@@ -127,6 +127,14 @@ gruv
 
 # Hypr<sup> / Shots</sup>
 
+<details open>(2025-Jan03) Adwaita-Iosevka-CT</summary> 
+<p>
+
+[style-Iosevka](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Use-Any-Font/style-Iosevka)
+![Screenshot-2025-01-03_17:16:51](https://github.com/user-attachments/assets/0c9ca70e-5310-4200-8dde-062a0b2d2fc5)
+
+</details>
+
 <details><summary>(2024-Dec31) Weather Script <sup>curl wttr.in</sup></summary> 
 <p>
 
@@ -144,7 +152,7 @@ Adwaita-Dark-Clock-Top  [Updated_Version-2](https://github.com/j5onrf/dots/tree/
 
 </details>
 
-<details open><summary>(2024-Dec24) Adwaita-Dark-CT</summary> 
+<details><summary>(2024-Dec24) Adwaita-Dark-CT</summary> 
 <p>
 
 [Adwaita-Dark-Clock-Top](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top) 
