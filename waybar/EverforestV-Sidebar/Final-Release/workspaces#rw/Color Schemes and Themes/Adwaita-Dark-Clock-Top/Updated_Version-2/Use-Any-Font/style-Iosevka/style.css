@@ -25,7 +25,7 @@ window#waybar {
     font-size: 28px;
     background: @color1;
     border-radius: 0.4em;
-    /* background-color: rgba(36, 36, 36, 0.8); */
+    background-color: rgba(36, 36, 36, 0.8); /* Opacity */
 }
 
 /* Workspaces Styles */
