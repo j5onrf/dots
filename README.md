@@ -131,7 +131,7 @@ gruv
 <p>
 
 [style-Iosevka](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Use-Any-Font/style-Iosevka)
-![Screenshot-2025-01-03_17:34:57](https://github.com/user-attachments/assets/dbecc4b8-04e5-4426-85b7-e2c93628e547)
+![Screenshot-2025-01-03_17:51:58](https://github.com/user-attachments/assets/f9d850e5-e682-4599-b986-3066a2e14342)
 
 </details>
 
