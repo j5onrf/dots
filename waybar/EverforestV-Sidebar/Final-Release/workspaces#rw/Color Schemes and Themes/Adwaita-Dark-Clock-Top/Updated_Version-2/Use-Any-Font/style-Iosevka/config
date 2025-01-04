@@ -45,7 +45,7 @@
  // Clock Configuration
   "clock": {
     "format": "{:%I\n%M}",
-    "tooltip-format": "{:%A, %d %B %Y}",
+    "tooltip-format": "{:%A, %d %b %Y}",
     // "on-click-right": "gapplication launch org.gnome.Weather",
     // "on-click-middle": "~/.config/hypr/scripts/wttr.sh",
     // "on-click": "gtk-launch brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default",
