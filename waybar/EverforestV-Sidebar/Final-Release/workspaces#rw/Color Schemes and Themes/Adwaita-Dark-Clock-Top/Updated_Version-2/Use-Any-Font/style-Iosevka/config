@@ -42,19 +42,13 @@
     "custom/exit"
   ],
 
-  // Clock Configuration
+ // Clock Configuration
   "clock": {
     "format": "{:%I\n%M}",
-    "tooltip-format": "<span>{calendar}</span>",
-    "on-click-right": "gapplication launch org.gnome.Weather",
-    "on-click-middle": "~/.config/hypr/scripts/wttr.sh",
-    "on-click": "gtk-launch brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default",
-    "calendar": {
-      "mode": "month",
-      "format": {
-        "today": "<span color='#E95420'><b>{}</b></span>"
-      }
-    }
+    "tooltip-format": "{:%A, %d %B %Y}",
+    // "on-click-right": "gapplication launch org.gnome.Weather",
+    // "on-click-middle": "~/.config/hypr/scripts/wttr.sh",
+    // "on-click": "gtk-launch brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default",
   },
 
   // Hyprland Window
