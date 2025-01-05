@@ -127,6 +127,13 @@ gruv
 
 # Hypr<sup> / Shots</sup>
 
+<details open>(2025-Jan05) Font Awesome 6 Pro :construction_worker:</summary> 
+<p>
+
+![Screenshot-2025-01-05_13:02:22](https://github.com/user-attachments/assets/2a253afc-1cc0-412c-8ad6-b44fef31f33e)
+
+</details>
+
 <details open>(2025-Jan03) Adwaita-Iosevka-CT</summary> 
 <p>
 
