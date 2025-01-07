@@ -26,7 +26,7 @@
     "window-rewrite": {
       "title<.*youtube.*>": "\uf04b",
       "title<.*reddit.*>": "<span font='18' line-height='1.2'>\uf544</span>",
-      "title<.*dot.*>": "\ue5db",
+      "title<.*dot.*>": "<span font='18' line-height='1.2'>\uf8f6</span>",
       // "title<.*chatgpt.*>": "\ue699",
       // "title<.*amazon.*>": "",
       // "title<.*youtube.*>": "",
