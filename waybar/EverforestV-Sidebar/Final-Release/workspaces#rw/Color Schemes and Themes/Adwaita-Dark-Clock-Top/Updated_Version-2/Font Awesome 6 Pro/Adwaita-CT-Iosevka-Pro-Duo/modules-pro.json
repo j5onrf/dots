@@ -27,6 +27,7 @@
       "title<.*youtube.*>": "\uf04b",
       "title<.*reddit.*>": "\ue04b",
       "title<.*dot.*>": "\ue5db",
+      // "title<.*chatgpt.*>": "\ue699",
       // "title<.*amazon.*>": "",
       // "title<.*youtube.*>": "",
       // "title<.*Picture-in-Picture.*>": "",
