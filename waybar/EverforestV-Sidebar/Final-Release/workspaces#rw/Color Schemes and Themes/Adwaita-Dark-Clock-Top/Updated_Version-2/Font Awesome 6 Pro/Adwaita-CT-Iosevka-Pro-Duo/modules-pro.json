@@ -26,7 +26,7 @@
     "window-rewrite": {
       "title<.*youtube.*>": "\uf04b",
       "title<.*reddit.*>": "\ue04b",
-      "title<.*dot.*>": "\uf8f6",
+      "title<.*dot.*>": "\ue5db",
       // "title<.*amazon.*>": "",
       // "title<.*youtube.*>": "",
       // "title<.*Picture-in-Picture.*>": "",
