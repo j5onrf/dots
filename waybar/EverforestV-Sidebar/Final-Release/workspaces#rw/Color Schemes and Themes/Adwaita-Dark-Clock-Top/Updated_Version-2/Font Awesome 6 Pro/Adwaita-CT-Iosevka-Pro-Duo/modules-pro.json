@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf (2025)
-// Vertical-Sidebar Font-Awesome-6-Pro (01-06-2025) beta
+// Vertical-Sidebar Font-Awesome-6-Pro (01-06-2025) beta 28px
 
 {
   // Workspaces
@@ -35,7 +35,7 @@
       "class<org.gnome.Weather>": "\uf76b",
       "class<wttr-floating>": "\uf76b",
       "class<io.missioncenter.MissionCenter>": "",
-      "class<firefox>": "\uf06d",
+      "class<firefox>": "<span font='22' foreground='#75787C'>\uf269</span>",
       "class<kitty>": "\ue13d",
       "class<alacritty>": "\uf120",
       "class<brave-browser-beta>": "\uf37e",
