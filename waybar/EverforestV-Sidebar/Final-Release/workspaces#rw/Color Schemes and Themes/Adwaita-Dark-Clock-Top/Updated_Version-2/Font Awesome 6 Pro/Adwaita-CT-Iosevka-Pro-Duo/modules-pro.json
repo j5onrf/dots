@@ -35,7 +35,7 @@
       "class<org.gnome.Weather>": "\uf76b",
       "class<wttr-floating>": "\uf76b",
       "class<io.missioncenter.MissionCenter>": "",
-      "class<firefox>": "<span font='22' foreground='#75787C'>\uf269</span>",
+      "class<firefox>": "<span font='22'>\uf269</span>",
       "class<kitty>": "\ue13d",
       "class<alacritty>": "\uf120",
       "class<brave-browser-beta>": "\uf37e",
