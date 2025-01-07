@@ -122,13 +122,13 @@ window#waybar {
 #custom-exit {
     font-family: "Font Awesome 6 Pro Duotone";
     font-weight: 300; /* Thin 100, Light 300, Duotone 900 */
-    padding: 0.39em 0.3em;
+    padding: 0.40em 0.3em;
 }
 #custom-appmenu:hover {
     font-family: "Iosevka Nerd Font Propo";
-    font-weight: 600; 
+    font-weight: 300; 
     margin: 0 0 0.3em 0; 
-    padding: 0.26em 0.3em;
+    padding: 0.27em 0.3em;
 }
 
 #custom-appmenu, 
