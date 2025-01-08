@@ -119,7 +119,6 @@ window#waybar {
     margin: 0.3em 0 0 0;
     color: @color0;
     background: @color2;
-    border-radius: 0.4em;
 }
 #custom-exit:hover,
 #custom-exit {
