@@ -27,7 +27,7 @@
       "title<.*youtube.*>": "\uf04b",
       "title<.*reddit.*>": "<span font='18' line-height='1.2'>\uf544</span>",
       "title<.*dot.*>": "\ue5db",
-      "title<.*chatgpt.*>": "\ue699",
+      // "title<.*chatgpt.*>": "\ue699",
       // "title<.*amazon.*>": "",
       // "title<.*youtube.*>": "\uf04b",
       // "title<.*Picture-in-Picture.*>": "",
@@ -54,7 +54,7 @@
       // "class<codium|codium-url-handler|VSCodium>": "󰨞",
       // "class<codeblocks>": "󰅩",
       // "class<com.obsproject.Studio>": "",
-      "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
+      // "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
       // "class<zen-alpha>": "󰰷",
       // "class<vlc>": "󰕼"
     }
