@@ -146,7 +146,7 @@ gruv
 <details><summary>(2024-Dec31) Weather Script <sup>curl wttr.in</sup></summary> 
 <p>
 
-['curl wttr.in' Kitty-Float-Script](https://github.com/j5onrf/dots/blob/main/scripts/weather-curl-wttr.in/Screenshot-2024-12-30_19%3A51%3A52.png)
+['curl wttr.in' Kitty-Float-Script](https://github.com/j5onrf/dots/blob/main/scripts/weather-curl-wttr.in/Screenshot-2025-01-08_14%3A48%3A19.png)
 
 </details>
 
