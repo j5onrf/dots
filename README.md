@@ -130,7 +130,7 @@ gruv
 <details open>(2025-Jan05) Font Awesome 6 Pro :construction_worker:</summary> 
 <p>
 
-[Font Awesome 6 Pro](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro) &nbsp; [Adwaita-CT-Iosevka-Pro-Duo<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Duo)
+[Font Awesome 6 Pro](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro)
 ![Screenshot-2025-01-05_13:02:22](https://github.com/user-attachments/assets/2a253afc-1cc0-412c-8ad6-b44fef31f33e)
 
 </details>
