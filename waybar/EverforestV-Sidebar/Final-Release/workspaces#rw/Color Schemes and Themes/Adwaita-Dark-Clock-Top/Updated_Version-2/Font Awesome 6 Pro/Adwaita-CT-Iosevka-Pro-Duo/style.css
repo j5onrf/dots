@@ -5,7 +5,7 @@
 \____|__  /\____ |  \/\_/ (____  /__||__| (____  /
         \/      \/             \/              \/
 * ML4W, Edited by j5onrf (2025)
-* Adwaita-CT-Iosevka-Pro-Duo (01-06-2025) beta
+* Adwaita-CT-Iosevka-Pro-Duo (01-07-2025) beta
 * -----------------------------------------------------  
 */
 
@@ -90,7 +90,7 @@ window#waybar {
 /* Hyprland/window */
 #window {
     font-family: "Iosevka Nerd Font Propo";
-    font-weight: 600; 
+    font-weight: 400; 
     margin: 0.3em 0.83em;
     padding: 0.5em 0;
     color: @color0;
@@ -120,13 +120,13 @@ window#waybar {
 }
 #custom-exit:hover,
 #custom-exit {
-    font-family: "Font Awesome 6 Pro Duotone";
-    font-weight: 300; /* Thin 100, Light 300, Duotone 900 */
+    font-family: "Font Awesome 6 Duotone Thin";
+    font-weight: 400; /* Thin 100, Light 300, Duotone 900 */
     padding: 0.39em 0.3em;
 }
 #custom-appmenu:hover {
     font-family: "Iosevka Nerd Font Propo";
-    font-weight: 300; 
+    font-weight: 400; 
     margin: 0 0 0.3em 0; 
     padding: 0.27em 0.3em;
 }
@@ -166,7 +166,7 @@ window#waybar {
 #memory,
 #custom-updates {
     font-family: "Iosevka Nerd Font Propo";
-    font-weight: 600; 
+    font-weight: 400; 
     font-size: 0.6em;
     color: @color0;
     padding: 0.15em 0;
@@ -186,7 +186,7 @@ window#waybar {
 /* Clock Styles */
 #clock {
     font-family: "Iosevka Nerd Font Propo";
-    font-weight: 600; 
+    font-weight: 400; 
     font-size: 0.857em;
     margin: 0.3em 0.5em;
     color: @color0;
