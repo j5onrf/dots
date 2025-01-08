@@ -5,7 +5,9 @@
 # Script currently only works with custom themes*
 
 # Quit all running Waybar instances
-killall waybar && sleep 0.5
+killall waybar
+pkill waybar
+sleep 0.5
 
 # Read the current theme path
 THEME_FILE="$HOME/.config/ml4w/settings/waybar-theme.sh"
