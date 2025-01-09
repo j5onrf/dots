@@ -25,7 +25,7 @@
     "window-rewrite-default": "\uf2fd",
     "window-rewrite": {
       "title<.*youtube.*>": "\uf04b",
-      "title<.*reddit.*>": "<span font='18' line-height='1.2'>\uf544</span>",
+      "title<.*reddit.*>": "<span line-height='1.1'>\uf544</span>",
       "title<.*dot.*>": "<span line-height='0.8'></span>",
       // "title<.*chatgpt.*>": "\ue1ec",
       // "title<.*amazon.*>": "",
