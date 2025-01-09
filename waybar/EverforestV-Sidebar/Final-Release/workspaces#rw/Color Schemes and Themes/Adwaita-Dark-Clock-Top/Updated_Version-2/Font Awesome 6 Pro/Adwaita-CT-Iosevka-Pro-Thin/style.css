@@ -64,6 +64,7 @@ window#waybar {
 }
 
 #workspaces button.empty {
+    font-family: "Iosevka Nerd Font Propo";
     opacity: 0.3;
     padding: 0;
 }
