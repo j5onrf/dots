@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf (2025)
-// Vertical-Sidebar Font-Awesome-6-Pro-Thin (01-07-2025) beta
+// Vertical-Sidebar Font-Awesome-6-Pro-Thin (01-09-2025) beta
 
 {
   // Workspaces
@@ -27,7 +27,7 @@
       "title<.*youtube.*>": "\uf04b",
       "title<.*reddit.*>": "<span font='18' line-height='1.2'>\uf544</span>",
       "title<.*dot.*>": "\ue5db",
-      // "title<.*chatgpt.*>": "\ue699",
+      "title<.*chatgpt.*>": "\ue1ec",
       // "title<.*amazon.*>": "",
       // "title<.*youtube.*>": "\uf04b",
       // "title<.*Picture-in-Picture.*>": "",
@@ -168,5 +168,4 @@
     "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
   }
 }
-
 
