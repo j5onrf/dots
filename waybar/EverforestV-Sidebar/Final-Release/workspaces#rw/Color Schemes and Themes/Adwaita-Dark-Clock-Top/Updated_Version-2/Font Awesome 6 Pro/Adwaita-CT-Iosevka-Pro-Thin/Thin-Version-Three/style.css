@@ -41,7 +41,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background: @color3;
+
     color: @color0;
     margin: 0.1em 0.14em;
     border-radius: 0.2em;
