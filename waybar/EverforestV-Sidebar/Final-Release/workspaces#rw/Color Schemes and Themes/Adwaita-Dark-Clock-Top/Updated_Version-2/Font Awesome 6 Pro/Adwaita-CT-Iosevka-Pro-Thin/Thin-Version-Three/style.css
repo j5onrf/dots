@@ -89,7 +89,6 @@ window#waybar {
     margin: 0.3em 0.5em;
     padding: 0.5em 0.25;
     color: @color0;
-    background-color: #000;
 }
 
 #window:hover {
@@ -190,7 +189,6 @@ window#waybar {
     margin: 0.3em 0.2em;
     padding: 0.25em 0;
     color: @color0;
-    background-color: #000;
 }
 
 #clock:hover {
