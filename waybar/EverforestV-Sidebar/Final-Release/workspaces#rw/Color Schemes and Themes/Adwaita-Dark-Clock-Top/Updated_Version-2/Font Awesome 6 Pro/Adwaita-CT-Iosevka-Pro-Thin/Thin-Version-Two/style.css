@@ -123,7 +123,7 @@ window#waybar {
     font-family: "Iosevka Nerd Font Propo";
     font-weight: 100; 
     margin: 0 0 0.3em 0; 
-    padding: 0.2em 0.3em;
+    padding: 0.25em 0.3em;
 }
 
 #custom-appmenu, 
