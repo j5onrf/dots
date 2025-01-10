@@ -87,7 +87,7 @@ window#waybar {
     font-family: "Iosevka Nerd Font Propo";
     font-weight: 200;  /* Thin 100, Light 300 */
     margin: 0.3em 0.5em;
-    padding: 0.5em 0.2;
+    padding: 0.5em 0.25;
     color: @color0;
     background-color: @color2;
 }
