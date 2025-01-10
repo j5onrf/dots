@@ -25,7 +25,7 @@ window#waybar {
     font-weight: 200; /* Thin 100, Light 300, Duotone 900 */
     font-size: 28px;
     border-radius: 0.2em;
-    background-color: rgba(0, 0, 0, 1); 
+    background-color: rgba(0, 0, 0, 0.8); 
 }
 
 /* Workspaces Styles */
@@ -49,8 +49,8 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background: @color3;
-    color: @color0;
+    color: @color3;
+    background: @color0;
     margin: 0.1em 0.14em;
     padding: 0.17em 0.14em;
 }
@@ -202,7 +202,7 @@ window#waybar {
 
 /* Tooltip */
 tooltip {
-    background-color: @color1;
+    background-color: #000;
     opacity: 0.8;
 }
 
