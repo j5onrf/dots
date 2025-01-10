@@ -165,7 +165,7 @@ window#waybar {
 #memory,
 #custom-updates {
     font-family: "Iosevka Nerd Font Propo";
-    font-weight: 300; 
+    font-weight: 400; 
     font-size: 0.6em;
     color: @color0;
     padding: 0.15em 0;
