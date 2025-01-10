@@ -110,8 +110,8 @@ window#waybar {
 #custom-exit:hover {
     font-size: 1em;
     margin: 0.3em 0 0 0;
-    color: @color0;
-    background-color: @color3;
+    color: @color3;
+    background-color: @color0;
 }
 #custom-exit:hover,
 #custom-exit {
