@@ -87,11 +87,9 @@ window#waybar {
     font-family: "Iosevka Nerd Font Propo";
     font-weight: 200;  /* Thin 100, Light 300 */
     margin: 0.3em 0.5em;
-    padding: 0.5em 0.25;
+    padding: 0.5em 0em 0.5em 0.12em;
     color: @color0;
-    background-color: @color2;
 }
-
 #window:hover {
     color: @color0;
     background-color: @color3;
@@ -188,14 +186,14 @@ window#waybar {
     font-weight: 200; 
     font-size: 0.857em;
     margin: 0.3em 0.2em;
-    padding: 0.25em 0;
+    padding: 0.1em 0.1em;
     color: @color0;
     background-color: @color2;
 }
 
 #clock:hover {
     margin: 0.3em 0.3em;
-    padding: 0.25em 0;
+    padding: 0.1em 0.1em;
     color: @color0;
     background-color: @color3;
 }
