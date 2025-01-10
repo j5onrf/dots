@@ -15,14 +15,21 @@ bind = $mainMod, C, exec, ~/.config/waybar/toggle.sh # Toggle WayBar
 
 </details>
 
+<details><summary>HyprPanel Blueberry</summary> 
+<p>
+
 (2024-oct27) Blueberry [HyprPanel <sup>theme</sup>](https://github.com/j5onrf/dots/tree/main/HyprPanel) & [Wallpapers](https://github.com/j5onrf/walls/tree/main/Blueberry/Blueberry-Arch-Blur)
 ![Screenshot-2024-10-27_13:17:04](https://github.com/user-attachments/assets/5f92cc50-62c7-46c3-ac23-81b716305b8c)
 
-<details><summary>+ScreenShots</summary>
+</details>
+
+<details open><summary>(2024-oct26) HyprPanel & WayBar</summary> 
+  
+![Screenshot-2024-10-27_18:21:11](https://github.com/user-attachments/assets/851678ef-a440-469e-b485-867240ebf268)
+
 <p>
 
-(2024-oct26) HyprPanel & WayBar
-![Screenshot-2024-10-27_18:21:11](https://github.com/user-attachments/assets/851678ef-a440-469e-b485-867240ebf268)
+</details>
 
 <details><summary>+ScreenShots</summary>
 <p>
@@ -42,7 +49,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive%202/Screens
 </details>
 </details>
 </details>
-</details>
+</details></p>
 <br>
 
 # WayBar
@@ -127,7 +134,7 @@ gruv
 
 # Hypr<sup> / Shots</sup>
 
-<details open>(2025-Jan05) Font Awesome 6 Pro :construction_worker:</summary> 
+<details open><summary>(2025-Jan05) Font Awesome 6 Pro :construction_worker:</summary> 
 <p>
 
 [Font Awesome 6 Pro](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro)
@@ -135,7 +142,7 @@ gruv
 
 </details>
 
-<details open>(2025-Jan03) Adwaita-Iosevka-CT</summary> 
+<details open><summary>(2025-Jan03) Adwaita-Iosevka-CT</summary> 
 <p>
 
 [style-Iosevka](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Use-Any-Font/style-Iosevka)
@@ -150,7 +157,7 @@ gruv
 
 </details>
 
-<details open><summary>(2024-Dec30) Adwaita-Dark-CT Updated_Version-2</summary> 
+<details><summary>(2024-Dec30) Adwaita-Dark-CT Updated_Version-2</summary> 
 <p>
 
 Adwaita-Dark-Clock-Top  [Updated_Version-2](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2)
