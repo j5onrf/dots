@@ -159,13 +159,14 @@
   // Network Module
   "network": {
     "format": "{ifname}",
-    "format-ethernet": "\uf1eb",
-    "format-disconnected": "󰤨",
-    "tooltip-format-ethernet": "󰤨 {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "format-ethernet": "<span line-height='1.0' font_desc='Font Awesome 6 Thin 20'>\uf1eb</span>",
+    "format-disconnected": "<span line-height='1.0' font_desc='Font Awesome 6 Thin 20'>\uf6ac</span>",
+    "tooltip-format-ethernet": "\uf1eb {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 20,
     "on-click": "nm-connection-editor",
     "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
   }
 }
+
 
