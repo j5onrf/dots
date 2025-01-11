@@ -23,7 +23,7 @@
 
 </details>
 
-<details open><summary>(2024-Dec30) Adwaita-Dark-CT Updated_Version-2</summary> 
+<details><summary>(2024-Dec30) Adwaita-Dark-CT Updated_Version-2</summary> 
 <p>
 
 Adwaita-Dark-Clock-Top  [Updated_Version-2](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2)
