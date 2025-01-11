@@ -20,7 +20,7 @@
 
   // Load Modules
   "include": [
-    "~/.config/waybar/modules-pro-thin-3.json"
+    "~/.config/waybar/modules-pro-thin.json"
   ],
 
   // Modules Left
