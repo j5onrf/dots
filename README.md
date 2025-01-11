@@ -1,55 +1,149 @@
-# HyprPanel
+# Hypr<sup> / Shots</sup>
 
-(2024-oct1) Trying out [HyprPanel](https://www.reddit.com/r/unixporn/comments/1frzwbx/hyprland_hyprpanel_w_25_new_themes_20_prebuilt/#lightbox)
-![Screenshot-2024-10-01_08:57:24](https://github.com/user-attachments/assets/17ae8b9c-26aa-496e-a6cc-f37e825035fe)
-
-<details><summary>Toggle on/off [i]</summary>
+<details open><summary>(2025-Jan05) Font Awesome 6 Pro :construction_worker:</summary> 
 <p>
 
-```
-bind = $mainMod, H, exec, agsv1 -t bar-0 # Toggle Hyprpanel
-bind = $mainMod, C, exec, ~/.config/waybar/toggle.sh # Toggle WayBar
+[Font Awesome 6 Pro](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro)
+![Screenshot-2025-01-05_13:02:22](https://github.com/user-attachments/assets/2a253afc-1cc0-412c-8ad6-b44fef31f33e)
+
+</details>
+
+<details open><summary>(2025-Jan03) Adwaita-Iosevka-CT</summary> 
+<p>
+
+[style-Iosevka](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Use-Any-Font/style-Iosevka)
+![Screenshot-2025-01-03_17:51:58](https://github.com/user-attachments/assets/f9d850e5-e682-4599-b986-3066a2e14342)
+
+</details>
+
+<details><summary>(2024-Dec31) Weather Script <sup>curl wttr.in</sup></summary> 
+<p>
+
+['curl wttr.in' Kitty-Float-Script](https://github.com/j5onrf/dots/blob/main/scripts/weather-curl-wttr.in/Screenshot-2025-01-08_14%3A48%3A19.png)
+
+</details>
+
+<details><summary>(2024-Dec30) Adwaita-Dark-CT Updated_Version-2</summary> 
+<p>
+
+Adwaita-Dark-Clock-Top  [Updated_Version-2](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2)
+![Screenshot-2024-12-24_15:52:53](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Screenshot-2024-12-30_09%3A25%3A13.png)
+[Pywal-Rofi-Dock-2](https://github.com/j5onrf/dots/tree/main/rofi/Rofi-Dock-2/Adwaita-Dark/Pywal-Version-HYDE-ML4W)
+![Screenshot-2024-12-26_15:52:53](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Screenshot-2024-12-29_19%3A01%3A25.png)
+
+</details>
+
+<details><summary>(2024-Dec24) Adwaita-Dark-CT</summary> 
+<p>
+
+[Adwaita-Dark-Clock-Top](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top) 
+![Screenshot-2024-12-24_15:52:53](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Screenshot-2024-12-24_14%3A51%3A22.png)
+[Adwaita-Dark-Rofi-Dock-2](https://github.com/j5onrf/dots/tree/main/rofi/Rofi-Dock-2/Adwaita-Dark) 
+![Screenshot-2024-12-26_15:52:53](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/rofi/Rofi-Dock-2/Adwaita-Dark/Screenshot-2024-12-26_19%3A44%3A26.png)
+
+</details>
+
+<details><summary>(2024-Dec18) Blueberry🫐<sup>2</sup></summary> 
+<p>
+  
+[Blueberry-3](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/BlueBerry-RW/Blueberry-3-RW) 
+![Screenshot-2024-12-18_16:27:27](https://github.com/user-attachments/assets/7bfc6a6f-c564-466b-a556-3d1c5050bf10)
+
+[Blueberry-Clock-Top](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/BlueBerry-RW/Blueberry-RW-Clock-Top)
+![Screenshot-2024-12-18_16:17:59](https://github.com/user-attachments/assets/c9ea25a3-8b6f-4c58-b523-8f05fafc1ffc)
+
+</details>
+
+<details><summary>(2024-Dec08) Catppuccin-Mocha🐈‍⬛ Rofi</summary> 
+<p>
+
+[Icons-Only-Dock-Catppuccin-Mocha.rasi](https://github.com/j5onrf/dots/tree/main/rofi/Icons-only-rofi-catppuchin-mocha/Version-Two)  (updated-12-12) &nbsp; Centered Workspaces# + Proton Calendar PWA
+![Screenshot-2024-12-12_18:09:11](https://github.com/user-attachments/assets/9b7bcc88-b133-40cd-8eb2-f03282b29cca)
+![Screenshot-2024-12-12_18:30:10](https://github.com/user-attachments/assets/b18d0c17-ac13-44b6-a299-f16a22d5229f)
+</details>
+
+<details><summary>(2024-Nov18) Nord🛡️ᛉᛟ Rofi</summary> 
+<p>
+
+[Version<sup>3</sup>](https://github.com/j5onrf/dots/tree/main/rofi/Nord/Harmonized%20Rofi%20Config%20for%20NordV-Sidebar/More-Styles/Version-3) (Nov-21-2024) &nbsp; [Icons Only Beta](https://github.com/j5onrf/dots/tree/main/rofi/Nord/Harmonized%20Rofi%20Config%20for%20NordV-Sidebar/More-Styles/Version-3/More-Styles) (Nov-23-2024)
+![Screenshot-v3](https://github.com/user-attachments/assets/789cf25a-6a70-4c6d-a397-05aee67ecdb8)
+![Screenshot-2024-11-23_13:54:58](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/rofi/Nord/Harmonized%20Rofi%20Config%20for%20NordV-Sidebar/More-Styles/Version-3/More-Styles/Screenshot-2024-11-24_09%3A23%3A49.png)
+</details>
+
+<details><summary>(2024-Nov17) Nord🛡️ᛉᛟ SideBar</summary>
+<p>
+  
+[ColorScheme](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release) &nbsp; [Wall](https://github.com/j5onrf/walls/tree/main/Nord) 
+![](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/Color%20Schemes%20and%20Themes/NordVivid/Screenshot-2024-11-17_11%3A46%3A18.png)
+![Screenshot-2024-11-18_13:20:39](https://github.com/user-attachments/assets/3c36599f-6827-4620-9212-f3df63e1007c)
+</details>
+
+<details><summary>Archived</summary>
+<p>
+
+<details><summary>(2024-Nov01) Everforest🌿 Rofi</summary>
+<p>
+  
+[everforest.rasi](https://github.com/j5onrf/dots/tree/main/rofi/EverForest%20Rofi) &nbsp; [walls](https://github.com/j5onrf/walls/tree/main/EverForest/EverForest_Arch) 
+![Screenshot-2024-11-01_23:56:26](https://github.com/user-attachments/assets/c02e5d51-7335-493a-bc13-623e78e70884)
+</details>
+
+<details><summary>(2024-oct31) Everforest-S🌿 colorscheme</summary>
+<p>
+
+![Screenshot-2024-10-31_16:32:25](https://github.com/user-attachments/assets/4c1015e5-00d2-464b-acdd-480ff516b1dd)
+
+</details>
+
+<details><summary>(2024-oct30) Blueberry-S🫐 Optional workspaces#rw</summary>
+<p>
+
+[workspaces#rw](https://github.com/j5onrf/dots/tree/main/waybar/Min-Blueberry/Sidebar/Alpha-release/workspaces%23rw)
+![Screenshot-2024-10-30_15:16:53](https://github.com/user-attachments/assets/f83a791b-93d6-4fb8-b06b-da27ba1d2a3d)
+
+</details>
+
+<details><summary>(2024-oct29) Blueberry-S🫐 Optional 2nd button style</summary>
+<p>
+
+Optional [2nd button style](https://github.com/j5onrf/dots/tree/main/waybar/Min-Blueberry/Sidebar/Alpha-release/Button-Style-2)
+![Screenshot-2024-10-29_19:23:06](https://github.com/user-attachments/assets/b8109956-689d-4ca7-b20b-426421163b08)
+
+</details>
+
+<details><summary>(2024-oct28) Blueberry-S🫐 workflow & gtk 47</summary>
+<p>
+
+![Screenshot-2024-10-28_21:28:43](https://github.com/user-attachments/assets/879c4de9-4d82-42ee-9504-a54a3743443d)
+
+</details>
+
+<details><summary>(2024-oct31) Blueberry🫐 Rofi</summary>
+<p>
+ 
+[quick-simple-blueberry-rofi](https://github.com/j5onrf/dots/tree/main/rofi/Blueberry%20Rofi) 
+Use [Rofi-Launcher](https://github.com/j5onrf/dots/tree/main/rofi/Rofi-Launcher) to have multi rofi
+
+</details>
+
+<details><summary>+ScreenShots</summary>
+<p>
+
+Hyprland [Screenshot Archive](https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots.md)
+```diff
+https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots.md
 ```
 
 </p>
-
-</details>
-
-<details><summary>HyprPanel Blueberry</summary> 
-<p>
-
-(2024-oct27) Blueberry [HyprPanel <sup>theme</sup>](https://github.com/j5onrf/dots/tree/main/HyprPanel) & [Wallpapers](https://github.com/j5onrf/walls/tree/main/Blueberry/Blueberry-Arch-Blur)
-![Screenshot-2024-10-27_13:17:04](https://github.com/user-attachments/assets/5f92cc50-62c7-46c3-ac23-81b716305b8c)
-
-</details>
-
-<details open><summary>(2024-oct26) HyprPanel & WayBar</summary> 
-  
-![Screenshot-2024-10-27_18:21:11](https://github.com/user-attachments/assets/851678ef-a440-469e-b485-867240ebf268)
-
-<p>
-
-</details>
-
-<details><summary>+ScreenShots</summary>
-<p>
-
-(2024-oct27) HyprPanel & WayBar
-![Screenshot-2024-10-27_16:35:55](https://github.com/user-attachments/assets/f0cdebe9-56e6-4e46-b400-a07b801838e0)
-
-<details><summary>+ScreenShots</summary>
-<p>
-  
-HyprPanel & Waybar [Screenshot Archive](https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive%202/Screenshots2.md)
-```diff
-https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive%202/Screenshots2.md
-```
 </details>
 </details>
 </details>
 </details>
 </details>
-</details></p>
+</details>
+</details>
+</details>
+</details>
 <br>
 
 # WayBar
@@ -131,150 +225,60 @@ gruv
 </details>
 <br>
 
+# HyprPanel
 
-# Hypr<sup> / Shots</sup>
+(2024-oct1) Trying out [HyprPanel](https://www.reddit.com/r/unixporn/comments/1frzwbx/hyprland_hyprpanel_w_25_new_themes_20_prebuilt/#lightbox)
+![Screenshot-2024-10-01_08:57:24](https://github.com/user-attachments/assets/17ae8b9c-26aa-496e-a6cc-f37e825035fe)
 
-<details open><summary>(2025-Jan05) Font Awesome 6 Pro :construction_worker:</summary> 
+<details><summary>Toggle on/off [i]</summary>
 <p>
 
-[Font Awesome 6 Pro](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro)
-![Screenshot-2025-01-05_13:02:22](https://github.com/user-attachments/assets/2a253afc-1cc0-412c-8ad6-b44fef31f33e)
+```
+bind = $mainMod, H, exec, agsv1 -t bar-0 # Toggle Hyprpanel
+bind = $mainMod, C, exec, ~/.config/waybar/toggle.sh # Toggle WayBar
+```
+
+</p>
 
 </details>
 
-<details open><summary>(2025-Jan03) Adwaita-Iosevka-CT</summary> 
+<details><summary>HyprPanel Blueberry</summary> 
 <p>
 
-[style-Iosevka](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Use-Any-Font/style-Iosevka)
-![Screenshot-2025-01-03_17:51:58](https://github.com/user-attachments/assets/f9d850e5-e682-4599-b986-3066a2e14342)
+(2024-oct27) Blueberry [HyprPanel <sup>theme</sup>](https://github.com/j5onrf/dots/tree/main/HyprPanel) & [Wallpapers](https://github.com/j5onrf/walls/tree/main/Blueberry/Blueberry-Arch-Blur)
+![Screenshot-2024-10-27_13:17:04](https://github.com/user-attachments/assets/5f92cc50-62c7-46c3-ac23-81b716305b8c)
 
 </details>
 
-<details><summary>(2024-Dec31) Weather Script <sup>curl wttr.in</sup></summary> 
-<p>
-
-['curl wttr.in' Kitty-Float-Script](https://github.com/j5onrf/dots/blob/main/scripts/weather-curl-wttr.in/Screenshot-2025-01-08_14%3A48%3A19.png)
-
-</details>
-
-<details><summary>(2024-Dec30) Adwaita-Dark-CT Updated_Version-2</summary> 
-<p>
-
-Adwaita-Dark-Clock-Top  [Updated_Version-2](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2)
-![Screenshot-2024-12-24_15:52:53](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Screenshot-2024-12-30_09%3A25%3A13.png)
-[Pywal-Rofi-Dock-2](https://github.com/j5onrf/dots/tree/main/rofi/Rofi-Dock-2/Adwaita-Dark/Pywal-Version-HYDE-ML4W)
-![Screenshot-2024-12-26_15:52:53](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Screenshot-2024-12-29_19%3A01%3A25.png)
-
-</details>
-
-<details><summary>(2024-Dec24) Adwaita-Dark-CT</summary> 
-<p>
-
-[Adwaita-Dark-Clock-Top](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top) 
-![Screenshot-2024-12-24_15:52:53](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Screenshot-2024-12-24_14%3A51%3A22.png)
-[Adwaita-Dark-Rofi-Dock-2](https://github.com/j5onrf/dots/tree/main/rofi/Rofi-Dock-2/Adwaita-Dark) 
-![Screenshot-2024-12-26_15:52:53](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/rofi/Rofi-Dock-2/Adwaita-Dark/Screenshot-2024-12-26_19%3A44%3A26.png)
-
-</details>
-
-<details><summary>(2024-Dec18) Blueberry🫐<sup>2</sup></summary> 
-<p>
+<details open><summary>(2024-oct26) HyprPanel & WayBar</summary> 
   
-[Blueberry-3](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/BlueBerry-RW/Blueberry-3-RW) 
-![Screenshot-2024-12-18_16:27:27](https://github.com/user-attachments/assets/7bfc6a6f-c564-466b-a556-3d1c5050bf10)
+![Screenshot-2024-10-27_18:21:11](https://github.com/user-attachments/assets/851678ef-a440-469e-b485-867240ebf268)
 
-[Blueberry-Clock-Top](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/BlueBerry-RW/Blueberry-RW-Clock-Top)
-![Screenshot-2024-12-18_16:17:59](https://github.com/user-attachments/assets/c9ea25a3-8b6f-4c58-b523-8f05fafc1ffc)
-
-</details>
-
-<details><summary>(2024-Dec08) Catppuccin-Mocha🐈‍⬛ Rofi</summary> 
 <p>
-
-[Icons-Only-Dock-Catppuccin-Mocha.rasi](https://github.com/j5onrf/dots/tree/main/rofi/Icons-only-rofi-catppuchin-mocha/Version-Two)  (updated-12-12) &nbsp; Centered Workspaces# + Proton Calendar PWA
-![Screenshot-2024-12-12_18:09:11](https://github.com/user-attachments/assets/9b7bcc88-b133-40cd-8eb2-f03282b29cca)
-![Screenshot-2024-12-12_18:30:10](https://github.com/user-attachments/assets/b18d0c17-ac13-44b6-a299-f16a22d5229f)
-</details>
-
-<details><summary>(2024-Nov18) Nord🛡️ᛉᛟ Rofi</summary> 
-<p>
-
-[Version<sup>3</sup>](https://github.com/j5onrf/dots/tree/main/rofi/Nord/Harmonized%20Rofi%20Config%20for%20NordV-Sidebar/More-Styles/Version-3) (Nov-21-2024) &nbsp; [Icons Only Beta](https://github.com/j5onrf/dots/tree/main/rofi/Nord/Harmonized%20Rofi%20Config%20for%20NordV-Sidebar/More-Styles/Version-3/More-Styles) (Nov-23-2024)
-![Screenshot-v3](https://github.com/user-attachments/assets/789cf25a-6a70-4c6d-a397-05aee67ecdb8)
-![Screenshot-2024-11-23_13:54:58](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/rofi/Nord/Harmonized%20Rofi%20Config%20for%20NordV-Sidebar/More-Styles/Version-3/More-Styles/Screenshot-2024-11-24_09%3A23%3A49.png)
-</details>
-
-<details><summary>(2024-Nov17) Nord🛡️ᛉᛟ SideBar</summary>
-<p>
-  
-[ColorScheme](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release) &nbsp; [Wall](https://github.com/j5onrf/walls/tree/main/Nord) 
-![](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/Color%20Schemes%20and%20Themes/NordVivid/Screenshot-2024-11-17_11%3A46%3A18.png)
-![Screenshot-2024-11-18_13:20:39](https://github.com/user-attachments/assets/3c36599f-6827-4620-9212-f3df63e1007c)
-</details>
-
-<details><summary>(2024-Nov01) Everforest🌿 Rofi</summary>
-<p>
-  
-[everforest.rasi](https://github.com/j5onrf/dots/tree/main/rofi/EverForest%20Rofi) &nbsp; [walls](https://github.com/j5onrf/walls/tree/main/EverForest/EverForest_Arch) 
-![Screenshot-2024-11-01_23:56:26](https://github.com/user-attachments/assets/c02e5d51-7335-493a-bc13-623e78e70884)
-</details>
-
-<details><summary>(2024-oct31) Everforest-S🌿 colorscheme</summary>
-<p>
-
-![Screenshot-2024-10-31_16:32:25](https://github.com/user-attachments/assets/4c1015e5-00d2-464b-acdd-480ff516b1dd)
-
-</details>
-
-<details><summary>(2024-oct30) Blueberry-S🫐 Optional workspaces#rw</summary>
-<p>
-
-[workspaces#rw](https://github.com/j5onrf/dots/tree/main/waybar/Min-Blueberry/Sidebar/Alpha-release/workspaces%23rw)
-![Screenshot-2024-10-30_15:16:53](https://github.com/user-attachments/assets/f83a791b-93d6-4fb8-b06b-da27ba1d2a3d)
-
-</details>
-
-<details><summary>(2024-oct29) Blueberry-S🫐 Optional 2nd button style</summary>
-<p>
-
-Optional [2nd button style](https://github.com/j5onrf/dots/tree/main/waybar/Min-Blueberry/Sidebar/Alpha-release/Button-Style-2)
-![Screenshot-2024-10-29_19:23:06](https://github.com/user-attachments/assets/b8109956-689d-4ca7-b20b-426421163b08)
-
-</details>
-
-<details><summary>(2024-oct28) Blueberry-S🫐 workflow & gtk 47</summary>
-<p>
-
-![Screenshot-2024-10-28_21:28:43](https://github.com/user-attachments/assets/879c4de9-4d82-42ee-9504-a54a3743443d)
-
-</details>
-
-<details><summary>(2024-oct31) Blueberry🫐 Rofi</summary>
-<p>
- 
-[quick-simple-blueberry-rofi](https://github.com/j5onrf/dots/tree/main/rofi/Blueberry%20Rofi) 
-Use [Rofi-Launcher](https://github.com/j5onrf/dots/tree/main/rofi/Rofi-Launcher) to have multi rofi
 
 </details>
 
 <details><summary>+ScreenShots</summary>
 <p>
 
-Hyprland [Screenshot Archive](https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots.md)
-```diff
-https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots.md
-```
+(2024-oct27) HyprPanel & WayBar
+![Screenshot-2024-10-27_16:35:55](https://github.com/user-attachments/assets/f0cdebe9-56e6-4e46-b400-a07b801838e0)
 
-</p>
+<details><summary>+ScreenShots</summary>
+<p>
+  
+HyprPanel & Waybar [Screenshot Archive](https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive%202/Screenshots2.md)
+```diff
+https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive%202/Screenshots2.md
+```
 </details>
 </details>
 </details>
 </details>
 </details>
-</details>
-</details>
-</details>
+</details></p>
 <br>
+
 
 # Hyprland
 
