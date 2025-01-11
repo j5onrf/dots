@@ -31,7 +31,7 @@ window#waybar {
 /* Workspaces Styles */
 #workspaces {
     font-family: "Font Awesome 6 Pro";
-    font-weight: 100; /* Thin 100, Light 300, Duotone 900 */
+    font-weight: 200; /* Thin 100, Light 300, Duotone 900 */
 }
 
 #workspaces button {
