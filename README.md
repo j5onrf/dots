@@ -291,26 +291,10 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive%202/Screens
   To add blur I'm using 'blur wallpaper effect' for better performance. Everything with opacity <1 will have blur including waybar. If using ml4w, right click on wallpaper icon to select wallpaper effect blur* = 1,2.
   
 ```
-  decoration {
-    rounding = 0
-    blur {
-        enabled = false
-        size = 6 # default 12
-        passes = 3 # default 4
-        new_optimizations = on
-        ignore_opacity = true
-        xray = true
-      # blurls = waybar
-    }
     active_opacity = 0.9 # 0.96
     inactive_opacity = 0.6
     fullscreen_opacity = 1
 
-    drop_shadow = false
-    shadow_range = 30
-    shadow_render_power = 3
-    col.shadow = 0x66000000
-}
 ```
 </p>
 </details>
@@ -322,27 +306,25 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive%202/Screens
 # Don't allow idle on fullscreen windows
 # windowrulev2 = idleinhibit fullscreen, class:.*
 
-# Notifications change from - dunstify
-
 # Load cliphist history
 # exec-once = wl-paste --watch cliphist store --auto-delete 10
 
 # Hyprpanel
-exec-once = agsv1
-bind = $mainMod, H, exec, agsv1 -t bar-0 # Toggle Hyprpanel
+# exec-once = agsv1
+# bind = $mainMod, H, exec, agsv1 -t bar-0 # Toggle Hyprpanel
 
 # Waybar
 bind = $mainMod, W, exec, ~/.config/waybar/launch.sh # Relaunch Waybar
 bind = $mainMod, C, exec, ~/.config/waybar/toggle.sh # Toggle waybar
 
 # terminals
-bind = $mainMod, X, exec, kgx # Open the terminal
 bind = $mainMod, S, exec, kitty # Open the terminal
 bind = $mainMod, D, exec, alacritty # Open the terminal
 bind = $mainMod, A, exec, $(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating # Open the terminal
 
 # Rofi
-bind = $mainMod, R, exec, zsh "$HOME/.config/rofi/bin/launcher2"
+# bind = $mainMod, R, exec, zsh "$HOME/.config/rofi/bin/launcher2"
+bind = $mainMod, R, exec, pkill rofi || rofi -show drun -replace -i
 
 # screenshot 
 bind =, Print, exec, grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | notify-send "Screenshot of the region taken" -t 1000 # screenshot of a region 
@@ -366,17 +348,12 @@ windowrulev2 = size 1300 1100,class:^(org.keepassxc.KeePassXC)$
 # Dimaround
 windowrulev2 = dimaround, class:^(dotfiles-floating)
 windowrulev2 = dimaround, class:^(Timeshift-gtk)
-windowrulev2 = dimaround, class:^(org.keepassxc.KeePassXC)
-windowrulev2 = dimaround, class:^(brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default)
-windowrulev2 = dimaround, class:^(org.gnome.Weather)
 
 # Dim Background of Rofi
 layerrule = dimaround, rofi
 
 # This launches rofi on startup using rofi launcher.
 # exec-once = ~/.config/rofi/bin/launcher2
-# Added waybar relaunch to fix calendar loading issues
-exec-once = ~/.config/rofi/bin/launcher; ~/.config/waybar/launch.sh
 
 ```
 
