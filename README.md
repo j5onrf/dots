@@ -250,7 +250,7 @@ bind = $mainMod, C, exec, ~/.config/waybar/toggle.sh # Toggle WayBar
 
 </details>
 
-<details open><summary>(2024-oct26) HyprPanel & WayBar</summary> 
+<details><summary>(2024-oct26) HyprPanel & WayBar</summary> 
   
 ![Screenshot-2024-10-27_18:21:11](https://github.com/user-attachments/assets/851678ef-a440-469e-b485-867240ebf268)
 
