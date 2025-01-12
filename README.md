@@ -1,5 +1,13 @@
 # Hypr<sup> / Shots</sup>
 
+<details open><summary>(2025-Jan12) Font Awesome 6 Pro Thin :construction_worker:</summary> 
+<p>
+
+[Font Awesome 6 Pro Thin-3<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three)
+![Screenshot-2025-01-12_06:44:17](https://github.com/user-attachments/assets/a994a6ff-fecd-492c-84d8-c52678577036)
+
+</details>
+
 <details open><summary>(2025-Jan05) Font Awesome 6 Pro :construction_worker:</summary> 
 <p>
 
@@ -147,6 +155,16 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 <br>
 
 # WayBar
+
+(2025-Jan12) [Adwaita-CT-Iosevka-Pro-Thin-3<sup>blk</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three) 
+![Screenshot-2025-01-12_06:42:42](https://github.com/user-attachments/assets/f3a41655-e95b-46be-81ee-709b27051435)
+
+(2025-Jan12) [Adwaita-CT-Iosevka-Pro-Thin](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin)
+![Screenshot-2025-01-12_06:48:42](https://github.com/user-attachments/assets/d0104364-df84-4b22-b3a2-1e752c232ae0)
+
+(2025-Jan12) [Adwaita-CT-Iosevka-Pro-Duo](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Duo)
+![Screenshot-2025-01-12_06:48:26](https://github.com/user-attachments/assets/6fd773e0-98b4-463c-a8d2-369a34be8ef7)
+
 (2024-Dec14) [Blueberry<sup>2</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/BlueBerry-RW) 
 ![BlueBerry-top3](https://github.com/user-attachments/assets/3c4e2df1-dc45-4290-a3f9-051c347bb9bf)
 
