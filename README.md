@@ -8,7 +8,7 @@
 
 </details>
 
-<details open><summary>(2025-Jan05) Font Awesome 6 Pro :construction_worker:</summary> 
+<details><summary>(2025-Jan05) Font Awesome 6 Pro :construction_worker:</summary> 
 <p>
 
 [Font Awesome 6 Pro<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro)
