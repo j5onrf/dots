@@ -165,6 +165,9 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 (2025-Jan12) [Adwaita-CT-Iosevka-Pro-Duo](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Duo)
 ![Screenshot-2025-01-12_06:48:26](https://github.com/user-attachments/assets/6fd773e0-98b4-463c-a8d2-369a34be8ef7)
 
+<details open><summary>2024_Nov-Dec_Archived</summary>
+<p>
+
 (2024-Dec14) [Blueberry<sup>2</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/BlueBerry-RW) 
 ![BlueBerry-top3](https://github.com/user-attachments/assets/3c4e2df1-dc45-4290-a3f9-051c347bb9bf)
 
@@ -182,6 +185,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 (2024-nov10) EverforestV-Sidebar [Final-Release Dots](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release)
 ![Unsaved Image 11](https://github.com/user-attachments/assets/7d8ef481-b053-495e-97fa-69d83d35a29d)
+</details>
 
 <details><summary>Archived</summary>
 <p>
