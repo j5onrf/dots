@@ -127,6 +127,7 @@ window#waybar {
 #custom-exit {
     font-size: 4;
     color: @color1;
+    color: transparent;
 }
 
 #custom-settings, 
