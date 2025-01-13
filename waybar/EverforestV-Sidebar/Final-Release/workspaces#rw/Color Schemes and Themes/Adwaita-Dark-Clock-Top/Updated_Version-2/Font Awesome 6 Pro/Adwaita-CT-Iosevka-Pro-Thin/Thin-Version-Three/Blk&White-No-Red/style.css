@@ -136,10 +136,6 @@ window#waybar {
     color: transparent;
 }
 
-#window-reddit {
-    font-size: 12px; /* Adjust to your preference */
-}
-
 /* Show chevrons on hover */
 #custom-settings:hover, 
 #custom-system:hover {
