@@ -4,7 +4,7 @@
 // |       |  | |  | | |   |  |_|  |   |   |   |___| |_____ 
 // |       |  |_|  | |_|   |       |   |___|    ___|_____  |
 // | ||_|| |       |       |       |       |   |___ _____| |
-// |_|   |_|_______|______||_______|_______|_______|_______|
+// |_|   |_|_______|______||_______|_______|_______|_______|      "title<.*reddit.*>": "",
 // ML4W, Edited by j5onrf (2025)
 // Vertical-Sidebar Font-Awesome-6-Pro-Thin (01-09-2025) beta
 
@@ -25,8 +25,9 @@
     "window-rewrite-default": "\uf2fd",
     "window-rewrite": {
       "title<.*youtube.*>": "\uf04b",
-      "title<.*reddit.*>": "<span line-height='1.2' font_desc='Font Awesome 6 Pro Thin 18'>\uf544</span>",
+      "title<.*reddit.*>": "",
       "title<.*dot.*>": "<span line-height='0.8'></span>",
+      // "title<.*reddit.*>": "<span line-height='1.2' font_desc='Font Awesome 6 Pro Thin 18'>\uf544</span>",
       // "title<.*chatgpt.*>": "\ue1ec",
       // "title<.*amazon.*>": "",
       // "title<.*youtube.*>": "\uf04b",
