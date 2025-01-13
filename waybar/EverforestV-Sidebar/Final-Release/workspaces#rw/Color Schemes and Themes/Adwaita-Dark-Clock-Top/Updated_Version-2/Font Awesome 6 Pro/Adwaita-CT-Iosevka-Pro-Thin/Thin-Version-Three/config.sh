@@ -1,2 +1,2 @@
 #!/bin/bash
-theme_name="Adwaita-CT-Iosevka-Pro-Thin-3"
+theme_name="Blk&Red-CT-Iosevka-Pro-Thin-3"
