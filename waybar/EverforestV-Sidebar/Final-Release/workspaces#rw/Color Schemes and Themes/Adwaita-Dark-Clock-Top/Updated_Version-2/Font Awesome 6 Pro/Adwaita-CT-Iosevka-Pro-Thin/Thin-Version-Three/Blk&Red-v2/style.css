@@ -47,8 +47,8 @@ window#waybar {
     box-shadow: inset 0 0 0.2em @color0;
 }
 #workspaces button:hover {
-    color: @color0;
-    box-shadow: inset 0 0 0.2em @color3;
+    color: @color3;
+    box-shadow: inset 0 0 0.2em @color0;
     margin: 0.1em 0.14em;
     padding: 0.17em 0.14em;
 }
