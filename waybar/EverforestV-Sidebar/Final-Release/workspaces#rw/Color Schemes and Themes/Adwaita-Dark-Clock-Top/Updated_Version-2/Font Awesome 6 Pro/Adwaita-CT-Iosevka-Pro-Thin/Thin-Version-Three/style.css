@@ -11,9 +11,8 @@
 
 /* Adwaita Color Scheme */
 @define-color color0 #D8DEE9; /* Light neutral for primary text */
-@define-color color1 #242424; /* Dark neutral for base background */
-@define-color color2 #333333; /* Slightly lighter dark neutral for icons background */
-@define-color color3 #1A1A1A; /* A darker color close to @color2 */
+@define-color color2 #A1142E; /* yt red darker */
+@define-color color3 #E1203F; /* yt red */
 
 /* General Styles */
 * {
@@ -38,17 +37,18 @@ window#waybar {
     color: @color0;
     margin: 0.1em 0.14em;
     padding: 0.17em 0.14em;
+    box-shadow: inset 0 0 0.2em @color0;
 }
 #workspaces button.active {
-    color: @color0;
+    color: @color3;
     margin: 0.1em 0.14em;
     padding: 0.17em 0.14em;
     border-radius: 0.4em;
-    box-shadow: inset 0 0 0.2em @color0;
+    box-shadow: inset 0 0 0.2em @color3;
 }
 #workspaces button:hover {
     color: @color0;
-    box-shadow: inset 0 0 0.2em @color0;
+    box-shadow: inset 0 0 0.2em @color3;
     margin: 0.1em 0.14em;
     padding: 0.17em 0.14em;
 }
@@ -71,8 +71,8 @@ window#waybar {
 #custom-appmenu:hover,
 #custom-exit:hover,
 #pulseaudio:hover {
-    color: @color0;
-    box-shadow: inset 0 0 0.2em @color0;
+    color: @color3;
+    box-shadow: inset 0 0 0.2em @color3;
     padding: 0.15em 0;
     transition: all 0.1s linear;
     margin: 0.1em 0.2em; 
@@ -88,8 +88,8 @@ window#waybar {
     color: @color0;
 }
 #window:hover {
-    color: @color0;
-    box-shadow: inset 0 0 0.2em @color0;
+    color: @color3;
+    box-shadow: inset 0 0 0.2em @color3;
 }
 
 /* Specific Adjustments */
@@ -97,7 +97,7 @@ window#waybar {
 #memory:hover,
 #custom-updates:hover{
     color: @color0;
-    background-color: @color3;
+    background-color: @color2;
     padding: 0.15em 0;
 }
 
@@ -105,8 +105,8 @@ window#waybar {
 #custom-exit:hover {
     font-size: 1em;
     margin: 0.3em 0 0 0;
-    color: @color0;
-    box-shadow: inset 0 0 0.2em @color0;
+    color: @color3;
+    box-shadow: inset 0 0 0.2em @color3;
 }
 #custom-exit:hover,
 #custom-exit {
@@ -166,6 +166,7 @@ window#waybar {
 /* Pulseaudio Muted State */
 #pulseaudio.muted {
     color: @color0;
+    background-color: @color2;
 }
 #pulseaudio.muted:hover {
     color: @color0;
@@ -184,8 +185,8 @@ window#waybar {
 #clock:hover {
     margin: 0.3em 0.3em;
     padding: 0.1em 0.1em;
-    color: @color0;
-    box-shadow: inset 0 0 0.2em @color0;
+    color: @color3;
+    box-shadow: inset 0 0 0.2em @color2;
 }
 
 /* Tooltip */
