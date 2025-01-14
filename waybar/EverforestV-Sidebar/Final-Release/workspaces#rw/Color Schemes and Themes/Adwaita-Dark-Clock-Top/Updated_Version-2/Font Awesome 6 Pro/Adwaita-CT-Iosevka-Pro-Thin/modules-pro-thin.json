@@ -157,11 +157,11 @@
     ]
   },
 
-  // Network Module
+    // Network Module
   "network": {
     "format": "{ifname}",
-    "format-ethernet": "<span line-height='1.0' font_desc='Font Awesome 6 Thin 20'>\uf1eb</span>",
-    "format-disconnected": "<span line-height='1.0' font_desc='Font Awesome 6 Thin 20'>\uf6ac</span>",
+    "format-ethernet": "\uf1eb",
+    "format-disconnected": "\uf6ac",
     "tooltip-format-ethernet": "\uf1eb {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 20,
@@ -169,5 +169,3 @@
     "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
   }
 }
-
-
