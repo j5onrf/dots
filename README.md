@@ -157,6 +157,9 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # WayBar
 
+(2025-Jan14) [Ghost<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three/Blk%26Red-v2/Ghost-red-v1) 
+![Screenshot-2025-01-14_12:55:34](https://github.com/user-attachments/assets/f83d002f-18fb-4fe7-a09a-847552182d7e)
+
 (2025-Jan12) [Blk&Wht-CT-Iosevka-Pro-Thin-3<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three/Blk%26White-No-Red) 
 ![Screenshot-2025-01-12_06:42:42](https://github.com/user-attachments/assets/f3a41655-e95b-46be-81ee-709b27051435)
 
