@@ -25,7 +25,6 @@ window#waybar {
     font-size: 24px;
     border-radius: 0.4em;
     background-color: rgba(0, 0, 0, 0); 
-
 }
 
 /* Workspaces Styles */
@@ -75,14 +74,15 @@ window#waybar {
     box-shadow: inset 0 0 0.2em @color0;
     padding: 0.15em 0;
     transition: all 0.1s linear;
-    margin: 0.1em 0.2em; 
+    margin: 0.1em 0.2em;
+    font-weight: 200;  /* Thin 100, Light 300 */
 }
 
 /* Hyprland/window */
 #window {
     font-size: 0.643em;
     font-family: "JetBrainsMono Nerd Font Propo";
-    font-weight: 100;  /* Thin 100, Light 300 */
+    font-weight: 200;  /* Thin 100, Light 300 */
     margin: 0.3em 0.3em;
     padding: 0.5em 0em 0.5em 0.325em;
     color: @color0;
@@ -91,6 +91,7 @@ window#waybar {
 #window:hover {
     color: @color3;
     box-shadow: inset 0 0 0.2em @color0;
+    font-weight: 200;  /* Thin 100, Light 300 */
 }
 
 /* Specific Adjustments */
@@ -99,6 +100,7 @@ window#waybar {
 #custom-updates:hover{
     color: @color0;
     padding: 0.15em 0;
+    font-weight: 200;  /* Thin 100, Light 300 */
 }
 
 #custom-appmenu:hover,
@@ -176,7 +178,7 @@ window#waybar {
 /* Clock Styles */
 #clock {
     font-family: "JetBrainsMono Nerd Font Propo";
-    font-weight: 100; 
+    font-weight: 200; 
     font-size: 0.857em;
     margin: 0.3em 0.2em;
     padding: 0.1em 0.1em;
@@ -188,6 +190,7 @@ window#waybar {
     padding: 0.1em 0.1em;
     color: @color3;
     box-shadow: inset 0 0 0.2em @color0;
+    font-weight: 200;  /* Thin 100, Light 300 */
 }
 
 /* Tooltip */
@@ -199,4 +202,3 @@ tooltip label {
     color: @color0;
     font-size: 14;
 }
-
