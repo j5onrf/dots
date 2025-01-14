@@ -157,7 +157,7 @@ window#waybar {
 #custom-updates {
     font-family: "JetBrainsMono Nerd Font Propo";
     font-weight: 100; 
-    font-size: 0.5em;
+    font-size: 0.464em;
     color: @color0;
     padding: 0.15em 0;
     margin: 0.1em 0.2em; 
