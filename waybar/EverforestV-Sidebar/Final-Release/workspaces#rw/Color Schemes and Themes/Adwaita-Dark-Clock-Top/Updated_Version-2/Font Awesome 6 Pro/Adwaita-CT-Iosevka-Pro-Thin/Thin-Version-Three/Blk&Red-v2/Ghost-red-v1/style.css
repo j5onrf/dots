@@ -112,7 +112,7 @@ window#waybar {
 #custom-exit {
     font-family: "Font Awesome 6 Duotone Thin";
     font-weight: 200; /* Thin 100, Light 300, Duotone 900 */
-    padding: 0.29em 0.3em;
+    padding: 0.30em 0.3em;
 }
 #custom-appmenu:hover {
     font-family: "JetBrainsMono Nerd Font Propo";
