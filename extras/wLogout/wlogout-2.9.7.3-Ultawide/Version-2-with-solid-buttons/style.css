@@ -56,7 +56,9 @@ button:hover {
     background-size: 40%;
     margin: 30px;
     border-radius: 80px; 
-    box-shadow: 0 0 50px @color7; 
+transition: background-color 0.1s linear, /* transform and opacity, which are handled by the GPU for smoother performance */
+                opacity 0.1s linear, 
+                transform 0.1s ease-in-out;
 }
 
 /* Adjust the size of the icon or content inside the button */
