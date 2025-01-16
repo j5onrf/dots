@@ -6,7 +6,6 @@
         \/     \/           \/     
 * ML4W, Edited by j5onrf (2025)
 * Ghost-JetBrains-Pro-Thin-3 (01-15-2025) beta
-* fonts broken until i can fix them 01-15
 * -----------------------------------------------------  
 */
 
@@ -76,7 +75,7 @@ window#waybar {
     padding: 0.15em 0;
     transition: all 0.1s linear;
     margin: 0.1em 0.2em;
-    font-weight: 200;  /* Thin 100, Light 300 */
+    font-weight: 100;  /* Thin 100, Light 300 */
 }
 
 /* Hyprland/window */
