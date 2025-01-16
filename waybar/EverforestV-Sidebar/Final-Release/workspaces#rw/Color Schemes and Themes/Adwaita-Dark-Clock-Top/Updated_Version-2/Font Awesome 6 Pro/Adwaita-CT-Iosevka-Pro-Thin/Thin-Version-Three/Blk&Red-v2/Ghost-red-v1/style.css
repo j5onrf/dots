@@ -17,7 +17,7 @@
 /* General Styles */
 * {
     border-radius: 0.4em;
-        background: none;
+    background: none;
 }
 
 window#waybar {
