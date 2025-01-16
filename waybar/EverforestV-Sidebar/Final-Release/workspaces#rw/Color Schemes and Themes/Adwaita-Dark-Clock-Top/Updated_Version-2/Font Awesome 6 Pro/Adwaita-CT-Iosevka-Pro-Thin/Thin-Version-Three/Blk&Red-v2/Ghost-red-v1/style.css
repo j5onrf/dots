@@ -11,13 +11,12 @@
 
 /* Blk-&-Red Color Scheme */
 @define-color color0 #D8DEE9; /* Light neutral for primary text */
-@define-color color2 #A1142E; /* yt red darker */
 @define-color color3 #E1203F; /* yt red */
 
 /* General Styles */
 * {
     border-radius: 0.4em;
-    background: none;
+        background: none;
 }
 
 window#waybar {
@@ -29,7 +28,7 @@ window#waybar {
     font-weight: 100; /* Thin 100, Light 300, Duotone 900 */
     font-size: 28px;
     border-radius: 0.4em;
-    background-color: rgba(36, 36, 36, 0.2); /* Bar Opacity */
+    background-color: rgba(0, 0, 0, 0.2); /* Bar Opacity */
 }
 
 /* Workspaces Styles */
