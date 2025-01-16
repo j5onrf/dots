@@ -5,7 +5,7 @@
  \______  /___|  /\____/____  >|__|  
         \/     \/           \/     
 * ML4W, Edited by j5onrf (2025)
-* Ghost-JetBrains-Pro-Thin-3 (01-14-2025) beta
+* Ghost-JetBrains-Pro-Thin-3 (01-15-2025) beta
 * -----------------------------------------------------  
 */
 
@@ -16,14 +16,14 @@
 
 /* General Styles */
 * {
-    border-radius: 0.4em;
+    border-radius: 0.2em;
 }
 
 window#waybar {
     font-family: "Font Awesome 6 Thin";
     font-weight: 100; /* Thin 100, Light 300, Duotone 900 */
     font-size: 24px;
-    border-radius: 0.4em;
+    border-radius: 0.2em;
     background-color: rgba(0, 0, 0, 0); 
 }
 
@@ -42,7 +42,7 @@ window#waybar {
     color: @color3;
     margin: 0.1em 0.14em;
     padding: 0.17em 0.14em;
-    border-radius: 0.4em;
+    border-radius: 0.2em;
     box-shadow: inset 0 0 0.2em @color0;
 }
 #workspaces button:hover {
@@ -82,16 +82,20 @@ window#waybar {
 #window {
     font-size: 0.643em;
     font-family: "JetBrainsMono Nerd Font Propo";
-    font-weight: 200;  /* Thin 100, Light 300 */
+    font-weight: 300;  /* Thin 100, Light 300 */
     margin: 0.3em 0.3em;
-    padding: 0.5em 0em 0.5em 0.3em;
+    padding: 0.5em 0 0.5em 0.35em; 
     color: @color0;
     box-shadow: inset 0 0 0.2em @color0;
+    transition: all 0.3s linear;
 }
 #window:hover {
     color: @color3;
-    box-shadow: inset 0 0 0.2em @color0;
-    font-weight: 200;  /* Thin 100, Light 300 */
+    box-shadow: inset 0 0 0.35em @color0; 
+    font-weight: 600;  
+}
+#window:not(:hover) {
+    transition: box-shadow 0s; 
 }
 
 /* Specific Adjustments */
@@ -114,7 +118,7 @@ window#waybar {
 #custom-exit {
     font-family: "Font Awesome 6 Duotone Thin";
     font-weight: 200; /* Thin 100, Light 300, Duotone 900 */
-    padding: 0.35em 0.3em;
+    padding: 0.34em 0.3em;
 }
 #custom-appmenu:hover {
     font-family: "JetBrainsMono Nerd Font Propo";
@@ -178,17 +182,21 @@ window#waybar {
 /* Clock Styles */
 #clock {
     font-family: "JetBrainsMono Nerd Font Propo";
-    font-weight: 200; 
+    font-weight: 300; 
     font-size: 0.857em;
     margin: 0.3em 0.2em;
     padding: 0.15em 0.1em;
     color: @color0;
     box-shadow: inset 0 0 0.2em @color0;
+    transition: all 0.3s linear;
 }
 #clock:hover {
     color: @color3;
+    font-weight: 600; 
     box-shadow: inset 0 0 0.2em @color0;
-    font-weight: 200;  /* Thin 100, Light 300 */
+}
+#clock:not(:hover) {
+    transition: box-shadow 0s; 
 }
 
 /* Tooltip */
@@ -200,4 +208,3 @@ tooltip label {
     color: @color0;
     font-size: 14;
 }
-
