@@ -82,7 +82,7 @@ window#waybar {
 #window {
     font-size: 0.643em;
     font-family: "JetBrainsMono Nerd Font Propo";
-    font-weight: 300;  /* Thin 100, Light 300 */
+    font-weight: 100;  /* Thin 100, Light 300 */
     margin: 0.3em 0.3em;
     padding: 0.5em 0 0.5em 0.35em; 
     color: @color0;
@@ -182,7 +182,7 @@ window#waybar {
 /* Clock Styles */
 #clock {
     font-family: "JetBrainsMono Nerd Font Propo";
-    font-weight: 300; 
+    font-weight: 100; 
     font-size: 0.857em;
     margin: 0.3em 0.2em;
     padding: 0.15em 0.1em;
