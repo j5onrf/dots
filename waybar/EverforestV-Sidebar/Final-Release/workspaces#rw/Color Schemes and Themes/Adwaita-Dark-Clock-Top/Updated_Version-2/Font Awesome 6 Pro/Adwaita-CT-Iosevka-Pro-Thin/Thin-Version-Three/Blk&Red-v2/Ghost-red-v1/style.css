@@ -17,14 +17,19 @@
 /* General Styles */
 * {
     border-radius: 0.4em;
+        background: none;
 }
 
 window#waybar {
+}
+.modules-left,
+.modules-right,
+.modules-center {
     font-family: "Font Awesome 6 Pro";
     font-weight: 100; /* Thin 100, Light 300, Duotone 900 */
     font-size: 28px;
     border-radius: 0.4em;
-    background: transparent;
+    background-color: rgba(36, 36, 36, 0.2); /* Bar Opacity */
 }
 
 /* Workspaces Styles */
@@ -84,7 +89,7 @@ window#waybar {
     font-family: "JetBrainsMono Nerd Font Propo";
     font-weight: 200;  /* Thin 100, Light 300 */
     margin: 0.3em 0.35em;
-    padding: 0.5em 0 0.5em 0.3em; 
+    padding: 0.5em 0 0.5em 0.2em; 
     color: @color0;
     box-shadow: inset 0 0 0.2em @color0;
 }
@@ -113,7 +118,7 @@ window#waybar {
 #custom-exit {
     font-family: "Font Awesome 6 Pro";
     font-weight: 400; /* Thin 100, Light 300, Duotone 900 */
-    padding: 0.35em 0.3em;
+    padding: 0.3em 0.3em;
 }
 #custom-appmenu:hover {
     font-family: "JetBrainsMono Nerd Font Propo";
