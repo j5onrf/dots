@@ -1,7 +1,5 @@
 # Hypr<sup> / Shots</sup>
 
-! fonts broken until i can fix them 01-15
-
 <details open><summary>(2025-Jan12) Font Awesome 6 Pro Thin :construction_worker:</summary> 
 <p>
 
