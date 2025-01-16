@@ -179,7 +179,7 @@ window#waybar {
     color: @color0;
     background-color: @color3;
 }
-G
+
 /* Clock Styles */
 #clock {
     font-family: "JetBrainsMono Nerd Font Propo";
