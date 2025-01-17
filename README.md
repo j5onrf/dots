@@ -158,7 +158,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # WayBar
 
-(2025-Jan16) [Ghost-Modern<sup>beta</sup>]() 
+(2025-Jan16) [Ghost-Modern<sup>pre</sup>]() 
 ![Ghost-Modern-White](https://github.com/user-attachments/assets/c59f6e18-dfe8-45b0-9961-097e4a36023a)
 ![Ghost-Modern](https://github.com/user-attachments/assets/f0d0f629-cbd7-4c3e-a762-67666a99905e)
 
