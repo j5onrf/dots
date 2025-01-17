@@ -166,7 +166,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # WayBar
 
-(2025-Jan16) [Ghost-Modern<sup>pre</sup>]() 
+(2025-Jan16) [Ghost-Modern<sup>pre</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three/Blk%26Red-v2/Ghost-red-v1/Ghost-Modern) 
 ![Ghost-Modern-White](https://github.com/user-attachments/assets/c59f6e18-dfe8-45b0-9961-097e4a36023a)
 ![Ghost-Modern](https://github.com/user-attachments/assets/f0d0f629-cbd7-4c3e-a762-67666a99905e)
 
