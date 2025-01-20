@@ -12,7 +12,7 @@
 <p>
 
 [Font Awesome 6 Pro Thin-3<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three)  &nbsp; 
- [Ghost-Red-v1<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three/Blk%26Red-v2/Ghost-red-v1)
+ [Ghost<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/Ghost/Ghost)
 ![Screenshot-2025-01-16_14:04:08](https://github.com/user-attachments/assets/d87f28b6-94ff-4ac9-9d9b-e5c53ce0b3a9)
 > border-radius: 0.2em = Modern, 0.4em = Round, 2em = Circle | size 24px - 34px tested
 
