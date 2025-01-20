@@ -63,7 +63,7 @@ window#waybar {
     border: none;
 }
 #workspaces button.empty {
-    padding: 0.15em 0;
+    padding: 0.16em 0;
 }
 
 /* Module Hover Styles */
