@@ -115,7 +115,6 @@
   // System
   "custom/system": {
     "format": "\uf077",
-    "on-click": "exec notify-send -u critical -t 3000 'Kill' 'Click any window to kill it' && hyprctl kill",
     "on-click-right": "exec ~/.config/waybar/launch.sh",
     "tooltip": false
   },
