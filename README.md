@@ -6,7 +6,7 @@
 [Ghost-Modern<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/Ghost/Ghost-Modern) 
 ![Screenshot-2025-01-17_14:04:08](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/Ghost/Ghost-Modern/Screenshot-2025-01-19_18%3A18%3A28.png)
 
-[Ghost-Modern-White<sup>pre</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three/Blk%26Red-v2/Ghost-red-v1/Ghost-Modern) 
+[Ghost-Modern-White<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/Ghost/Ghost-Modern-White) 
 ![Screenshot-2025-01-17_14:04:08](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three/Blk%26Red-v2/Ghost-red-v1/Ghost-Modern/Screenshot-2025-01-16_20%3A33%3A53.png)
 
 </details>
