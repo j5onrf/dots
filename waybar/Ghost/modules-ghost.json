@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf (2025)
-// Vertical-Sidebar Ghost-Modern (01-20-2025) beta
+// Vertical-Sidebar Ghost-Modern (01-19-2025) beta
 
 {
   // Workspaces
@@ -33,7 +33,6 @@
       "class<gimp-3.0>": "\uf1fc",
       "class<org.gnome.Weather>": "\uf76b",
       "class<wttr-floating>": "\uf76b",
-      // "class<io.missioncenter.MissionCenter>": "\uf085",
       "class<firefox>": "<span font='18'></span>",
       "class<kitty>": "<span font='17' line-height='1'>\ue13d</span>",
       "class<alacritty>": "<span font='16' line-height='0.7'>\uf120</span>",
@@ -43,6 +42,7 @@
       "class<polkit-gnome-authentication-agent-1>": "\ue575",
       "class<nwg-look>": "\uf3f1",
       "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
+      // "class<io.missioncenter.MissionCenter>": "\uf085",
       // "class<org.gnome.Console>": "",
       // "class<mousepad>": "\uf15c",
       // "class<thunar>": "\uf07c",
