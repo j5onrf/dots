@@ -167,7 +167,7 @@ window#waybar {
     font-family: "JetBrainsMono Nerd Font Propo";
     font-weight: 200; 
     font-size: 0.5em;
-    color: @color1;
+    color: @color0;
     padding: 0.15em 0;
     margin: 0.1em 0.2em; 
 }
