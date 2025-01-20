@@ -42,7 +42,7 @@
       "class<org.gnome.TextEditor>": "",
       "class<polkit-gnome-authentication-agent-1>": "\ue575",
       "class<nwg-look>": "\uf3f1",
-      "class<org.gnome.Boxes>": "󰖳",
+      "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
       // "class<org.gnome.Console>": "",
       // "class<mousepad>": "\uf15c",
       // "class<thunar>": "\uf07c",
