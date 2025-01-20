@@ -33,7 +33,7 @@
       "class<gimp-3.0>": "\uf1fc",
       "class<org.gnome.Weather>": "\uf76b",
       "class<wttr-floating>": "\uf76b",
-      "class<io.missioncenter.MissionCenter>": "\uf085",
+      // "class<io.missioncenter.MissionCenter>": "\uf085",
       "class<firefox>": "<span font='18'></span>",
       "class<kitty>": "<span font='17' line-height='1'>\ue13d</span>",
       "class<alacritty>": "<span font='16' line-height='0.7'>\uf120</span>",
@@ -115,6 +115,7 @@
   // System
   "custom/system": {
     "format": "\uf077",
+    "on-click": "exec notify-send -u critical -t 3000 'Kill' 'Click any window to kill it' && hyprctl kill",
     "on-click-right": "exec ~/.config/waybar/launch.sh",
     "tooltip": false
   },
