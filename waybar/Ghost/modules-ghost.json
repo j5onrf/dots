@@ -28,6 +28,7 @@
       "title<.*reddit.*>": "<span line-height='0.8'></span>",
       "title<.*dot.*>": "<span line-height='0.8'></span>",
       "title<.*chatgpt.*>": "\ue1ec",
+      "title<.*deepseek.*>": "\uf72c",
       // "title<.*amazon.*>": "",
       // "title<.*Picture-in-Picture.*>": "\ue2c8",
       "class<gimp-3.0>": "\uf1fc",
