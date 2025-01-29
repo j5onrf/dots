@@ -1,5 +1,13 @@
 # Hypr<sup> / Shots</sup>
 
+<details open><summary>(2025-Jan29) Opensource Deepseek 🐋</summary> 
+<p>
+ 
+[Adwaita-CT-Iosevka-Pro-Thin<sup>*</sup>]([https://github.com/j5onrf/dots/tree/main/waybar/Ghost](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin)) 
+![Screenshot-2025-01-29_14:04:08](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Screenshot-2025-01-29_15%3A29%3A59.png)
+
+</details>
+
 <details open><summary>(2025-Jan16) Ghost-Modern 👻</summary> 
 <p>
  
