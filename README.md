@@ -5,10 +5,13 @@
  
 [May17-2025-Updates](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates) 
 ![FullScreen-2025-05-17_12-09-51.png](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/FullScreen-2025-05-17_12-09-51.png)
+<br><br>
 [Current-Rofi](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/Current_Rofi) 
 ![FullScreen-2025-05-17_rofi.png](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/Current_Rofi/FullScreen-2025-05-17_18-08-49.png)
 
 </details>
+
+<br>
 
 <details><summary>(2025-Jan29) Opensource Deepseek 🐋</summary> 
 <p>
@@ -34,7 +37,7 @@
 ![Screenshot-2025-01-16_14:04:08](https://github.com/user-attachments/assets/d87f28b6-94ff-4ac9-9d9b-e5c53ce0b3a9)
 > border-radius: 0.2em = Modern, 0.4em = Round, 2em = Circle | size 24px - 34px tested
 
-</details><br>
+</details>
 
 <details><summary>(2025-Jan05) Font Awesome 6 Pro :construction_worker:</summary> 
 <p>
@@ -78,6 +81,8 @@ Adwaita-Dark-Clock-Top  [Updated_Version-2](https://github.com/j5onrf/dots/tree/
 ![Screenshot-2024-12-26_15:52:53](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/rofi/Rofi-Dock-2/Adwaita-Dark/Screenshot-2024-12-26_19%3A44%3A26.png)
 
 </details>
+
+<br>
 
 <details><summary>(2024-Dec18) Blueberry🫐<sup>2</sup></summary> 
 <p>
@@ -285,7 +290,6 @@ gruv
 # HyprPanel
 
 (2024-oct1) Trying out [HyprPanel](https://www.reddit.com/r/unixporn/comments/1frzwbx/hyprland_hyprpanel_w_25_new_themes_20_prebuilt/#lightbox)
-![Screenshot-2024-10-01_08:57:24](https://github.com/user-attachments/assets/17ae8b9c-26aa-496e-a6cc-f37e825035fe)
 
 <details><summary>Toggle on/off [i]</summary>
 <p>
