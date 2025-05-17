@@ -4,7 +4,7 @@
 <p>
  
 [May17-2025-Updates](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates) 
-![FullScreen-2025-05-17_12-09-51.png](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/May17-2025-Updates/FullScreen-2025-05-17_12-09-51.png)
+![FullScreen-2025-05-17_12-09-51.png](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/FullScreen-2025-05-17_12-09-51.png)
 
 </details>
 
