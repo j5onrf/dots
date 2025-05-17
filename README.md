@@ -358,32 +358,24 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive%202/Screens
 <p>
   
 ```
-# Don't allow idle on fullscreen windows
-# windowrulev2 = idleinhibit fullscreen, class:.*
-
-# Load cliphist history
-# exec-once = wl-paste --watch cliphist store --auto-delete 10
-
-# Hyprpanel
-# exec-once = agsv1
-# bind = $mainMod, H, exec, agsv1 -t bar-0 # Toggle Hyprpanel
+# Updated May 17, 2025
 
 # Waybar
-bind = $mainMod, W, exec, ~/.config/waybar/launch.sh # Relaunch Waybar
+bind = $mainMod, W, exec,  ~/.config/waybar/launch.sh # Relaunch Waybar
 bind = $mainMod, C, exec, ~/.config/waybar/toggle.sh # Toggle waybar
 
 # terminals
 bind = $mainMod, S, exec, kitty # Open the terminal
 bind = $mainMod, D, exec, alacritty # Open the terminal
-bind = $mainMod, A, exec, $(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating # Open the terminal
 
 # Rofi
-# bind = $mainMod, R, exec, zsh "$HOME/.config/rofi/bin/launcher2"
-bind = $mainMod, R, exec, pkill rofi || rofi -show drun -replace -i
+bind = $mainMod, R, exec, zsh "$HOME/.config/rofi/bin/launcher"
+# bind = $mainMod, R, exec, pkill rofi || rofi -show drun -replace -i
 
 # screenshot 
-bind =, Print, exec, grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | notify-send "Screenshot of the region taken" -t 1000 # screenshot of a region 
-bind = SHIFT, Print, exec, grim - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | notify-send "Screenshot of whole screen taken" -t 1000 # screenshot of the whole screen
+# Fast screenshot using grim and slurp (via wrapper script)
+bind = , Print, exec, /home/j5/.config/hypr/scripts/fast_screenshot.sh
+bind = SHIFT, Print, exec, /home/j5/.config/hypr/scripts/fast_screenshot_full.sh
 
 # kill hard
 bind = $mainMod SHIFT, X, exec, notify-send -u critical -t 3000 "Kill" "Click any window kill it" & hyprctl kill
@@ -392,7 +384,11 @@ bind = $mainMod SHIFT, X, exec, notify-send -u critical -t 3000 "Kill" "Click an
 windowrulev2 = float,class:^(org.gnome.Weather)$
 windowrulev2 = size 1100 900,class:^(org.gnome.Weather)$
 
-# Proton-Calendar-PWA
+# Window rules for the terminal running curl wttr.in
+windowrulev2 = float, class:^(wttr-floating)$
+windowrulev2 = size 1300 950, class:^(wttr-floating)$
+
+# Proton-Calendar-PWM
 windowrulev2 = float,class:^(brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default)$
 windowrulev2 = size 1100 800,class:^(brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default)$
 
@@ -400,15 +396,11 @@ windowrulev2 = size 1100 800,class:^(brave-ojibjkjikcpjonjjngfkegflhmffeemk-Defa
 windowrulev2 = float,class:^(org.keepassxc.KeePassXC)$
 windowrulev2 = size 1300 1100,class:^(org.keepassxc.KeePassXC)$
 
-# Dimaround
-windowrulev2 = dimaround, class:^(dotfiles-floating)
-windowrulev2 = dimaround, class:^(Timeshift-gtk)
+# Startup
+exec-once = ~/.config/rofi/bin/launcher; ~/.config/waybar/launch.sh
 
-# Dim Background of Rofi
-layerrule = dimaround, rofi
-
-# This launches rofi on startup using rofi launcher.
-# exec-once = ~/.config/rofi/bin/launcher2
+# Anyrun
+bind = SUPER, SPACE, exec, anyrun
 
 ```
 
