@@ -1,6 +1,14 @@
 # Hypr<sup> / Shots</sup>
 
-<details open><summary>(2025-Jan29) Opensource Deepseek 🐋</summary> 
+<details open><summary>(2025-May17) Updated dots to ML4W v2.9.8.5 - Trying Anyrun Launcher</summary> 
+<p>
+ 
+[May17-2025-Updates](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates) 
+![FullScreen-2025-05-17_12-09-51.png](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/May17-2025-Updates/FullScreen-2025-05-17_12-09-51.png)
+
+</details>
+
+<details><summary>(2025-Jan29) Opensource Deepseek 🐋</summary> 
 <p>
  
 [Adwaita-CT-Iosevka-Pro-Thin<sup>*</sup>]([https://github.com/j5onrf/dots/tree/main/waybar/Ghost](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin)) 
@@ -8,7 +16,7 @@
 
 </details>
 
-<details open><summary>(2025-Jan16) Ghost-Modern 👻</summary> 
+<details><summary>(2025-Jan16) Ghost-Modern 👻</summary> 
 <p>
  
 [Ghost-Modern-White<sup>wip</sup>](https://github.com/j5onrf/dots/tree/main/waybar/Ghost) &nbsp; [Ghost-Modern<sup>wip</sup>](https://github.com/j5onrf/dots/tree/main/waybar/Ghost) 
@@ -16,7 +24,7 @@
 
 </details>
 
-<details open><summary>(2025-Jan12) Font Awesome 6 Pro Thin :construction_worker:</summary> 
+<details><summary>(2025-Jan12) Font Awesome 6 Pro Thin :construction_worker:</summary> 
 <p>
 
 [Font Awesome 6 Pro Thin-3<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three)  &nbsp; 
