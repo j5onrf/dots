@@ -6,5 +6,4 @@ Config(
     args: "-e {}",
   )),
   sort_by_usage: true, // This is good for seeing recent/frequent apps
-  // preprocess_exec_script: Some("/home/j5/.local/share/anyrun/preprocess_application_command.sh") // Only if you've fixed and tested this
 )
