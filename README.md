@@ -1,6 +1,6 @@
 # Hyprdots
 
-<details open><summary>(2025-May17) Updated dots to ML4W v2.9.8.5 - Trying Anyrun Launcher</summary> 
+<details open><summary>(2025-May17) Updated dots to ML4W v2.9.8.5 - Anyrun Launcher</summary> 
 <p>
  
 [May17-2025-Updates](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates) 
