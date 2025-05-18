@@ -1,4 +1,4 @@
-# Hypr<sup> / Shots</sup>
+# Hyprdots
 
 <details open><summary>(2025-May17) Updated dots to ML4W v2.9.8.5 - Trying Anyrun Launcher</summary> 
 <p>
