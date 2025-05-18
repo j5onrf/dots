@@ -378,8 +378,8 @@ bind = $mainMod, R, exec, zsh "$HOME/.config/rofi/bin/launcher"
 
 # screenshot 
 # Fast screenshot using grim and slurp (via wrapper script)
-bind = , Print, exec, /home/j5/.config/hypr/scripts/fast_screenshot.sh
-bind = SHIFT, Print, exec, /home/j5/.config/hypr/scripts/fast_screenshot_full.sh
+bind = , Print, exec, ~/.config/hypr/scripts/fast_screenshot.sh
+bind = SHIFT, Print, exec, ~/.config/hypr/scripts/fast_screenshot_full.sh
 
 # kill hard
 bind = $mainMod SHIFT, X, exec, notify-send -u critical -t 3000 "Kill" "Click any window kill it" & hyprctl kill
