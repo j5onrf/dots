@@ -3,7 +3,7 @@
 <details open><summary>(2025-May17) Updated dots to ML4W v2.9.8.5 - Anyrun Launcher</summary> 
 <p>
  
-[May17-2025-Updates](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates) 
+[Dotfile-Updates](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates) 
 ![FullScreen-2025-05-17_12-09-51.png](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/FullScreen-2025-05-17_12-09-51.png)
 <br><br>
 [Current-Rofi](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/Current_Rofi) 
