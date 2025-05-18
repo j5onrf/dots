@@ -82,8 +82,6 @@ Adwaita-Dark-Clock-Top  [Updated_Version-2](https://github.com/j5onrf/dots/tree/
 
 </details>
 
-<br>
-
 <details><summary>(2024-Dec18) Blueberry🫐<sup>2</sup></summary> 
 <p>
   
