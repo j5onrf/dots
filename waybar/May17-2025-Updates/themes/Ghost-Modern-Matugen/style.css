@@ -1,0 +1,221 @@
+@import 'ghost-matugen.css';
+
+* {
+    border-radius: 0.2em;
+    background: none;
+}
+
+window#waybar {
+    background-color: @ghost_bar_background;
+        border-radius: 0.4em;
+}
+.modules-left,
+.modules-right,
+.modules-center {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 100;
+    font-size: 24px;
+    border-radius: 0.2em;
+    box-shadow: inset 0 0 1em @ghost_light_glow;
+}
+.modules-left,
+.modules-right {
+   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+#workspaces {
+    font-family: "Font Awesome 6 Pro Light";
+    font-weight: 200;
+    background-color: @ghost_bar_background; /* ADDED THIS LINE */
+}
+#workspaces button {
+    color: @ghost_ws_button_fg;
+    margin: 0.1em 0.14em;
+    padding: 0.16em 0.13em;
+    border: 1px solid @ghost_ws_button_shadow;
+    background-color: @ghost_ws_button_bg;
+}
+#workspaces button.active {
+    color: @ghost_ws_button_active_fg;
+    margin: 0.1em 0.14em;
+    padding: 0.16em 0.13em;
+    background-color: @ghost_ws_button_active_bg;
+    border: 1px solid @ghost_ws_button_active_fg;
+    box-shadow: none;
+}
+#workspaces button:hover {
+    color: @ghost_ws_button_hover_fg;
+    margin: 0.1em 0.14em;
+    padding: 0.16em 0.13em;
+    background-color: @ghost_ws_button_hover_bg;
+    border: 1px solid @ghost_ws_button_hover_fg;
+    box-shadow: none;
+}
+#workspaces button.empty {
+    color: @ghost_ws_button_hover_fg;
+    margin: 0.1em 0.14em;
+    padding: 0.16em 0.13em;
+    box-shadow: none;
+}
+
+#cpu:hover,
+#memory:hover,
+#custom-hyprshade:hover,
+#custom-cliphist:hover,
+#custom-updates:hover,
+#network:hover,
+#custom-wallpaper:hover,
+#custom-waybarthemes:hover,
+#tray:hover,
+#custom-appmenu:hover,
+#custom-exit:hover,
+#pulseaudio:hover,
+#custom-hypridle:hover,
+#custom-notification:hover {
+    color: @ghost_text_primary;
+    border: 1px solid @ghost_hover_glow_color;
+    box-shadow: none;
+    padding: 0.15em 0;
+    transition: all 0.1s linear;
+    margin: 0.1em 0.2em;
+    font-weight: 300;
+}
+
+#window {
+    font-size: 0.643em;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-weight: 400;
+    margin: 0.3em 0.35em;
+    padding-top: calc(0.5em - 1px);
+    padding-right: 0px;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: calc(0.2em - 1px);
+    color: @ghost_text_primary;
+    border: 1px solid transparent;
+}
+#window:hover {
+    color: @ghost_text_primary;
+    border: 1px solid @ghost_hover_glow_color;
+    box-shadow: none;
+}
+
+#cpu:hover,
+#memory:hover,
+#custom-updates:hover{
+    color: @ghost_text_primary;
+    padding: 0.15em 0;
+    font-weight: 200;
+}
+
+#custom-appmenu,
+#custom-exit {
+    font-size: 4;
+    color: @ghost_hidden_text;
+    border: 1px solid transparent;
+}
+
+#custom-exit {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 400;
+    padding: calc(0.34em - 1px) calc(0.3em - 1px);
+}
+
+#custom-appmenu {
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-weight: 100;
+    padding: calc(0.18em - 1px) calc(0.3em - 1px);
+}
+
+#custom-appmenu:hover,
+#custom-exit:hover {
+    font-size: 1em;
+    color: @ghost_text_primary;
+    border: 1px solid @ghost_hover_glow_color;
+    box-shadow: none;
+}
+
+#custom-settings,
+#custom-system {
+    font-size: 0.5em;
+    color: @ghost_hidden_text;
+    border: 1px solid transparent;
+    padding: calc(0.1em - 1px);
+}
+
+#custom-settings, 
+#custom-system {
+    font-size: 0.5em;
+    color: @ghost_hidden_text;
+    color: transparent;
+}
+
+#custom-settings:hover,
+#custom-system:hover {
+    color: @ghost_text_primary;
+}
+
+#pulseaudio,
+#custom-cliphist,
+#custom-hyprshade,
+#network, #tray,
+#custom-waybarthemes,
+#custom-wallpaper,
+#custom-hypridle,
+#custom-notification {
+    color: @ghost_icon_default;
+    border: 1px solid transparent;
+    padding: 0.15em 0;
+    margin: 0.1em 0.2em;
+}
+
+#custom-hypridle.active {
+    color: @ghost_hypridle_active_icon;
+}
+#custom-hypridle.notactive {
+    color: @ghost_hypridle_inactive_icon;
+}
+
+#cpu,
+#memory,
+#custom-updates {
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-weight: 200;
+    font-size: 0.57em;
+    color: @ghost_text_primary;
+    padding: 0.15em 0;
+    margin: 0.1em 0.2em;
+    border: 1px solid transparent;
+}
+
+#pulseaudio.muted {
+    color: @ghost_pulseaudio_muted_fg;
+    background-color: @ghost_pulseaudio_muted_bg;
+}
+#pulseaudio.muted:hover {
+    color: @ghost_pulseaudio_muted_hover__fg;
+    background-color: @ghost_pulseaudio_muted_hover_bg;
+}
+
+#clock {
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-weight: 400;
+    font-size: 0.857em;
+    margin: 0.3em 0.2em;
+    padding: calc(0.15em - 1px);
+    color: @ghost_text_primary;
+    border: 1px solid transparent;
+}
+#clock:hover {
+    color: @ghost_text_primary;
+    border: 1px solid @ghost_hover_glow_color;
+    box-shadow: none;
+}
+
+tooltip {
+    background-color: @ghost_tooltip_background;
+    opacity: 0.9;
+}
+tooltip label {
+    color: @ghost_text_tooltip;
+    font-size: 14px;
+}
