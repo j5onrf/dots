@@ -41,7 +41,7 @@ window#waybar {
 #workspaces {
     font-family: "Font Awesome 6 Pro Light";
     font-weight: 200;
-    background-color: @ghost_bar_background; /* ADDED THIS LINE */
+    background-color: @ghost_bar_background;
 }
 #workspaces button {
     color: @ghost_ws_button_fg;
@@ -188,6 +188,10 @@ window#waybar {
 }
 #custom-hypridle.notactive {
     color: @ghost_hypridle_inactive_icon;
+}
+
+#network {
+    font-size: 22px;
 }
 
 #cpu,
