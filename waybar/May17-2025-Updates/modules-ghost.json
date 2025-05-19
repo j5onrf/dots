@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf (2025)
-// Vertical-Sidebar Ghost-Modern (05-17-2025) beta
+// Vertical-Sidebar Ghost-Modern (05-19-2025) beta
 
 {
   // Workspaces
@@ -46,6 +46,9 @@
       "class<polkit-gnome-authentication-agent-1>": "\ue575",
       "class<nwg-look>": "\uf3f1",
       "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
+      "class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞",
+      "class<vlc>": "\uf636",
+      "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073"
       // "class<io.missioncenter.MissionCenter>": "\uf085",
       // "class<org.gnome.Console>": "",
       // "class<mousepad>": "\uf15c",
@@ -53,14 +56,9 @@
       // "class<obsidian>": "󰠮",
       // "class<freetube>": "",
       // "class<[Ss]potify>": "\uf001",
-      // "class<VSCode|code-url-handler>": "󰨞",
       // "class<sublime_text>": "󰅳",
-      // "class<codium|codium-url-handler|VSCodium>": "󰨞",
       // "class<codeblocks>": "󰅩",
       // "class<com.obsproject.Studio>": "",
-      // "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
-      // "class<zen-alpha>": "󰰷",
-      // "class<vlc>": "\uf636"
     }
 },
 
