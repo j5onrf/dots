@@ -1,5 +1,13 @@
 # Hyprdots
 
+<details open><summary>(2025-May19) Matugen Inspired Ghost Modern Theme </summary> 
+<p>
+ 
+[Ghost-Modern-Matugen](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
+![FullScreen-2025-05-19_14-21-57.png](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/FullScreen-2025-05-19_14-21-57.png)
+
+</details>
+
 <details open><summary>(2025-May17) Updated dots to ML4W v2.9.8.6 - Anyrun Launcher</summary> 
 <p>
  
