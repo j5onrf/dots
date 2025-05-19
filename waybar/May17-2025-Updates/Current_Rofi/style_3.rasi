@@ -71,12 +71,7 @@ dummybox {
 
 // Inputs //
 inputbar {
-    enabled:                     false; // Original setting
-                                       /* If enabled, you could style using Matugen colors: */
-                                       /* background-color: @surface-container; */
-                                       /* text-color: @on-surface; */
-                                       /* padding: 0.5em; */
-                                       /* border-radius: 6px; */
+    enabled:                     false;
 }
 
 
