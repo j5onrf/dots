@@ -1,2 +1,2 @@
 #!/bin/bash
-theme_name="Ghost-Modern-white"
+theme_name="Ghost-Modern-White"
