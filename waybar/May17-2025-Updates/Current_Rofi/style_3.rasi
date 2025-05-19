@@ -1,3 +1,14 @@
+/*  _____          __                              
+  /     \ _____ _/  |_ __ __  ____   ____   ____  
+ /  \ /  \\__  \\   __|  |  \/ ___\_/ __ \ /    \ 
+/    Y    \/ __ \|  | |  |  / /_/  \  ___/|   |  \
+\____|__  (____  |__| |____/\___  / \___  |___|  /
+        \/     \/          /_____/      \/     \/ 
+* HYDE, ML4W, Edited by j5onrf (2025)
+* Matugen-Rofi-Dock (5-19-2025)
+* -----------------------------------------------------  
+*/
+
 /**
  * ROFI Layout - Style 3: Sidebar with Mode Icons
  * Dynamically themed using rofi/colors.rasi (Matugen)
@@ -5,16 +16,13 @@
 
 // Config //
 configuration {
-    modi:                        "drun,filebrowser,window,run";
+    modi:                        "drun";
     show-icons:                  true;
     display-drun:                " ";
-    display-run:                 " ";
-    display-filebrowser:         " ";
-    display-window:              " ";
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
-    font:                        ""; // As per your example config
-    icon-theme:                  "";       // As per your example config
+    font:                        ""; 
+    icon-theme:                  "";
     hover-select:                false;
     scroll-method:               1;
     me-select-entry:             "";
@@ -63,7 +71,7 @@ dummybox {
 
 // Inputs //
 inputbar {
-    enabled:                     false; // Your original setting
+    enabled:                     false; // Original setting
                                        /* If enabled, you could style using Matugen colors: */
                                        /* background-color: @surface-container; */
                                        /* text-color: @on-surface; */
@@ -112,7 +120,7 @@ mode-switcher {
 }
 button {
     cursor:                      pointer;
-    border-radius:               3em;            // Your original radius
+    border-radius:               3em;            // Original radius
     background-color:            @background;    // Matugen: Main background (button is transparent over mainbox)
     text-color:                  @on-surface;    // Matugen: Text color for on-surface
 }
@@ -163,3 +171,4 @@ textbox {
     vertical-align:              0.5;
     horizontal-align:            0.5;
 }
+
