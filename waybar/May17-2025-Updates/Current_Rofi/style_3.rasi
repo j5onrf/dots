@@ -22,7 +22,7 @@ configuration {
 }
 
 /* ---- Dynamically Load Matugen Colors ---- */
-@import "/home/j5/.config/rofi/colors.rasi"
+@import "~/.config/rofi/colors.rasi"
 @import "~/.config/ml4w/settings/rofi-font.rasi"
 @import "~/.config/ml4w/settings/rofi-border-radius.rasi"
 @import "~/.config/ml4w/settings/rofi-border.rasi"
