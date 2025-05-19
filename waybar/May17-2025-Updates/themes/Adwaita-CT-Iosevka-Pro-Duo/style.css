@@ -5,7 +5,7 @@
 \____|__  /\____ |  \/\_/ (____  /__||__| (____  /
         \/      \/             \/              \/
 * ML4W, Edited by j5onrf (2025)
-* Adwaita-CT-Iosevka-Pro-Duo (05-17-2025) beta
+* Adwaita-CT-Iosevka-Pro-Duo (05-18-2025) beta
 * -----------------------------------------------------  
 */
 
@@ -81,7 +81,9 @@ window#waybar {
 #tray:hover,
 #custom-appmenu:hover,
 #custom-exit:hover,
-#pulseaudio:hover {
+#pulseaudio:hover,
+#custom-hypridle:hover,
+#custom-notification:hover {
     color: @color1;
     background: @color0;
     padding: 0.15em 0;
