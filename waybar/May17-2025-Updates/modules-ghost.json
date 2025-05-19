@@ -46,7 +46,7 @@
       "class<polkit-gnome-authentication-agent-1>": "\ue575",
       "class<nwg-look>": "\uf3f1",
       "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
-      "class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞",
+      "class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞 ",
       "class<vlc>": "\uf636",
       "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073"
       // "class<io.missioncenter.MissionCenter>": "\uf085",
