@@ -195,6 +195,9 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # WayBar
 
+(2025-May19) [Ghost-Modern-Matugen<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
+![Ghost-Modern-Matugen](https://github.com/user-attachments/assets/0eed9f96-7659-4f65-97c4-26d848d72895)
+
 (2025-Jan16) [Ghost-Modern<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/Ghost) 
 ![Ghost-Modern-White](https://github.com/user-attachments/assets/c59f6e18-dfe8-45b0-9961-097e4a36023a)
 ![Ghost-Modern](https://github.com/user-attachments/assets/f0d0f629-cbd7-4c3e-a762-67666a99905e)
