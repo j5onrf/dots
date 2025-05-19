@@ -5,7 +5,7 @@
  \______  /___|  /\____/____  >|__|  
         \/     \/           \/     
 * ML4W, Edited by j5onrf (2025)
-* Ghost-Modern-White (05-17-2025) beta
+* Ghost-Modern-White (05-18-2025) beta
 * ----------------------------------------------------- 
 */
 
@@ -78,7 +78,9 @@ window#waybar {
 #tray:hover,
 #custom-appmenu:hover,
 #custom-exit:hover,
-#pulseaudio:hover {
+#pulseaudio:hover,
+#custom-hypridle:hover,
+#custom-notification:hover {
     color: @color0;
     box-shadow: inset 0 0 0.2em @color0;
     padding: 0.15em 0;
