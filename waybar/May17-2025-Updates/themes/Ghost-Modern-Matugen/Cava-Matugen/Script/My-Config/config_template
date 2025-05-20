@@ -1,7 +1,7 @@
 # Cava Config Template
 [general]
 framerate = 60
-bars = 11
+bars = 12
 bar_width = 1 
 bar_spacing = 1
 autosens = 0
