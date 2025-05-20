@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf (2025)
-// Vertical-Sidebar Ghost-Modern (05-19-2025) beta
+// Ghost (05-20-2025) beta
 
 {
   // Workspaces
@@ -31,9 +31,10 @@
       "title<.*grok.*>": "\ue1ec",
       "title<.*ai.*>": "\ue1ec",
       "title<.*amazon.*>": "",
-      // "title<.*Picture-in-Picture.*>": "\ue2c8",
+      "title<.*gmail.*>": "󰊫 ",
+      "title<.*nvim ~.*>": " ",
       // "title<.*deepseek.*>": "\uf72c",
-      "class<gimp-3.0>": "\uf1fc",
+      "class<gimp>": "\uf1fc",
       "class<org.gnome.Weather>": "\uf76b",
       "class<wttr-floating>": "\uf76b",
       "class<firefox>": "<span font='18'></span>",
@@ -41,24 +42,18 @@
       "class<alacritty>": "<span font='16' line-height='0.7'>\uf120</span>",
       "class<brave-browser>": "\uf37e",
       "class<brave-browser-beta>": "\uf37e",
+      "class<zen>": "󰰷",
       "class<org.gnome.Nautilus>": "\uf07b",
       "class<org.gnome.TextEditor>": "",
       "class<polkit-gnome-authentication-agent-1>": "\ue575",
+      "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫",
       "class<nwg-look>": "\uf3f1",
       "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
       "class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞 ",
       "class<vlc>": "\uf636",
+      "class<mpv>": "\uf636",
       "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073"
-      // "class<io.missioncenter.MissionCenter>": "\uf085",
-      // "class<org.gnome.Console>": "",
-      // "class<mousepad>": "\uf15c",
-      // "class<thunar>": "\uf07c",
-      // "class<obsidian>": "󰠮",
-      // "class<freetube>": "",
-      // "class<[Ss]potify>": "\uf001",
-      // "class<sublime_text>": "󰅳",
-      // "class<codeblocks>": "󰅩",
-      // "class<com.obsproject.Studio>": "",
+      // https://github.com/JaKooLit/Hyprland-Dots/blob/main/config/waybar/ModulesWorkspaces
     }
 },
 
@@ -174,7 +169,7 @@
   
    // Hypridle inhibitor
   "custom/hypridle": {
-    "format": "",
+    "format": "\uf023",
     "return-type": "json",
     "escape": true,
     "exec-on-event": true,
@@ -190,16 +185,16 @@
     "format-icons": {
       "notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "none": "",
+      "none": "\uf0f3",
       "dnd-notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "dnd-none": "",
+      "dnd-none": "\uf8fa",
       "inhibited-notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "inhibited-none": "",
+      "inhibited-none": "\uf8fa",
       "dnd-inhibited-notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "dnd-inhibited-none": ""
+      "dnd-inhibited-none": "\uf1f6"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -209,5 +204,3 @@
     "escape": true
   }
 }
-
-
