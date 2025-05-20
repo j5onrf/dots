@@ -424,8 +424,11 @@ exec-once = ~/.config/rofi/bin/launcher
 # Anyrun
 bind = $mainMod, SPACE, exec, anyrun
 
-# Your Cava binding
-bind = $mainMod, Z, exec, kitty --title \"CavaVisualizer\" -e $HOME/.config/hypr/scripts/run_themed_cava.sh
+# Cava binding
+# bind = $mainMod, Z, exec, kitty --title \"CavaVisualizer\" -e $HOME/.config/hypr/scripts/run_themed_cava.sh
+
+# Cava binding kitty font-size
+bind = $mainMod, Z, exec, kitty --title \"CavaVisualizer\" -o font_size=6 -e $HOME/.config/hypr/scripts/run_themed_cava.sh
 
 ```
 
