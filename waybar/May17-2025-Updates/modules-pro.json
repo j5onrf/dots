@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf (2025)
-// Vertical-Sidebar Font-Awesome-6-Pro (05-17-2025) beta
+// Font-Awesome-6-Pro (05-20-2025) beta
 
 {
   // Workspaces
@@ -31,22 +31,28 @@
       "title<.*grok.*>": "\ue1ec",
       "title<.*ai.*>": "\ue1ec",
       "title<.*amazon.*>": "",
-      "class<gimp-3.0>": "\uf1fc",
+      "title<.*gmail.*>": "󰊫 ",
+      "title<.*nvim ~.*>": " ",
+      "class<gimp>": "\uf1fc",
       "class<org.gnome.Weather>": "\uf76b",
       "class<wttr-floating>": "\uf76b",
-      "class<io.missioncenter.MissionCenter>": "",
+      // "class<io.missioncenter.MissionCenter>": "",
       "class<firefox>": "<span font='22'>\uf269</span>",
       "class<kitty>": "\ue13d",
       "class<alacritty>": "\uf120",
       "class<brave-browser>": "\uf37e",
       "class<brave-browser-beta>": "\uf37e",
+      "class<zen>": "󰰷",
       "class<org.gnome.Nautilus>": "\ue185",
       "class<org.gnome.TextEditor>": "",
       "class<polkit-gnome-authentication-agent-1>": "󰒃",
       "class<nwg-look>": "",
-      "class<vlc>": "󰕼",
       "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
       "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
+      "class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞",
+      "class<vlc>": "󰕼",
+      "class<mpv>": "",
+      // https://github.com/JaKooLit/Hyprland-Dots/blob/main/config/waybar/ModulesWorkspaces
     }
 },
 
@@ -162,7 +168,7 @@
   
     // Hypridle inhibitor
   "custom/hypridle": {
-    "format": "",
+    "format": "\uf023",
     "return-type": "json",
     "escape": true,
     "exec-on-event": true,
@@ -178,16 +184,16 @@
     "format-icons": {
       "notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "none": "",
+      "none": "\uf0f3",
       "dnd-notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "dnd-none": "",
+      "dnd-none": "\uf8fa",
       "inhibited-notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "inhibited-none": "",
+      "inhibited-none": "\uf8fa",
       "dnd-inhibited-notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "dnd-inhibited-none": ""
+      "dnd-inhibited-none": "\uf1f6"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -197,5 +203,3 @@
     "escape": true
   }
 }
-
-
