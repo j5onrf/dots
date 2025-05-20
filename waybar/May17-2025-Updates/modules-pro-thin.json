@@ -170,7 +170,7 @@
 
    // Hypridle inhibitor
   "custom/hypridle": {
-    "format": "",
+    "format": "\uf023",
     "return-type": "json",
     "escape": true,
     "exec-on-event": true,
@@ -186,16 +186,16 @@
     "format-icons": {
       "notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "none": "",
+      "none": "\uf0f3",
       "dnd-notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "dnd-none": "",
+      "dnd-none": "\uf8fa",
       "inhibited-notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "inhibited-none": "",
+      "inhibited-none": "\uf8fa",
       "dnd-inhibited-notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "dnd-inhibited-none": ""
+      "dnd-inhibited-none": "\uf1f6"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
