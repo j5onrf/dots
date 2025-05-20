@@ -9,7 +9,7 @@
 \____|__  (____  |__| |____/\___  / \___  |___|  /
         \/     \/          /_____/      \/     \/        
 * ML4W, Edited by j5onrf (2025)
-* Ghost-Modern-Matugen (05-20-2025) beta
+* Ghost-Modern-Matugen (05-19-2025) beta
 * ----------------------------------------------------- 
 */
 
@@ -103,7 +103,7 @@ window#waybar {
     margin: 0.3em 0.35em;
     padding-top: calc(0.5em - 1px);
     padding-right: 0px;
-    padding-bottom: calc(0.5em - 1px);
+    padding-bottom: calc(0.4em - 1px);
     padding-left: calc(0.2em - 1px);
     color: @ghost_text_primary;
     border: 1px solid transparent;
@@ -212,7 +212,7 @@ window#waybar {
     font-family: "JetBrainsMono Nerd Font Mono";
     font-weight: 400;
     font-size: 0.857em;
-    margin: 0.2em 0.1em;
+    margin: 0em 0.01em;
     padding: calc(0.15em - 1px);
     color: @ghost_text_primary;
     border: 1px solid transparent;
@@ -224,7 +224,7 @@ window#waybar {
 
 tooltip {
     background-color: @ghost_tooltip_background;
-    opacity: 1;
+    opacity: 0.9;
 }
 tooltip label {
     color: @ghost_text_tooltip;
