@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf (2025)
-// Vertical-Sidebar Font-Awesome-6-Pro-Thin (05-17-2025) beta
+// Font-Awesome-6-Pro-Thin (05-20-2025) beta
 
 {
   // Workspaces
@@ -31,35 +31,30 @@
       "title<.*grok.*>": "\ue1ec",
       "title<.*ai.*>": "\ue1ec",
       "title<.*amazon.*>": "",
-      // "title<.*Picture-in-Picture.*>": "\ue2c8",
-      "class<gimp-3.0>": "\uf1fc",
+      "title<.*gmail.*>": "󰊫 ",
+      "title<.*nvim ~.*>": " ",
+      "class<gimp>": "\uf1fc",
       "class<org.gnome.Weather>": "\uf76b",
       "class<wttr-floating>": "\uf76b",
-      "class<io.missioncenter.MissionCenter>": "\uf085",
+      // "class<io.missioncenter.MissionCenter>": "\uf085",
       "class<firefox>": "<span font='22'>\uf269</span>",
       "class<kitty>": "\ue13d",
       "class<alacritty>": "\uf120",
       "class<brave-browser-beta>": "\uf37e",
       "class<brave-browser>": "\uf37e",
+      "class<zen>": "󰰷",
       "class<org.gnome.Nautilus>": "\uf07b",
       "class<org.gnome.TextEditor>": "",
       "class<polkit-gnome-authentication-agent-1>": "\ue575",
+      "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫",
       "class<nwg-look>": "\uf3f1",
       "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
-      // "class<org.gnome.Console>": "",
-      // "class<mousepad>": "\uf15c",
-      // "class<thunar>": "\uf07c",
-      // "class<obsidian>": "󰠮",
-      // "class<freetube>": "",
-      // "class<[Ss]potify>": "\uf001",
-      // "class<VSCode|code-url-handler>": "󰨞",
-      // "class<sublime_text>": "󰅳",
-      // "class<codium|codium-url-handler|VSCodium>": "󰨞",
-      // "class<codeblocks>": "󰅩",
-      // "class<com.obsproject.Studio>": "",
-      // "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
-      // "class<zen-alpha>": "󰰷",
-      // "class<vlc>": "\uf636"
+      "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
+      "class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞",
+      "class<vlc>": "\uf636",
+      "class<mpv>": "",
+      "class<localsend>":""
+      // https://github.com/JaKooLit/Hyprland-Dots/blob/main/config/waybar/ModulesWorkspaces
     }
 },
 
@@ -210,5 +205,3 @@
     "escape": true
   }
 }
-
-
