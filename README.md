@@ -419,7 +419,7 @@ windowrulev2 = float,class:^(org.keepassxc.KeePassXC)$
 windowrulev2 = size 1300 1100,class:^(org.keepassxc.KeePassXC)$
 
 # Startup
-exec-once = ~/.config/rofi/bin/launcher; ~/.config/waybar/launch.sh
+exec-once = ~/.config/rofi/bin/launcher
 
 # Anyrun
 bind = $mainMod, SPACE, exec, anyrun
