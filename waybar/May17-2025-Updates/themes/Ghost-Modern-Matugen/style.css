@@ -191,7 +191,7 @@ window#waybar {
 }
 
 #network {
-    font-size: 22px;
+    font-size: 0.89em;
 }
 
 #cpu,
