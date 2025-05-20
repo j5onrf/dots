@@ -6,12 +6,22 @@ TEMP_CAVA_CONFIG="/tmp/cava_dynamic_config_$$"
 
 GRADIENT_ANSI_COLORS=(
     "color1"
-    "color5" 
+    "color2" 
     "color3" 
-    "color2"
+    "color4"
+    "color5" 
     "color6" 
-    "color4" 
 )
+
+# Adds More Color to Bars
+# GRADIENT_ANSI_COLORS=(
+ #   "color1"
+ #   "color5" 
+ #   "color3" 
+ #   "color2"
+ #   "color6" 
+ #   "color4" 
+#)
 
 get_hex_for_ansi() {
     local ansi_name="$1"
