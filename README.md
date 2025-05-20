@@ -422,7 +422,10 @@ windowrulev2 = size 1300 1100,class:^(org.keepassxc.KeePassXC)$
 exec-once = ~/.config/rofi/bin/launcher; ~/.config/waybar/launch.sh
 
 # Anyrun
-bind = SUPER, SPACE, exec, anyrun
+bind = $mainMod, SPACE, exec, anyrun
+
+# Your Cava binding
+bind = $mainMod, Z, exec, kitty --title \"CavaVisualizer\" -e $HOME/.config/hypr/scripts/run_themed_cava.sh
 
 ```
 
