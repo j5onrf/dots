@@ -1,6 +1,6 @@
 # Hyprdots
 
-<details open><summary>(2025-May19) Matugen Inspired Waybar Theme </summary> 
+<details open><summary>(2025-May21) Matugen Inspired Waybar Theme </summary> 
 <p>
  
 [Ghost-Matugen](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
