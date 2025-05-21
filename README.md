@@ -4,7 +4,7 @@
 <p>
  
 [Ghost-Modern-Matugen](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
-![FullScreen-2025-05-19_14-21-57.png](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/FullScreen-2025-05-19_14-21-57.png)
+![FullScreen-2025-05-21_14-32-31](https://github.com/user-attachments/assets/a2c8f6f6-225b-425f-9c27-974af5e89b79)
 <br><br>
 [Cava-Wallust](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Cava-Matugen) 
 ![FullScreen-2025-05-20_10-23-36](https://github.com/user-attachments/assets/72388597-b3bd-467d-8a7e-dcfd273a87d6)
