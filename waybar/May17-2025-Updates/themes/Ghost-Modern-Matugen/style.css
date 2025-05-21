@@ -123,11 +123,11 @@ window#waybar {
     border: 1px solid @ghost_hover_glow_color;
     font-size: 1em;
     color: @ghost_text_primary;
-    font-size: 1.5em;
+    font-size: 1.75em;
 }
 #custom-exit:hover {
-    padding: 0.2em 0;
-    font-size: 1.5em;
+    padding: 0.125em 0;
+    font-size: 1.25em;
 }
 #custom-appmenu,
 #custom-exit {
