@@ -26,7 +26,7 @@
   // Modules Left
   "modules-left": [
     "custom/appmenu",
-    "clock",
+    "hyprland/window",
     "group/settings"
   ],
 
@@ -38,7 +38,7 @@
   // Modules Right
   "modules-right": [
     "group/hardware",
-    "hyprland/window",
+    "clock",
     "custom/exit"
   ],
   
@@ -59,7 +59,7 @@
       "(.*) - Brave": "$1",
       "(.*) - Brave Search": "$1"
     },
-    "rotate": 90,
+    "rotate": 270,
     // "separate-outputs": true,
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
