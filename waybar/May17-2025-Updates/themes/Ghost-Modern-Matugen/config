@@ -12,8 +12,8 @@
   // General Settings
   "layer": "top",
   "position": "left",
-  "margin-bottom": 15,
-  "margin-top": 15,
+  "margin-bottom": 10,
+  "margin-top": 10,
   "margin-left": 10,
   "margin-right": 8,
   "spacing": 0,
