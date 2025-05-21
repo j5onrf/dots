@@ -100,7 +100,7 @@ window#waybar {
     margin: 0.3em 0.35em;
     padding-top: calc(0.5em - 1px);
     padding-right: 0px;
-    padding-bottom: calc(0.4em - 1px);
+    padding-bottom: calc(0.5em - 1px);
     padding-left: calc(0.2em - 1px);
     color: @ghost_text_primary;
     border: 1px solid transparent;
@@ -126,7 +126,7 @@ window#waybar {
     font-size: 1.75em;
 }
 #custom-exit:hover {
-    padding: 0.14em 0;
+    padding: 0.13em 0;
     font-size: 1.25em;
 }
 #custom-appmenu,
