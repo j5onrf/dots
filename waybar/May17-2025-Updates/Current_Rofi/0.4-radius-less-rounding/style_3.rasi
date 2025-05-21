@@ -5,7 +5,7 @@
 \____|__  (____  |__| |____/\___  / \___  |___|  /
         \/     \/          /_____/      \/     \/ 
 * HYDE, ML4W, Edited by j5onrf (2025)
-* Matugen-Rofi-Dock (5-21-2025)
+* Matugen-Rofi (5-21-2025)
 * -----------------------------------------------------  
 */
 
@@ -21,7 +21,7 @@ configuration {
     display-drun:                " ";
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
-    font:                        ""; // Adwaita Sans 11
+    font:                        ""; // Adwaita Mono 11
     icon-theme:                  "";
     hover-select:                false;
     scroll-method:               1;
@@ -140,7 +140,7 @@ element selected.normal {
      border-radius:            0.4em;       // Optional: if you want selected elements to also have this radius
 }
 element-icon {
-    size:                        1.5em; // Changed from 3em to target half size
+    size:                        1.6em; // Changed from 3em to target half size
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
