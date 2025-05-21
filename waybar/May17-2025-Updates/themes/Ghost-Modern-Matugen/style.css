@@ -222,8 +222,8 @@ window#waybar {
 #clock:hover {
     color: @ghost_text_primary;
     border: 1px solid @ghost_hover_glow_color;
-    padding-top: calc(0.3em - 1px);
-    padding-bottom: calc(0.3em - 1px);
+    padding-top: calc(0.2em - 1px);
+    padding-bottom: calc(0.2em - 1px);
 }
 
 tooltip {
