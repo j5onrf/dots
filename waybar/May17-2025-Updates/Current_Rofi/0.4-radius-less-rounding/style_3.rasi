@@ -37,7 +37,7 @@ configuration {
 
 // Main //
 window {
-    height:                      30em;
+    height:                      31.5em;
     width:                       37em;
     transparency:                "real";
     fullscreen:                  false;
@@ -88,7 +88,7 @@ listview {
     spacing:                     0em;
     enabled:                     true;
     columns:                     1;
-    lines:                       12; // Adjusted from 7 for smaller elements
+    lines:                       13; // Adjusted from 7 for smaller elements
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -137,10 +137,10 @@ element {
 element selected.normal {
     background-color:            @primary;       // Matugen: Main accent for selection background
     text-color:                  @on-primary;    // Matugen: Text color for on-primary backgrounds
-     border-radius:            0.4em;       // Optional: if you want selected elements to also have this radius
+     border-radius:              0.4em;       // Optional: if you want selected elements to also have this radius
 }
 element-icon {
-    size:                        1.6em; // Changed from 3em to target half size
+    size:                        1.5em; // Changed from 3em to target half size
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
@@ -166,4 +166,3 @@ textbox {
     vertical-align:              0.5;
     horizontal-align:            0.5;
 }
-
