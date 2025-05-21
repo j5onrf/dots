@@ -9,7 +9,7 @@
 \____|__  (____  |__| |____/\___  / \___  |___|  /
         \/     \/          /_____/      \/     \/        
 * ML4W, Edited by j5onrf (2025)
-* Ghost-Modern-Matugen (05-19-2025) beta
+* Ghost-Modern-Matugen (05-21-2025) beta
 * ----------------------------------------------------- 
 */
 
@@ -82,14 +82,11 @@ window#waybar {
 #custom-wallpaper:hover,
 #custom-waybarthemes:hover,
 #tray:hover,
-#custom-appmenu:hover,
-#custom-exit:hover,
 #pulseaudio:hover,
 #custom-hypridle:hover,
 #custom-notification:hover {
     color: @ghost_text_primary;
     border: 1px solid @ghost_hover_glow_color;
-    box-shadow: none;
     padding: 0.15em 0;
     transition: all 0.1s linear;
     margin: 0.1em 0.2em;
@@ -121,26 +118,29 @@ window#waybar {
     font-weight: 200;
 }
 
+#custom-appmenu:hover,
+#custom-exit:hover  {
+    border: 1px solid @ghost_hover_glow_color;
+    font-size: 1em;
+    color: @ghost_text_primary;
+    font-size: 1.5em;
+}
+#custom-exit:hover {
+    padding: 0.2em 0;
+    font-size: 1.5em;
+}
 #custom-appmenu,
 #custom-exit {
     font-size: 4px;
     color: @ghost_hidden_text;
 }
-
 #custom-exit {
     font-family: "Font Awesome 6 Pro";
     font-weight: 400;
 }
-
 #custom-appmenu {
     font-family: "JetBrainsMono Nerd Font Mono";
     font-weight: 100;
-}
-
-#custom-appmenu:hover,
-#custom-exit:hover {
-    font-size: 1em;
-    color: @ghost_text_primary;
 }
 
 #custom-settings,
