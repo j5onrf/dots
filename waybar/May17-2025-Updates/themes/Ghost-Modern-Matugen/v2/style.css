@@ -107,7 +107,7 @@ window#waybar {
 #window:hover {
     color: @ghost_text_primary;
     border: 1px solid @ghost_hover_glow_color;
-    padding-top: calc(0.5em - 1px);
+
 }
 
 #cpu:hover,
@@ -217,12 +217,11 @@ window#waybar {
     font-weight: 400;
     font-size: 0.857em;
     color: @ghost_text_primary;
+    border: 1px solid transparent;
 }
 #clock:hover {
     color: @ghost_text_primary;
     border: 1px solid @ghost_hover_glow_color;
-    padding-top: calc(0.2em - 1px);
-    padding-bottom: calc(0.2em - 1px);
 }
 
 tooltip {
