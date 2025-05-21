@@ -363,19 +363,6 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive%202/Screens
 
   - Arch and [ML4W](https://github.com/mylinuxforwork/dotfiles)
 
- <details><summary>opacity & blur [i]</summary>
-<p>
-  To add blur I'm using 'blur wallpaper effect' for better performance. Everything with opacity <1 will have blur including waybar. If using ml4w, right click on wallpaper icon to select wallpaper effect blur* = 1,2.
-  
-```
-    active_opacity = 0.9 # 0.96
-    inactive_opacity = 0.6
-    fullscreen_opacity = 1
-
-```
-</p>
-</details>
-
  <details><summary>example custom.conf [i]</summary>
 <p>
   
