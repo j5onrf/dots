@@ -12,10 +12,10 @@
   // General Settings
   "layer": "top",
   "position": "left",
-  "margin-bottom": 9,
-  "margin-top": 9,
+  "margin-bottom": 10,
+  "margin-top": 10,
   "margin-left": 10,
-  "margin-right": 8,
+  "margin-right": 2,
   "spacing": 0,
 
   // Load Modules
