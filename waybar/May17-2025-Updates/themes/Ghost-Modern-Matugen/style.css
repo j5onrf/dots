@@ -49,6 +49,7 @@ window#waybar {
     padding: 0.25em 0.13em;
     border: 1px solid @ghost_ws_button_shadow;
     background-color: @ghost_ws_button_bg;
+    min-width: 1.25em; /* Optional: keeps min-width larger than content */
 }
 #workspaces button.active {
     color: @ghost_ws_button_active_fg;
