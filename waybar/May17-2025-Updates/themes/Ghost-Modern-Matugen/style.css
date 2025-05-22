@@ -31,11 +31,6 @@ window#waybar {
     margin: 5px;
     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.4);
 }
-/* No Shadow Option
-window#waybar {
-    background-color: @ghost_bar_background;
-            border-radius: 0em;
-} */
 
 .modules-left,
 .modules-right,
@@ -57,10 +52,10 @@ window#waybar {
     background-color: @ghost_bar_background;
 }
 #workspaces button {
-    color: @ghost_ws_button_fg;
+    color: @primary;
     margin: 0.1em 0.14em;
     padding: 0.25em 0.13em;
-    border: 1px solid @ghost_ws_button_shadow;
+    border: 1px solid @primary;
     background-color: @ghost_ws_button_bg;
     min-width: 1.25em; /* Optional: keeps min-width larger than content */
 }
@@ -115,11 +110,11 @@ window#waybar {
     padding-top: calc(0em - 1px);
     padding-right: 0px;
     padding-left: calc(0.4em - 1px);
-    color: @ghost_text_primary;
+    color: @primary;
     border: 1px solid transparent;
 }
 #window:hover {
-    color: @ghost_text_primary;
+    color: @primary;
     border: 1px solid @ghost_hover_glow_color;
 }
 
@@ -134,14 +129,14 @@ window#waybar {
 #custom-appmenu:hover {
     border: 1px solid @ghost_hover_glow_color;
     font-size: 1em;
-    color: @ghost_text_primary;
+    color: @primary;
     font-size: 1.75em;
     margin: 0 0 0.2em 0;
 }
 #custom-exit:hover {
     border: 1px solid @ghost_hover_glow_color;
     font-size: 1em;
-    color: @ghost_text_primary;
+    color: @primary;
     padding: 0.19em 0;
     font-size: 1.25em;
     margin: 0.1em 0 0 0;
@@ -187,7 +182,7 @@ window#waybar {
 #custom-wallpaper,
 #custom-hypridle,
 #custom-notification {
-    color: @ghost_icon_default;
+    color: @primary;
     border: 1px solid transparent;
     padding: 0.15em 0;
     margin: 0.1em 0.2em;
@@ -229,11 +224,11 @@ window#waybar {
     font-family: "JetBrainsMono Nerd Font Mono";
     font-weight: 400;
     font-size: 0.857em;
-    color: @ghost_text_primary;
+    color: @primary;
     border: 1px solid transparent;
 }
 #clock:hover {
-    color: @ghost_text_primary;
+    color: @primary;
     border: 1px solid @ghost_hover_glow_color;
 }
 
