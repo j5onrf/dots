@@ -5,6 +5,9 @@
 
 /* 2. Define semantic color names for YOUR Ghost-Modern-Matugen theme */
 
+/* --- Icon Colors & Elements --- */
+@define-color ghost_clock_window_text @primary;
+
 /* --- Text Colors --- */
 @define-color ghost_text_primary @on_surface;               /* #f0dede */
 @define-color ghost_text_tooltip @on_surface;               /* #f0dede */
