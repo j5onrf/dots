@@ -54,6 +54,7 @@
       "class<vlc>": "\uf636",
       "class<mpv>": "\uf636",
       "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
+      "class<org.gnome.Calculator>": "\uf1ec"
       // https://github.com/JaKooLit/Hyprland-Dots/blob/main/config/waybar/ModulesWorkspaces
     }
 },
