@@ -5,15 +5,15 @@
 //   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
 //        \/         \/\/              \/        \/       \/     
 // ML4W, Edited by j5onrf (2025)
-// Ghost-Matugen (05-21-2025) beta
+// Ghost-Matugen (05-22-2025) beta
 // -----------------------------------------------------
 
 {
   // General Settings
   "layer": "top",
   "position": "left",
-  "margin-bottom": 10,
-  "margin-top": 10,
+  "margin-bottom": 8,
+  "margin-top": 8,
   "margin-left": 10,
   "margin-right": 8,
   "spacing": 0,
