@@ -129,7 +129,7 @@ window#waybar {
     border: 1px solid @ghost_hover_glow_color;
     font-size: 1em;
     color: @ghost_text_primary;
-    padding: 0.13em 0;
+    padding: 0.19em 0;
     font-size: 1.25em;
     margin: 0.1em 0 0 0;
 }
