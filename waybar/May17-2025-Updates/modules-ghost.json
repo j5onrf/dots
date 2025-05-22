@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf (2025)
-// Ghost (05-20-2025) beta
+// Ghost (05-21-2025) beta
 
 {
   // Workspaces
@@ -24,12 +24,12 @@
     "format-window-separator": "\n",
     "window-rewrite-default": "\uf059",
     "window-rewrite": {
-      "title<.*youtube.*>": "\uf04b",
+      "title<.*youtube.*>": "<span line-height='1.1'>\uf04b</span>",
       "title<.*reddit.*>": "<span line-height='0.8'></span>",
-      "title<.*dot.*>": "<span line-height='0.8'> </span>",
-      "title<.*chatgpt.*>": "\ue1ec",
-      "title<.*grok.*>": "\ue1ec",
-      "title<.*ai.*>": "\ue1ec",
+      "title<.*dot.*>": "<span line-height='0.9'> </span>",
+      "title<.*chatgpt.*>": "<span line-height='1.1'>\ue1ec</span>",
+      "title<.*grok.*>": "<span line-height='1.1'>\ue1ec</span>",
+      "title<.*ai.*>": "<span line-height='1.1'>\ue1ec</span>",
       "title<.*amazon.*>": "",
       "title<.*gmail.*>": "󰊫 ",
       "title<.*nvim ~.*>": " ",
@@ -44,7 +44,7 @@
       "class<brave-browser>": "\uf37e",
       "class<brave-browser-beta>": "\uf37e",
       "class<zen>": "󰰷",
-      "class<org.gnome.Nautilus>": "\uf07b",
+      "class<org.gnome.Nautilus>": "<span line-height='1.1'>\uf07b</span>",
       "class<org.gnome.TextEditor>": "",
       "class<polkit-gnome-authentication-agent-1>": "\ue575",
       "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫",
@@ -53,7 +53,7 @@
       "class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞 ",
       "class<vlc>": "\uf636",
       "class<mpv>": "\uf636",
-      "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073"
+      "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
       // https://github.com/JaKooLit/Hyprland-Dots/blob/main/config/waybar/ModulesWorkspaces
     }
 },
