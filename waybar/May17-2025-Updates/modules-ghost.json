@@ -33,7 +33,7 @@
       "title<.*amazon.*>": "",
       "title<.*gmail.*>": "󰊫 ",
       "title<.*nvim ~.*>": " ",
-      "title<.*Cava.*>": "\uf8f1",
+      "title<.*Cava.*>": "<span line-height='1.1'>\uf8f1</span>",
       // "title<.*deepseek.*>": "\uf72c",
       "class<gimp>": "\uf1fc",
       "class<org.gnome.Weather>": "\uf76b",
