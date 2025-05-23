@@ -221,6 +221,7 @@ window#waybar {
     font-size: 0.857em;
     color: @primary;
     border: 1px solid transparent;
+    padding-top: 0.2em;
 }
 #clock:hover {
     color: @primary;
@@ -229,7 +230,7 @@ window#waybar {
 
 tooltip {
     background-color: @ghost_tooltip_background;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 tooltip label {
     color: @ghost_text_tooltip;
