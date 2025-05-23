@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf (2025)
-// Ghost (05-22-2025) beta
+// Ghost (05-23-2025) beta
 
 {
   // Workspaces
@@ -19,9 +19,10 @@
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e-1",
     "on-scroll-down": "hyprctl dispatch workspace e+1",
-    "format": "{windows}",
+    "format": "{icon}{windows}",
     "persistent-workspaces": { "*": 5 },
     "format-window-separator": "\n",
+    "format-icons": { "empty": "\uf067", "default": "" },
     "window-rewrite-default": "\uf059",
     "window-rewrite": {
       "title<.*youtube.*>": "<span line-height='1'>\uf04b</span>",
@@ -34,7 +35,6 @@
       "title<.*gmail.*>": "󰊫 ",
       "title<.*nvim ~.*>": " ",
       "title<.*Cava.*>": "<span line-height='1'>\uf8f1</span>",
-      // "title<.*deepseek.*>": "\uf72c",
       "class<gimp>": "<span line-height='1'>\uf1fc</span>",
       "class<org.gnome.Weather>": "\uf76b",
       "class<wttr-floating>": "\uf76b",
@@ -101,7 +101,7 @@
   "custom/settings": {
     "format": "\uf078",
     "on-click": "flatpak run com.ml4w.sidebar",
-    "on-click-right": "/usr/bin/com.ml4w.hyprland.settings",
+    "on-click-right": "/home/j5/.config/hypr/settings/com.ml4w.hyprland.settings",
     "on-click-middle": "hyprctl dispatch exec 'kitty --class hyprpicker -e zsh -c \"sleep 0.5; hyprpicker; exec zsh\"'",
     "tooltip": false
   },
