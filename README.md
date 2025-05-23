@@ -203,11 +203,8 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # WayBar
 
-(2025-May22) [Ghost-Matugen<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
-![125Region-2025-05-22_15-32-10](https://github.com/user-attachments/assets/b074d534-553c-4ca5-ba26-fb2295c63d2a)
-
-(2025-May19) [Ghost-Matugen<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
-![Ghost-Modern-Matugen](https://github.com/user-attachments/assets/0eed9f96-7659-4f65-97c4-26d848d72895)
+(2025-May23) [Ghost-Matugen<sup>beta</sup> Azonix Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
+![ui-2025-05-23_14-58-23](https://github.com/user-attachments/assets/4448a203-866a-4716-b6cc-0e003538a9cf)
 
 (2025-Jan16) [Ghost-Modern<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/Ghost) 
 ![Ghost-Modern-White](https://github.com/user-attachments/assets/c59f6e18-dfe8-45b0-9961-097e4a36023a)
