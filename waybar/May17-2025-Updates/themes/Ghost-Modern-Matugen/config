@@ -49,6 +49,9 @@
     "on-click-right": "gapplication launch org.gnome.Weather",
     "on-click-middle": "~/.config/hypr/scripts/wttr.sh",
     "on-click": "gtk-launch brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default",
+        // "separate-outputs": true,
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
   },
   
   // Hyprland Window
