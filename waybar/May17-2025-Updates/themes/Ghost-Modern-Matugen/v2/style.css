@@ -57,7 +57,6 @@ window#waybar {
     padding: 0.25em 0.13em;
     background-color: @ghost_ws_button_active_bg;
     border: 1px solid @ghost_ws_button_active_fg;
-    box-shadow: none;
 }
 #workspaces button:hover {
     color: @ghost_ws_button_hover_fg;
@@ -65,13 +64,11 @@ window#waybar {
     padding: 0.25em 0.13em;
     background-color: @ghost_ws_button_hover_bg;
     border: 1px solid @ghost_ws_button_hover_fg;
-    box-shadow: none;
 }
 #workspaces button.empty {
     color: @ghost_ws_button_hover_fg;
     margin: 0.1em 0.14em;
     padding: 0.25em 0.13em;
-    box-shadow: none;
 }
 
 #cpu:hover,
@@ -96,19 +93,18 @@ window#waybar {
 
 #window {
     font-size: 0.643em;
-    font-family: "JetBrainsMono Nerd Font Mono";
+    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-weight: 400;
     margin: 0.3em 0.35em;
-    padding-top: calc(0em - 1px);
+    padding-top: 0.1em;
     padding-right: 0px;
-    padding-left: calc(0.4em - 1px);
+    padding-left: 0.35em;
     color: @ghost_text_primary;
     border: 1px solid transparent;
 }
 #window:hover {
     color: @ghost_text_primary;
     border: 1px solid @ghost_hover_glow_color;
-
 }
 
 #cpu:hover,
@@ -214,11 +210,12 @@ window#waybar {
 }
 
 #clock {
-    font-family: "JetBrainsMono Nerd Font Mono";
+    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-weight: 400;
     font-size: 0.857em;
     color: @ghost_text_primary;
     border: 1px solid transparent;
+    padding: 0.01em 0;
 }
 #clock:hover {
     color: @ghost_text_primary;
@@ -227,7 +224,7 @@ window#waybar {
 
 tooltip {
     background-color: @ghost_tooltip_background;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 tooltip label {
     color: @ghost_text_tooltip;
