@@ -99,12 +99,12 @@ window#waybar {
 
 #window {
     font-size: 0.643em;
-    font-family: "Terminus Nerd Font", "JetbrainsMono Nerd Font Mono";
+    font-family: "Azonix", "JetBrainsMono Nerd Font Mono", sans-serif;
     font-weight: 400;
     margin: 0.3em 0.35em;
     padding-top: 0.1em;
     padding-right: 0px;
-    padding-left: 0.35em;
+    padding-left: 0.6em;
     color: @primary;
     border: 1px solid transparent;
 }
@@ -197,8 +197,8 @@ window#waybar {
 #cpu,
 #memory,
 #custom-updates {
-    font-family: "JetBrainsMono Nerd Font Mono";
-    font-weight: 200;
+    font-family: "Azonix", "JetBrainsMono Nerd Font Mono", sans-serif;
+    font-weight: 100;
     font-size: 0.57em;
     color: @ghost_text_primary;
     padding: 0.15em 0;
@@ -216,7 +216,7 @@ window#waybar {
 }
 
 #clock {
-font-family: "Terminus Nerd Font", "JetbrainsMono Nerd Font Mono";
+    font-family: "Azonix", "JetBrainsMono Nerd Font Mono", sans-serif;
     font-weight: 400;
     font-size: 0.857em;
     color: @primary;
