@@ -206,6 +206,15 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 (2025-May23) [Ghost-Matugen<sup>beta</sup> Azonix Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
 ![ui-2025-05-23_14-58-23](https://github.com/user-attachments/assets/4448a203-866a-4716-b6cc-0e003538a9cf)
 
+(2025-Jan12) [Adwaita-CT-Iosevka-Pro-Thin](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin)
+![Screenshot-2025-01-12_06:48:42](https://github.com/user-attachments/assets/d0104364-df84-4b22-b3a2-1e752c232ae0)
+
+(2025-Jan12) [Adwaita-CT-Iosevka-Pro-Duo](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Duo)
+![Screenshot-2025-01-12_06:48:26](https://github.com/user-attachments/assets/6fd773e0-98b4-463c-a8d2-369a34be8ef7)
+
+<details><summary>2025_Jan-April_Archived</summary>
+<p>
+
 (2025-Jan16) [Ghost-Modern<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/Ghost) 
 ![Ghost-Modern-White](https://github.com/user-attachments/assets/c59f6e18-dfe8-45b0-9961-097e4a36023a)
 ![Ghost-Modern](https://github.com/user-attachments/assets/f0d0f629-cbd7-4c3e-a762-67666a99905e)
@@ -215,12 +224,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 (2025-Jan12) [Blk&Wht-CT-Iosevka-Pro-Thin-3<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three/Blk%26White-No-Red) <sup>discontinued</sup>
 ![Screenshot-2025-01-12_06:42:42](https://github.com/user-attachments/assets/f3a41655-e95b-46be-81ee-709b27051435)
-
-(2025-Jan12) [Adwaita-CT-Iosevka-Pro-Thin](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin)
-![Screenshot-2025-01-12_06:48:42](https://github.com/user-attachments/assets/d0104364-df84-4b22-b3a2-1e752c232ae0)
-
-(2025-Jan12) [Adwaita-CT-Iosevka-Pro-Duo](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Duo)
-![Screenshot-2025-01-12_06:48:26](https://github.com/user-attachments/assets/6fd773e0-98b4-463c-a8d2-369a34be8ef7)
+</details>
 
 <details><summary>2024_Nov-Dec_Archived</summary>
 <p>
