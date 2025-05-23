@@ -98,13 +98,13 @@ window#waybar {
 }
 
 #window {
-    font-size: 0.643em;
-    font-family: "JetBrainsMono Nerd Font Mono";
-    font-weight: 200;
+    font-size: 0.743em;
+font-family: "Terminus Nerd Font", "JetbrainsMono Nerd Font Mono";
+    font-weight: 400;
     margin: 0.3em 0.35em;
     padding-top: 0.1em;
     padding-right: 0px;
-    padding-left: 0.35em;
+    padding-left: 0em;
     color: @primary;
     border: 1px solid transparent;
 }
@@ -216,8 +216,8 @@ window#waybar {
 }
 
 #clock {
-    font-family: "JetBrainsMono Nerd Font Mono";
-    font-weight: 200;
+font-family: "Terminus Nerd Font", "JetbrainsMono Nerd Font Mono";
+    font-weight: 400;
     font-size: 0.857em;
     color: @primary;
     border: 1px solid transparent;
