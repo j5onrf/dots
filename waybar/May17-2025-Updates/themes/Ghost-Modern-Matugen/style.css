@@ -9,7 +9,7 @@
 \____|__  (____  |__| |____/\___  / \___  |___|  /
         \/     \/          /_____/      \/     \/        
 * ML4W, Edited by j5onrf (2025)
-* Ghost-Modern-Matugen (05-23-2025) beta
+* Ghost-Matugen (05-24-2025) beta
 * ----------------------------------------------------- 
 */
 
@@ -154,13 +154,7 @@ window#waybar {
 #custom-system {
     font-size: 0.5em;
     color: @ghost_hidden_text;
-    padding: calc(0.4em - 1px);
-}
-
-#custom-settings, 
-#custom-system {
-    font-size: 0.5em;
-    color: @ghost_hidden_text;
+    padding: 0.4em;
     color: transparent;
 }
 
@@ -188,10 +182,6 @@ window#waybar {
 }
 #custom-hypridle.notactive {
     color: @ghost_hypridle_inactive_icon;
-}
-
-#network {
-    font-size: 0.89em;
 }
 
 #cpu,
