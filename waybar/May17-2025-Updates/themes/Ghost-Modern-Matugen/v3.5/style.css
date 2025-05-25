@@ -153,7 +153,7 @@ window#waybar {
 #window {
     font-size: 0.643em;
     font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono";
-    font-weight: 600;
+    font-weight: 400;
     margin: 0.3em 0.35em;
     padding-top: 0.13em; 
     padding-right: 0px;
@@ -225,7 +225,7 @@ window#waybar {
 
 #clock {
     font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono";
-    font-weight: 600;
+    font-weight: 400;
     font-size: 0.857em;
 }
 
