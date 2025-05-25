@@ -61,6 +61,9 @@
 
 </details>
 
+<details><summary>Archived 2024</summary>
+<p>
+
 <details><summary>(2024-Dec31) Weather Script <sup>curl wttr.in</sup></summary> 
 <p>
 
@@ -122,9 +125,6 @@ Adwaita-Dark-Clock-Top  [Updated_Version-2](https://github.com/j5onrf/dots/tree/
 ![](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/Color%20Schemes%20and%20Themes/NordVivid/Screenshot-2024-11-17_11%3A46%3A18.png)
 ![Screenshot-2024-11-18_13:20:39](https://github.com/user-attachments/assets/3c36599f-6827-4620-9212-f3df63e1007c)
 </details>
-
-<details><summary>Archived</summary>
-<p>
 
 <details><summary>(2024-Nov01) Everforest🌿 Rofi</summary>
 <p>
