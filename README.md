@@ -204,7 +204,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 # WayBar
 
 (2025-May23) [Ghost-Matugen<sup>beta</sup> Azonix Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
-![ui1-2025-05-23_14-58-23](https://github.com/user-attachments/assets/716b73c5-6f91-4070-90e6-d07828e7c7b1)
+![Region-2025-05-24_19-48-26](https://github.com/user-attachments/assets/ea7651fa-4014-41c8-9b5f-cff26bd6f868)
 
 (2025-Jan12) [Adwaita-CT-Iosevka-Pro-Thin](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin)
 ![Screenshot-2025-01-12_06:48:42](https://github.com/user-attachments/assets/d0104364-df84-4b22-b3a2-1e752c232ae0)
