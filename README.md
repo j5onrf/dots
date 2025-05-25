@@ -19,6 +19,9 @@
 
 </details>
 
+<details><summary>Archived 2024</summary>
+<p>
+
 <details><summary>(2025-Jan29) Opensource Deepseek 🐋</summary> 
 <p>
  
@@ -60,9 +63,6 @@
 ![Screenshot-2025-01-03_17:51:58](https://github.com/user-attachments/assets/f9d850e5-e682-4599-b986-3066a2e14342)
 
 </details>
-
-<details><summary>Archived 2024</summary>
-<p>
 
 <details><summary>(2024-Dec31) Weather Script <sup>curl wttr.in</sup></summary> 
 <p>
