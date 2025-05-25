@@ -3,20 +3,12 @@
 <details open><summary>(2025-May21-24) Matugen Inspired Waybar Theme </summary> 
 <p>
  
-[Ghost-Matugen](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
+[Ghost-Matugen](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) &nbsp; [v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2) &nbsp; [v3](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3) &nbsp; [Cava-Wallust](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Cava-Matugen) 
 ![FullScreen-2025-05-21_14-32-31](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/FullScreen-2025-05-24_19-12-34.png)
-
-[v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2) &nbsp; [v3](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3) 
-![FullScreen-2025-05-21_17-19-03.png](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2/FullScreen-2025-05-21_17-19-03.png)
-
-[Cava-Wallust](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Cava-Matugen) 
-![FullScreen-2025-05-20_10-23-36](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Cava-Matugen/FullScreen-2025-05-20_09-49-15.png)
 
 </details>
 
-<br>
-
-<details open><summary>(2025-May17) Updated dots to ML4W v2.9.8.6 - Anyrun Launcher</summary> 
+<details><summary>(2025-May17) Updated dots to ML4W v2.9.8.6 - Anyrun Launcher</summary> 
 <p>
  
 [Dotfile-Updates](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates) 
@@ -26,8 +18,6 @@
 ![FullScreen-2025-05-17_rofi.png](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/Current_Rofi/FullScreen-2025-05-17_18-08-49.png)
 
 </details>
-
-<br>
 
 <details><summary>(2025-Jan29) Opensource Deepseek 🐋</summary> 
 <p>
