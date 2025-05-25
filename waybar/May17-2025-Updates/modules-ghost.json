@@ -54,7 +54,9 @@
       "class<vlc>": "\uf636",
       "class<mpv>": "\uf636",
       "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
-      "class<org.gnome.Calculator>": "\uf1ec"
+      "class<org.gnome.Calculator>": "\uf1ec",
+      "class<timeshift-gtk>": "\uf1da",
+      "class<org.gnome.World.PikaBackup>": "\uf1da"
       // https://github.com/JaKooLit/Hyprland-Dots/blob/main/config/waybar/ModulesWorkspaces
     }
 },
@@ -70,16 +72,15 @@
     "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
     "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
     "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
-    "tooltip-format": "Clipboard Manager"
+    "tooltip": false
   },
 
   // Hyprshade
   "custom/hyprshade": {
     "format": "\uf575",
- // "format": "\uf87f",
-    "tooltip-format": "Toggle Screen Shader",
     "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
-    "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi"
+    "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi",
+    "tooltip": false
   },
 
   // Wallpaper
@@ -87,14 +88,14 @@
     "format": "\uf03e",
     "on-click": "waypaper",
     "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
-    "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect"
+    "tooltip": false
   },
 
   // Waybar Themes
   "custom/waybarthemes": {
     "format": "\uf856",
     "on-click": "~/.config/waybar/themeswitcher.sh",
-    "tooltip-format": "Select a waybar theme"
+    "tooltip": false
   },
 
   // Settings
@@ -163,7 +164,7 @@
     "format": "{ifname}",
     "format-ethernet": "\uf1eb",
     "format-disconnected": "\uf6ac",
-    "tooltip-format-ethernet": "\uf1eb {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip": false,
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 20,
     "on-click": "nm-connection-editor",
@@ -183,7 +184,7 @@
   
     // SwayNC
   "custom/notification": {
-    "tooltip-format": "Left: Notifications\nRight: Do not disturb",
+    "tooltip": false,
     "format": "{icon}",
     "format-icons": {
       "notification":
