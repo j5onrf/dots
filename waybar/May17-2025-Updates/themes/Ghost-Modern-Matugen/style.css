@@ -9,7 +9,7 @@
 \____|__  (____  |__| |____/\___  / \___  |___|  /
         \/     \/          /_____/      \/     \/        
 * ML4W, Edited by j5onrf (2025)
-* Ghost-Matugen (05-24-2025) beta
+* Ghost-Matugen (05-25-2025) beta
 * ----------------------------------------------------- 
 */
 
@@ -104,7 +104,7 @@ window#waybar {
     margin: 0.3em 0.35em;
     padding-top: 0.1em;
     padding-right: 0px;
-    padding-left: 0.47em;
+    padding-left: 0.45em;
     color: @primary;
     border: 1px solid transparent;
 }
