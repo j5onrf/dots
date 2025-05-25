@@ -1,10 +1,10 @@
 # Hyprdots
 
-<details open><summary>(2025-May21) Matugen Inspired Waybar Theme </summary> 
+<details open><summary>(2025-May21-24) Matugen Inspired Waybar Theme </summary> 
 <p>
  
 [Ghost-Matugen](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
-![FullScreen-2025-05-21_14-32-31](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/FullScreen-2025-05-21_16-00-22.png)
+![FullScreen-2025-05-21_14-32-31](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/FullScreen-2025-05-24_19-12-34.png)
 
 [v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2) &nbsp; [v3](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3) 
 ![FullScreen-2025-05-21_17-19-03.png](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2/FullScreen-2025-05-21_17-19-03.png)
