@@ -27,7 +27,7 @@ window#waybar {
 
 #waybar > box {
     background: transparent;
-    border-radius: 0.4em;
+    border-radius: 0.2em;
     margin: 5px 5px 5px 0px;           
 }
 
@@ -227,4 +227,19 @@ tooltip {
 tooltip label {
     color: @ghost_text_tooltip;
     font-size: 14px;
+}
+
+  /* --- CPU Module Styling --- */
+#cpu.low { /* 0-4% */
+    color: @ghost_text_primary; 
+}
+#cpu.medium { /* 5-49% */
+    color: @tertiary_fixed;
+}
+#cpu.high { /* 50-79% */
+    color: @source_color;
+}
+#cpu.critical { /* 80%-100% */
+    color: @error;
+    font-weight: bold; 
 }
