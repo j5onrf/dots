@@ -98,10 +98,10 @@
 
   // CPU
   "cpu": {
-    "format-critical": "<span color='#E95420'><b>{usage}</b></span>",
-    "format-high": "<span color='#F6C177'>{usage}</span>",
-    "format-medium": "<span color='#8AE234'>{usage}</span>",
-    "format-low": "<span color='#D8DEE9'>{usage}</span>",
+    "format-critical": "<b>{usage}</b>",
+    "format-high": "{usage}",
+    "format-medium": "{usage}",
+    "format-low": "{usage}",
     "on-click": "kitty -e htop --sort-key PERCENT_CPU",
     "tooltip": false,
     "states": {
