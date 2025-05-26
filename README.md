@@ -3,7 +3,7 @@
 <details open><summary>(2025-May21-24) Matugen Inspired Waybar Theme </summary> 
 <p>
  
-[Ghost-Matugen](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) &nbsp; [v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2) &nbsp; [v3.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3.5) &nbsp; [Cava-Wallust](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Cava-Matugen) 
+[Ghost-Matugen](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) &nbsp; [v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2) &nbsp; [v3](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3) &nbsp; [v3.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3.5) &nbsp; [Cava-Wallust](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Cava-Matugen) 
 ![FullScreen-2025-05-21_14-32-31](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/FullScreen-2025-05-25_10-37-22.png)
 
 </details>
