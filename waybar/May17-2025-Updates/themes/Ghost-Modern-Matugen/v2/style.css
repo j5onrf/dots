@@ -21,7 +21,7 @@
 
 window#waybar {
     font-family: "Font Awesome 6 Thin";
-    font-weight: 300;
+    font-weight: 100;
     font-size: 24px;
     border-radius: 0em;
     background-color: @ghost_bar_background;
@@ -75,7 +75,7 @@ window#waybar {
     padding: 0.15em 0;
     transition: all 0.1s linear;
     margin: 0.1em 0.2em;
-    font-weight: 300;
+    font-weight: 100;
 }
 
 #window {
