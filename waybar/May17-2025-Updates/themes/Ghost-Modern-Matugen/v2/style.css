@@ -9,7 +9,7 @@
 \____|__  (____  |__| |____/\___  / \___  |___|  /
         \/     \/          /_____/      \/     \/        
 * ML4W, Edited by j5onrf (2025)
-* Ghost-Matugen v2 (05-25-2025) beta
+* Ghost-Matugen v2 (05-26-2025) beta
 * ----------------------------------------------------- 
 */
 
@@ -99,7 +99,7 @@ window#waybar {
 #custom-updates:hover{
     color: @ghost_text_primary;
     padding: 0.15em 0;
-    font-weight: 200;
+    font-weight: 100;
 }
 
 #custom-appmenu:hover {
@@ -206,4 +206,19 @@ tooltip {
 tooltip label {
     color: @ghost_text_tooltip;
     font-size: 14px;
+}
+
+  /* --- CPU Module Styling --- */
+#cpu.low { /* 0-4% */
+    color: @ghost_text_primary; 
+}
+#cpu.medium { /* 5-49% */
+    color: @tertiary_fixed;
+}
+#cpu.high { /* 50-79% */
+    color: @source_color;
+}
+#cpu.critical { /* 80%-100% */
+    color: @error;
+    font-weight: bold; 
 }
