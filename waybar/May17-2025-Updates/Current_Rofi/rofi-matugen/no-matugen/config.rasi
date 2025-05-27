@@ -3,7 +3,6 @@
  */
 
 * {
-    // Base Colors (closer to your "good job" image)
     background-main:         #2E2A38; // Main window background
     background-input:        #3C384A; // Input bar background
     foreground-main:         #D8D8E2; // Main text color
@@ -24,14 +23,6 @@
     margin:                  0;
     padding:                 0;
     spacing:                 0;
-}
-
-configuration {
-    modi:                        "drun";
-    hover-select:                false;
-    scroll-method:               1;
-    me-select-entry:             "";
-    me-accept-entry:             "MousePrimary";
 }
 
 window {
@@ -56,7 +47,7 @@ inputbar {
     text-color:              @foreground-main;
     padding:                 8px 10px; // Adjusted padding
     border-radius:           4px;
-    children:                [ textbox-prompt-colon, entry, case-indicator ]; // Prompt text removed, icon only
+    children:                [ textbox-prompt-colon, entry, case-indicator ];
     spacing:                 8px; // Space between icon and entry field
 }
 
@@ -71,7 +62,7 @@ textbox-prompt-colon { // This is the search icon
     expand:                  false;
     str:                     ""; // Search icon
     text-color:              inherit;
-    background-color:        transparent; // Explicitly transparent
+    background-color:        transparent;
     vertical-align:          0.5;
     padding:                 0; // No extra padding around icon itself
 }
@@ -87,7 +78,7 @@ entry { // The actual text input field
 
 case-indicator {
     text-color:              inherit;
-    background-color:        transparent; // Explicitly transparent
+    background-color:        transparent;
     vertical-align:          0.5;
     padding:                 0;
 }
@@ -103,7 +94,7 @@ listview {
 }
 
 element {
-    padding:                 8px 10px; // Consistent padding with inputbar
+    padding:                 8px 10px;
     border-radius:           4px;
     background-color:        transparent;
 }
@@ -150,5 +141,9 @@ configuration {
     dynamic:                 false;
     fixed-num-lines:         true;
     display-drun:            ""; // Handled by inputbar theme
-    drun-prompt:             ""; // Handled by inputbar theme
+    drun-prompt:             ""; // Handled by inputbar theme                       
+    hover-select:                false;
+    scroll-method:               1;
+    me-select-entry:             "";
+    me-accept-entry:             "MousePrimary";
 }
