@@ -1,5 +1,5 @@
 /**
- * ROFI Dark Theme
+ * ROFI Dark Theme j5onrf 05-26-2025
  */
 
 * {
@@ -23,6 +23,21 @@
     margin:                  0;
     padding:                 0;
     spacing:                 0;
+}
+
+// Rofi Configuration Options
+configuration {
+    modi:                    "drun,run,window";
+    show-icons:              true;
+    icon-theme:              "Papirus-Dark";
+    dynamic:                 false;
+    fixed-num-lines:         true;
+    display-drun:            ""; // Handled by inputbar theme
+    drun-prompt:             ""; // Handled by inputbar theme                       
+    hover-select:            false;
+    scroll-method:           1;
+    me-select-entry:         "";
+    me-accept-entry:         "MousePrimary";
 }
 
 window {
@@ -51,14 +66,7 @@ inputbar {
     spacing:                 8px; // Space between icon and entry field
 }
 
-/* prompt { // Full text prompt disabled for cleaner look, using textbox-prompt-colon for icon
-    enabled:                 true;
-    text-color:              inherit;
-    background-color:        transparent;
-    padding:                 0;
-} */
-
-textbox-prompt-colon { // This is the search icon
+textbox-prompt-colon {
     expand:                  false;
     str:                     ""; // Search icon
     text-color:              inherit;
@@ -69,11 +77,11 @@ textbox-prompt-colon { // This is the search icon
 
 entry { // The actual text input field
     text-color:              inherit;
-    background-color:        transparent; // Explicitly transparent
+    background-color:        transparent;
     placeholder:             "Type to filter";
     placeholder-color:       @placeholder-text;
     vertical-align:          0.5;
-    padding:                 0; // No extra padding around text entry itself
+    padding:                 0; 
 }
 
 case-indicator {
@@ -131,19 +139,4 @@ element urgent {
 element selected.urgent {
     background-color:        @selected-background;
     text-color:              @accent-red;
-}
-
-// Rofi Configuration Options
-configuration {
-    modi:                    "drun,run,window";
-    show-icons:              true;
-    icon-theme:              "Papirus-Dark";
-    dynamic:                 false;
-    fixed-num-lines:         true;
-    display-drun:            ""; // Handled by inputbar theme
-    drun-prompt:             ""; // Handled by inputbar theme                       
-    hover-select:                false;
-    scroll-method:               1;
-    me-select-entry:             "";
-    me-accept-entry:             "MousePrimary";
 }
