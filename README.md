@@ -1,9 +1,9 @@
 # Hyprdots
 
-<details open><summary>(2025-May21-24) Matugen Inspired Waybar Theme </summary>
+<details open><summary>(2025-May21-24) Matugen Inspired Waybar Theme </summary> 
 <p>
  
-[Ghost-Matugen](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) &nbsp; [v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2) &nbsp; [v2.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2.5) &nbsp; [v3](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3) &nbsp; [v3.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3.5) &nbsp; [Cava-Wallust](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Cava-Matugen) 
+[Ghost-Matugen](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) <img src="https://github.com/user-attachments/assets/77e4ff29-45f2-4a00-af97-569f09c577eb" width="125" alt="w2"> &nbsp; [v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2) &nbsp; [v2.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2.5) &nbsp; [v3](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3) &nbsp; [v3.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3.5) &nbsp; [Cava-Wallust](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Cava-Matugen) 
 ![FullScreen-2025-05-21_14-32-31](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/FullScreen-2025-05-25_10-37-22.png)
 
 </details>
@@ -194,7 +194,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 # WayBar
 
 (2025-May23) [Ghost-Matugen<sup>beta</sup> Azonix Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
-![Region-2025-05-24_19-48-26](https://github.com/user-attachments/assets/ea7651fa-4014-41c8-9b5f-cff26bd6f868)
+![Region-2025-05-24_19-48-26](https://github.com/user-attachments/assets/ea7651fa-4014-41c8-9b5f-cff26bd6f868) 
 
 (2025-Jan12) [Adwaita-CT-Iosevka-Pro-Thin](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin)
 ![Screenshot-2025-01-12_06:48:42](https://github.com/user-attachments/assets/d0104364-df84-4b22-b3a2-1e752c232ae0)
