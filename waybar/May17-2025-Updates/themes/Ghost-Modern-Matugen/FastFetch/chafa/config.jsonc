@@ -17,16 +17,18 @@
                 {
             "type": "title",
             "key": "󰣇 ",
-			"format": "{6}{7}{8}"
+			"format": "Arch"
         },
         {
             "type": "kernel",
             "key": " ",
+            "format": "{2}",
             "keyColor": "yellow"
         },
         {
             "type": "wm",
             "key": " ",
+            "format": "{2} {5}",          
             "keyColor": "blue"
         },
         {
@@ -39,23 +41,23 @@
             "key": " ",
             "keyColor": "blue"
         },
-        /*
         {
             "type": "packages",
             "key": "󰏖 ",
+            "format": "{1} packages",
             "keyColor": "yellow"
         },
-        */
-        {
+                {
             "type": "memory",
             "key": "󰍛 ",
             "keyColor": "magenta",
             // format: used / total
-            "format": "{1} / {2}"
+            "format": "{1}"
         },
         {
             "type": "uptime",
             "key": "󰔛 ",
+            "format": "{1} day {2} hours",
             "keyColor": "green"
         },
                 {
