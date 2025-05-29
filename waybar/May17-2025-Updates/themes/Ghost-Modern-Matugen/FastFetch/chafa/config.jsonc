@@ -14,6 +14,11 @@
     },
     "modules": [
         "break",
+                {
+            "type": "title",
+            "key": "󰣇 ",
+			"format": "{6}{7}{8}"
+        },
         {
             "type": "kernel",
             "key": " ",
@@ -21,17 +26,17 @@
         },
         {
             "type": "wm",
-            "key": " ",
+            "key": " ",
             "keyColor": "blue"
         },
         {
             "type": "shell",
-            "key": " ",
+            "key": " ",
             "keyColor": "yellow"
         },
         {
             "type": "terminal",
-            "key": " ",
+            "key": " ",
             "keyColor": "blue"
         },
         /*
@@ -55,7 +60,8 @@
         },
                 {
             "type": "custom",
-            "format": "   \u001b[31m⬤ \u001b[32m⬤ \u001b[33m⬤ \u001b[34m⬤ \u001b[35m⬤ \u001b[36m⬤ \u001b[0m"
+            "key": "󰌁 ",
+            "format": "\u001b[31m⬤ \u001b[32m⬤ \u001b[33m⬤ \u001b[34m⬤ \u001b[35m⬤ \u001b[36m⬤ \u001b[0m"
         },
 		"break",
     ]
