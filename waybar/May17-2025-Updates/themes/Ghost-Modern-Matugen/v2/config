@@ -57,7 +57,7 @@
   
   // Hyprland Window
   "hyprland/window": {
-    "format": "{title:.10}",
+    "format": "{title:.12}",
     "rewrite": {
       "^(\\s*)$": "Hyprland",
       "(.*) - Brave": "$1",
