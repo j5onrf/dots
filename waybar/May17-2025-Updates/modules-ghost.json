@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf (2025)
-// Ghost (05-25-2025) beta
+// Ghost (05-31-2025) beta
 
 {
   // Workspaces
@@ -30,11 +30,12 @@
       "title<.*dot.*>": "<span line-height='0.7'> </span>",
       "title<.*chatgpt.*>": "<span line-height='1'>\ue1ec</span>",
       "title<.*grok.*>": "<span line-height='1'>\ue1ec</span>",
-      "title<.*ai.*>": "<span line-height='1'>\ue1ec</span>",
+      "title<.*AI Studio.*>": "<span line-height='1'>\ue1ec</span>",
       "title<.*amazon.*>": "",
       "title<.*gmail.*>": "󰊫 ",
       "title<.*nvim ~.*>": " ",
-      "title<.*Cava.*>": "<span line-height='1'>\uf8f1</span>",
+      "class<CavaVisualizer>": "<span line-height='1'>\uf8f1</span>",
+      "class<KewMusicPlayer>": "<span line-height='1'>\uf8c9</span>",
       "class<gimp>": "<span line-height='1'>\uf1fc</span>",
       "class<org.gnome.Weather>": "\uf76b",
       "class<wttr-floating>": "\uf76b",
