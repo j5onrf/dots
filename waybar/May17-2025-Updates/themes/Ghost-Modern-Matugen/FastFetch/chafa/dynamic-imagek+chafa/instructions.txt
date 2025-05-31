@@ -1,296 +1,244 @@
-## Dynamic Themed Fastfetch Logo with Chafa
+## Dynamic Themed Fastfetch Logo with Chafa - instructions.txt
 
-This setup allows your Fastfetch logo to be randomly selected from a collection of base images, dynamically re-colored to match your current Matugen/Wallust theme, and then displayed as selectable character art using Chafa.
+This setup allows your Fastfetch logo to be randomly selected from a collection of base images, dynamically re-colored to match your current Matugen theme, and then displayed as selectable character art using Chafa.
 
 **Prerequisites:**
 
 1.  **Fastfetch:** Installed.
 2.  **Chafa:** Installed.
-3.  **ImageMagick:** Installed (`imagemagick` package).
-4.  **Matugen:** Installed and configured to generate a Waybar CSS color file (e.g., `~/.config/waybar/colors.css`). This is assumed to be triggered by your wallpaper changing script.
-5.  **A Wallpaper Changing Script:** A script that sets your wallpaper and then triggers Matugen (and optionally Wallust for other apps like Kitty). We'll refer to this as your main `wallpaper.sh`.
-6.  **Base Logo Images:** A collection of PNG images with transparent backgrounds that you want to use as potential Fastfetch logos.
-7.  **jq (Optional but recommended for some Matugen setups):** If Matugen outputs JSON and you need to parse it (though our script uses CSS). `sudo pacman -S jq`
+3.  **ImageMagick:** Installed (e.g., 'imagemagick' package).
+4.  **Matugen:** Installed and configured to generate a Waybar CSS color file (typically at `~/.config/waybar/colors.css`). This process should be triggered by your main wallpaper changing script.
+5.  **A Main Wallpaper Changing Script:** (e.g., ML4W's `wallpaper.sh`) that sets your wallpaper and then triggers Matugen.
+6.  **Base Logo Images:** A collection of PNG images with transparent backgrounds.
+7.  **jq (Usually not needed for this CSS method):** A command-line JSON processor. (Might be useful if you ever switch to parsing Matugen's JSON output directly).
 
 **Setup Steps:**
 
 **1. Prepare Your Base Logo Images:**
-   *   Create a directory to store your original, un-themed logo images. For example:
-        ```bash
-        mkdir -p ~/.config/fastfetch/logos/originals
-        ```
-   *   Place all your desired base logo PNGs (with transparent backgrounds) into this `~/.config/fastfetch/logos/originals/` directory (e.g., `wolf.png`, `arch_A.png`, `tux.png`).
+    *   Create a directory to store your original, un-themed logo images.
+      Example: `mkdir -p ~/.config/fastfetch/logos/originals`
+    *   Place all your base logo PNGs (with transparent backgrounds) into this directory (e.g., `wolf.png`, `arch_A.png`).
 
 **2. Create the Logo Theming Script (`theme_fastfetch_logo.sh`):**
-   *   Create a new file, for example, at `~/.config/hypr/scripts/theme_fastfetch_logo.sh`.
-   *   Paste the following Bash script into it:
+    *   Create a new file, for example, at: `~/.config/hypr/scripts/theme_fastfetch_logo.sh`
+    *   Paste the following Bash script content into this file:
 
-     ```bash
-     #!/bin/bash
+      ```bash
+      #!/bin/bash
 
-     # This script themes a random Fastfetch logo using colors from Matugen's Waybar CSS.
-     # It should be run AFTER Matugen has updated the colors.css file.
+      # This script themes a random Fastfetch logo using colors from Matugen's Waybar CSS.
+      # It should be run AFTER Matugen has updated the colors.css file.
 
-     # --- Configuration ---
-     BASE_LOGO_DIR="$HOME/.config/fastfetch/logos/originals"
-     MATUGEN_WAYBAR_CSS_FILE="$HOME/.config/waybar/colors.css"
-     THEMED_LOGO_OUTPUT_PATH="$HOME/.config/fastfetch/logos/current_random_themed_logo.png" # Fixed output for Fastfetch
+      # --- Configuration ---
+      BASE_LOGO_DIR="$HOME/.config/fastfetch/logos/originals"
+      MATUGEN_WAYBAR_CSS_FILE="$HOME/.config/waybar/colors.css"
+      THEMED_LOGO_OUTPUT_PATH="$HOME/.config/fastfetch/logos/current_random_themed_logo.png" # Fixed output for Fastfetch
 
-     # --- Matugen Color Names to Use (from colors.css) ---
-     # CHOOSE TWO COLORS FROM YOUR MATUGEN-GENERATED ~/.config/waybar/colors.css
-     # The first color will tint the darker parts of your logo.
-     # The second color will tint the lighter parts of your logo.
-     # Examples (you MUST check your own colors.css for available names):
-     MATUGEN_COLOR_NAME_FOR_DARK_PARTS="surface_container_highest" 
-     MATUGEN_COLOR_NAME_FOR_LIGHT_PARTS="primary"              
+      # --- Matugen Color Names to Use (from colors.css) ---
+      # CHOOSE TWO COLORS FROM YOUR MATUGEN-GENERATED ~/.config/waybar/colors.css
+      # The first color will tint the darker parts of your logo.
+      # The second color will tint the lighter parts of your logo.
+      # Examples (you MUST check your own colors.css for available names):
+      MATUGEN_COLOR_NAME_FOR_DARK_PARTS="surface_container_highest" 
+      MATUGEN_COLOR_NAME_FOR_LIGHT_PARTS="primary"              
 
-     # --- Helper function to extract color ---
-     get_matugen_css_color() {
-         local color_name_css="$1"
-         local css_file="$2"
-         local default_color="$3" 
+      # --- Helper function to extract color ---
+      get_matugen_css_color() {
+          local color_name_css="$1"
+          local css_file="$2"
+          local default_color="$3" 
 
-         if [ ! -f "$css_file" ]; then
-             echo "$default_color"
-             echo "Warning: Matugen CSS file not found: $css_file. Using default for $color_name_css." >&2
-             return 1
-         fi
+          if [ ! -f "$css_file" ]; then
+              echo "$default_color"
+              echo "Warning: Matugen CSS file not found: $css_file. Using default for $color_name_css." >&2
+              return 1
+          fi
 
-         local color_value
-         color_value=$(grep -E "^\s*@define-color\s+${color_name_css}\s+" "$css_file" | awk '{print $3}' | sed 's/;//')
+          local color_value
+          color_value=$(grep -E "^\s*@define-color\s+${color_name_css}\s+" "$css_file" | awk '{print $3}' | sed 's/;//')
 
-         if [[ -n "$color_value" ]] && [[ "$color_value" =~ ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$ ]]; then
-             echo "$color_value"
-             return 0
-         else
-             echo "$default_color"
-             echo "Warning: Color '$color_name_css' not found or invalid in $css_file. Found: '$color_value'. Using default." >&2
-             return 1
-         fi
-     }
+          if [[ -n "$color_value" ]] && [[ "$color_value" =~ ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$ ]]; then
+              echo "$color_value"
+              return 0
+          else
+              echo "$default_color"
+              echo "Warning: Color '$color_name_css' not found or invalid in $css_file. Found: '$color_value'. Using default." >&2
+              return 1
+          fi
+      }
 
-     # --- Main Logic ---
-     echo "--- Running theme_fastfetch_logo.sh ---" >&2 
+      # --- Main Logic ---
+      # Use >&2 for debug/info messages to keep stdout clean if this script's output is ever captured.
+      echo "--- Running theme_fastfetch_logo.sh ---" >&2 
 
-     if [ ! -f "$MATUGEN_WAYBAR_CSS_FILE" ]; then
-         echo "Error: Matugen CSS file '$MATUGEN_WAYBAR_CSS_FILE' not found. Cannot theme logo." >&2
-         exit 1
-     fi
-     echo "DEBUG: Matugen CSS file timestamp:" >&2
-     ls -l "$MATUGEN_WAYBAR_CSS_FILE" >&2
+      if [ ! -f "$MATUGEN_WAYBAR_CSS_FILE" ]; then
+          echo "Error: Matugen CSS file '$MATUGEN_WAYBAR_CSS_FILE' not found. Cannot theme logo." >&2
+          exit 1
+      fi
+      echo "DEBUG: Matugen CSS file timestamp:" >&2
+      ls -l "$MATUGEN_WAYBAR_CSS_FILE" >&2
 
-     TARGET_FOR_BLACK_REGIONS=$(get_matugen_css_color "$MATUGEN_COLOR_NAME_FOR_DARK_PARTS" "$MATUGEN_WAYBAR_CSS_FILE" "#000000")
-     dark_color_success=$?
-     TARGET_FOR_WHITE_REGIONS=$(get_matugen_css_color "$MATUGEN_COLOR_NAME_FOR_LIGHT_PARTS" "$MATUGEN_WAYBAR_CSS_FILE" "#FFFFFF")
-     light_color_success=$?
+      TARGET_FOR_BLACK_REGIONS=$(get_matugen_css_color "$MATUGEN_COLOR_NAME_FOR_DARK_PARTS" "$MATUGEN_WAYBAR_CSS_FILE" "#000000")
+      dark_color_success=$?
+      TARGET_FOR_WHITE_REGIONS=$(get_matugen_css_color "$MATUGEN_COLOR_NAME_FOR_LIGHT_PARTS" "$MATUGEN_WAYBAR_CSS_FILE" "#FFFFFF")
+      light_color_success=$?
 
-     if [ $dark_color_success -ne 0 ] || [ $light_color_success -ne 0 ]; then
-         echo "Error: Failed to extract one or both theme colors. Using a random original logo for safety." >&2
-         find "$BASE_LOGO_DIR" -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" \) -print -quit | head -n 1 | xargs -I {} cp {} "$THEMED_LOGO_OUTPUT_PATH"
-         exit 1
-     fi
-     echo "DEBUG: Using Matugen colors -> Dark parts: $TARGET_FOR_BLACK_REGIONS, Light parts: $TARGET_FOR_WHITE_REGIONS" >&2
+      if [ $dark_color_success -ne 0 ] || [ $light_color_success -ne 0 ]; then
+          echo "Error: Failed to extract one or both theme colors. Using a random original logo for safety." >&2
+          # As a fallback, copy any existing logo or a default to the target location
+          find "$BASE_LOGO_DIR" -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" \) -print -quit | head -n 1 | xargs -I {} cp {} "$THEMED_LOGO_OUTPUT_PATH" 2>/dev/null
+          exit 1
+      fi
+      echo "DEBUG: Using Matugen colors -> Dark parts: $TARGET_FOR_BLACK_REGIONS, Light parts: $TARGET_FOR_WHITE_REGIONS" >&2
 
-     if [ ! -d "$BASE_LOGO_DIR" ]; then
-         echo "Error: Base logo directory not found: $BASE_LOGO_DIR" >&2
-         exit 1 
-     fi
-     mapfile -t available_logos < <(find "$BASE_LOGO_DIR" -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \))
-     if [ ${#available_logos[@]} -eq 0 ]; then
-         echo "Error: No logos found in $BASE_LOGO_DIR" >&2
-         exit 1 
-     fi
-     random_index=$((RANDOM % ${#available_logos[@]}))
-     SELECTED_BASE_LOGO_PATH="${available_logos[$random_index]}"
-     echo "DEBUG: Selected base logo for theming: $SELECTED_BASE_LOGO_PATH" >&2
+      if [ ! -d "$BASE_LOGO_DIR" ]; then
+          echo "Error: Base logo directory not found: $BASE_LOGO_DIR" >&2
+          exit 1 
+      fi
+      mapfile -t available_logos < <(find "$BASE_LOGO_DIR" -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \))
+      if [ ${#available_logos[@]} -eq 0 ]; then
+          echo "Error: No logos found in $BASE_LOGO_DIR" >&2
+          exit 1 
+      fi
+      random_index=$((RANDOM % ${#available_logos[@]}))
+      SELECTED_BASE_LOGO_PATH="${available_logos[$random_index]}"
+      echo "DEBUG: Selected base logo for theming: $SELECTED_BASE_LOGO_PATH" >&2
 
-     ALPHA_CHANNEL_LOGO="/tmp/fastfetch_logo_alpha_$$.png" 
-     COLORIZED_OPAQUE_LOGO="/tmp/fastfetch_logo_colorized_opaque_$$.png"
+      ALPHA_CHANNEL_LOGO="/tmp/fastfetch_logo_alpha_$$.png" 
+      COLORIZED_OPAQUE_LOGO="/tmp/fastfetch_logo_colorized_opaque_$$.png"
 
-     if ! magick "$SELECTED_BASE_LOGO_PATH" -alpha extract "$ALPHA_CHANNEL_LOGO"; then
-         echo "Error: Failed to extract alpha channel from $SELECTED_BASE_LOGO_PATH." >&2
-         cp "$SELECTED_BASE_LOGO_PATH" "$THEMED_LOGO_OUTPUT_PATH" 
-         rm -f "$ALPHA_CHANNEL_LOGO" "$COLORIZED_OPAQUE_LOGO" 
-         exit 1
-     fi
+      if ! magick "$SELECTED_BASE_LOGO_PATH" -alpha extract "$ALPHA_CHANNEL_LOGO"; then
+          echo "Error: Failed to extract alpha channel from $SELECTED_BASE_LOGO_PATH." >&2
+          cp "$SELECTED_BASE_LOGO_PATH" "$THEMED_LOGO_OUTPUT_PATH" 2>/dev/null
+          rm -f "$ALPHA_CHANNEL_LOGO" "$COLORIZED_OPAQUE_LOGO" 
+          exit 1
+      fi
 
-     if ! magick "$SELECTED_BASE_LOGO_PATH" \
-         -colorspace Gray \
-         +level-colors "${TARGET_FOR_BLACK_REGIONS}","${TARGET_FOR_WHITE_REGIONS}" \
-         "$COLORIZED_OPAQUE_LOGO"; then
-         echo "Error: Failed to colorize logo $SELECTED_BASE_LOGO_PATH." >&2
-         cp "$SELECTED_BASE_LOGO_PATH" "$THEMED_LOGO_OUTPUT_PATH"
-         rm -f "$ALPHA_CHANNEL_LOGO" "$COLORIZED_OPAQUE_LOGO"
-         exit 1
-     fi
+      if ! magick "$SELECTED_BASE_LOGO_PATH" \
+          -colorspace Gray \
+          +level-colors "${TARGET_FOR_BLACK_REGIONS}","${TARGET_FOR_WHITE_REGIONS}" \
+          "$COLORIZED_OPAQUE_LOGO"; then
+          echo "Error: Failed to colorize logo $SELECTED_BASE_LOGO_PATH." >&2
+          cp "$SELECTED_BASE_LOGO_PATH" "$THEMED_LOGO_OUTPUT_PATH" 2>/dev/null
+          rm -f "$ALPHA_CHANNEL_LOGO" "$COLORIZED_OPAQUE_LOGO"
+          exit 1
+      fi
 
-     if magick "$COLORIZED_OPAQUE_LOGO" "$ALPHA_CHANNEL_LOGO" \
-         -alpha off \
-         -compose CopyOpacity -composite \
-         "$THEMED_LOGO_OUTPUT_PATH"; then
-         echo "Themed logo saved: $THEMED_LOGO_OUTPUT_PATH" >&2
-         ls -l "$THEMED_LOGO_OUTPUT_PATH" >&2 
-     else
-         echo "Error: Failed to re-apply alpha channel to themed logo." >&2
-         cp "$SELECTED_BASE_LOGO_PATH" "$THEMED_LOGO_OUTPUT_PATH"
-     fi
+      if magick "$COLORIZED_OPAQUE_LOGO" "$ALPHA_CHANNEL_LOGO" \
+          -alpha off \
+          -compose CopyOpacity -composite \
+          "$THEMED_LOGO_OUTPUT_PATH"; then
+          echo "Themed logo saved: $THEMED_LOGO_OUTPUT_PATH" >&2
+          ls -l "$THEMED_LOGO_OUTPUT_PATH" >&2 
+      else
+          echo "Error: Failed to re-apply alpha channel to themed logo." >&2
+          cp "$SELECTED_BASE_LOGO_PATH" "$THEMED_LOGO_OUTPUT_PATH" 2>/dev/null
+      fi
 
-     rm -f "$ALPHA_CHANNEL_LOGO" "$COLORIZED_OPAQUE_LOGO"
-     echo "--- theme_fastfetch_logo.sh finished ---" >&2
-     ```
-   *   **Make it executable:** `chmod +x ~/.config/hypr/scripts/theme_fastfetch_logo.sh`
-   *   **Configure Colors:** Open the script and **edit these lines** with color names from your `~/.config/waybar/colors.css` that you like for the dark and light parts of your logos:
+      rm -f "$ALPHA_CHANNEL_LOGO" "$COLORIZED_OPAQUE_LOGO"
+      echo "--- theme_fastfetch_logo.sh finished ---" >&2
+      ```
+    *   **Make it executable:** `chmod +x ~/.config/hypr/scripts/theme_fastfetch_logo.sh`
+    *   **IMPORTANT: Configure Colors within the script:** Open `theme_fastfetch_logo.sh` and edit these lines with valid color *names* (not the hex codes themselves) from your Matugen-generated `~/.config/waybar/colors.css` file:
         ```bash
         MATUGEN_COLOR_NAME_FOR_DARK_PARTS="surface_container_highest" 
         MATUGEN_COLOR_NAME_FOR_LIGHT_PARTS="primary"  
         ```
+      Experiment to find colors that look good for your logos.
 
-3. How to Run the Logo Theming Script (theme_fastfetch_logo.sh):
+**3. How to Run the Logo Theming Script (`theme_fastfetch_logo.sh`):**
 
-This theme_fastfetch_logo.sh script needs to be run AFTER your main wallpaper changing script (e.g., ML4W's wallpaper.sh) has successfully:
-a. Set a new wallpaper.
-b. Triggered Matugen to generate new theme colors.
-c. Matugen has updated its color definition file (e.g., ~/.config/waybar/colors.css).
+This script needs to be run **AFTER** your main wallpaper changing script (e.g., ML4W's `wallpaper.sh`) has successfully:
+    a. Set a new wallpaper.
+    b. Triggered Matugen to generate new theme colors.
+    c. Matugen has updated its color definition file (e.g., `~/.config/waybar/colors.css`).
 
-You have several options for how to trigger theme_fastfetch_logo.sh:
+Choose ONE of the following methods to trigger `theme_fastfetch_logo.sh`:
 
-A) Manually After Wallpaper Change:
+*   **A) Manually After Wallpaper Change (for testing):**
+    *   After you change your wallpaper and see other elements (like Waybar) update, manually run:
+        `bash ~/.config/hypr/scripts/theme_fastfetch_logo.sh`
+    *   The next new terminal should show the themed Fastfetch logo.
 
-After you change your wallpaper and see your other desktop elements (like Waybar) update with the new theme, manually run the script:
+*   **B) Chaining it After Your Wallpaper Change Command (if you call it manually):**
+    *   If you manually trigger wallpaper changes like `wallpaper_script.sh ~/Pictures/new_bg.jpg`, you can do:
+        `wallpaper_script.sh ~/Pictures/new_bg.jpg && bash ~/.config/hypr/scripts/theme_fastfetch_logo.sh`
 
-bash ~/.config/hypr/scripts/theme_fastfetch_logo.sh
-```    *   The next new terminal you open should show the themed Fastfetch logo. This is good for testing.
+*   **C) Using a Systemd Path Unit (Recommended for Full Automation):**
+    *   This automatically runs `theme_fastfetch_logo.sh` whenever Matugen's color file (`~/.config/waybar/colors.css`) is modified.
+    *   **Create Path Unit:** `~/.config/systemd/user/theme_fastfetch_logo.path`
+        ```ini
+        [Unit]
+        Description=Watch Matugen Waybar CSS for Fastfetch logo update
 
+        [Path]
+        PathModified=%h/.config/waybar/colors.css
 
-B) Chaining it After Your Wallpaper Change Command (If You Call it Manually):
+        [Install]
+        WantedBy=default.target
+        ```
+    *   **Create Service Unit:** `~/.config/systemd/user/theme_fastfetch_logo.service`
+        ```ini
+        [Unit]
+        Description=Update Fastfetch logo theme based on Matugen colors
 
-If you manually trigger your wallpaper changes with a command like wallpaper.sh ~/Pictures/new_bg.jpg, you can simply run the logo theming script right after:
-
-~/.config/hypr/scripts/wallpaper.sh ~/Pictures/new_bg.jpg && ~/.config/hypr/scripts/theme_fastfetch_logo.sh
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
-
-The && ensures theme_fastfetch_logo.sh only runs if wallpaper.sh completes successfully.
-
-C) Using a Systemd Path Unit (Recommended for Full Automation):
-
-This method automatically runs theme_fastfetch_logo.sh whenever Matugen's color file (~/.config/waybar/colors.css) is modified. This is robust and decoupled from wallpaper.sh.
-
-Create the Path Unit file: ~/.config/systemd/user/theme_fastfetch_logo.path
-
-[Unit]
-Description=Watch Matugen Waybar CSS for Fastfetch logo update
-Documentation=https://github.com/YOUR_USERNAME/YOUR_DOTFILES_REPO # Optional: Link to your repo
-
-[Path]
-PathModified=%h/.config/waybar/colors.css # Watch this file for changes
-
-[Install]
-WantedBy=default.target 
-```    *   **Create the Service Unit file:** `~/.config/systemd/user/theme_fastfetch_logo.service`
-```ini
-[Unit]
-Description=Update Fastfetch logo theme based on Matugen colors
-Documentation=https://github.com/YOUR_USERNAME/YOUR_DOTFILES_REPO # Optional
-
-[Service]
-Type=oneshot
-ExecStart=%h/.config/hypr/scripts/theme_fastfetch_logo.sh # Ensure this is the correct full path
-# Optional: Log output for debugging the service
-# StandardOutput=append:/tmp/theme_logo_service.log
-# StandardError=append:/tmp/theme_logo_service.log
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Ini
-IGNORE_WHEN_COPYING_END
-
-Make sure ExecStart= points to the correct, absolute path of your theme_fastfetch_logo.sh script if %h (home directory shortcut) doesn't expand as expected in your systemd version, or use the full path directly.
-
-Enable and Start the Path Unit:
-
-systemctl --user daemon-reload
-systemctl --user enable --now theme_fastfetch_logo.path
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
-
-To check its status: systemctl --user status theme_fastfetch_logo.path and systemctl --user status theme_fastfetch_logo.service.
-
-To see logs (if you configured them in the .service file or if it fails): journalctl --user -u theme_fastfetch_logo.service
-
-D) Adding a Minimal Call at the Very End of Your Original wallpaper.sh (If you decide this is acceptable later):
-
-This was the method we discussed if you did want to modify wallpaper.sh slightly. If you are strictly against modifying wallpaper.sh, then options A, B, or C are better.
-
-If you choose this, the call would be (as previously discussed, run in the background):
-
-# At the very end of your original wallpaper.sh
-THEME_LOGO_SCRIPT_PATH="$HOME/.config/hypr/scripts/theme_fastfetch_logo.sh"
-if [ -f "$THEME_LOGO_SCRIPT_PATH" ]; then
-    (bash "$THEME_LOGO_SCRIPT_PATH" >> /tmp/theme_logo_debug.log 2>&1) & 
-fi
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
-
-Choose ONE of these methods (A, B, or C primarily, or D if you reconsider) to trigger theme_fastfetch_logo.sh. Option C (Systemd Path Unit) is generally the most robust for automatic updates based on file changes.
+        [Service]
+        Type=oneshot
+        ExecStart=/home/YOUR_USERNAME/.config/hypr/scripts/theme_fastfetch_logo.sh 
+        # IMPORTANT: Replace YOUR_USERNAME with your actual username, or use %h if supported for ExecStart.
+        # Using the full path is safest for ExecStart.
+        ```
+    *   **Enable and Start:**
+        ```bash
+        systemctl --user daemon-reload
+        systemctl --user enable --now theme_fastfetch_logo.path
+        ```
+    *   **Check status:** `systemctl --user status theme_fastfetch_logo.path`
+    *   **Check logs:** `journalctl --user -u theme_fastfetch_logo.service`
 
 **4. Configure Fastfetch:**
-   *   Edit your Fastfetch configuration file (usually `~/.config/fastfetch/config.jsonc` or by running `fastfetch --gen-config-force` to create/overwrite one based on defaults and then edit).
-   *   Set the logo section to use Chafa and point to the output file of your theming script:
+    *   Edit your Fastfetch configuration file (usually `~/.config/fastfetch/config.jsonc`).
+    *   Set the logo section to use Chafa and point to the output file of your theming script:
 
-     ```json
-     {
-         // ... other modules ...
-         "logo": {
-             "source": "~/.config/fastfetch/logos/current_random_themed_logo.png",
-             "type": "chafa",
-             "width": 30, // Adjust to your preferred character width
-             "preserveAspectRatio": true,
-             "padding": { // Optional
-                 "top": 1,
-                 "left": 2
-             }
-         }
-         // ... other modules ...
-     }
-     ```
+      ```json
+      {
+          // ... other modules ...
+          "logo": {
+              "source": "~/.config/fastfetch/logos/current_random_themed_logo.png",
+              "type": "chafa",
+              "width": 30, // Adjust to your preferred character width
+              "preserveAspectRatio": true // Optional, usually good
+              // Add padding if desired
+              // "padding": { 
+              //     "top": 1,
+              //     "left": 2
+              // }
+          }
+          // ... other modules ...
+      }
+      ```
 
 **5. Configure Shell for Fastfetch Logo Recaching:**
-   *   To ensure Fastfetch picks up the newly themed logo when you open a new terminal, add the `--logo-recache` flag to the `fastfetch` command in your shell's startup file (e.g., `~/.zshrc`, `~/.bashrc`, or a sourced script like ML4W's `30-autostart`).
-   *   Example for a file like `30-autostart` if it's sourced by `.zshrc`:
-     ```bash
-     # In your Zsh startup script (e.g., part of 30-autostart)
-     if [[ $(tty) == *"pts"* ]]; then
-         fastfetch --logo-recache
-     fi
-     ```
+    *   To ensure Fastfetch picks up the newly themed logo when you open a new terminal, add the `--logo-recache` flag to the `fastfetch` command in your shell's startup file (e.g., `~/.zshrc`, `~/.bashrc`, or a sourced script like ML4W's `30-autostart`).
+    *   Example for a file like `30-autostart` if it's sourced by `.zshrc`:
+      ```bash
+      # In your Zsh startup script (e.g., part of 30-autostart)
+      if [[ $(tty) == *"pts"* ]]; then
+          fastfetch --logo-recache
+      fi
+      ```
 
-**How It Works:**
+**How It Works Summary:**
 
-1.  When you change your wallpaper, your main `wallpaper.sh` runs.
-2.  Matugen generates new theme colors and updates `~/.config/waybar/colors.css`.
-3.  Your `wallpaper.sh` then calls `theme_fastfetch_logo.sh`.
-4.  `theme_fastfetch_logo.sh` reads the new colors from `colors.css`, picks a random logo from your `originals` directory, re-colors it using ImageMagick, and saves it as `current_random_themed_logo.png`.
-5.  The next time you open a new terminal, Fastfetch runs with `--logo-recache`, reads the updated `current_random_themed_logo.png`, processes it with Chafa, and displays your dynamically themed, random logo as character art.
+1.  Change wallpaper -> Main wallpaper script runs Matugen.
+2.  Matugen updates `~/.config/waybar/colors.css`.
+3.  (If using Systemd Path Unit) The change to `colors.css` triggers `theme_fastfetch_logo.sh`.
+4.  `theme_fastfetch_logo.sh` reads new colors, picks a random original logo, re-colors it with ImageMagick, and saves it as `current_random_themed_logo.png`.
+5.  New terminal -> Fastfetch runs with `--logo-recache`, reads the updated themed logo, Chafa processes it, and displays it.
 
 **Troubleshooting:**
 
-*   Check `/tmp/theme_logo_debug.log` for any errors or debug messages from the logo theming script.
-*   Ensure paths in all scripts are correct.
-*   Verify that Matugen is indeed updating `~/.config/waybar/colors.css` with new hex codes when your wallpaper changes.
-*   Manually run `theme_fastfetch_logo.sh` to test it independently. Check the generated `current_random_themed_logo.png` with an image viewer.
-
-This provides a comprehensive setup for a highly dynamic and visually integrated Fastfetch logo!
+*   If `theme_fastfetch_logo.sh` is run via Systemd, check its logs: `journalctl --user -u theme_fastfetch_logo.service -n 50 --no-pager`
+*   Manually run `bash ~/.config/hypr/scripts/theme_fastfetch_logo.sh` after changing wallpaper to test it. Check its terminal output for "DEBUG" or "Error" messages.
+*   Verify paths and chosen color names in `theme_fastfetch_logo.sh`.
+*   Ensure `current_random_themed_logo.png` is actually being updated with new colors by viewing it with an image viewer.
