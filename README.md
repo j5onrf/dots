@@ -406,7 +406,7 @@ exec-once = ~/.config/rofi/bin/launcher
 # Anyrun
 bind = $mainMod, SPACE, exec, anyrun
 
-# Cava binding kitty font-size & #rw title
+# Cava binding kitty font-size & #rw class
 bind = $mainMod, Z, exec, kitty --class CavaVisualizer -o font_size=6 -e $HOME/.config/hypr/scripts/run_themed_cava.sh
 
 # kew music player
