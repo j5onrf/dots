@@ -145,23 +145,107 @@ This setup allows your Fastfetch logo to be randomly selected from a collection 
         MATUGEN_COLOR_NAME_FOR_LIGHT_PARTS="primary"  
         ```
 
-**3. Integrate with Your Main Wallpaper Script (e.g., `wallpaper.sh`):**
-   *   Open your main script that changes the wallpaper and runs Matugen (and/or Wallust).
-   *   Find the place in that script **after** Matugen has successfully run and updated `~/.config/waybar/colors.css` (and after Wallust if it also updates Kitty colors used by other components).
-   *   Add the following lines to call your logo theming script:
+3. How to Run the Logo Theming Script (theme_fastfetch_logo.sh):
 
-     ```bash
-     # In your main wallpaper.sh, after Matugen/Wallust calls:
+This theme_fastfetch_logo.sh script needs to be run AFTER your main wallpaper changing script (e.g., ML4W's wallpaper.sh) has successfully:
+a. Set a new wallpaper.
+b. Triggered Matugen to generate new theme colors.
+c. Matugen has updated its color definition file (e.g., ~/.config/waybar/colors.css).
 
-     THEME_LOGO_SCRIPT_PATH="$HOME/.config/hypr/scripts/theme_fastfetch_logo.sh"
-     if [ -f "$THEME_LOGO_SCRIPT_PATH" ]; then
-         echo ":: wallpaper.sh: Calling theme_fastfetch_logo.sh" # Log to stdout or stderr
-         (bash "$THEME_LOGO_SCRIPT_PATH" >> /tmp/theme_logo_debug.log 2>&1) & # Run in background, log output
-     else
-         echo ":: wallpaper.sh: Logo theming script not found at $THEME_LOGO_SCRIPT_PATH"
-     fi
-     ```
-   *   The `&` at the end runs the logo theming script in the background so it doesn't delay your main wallpaper script. Output and errors from `theme_fastfetch_logo.sh` will go to `/tmp/theme_logo_debug.log`.
+You have several options for how to trigger theme_fastfetch_logo.sh:
+
+A) Manually After Wallpaper Change:
+
+After you change your wallpaper and see your other desktop elements (like Waybar) update with the new theme, manually run the script:
+
+bash ~/.config/hypr/scripts/theme_fastfetch_logo.sh
+```    *   The next new terminal you open should show the themed Fastfetch logo. This is good for testing.
+
+
+B) Chaining it After Your Wallpaper Change Command (If You Call it Manually):
+
+If you manually trigger your wallpaper changes with a command like wallpaper.sh ~/Pictures/new_bg.jpg, you can simply run the logo theming script right after:
+
+~/.config/hypr/scripts/wallpaper.sh ~/Pictures/new_bg.jpg && ~/.config/hypr/scripts/theme_fastfetch_logo.sh
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Bash
+IGNORE_WHEN_COPYING_END
+
+The && ensures theme_fastfetch_logo.sh only runs if wallpaper.sh completes successfully.
+
+C) Using a Systemd Path Unit (Recommended for Full Automation):
+
+This method automatically runs theme_fastfetch_logo.sh whenever Matugen's color file (~/.config/waybar/colors.css) is modified. This is robust and decoupled from wallpaper.sh.
+
+Create the Path Unit file: ~/.config/systemd/user/theme_fastfetch_logo.path
+
+[Unit]
+Description=Watch Matugen Waybar CSS for Fastfetch logo update
+Documentation=https://github.com/YOUR_USERNAME/YOUR_DOTFILES_REPO # Optional: Link to your repo
+
+[Path]
+PathModified=%h/.config/waybar/colors.css # Watch this file for changes
+
+[Install]
+WantedBy=default.target 
+```    *   **Create the Service Unit file:** `~/.config/systemd/user/theme_fastfetch_logo.service`
+```ini
+[Unit]
+Description=Update Fastfetch logo theme based on Matugen colors
+Documentation=https://github.com/YOUR_USERNAME/YOUR_DOTFILES_REPO # Optional
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/hypr/scripts/theme_fastfetch_logo.sh # Ensure this is the correct full path
+# Optional: Log output for debugging the service
+# StandardOutput=append:/tmp/theme_logo_service.log
+# StandardError=append:/tmp/theme_logo_service.log
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Ini
+IGNORE_WHEN_COPYING_END
+
+Make sure ExecStart= points to the correct, absolute path of your theme_fastfetch_logo.sh script if %h (home directory shortcut) doesn't expand as expected in your systemd version, or use the full path directly.
+
+Enable and Start the Path Unit:
+
+systemctl --user daemon-reload
+systemctl --user enable --now theme_fastfetch_logo.path
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Bash
+IGNORE_WHEN_COPYING_END
+
+To check its status: systemctl --user status theme_fastfetch_logo.path and systemctl --user status theme_fastfetch_logo.service.
+
+To see logs (if you configured them in the .service file or if it fails): journalctl --user -u theme_fastfetch_logo.service
+
+D) Adding a Minimal Call at the Very End of Your Original wallpaper.sh (If you decide this is acceptable later):
+
+This was the method we discussed if you did want to modify wallpaper.sh slightly. If you are strictly against modifying wallpaper.sh, then options A, B, or C are better.
+
+If you choose this, the call would be (as previously discussed, run in the background):
+
+# At the very end of your original wallpaper.sh
+THEME_LOGO_SCRIPT_PATH="$HOME/.config/hypr/scripts/theme_fastfetch_logo.sh"
+if [ -f "$THEME_LOGO_SCRIPT_PATH" ]; then
+    (bash "$THEME_LOGO_SCRIPT_PATH" >> /tmp/theme_logo_debug.log 2>&1) & 
+fi
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Bash
+IGNORE_WHEN_COPYING_END
+
+Choose ONE of these methods (A, B, or C primarily, or D if you reconsider) to trigger theme_fastfetch_logo.sh. Option C (Systemd Path Unit) is generally the most robust for automatic updates based on file changes.
 
 **4. Configure Fastfetch:**
    *   Edit your Fastfetch configuration file (usually `~/.config/fastfetch/config.jsonc` or by running `fastfetch --gen-config-force` to create/overwrite one based on defaults and then edit).
