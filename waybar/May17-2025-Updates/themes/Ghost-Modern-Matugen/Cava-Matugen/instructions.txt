@@ -147,12 +147,8 @@ Step 4: (Optional) Integrate with Waybar and Hyprland
     *   Remember to reload Hyprland after adding rules.
 
 3.  **custom.conf Keybinding (in '$HOME/.config/hypr/conf') **
-        # Cava binding
-        # bind = $mainMod, Z, exec, kitty --title \"CavaVisualizer\" -e $HOME/.config/hypr/scripts/run_themed_cava.sh
-        # Cava binding kitty font-size
-        # bind = $mainMod, Z, exec, kitty --title \"CavaVisualizer\" -o font_size=6 -e $HOME/.config/hypr/scripts/run_themed_cava.sh
-        # Cava binding kitty font-size & #rw title
-        bind = $mainMod, Z, exec, kitty --title \"CavaVisualizer\" -o font_size=6 -e $HOME/.config/hypr/scripts/run_themed_cava.sh
+        # Cava binding kitty font-size & #rw class
+        bind = $mainMod, Z, exec, kitty --class CavaVisualizer -o font_size=6 -e $HOME/.config/hypr/scripts/run_themed_cava.sh
 
 -------------------------------------------------------------
 How it Works Dynamically:
