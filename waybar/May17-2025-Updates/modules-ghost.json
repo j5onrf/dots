@@ -153,7 +153,6 @@
     },
     "modules": [
       "custom/settings",
-      "pulseaudio",
       "custom/waybarthemes",
       "custom/wallpaper",
       "custom/hypridle",
