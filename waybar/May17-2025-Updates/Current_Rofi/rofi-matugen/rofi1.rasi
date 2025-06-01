@@ -17,7 +17,7 @@ configuration {
     fixed-num-lines:         true;
     display-drun:            ""; 
     drun-prompt:             "";
-    font:                    "Fira Sans 11"; // 
+    font:                    "Fira Sans 11";
     hover-select:            false;
     scroll-method:           1;
     me-select-entry:         "";
@@ -70,7 +70,7 @@ window {
     border-radius:           4px;                      /* You could also move this to rofi-border-radius.rasi */
 }
 
-/* ... rest of your rofi1.rasi theme ... */
+/* ... rest of your .rasi theme ... */
 
 mainbox {
     children:                [ inputbar, listview ];
