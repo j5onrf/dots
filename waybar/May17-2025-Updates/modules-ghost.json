@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf (2025)
-// Ghost (05-31-2025) beta
+// Ghost (6-01-2025) beta
 
 {
   // Workspaces
@@ -35,6 +35,7 @@
       "title<.*gmail.*>": "󰊫 ",
       "title<.*nvim ~.*>": " ",
       "class<CavaVisualizer>": "<span line-height='1'>\uf8f1</span>",
+      "class<io.bassi.Amberol>": "<span line-height='1'>\uf8c9</span>",
       "class<KewMusicPlayer>": "<span line-height='1'>\uf8c9</span>",
       "class<gimp>": "<span line-height='1'>\uf1fc</span>",
       "class<org.gnome.Weather>": "\uf76b",
