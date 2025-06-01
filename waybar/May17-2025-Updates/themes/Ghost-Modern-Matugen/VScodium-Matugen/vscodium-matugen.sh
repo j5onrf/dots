@@ -312,3 +312,14 @@ else
 fi
 
 echo "You might need to reload VSCodium (Ctrl+Shift+P -> 'Reload Window') for all changes to take full effect."
+
+# --- Add Nautilus Reloading Logic ---
+if pgrep -x "nautilus" > /dev/null; then
+    echo ":: vscodium-matugen.sh: Reloading Nautilus to apply theme changes..." >&2
+    nautilus -q
+    sleep 0.5
+    (nautilus &)
+else
+    echo ":: vscodium-matugen.sh: Nautilus not running, no need to reload." >&2
+fi
+# --- End of Nautilus Reloading Logic ---
