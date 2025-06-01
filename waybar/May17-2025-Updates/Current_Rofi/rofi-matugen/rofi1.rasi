@@ -12,7 +12,7 @@
 configuration {
     modi:                    "drun,run,window";
     show-icons:              true;
-    icon-theme:              "Papirus-Dark";
+    icon-theme:              "";
     dynamic:                 false;
     fixed-num-lines:         true;
     display-drun:            ""; 
