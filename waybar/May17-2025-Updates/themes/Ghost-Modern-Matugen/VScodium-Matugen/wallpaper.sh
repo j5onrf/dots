@@ -197,3 +197,16 @@ echo "* { current-image: url(\"$blurredwallpaper\", height); }" >"$rasifile"
 echo ":: Generate new cached wallpaper square-$wallpaperfilename"
 magick $tmpwallpaper -gravity Center -extent 1:1 $squarewallpaper
 cp $squarewallpaper $generatedversions/square-$wallpaperfilename.png
+
+# ... (all other commands in wallpaper.sh, like reloading swaync, etc.) ...
+
+# --- Add this block to call your logo theming script ---
+THEME_LOGO_SCRIPT_PATH="$HOME/.config/hypr/scripts/theme_fastfetch_logo.sh"
+if [ -f "$THEME_LOGO_SCRIPT_PATH" ]; then
+    bash "$THEME_LOGO_SCRIPT_PATH" &
+else
+    echo "Logo theming script not found: $THEME_LOGO_SCRIPT_PATH" >&2 # Kept warning, but made it less verbose
+fi
+# --- End of added block ---
+
+echo "Wallpaper script finished."
