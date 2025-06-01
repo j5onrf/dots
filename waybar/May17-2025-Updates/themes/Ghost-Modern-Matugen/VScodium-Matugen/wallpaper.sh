@@ -87,10 +87,11 @@ if [ -f $wallpapereffect ]; then
         used_wallpaper=$generatedversions/$effect-$wallpaperfilename
         if [ -f $generatedversions/$effect-$wallpaperfilename ] && [ "$force_generate" == "0" ] && [ "$use_cache" == "1" ]; then
             echo ":: Use cached wallpaper $effect-$wallpaperfilename"
-        else
+   else
             echo ":: Generate new cached wallpaper $effect-$wallpaperfilename with effect $effect"
-            notify-send --replace-id=1 "Using wallpaper effect $effect..." "with image $wallpaperfilename" -h int:value:33
+            notify-send --replace-id=1 "Applying effect: $effect..." "Processing: $wallpaperfilename" -h int:value:30
             source $HOME/.config/hypr/effects/wallpaper/$effect
+            notify-send --replace-id=1 "Effect '$effect' applied." "$wallpaperfilename processed." -h int:value:100 -t 4000
         fi
         echo ":: Loading wallpaper $generatedversions/$effect-$wallpaperfilename with effect $effect"
         echo ":: Setting wallpaper with $used_wallpaper"
