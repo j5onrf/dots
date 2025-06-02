@@ -176,6 +176,10 @@ window#waybar {
     padding: 0.15em 0;
     margin: 0.1em 0.2em;
 }
+#custom-notification:hover,
+#custom-notification {
+    margin: 0.2em 0 0.4em 0;
+}
 
 #custom-hypridle.active {
     color: @ghost_hypridle_active_icon;
@@ -198,11 +202,9 @@ window#waybar {
 
 #pulseaudio.muted {
     color: @ghost_pulseaudio_muted_fg;
-    background-color: @ghost_pulseaudio_muted_bg;
 }
 #pulseaudio.muted:hover {
     color: @ghost_pulseaudio_muted_hover__fg;
-    background-color: @ghost_pulseaudio_muted_hover_bg;
 }
 
 #clock {
