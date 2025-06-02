@@ -34,6 +34,7 @@
       "title<.*amazon.*>": "",
       "title<.*gmail.*>": "󰊫 ",
       "title<.*nvim ~.*>": " ",
+      "class<waypaper>": "\uf03e",
       "class<CavaVisualizer>": "<span line-height='1'>\uf8f1</span>",
       "class<io.bassi.Amberol>": "<span line-height='1'>\uf8c9</span>",
       "class<KewMusicPlayer>": "<span line-height='1'>\uf8c9</span>",
