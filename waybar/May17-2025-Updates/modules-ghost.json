@@ -193,10 +193,10 @@
       "none": "\uf0f3",
       "dnd-notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "dnd-none": "\uf8fa",
+      "dnd-none": "\uf1f6",
       "inhibited-notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "inhibited-none": "\uf8fa",
+      "inhibited-none": "\uf1f6",
       "dnd-inhibited-notification":
         "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
       "dnd-inhibited-none": "\uf1f6"
