@@ -50,7 +50,7 @@
       "class<org.gnome.Nautilus>": "<span line-height='1'>\uf07b</span>",
       "class<org.gnome.TextEditor>": "",
       "class<polkit-gnome-authentication-agent-1>": "\ue575",
-      "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫",
+      // "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫",
       "class<nwg-look>": "\uf3f1",
       "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
       "class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "<span line-height='0.8'>󰨞 </span>",
@@ -120,6 +120,7 @@
   "custom/system": {
     "format": "\uf077",
     "on-click-right": "exec ~/.config/waybar/launch.sh",
+    "on-click-middle": "hyprctl dispatch swapsplit",
     "tooltip": false
   },
 
