@@ -23,7 +23,7 @@
     "persistent-workspaces": { "*": 5 },
     "format-window-separator": "\n",
     "format-icons": { "empty": "\uf067", "default": "" },
-    "window-rewrite-default": "\uf059",
+    "window-rewrite-default": "\ue3dd",
     "window-rewrite": {
       "title<.*youtube.*>": "<span line-height='1'>\uf04b</span>",
       "title<.*reddit.*>": "<span line-height='0.8'></span>",
