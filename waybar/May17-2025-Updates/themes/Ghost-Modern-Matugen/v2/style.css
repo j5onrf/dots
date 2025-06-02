@@ -176,14 +176,16 @@ window#waybar {
     margin: 0.1em 0.2em;
     border: 1px solid transparent;
 }
+#custom-notification:hover,
+#custom-notification {
+    margin: 0.2em 0 0.4em 0;
+}
 
 #pulseaudio.muted {
     color: @ghost_pulseaudio_muted_fg;
-    background-color: @ghost_pulseaudio_muted_bg;
 }
 #pulseaudio.muted:hover {
     color: @ghost_pulseaudio_muted_hover__fg;
-    background-color: @ghost_pulseaudio_muted_hover_bg;
 }
 
 #clock {
