@@ -119,6 +119,7 @@
   // System
   "custom/system": {
     "format": "\uf077",
+    "on-click": "flatpak run com.ml4w.sidebar",
     "on-click-right": "exec ~/.config/waybar/launch.sh",
     "on-click-middle": "hyprctl dispatch swapsplit",
     "tooltip": false
