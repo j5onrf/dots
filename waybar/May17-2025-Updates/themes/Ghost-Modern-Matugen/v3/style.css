@@ -9,7 +9,7 @@
 \____|__  (____  |__| |____/\___  / \___  |___|  /
         \/     \/          /_____/      \/     \/        
 * ML4W, Edited by j5onrf (2025)
-* Ghost-Matugen v3 (05-25-2025) beta
+* Ghost-Matugen v3.5 (05-26-2025) beta
 * ----------------------------------------------------- 
 */
 
@@ -23,14 +23,12 @@
 window#waybar {
     background-color: transparent;
     border: none;
-    box-shadow: none;
 }
 
 #waybar > box {
     background: transparent;
-    border-radius: 0;
-    margin: 5px 5px;           
-    box-shadow: none; 
+    border-radius: 0.2em;
+    margin: 5px 5px 5px 0px;           
 }
 
 .modules-left,
@@ -47,7 +45,7 @@ window#waybar {
     font-family: "Font Awesome 6 Pro Light";
     font-weight: 200;
     background-color: @ghost_bar_background;
-    margin: 0.8em 0em;
+    margin: 0em;
 }
 #workspaces button {
     color: @primary;
@@ -130,7 +128,7 @@ window#waybar {
     border: 1px solid transparent;
 }
 #cpu, #cpu:hover { 
-    margin: 1.5em 0 0 0;
+    margin: 0.6em 0 0 0;
 }
 
 #custom-appmenu:hover {
@@ -190,7 +188,7 @@ window#waybar {
 }
 #custom-notification:hover,
 #custom-notification {
-    margin: 0 0 0.8em 0;
+    margin: 0.2em 0 0.4em 0;
 }
 
 #custom-hypridle.active {
@@ -206,7 +204,6 @@ window#waybar {
 }
 #pulseaudio.muted:hover {
     color: @ghost_pulseaudio_muted_hover__fg;
-    background-color: @ghost_pulseaudio_muted_hover_bg;
 }
 
 #clock {

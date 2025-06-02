@@ -5,7 +5,7 @@
 //   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
 //        \/         \/\/              \/        \/       \/     
 // ML4W, Edited by j5onrf (2025)
-// Ghost (05-23-2025) beta
+// Ghost (6-01-2025) beta
 // -----------------------------------------------------
 
 {
@@ -80,11 +80,11 @@
     "tooltip": false
   },
 
-  // Rofi Application Launcher 󰣇
+  // Rofi Application Launcher
   "custom/appmenu": {
     "format": "",
     "on-click": "~/.config/rofi/bin/launcher",
-    "on-click-right": "~/.config/rofi/bin/launcher",
+    "on-click-right": "~/.config/rofi/bin/launcher2",
     "tooltip": false
   },
 
