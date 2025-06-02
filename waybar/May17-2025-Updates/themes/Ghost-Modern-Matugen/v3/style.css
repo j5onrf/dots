@@ -9,7 +9,7 @@
 \____|__  (____  |__| |____/\___  / \___  |___|  /
         \/     \/          /_____/      \/     \/        
 * ML4W, Edited by j5onrf (2025)
-* Ghost-Matugen v3.5 (05-26-2025) beta
+* Ghost-Matugen v3.5 (6-02-2025) beta
 * ----------------------------------------------------- 
 */
 
@@ -200,7 +200,6 @@ window#waybar {
 
 #pulseaudio.muted {
     color: @ghost_pulseaudio_muted_fg;
-    background-color: @ghost_pulseaudio_muted_bg;
 }
 #pulseaudio.muted:hover {
     color: @ghost_pulseaudio_muted_hover__fg;
