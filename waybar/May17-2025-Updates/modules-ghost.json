@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf (2025)
-// Ghost (6-01-2025) beta
+// Ghost (6-02-2025) beta
 
 {
   // Workspaces
@@ -95,7 +95,7 @@
 
   // Waybar Themes
   "custom/waybarthemes": {
-    "format": "\uf856",
+    "format": "\uf0b2",
     "on-click": "~/.config/waybar/themeswitcher.sh",
     "tooltip": false
   },
@@ -174,7 +174,7 @@
   
    // Hypridle inhibitor
   "custom/hypridle": {
-    "format": "\uf023",
+    "format": "\uf30d",
     "return-type": "json",
     "escape": true,
     "exec-on-event": true,
@@ -185,7 +185,7 @@
   
     // SwayNC
   "custom/notification": {
-    "tooltip": false,
+    "tooltip-format": "Left: Notifications\nRight: Do not disturb",
     "format": "{icon}",
     "format-icons": {
       "notification":
