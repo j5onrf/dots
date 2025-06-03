@@ -5,7 +5,7 @@
 //   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
 //        \/         \/\/              \/        \/       \/     
 // ML4W, Edited by j5onrf (2025)
-// Ghost (6-01-2025) beta
+// Ghost (6-02-2025) beta
 // -----------------------------------------------------
 
 {
@@ -20,7 +20,7 @@
 
   // Load Modules
   "include": [
-    "~/.config/waybar/modules-ghost.json"
+    "~/.config/waybar/modules-ghost.jsonc"
   ],
 
   // Modules Left
