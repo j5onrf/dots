@@ -1,2 +1,2 @@
 #!/bin/bash
-theme_name="Ghost-Matugen-v1.0"
+theme_name="Ghost-Matugen"
