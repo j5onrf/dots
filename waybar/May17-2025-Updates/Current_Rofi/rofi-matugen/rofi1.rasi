@@ -4,7 +4,7 @@
 /    Y    \/ __ \|  | |  |  / /_/  \  ___/|   |  \
 \____|__  (____  |__| |____/\___  / \___  |___|  /
         \/     \/          /_____/      \/     \/ 
-* j5onrf (6-01-2025) ROFI Integrated with Matugen
+* j5onrf (6-03-2025) ROFI Integrated with Matugen
 * -----------------------------------------------------  
 */
 
@@ -43,7 +43,7 @@ configuration {
     rofi-foreground-main:         @on-surface;
     rofi-selected-background:     @primary-container;
     rofi-selected-foreground:     @on-primary-container;
-    rofi-border-color:            @outline;                   /* This is your border color from Matugen */
+    rofi-border-color:            @primary;                 /* This is your border color from Matugen */
     rofi-placeholder-text:        @on-surface-variant;
 
     // Accents
@@ -90,7 +90,7 @@ inputbar {
 
 textbox-prompt-colon { 
     expand:                  false;
-    str:                     " "; // 
+    str:                     ""; // 
     text-color:              inherit; 
     background-color:        transparent;
     vertical-align:          0.5;
