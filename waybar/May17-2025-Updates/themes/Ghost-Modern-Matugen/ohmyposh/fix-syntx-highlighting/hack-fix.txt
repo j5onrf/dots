@@ -1,0 +1,4 @@
+to fix too dark of text for sytax-highlighting plugin i had to remove it for now
+
+    zsh-syntax-highlighting
+    fast-syntax-highlighting
