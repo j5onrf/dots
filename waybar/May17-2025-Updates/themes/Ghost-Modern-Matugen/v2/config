@@ -5,9 +5,8 @@
 //   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
 //        \/         \/\/              \/        \/       \/     
 // ML4W, Edited by j5onrf (2025)
-// Ghost v2 (05-21-2025) beta
+// Ghost v2 (6-2-2025) beta
 // -----------------------------------------------------
-
 
 {
   // General Settings
@@ -21,7 +20,7 @@
 
   // Load Modules
   "include": [
-    "~/.config/waybar/modules-ghost.json"
+    "~/.config/waybar/modules-ghost.jsonc"
   ],
 
   // Modules Left
@@ -82,11 +81,11 @@
     "tooltip": false
   },
 
-  // Rofi Application Launcher 󰣇
+  // Rofi Application Launcher
   "custom/appmenu": {
     "format": "",
     "on-click": "~/.config/rofi/bin/launcher",
-    "on-click-right": "~/.config/rofi/bin/launcher",
+    "on-click-right": "~/.config/rofi/bin/launcher2",
     "tooltip": false
   },
 
