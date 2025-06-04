@@ -28,7 +28,7 @@ window#waybar {
 #waybar > box { /* Optional: shadow match hyprland decoration attempt */
     background-color: @ghost_bar_background;
     border-radius: 0.5em;
-    margin: 5px 0 0 0;
+    margin: 5px 0 5px 0;
     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.4);
 }
 
