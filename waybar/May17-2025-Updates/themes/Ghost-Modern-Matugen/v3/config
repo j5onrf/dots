@@ -4,7 +4,7 @@
 //  \        /    |    \____   ||    |   /    |    |    |   \
 //   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
 //        \/         \/\/              \/        \/       \/     
-// ML4W, Edited by j5onrf (2025)
+// ML4W, Edited by j5onrf
 // Ghost (6-02-2025) beta
 // -----------------------------------------------------
 
@@ -65,7 +65,8 @@
     "rotate": 270,
     // "separate-outputs": true,
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "tooltip": false
   },
 
   // Pulseaudio
