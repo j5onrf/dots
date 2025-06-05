@@ -27,7 +27,7 @@
     "window-rewrite": {
       "title<.*youtube.*>": "<span line-height='1'>\uf04b</span>",
       "title<.*reddit.*>": "<span line-height='0.8'></span>",
-      "title<.*dot.*>": "<span line-height='0.7'> </span>",
+      "title<.*dot.*>": "<span line-height='0.8'>\ue13a</span>",
       "title<.*chatgpt.*>": "<span line-height='1'>\ue1ec</span>",
       "title<.*grok.*>": "<span line-height='1'>\ue1ec</span>",
       "title<.*AI Studio.*>": "<span line-height='1'>\ue1ec</span>",
