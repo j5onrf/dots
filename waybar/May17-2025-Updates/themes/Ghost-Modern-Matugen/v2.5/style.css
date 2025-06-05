@@ -8,8 +8,8 @@
 /    Y    \/ __ \|  | |  |  / /_/  \  ___/|   |  \
 \____|__  (____  |__| |____/\___  / \___  |___|  /
         \/     \/          /_____/      \/     \/        
-* ML4W, Edited by j5onrf (2025)
-* Ghost-Matugen v2.5 (6-02-2025) beta
+* ML4W, Edited by j5onrf
+* Ghost-Matugen v2.5 (6-05-2025) beta
 * ----------------------------------------------------- 
 */
 
@@ -105,6 +105,7 @@ window#waybar {
 #window:hover {
     color: @primary;
     border: 1px solid @ghost_hover_glow_color;
+    border-radius: 0.4em;
 }
 
 #cpu:hover,
