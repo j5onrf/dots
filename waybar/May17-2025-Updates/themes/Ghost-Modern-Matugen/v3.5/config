@@ -4,8 +4,8 @@
 //  \        /    |    \____   ||    |   /    |    |    |   \
 //   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
 //        \/         \/\/              \/        \/       \/     
-// ML4W, Edited by j5onrf (2025)
-// Ghost (6-02-2025) beta
+// ML4W, Edited by j5onrf
+// Ghost (6-2-2025) beta
 // -----------------------------------------------------
 
 {
@@ -14,7 +14,7 @@
   "position": "left",
   "margin-bottom": 9,
   "margin-top": 9,
-  "margin-left": 10,
+  "margin-left": 0,
   "margin-right": 0,
   "spacing": 0,
 
@@ -65,7 +65,8 @@
     "rotate": 270,
     // "separate-outputs": true,
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "tooltip": false
   },
 
   // Pulseaudio
@@ -80,7 +81,7 @@
     "tooltip": false
   },
 
-  // Rofi Application Launcher
+  // Rofi Application Launcher 󰣇   rofi -show drun
   "custom/appmenu": {
     "format": "",
     "on-click": "~/.config/rofi/bin/launcher",
