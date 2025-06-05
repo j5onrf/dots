@@ -6,7 +6,7 @@
 # Fastfetch
 # -----------------------------------------------------
 if [[ $(tty) == *"pts"* ]]; then
-    fastfetch
+    fastfetch --logo-recache && echo
 #   fastfetch --config examples/13
 else
     echo
