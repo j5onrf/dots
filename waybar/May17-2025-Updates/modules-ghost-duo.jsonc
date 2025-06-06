@@ -55,7 +55,7 @@
       // "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫",
       "class<nwg-look>": "\uf3f1",
       "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
-      "class<codium": "<span line-height='0.8'> </span>",
+      "class<codium>": "<span line-height='0.8'> </span>",
       "class<vlc>": "\uf636",
       "class<mpv>": "\uf636",
       "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",

@@ -5,7 +5,7 @@
 // |       |  |_|  | |_|   |       |   |___|    ___|_____  |
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
-// ML4W, Edited by j5onrf (2025)
+// ML4W, Edited by j5onrf
 // Ghost (6-02-2025) beta
 
 {
@@ -35,10 +35,11 @@
       "title<.*gmail.*>": "󰊫 ",
       "title<.*nvim ~.*>": " ",
       "class<waypaper>": "\uf03e",
+      "org.gnome.Loupe>": "\uf1c5",
       "class<CavaVisualizer>": "<span line-height='1'>\uf8f1</span>",
       "class<io.bassi.Amberol>": "<span line-height='1'>\uf8c9</span>",
       "class<KewMusicPlayer>": "<span line-height='1'>\uf8c9</span>",
-      "class<gimp>": "<span line-height='1'>\uf1fc</span>",
+      "class<gimp>": "<span line-height='0.7'>\uf1fc</span>",
       "class<org.gnome.Weather>": "\uf76b",
       "class<wttr-floating>": "\uf76b",
       "class<firefox>": "<span font='18'></span>",
@@ -54,7 +55,7 @@
       // "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫",
       "class<nwg-look>": "\uf3f1",
       "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
-      "class<codium": "<span line-height='0.8'> </span>",
+      "class<codium>": "<span line-height='0.8'> </span>",
       "class<vlc>": "\uf636",
       "class<mpv>": "\uf636",
       "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
@@ -194,16 +195,16 @@
     "format": "{icon}",
     "format-icons": {
       "notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
       "none": "\uf0f3",
       "dnd-notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
       "dnd-none": "\uf1f6",
       "inhibited-notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
       "inhibited-none": "\uf1f6",
       "dnd-inhibited-notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
       "dnd-inhibited-none": "\uf1f6"
     },
     "return-type": "json",
