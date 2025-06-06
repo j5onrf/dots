@@ -196,20 +196,20 @@
     "format-icons": {
       // --- Standard States
       // Notification waiting: Bell with exclamation
-      "notification": "<span font='19'>\uf848</span>", 
+      "notification": "<span font='20'>\uf848</span>", 
       // Default state: A regular bell
-      "none": "<span font='19'>\uf0f3</span>",
+      "none": "<span font='20'>\uf0f3</span>",
 
       // --- Do Not Disturb (DND) States ---
-      "dnd-notification": "<span font='19'>\uf1f7</span>", // Outline slashed bell
-      "dnd-none": "<span font='19'>\uf1f6</span>",      // Solid slashed bell
+      "dnd-notification": "<span font='20'>\uf1f7</span>", // Outline slashed bell
+      "dnd-none": "<span font='20'>\uf1f6</span>",      // Solid slashed bell
       
       // --- Fallback for Inhibited States ---
       // These will look exactly like DND states to prevent broken text.
-      "inhibited-notification": "<span font='19'>\uf1f7</span>",
-      "inhibited-none": "<span font='19'>\uf1f6</span>",
-      "dnd-inhibited-notification": "<span font='19'>\uf1f7</span>", 
-      "dnd-inhibited-none": "<span font='19'>\uf1f6</span>"
+      "inhibited-notification": "<span font='20'>\uf1f7</span>",
+      "inhibited-none": "<span font='20'>\uf1f6</span>",
+      "dnd-inhibited-notification": "<span font='20'>\uf1f7</span>", 
+      "dnd-inhibited-none": "<span font='20'>\uf1f6</span>"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
