@@ -34,34 +34,34 @@
       "title<.*amazon.*>": "",
       "title<.*gmail.*>": "󰊫 ",
       "title<.*nvim ~.*>": " ",
+      "class<firefox>": "<span font='18'></span>",
+      "class<brave-browser>": "<span line-height='1'>\uf37e</span>",
+      "class<codium>": "<span line-height='0.8'> </span>",
+      "class<kitty>": "<span line-height='1'>\ue13d</span>",
+      "class<alacritty>": "<span font='16' line-height='0.7'>\uf120</span>",
       "class<waypaper>": "\uf03e",
       "class<org.gnome.Loupe>": "\uf1c5",
       "class<CavaVisualizer>": "<span line-height='1'>\uf8f1</span>",
-      // "class<io.bassi.Amberol>": "<span line-height='1'>\uf8c9</span>",
       "class<KewMusicPlayer>": "<span line-height='1'>\uf8c9</span>",
       "class<gimp>": "<span line-height='0.7'>\uf1fc</span>",
       "class<org.gnome.Weather>": "\uf76b",
       "class<wttr-floating>": "\uf76b",
-      "class<firefox>": "<span font='18'></span>",
-      "class<kitty>": "<span line-height='1'>\ue13d</span>",
-      "class<alacritty>": "<span font='16' line-height='0.7'>\uf120</span>",
-      "class<brave-browser>": "<span line-height='1'>\uf37e</span>",
-      // "class<brave-browser-beta>": "<span line-height='1'>\uf37e</span>",
-      // "class<zen>": "󰰷",
-      // "class<org.gnome.Nautilus>": "<span line-height='1'>\uf07b</span>",
       "class<org.gnome.Nautilus>": "",
       "class<org.gnome.TextEditor>": "",
       "class<polkit-gnome-authentication-agent-1>": "\ue575",
-      // "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫",
       "class<nwg-look>": "\uf3f1",
       "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
-      "class<codium>": "<span line-height='0.8'> </span>",
       "class<vlc>": "\uf636",
       "class<mpv>": "\uf636",
       "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
       "class<org.gnome.Calculator>": "\uf1ec",
       "class<timeshift-gtk>": "\uf1da",
       "class<org.gnome.World.PikaBackup>": "\uf1da"
+      // "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫",
+      // "class<io.bassi.Amberol>": "<span line-height='1'>\uf8c9</span>",
+      // "class<brave-browser-beta>": "<span line-height='1'>\uf37e</span>",
+      // "class<zen>": "󰰷",
+      // "class<org.gnome.Nautilus>": "<span line-height='1'>\uf07b</span>",
       // https://github.com/JaKooLit/Hyprland-Dots/blob/main/config/waybar/ModulesWorkspaces
     }
 },
@@ -194,18 +194,10 @@
     "tooltip-format": "Left: Notifications\nRight: Do not disturb",
     "format": "{icon}",
     "format-icons": {
-      // --- Standard States
-      // Notification waiting: Bell with exclamation
       "notification": "<span font='20'>\uf848</span>", 
-      // Default state: A regular bell
       "none": "<span font='20'>\uf0f3</span>",
-
-      // --- Do Not Disturb (DND) States ---
-      "dnd-notification": "<span font='20'>\uf1f7</span>", // Outline slashed bell
-      "dnd-none": "<span font='20'>\uf1f6</span>",      // Solid slashed bell
-      
-      // --- Fallback for Inhibited States ---
-      // These will look exactly like DND states to prevent broken text.
+      "dnd-notification": "<span font='20'>\uf1f7</span>",
+      "dnd-none": "<span font='20'>\uf1f6</span>",
       "inhibited-notification": "<span font='20'>\uf1f7</span>",
       "inhibited-none": "<span font='20'>\uf1f6</span>",
       "dnd-inhibited-notification": "<span font='20'>\uf1f7</span>", 
