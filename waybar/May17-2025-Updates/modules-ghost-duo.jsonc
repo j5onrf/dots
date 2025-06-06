@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf
-// Ghost-Duotone (6-05-2025) beta
+// Ghost-Duotone (6-06-2025) beta
 
 {
   // Workspaces
@@ -30,7 +30,7 @@
       "title<.*dot.*>": "<span line-height='0.8'>\ue13a</span>",
       "title<.*chatgpt.*>": "<span line-height='1'>\ue1ec</span>",
       "title<.*grok.*>": "<span line-height='1'>\ue1ec</span>",
-      "title<.*AI Studio.*>": "<span line-height='1'>\ue1ec</span>",
+      "title<.*AI Studio.*>": "<span line-height='1'>\ue5d6</span>",
       "title<.*amazon.*>": "",
       "title<.*gmail.*>": "󰊫 ",
       "title<.*nvim ~.*>": " ",
@@ -98,7 +98,7 @@
 
   // Waybar Themes
   "custom/waybarthemes": {
-    "format": "\uf0b2",
+    "format": "\uf363",
     "on-click": "~/.config/waybar/themeswitcher.sh",
     "tooltip": false
   },
