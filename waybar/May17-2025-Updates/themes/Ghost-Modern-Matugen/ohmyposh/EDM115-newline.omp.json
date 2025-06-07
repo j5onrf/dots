@@ -1,13 +1,13 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "palette": {
-    "user_fg": "p:color11",
-    "path_fg": "p:color6",
-    "text_accent_fg": "p:color7",
-    "git_fg": "p:color13",
-    "git_branch_icon_fg": "p:color13",
-    "prompt_char_fg": "p:color10"
-  },
+"palette": {
+  "user_fg": "p:color15",
+  "path_fg": "p:color10",
+  "text_accent_fg": "p:color15",
+  "git_fg": "p:color13",
+  "git_branch_icon_fg": "p:color13",
+  "prompt_char_fg": "p:color10"
+},
   "blocks": [
     {
       "alignment": "left",
