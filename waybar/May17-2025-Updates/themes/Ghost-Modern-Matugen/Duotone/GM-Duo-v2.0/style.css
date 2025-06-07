@@ -9,7 +9,7 @@
 \____|__  (____  |__| |____/\___  / \___  |___|  /
         \/     \/          /_____/      \/     \/        
 * ML4W, Edited by j5onrf
-* GM v2 (6-06-2025) beta
+* GM-Duo-v2 (6-07-2025) beta
 * ----------------------------------------------------- 
 */
 
@@ -124,7 +124,7 @@ window#waybar {
     color: @ghost_hidden_text;
 }
 #custom-exit {
-    font-family: "Font Awesome 6 Duotonr";
+    font-family: "Font Awesome 6 Duotone";
     font-weight: 900;
 }
 #custom-appmenu {
