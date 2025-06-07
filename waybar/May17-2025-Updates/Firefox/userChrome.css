@@ -1,9 +1,0 @@
-/* Hide the top tab bar */
-#TabsToolbar {
-  visibility: collapse !important;
-}
-
-/* Hide the sidebar header */
-#sidebar-header {
-  display: none !important;
-}
