@@ -20,7 +20,7 @@
 
   // Load Modules
   "include": [
-    "~/.config/waybar/modules-ghost.jsonc"
+    "~/.config/waybar/modules-ghost-duo.jsonc"
   ],
 
   // Modules Left
