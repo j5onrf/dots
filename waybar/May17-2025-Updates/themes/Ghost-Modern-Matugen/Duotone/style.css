@@ -9,7 +9,7 @@
 \____|__  (____  |__| |____/\___  / \___  |___|  /
         \/     \/          /_____/      \/     \/        
 * ML4W, Edited by j5onrf
-* Ghost-Matugen-Duo (6-05-2025) beta
+* GM-Duo (6-07-2025) beta
 * ----------------------------------------------------- 
 */
 
@@ -25,7 +25,7 @@ window#waybar {
     border: none;
     box-shadow: none;
 }
-#waybar > box { /* Optional: shadow match hyprland decoration attempt */
+#waybar > box { /* Optional: shadow match hyprland decoration */
     background-color: @ghost_bar_background;
     border-radius: 0.5em;
     margin: 5px;
@@ -47,6 +47,8 @@ window#waybar {
 }
 
 #workspaces {
+    font-family: "Font Awesome 6 Duotone";
+    font-weight: 900; /* Thin 100, Light 300, Duotone 900 */
     background-color: @ghost_bar_background;
 }
 #workspaces button {
