@@ -104,7 +104,7 @@ window#waybar {
     margin: 0.3em 0.35em;
     padding-top: 0.1em;
     padding-right: 0px;
-    padding-left: 0.45em;
+    padding-left: 0.5em;
     color: @primary;
     border: 1px solid transparent;
 }
