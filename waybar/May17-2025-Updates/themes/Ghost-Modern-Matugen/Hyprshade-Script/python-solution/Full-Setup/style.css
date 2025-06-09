@@ -100,11 +100,11 @@ window#waybar {
 #window {
     font-size: 0.643em;
     font-family: "Orbitron", "JetBrainsMono Nerd Font Mono", sans-serif;
-    font-weight: 700;
+    font-weight: 400;
     margin: 0.3em 0.35em;
     padding-top: 0.1em;
     padding-right: 0px;
-    padding-left: 0.5em;
+    padding-left: 0.53em;
     color: @primary;
     border: 1px solid transparent;
 }
@@ -210,7 +210,7 @@ window#waybar {
 
 #clock {
     font-family: "Orbitron", "JetBrainsMono Nerd Font Mono", sans-serif;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 0.857em;
     color: @primary;
     border: 1px solid transparent;
