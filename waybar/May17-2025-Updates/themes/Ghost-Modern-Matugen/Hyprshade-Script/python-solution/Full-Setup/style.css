@@ -99,8 +99,8 @@ window#waybar {
 
 #window {
     font-size: 0.643em;
-    font-family: "Azonix", "JetBrainsMono Nerd Font Mono", sans-serif;
-    font-weight: 400;
+    font-family: "Orbitron", "JetBrainsMono Nerd Font Mono", sans-serif;
+    font-weight: 700;
     margin: 0.3em 0.35em;
     padding-top: 0.1em;
     padding-right: 0px;
@@ -192,8 +192,8 @@ window#waybar {
 #cpu,
 #memory,
 #custom-updates {
-    font-family: "Azonix", "JetBrainsMono Nerd Font Mono", sans-serif;
-    font-weight: 100;
+    font-family: "Orbitron", "JetBrainsMono Nerd Font Mono", sans-serif;
+    font-weight: 400;
     font-size: 0.57em;
     color: @ghost_text_primary;
     padding: 0.15em 0;
@@ -209,8 +209,8 @@ window#waybar {
 }
 
 #clock {
-    font-family: "Azonix", "JetBrainsMono Nerd Font Mono", sans-serif;
-    font-weight: 400;
+    font-family: "Orbitron", "JetBrainsMono Nerd Font Mono", sans-serif;
+    font-weight: 700;
     font-size: 0.857em;
     color: @primary;
     border: 1px solid transparent;
