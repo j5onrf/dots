@@ -1,0 +1,19 @@
+/*
+  Minimal userChrome.css for Hyprland/Sidebery Setup
+  - Hides native tabs and sidebar header.
+  - Allows sidebar to be made very narrow.
+  - Makes the splitter invisible revealing pywalfox theme color.
+*/
+
+/* --- CHROME --- */
+#TabsToolbar    { visibility: collapse !important; }
+#sidebar-header { display: none !important; }
+
+/* --- SIDEBAR --- */
+#sidebar-box {
+  min-width: 40px !important; /* Set this to your desired minimum width */
+}
+
+#sidebar-splitter {
+  opacity: 0 !important;
+}

@@ -1,0 +1,191 @@
+/*
+ * __        __          _                  ____  _         _       
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___  
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \ 
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/ 
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___| 
+ *                 |___/                              |___/         
+ *   ML4W
+ * 2025 Min-Blueberry-No-Chevrons
+ * -----------------------------------------------------  
+*/
+ 
+/* Color Definitions */
+@define-color waybarcolor #BBBBFF;
+
+* {
+    font-family: "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free";
+    border: 0px;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: #14131D;
+    border: 0px;
+    border-radius: 0px;
+}
+
+/* Workspaces Styles */
+#workspaces {
+    margin-top: 3px;
+    font-size: 20px;
+    font-weight: 400;
+}
+#workspaces button {
+    margin: 0px;
+    padding: 2px 15px;
+    color: @waybarcolor;
+    border-bottom: 3px solid #14131D;
+}
+#workspaces button.active {
+    color: @waybarcolor;
+    border-radius: 5px;
+/* background: #373250; */
+    border-bottom: 3px solid #BBBBFF;
+}
+#workspaces button:hover {
+    border-radius: 3px;
+    background: #373250;
+}
+#workspaces button.empty {
+    opacity: 0.0;
+}
+
+/* Module Styles */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+} 
+
+/* hyprland/window */
+#window {
+    margin: 5px;
+    padding: 0px 10px;
+    color: #BBBBFF;
+    font-size:18px;
+}
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+/* Hover Styles */
+#window:hover,
+#clock:hover,
+#cpu:hover, 
+#memory:hover
+ {
+    color: @waybarcolor;
+    border-radius: 5px;
+    background: #373250;
+    transition-duration: .5s;
+}
+
+/* Custom Quicklinks Styles */
+#custom-quicklink1,
+#custom-quicklink2,
+#custom-quicklink3,
+#custom-quicklink4,
+#custom-waybarthemes {
+    margin-right: 15px;
+    font-size: 20px;
+    color: @waybarcolor;
+}
+
+/* Quicklinks Wallpaper */
+#custom-wallpaper {
+    margin-right: 5px;
+    font-size: 20px;
+    color: @waybarcolor;
+}
+
+/* Left-side App Tray Slider */
+#custom-settings {
+    margin-right: 0px;
+    opacity: 0.0;
+    font-size: 3px;
+}
+
+/* Right-side App Tray Slider */
+#custom-system {
+    margin-left: 0px;
+    opacity: 0.0;
+    font-size: 3px;
+}
+
+/* Clipboard Manager */
+/* Screen Shader */
+#custom-hyprshade,
+#custom-cliphist
+{
+    color: @waybarcolor;
+    margin-right: 23px;
+    font-size: 18px;
+}
+
+/* Custom Module appmenu rofi */
+#custom-appmenu {
+    color: @waybarcolor;
+    margin: 0px;
+    opacity: 0.0;
+}
+
+/* Custom Exit Styles wlogout */
+#custom-exit {
+    font-size: 1px;
+    margin: 0px;
+    color: @waybarcolor;
+    opacity: 0.0;
+}
+
+/* Custom Updates Styles */
+#custom-updates {
+    color: @waybarcolor;
+    font-size: 18px;
+    margin-right: 20px;
+}
+#custom-updates.yellow {
+    color: #ff9a3c;
+}
+#custom-updates.red {
+    color: #dc2f2f;
+}
+
+/* Clock Styles */
+#cpu, #memory, #clock  {
+    margin: 5px;
+    color: @waybarcolor;
+    font-size: 18px;
+}
+
+/* Pulseaudio Styles */
+#pulseaudio {
+    color: @waybarcolor;
+    margin-right: 15px;
+    font-size: 18px;
+}
+#pulseaudio.muted {
+    color: #ed8796;
+    font-size: 18px;
+}
+
+/* Network Styles */
+#network {
+    color: @waybarcolor;
+    font-size: 18px;
+    margin: 0 20px 0 15px;
+}
+
+/* Tray Styles */
+#tray {
+    margin: 0 15px 0 5px;
+}
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+

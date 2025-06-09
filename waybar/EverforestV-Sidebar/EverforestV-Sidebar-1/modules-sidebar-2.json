@@ -1,0 +1,187 @@
+//  __  __           _       _
+// |  \/  | ___   __| |_   _| | ___  ___
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __|
+// | |  | | (_) | (_| | |_| | |  __/\__ \
+// |_|  |_|\___/ \__,_|\__,_|_|\___||___/
+//
+//  ML4W
+// EverForest-Sidebar-RW (11-04-2024)
+
+// Workspaces
+{
+"hyprland/workspaces#rw": {
+	"disable-scroll": true,
+	"all-outputs": true,
+	"warp-on-scroll": false,
+	"sort-by-number": true,
+	"show-special": false,
+        "on-click": "activate",
+	"on-scroll-up": "hyprctl dispatch workspace e-1",
+	"on-scroll-down": "hyprctl dispatch workspace e+1",
+	"persistent-workspaces": {"*": 15},
+	"format": "{name}",
+	"format": "{icon}",
+	"format-icons": {
+		"1": "",
+		"2": "",
+		"3": "",
+		"4": "",
+		"5": "<span font='24'>󰄛</span>",
+		"6": "",
+		"7": "",
+		"8": "",
+		"9": "",
+		"10": "",
+		"11": "",
+		"12": "",
+		"13": "",
+		"14": "",
+		"15": "",
+		}   
+  },
+
+  // Empty
+  "custom/empty": {
+    "format": ""
+  },
+
+  // Cliphist
+  "custom/cliphist": {
+    "format": "󰨸",
+    "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
+    "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
+    "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
+    "tooltip-format": "Clipboard Manager"
+  },
+  
+    // Hyprshade
+  "custom/hyprshade": {
+    "format": "",
+    "tooltip-format": "Toggle Screen Shader",
+    "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
+    "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi"
+  },
+
+// Updates
+  "custom/updates": {
+    "format": "{}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.config/ml4w/scripts/updates.sh",
+    "restart-interval": 1800,
+    "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
+    "on-click-right": "~/.config/ml4w/settings/software.sh"
+  },
+
+  // Wallpaper
+  "custom/wallpaper": {
+    "format": "󰸉",
+    "on-click": "waypaper",
+    "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
+    "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect"
+  },
+
+  // Waybar Themes   
+  "custom/waybarthemes": {
+    "format": "",
+    "on-click": "~/.config/waybar/themeswitcher.sh",
+    "tooltip-format": "Select a waybar theme"
+  },
+
+  // Settings
+  "custom/settings": {
+    "format": "",
+    "on-click": "~/.config/ml4w/apps/ML4W_Dotfiles_Settings-x86_64.AppImage",
+    "on-click-right": "~/.config/ml4w/apps/ML4W_Hyprland_Settings-x86_64.AppImage",
+    "tooltip": false
+  },
+
+  // Power Menu 
+  "custom/exit": {
+    "format": "",
+    "on-click": "wlogout",
+//  "on-click-right": "ags -t sidebar",
+//  "on-click-right": "ags -t notificationsmenu",
+    "on-click-right": "com.ml4w.welcome",
+    "tooltip": false
+  },
+
+  // System tray
+  "tray": {
+    "icon-size": 15,
+    "spacing": 10
+  },
+
+// Taskbar
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": ["Alacritty", "kitty"],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    },
+    "rewrite": {
+      "Firefox Web Browser": "Firefox",
+      "Foot Server": "Terminal"
+    }
+  },
+
+  // System
+  "custom/system": {
+    "format": "",
+    "tooltip": false
+  },
+  
+   // Chevron
+  "custom/chevron": {
+    "format": "",
+    "tooltip": false
+  },
+
+  // Group Hardware  ,"cpu","memory"
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": ["custom/system","cpu","memory","tray","custom/updates","network","custom/hyprshade","custom/cliphist","pulseaudio"]
+  },
+
+  // Group Settings
+  "group/settings": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/settings",
+      "pulseaudio", 
+      "custom/waybarthemes",
+      "custom/wallpaper"
+  //  "group/quicklinks"
+  //  "wlr/taskbar"
+    ]
+  },
+
+  // Network
+  "network": {
+    "format": "{ifname}",
+    "format-ethernet": "",
+    "format-disconnected": "",
+    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "on-click": "~/.config/ml4w/settings/networkmanager.sh",
+    "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
+  },
+  
+  }
+

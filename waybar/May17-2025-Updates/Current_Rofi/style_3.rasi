@@ -1,0 +1,169 @@
+/*  _____          __                              
+  /     \ _____ _/  |_ __ __  ____   ____   ____  
+ /  \ /  \\__  \\   __|  |  \/ ___\_/ __ \ /    \ 
+/    Y    \/ __ \|  | |  |  / /_/  \  ___/|   |  \
+\____|__  (____  |__| |____/\___  / \___  |___|  /
+        \/     \/          /_____/      \/     \/ 
+* HYDE, ML4W, Edited by j5onrf (2025)
+* Matugen-Rofi-Dock (5-21-2025)
+* -----------------------------------------------------  
+*/
+
+/**
+ * ROFI Layout - Style 3:
+ * Dynamically themed using rofi/colors.rasi (Matugen)
+ */
+
+// Config //
+configuration {
+    modi:                        "drun";
+    show-icons:                  true;
+    display-drun:                " ";
+    drun-display-format:         "{name}";
+    window-format:               "{w}{t}";
+    font:                        ""; // Adwaita Mono 11
+    icon-theme:                  "";
+    hover-select:                false;
+    scroll-method:               1;
+    me-select-entry:             "";
+    me-accept-entry:             "MousePrimary";
+}
+
+/* ---- Dynamically Load Matugen Colors ---- */
+@import "~/.config/rofi/colors.rasi"
+@import "~/.config/ml4w/settings/rofi-font.rasi"
+@import "~/.config/ml4w/settings/rofi-border-radius.rasi"
+@import "~/.config/ml4w/settings/rofi-border.rasi"
+
+// Main //
+window {
+    height:                      31.5em;
+    width:                       37em;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border:                      @border-width;  // Assumes @border-width is defined in rofi-border.rasi
+    border-radius:               @border-radius; // Assumes @border-radius is defined in rofi-border-radius.rasi
+    border-color:                @primary;       // Matugen: Main accent color
+    background-color:            @background;    // Matugen: Main background (already includes 0.7 alpha)
+}
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 vertical;
+    children:                    [ "inputbar" , "dummybox" ];
+    background-color:            transparent; // To show the background image
+
+}
+dummybox {
+    padding:                     0.5em;
+    spacing:                     0em;
+    orientation:                 horizontal;
+    children:                    [ "listbox" ];
+    background-color:            transparent;
+    background-image:            transparent;
+}
+
+
+// Inputs //
+inputbar {
+    enabled:                     false;
+}
+
+
+// Lists //
+listbox {
+    padding:                     0em;
+    spacing:                     0em;
+    children:                    [ "dummy" , "listview" , "dummy" ];
+    background-color:            transparent;
+    background-image:            transparent;
+}
+listview {
+    padding:                     1em;
+    spacing:                     0em;
+    enabled:                     true;
+    columns:                     1;
+    lines:                       13; // Adjusted from 7 for smaller elements
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    expand:                      false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            @background;
+    text-color:                  @on-surface;
+    border-radius:               1.5em;
+}
+
+
+// Modes //
+mode-switcher {
+    orientation:                 vertical;
+    width:                       6.8em;
+    enabled:                     true;
+    padding:                     3.2em 1em 3.2em 1em;
+    spacing:                     1em;
+    background-color:            transparent;
+}
+button {
+    cursor:                      pointer;
+    border-radius:               3em;            // Original radius
+    background-color:            @background;    // Matugen: Main background (button is transparent over mainbox)
+    text-color:                  @on-surface;    // Matugen: Text color for on-surface
+}
+button selected {
+    background-color:            @primary;       // Matugen: Main accent for selection background
+    text-color:                  @on-primary;    // Matugen: Text color for on-primary backgrounds
+}
+
+
+// Elements //
+element {
+    enabled:                     true;
+    spacing:                     1em;
+    padding:                     0.4em;
+    cursor:                      pointer;
+    background-color:            transparent;    // Elements are transparent until selected
+    text-color:                  @on-surface;    // Matugen: Text color
+}
+element selected.normal {
+    background-color:            @primary;       // Matugen: Main accent for selection background
+    text-color:                  @on-primary;    // Matugen: Text color for on-primary backgrounds
+    /* border-radius:            1.5em; */      // Optional: if you want selected elements to also have this radius
+}
+element-icon {
+    size:                        1.5em; // Changed from 3em to target half size
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+// Error message //
+error-message {
+    text-color:                  @on-surface;    // Matugen: Text color
+    background-color:            @background;    // Matugen: Main background
+    text-transform:              capitalize;
+    children:                    [ "textbox" ];
+}
+textbox {
+    text-color:                  inherit;
+    background-color:            inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+

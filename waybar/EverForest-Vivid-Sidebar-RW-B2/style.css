@@ -1,0 +1,227 @@
+/*_________                 ___________                          __   
+\_   _____/__  __ __________\_   _____/__________  ____   ______/  |_ 
+ |    __)_\  \/ // __ \_  __ \    __)/  _ \_  __ \/ __ \ /  ___|   __\
+ |        \\   /\  ___/|  | \/     \(  <_> )  | \|  ___/ \___ \ |  |  
+/_______  / \_/  \___  >__|  \___  / \____/|__|   \___  >____  >|__|  
+        \/           \/          \/                   \/     \/       
+*    ML4W
+*  Everforest-Vivid-S 1.5 Alpha (Updated on 11-02-2024)
+* -----------------------------------------------------  
+*/
+ 
+/* Color Definitions */
+@define-color waybarcolor #A7C080;
+@define-color bgcolor1 #DBBC7F;
+@define-color bgcolor2 #2B3339;
+@define-color bgcolor3 #E69875;
+@define-color color1 #21252B;
+
+/* General Styles */
+* {
+    font-family: "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free", sans-serif;
+    border: 0px;
+    border-radius: 0px;
+    font-weight: 600;
+}
+window#waybar {
+    background-color: @bgcolor2;
+    border-radius: 0.7rem;
+}
+
+/* Workspaces Styles */
+/* Button Style 2 */
+#workspaces {
+    margin: 2px 0px;
+    font-size: 28px;
+}
+#workspaces button {
+    margin: 2px 7px;
+    color: @waybarcolor;
+}
+#workspaces button.active {
+    margin: 2px 7px;
+    color: @color1;
+    border-radius: 0.7rem;
+    background: @bgcolor1;
+}
+#workspaces button:hover {
+    color: @color1;
+    border-radius: 0.7rem;
+    background: @bgcolor3;
+}
+#workspaces button.empty {
+    opacity: 0.3;
+    border-radius: 0.7rem;
+}
+
+/* Module Styles */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+} 
+
+/* hyprland/window */
+#window {
+    margin: 5px;
+    padding: 0px 10px;
+    color: #BBBBFF;
+    font-size:18px;
+}
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+/* Hover Styles */
+#window:hover,
+#cpu:hover, 
+#memory:hover,
+#custom-hyprshade:hover,
+#custom-cliphist:hover,
+#custom-updates:hover,
+#network:hover,
+#custom-wallpaper:hover,
+#custom-waybarthemes:hover,
+#tray:hover {
+    margin: 0px 5px;
+    padding: 10px 0px;
+    color: @color1;
+    border-radius: 3px;
+    background: @bgcolor1;
+}
+#custom-updates:hover {
+    background: @bgcolor3;
+}
+#cpu:hover {
+    background: @bgcolor3;
+}
+#custom-hyprshade:hover,
+#memory:hover {
+    background: @waybarcolor;
+}
+#custom-appmenu:hover,
+#custom-exit:hover{
+    border-radius: 6px;
+    color: @color1;
+    background: @bgcolor1;
+    transition: background-color, 0.2s ease-in-out;
+    font-size: 28px;
+    opacity: 1.0;
+}
+#clock:hover,
+#pulseaudio:hover {
+    margin: 0px 5px;
+    border-radius: 3px;
+    color: @color1;
+    background: @bgcolor3; 
+    transition: background-color, 0.2s ease-in-out;
+}
+#clock:hover{
+    background: @bgcolor1; 
+    margin: 3px 0px;
+}
+/* Quicklinks Wallpaper */
+#custom-wallpaper:hover {
+    margin: 0px 5px 20px 5px;
+    padding: 10px 0px;
+    font-size: 28px;
+    color: @color1;
+    background: @waybarcolor;
+}
+#custom-wallpaper {
+    margin: 0px 5px 20px 5px;
+    padding: 10px 0px;
+    font-size: 28px;
+    color: @waybarcolor;
+}
+
+/* Custom Quicklinks Styles */
+#custom-waybarthemes {
+    font-size: 28px;
+}
+
+/* Bottom App Tray Slider */
+/* Top App Tray Slider */
+#custom-system {
+    color: @waybarcolor;
+}
+#custom-settings {
+    color: @waybarcolor;
+}
+
+/* Screen Shader */
+/* Clipboard Manager */
+/* Network Styles */
+#custom-hyprshade,
+#custom-cliphist,
+#network {
+    color: @waybarcolor;
+    margin: 0px 5px;
+    padding: 10px 0px;
+    font-size: 28px;
+}
+#custom-hyprshade {
+    font-size: 26px;
+}
+/* Custom Module appmenu rofi */
+/* Custom Exit Styles wlogout */
+#custom-appmenu,
+#custom-exit {
+    margin: 0px;
+    font-size: 5px;
+    color: @bgcolor2;
+}
+
+/* Clock Styles */
+#clock  {
+    margin: 3px 0px;
+    color: @waybarcolor;
+    font-size: 18px;
+}
+
+/* Cpu Memory */
+/* Tray Styles */
+#cpu, 
+#memory,
+#custom-updates{
+    font-size: 18px;
+}
+
+#cpu, #memory, 
+#custom-updates, 
+#custom-waybarthemes,
+#tray {
+    margin: 0px 5px;
+    padding: 10px 0px;
+    color: @waybarcolor;
+}
+
+/* Pulseaudio Styles */
+#pulseaudio {
+    color: @waybarcolor;
+    margin: 0px 5px;
+    padding: 10px 5px;
+    font-size: 28px;
+}
+#pulseaudio.muted {
+    color: @bgcolor3;
+}
+#pulseaudio.muted:hover {
+    color: @color1;
+    background-color: @bgcolor3;
+}
+/* tooltip */
+tooltip {
+    background-color: @bgcolor2;
+    border-radius: 0.7rem;
+    opacity: 0.8;
+    padding: 0px;
+    margin: 0px;
+}
+tooltip label {
+    color: @waybarcolor;
+    font-weight: 900;
+}
+
+

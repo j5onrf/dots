@@ -1,0 +1,1 @@
+magick $wallpaper -scale '%[fx:w/36]x%[fx:h/36]!' -sample '%[fx:w*36]x%[fx:h*36]!' $used_wallpaper

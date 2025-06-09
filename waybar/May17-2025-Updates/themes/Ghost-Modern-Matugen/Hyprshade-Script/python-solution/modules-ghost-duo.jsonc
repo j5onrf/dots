@@ -1,0 +1,15 @@
+  // Hyprshade
+"custom/hyprshade": {
+  "exec": "~/.config/hypr/scripts/hyprshade_daemon.py",
+  "persistent": true,
+  "return-type": "json",
+
+  // Left-click sends Signal 1 (Toggle)
+  "on-click": "pkill -SIGUSR1 -f hyprshade_daemon.py",
+  
+  // Right-click sends Signal 2 (Rofi Menu)
+  "on-click-right": "pkill -SIGUSR2 -f hyprshade_daemon.py",
+
+  // No interval, no other complexity.
+  "tooltip": false
+},

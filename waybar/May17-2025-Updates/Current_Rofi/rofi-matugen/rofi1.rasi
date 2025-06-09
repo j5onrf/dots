@@ -1,0 +1,165 @@
+/**_____          __                              
+  /     \ _____ _/  |_ __ __  ____   ____   ____  
+ /  \ /  \\__  \\   __|  |  \/ ___\_/ __ \ /    \ 
+/    Y    \/ __ \|  | |  |  / /_/  \  ___/|   |  \
+\____|__  (____  |__| |____/\___  / \___  |___|  /
+        \/     \/          /_____/      \/     \/ 
+* j5onrf (6-03-2025) ROFI Integrated with Matugen
+* -----------------------------------------------------  
+*/
+
+/* ---- Configuration ---- */
+configuration {
+    modi:                    "drun,run,window";
+    show-icons:              true;
+    icon-theme:              "";
+    dynamic:                 false;
+    fixed-num-lines:         true;
+    display-drun:            ""; 
+    drun-prompt:             "";
+    font:                    "Fira Sans 11";
+    hover-select:            false;
+    scroll-method:           1;
+    me-select-entry:         "";
+    me-accept-entry:         "MousePrimary";
+}
+
+/* ---- Load colors using @theme ---- */
+@theme "~/.config/rofi/colors.rasi" 
+
+/* ---- Load external border settings ---- */
+@import "~/.config/ml4w/settings/rofi-border.rasi"
+@import "~/.config/ml4w/settings/rofi-font.rasi" // This import will override the font above
+
+// Optional: Other imports if you use them
+// @import "~/.config/ml4w/settings/rofi-border-radius.rasi"
+
+
+/* ---- Map colors from colors.rasi to semantic names for this theme ---- */
+* {
+    // Base Colors
+    rofi-background-main:         @surface;
+    rofi-background-input:        @surface-container-low;
+    rofi-foreground-main:         @on-surface;
+    rofi-selected-background:     @primary-container;
+    rofi-selected-foreground:     @on-primary-container;
+    rofi-border-color:            @primary;                 /* This is your border color from Matugen */
+    rofi-placeholder-text:        @on-surface-variant;
+
+    // Accents
+    rofi-accent-green:            @tertiary; 
+    rofi-accent-red:              @error;
+
+    // General properties
+    background-color:        transparent; 
+    text-color:              @rofi-foreground-main; 
+    border:                  0; 
+    margin:                  0;
+    padding:                 0;
+    spacing:                 0;
+}
+
+window {
+    background-color:        @rofi-background-main;     /* Opaque window background */
+    border:                  @border-width;             /* Use width from rofi-border.rasi */
+    border-color:            @rofi-border-color;        /* Use color from your theme's semantic map */
+    padding:                 10px;
+    width:                   50%;
+    location:                center;
+    anchor:                  center;
+    border-radius:           4px;                      /* You could also move this to rofi-border-radius.rasi */
+}
+
+/* ... rest of your .rasi theme ... */
+
+mainbox {
+    children:                [ inputbar, listview ];
+    spacing:                 10px;
+    padding:                 5px;
+    background-color:        @rofi-background-main; /* Opaque background for the content area (#101418) */
+}
+
+inputbar {
+    background-color:        @rofi-background-input;
+    text-color:              @rofi-foreground-main; 
+    padding:                 8px 10px;
+    border-radius:           4px;
+    children:                [ textbox-prompt-colon, entry, case-indicator ];
+    spacing:                 8px;
+}
+
+textbox-prompt-colon { 
+    expand:                  false;
+    str:                     ""; // 
+    text-color:              inherit; 
+    background-color:        transparent;
+    vertical-align:          0.5;
+    padding:                 0; 
+}
+
+entry { 
+    text-color:              inherit;
+    background-color:        transparent;
+    placeholder:             "Type to filter";
+    placeholder-color:       @rofi-placeholder-text;
+    vertical-align:          0.5;
+    padding:                 0;
+}
+
+case-indicator {
+    text-color:              inherit;
+    background-color:        transparent;
+    vertical-align:          0.5;
+    padding:                 0;
+}
+
+listview {
+    lines:                   12;
+    columns:                 1;
+    fixed-height:            true;
+    scrollbar:               false;
+    spacing:                 5px;
+    padding:                 5px 0px;
+    background-color:        transparent;
+}
+
+element {
+    padding:                 8px 10px;
+    border-radius:           4px;
+    background-color:        transparent;
+    text-color:              @rofi-foreground-main;
+}
+
+element-text {
+    background-color:        inherit;
+    text-color:              inherit;
+    vertical-align:          0.5;
+}
+
+element-icon {
+    size:                    1.5em;
+    padding:                 0px 10px 0px 0px;
+    background-color:        inherit;
+    vertical-align:          0.5;
+}
+
+element selected {
+    background-color:        @rofi-selected-background;
+    text-color:              @rofi-selected-foreground;
+}
+
+element active {
+    text-color:              @rofi-accent-green;
+}
+element selected.active {
+    background-color:        @rofi-selected-background; 
+    text-color:              @rofi-accent-green;
+}
+
+element urgent {
+    text-color:              @rofi-accent-red;
+}
+element selected.urgent {
+    background-color:        @rofi-selected-background;
+    text-color:              @rofi-accent-red;
+}

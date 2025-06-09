@@ -1,0 +1,45 @@
+Optimized Event-Driven Script
+
+This version filters relevant events more efficiently and minimizes resource usage:
+
+#!/bin/bash
+
+# Path to your Waybar toggle script
+TOGGLE_SCRIPT=~/.config/waybar/toggle.sh
+
+# Hover detection threshold for X coordinate
+HOVER_THRESHOLD=1
+
+# Variable to track if the mouse was previously in the hover area
+LAST_HOVER_STATE=0
+
+# Listen for cursorMoved events and filter them directly
+socat - UNIX-CONNECT:/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE.sock | \
+grep --line-buffered '^cursorMoved' | while read -r line; do
+    # Extract X coordinate directly from the event
+    X=$(echo "$line" | awk -F'[ ,]' '{print $2}')
+
+    # Check if mouse is within the hover threshold
+    if (( X <= HOVER_THRESHOLD )); then
+        if (( LAST_HOVER_STATE == 0 )); then
+            # Toggle Waybar state
+            "$TOGGLE_SCRIPT"
+            LAST_HOVER_STATE=1
+        fi
+    else
+        LAST_HOVER_STATE=0
+    fi
+done
+To address the 1-2% CPU usage, which is likely caused by constant socat listening and processing the events, you can optimize the script by:
+
+Filtering Events Directly: Instead of processing every line from socat, filter only the relevant events (cursorMoved) to reduce unnecessary overhead.
+
+Efficient Parsing: Use more lightweight tools and commands (e.g., awk or cut) to extract data rather than heavier tools like grep and head.
+
+Reducing Script Overhead: If possible, avoid processing events in a Bash loop and offload the work to lighter utilities.
+
+Alternate: Use Rust or Python for Even Lower Overhead
+
+https://www.reddit.com/r/hyprland/comments/1gvkzmz/comment/m1j0ezp/?context=3
+
+I gave up and just use the keybind toggle.sh. Unless someone else shows a better way with no cpu overhead.

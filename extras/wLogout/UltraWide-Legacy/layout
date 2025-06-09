@@ -1,0 +1,55 @@
+{
+    "label" : "spacer",
+    "action" : "",
+    "text" : "",
+}
+{
+    "label" : "spacer",
+    "action" : "",
+    "text" : "",
+}
+{
+    "label" : "lock",
+    "action" : "~/.config/hypr/scripts/power.sh lock",
+    "text" : "Lock",
+    "keybind" : "l"
+}
+{
+    "label" : "hibernate",
+    "text" : "Hibernate",
+}
+{
+    "label" : "logout",
+    "action" : "~/.config/hypr/scripts/power.sh exit",
+    "text" : "Logout",
+    "keybind" : "e"
+}
+{
+    "label" : "shutdown",
+    "action" : "~/.config/hypr/scripts/power.sh shutdown",
+    "text" : "Shutdown",
+    "keybind" : "s"
+}
+{
+    "label" : "suspend",
+    "action" : "~/.config/hypr/scripts/power.sh suspend",
+    "text" : "Suspend",
+    "keybind" : "u"
+}
+{
+    "label" : "reboot",
+    "action" : "~/.config/hypr/scripts/power.sh reboot",
+    "text" : "Reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "spacer",
+    "action" : "",
+    "text" : "",
+}
+{
+    "label" : "spacer",
+    "action" : "",
+    "text" : "",
+}
+

@@ -1,0 +1,205 @@
+//  __   __ _______ ______  __   __ ___     _______ _______ 
+// |  |_|  |       |      ||  | |  |   |   |       |       |
+// |       |   _   |  _    |  | |  |   |   |    ___|  _____|
+// |       |  | |  | | |   |  |_|  |   |   |   |___| |_____ 
+// |       |  |_|  | |_|   |       |   |___|    ___|_____  |
+// | ||_|| |       |       |       |       |   |___ _____| |
+// |_|   |_|_______|______||_______|_______|_______|_______|
+// ML4W, Edited by j5onrf (2025)
+// Font-Awesome-6-Pro (05-20-2025) beta
+
+{
+  // Workspaces
+  "hyprland/workspaces#rw": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "sort-by-number": true,
+    "show-special": false,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "format": "{windows}",
+    "persistent-workspaces": { "*": 5 },
+    "format-window-separator": "\n",
+    "window-rewrite-default": "\uf059",
+    "window-rewrite": {
+      "title<.*youtube.*>": "<span font='18' line-height='1.2'></span>",
+      "title<.*reddit.*>": "<span font='18' line-height='1.2'>\uf544</span>",
+      "title<.*dot.*>": "\ue5db",
+      "title<.*chatgpt.*>": "\ue1ec",
+      "title<.*grok.*>": "\ue1ec",
+      "title<.*ai.*>": "\ue1ec",
+      "title<.*amazon.*>": "",
+      "title<.*gmail.*>": "󰊫 ",
+      "title<.*nvim ~.*>": " ",
+      "class<gimp>": "\uf1fc",
+      "class<org.gnome.Weather>": "\uf76b",
+      "class<wttr-floating>": "\uf76b",
+      // "class<io.missioncenter.MissionCenter>": "",
+      "class<firefox>": "<span font='22'>\uf269</span>",
+      "class<kitty>": "\ue13d",
+      "class<alacritty>": "\uf120",
+      "class<brave-browser>": "\uf37e",
+      "class<brave-browser-beta>": "\uf37e",
+      "class<zen>": "󰰷",
+      "class<org.gnome.Nautilus>": "\ue185",
+      "class<org.gnome.TextEditor>": "",
+      "class<polkit-gnome-authentication-agent-1>": "󰒃",
+      "class<nwg-look>": "",
+      "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
+      "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
+      "class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞",
+      "class<vlc>": "󰕼",
+      "class<mpv>": "",
+      // https://github.com/JaKooLit/Hyprland-Dots/blob/main/config/waybar/ModulesWorkspaces
+    }
+},
+
+  // Empty
+  "custom/empty": {
+    "format": ""
+  },
+
+  // Clipboard History
+  "custom/cliphist": {
+    "format": "\uf328",
+    "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
+    "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
+    "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
+    "tooltip-format": "Clipboard Manager"
+  },
+
+  // Hyprshade
+  "custom/hyprshade": {
+    "format": "\uf87f",
+    "tooltip-format": "Toggle Screen Shader",
+    "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
+    "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi"
+  },
+
+  // Wallpaper
+  "custom/wallpaper": {
+    "format": "\uf03e",
+    "on-click": "waypaper",
+    "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
+    "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect"
+  },
+
+  // Waybar Themes
+  "custom/waybarthemes": {
+    "format": "\uf856",
+    "on-click": "~/.config/waybar/themeswitcher.sh",
+    "tooltip-format": "Select a waybar theme"
+  },
+
+  // Settings
+  "custom/settings": {
+    "format": "\uf078",
+    "on-click": "flatpak run com.ml4w.sidebar",
+    "on-click-right": "flatpak run com.ml4w.calendar",
+    "on-click-middle": "hyprctl dispatch exec 'kitty --class hyprpicker -e zsh -c \"sleep 0.5; hyprpicker; exec zsh\"'",
+    "tooltip": false
+  },
+
+  // System tray
+  "tray": {
+    "icon-size": 24,
+    "spacing": 10
+  },
+
+  // System
+  "custom/system": {
+    "format": "\uf077",
+    "on-click-right": "exec ~/.config/waybar/launch.sh",
+    "tooltip": false
+  },
+
+  // Group: Hardware
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 200,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/system",
+      "cpu",
+      "memory",
+      "custom/updates",
+      "network",
+      "custom/hyprshade",
+      "custom/cliphist",
+      "pulseaudio",
+      "tray"
+    ]
+  },
+
+  // Group: Settings
+  "group/settings": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 200,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/settings",
+      // "pulseaudio",
+      "custom/waybarthemes",
+      "custom/wallpaper",
+      "custom/hypridle",
+      "custom/notification"
+    ]
+  },
+
+  // Network Module
+  "network": {
+    "format": "{ifname}",
+    "format-ethernet": "\uf1eb",
+    "format-disconnected": "󰤨",
+    "tooltip-format-ethernet": "󰤨 {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 20,
+    "on-click": "nm-connection-editor",
+    "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
+  },
+  
+    // Hypridle inhibitor
+  "custom/hypridle": {
+    "format": "\uf023",
+    "return-type": "json",
+    "escape": true,
+    "exec-on-event": true,
+    "interval": 60,
+    "exec": "~/.config/hypr/scripts/hypridle.sh status",
+    "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
+  },
+  
+    // SwayNC
+  "custom/notification": {
+    "tooltip-format": "Left: Notifications\nRight: Do not disturb",
+    "format": "{icon}",
+    "format-icons": {
+      "notification":
+        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "none": "\uf0f3",
+      "dnd-notification":
+        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "dnd-none": "\uf8fa",
+      "inhibited-notification":
+        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "inhibited-none": "\uf8fa",
+      "dnd-inhibited-notification":
+        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "dnd-inhibited-none": "\uf1f6"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  }
+}

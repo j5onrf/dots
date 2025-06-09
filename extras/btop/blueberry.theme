@@ -1,0 +1,52 @@
+# ___.   .__               ___.                               
+# \_ |__ |  |  __ __   ____\_ |__   _____(2025)_j5onrf ___.__.
+#  | __ \|  | |  |  \_/ __ \| __ \_/ __ \_  __ \_  __ <   |  |
+#  | \_\ \  |_|  |  /\  ___/| \_\ \  ___/|  | \/|  | \/\___  |
+#  |___  /____/____/  \___  >___  /\___  >__|   |__|   / ____|
+#      \/                 \/    \/     \/              \/  
+
+name: "blueberry"
+theme[main_bg]="#14131d"
+theme[main_fg]="#BBBBFF"
+theme[title]="#BBBBFF"
+theme[hi_fg]="#88ff88"
+theme[selected_bg]="#3b3854"
+theme[selected_fg]="#88ff88"
+theme[inactive_fg]="#7b7bbb"
+theme[graph_text]="#BBBBFF"
+theme[meter_bg]="#3b3854"
+theme[proc_misc]="#BBBBFF"
+theme[cpu_box]="#88ff88"
+theme[mem_box]="#88ff88"
+theme[net_box]="#BBBBFF"
+theme[proc_box]="#BBBBFF"
+theme[div_line]="#343051"
+theme[temp_start]="#BBBBFF"
+theme[temp_mid]="#BBBBFF"
+theme[temp_end]="#BBBBFF"
+theme[cpu_start]="#88ff88"
+theme[cpu_mid]="#88ff88"
+theme[cpu_end]="#88ff88"
+theme[free_start]="#88ff88"
+theme[free_mid]="#88ff88"
+theme[free_end]="#88ff88"
+theme[cached_start]="#BBBBFF"
+theme[cached_mid]="#BBBBFF"
+theme[cached_end]="#BBBBFF"
+theme[available_start]="#BBBBFF"
+theme[available_mid]="#BBBBFF"
+theme[available_end]="#BBBBFF"
+theme[used_start]="#88ff88"
+theme[used_mid]="#88ff88"
+theme[used_end]="#88ff88"
+theme[download_start]="#BBBBFF"
+theme[download_mid]="#BBBBFF"
+theme[download_end]="#BBBBFF"
+theme[upload_start]="#BBBBFF"
+theme[upload_mid]="#BBBBFF"
+theme[upload_end]="#BBBBFF"
+theme[process_start]="#88ff88"
+theme[process_mid]="#88ff88"
+theme[process_end]="#88ff88"
+
+

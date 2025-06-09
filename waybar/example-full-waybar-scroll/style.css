@@ -1,0 +1,124 @@
+/*
+ * __        __          _                  ____  _         _       
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___  
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \ 
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/ 
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___| 
+ *                 |___/                              |___/         
+ *  
+ * (2024) Minimal Full Waybar Scroll
+ * ----------------------------------------------------- 
+*/
+
+/* -----------------------------------------------------
+ * Workspaces oct15-2024 Min-Hyprtidy
+ * ----------------------------------------------------- */
+
+#workspaces {
+    margin: 0px;
+    font-size: 18px;
+    color: @glyphbutton;
+}
+
+#workspaces button {
+    border: none;
+    margin: 0px;
+    padding: 0px 8px;
+    color: @waybarcolor;
+}
+
+#workspaces button.active {
+    color: @glyphbutton;
+    border-radius: 3px;
+    background: @waybarcolor;
+}
+
+#workspaces button:hover {
+    border-radius: 3px;
+}
+
+#workspaces button.empty {
+    opacity: 0.0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------------------
+ * Workspaces sep-2024
+ * ----------------------------------------------------- */
+
+#workspaces {
+    padding: 0;
+    margin-left: 10px;
+    border: none;
+}
+
+#workspaces button {
+    padding: 0 4px;
+    border: none;
+    color: @iconcolor;
+    background: transparent;
+}
+
+#workspaces button:hover {
+    opacity: 0.0;
+}
+
+#workspaces button.empty {
+    color: rgba(0, 0, 0, 0.0);
+}
+
+#workspaces button.active {
+    background-color: @gbcolor;
+    color: @hovercolor;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+
+/* -----------------------------------------------------
+ * Workspaces sep-2024
+ * ----------------------------------------------------- */
+
+ #workspaces {
+    margin: 0px 7px 0px 7px;
+    border: 0px;
+    font-size: 14px;
+    color: @textcolor1;
+}
+
+#workspaces button {
+    border: 0px;
+    margin:2px 10px 2px 0px;
+    padding:0px 4px 0px 4px;
+    color: @textcolor3;
+}
+
+#workspaces button.active {
+    color: @textcolor1;
+border-radius: 5px;
+    background: @workspacesbackground2;
+}
+
+#workspaces button:hover {
+    opacity: 0.0;
+}
+
+#workspaces button.empty {
+   opacity: 0.0;
+}

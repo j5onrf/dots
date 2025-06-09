@@ -1,0 +1,142 @@
+/**
+ * ROFI Dark Theme j5onrf 05-26-2025
+ */
+
+* {
+    background-main:         #2E2A38; // Main window background
+    background-input:        #3C384A; // Input bar background
+    foreground-main:         #D8D8E2; // Main text color
+    selected-background:     #4A4458; // Selected item background
+    selected-foreground:     #FFFFFF; // Selected item text color
+    border-color:            #3C384A; // Window border color (same as input bar for subtlety)
+    placeholder-text:        #807C8F; // Placeholder text color
+
+    // Accents
+    accent-green:            #A9DC76;
+    accent-red:              #FF6188;
+
+    // General properties
+    background-color:        @background-main;
+    text-color:              @foreground-main;
+    font:                    "Adwaita Mono 11";
+    border:                  0;
+    margin:                  0;
+    padding:                 0;
+    spacing:                 0;
+}
+
+// Rofi Configuration Options
+configuration {
+    modi:                    "drun,run,window";
+    show-icons:              true;
+    icon-theme:              "Papirus-Dark";
+    dynamic:                 false;
+    fixed-num-lines:         true;
+    display-drun:            ""; // Handled by inputbar theme
+    drun-prompt:             ""; // Handled by inputbar theme                       
+    hover-select:            false;
+    scroll-method:           1;
+    me-select-entry:         "";
+    me-accept-entry:         "MousePrimary";
+}
+
+window {
+    background-color:        @background-main;
+    border:                  1px;
+    border-color:            @border-color;
+    padding:                 10px;
+    width:                   50%;
+    location:                center;
+    anchor:                  center;
+    border-radius:           4px;
+}
+
+mainbox {
+    children:                [ inputbar, listview ];
+    spacing:                 10px;
+    padding:                 5px;
+}
+
+inputbar {
+    background-color:        @background-input;
+    text-color:              @foreground-main;
+    padding:                 8px 10px; // Adjusted padding
+    border-radius:           4px;
+    children:                [ textbox-prompt-colon, entry, case-indicator ];
+    spacing:                 8px; // Space between icon and entry field
+}
+
+textbox-prompt-colon {
+    expand:                  false;
+    str:                     ""; // Search icon
+    text-color:              inherit;
+    background-color:        transparent;
+    vertical-align:          0.5;
+    padding:                 0; // No extra padding around icon itself
+}
+
+entry { // The actual text input field
+    text-color:              inherit;
+    background-color:        transparent;
+    placeholder:             "Type to filter";
+    placeholder-color:       @placeholder-text;
+    vertical-align:          0.5;
+    padding:                 0; 
+}
+
+case-indicator {
+    text-color:              inherit;
+    background-color:        transparent;
+    vertical-align:          0.5;
+    padding:                 0;
+}
+
+listview {
+    lines:                   12;
+    columns:                 1;
+    fixed-height:            true;
+    scrollbar:               false;
+    spacing:                 5px;
+    padding:                 5px 0px;
+    background-color:        transparent;
+}
+
+element {
+    padding:                 8px 10px;
+    border-radius:           4px;
+    background-color:        transparent;
+}
+
+element-text {
+    background-color:        inherit;
+    text-color:              inherit;
+    vertical-align:          0.5;
+}
+
+element-icon {
+    size:                    1.5em;
+    padding:                 0px 10px 0px 0px;
+    background-color:        inherit;
+    vertical-align:          0.5;
+}
+
+element selected {
+    background-color:        @selected-background;
+    text-color:              @selected-foreground;
+}
+
+element active {
+    text-color:              @accent-green;
+}
+element selected.active {
+    background-color:        @selected-background;
+    text-color:              @accent-green;
+}
+
+element urgent {
+    text-color:              @accent-red;
+}
+element selected.urgent {
+    background-color:        @selected-background;
+    text-color:              @accent-red;
+}

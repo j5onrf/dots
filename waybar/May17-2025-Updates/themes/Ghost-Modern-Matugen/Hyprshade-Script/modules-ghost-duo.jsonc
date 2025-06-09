@@ -1,0 +1,15 @@
+  // Hyprshade
+"custom/hyprshade": {
+  // EXEC: Calls the script with NO arguments. It just runs the "Display Reporter".
+  "exec": "~/.config/hypr/scripts/icon-switch-hyprshade.sh",
+
+  // ON-CLICK: Calls the script WITH the "toggle" argument to run the "Action Handler".
+  "on-click": "~/.config/hypr/scripts/icon-switch-hyprshade.sh toggle",
+
+  // ON-CLICK-RIGHT: Your original command, left exactly as you wanted.
+  "on-click-right": "sleep 0.1; ~/.config/hypr/scripts/hyprshade.sh rofi",
+
+  "return-type": "json",
+  "interval": 1,
+  "tooltip": false
+},

@@ -1,0 +1,244 @@
+/*________.__                   __   
+ /  _____/|  |__   ____  ______/  |_  
+/   \  ___|  |  \ /  _ \/  ___|   __\
+\    \_\  \   Y  (  <_> )___ \ |  |  
+ \______  /___|  /\____/____  >|__|                           
+  /     \ _____ _/  |_ __ __  ____   ____   ____  
+ /  \ /  \\__  \\   __|  |  \/ ___\_/ __ \ /    \ 
+/    Y    \/ __ \|  | |  |  / /_/  \  ___/|   |  \
+\____|__  (____  |__| |____/\___  / \___  |___|  /
+        \/     \/          /_____/      \/     \/        
+* ML4W, Edited by j5onrf
+* Ghost-Matugen v3.5 (6-05-2025) beta
+* ----------------------------------------------------- 
+*/
+
+@import 'ghost-matugen.css';
+
+* {
+    border-radius: 0.2em;
+    background: none;
+}
+
+window#waybar {
+    background-color: transparent;
+    border: none;
+}
+
+#waybar > box {
+    background: transparent;
+    border-radius: 0.2em;
+    margin: 5px 5px 5px 0px;           
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 100;
+    font-size: 24px; 
+    background-color: @ghost_bar_background;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+#workspaces {
+    font-family: "Font Awesome 6 Pro Light";
+    font-weight: 200;
+    background-color: @ghost_bar_background;
+    margin: 0em;
+}
+#workspaces button {
+    color: @primary;
+    margin: 0.1em 0.14em;
+    padding: 0.25em 0.13em;
+    background-color: @ghost_ws_button_bg;
+    min-width: 1.25em; /* Optional: keeps min-width larger than content */
+}
+#workspaces button.active {
+    color: @ghost_ws_button_active_fg;
+    margin: 0.1em 0.14em;
+    padding: 0.25em 0.13em;
+    background-color: @ghost_ws_button_active_bg;
+}
+#workspaces button:hover {
+    color: @ghost_ws_button_hover_fg;
+    margin: 0.1em 0.14em;
+    padding: 0.25em 0.13em;
+    background-color: @ghost_ws_button_hover_bg;
+    border: 1px solid @primary;
+}
+#workspaces button.empty {
+    color: @primary;
+    margin: 0.1em 0.14em;
+    padding: 0.25em 0.13em;
+}
+
+#cpu:hover,
+#memory:hover,
+#custom-hyprshade:hover,
+#custom-cliphist:hover,
+#custom-updates:hover,
+#network:hover,
+#custom-wallpaper:hover,
+#custom-waybarthemes:hover,
+#tray:hover,
+#pulseaudio:hover,
+#custom-hypridle:hover,
+#custom-notification:hover {
+    color: @ghost_text_primary;
+    border: 1px solid @ghost_hover_glow_color;
+    padding: 0.15em 0;
+    transition: all 0.1s linear;
+    margin: 0.1em 0.2em;
+    font-weight: 300;
+}
+
+#window {
+    font-size: 0.643em;
+    font-family: "Azonix", "JetBrainsMono Nerd Font Mono", sans-serif;
+    font-weight: 400;
+    margin: 0.3em 0.35em;
+    padding-top: 0.1em;
+    padding-right: 0px;
+    padding-left: 0.45em;
+    color: @primary;
+    border: 1px solid transparent;
+}
+#window:hover {
+    color: @primary;
+    border: 1px solid @ghost_hover_glow_color;
+    border-radius: 0.4em;
+}
+
+#cpu:hover,
+#memory:hover,
+#custom-updates:hover{
+    color: @ghost_text_primary;
+    padding: 0.15em 0;
+    font-weight: 200;
+}
+#cpu,
+#memory,
+#custom-updates {
+    font-family: "Azonix", "JetBrainsMono Nerd Font Mono", sans-serif;
+    font-weight: 100;
+    font-size: 0.57em;
+    color: @ghost_text_primary;
+    padding: 0.15em 0;
+    margin: 0.1em 0.2em;
+    border: 1px solid transparent;
+}
+#cpu, #cpu:hover { 
+    margin: 0.6em 0 0 0;
+}
+
+#custom-appmenu:hover {
+    border: 1px solid @ghost_hover_glow_color;
+    font-size: 1em;
+    color: @primary;
+    font-size: 1.75em;
+    margin: 0 0 0.2em 0;
+}
+#custom-exit:hover {
+    border: 1px solid @ghost_hover_glow_color;
+    font-size: 1em;
+    color: @primary;
+    padding: 0.19em 0;
+    font-size: 1.25em;
+    margin: 0.1em 0 0 0;
+}
+#custom-appmenu,
+#custom-exit {
+    font-size: 4px;
+    color: @ghost_hidden_text;
+}
+#custom-exit {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 400;
+}
+#custom-appmenu {
+    font-family: "JetBrainsMono Nerd Font Mono";
+    font-weight: 100;
+}
+
+#custom-settings,
+#custom-system {
+    font-size: 0.5em;
+    color: @ghost_hidden_text;
+    padding: 0.4em;
+    color: transparent;
+}
+
+#custom-settings:hover,
+#custom-system:hover {
+    color: @ghost_text_primary;
+}
+
+#pulseaudio,
+#custom-cliphist,
+#custom-hyprshade,
+#network, #tray,
+#custom-waybarthemes,
+#custom-wallpaper,
+#custom-hypridle,
+#custom-notification {
+    color: @primary;
+    border: 1px solid transparent;
+    padding: 0.15em 0;
+    margin: 0.1em 0.2em;
+}
+#custom-notification:hover,
+#custom-notification {
+    margin: 0.2em 0 0.4em 0;
+}
+
+#custom-hypridle.active {
+    color: @ghost_hypridle_active_icon;
+}
+#custom-hypridle.notactive {
+    color: @ghost_hypridle_inactive_icon;
+}
+
+#pulseaudio.muted {
+    color: @ghost_pulseaudio_muted_fg;
+}
+#pulseaudio.muted:hover {
+    color: @ghost_pulseaudio_muted_hover__fg;
+}
+
+#clock {
+    font-family: "Azonix", "JetBrainsMono Nerd Font Mono", sans-serif;
+    font-weight: 400;
+    font-size: 0.857em;
+    color: @primary;
+    border: 1px solid transparent;
+    padding-top: 0.2em;
+}
+#clock:hover {
+    color: @primary;
+    border: 1px solid @ghost_hover_glow_color;
+}
+
+tooltip {
+    background-color: @ghost_tooltip_background;
+    opacity: 0.8;
+}
+tooltip label {
+    color: @ghost_text_tooltip;
+    font-size: 14px;
+}
+
+  /* --- CPU Module Styling --- */
+#cpu.low { /* 0-4% */
+    color: @ghost_text_primary; 
+}
+#cpu.medium { /* 5-49% */
+    color: @tertiary_fixed;
+}
+#cpu.high { /* 50-79% */
+    color: @source_color;
+}
+#cpu.critical { /* 80%-100% */
+    color: @error;
+    font-weight: bold; 
+}

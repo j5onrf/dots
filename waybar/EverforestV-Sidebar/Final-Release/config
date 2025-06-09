@@ -1,0 +1,127 @@
+// __        __          _                 
+// \ \      / /_ _ _   _| |__   __ _ _ __  
+//  \ \ /\ / / _` | | | | '_ \ / _` | '__| 
+//   \ V  V / (_| | |_| | |_) | (_| | |    
+//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
+//                 |___/                   
+//  ML4W
+// EverforestV-Sidebar Final (11-10-2024)
+// ----------------------------------------------------- 
+//
+{
+    // General Settings
+    "layer": "top",
+    "position": "left",
+    "margin-bottom": 10,
+    "margin-top": 10,
+    "margin-left": 9,
+    "margin-right": 5,    
+    "spacing": 0,
+
+    // Load Modules
+    "include": [
+        "~/.config/waybar/modules-sidebar.json"
+    ],
+
+    // Pulseaudio  󰗅 󱘂 
+    "pulseaudio": {
+        "scroll-step": 3, // %, can be a float
+        "format": "{icon}",
+        "format-icons": {
+            "default": ["󰗅"]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "ags -t bar-0",
+        "format-muted": "󱘂",
+        "tooltip": false
+    },
+    
+    // Clock :%I:%M  %a%e  pm: %p  "rotate": 90,
+    "clock": {
+        "format": "{:%I\n%M}",
+        "on-click": "ags -t calendarmenu",
+        "on-click-right": "gapplication launch org.gnome.Weather",
+        "tooltip": false
+    },
+  
+    // Rofi Application Launcher 󱗼
+    "custom/appmenu": {
+        "format": "󰣇",
+        "on-click": "~/.config/rofi/bin/launcher",
+        "on-click-right": "~/.config/rofi/bin/launcher2",
+        "tooltip": false
+    },
+  
+    // Power Menu 
+    "custom/exit": {
+        "format": "",
+        "on-click": "wlogout",
+        "on-click-right": "com.ml4w.welcome",
+        "tooltip": false
+    },
+  
+    // CPU
+    "cpu": {
+        "format-critical": "<span color='#c20821'><b>{usage}</b></span>",
+        "format-high": "<span color='#E69875'>{usage}</span>",
+        "format-medium": "<span color='#DBBC7F'>{usage}</span>",
+        "format-low": "<span color='#A7C080'>{usage}</span>",
+        "on-click": "~/.config/ml4w/settings/systeminfo.sh",
+        "tooltip": false,
+  //    "interval": 2,
+        "states": {
+            "critical": 80,
+            "high": 50,
+            "medium": 5,
+            "low": 0
+        }
+    },
+  
+    // Memory
+    "memory": {
+        "format-critical": "<span color='#c20821'><b>{used:0.1f}</b></span>",
+        "format-high": "<span color='#E69875'>{used:0.1f}</span>",
+        "format-medium": "<span color='#DBBC7F'>{used:0.1f}</span>",
+        "format-low": "<span color='#A7C080'>{used:0.1f}</span>",
+        "on-click": "~/.config/ml4w/settings/systeminfo.sh",
+        "tooltip": false,
+ //     "interval": 10,
+        "states": {
+            "critical": 25.6,   // More than 25.6 GB (80% of 32 GB)
+            "high": 19.2,       // Between 19.2 GB (60% of 32 GB) and 25.6 GB
+            "medium": 12.8,     // Between 12.8 GB (40% of 32 GB) and 19.2 GB
+            "low": 0            // Less than 12.8 GB (below 40% of 32 GB)
+        }
+    },
+
+    // Updates 󰚰
+    "custom/updates": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/ml4w/scripts/updates.sh",
+        "restart-interval": 1800,
+        "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
+        "on-click-right": "~/.config/ml4w/settings/software.sh"
+    },
+
+    // Modules Left
+    "modules-left": [
+        "custom/appmenu",
+//      "group/links",
+        "group/settings",
+        "hyprland/workspaces#rw"
+    ],
+
+    // Modules Center
+    "modules-center": [
+        "custom/empty"
+    ],
+
+    // Modules Right    
+    "modules-right": [     
+        "group/hardware", 
+        "clock",  
+        "custom/exit"
+    ]
+}
+

@@ -1,0 +1,120 @@
+//  __      __  _____ _____._____________   _____ __________ 
+// /  \    /  \/  _  \\__  |   \______   \ /  _  \\______   \
+// \   \/\/   /  /_\  \/   |   ||    |  _//  /_\  \|       _/
+//  \        /    |    \____   ||    |   /    |    |    |   \
+//   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
+//        \/         \/\/              \/        \/       \/     
+// ML4W, Edited by j5onrf (2025)
+// Ghost-Modern (01-19-2025) beta
+// -----------------------------------------------------
+
+{
+  // General Settings
+  "layer": "top",
+  "position": "left",
+  "margin-bottom": 15,
+  "margin-top": 15,
+  "margin-left": 10,
+  "margin-right": 8,
+  "spacing": 0,
+
+  // Load Modules
+  "include": [
+    "~/.config/waybar/modules-ghost.json"
+  ],
+
+  // Modules Left
+  "modules-left": [
+    "custom/appmenu",
+    "clock",
+    "group/settings"
+  ],
+
+  // Modules Center
+  "modules-center": [
+    "hyprland/workspaces#rw"
+  ],
+
+  // Modules Right
+  "modules-right": [
+    "group/hardware",
+    "hyprland/window",
+    "custom/exit"
+  ],
+  
+  // Clock Configuration
+  "clock": {
+    "format": "{:%I\n%M}",
+    "tooltip-format": "{:%A, %d %b %Y}",
+    "on-click-right": "gapplication launch org.gnome.Weather",
+    "on-click-middle": "~/.config/hypr/scripts/wttr.sh",
+    "on-click": "gtk-launch brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default",
+  },
+  
+  // Hyprland Window
+  "hyprland/window": {
+    "format": "{title:.10}",
+    "rewrite": {
+      "^(\\s*)$": "Hyprland",
+      "(.*) - Brave": "$1",
+      "(.*) - Brave Search": "$1"
+    },
+    "rotate": 90,
+    // "separate-outputs": true,
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+
+  // Pulseaudio
+  "pulseaudio": {
+    "scroll-step": 3,
+    "format": "{icon}",
+    "format-icons": {
+      "default": ["\uf6a8"]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format-muted": "\uf6a9",
+    "tooltip": false
+  },
+
+  // Rofi Application Launcher 󰣇
+  "custom/appmenu": {
+    "format": "",
+    "on-click": "~/.config/rofi/bin/launcher",
+    "on-click-right": "~/.config/rofi/bin/launcher",
+    "tooltip": false
+  },
+
+  // Power Menu 
+  "custom/exit": {
+    "format": "\uf011",
+    "on-click": "~/.config/ml4w/scripts/wlogout.sh",
+    "on-click-right": "com.ml4w.welcome",
+    "tooltip": false
+  },
+
+     // CPU
+  "cpu": {
+    "format": "{usage}",
+    "on-click": "kitty -e htop --sort-key PERCENT_CPU",
+    "tooltip": false
+  },
+  
+  // Memory
+  "memory": {
+    "format": "{used:0.1f}",
+    "on-click": "kitty -e htop --sort-key PERCENT_MEM",
+    "tooltip": false
+  },
+  
+    // Updates
+  "custom/updates": {
+    "format": "{}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.config/ml4w/scripts/updates.sh",
+    "interval": 1800,
+    "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
+    "on-click-right": "~/.config/ml4w/settings/software.sh"
+  }
+}

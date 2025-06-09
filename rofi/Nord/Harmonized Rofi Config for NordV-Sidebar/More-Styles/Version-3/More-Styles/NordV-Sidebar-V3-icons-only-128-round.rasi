@@ -1,0 +1,135 @@
+/* _____                   .______   ___.__      .__    .___
+ \      \   ___________  __| _\   \ /   |_____  _|__| __| _/
+ /   |   \ /  _ \_  __ \/ __ | \   Y   /|  \  \/ |  |/ __ | 
+/    |    (  <_> |  | \/ /_/ |  \     / |  |\   /|  / /_/ | 
+\____|__  /\____/|__|  \____ |   \___/  |__| \_/ |__\____ | 
+        \/                  \/                           \/   
+* Edited by j5onrf (2025)
+* -----------------------------------------------------  
+* Harmonized Rofi Config for NordV-Sidebar
+*/
+
+/* Define color variables */
+* {
+  al:           #00000000;    /* Transparent */
+  bg:           #2E3440FF;    /* Dark primary background color */
+  bga:          #3B4252FF;    /* Secondary background */
+  fg:           #88C0D0FF;    /* Light blue for text and icons */
+  ac:           #88C0D0FF;    /* Accent blue for hover effects */
+  se:           #8FBCBBFF;    /* Aqua highlight (active/selected items) */
+  wh:           #FFFFFF;      /* White color */
+}
+
+/* General Configuration */
+configuration {
+    font:                "JetBrainsMono Nerd Font Propo 18";
+    font-weight: 600; /* Medium weight for balance */
+    show-icons:          true;
+    icon-theme:          "Papirus";
+    display-drun:        " ";
+    drun-display-format: "{name}";
+    disable-history:     false;
+    fullscreen:          false;
+    hide-scrollbar:      false;
+    sidebar-mode:        false;
+    cycle: false; /* Disable wrapping when scrolling */
+}
+
+/* Window (Background and Border) */
+window {
+    transparency:        "real";
+    background-color:    @bg;    /* Window background color */
+    text-color:          @fg;    /* Text color */
+    border:              0.11em; /* Border thickness (match Waybar) */
+    border-color:        #434C53;   /* Border color (secondary background) */
+    border-radius:       2em;    /* Rounded corners */
+    width:               1020px;
+    location:            center;   /* Align with Waybar sidebar */
+    x-offset:            0px;   /* Slight horizontal offset */
+    y-offset:            0px;    /* Align vertically with screen */
+}
+
+/* Input Bar (Search Area) */
+inputbar {
+    background-color:    @bg;
+    text-color:          @fg;
+    padding:             0.65em 0.5em;  /* Matching left and right padding */
+    margin:              0.81em 0.81em 0em;  /* Same margin for top and left/right, but 0 for bottom */
+    border:              0.05em;
+    border-color:        #99C1F1;   /* Border color (secondary background) */
+    border-radius:       2em;
+    children:            [ prompt, entry ];
+    horizontal-align:    0;
+}
+
+/* Prompt (Label before Input) */
+prompt {
+    text-color:          @wh;    /* Accent color for prompt text */
+    background-color:    transparent;
+    padding:             0.18em 0 0 0; /* Add left padding to move the icon */
+    margin-left:         0em;   /* Add some space between the icon and the search box */
+}
+
+/* Entry (Search Input) */
+entry {
+    background-color:    transparent;
+    text-color:          @wh;    /* White color for text */
+    placeholder-color:   @wh;    /* White color for placeholder */
+    placeholder:         "Search...";
+    padding:             0.2em 0.5em;
+    horizontal-align:    0;      /* Align text input to the left */
+}
+
+/* Listview (Result Items) */
+listview {
+    background-color:    @al;    /* Transparent background */
+    columns:             5;
+    lines:               4;     /* Set the height with # of lines */
+    spacing:             0em;  /* Space between items */
+    margin:              0.81em 0.81em 0em;  /* Same margin for top and left/right, but 0 for bottom */
+    layout:              vertical;
+}
+
+/* Elements (Items in Listview) */
+element {
+    background-color:    @bga;
+    text-color:          @wh;    /* White color for element text */
+    border-radius:       100em;  /* Match Waybar button shape */
+    padding:             0.45em 0.5em; /* Ensure padding on the sides for internal space */
+    margin:              0.4em;
+    border:              0.12em; /* Border thickness (match Waybar) */
+    border-color:        #3B4252;   /* Border color (secondary background) */
+}
+
+/* Icons (Optional for Listview Items) */
+element-icon {
+    background-color:    transparent;
+    text-color:          inherit;
+    size:                128px;    /* Icon size */
+}
+
+/* Selected Element */
+element selected {
+    background-color:    #99C1F1;
+    text-color:          @bg;     /* Contrast text for selection */
+    border-color:        #99C1F1;     /* Accent border color */
+}
+
+/* Text for Elements */
+element-text {
+    background-color:    transparent;
+    text-color:          inherit;
+    expand:              true;
+    horizontal-align:    0;
+    vertical-align:      0.5;
+    padding-left:        0em;    /* Increase left padding to ensure more space between icon and text */
+}
+
+/* Main Box (Container for Input and Listview) */
+mainbox {
+    children:            [ inputbar, listview ];
+    spacing:             0em;  /* Reduce spacing between search box and results */
+    background-color:    @al;    /* Transparent container */
+    margin:              0 0 0.6em 0;
+}
+

@@ -1,0 +1,181 @@
+/*___.   .__               ___.                               
+* \_ |__ |  |  __ __   ____\_ |__   ____ _____ _______ ___.__.
+*  | __ \|  | |  |  \_/ __ \| __ \_/ __ \_  __ \_  __ <   |  |
+*  | \_\ \  |_|  |  /\  ___/| \_\ \  ___/|  | \/|  | \/\___  |
+*  |___  /____/____/  \___  >___  /\___  >__|   |__|   / ____|
+*      \/                 \/    \/     \/              \/  
+*  ML4W, Edited by j5onrf (2025)
+*  BlueBerry_Vertical-RW (12-15-2024)
+* -----------------------------------------------------  
+*/
+
+/* Blueberry Color Scheme */
+@define-color color0 #bbbbff; /* Primary text color */
+@define-color color1 #14131D; /* Base background color */
+@define-color color2 #1A1827; /* Icons background color */
+
+/* General Styles */
+* {
+    font-family: "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free", sans-serif;
+    border-radius: 0.4em;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+window#waybar {
+    background: @color1;
+    border: 0.06em solid @color0;
+}
+
+/* Workspaces Styles */
+#workspaces button {
+    color: @color0;
+    background: @color2;
+    margin: 0.1em 0.25em;
+    padding: 0 0.18em;
+    border-left: none; 
+}
+
+#workspaces button.active {
+    color: @color0;
+    background: @color2;
+    margin: 0.1em 0.25em;
+    border-radius: 0.4em;
+    border-left: 0.07em solid @color0;
+    padding: 0 0.18em;
+}
+
+#workspaces button:hover {
+    background: @color0;
+    color: @color2;
+    margin: 0.1em 0.25em;
+    padding: 0 0.18em;
+    border-left: none;
+}
+
+#workspaces button.empty {
+    background: rgba(52, 48, 81, 0.2);
+    padding: 0;
+}
+
+/* Module Hover Styles */
+#cpu:hover, 
+#memory:hover,
+#custom-hyprshade:hover,
+#custom-cliphist:hover,
+#custom-updates:hover,
+#network:hover,
+#custom-wallpaper:hover,
+#custom-waybarthemes:hover,
+#tray:hover,
+#custom-appmenu:hover,
+#custom-exit:hover,
+#pulseaudio:hover {
+    color: @color1;
+    background: @color0;
+    padding: 0;
+    transition: all 0.1s linear;
+    margin: 0em 0.3em; 
+}
+
+/* Specific Adjustments */
+#cpu:hover, 
+#memory:hover,
+#custom-updates:hover{
+    color: @color0;
+    background: #343051;
+    padding: 0.15em 0;
+}
+
+#custom-chevron {
+    border: none;
+    padding: 0em 0.2em;
+    margin: 0em 0.3em; 
+    color: @color1;
+    border-left: 0.078em solid transparent;
+}
+
+#custom-appmenu:hover, 
+#custom-exit:hover {
+    font-size: 1em;
+    background: @color0;
+    padding: 0.19em 0.3em;
+    margin: 0em; 
+}
+
+#custom-appmenu, 
+#custom-exit {
+    font-size: 4;
+    color: @color1;
+}
+
+#custom-settings, 
+#custom-system {
+    font-size: 0.5em;
+    color: @color1;
+}
+
+/* Show chevrons on hover */
+#custom-settings:hover, 
+#custom-system:hover {
+    color: @color0; 
+}
+
+/* Styles for System Info Modules */
+#pulseaudio,
+#custom-cliphist,
+#custom-hyprshade,
+#network, #tray,
+#custom-waybarthemes, 
+#custom-wallpaper {
+    color: @color0;
+    padding: 0;
+    margin: 0em 0.3em; 
+}
+
+#cpu,
+#memory,
+#custom-updates {
+    font-size: 0.5714em;
+    color: @color0;
+    padding: 0.15em 0;
+    margin: 0em 0.3em; 
+}
+
+/* Pulseaudio Muted State */
+#pulseaudio.muted {
+    color: @color0;
+}
+
+#pulseaudio.muted:hover {
+    color: @color1;
+    background-color: @color0;
+}
+
+/* Clock Styles */
+#clock {
+    font-size: 0.85em;
+    margin: 0.3em 0.5em;
+    color: @color0;
+    padding: 0.25em 0;
+    background-color: @color2;
+}
+
+#clock:hover {
+    margin: 0.3em 0.5em;
+    color: #343051;
+    padding: 0.25em 0;
+    background-color: @color0;
+}
+
+/* Tooltip */
+tooltip {
+    background-color: @color1;
+    opacity: 0.8;
+}
+
+tooltip label {
+    color: @color0;
+    font-size: 14;
+}
+
