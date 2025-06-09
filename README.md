@@ -194,8 +194,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 # WayBar
 
 (2025-June09) [GM-Duo-Hyprshade<sup>beta</sup> Orbitron Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Hyprshade-Script/python-solution) 
-![1Region-2025-06-09_18-13-18](https://github.com/user-attachments/assets/2bd4e847-a47c-4830-8100-62e27dc4b517)
-
+![2Region-2025-06-09_17-51-46](https://github.com/user-attachments/assets/d69bc9f6-59c3-45b7-a0fb-537fae10a21d)
 
 (2025-May23) [Ghost-Matugen<sup>beta</sup> Azonix Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
 ![Region-2025-05-24_19-48-26](https://github.com/user-attachments/assets/ea7651fa-4014-41c8-9b5f-cff26bd6f868) 
