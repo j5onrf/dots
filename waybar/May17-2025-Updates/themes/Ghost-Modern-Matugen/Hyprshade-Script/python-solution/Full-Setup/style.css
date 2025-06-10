@@ -221,7 +221,7 @@ window#waybar {
 }
 
 tooltip {
-    background-color: @ghost_tooltip_background;
+    background-color: @ghost_bar_background;
     opacity: 0.8;
 }
 tooltip label {
