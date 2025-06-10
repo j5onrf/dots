@@ -105,7 +105,7 @@ window#waybar {
     padding-top: 0.1em;
     color: @primary;
     border: 1px solid transparent;
-    padding-left: 0.6em;
+    padding-left: 0.6em; /* Tweak based on font width/size */
     padding-right: 0.6em;
 }
 #window:hover {
