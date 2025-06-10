@@ -106,8 +106,8 @@ window#waybar {
     color: @primary;
     /* --- Centering Fix for Waybar Stable --- */
     /* Tweak these values equally based on your font and preference. */
-    padding-left: 0.6em;
-    padding-right: 0.4em;
+    padding-left: 0.55em;
+    padding-right: 0.45em;
 }
 
 #cpu:hover,
@@ -208,11 +208,6 @@ window#waybar {
     font-weight: 400;
     font-size: 0.857em;
     color: @primary;
-    border: 1px solid transparent;
-}
-#clock:hover {
-    color: @primary;
-    border: 1px solid @ghost_hover_glow_color;
 }
 
 tooltip {
