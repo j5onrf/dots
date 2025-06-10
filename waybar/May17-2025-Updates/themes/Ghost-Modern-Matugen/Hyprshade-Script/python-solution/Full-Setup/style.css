@@ -104,17 +104,11 @@ window#waybar {
     margin: 0.3em 0.35em; /* This is the space OUTSIDE the module */
     padding-top: 0.1em;
     color: @primary;
-    border: 1px solid transparent;
     /* --- Centering Fix for Waybar Stable --- */
     /* The only way to center is to have equal padding on left and right. */
     /* Tweak these values equally based on your font and preference. */
-    padding-left: 0.4em;
+    padding-left: 0.6em;
     padding-right: 0.4em;
-}
-#window:hover {
-    color: @primary;
-    border: 1px solid @ghost_hover_glow_color;
-    border-radius: 0.4em;
 }
 
 #cpu:hover,
