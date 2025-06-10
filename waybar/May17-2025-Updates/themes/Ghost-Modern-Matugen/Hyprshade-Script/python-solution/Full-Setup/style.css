@@ -101,13 +101,15 @@ window#waybar {
     font-size: 0.643em;
     font-family: "Audiowide", "Orbitron", "Michroma", sans-serif;
     font-weight: 400;
-    margin: 0.3em 0.35em;
+    margin: 0.3em 0.35em; /* This is the space OUTSIDE the module */
     padding-top: 0.1em;
     color: @primary;
     border: 1px solid transparent;
-    /* Workaround for stable Waybar's GTK CSS limitations */
-    padding-left: 0.6em; /* Tweak based on font width/size */
-    padding-right: 0.6em;
+    /* --- Centering Fix for Waybar Stable --- */
+    /* The only way to center is to have equal padding on left and right. */
+    /* Tweak these values equally based on your font and preference. */
+    padding-left: 0.4em;
+    padding-right: 0.4em;
 }
 #window:hover {
     color: @primary;
@@ -159,7 +161,6 @@ window#waybar {
     padding: 0.4em;
     color: transparent;
 }
-
 #custom-settings:hover,
 #custom-system:hover {
     color: @ghost_text_primary;
