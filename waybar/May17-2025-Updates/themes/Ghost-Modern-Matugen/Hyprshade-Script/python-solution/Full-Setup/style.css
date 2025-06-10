@@ -105,7 +105,6 @@ window#waybar {
     padding-top: 0.1em;
     color: @primary;
     /* --- Centering Fix for Waybar Stable --- */
-    /* The only way to center is to have equal padding on left and right. */
     /* Tweak these values equally based on your font and preference. */
     padding-left: 0.6em;
     padding-right: 0.4em;
