@@ -6,8 +6,9 @@ This module controls [Hyprshade](https://github.com/loqusion/hyprshade) with a l
 
 ### 🎥 Demo
 
-![FullScreen-2025-06-08_21-32-14](https://github.com/user-attachments/assets/384aa71a-586b-45c5-893a-94218e6f92e8)
 ![FullScreen-2025-06-08_21-32-14](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Hyprshade-Script/python-solution/Full-Setup/FullScreen-2025-06-09_18-06-12.png)
+
+![FullScreen-2025-06-08_21-32-14](https://github.com/user-attachments/assets/384aa71a-586b-45c5-893a-94218e6f92e8)
 
 ---
 
