@@ -9,7 +9,7 @@
 \____|__  (____  |__| |____/\___  / \___  |___|  /
         \/     \/          /_____/      \/     \/        
 * ML4W, Edited by j5onrf
-* GM-Duo (6-07-2025) beta
+* GM-Duo (6-09-2025) beta
 * ----------------------------------------------------- 
 */
 
@@ -222,8 +222,8 @@ window#waybar {
 }
 
 tooltip {
-    background-color: @ghost_tooltip_background;
-    opacity: 0.8;
+    background-color: @ghost_bar_background;
+    opacity: 0.9;
 }
 tooltip label {
     color: @ghost_text_tooltip;
