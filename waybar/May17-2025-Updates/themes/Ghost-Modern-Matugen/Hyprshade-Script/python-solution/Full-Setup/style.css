@@ -25,7 +25,7 @@ window#waybar {
     border: none;
     box-shadow: none;
 }
-#waybar > box { /* Optional: shadow match hyprland decoration */
+#waybar > box { /* Optional: Shadow */
     background-color: @ghost_bar_background;
     border-radius: 0.4em;
     margin: 5px;
@@ -36,7 +36,7 @@ window#waybar {
 .modules-right,
 .modules-center {
     font-family: "Font Awesome 6 Duotone";
-    font-weight: 900; /* Thin 100, Light 300, Duotone 900 */
+    font-weight: 900;
     font-size: 24px;
     border-radius: 0.4em;
     box-shadow: inset 0 0 1em @ghost_light_glow;
@@ -48,7 +48,7 @@ window#waybar {
 
 #workspaces {
     font-family: "Font Awesome 6 Duotone";
-    font-weight: 900; /* Thin 100, Light 300, Duotone 900 */
+    font-weight: 900;
     background-color: @ghost_bar_background;
 }
 #workspaces button {
@@ -56,7 +56,7 @@ window#waybar {
     margin: 0.1em 0.14em;
     padding: 0.25em 0.13em;
     background-color: @ghost_ws_button_bg;
-    min-width: 1.25em; /* Optional: keeps min-width larger than content */
+    min-width: 1.25em; /* Optional: keeps min-width */
 }
 #workspaces button.active {
     color: @ghost_ws_button_active_fg;
@@ -90,7 +90,7 @@ window#waybar {
 #custom-hypridle:hover,
 #custom-notification:hover {
     color: @ghost_text_primary;
-    border: 1px solid @ghost_hover_glow_color;
+        background-color: @ghost_ws_button_hover_bg;
     padding: 0.15em 0;
     transition: all 0.1s linear;
     margin: 0.1em 0.2em;
@@ -101,12 +101,10 @@ window#waybar {
     font-size: 0.643em;
     font-family: "Audiowide", "Orbitron", "Michroma", sans-serif;
     font-weight: 400;
-    margin: 0.3em 0.35em; /* This is the space OUTSIDE the module */
+    margin: 0.3em 0.35em;
     padding-top: 0.1em;
     color: @primary;
-    /* --- Centering Fix for Waybar Stable --- */
-    /* Tweak these values equally based on your font and preference. */
-    padding-left: 0.55em;
+    padding-left: 0.55em; /* Centering Fix for Waybar Stable */
     padding-right: 0.45em;
 }
 
@@ -118,33 +116,33 @@ window#waybar {
     font-weight: 200;
 }
 
+#custom-appmenu {
+    font-family: "JetBrainsMono Nerd Font Mono";
+    font-weight: 100;
+}
 #custom-appmenu:hover {
-    border: 1px solid @ghost_hover_glow_color;
+    background-color: @ghost_ws_button_active_bg;   
     font-size: 1em;
     color: @primary;
     font-size: 1.75em;
     margin: 0 0 0.2em 0;
-}
-#custom-exit:hover {
-    border: 1px solid @ghost_hover_glow_color;
-    font-size: 1em;
-    color: @primary;
-    padding: 0.19em 0;
-    font-size: 1.25em;
-    margin: 0.1em 0 0 0;
 }
 #custom-appmenu,
 #custom-exit {
     font-size: 4px;
     color: @ghost_hidden_text;
 }
+#custom-exit:hover {
+    background-color: @ghost_ws_button_active_bg;
+    font-size: 1em;
+    color: @primary;
+    padding: 0.19em 0;
+    font-size: 1.25em;
+    margin: 0.1em 0 0 0;
+}
 #custom-exit {
     font-family: "Font Awesome 6 Duotone";
-    font-weight: 900; /* Thin 100, Light 300, Duotone 900 */
-}
-#custom-appmenu {
-    font-family: "JetBrainsMono Nerd Font Mono";
-    font-weight: 100;
+    font-weight: 900;
 }
 
 #custom-settings,
@@ -210,7 +208,6 @@ window#waybar {
     color: @primary;
 }
 
-/* --- Tooltip Styling (Inverse Logic) --- */
 tooltip {
     background-color: @ghost_bar_background;
     border-radius: 0.5em;
@@ -229,7 +226,6 @@ tooltip label tt {
     font-size: 0.9em;
 }
 
-  /* --- CPU Module Styling --- */
 #cpu.low { /* 0-4% */
     color: @ghost_text_primary; 
 }
