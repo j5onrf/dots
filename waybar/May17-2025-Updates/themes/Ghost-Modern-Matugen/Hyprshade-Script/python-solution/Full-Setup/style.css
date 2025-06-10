@@ -90,7 +90,8 @@ window#waybar {
 #custom-hypridle:hover,
 #custom-notification:hover {
     color: @ghost_text_primary;
-        background-color: @ghost_ws_button_hover_bg;
+    background-color: @ghost_ws_button_hover_bg;
+    border: 1px solid @ghost_hover_glow_color;
     padding: 0.15em 0;
     transition: all 0.1s linear;
     margin: 0.1em 0.2em;
