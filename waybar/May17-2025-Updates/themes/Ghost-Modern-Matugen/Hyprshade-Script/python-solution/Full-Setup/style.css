@@ -214,7 +214,6 @@ window#waybar {
     font-size: 0.857em;
     color: @primary;
     border: 1px solid transparent;
-    padding-top: 0.2em;
 }
 #clock:hover {
     color: @primary;
