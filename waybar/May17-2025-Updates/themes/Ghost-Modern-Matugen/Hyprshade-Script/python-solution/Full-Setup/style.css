@@ -27,7 +27,7 @@ window#waybar {
 }
 #waybar > box { /* Optional: shadow match hyprland decoration */
     background-color: @ghost_bar_background;
-    border-radius: 0.5em;
+    border-radius: 0.4em;
     margin: 5px;
     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.4);
 }
@@ -212,11 +212,18 @@ window#waybar {
 
 tooltip {
     background-color: @ghost_bar_background;
-    opacity: 0.8;
+    border-radius: 0.5em;
+    padding: 0.8em;
+    opacity: 0.95;
 }
 tooltip label {
-    color: @ghost_text_tooltip;
+    color: @on_surface; /* Main text color */
     font-size: 14px;
+}
+tooltip label tt {
+    font-family: monospace;
+    font-size: 0.9em; 
+    color: @on_surface_variant;
 }
 
   /* --- CPU Module Styling --- */

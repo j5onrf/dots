@@ -5,7 +5,7 @@
 //   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
 //        \/         \/\/              \/        \/       \/     
 // ML4W, Edited by j5onrf
-// GM-Duo-Hyprshade (6-09-2025) beta
+// GM-Duo-Hyprshade (6-10-2025) beta
 // -----------------------------------------------------
 
 {
@@ -45,13 +45,18 @@
   // Clock Configuration
   "clock": {
     "format": "{:%I\n%M}",
-    "tooltip-format": "{:%A, %d %b %Y}",
+    "tooltip": true,
+    "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "flatpak run com.ml4w.calendar",
     "on-click-right": "gapplication launch org.gnome.Weather",
     "on-click-middle": "~/.config/hypr/scripts/wttr.sh",
-    "on-click": "gtk-launch brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default",
-        // "separate-outputs": true,
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "calendar": {
+        "format": {
+            "today": "<span color='#b0c6ff'><b><u>{}</u></b></span>"
+        }
+    }
   },
   
   // Hyprland Window
@@ -66,7 +71,7 @@
     // "separate-outputs": true,
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-    "tooltip": false
+    "tooltip": true
   },
 
   // Pulseaudio
