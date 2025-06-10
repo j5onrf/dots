@@ -224,6 +224,8 @@ tooltip label big {
 }
 tooltip label tt {
     font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
+}
+tooltip label tt small {
     font-size: 0.9em;
 }
 
