@@ -223,7 +223,7 @@ tooltip label big {
     color: @on_surface;
 }
 tooltip label tt {
-    font-family: monospace;
+    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-size: 0.9em;
 }
 
