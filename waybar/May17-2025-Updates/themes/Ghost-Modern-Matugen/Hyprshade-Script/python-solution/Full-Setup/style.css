@@ -210,6 +210,7 @@ window#waybar {
     color: @primary;
 }
 
+/* --- Tooltip Styling (Inverse Logic) --- */
 tooltip {
     background-color: @ghost_bar_background;
     border-radius: 0.5em;
@@ -217,13 +218,15 @@ tooltip {
     opacity: 0.95;
 }
 tooltip label {
-    color: @on_surface; /* Main text color */
+    color: @primary;
     font-size: 14px;
+}
+tooltip label big {
+    color: @on_surface;
 }
 tooltip label tt {
     font-family: monospace;
-    font-size: 0.9em; 
-    color: @on_surface_variant;
+    font-size: 0.9em;
 }
 
   /* --- CPU Module Styling --- */

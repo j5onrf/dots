@@ -5,7 +5,7 @@
 //   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
 //        \/         \/\/              \/        \/       \/     
 // ML4W, Edited by j5onrf
-// GM-Duo-Hyprshade (6-10-2025) beta
+// GM-Duo-Hyprshade (6-09-2025) beta
 // -----------------------------------------------------
 
 {
@@ -46,7 +46,7 @@
   "clock": {
     "format": "{:%I\n%M}",
     "tooltip": true,
-    "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<big>{:%A, %d}</big>\n<tt>{calendar}</tt>",
     "on-click": "flatpak run com.ml4w.calendar",
     "on-click-right": "gapplication launch org.gnome.Weather",
     "on-click-middle": "~/.config/hypr/scripts/wttr.sh",
@@ -54,7 +54,7 @@
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
     "calendar": {
         "format": {
-            "today": "<span color='#b0c6ff'><b><u>{}</u></b></span>"
+            "today": "<b><u>{}</u></b>"
         }
     }
   },
