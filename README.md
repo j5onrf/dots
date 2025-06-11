@@ -1,4 +1,11 @@
 # Hyprdots
+<details open><summary>(2025-June11) Ghostbar Expedition Template</summary>
+<p>
+
+[Ghostbar-Expedition<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition) 
+![FullScreen-2025-06-11_09-56-24.png](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/FullScreen-2025-06-11_09-56-24.png)
+
+</details>
 
 <details open><summary>(2025-May21-June05) Matugen Inspired Waybar Theme </summary>
 <p>
