@@ -88,7 +88,7 @@
 
   // Application Launcher - 
   "custom/appmenu": {
-    "format": "\uf6e2",
+    "format": "<span font_family='Font Awesome 6 Duotone'>\uf358</span>",
     "on-click": "~/.config/rofi/bin/launcher",
     "on-click-right": "~/.config/rofi/bin/launcher2",
     "tooltip": false
