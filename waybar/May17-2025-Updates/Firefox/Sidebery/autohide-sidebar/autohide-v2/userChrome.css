@@ -1,0 +1,95 @@
+/*
+  Instant & Delayed Autohide userChrome.css for Sidebery
+  - Hides native tabs and sidebar header.
+  - Sidebar state changes are INSTANT (no animation).
+  - After mouse leaves, waits for a specified delay, then instantly collapses.
+*/
+
+/* --- CHROME HIDES --- */
+#TabsToolbar {
+  visibility: collapse !important;
+}
+#sidebar-header {
+  display: none !important;
+}
+#sidebar-splitter {
+  display: none !important;
+}
+
+
+/* --- SIDEBAR --- */
+:root {
+  /* --- CUSTOMIZE THESE VALUES --- */
+  --uc-sidebar-expanded-width: 280px; /* The width of the sidebar when open */
+  --uc-sidebar-collapsed-width: 5px;  /* The width when hidden */
+  --uc-autohide-delay: 10s;           /* The delay before hiding */
+  /* --- END OF CUSTOMIZATION --- */
+}
+
+/* This is the base state of the sidebar */
+#sidebar-box {
+  position: relative !important;
+  z-index: 100;
+  
+  /* Set the default state to be expanded */
+  min-width: var(--uc-sidebar-expanded-width) !important;
+  max-width: var(--uc-sidebar-expanded-width) !important;
+  
+  /*
+    KEY CHANGE: The transition duration is set to 0s to make the change
+    instant. The 'transition-property' is still needed to link the
+    change to the 'transition-delay' timer.
+  */
+  transition-property: min-width, max-width, background-color !important;
+  transition-duration: 0s !important;
+}
+
+/* --- HIDING LOGIC --- */
+
+/* This rule applies ONLY when the mouse is NOT hovering over the sidebar */
+#sidebar-box:not(:hover) {
+  /* Shrink the sidebar */
+  min-width: var(--uc-sidebar-collapsed-width) !important;
+  max-width: var(--uc-sidebar-collapsed-width) !important;
+
+  /* Make it invisible */
+  background-color: transparent !important;
+  
+  /* THE TIMER: Wait for the specified delay before instantly applying the above styles. */
+  transition-delay: var(--uc-autohide-delay) !important;
+}
+
+/* --- HOVER LOGIC --- */
+
+/* This rule applies ONLY when the mouse IS hovering over the sidebar */
+#sidebar-box:hover {
+  /* Expand the sidebar to its full width */
+  min-width: var(--uc-sidebar-expanded-width) !important;
+  max-width: var(--uc-sidebar-expanded-width) !important;
+  
+  /* CANCEL TIMER: Reset the delay to 0. This makes the sidebar open instantly
+     and cancels any pending "hide" timer. */
+  transition-delay: 0s !important;
+}
+
+
+/* --- HIDE SIDEBAR CONTENT WHEN COLLAPSED --- */
+
+/* This targets the content inside the sidebar (panels, etc.) */
+#sidebar {
+  /* Make the opacity change instant */
+  transition: opacity 0s !important;
+}
+
+/* When the sidebar is not being hovered, make its content invisible */
+#sidebar-box:not(:hover) #sidebar {
+  opacity: 0 !important;
+  /* Link this change to the main autohide timer */
+  transition-delay: var(--uc-autohide-delay) !important;
+}
+
+/* When you hover the sidebar, make the content visible again instantly */
+#sidebar-box:hover #sidebar {
+  opacity: 1 !important;
+  transition-delay: 0s !important;
+}
