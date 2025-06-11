@@ -20,7 +20,7 @@
 
   // Load Modules
   "include": [
-    "~/.config/waybar/gm-duo-hyprshade.jsonc"
+    "~/.config/waybar/ghost-exp.jsonc"
   ],
 
   // Modules Left
@@ -86,7 +86,7 @@
     "tooltip": false
   },
 
-  // Rofi Application Launcher
+  // Application Launcher - 
   "custom/appmenu": {
     "format": "\uf6e2",
     "on-click": "~/.config/rofi/bin/launcher",
