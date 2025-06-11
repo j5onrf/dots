@@ -20,9 +20,9 @@
 /* --- SIDEBAR --- */
 :root {
   /* --- CUSTOMIZE THESE VALUES --- */
-  --uc-sidebar-expanded-width: 280px; /* The width of the sidebar when open */
+  --uc-sidebar-expanded-width: 280px; /* The width of the sidebar when open default 280px */
   --uc-sidebar-collapsed-width: 5px;  /* The width when hidden */
-  --uc-autohide-delay: 10s;           /* The delay before hiding */
+  --uc-autohide-delay: 5s;           /* The delay before hiding */
   /* --- END OF CUSTOMIZATION --- */
 }
 
