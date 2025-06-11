@@ -52,7 +52,7 @@
                 {
             "type": "memory",
             "key": "󰍛 ",
-            "keyColor": "yellow",
+            "keyColor": "blue",
             // format: used / total
             "format": "{1}"
         },
@@ -60,7 +60,7 @@
             "type": "uptime",
             "key": "󰔛 ",
             "format": "{1} days {2} hours",
-            "keyColor": "blue",
+            "keyColor": "yellow",
         },
                 {
             "type": "custom",
