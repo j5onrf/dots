@@ -8,10 +8,10 @@ import subprocess
 STATE_FILE = "/tmp/hyprshade.state"
 SETTINGS_FILE = os.path.expanduser("~/.config/ml4w/settings/hyprshade.sh")
 FALLBACK_SHADER = "blue-light-filter-75"
-ICON_ON = "\ue019"  # light-switch
-ICON_OFF = "\ue018" # light-switch
-# ICON_ON = "\uf673"    # light-bulb
-# ICON_OFF = "\uf0eb"   # light-bulb
+# ICON_ON = "\ue019"  # light-switch
+# ICON_OFF = "\ue018" # light-switch
+ICON_ON = "\uf673"    # light-bulb
+ICON_OFF = "\uf0eb"   # light-bulb
 
 # --- FUNCTIONS ---
 

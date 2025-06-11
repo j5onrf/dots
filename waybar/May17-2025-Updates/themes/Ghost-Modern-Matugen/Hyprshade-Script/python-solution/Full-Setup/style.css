@@ -207,6 +207,7 @@ window#waybar {
     font-weight: 400;
     font-size: 0.857em;
     color: @primary;
+    padding-bottom: 0.1em;
 }
 
 tooltip {

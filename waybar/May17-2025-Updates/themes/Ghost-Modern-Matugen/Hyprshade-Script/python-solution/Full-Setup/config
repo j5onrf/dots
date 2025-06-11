@@ -49,7 +49,7 @@
     "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
     "on-click": "flatpak run com.ml4w.calendar",
     "on-click-right": "gapplication launch org.gnome.Weather",
-    "on-click-middle": "~/.config/hypr/scripts/wttr.sh",
+    "on-click-middle": "$HOME/.config/hypr/scripts/wttr.sh",
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
     "calendar": {
