@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 // ML4W, Edited by j5onrf
-// Ghost-Duo (6-10-2025) beta
+// Ghost-Duo-HS (6-11-2025) beta
 
 {
   // Workspaces
@@ -53,7 +53,6 @@
        "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
        "class<vlc>": "\uf636",
        "class<mpv>": "\uf636",
-       "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
        "class<org.gnome.Calculator>": "\uf1ec",
        "class<timeshift-gtk>": "\uf1da",
        "class<org.gnome.World.PikaBackup>": "\uf1da"
@@ -63,6 +62,7 @@
       // "class<brave-browser-beta>": "<span line-height='1'>\uf37e</span>",
       // "class<zen>": "󰰷",
       // "class<org.gnome.Nautilus>": "<span line-height='1'>\uf07b</span>",
+      // "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
       // https://github.com/JaKooLit/Hyprland-Dots/blob/main/config/waybar/ModulesWorkspaces
     }
 },
