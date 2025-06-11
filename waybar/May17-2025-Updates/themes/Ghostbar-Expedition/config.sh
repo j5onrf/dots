@@ -1,2 +1,2 @@
 #!/bin/bash
-theme_name="Ghostbar-Expedition"
+theme_name="Ghost-Expedition"
