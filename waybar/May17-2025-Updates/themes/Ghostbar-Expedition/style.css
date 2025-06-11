@@ -122,9 +122,9 @@ window#waybar {
     font-weight: 600;
     background-color: @ghost_ws_button_active_bg;   
     color: @primary;
-    font-size: 1.75em;
+    font-size: 1.25em;
     margin: 0 0 0.2em 0;
-     padding: 0.125em 0; /**/
+    padding: 0.2em 0; /**/
 }
 #custom-exit {
     font-family: "Font Awesome 6 Duotone";
