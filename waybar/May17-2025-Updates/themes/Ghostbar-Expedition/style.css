@@ -118,13 +118,13 @@ window#waybar {
     font-weight: 200;
 }
 #custom-appmenu {
-    font-family: "Font Awesome 6 Pro";
+    font-family: "JetBrainsMono Nerd Font Mono", "Font Awesome 6 Pro";
     font-weight: 600;
     background-color: @ghost_ws_button_active_bg;   
     color: @primary;
-    font-size: 1.25em;
+    font-size: 1.75em;
     margin: 0 0 0.2em 0;
-    padding: 0.19em 0;
+    padding: 0.125em 0; /**/
 }
 #custom-exit {
     font-family: "Font Awesome 6 Duotone";
