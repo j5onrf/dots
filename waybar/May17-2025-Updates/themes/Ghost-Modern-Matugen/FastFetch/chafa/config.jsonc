@@ -18,7 +18,7 @@
                 {
             "type": "title",
             "key": "󰣇 ",
-			"format": "Arch",
+            "format": "Arch",
             "keyColor": "blue"
         },
         {
