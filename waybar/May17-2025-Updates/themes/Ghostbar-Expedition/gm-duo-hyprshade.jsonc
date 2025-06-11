@@ -82,15 +82,23 @@
   },
 
   // Hyprshade
-  // waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Hyprshade-Script/python-solution
   "custom/hyprshade": {
-   "exec": "~/.config/hypr/scripts/hyprshade_daemon.py",
-   "persistent": true,
-   "return-type": "json",
-   "on-click": "pkill -SIGUSR1 -f hyprshade_daemon.py",
-   "on-click-right": "pkill -SIGUSR2 -f hyprshade_daemon.py",
-   "tooltip": false
-},
+    "format": "\uf575",
+    "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
+    "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi",
+    "tooltip": false
+  },
+
+  // Hyprshade
+  // waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Hyprshade-Script/python-solution
+  // "custom/hyprshade": {
+  // "exec": "~/.config/hypr/scripts/hyprshade_daemon.py",
+  // "persistent": true,
+  // "return-type": "json",
+  // "on-click": "pkill -SIGUSR1 -f hyprshade_daemon.py",
+  // "on-click-right": "pkill -SIGUSR2 -f hyprshade_daemon.py",
+  // "tooltip": false
+  // },
 
   // Wallpaper
   "custom/wallpaper": {
