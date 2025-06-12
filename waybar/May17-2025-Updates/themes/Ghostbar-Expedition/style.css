@@ -104,7 +104,7 @@ window#waybar {
     font-family: "Audiowide", "Orbitron", "Michroma", sans-serif;
     font-weight: 400;
     margin: 0.3em 0.35em;
-    padding-top: 0.1em;
+    padding-top: 0.15em;
     color: @primary;
     padding-left: 0.55em; /* Centering Fix for Waybar Stable */
     padding-right: 0.45em;
@@ -198,7 +198,7 @@ window#waybar {
     font-weight: 400;
     font-size: 0.7em;
     color: @primary;
-    padding-bottom: 0.1em;
+    padding-bottom: 0.15em;
 }
 
 tooltip {
