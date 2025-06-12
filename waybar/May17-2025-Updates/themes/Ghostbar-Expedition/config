@@ -2,7 +2,7 @@
 //  Ghost-Expedition (beta) 2025-06-12
 
 {
-    // --- 1. GLOBAL BAR SETTINGS ---
+    // --- GLOBAL BAR SETTINGS ---
     "layer": "top",
     "position": "left",
     "spacing": 0,
@@ -11,14 +11,12 @@
     "margin-left": 10,
     "margin-right": 0,
 
-    // --- 2. LOAD MODULE LIBRARY ---
-    // This is the most important line. It loads the master library.
+    // --- LOAD MODULE LIBRARY ---
     "include": [
         "~/.config/waybar/ghost-exp.jsonc"
     ],
 
-    // --- 3. MODULE LAYOUT ---
-    // The high-level overview of the bar's structure.
+    // --- MODULE LAYOUT ---
     "modules-left": [
         "custom/appmenu",
         "hyprland/window",
