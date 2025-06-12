@@ -88,7 +88,7 @@
 
   // Application Launcher - 
   "custom/appmenu": {
-    "format": "\uf358",
+    "format": "\ue410",
     "on-click": "~/.config/rofi/bin/launcher",
     "on-click-right": "~/.config/rofi/bin/launcher2",
     "tooltip": false
