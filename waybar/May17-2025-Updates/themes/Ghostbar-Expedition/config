@@ -2,7 +2,6 @@
 //  Ghost-Expedition (beta) 2025-06-12
 
 {
-    // --- GLOBAL BAR SETTINGS ---
     "layer": "top",
     "position": "left",
     "spacing": 0,
@@ -11,12 +10,10 @@
     "margin-left": 10,
     "margin-right": 0,
 
-    // --- LOAD MODULE LIBRARY ---
     "include": [
         "~/.config/waybar/ghost-exp.jsonc"
     ],
 
-    // --- MODULE LAYOUT ---
     "modules-left": [
         "custom/appmenu",
         "hyprland/window",
