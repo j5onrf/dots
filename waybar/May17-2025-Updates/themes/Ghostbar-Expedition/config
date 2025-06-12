@@ -79,10 +79,10 @@
     "scroll-step": 3,
     "format": "{icon}",
     "format-icons": {
-      "default": ["\uf6a8"]
+      "default": ["\uf8f2"]
     },
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "format-muted": "\uf6a9",
+    "format-muted": "\uf7a4",
     "tooltip": false
   },
 

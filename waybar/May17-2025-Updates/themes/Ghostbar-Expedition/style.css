@@ -132,7 +132,7 @@ window#waybar {
     background-color: @ghost_ws_button_active_bg;
     font-size: 1em;
     color: @primary;
-    padding: 0.19em 0;
+    padding: 0.2em 0;
     font-size: 1.25em;
     margin: 0.1em 0 0 0;
 }
