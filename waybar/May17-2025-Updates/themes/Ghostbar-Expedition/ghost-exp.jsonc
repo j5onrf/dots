@@ -8,53 +8,10 @@
 //  by j5onrf, from ML4W base
 //  Ghost-Expedition (beta) 2025-06-12
 
-//  Ghost-Expedition Module Library
-
-{
-    // =================================================================================
-    // --- GROUP DEFINITIONS ---
-    // =================================================================================
-    "group/settings": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 200,
-            "children-class": "not-memory",
-            "transition-left-to-right": true
-        },
-        "modules": [
-            "custom/settings",
-            "custom/waybarthemes",
-            "custom/wallpaper",
-            "custom/hypridle",
-            "custom/notification"
-        ]
-    },
-    "group/hardware": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 200,
-            "children-class": "not-memory",
-            "transition-left-to-right": false
-        },
-        "modules": [
-            "custom/system",
-            "cpu",
-            "memory",
-            "custom/updates",
-            "network",
-            "custom/hyprshade",
-            "custom/cliphist",
-            "pulseaudio",
-            "tray"
-        ]
-    },
-
     // =================================================================================
     // --- CORE WORKFLOW MODULES ---
     // =================================================================================
-
-// In ghost-exp.jsonc
-
+{
     "hyprland/workspaces#rw": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -114,6 +71,44 @@
             "class<timeshift-gtk>": "\uf1da",
             "class<org.gnome.World.PikaBackup>": "\uf1da"
         }
+    },
+
+    // =================================================================================
+    // --- GROUP DEFINITIONS ---
+    // =================================================================================
+    "group/settings": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "children-class": "not-memory",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/settings",
+            "custom/waybarthemes",
+            "custom/wallpaper",
+            "custom/hypridle",
+            "custom/notification"
+        ]
+    },
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/system",
+            "cpu",
+            "memory",
+            "custom/updates",
+            "network",
+            "custom/hyprshade",
+            "custom/cliphist",
+            "pulseaudio",
+            "tray"
+        ]
     },
     "hyprland/window": {
         "format": "{title:.12}",
