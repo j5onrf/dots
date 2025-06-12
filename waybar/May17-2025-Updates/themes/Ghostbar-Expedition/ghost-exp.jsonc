@@ -91,18 +91,19 @@
             "tray"
         ]
     },
-    "hyprland/window": {
-        "format": "{title:.12}",
-        "rewrite": {
-            "^(\\s*)$": "Hyprland",
-            "(.*) - Brave": "$1",
-            "(.*) - Brave Search": "$1"
-        },
-        "rotate": 270,
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-        "tooltip": true
-    },
+   "hyprland/window": {
+       "format": "{title:.12}",
+       "tooltip-format": "{title}",
+       "rewrite": {
+           "^(\\s*)$": "Hyprland",
+           "(.*) - Brave": "$1",
+           "(.*) - Brave Search": "$1"
+       },
+       "rotate": 270,
+       "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+       "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+       "tooltip": true
+   },
     "clock": {
         "format": "{:%I\n%M}",
         "tooltip": true,
