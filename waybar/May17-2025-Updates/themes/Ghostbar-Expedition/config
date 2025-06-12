@@ -5,7 +5,7 @@
 //   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
 //        \/         \/\/              \/        \/       \/     
 // ML4W, Edited by j5onrf
-// Ghost-Expedition (6-11-2025) beta
+// Ghost-Expedition (6-12-2025) beta
 // -----------------------------------------------------
 
 {
@@ -120,17 +120,12 @@
 
   // Memory
   "memory": {
-    "format-high": "<span color='#E95420'><b>{used:0.1f}</b></span>",
-    "format-low": "<span color='#D8DEE9'>{used:0.1f}</span>",
+    "format": "{used:0.1f}",
     "on-click": "kitty -e htop --sort-key PERCENT_MEM",
-    "tooltip": false,
-    "states": {
-      "high": 24.7,
-      "low": 0
-    }
+    "tooltip": false
   },
   
-    // Updates
+  // Updates
   "custom/updates": {
     "format": "{}",
     "escape": true,
