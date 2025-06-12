@@ -133,7 +133,7 @@ window#waybar {
 #pulseaudio, #custom-cliphist, #custom-hyprshade, #network, #tray,
 #custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification {
     color: @primary;
-    border: 1px solid transparent; /* Reserve space for hover border to prevent jump */
+    border: 1px solid transparent;
     padding: 0.15em 0;
     margin: 0.1em 0.2em;
 }
