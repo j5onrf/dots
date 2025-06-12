@@ -1,10 +1,6 @@
 //  by j5onrf, from ML4W base
 //  Ghost-Expedition (beta) 2025-06-12
 
-//  Ghost-Expedition :: Theme Layout File
-//  This file defines the layout and global settings for the bar.
-//  It loads its module definitions from the main library file.
-
 {
     // --- 1. GLOBAL BAR SETTINGS ---
     "layer": "top",
