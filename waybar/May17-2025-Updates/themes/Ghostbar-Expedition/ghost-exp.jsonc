@@ -22,7 +22,6 @@
         },
         "window-rewrite-default": "\ue3dd",
         "window-rewrite": {
-            // --- Title-Based Icon Rewrites ---
             "title<.*youtube.*>": "<span line-height='1'>\uf04b</span>",
             "title<.*reddit.*>": "<span line-height='0.8'></span>",
             "title<.*dot.*>": "<span line-height='0.8'>\ue13a</span>",
@@ -32,7 +31,7 @@
             "title<.*amazon.*>": "",
             "title<.*gmail.*>": "󰊫 ",
             "title<.*nvim ~.*>": " ",
-            // --- Class-Based Icon Rewrites ---
+
             "class<firefox>": "<span font='18'>\uf37e</span>",
             "class<brave-browser>": "<span line-height='1'>\ue24f</span>",
             "class<codium>": "<span line-height='0.8'> </span>",
