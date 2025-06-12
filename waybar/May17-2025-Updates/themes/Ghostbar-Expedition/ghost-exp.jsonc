@@ -5,209 +5,282 @@
 // |       |  |_|  | |_|   |       |   |___|    ___|_____  |
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
-// ML4W, Edited by j5onrf
-// Ghost-Expedition (6-11-2025) beta
+//  by j5onrf, from ML4W base
+//  Ghost-Expedition (beta) 2025-06-12
+
+//  Ghost-Expedition Module Library
 
 {
-  // Workspaces
-  "hyprland/workspaces#rw": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "warp-on-scroll": false,
-    "sort-by-number": true,
-    "show-special": false,
-    "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace e-1",
-    "on-scroll-down": "hyprctl dispatch workspace e+1",
-    "format": "{icon}{windows}",
-    "persistent-workspaces": { "*": 5 },
-    "format-window-separator": "\n",
-    "format-icons": { "empty": "\ue59e", "default": "" },
-    "window-rewrite-default": "\ue3dd",
-    "window-rewrite": {
-      "title<.*youtube.*>": "<span line-height='1'>\uf04b</span>",
-      "title<.*reddit.*>": "<span line-height='0.8'></span>",
-      "title<.*dot.*>": "<span line-height='0.8'>\ue13a</span>",
-      "title<.*chatgpt.*>": "<span line-height='1'>\ue1ec</span>",
-      "title<.*grok.*>": "<span line-height='1'>\ue1ec</span>",
-      "title<.*AI Studio.*>": "<span line-height='1'>\ue5d6</span>",
-      "title<.*amazon.*>": "",
-      "title<.*gmail.*>": "󰊫 ",
-      "title<.*nvim ~.*>": " ",
-       "class<firefox>": "<span font='18'>\uf37e</span>",
-       "class<brave-browser>": "<span line-height='1'>\ue24f</span>",
-       "class<codium>": "<span line-height='0.8'> </span>",
-       "class<kitty>": "<span line-height='1'>\ue13d</span>",
-       "class<kitty-floating>": "<span line-height='1'>\ue13d</span>",
-       "class<alacritty>": "<span font='16' line-height='0.7'>\uf120</span>",
-       "class<waypaper>": "\uf03e",
-       "class<org.gnome.Loupe>": "\uf1c5",
-       "class<CavaVisualizer>": "<span line-height='1'>\uf8f1</span>",
-       "class<KewMusicPlayer>": "<span line-height='1'>\uf8c9</span>",
-       "class<gimp>": "<span line-height='0.7'>\uf1fc</span>",
-       "class<org.gnome.Weather>": "\uf76b",
-       "class<wttr-floating>": "\uf76b",
-       "class<org.gnome.Nautilus>": "",
-       "class<org.gnome.TextEditor>": "",
-       "class<polkit-gnome-authentication-agent-1>": "\ue575",
-       "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
-       "class<vlc>": "\uf636",
-       "class<mpv>": "\uf636",
-       "class<org.gnome.Calculator>": "\uf1ec",
-       "class<timeshift-gtk>": "\uf1da",
-       "class<org.gnome.World.PikaBackup>": "\uf1da"
-      // "class<nwg-look>": "\uf3f1",
-      // "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󱡫",
-      // "class<io.bassi.Amberol>": "<span line-height='1'>\uf8c9</span>",
-      // "class<brave-browser-beta>": "<span line-height='1'>\uf37e</span>",
-      // "class<zen>": "󰰷",
-      // "class<org.gnome.Nautilus>": "<span line-height='1'>\uf07b</span>",
-      // "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
-      // https://github.com/JaKooLit/Hyprland-Dots/blob/main/config/waybar/ModulesWorkspaces
+    // =================================================================================
+    // --- GROUP DEFINITIONS ---
+    // =================================================================================
+    "group/settings": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "children-class": "not-memory",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/settings",
+            "custom/waybarthemes",
+            "custom/wallpaper",
+            "custom/hypridle",
+            "custom/notification"
+        ]
+    },
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/system",
+            "cpu",
+            "memory",
+            "custom/updates",
+            "network",
+            "custom/hyprshade",
+            "custom/cliphist",
+            "pulseaudio",
+            "tray"
+        ]
+    },
+
+    // =================================================================================
+    // --- CORE WORKFLOW MODULES ---
+    // =================================================================================
+
+// In ghost-exp.jsonc
+
+    "hyprland/workspaces#rw": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "sort-by-number": true,
+        "show-special": false,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "format": "{icon}{windows}",
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "format-window-separator": "\n",
+        "format-icons": {
+            "empty": "\ue59e",
+            "default": ""
+        },
+        "window-rewrite-default": "\ue3dd",
+        "window-rewrite": {
+            // ===================================
+            // --- Title-Based Icon Rewrites ---
+            // ===================================
+            "title<.*youtube.*>": "<span line-height='1'>\uf04b</span>",
+            "title<.*reddit.*>": "<span line-height='0.8'></span>",
+            "title<.*dot.*>": "<span line-height='0.8'>\ue13a</span>",
+            "title<.*chatgpt.*>": "<span line-height='1'>\ue1ec</span>",
+            "title<.*grok.*>": "<span line-height='1'>\ue1ec</span>",
+            "title<.*AI Studio.*>": "<span line-height='1'>\ue5d6</span>",
+            "title<.*amazon.*>": "",
+            "title<.*gmail.*>": "󰊫 ",
+            "title<.*nvim ~.*>": " ",
+
+            // ==================================
+            // --- Class-Based Icon Rewrites ---
+            // ==================================
+            "class<firefox>": "<span font='18'>\uf37e</span>",
+            "class<brave-browser>": "<span line-height='1'>\ue24f</span>",
+            "class<codium>": "<span line-height='0.8'> </span>",
+            "class<kitty>": "<span line-height='1'>\ue13d</span>",
+            "class<kitty-floating>": "<span line-height='1'>\ue13d</span>",
+            "class<alacritty>": "<span font='16' line-height='0.7'>\uf120</span>",
+            "class<waypaper>": "\uf03e",
+            "class<org.gnome.Loupe>": "\uf1c5",
+            "class<CavaVisualizer>": "<span line-height='1'>\uf8f1</span>",
+            "class<KewMusicPlayer>": "<span line-height='1'>\uf8c9</span>",
+            "class<gimp>": "<span line-height='0.7'>\uf1fc</span>",
+            "class<org.gnome.Weather>": "\uf76b",
+            "class<wttr-floating>": "\uf76b",
+            "class<org.gnome.Nautilus>": "",
+            "class<org.gnome.TextEditor>": "",
+            "class<polkit-gnome-authentication-agent-1>": "\ue575",
+            "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
+            "class<vlc>": "\uf636",
+            "class<mpv>": "\uf636",
+            "class<org.gnome.Calculator>": "\uf1ec",
+            "class<timeshift-gtk>": "\uf1da",
+            "class<org.gnome.World.PikaBackup>": "\uf1da"
+        }
+    },
+    "hyprland/window": {
+        "format": "{title:.12}",
+        "rewrite": {
+            "^(\\s*)$": "Hyprland",
+            "(.*) - Brave": "$1",
+            "(.*) - Brave Search": "$1"
+        },
+        "rotate": 270,
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "tooltip": true
+    },
+    "clock": {
+        "format": "{:%I\n%M}",
+        "tooltip": true,
+        "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "on-click": "flatpak run com.ml4w.calendar",
+        "on-click-right": "gapplication launch org.gnome.Weather",
+        "on-click-middle": "$HOME/.config/hypr/scripts/wttr.sh",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "calendar": {
+            "format": {
+                "today": "<b><u>{}</u></b>"
+            }
+        }
+    },
+    "custom/empty": {
+        "format": ""
+    },
+
+    // =================================================================================
+    // --- ACTION & LAUNCHER MODULES ---
+    // =================================================================================
+    "custom/appmenu": {
+        "format": "\ue410",
+        "on-click": "~/.config/rofi/bin/launcher",
+        "on-click-right": "~/.config/rofi/bin/launcher2",
+        "tooltip": false
+    },
+    "custom/exit": {
+        "format": "\uf011",
+        "on-click": "~/.config/ml4w/scripts/wlogout.sh",
+        "on-click-right": "com.ml4w.welcome",
+        "tooltip": false
+    },
+    "custom/cliphist": {
+        "format": "\uf46d",
+        "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
+        "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
+        "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
+        "tooltip": false
+    },
+    "custom/hyprshade": {
+        "format": "\ue0c9",
+        "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
+        "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi",
+        "tooltip": false
+    },
+    "custom/settings": {
+        "format": "\uf078",
+        "on-click": "flatpak run com.ml4w.sidebar",
+        "on-click-right": "/home/j5/.config/hypr/settings/com.ml4w.hyprland.settings",
+        "on-click-middle": "hyprctl dispatch exec 'kitty --class hyprpicker -e zsh -c \"sleep 0.5; hyprpicker; exec zsh\"'",
+        "tooltip": false
+    },
+    "custom/system": {
+        "format": "\uf077",
+        "on-click": "flatpak run com.ml4w.sidebar",
+        "on-click-right": "exec ~/.config/waybar/launch.sh",
+        "on-click-middle": "hyprctl dispatch swapsplit",
+        "tooltip": false
+    },
+    "custom/wallpaper": {
+        "format": "\uf03e",
+        "on-click": "waypaper",
+        "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
+        "tooltip": false
+    },
+    "custom/waybarthemes": {
+        "format": "\uf363",
+        "on-click": "~/.config/waybar/themeswitcher.sh",
+        "tooltip": false
+    },
+    
+    // =================================================================================
+    // --- SYSTEM STATUS & SERVICE MODULES ---
+    // =================================================================================
+    "cpu": {
+        "format-critical": "<b>{usage}</b>",
+        "format-high": "{usage}",
+        "format-medium": "{usage}",
+        "format-low": "{usage}",
+        "on-click": "kitty -e htop --sort-key PERCENT_CPU",
+        "tooltip": false,
+        "states": {
+            "critical": 80,
+            "high": 50,
+            "medium": 5,
+            "low": 0
+        }
+    },
+    "memory": {
+        "format": "{used:0.1f}",
+        "on-click": "kitty -e htop --sort-key PERCENT_MEM",
+        "tooltip": false
+    },
+    "custom/updates": {
+        "format": "{}",
+        "escape": true,
+        "return-type": "json",
+        "exec": "~/.config/ml4w/scripts/updates.sh",
+        "interval": 1800,
+        "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
+        "on-click-right": "~/.config/ml4w/settings/software.sh"
+    },
+    "pulseaudio": {
+        "scroll-step": 3,
+        "format": "{icon}",
+        "format-icons": {
+            "default": ["\uf8f2"]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format-muted": "\uf7a4",
+        "tooltip": false
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-ethernet": "\uf6aa",
+        "format-disconnected": "\uf6ac",
+        "tooltip": false,
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 20,
+        "on-click": "nm-connection-editor",
+        "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
+    },
+    "tray": {
+        "icon-size": 24,
+        "spacing": 10
+    },
+    "custom/hypridle": {
+        "format": "\uf30d",
+        "return-type": "json",
+        "escape": true,
+        "exec-on-event": true,
+        "interval": 60,
+        "exec": "~/.config/hypr/scripts/hypridle.sh status",
+        "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
+    },
+    "custom/notification": {
+        "tooltip-format": "Left: Notifications\nRight: Do not disturb",
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "\uf848",
+            "none": "\uf0f3",
+            "dnd-notification": "\uf1f7",
+            "dnd-none": "\uf1f6",
+            "inhibited-notification": "\uf1f7",
+            "inhibited-none": "\uf1f6",
+            "dnd-inhibited-notification": "\uf1f7",
+            "dnd-inhibited-none": "\uf1f6"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw"
     }
-},
-
-  // Empty
-  "custom/empty": {
-    "format": ""
-  },
-
-  // Clipboard History
-  "custom/cliphist": {
-    "format": "\uf46d",
-    "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
-    "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
-    "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
-    "tooltip": false
-  },
-
- // Hyprshade
-  "custom/hyprshade": {
-    "format": "\ue0c9",
-    "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
-    "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi",
-    "tooltip": false
-  },
-
-  // Wallpaper
-  "custom/wallpaper": {
-    "format": "\uf03e",
-    "on-click": "waypaper",
-    "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
-    "tooltip": false
-  },
-
-  // Waybar Themes
-  "custom/waybarthemes": {
-    "format": "\uf363",
-    "on-click": "~/.config/waybar/themeswitcher.sh",
-    "tooltip": false
-  },
-
-  // Settings
-  "custom/settings": {
-    "format": "\uf078",
-    "on-click": "flatpak run com.ml4w.sidebar",
-    "on-click-right": "/home/j5/.config/hypr/settings/com.ml4w.hyprland.settings",
-    "on-click-middle": "hyprctl dispatch exec 'kitty --class hyprpicker -e zsh -c \"sleep 0.5; hyprpicker; exec zsh\"'",
-    "tooltip": false
-  },
-
-  // System
-  "custom/system": {
-    "format": "\uf077",
-    "on-click": "flatpak run com.ml4w.sidebar",
-    "on-click-right": "exec ~/.config/waybar/launch.sh",
-    "on-click-middle": "hyprctl dispatch swapsplit",
-    "tooltip": false
-  },
-
-  // Group: Hardware
-  "group/hardware": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 200,
-      "children-class": "not-memory",
-      "transition-left-to-right": false
-    },
-    "modules": [
-      "custom/system",
-      "cpu",
-      "memory",
-      "custom/updates",
-      "network",
-      "custom/hyprshade",
-      "custom/cliphist",
-      "pulseaudio",
-      "tray"
-    ]
-  },
-
-  // Group: Settings
-  "group/settings": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 200,
-      "children-class": "not-memory",
-      "transition-left-to-right": true
-    },
-    "modules": [
-      "custom/settings",
-      "custom/waybarthemes",
-      "custom/wallpaper",
-      "custom/hypridle",
-      "custom/notification"
-    ]
-  },
-
-    // Network Module
-  "network": {
-    "format": "{ifname}",
-    "format-ethernet": "\uf6aa",
-    "format-disconnected": "\uf6ac",
-    "tooltip": false,
-    "tooltip-format-disconnected": "Disconnected",
-    "max-length": 20,
-    "on-click": "nm-connection-editor",
-    "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
-  },
-
-  // System Tray
-  "tray": {
-    "icon-size": 24,
-    "spacing": 10
-  },
-  
-   // Hypridle inhibitor
-  "custom/hypridle": {
-    "format": "\uf30d",
-    "return-type": "json",
-    "escape": true,
-    "exec-on-event": true,
-    "interval": 60,
-    "exec": "~/.config/hypr/scripts/hypridle.sh status",
-    "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
-  },
-  
-    // SwayNC
-  "custom/notification": {
-    "tooltip-format": "Left: Notifications\nRight: Do not disturb",
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "<span font='20'>\uf848</span>", 
-      "none": "<span font='20'>\uf0f3</span>",
-      "dnd-notification": "<span font='20'>\uf1f7</span>",
-      "dnd-none": "<span font='20'>\uf1f6</span>",
-      "inhibited-notification": "<span font='20'>\uf1f7</span>",
-      "inhibited-none": "<span font='20'>\uf1f6</span>",
-      "dnd-inhibited-notification": "<span font='20'>\uf1f7</span>", 
-      "dnd-inhibited-none": "<span font='20'>\uf1f6</span>"
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
-  }
 }
