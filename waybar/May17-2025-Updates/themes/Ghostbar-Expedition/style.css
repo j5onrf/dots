@@ -9,16 +9,13 @@
  *  |        \>    <|  |_> \  ___// /_/ ||  ||  | |  (  <_> |   |  \
  * /_______  /__/\_ |   __/ \___  \____ ||__||__| |__|\____/|___|  /
  *         \/      \|__|        \/     \/                        \/
- *  by j5onrf, from ML4W base
+ *  by j5onrf, ML4W base
  *  Ghost-Expedition (beta) 2025-06-12
  */
 
 @import 'ghost-matugen.css';
 
-
-/* =============================================================================
-   --- Global & Bar Styles ---
-   ========================================================================== */
+/* --- Global & Bar Styles --- */
 
 /* Applies to all elements */
 * {
@@ -56,10 +53,7 @@ window#waybar {
    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
-
-/* =============================================================================
-   --- Module Styles (Grouped by Module Function) ---
-   ========================================================================== */
+/* --- Module Styles (Grouped by Module Function) --- */
 
 /* --- Workspaces --- */
 #workspaces {
@@ -135,9 +129,7 @@ window#waybar {
     padding-bottom: 0.15em;
 }
 
-
 /* --- Status Icon Group (PulseAudio, Network, Tray, etc.) --- */
-/* Shared base styles for all icons in this group */
 #pulseaudio, #custom-cliphist, #custom-hyprshade, #network, #tray,
 #custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification {
     color: @primary;
@@ -172,8 +164,6 @@ window#waybar {
 }
 
 /* --- System Monitor Group (CPU, Memory, Updates) --- */
-/* Shared base styles for all three modules.
-   This sets the desired default color for all of them. */
 #cpu, 
 #memory, 
 #custom-updates {
@@ -204,11 +194,7 @@ window#waybar {
     font-weight: bold; 
 }
 
-
-/* =============================================================================
-   --- Tooltips ---
-   ========================================================================== */
-
+/* --- Tooltips --- */
 tooltip {
     background-color: @ghost_bar_background;
     border-radius: 0.5em;
