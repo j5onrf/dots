@@ -35,7 +35,7 @@
       "title<.*gmail.*>": "󰊫 ",
       "title<.*nvim ~.*>": " ",
        "class<firefox>": "<span font='18'>\uf37e</span>",
-       "class<brave-browser>": "<span line-height='1'>\uf37e</span>",
+       "class<brave-browser>": "<span line-height='1'>\ue24f</span>",
        "class<codium>": "<span line-height='0.8'> </span>",
        "class<kitty>": "<span line-height='1'>\ue13d</span>",
        "class<kitty-floating>": "<span line-height='1'>\ue13d</span>",
@@ -74,7 +74,7 @@
 
   // Clipboard History
   "custom/cliphist": {
-    "format": "\uf328",
+    "format": "\uf46d",
     "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
     "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
     "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
@@ -83,22 +83,11 @@
 
  // Hyprshade
   "custom/hyprshade": {
-    "format": "\uf575",
+    "format": "\ue0c9",
     "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
     "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi",
     "tooltip": false
   },
-
-  // Hyprshade
-  // waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Hyprshade-Script/python-solution
-  // "custom/hyprshade": {
-  // "exec": "~/.config/hypr/scripts/hyprshade_daemon.py",
-  // "persistent": true,
-  // "return-type": "json",
-  // "on-click": "pkill -SIGUSR1 -f hyprshade_daemon.py",
-  // "on-click-right": "pkill -SIGUSR2 -f hyprshade_daemon.py",
-  // "tooltip": false
-  // },
 
   // Wallpaper
   "custom/wallpaper": {
@@ -174,7 +163,7 @@
     // Network Module
   "network": {
     "format": "{ifname}",
-    "format-ethernet": "\uf1eb",
+    "format-ethernet": "\uf6aa",
     "format-disconnected": "\uf6ac",
     "tooltip": false,
     "tooltip-format-disconnected": "Disconnected",
