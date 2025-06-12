@@ -191,7 +191,7 @@ window#waybar {
 #memory:hover, 
 #custom-updates:hover {
     color: @ghost_text_primary;
-    font-weight: 100;
+    font-weight: 200;
 }
 /* State-based colors that apply ONLY to the CPU module */
 #cpu.medium {
