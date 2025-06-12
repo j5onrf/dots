@@ -15,22 +15,18 @@
 
 @import 'ghost-matugen.css';
 
-/* --- Global & Bar Styles --- */
-
 /* Applies to all elements */
 * {
     border-radius: 0.2em;
     background: none;
 }
 
-/* Main window */
 window#waybar {
     background-color: transparent;
     border: none;
     box-shadow: none;
 }
 
-/* The box containing all modules */
 #waybar > box {
     background-color: @ghost_bar_background;
     border-radius: 0.4em;
@@ -38,7 +34,6 @@ window#waybar {
     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.4);
 }
 
-/* General style for all module containers */
 .modules-left,
 .modules-right,
 .modules-center {
@@ -52,8 +47,6 @@ window#waybar {
 .modules-right {
    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
-
-/* --- Module Styles (Grouped by Module Function) --- */
 
 /* --- Workspaces --- */
 #workspaces {
