@@ -8,23 +8,13 @@
 //  by j5onrf, from ML4W base
 //  Ghost-Expedition (beta) 2025-06-12
 
-    // =================================================================================
     // --- CORE WORKFLOW MODULES ---
-    // =================================================================================
 {
     "hyprland/workspaces#rw": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "warp-on-scroll": false,
-        "sort-by-number": true,
-        "show-special": false,
-        "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace e-1",
-        "on-scroll-down": "hyprctl dispatch workspace e+1",
-        "format": "{icon}{windows}",
-        "persistent-workspaces": {
-            "*": 5
-        },
+        "disable-scroll": true, "all-outputs": true, "warp-on-scroll": false, "sort-by-number": true,
+        "show-special": false, "on-click": "activate", "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1", "format": "{icon}{windows}",
+        "persistent-workspaces": { "*": 5 },
         "format-window-separator": "\n",
         "format-icons": {
             "empty": "\ue59e",
@@ -32,9 +22,7 @@
         },
         "window-rewrite-default": "\ue3dd",
         "window-rewrite": {
-            // ===================================
             // --- Title-Based Icon Rewrites ---
-            // ===================================
             "title<.*youtube.*>": "<span line-height='1'>\uf04b</span>",
             "title<.*reddit.*>": "<span line-height='0.8'></span>",
             "title<.*dot.*>": "<span line-height='0.8'>\ue13a</span>",
@@ -44,10 +32,7 @@
             "title<.*amazon.*>": "",
             "title<.*gmail.*>": "󰊫 ",
             "title<.*nvim ~.*>": " ",
-
-            // ==================================
             // --- Class-Based Icon Rewrites ---
-            // ==================================
             "class<firefox>": "<span font='18'>\uf37e</span>",
             "class<brave-browser>": "<span line-height='1'>\ue24f</span>",
             "class<codium>": "<span line-height='0.8'> </span>",
@@ -73,9 +58,7 @@
         }
     },
 
-    // =================================================================================
     // --- GROUP DEFINITIONS ---
-    // =================================================================================
     "group/settings": {
         "orientation": "inherit",
         "drawer": {
@@ -141,9 +124,7 @@
         "format": ""
     },
 
-    // =================================================================================
     // --- ACTION & LAUNCHER MODULES ---
-    // =================================================================================
     "custom/appmenu": {
         "format": "\ue410",
         "on-click": "~/.config/rofi/bin/launcher",
@@ -195,9 +176,7 @@
         "tooltip": false
     },
     
-    // =================================================================================
     // --- SYSTEM STATUS & SERVICE MODULES ---
-    // =================================================================================
     "cpu": {
         "format-critical": "<b>{usage}</b>",
         "format-high": "{usage}",
