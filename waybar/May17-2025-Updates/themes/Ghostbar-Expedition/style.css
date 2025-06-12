@@ -10,7 +10,7 @@ ___________    \/           \/     .__.__  __  .__
 /_______  /__/\_ |   __/ \___  \____ ||__||__| |__|\____/|___|  /
         \/      \|__|        \/     \/                        \/
 * ML4W, Edited by j5onrf
-* Ghost-Expedition (6-11-2025) beta
+* Ghost-Expedition (6-12-2025) beta
 * -----------------------------------------------------
 */
 
@@ -59,7 +59,7 @@ window#waybar {
 
 
 /* =============================================================================
-   --- Module Styles (Grouped by Module) ---
+   --- Module Styles (Grouped by Module Function) ---
    ========================================================================== */
 
 /* --- Workspaces --- */
@@ -88,7 +88,7 @@ window#waybar {
     color: @primary;
 }
 
-/* --- Left Side Buttons (App Menu & Exit) --- */
+/* --- Primary Launchers & Action Buttons --- */
 #custom-appmenu,
 #custom-exit {
     font-family: "Font Awesome 6 Duotone";
@@ -105,7 +105,7 @@ window#waybar {
     margin: 0.1em 0 0 0;
 }
 
-/* --- Hidden Group Buttons (Settings & System) --- */
+/* --- Hidden Group Buttons (for Drawers/Groups) --- */
 #custom-settings,
 #custom-system {
     font-size: 0.5em;
@@ -137,7 +137,7 @@ window#waybar {
 }
 
 
-/* --- Right Side Icon Group (PulseAudio, Network, Tray, etc.) --- */
+/* --- Status Icon Group (PulseAudio, Network, Tray, etc.) --- */
 /* Shared base styles for all icons in this group */
 #pulseaudio, #custom-cliphist, #custom-hyprshade, #network, #tray,
 #custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification {
@@ -172,7 +172,7 @@ window#waybar {
     color: @ghost_pulseaudio_muted_hover__fg;
 }
 
-/* --- Right Side Text Group (CPU, Memory, Updates) --- */
+/* --- System Monitor Group (CPU, Memory, Updates) --- */
 /* Shared base styles for all three modules.
    This sets the desired default color for all of them. */
 #cpu, 
@@ -204,6 +204,7 @@ window#waybar {
     color: @error;
     font-weight: bold; 
 }
+
 
 /* =============================================================================
    --- Tooltips ---
