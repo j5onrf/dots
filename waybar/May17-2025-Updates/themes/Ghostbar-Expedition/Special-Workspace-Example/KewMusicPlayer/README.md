@@ -41,7 +41,7 @@ After adding these lines, reload Hyprland (e.g., `hyprctl reload` or `$mainMod +
 
 Your Waybar configuration likely already handles the icon for KewMusicPlayer if you've previously set it up.
 
-1.  **Check your Waybar configuration file** (e.g., `~/.config/waybar/conf/ghost-exp.jsonc` or `~/.config/waybar/modules.json`).
+1.  **Check your Waybar configuration file** (e.g., `~/.config/waybar/ghost-exp.jsonc` or `~/.config/modules.json`).
 2.  **Ensure the `hyprland/workspaces#rw` module has:**
     *   `"show-special": true` (to display icons for special workspaces).
     *   The following rule (or similar) within its `"window-rewrite"` section:
