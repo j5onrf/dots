@@ -38,27 +38,24 @@ After adding these lines, reload Hyprland (e.g., `hyprctl reload` or `$mainMod +
 
 ### 2. Waybar Configuration
 
-Modify your Waybar configuration file (e.g., `~/.config/waybar/conf/ghost-exp.jsonc` or `~/.config/waybar/modules.json`).
-Locate the `hyprland/workspaces#rw` module and ensure the following:
+Your Waybar configuration likely already handles the icon for KewMusicPlayer if you've previously set it up.
 
-```json
-{
-    // ... other modules ...
-    "hyprland/workspaces#rw": {
-        // ... your existing settings ...
-        "show-special": true, // Enable this to see the scratchpad icon in Waybar
+1.  **Check your Waybar configuration file** (e.g., `~/.config/waybar/conf/ghost-exp.jsonc` or `~/.config/waybar/modules.json`).
+2.  **Ensure the `hyprland/workspaces#rw` module has:**
+    *   `"show-special": true` (to display icons for special workspaces).
+    *   The following rule (or similar) within its `"window-rewrite"` section:
+        ```json
         "window-rewrite": {
-          "org.keepassxc.KeePassXC": "\uf084", // Your KeePassXC icon (if configured)
-          "KewMusicPlayer": "\uf8c9",         // <--- Icon for KewMusicPlayer
-            // ... your other window-rewrite rules ...
+            // ... other rules ...
+            "class<KewMusicPlayer>": "<span line-height='1'>\uf8c9</span>", // Ensures KewMusicPlayer icon
+            // ... other rules ...
         }
-        // Ensure format-icons, persistent-workspaces, etc., are as you need them.
-        // It's not usually necessary to define "special:music" in "format-icons"
-        // if "window-rewrite" is correctly identifying KewMusicPlayer.
-    },
-    // ... other modules ...
-}
-```
+        ```
+    If these are already in place, no Waybar configuration changes are needed for the icon.
+
+3.  If you made changes (like setting `"show-special": true`), restart Waybar (e.g., `killall waybar && waybar &` or `$mainMod + SHIFT + W`).
+
+---
 
 After editing, restart Waybar (e.g., `killall waybar && waybar &` or `$mainMod + SHIFT + W`).
 
