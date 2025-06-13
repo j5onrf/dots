@@ -59,4 +59,3 @@ After editing, restart Waybar (e.g., `killall waybar && waybar &` or `$mainMod +
 
 ---
 
-This README is concise and gives users the essential steps. You can add more details to the "Notes" or create a separate "Troubleshooting" section if common issues arise.
