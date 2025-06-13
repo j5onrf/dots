@@ -76,5 +76,3 @@ After editing, restart Waybar (e.g., `killall waybar && waybar &` or `$mainMod +
 *   **`$mainMod`:** Refers to your Super/Windows key (or whatever you have it set to in Hyprland).
 
 ---
-
-This README provides a clear path for users to set up KewMusicPlayer in its own special workspace, leveraging the configuration you've already found works well.
