@@ -203,9 +203,6 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 (2025-June13) [Ghost-Expedition<sup>beta</sup> Audiowide Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition) 
 ![2khjRegion-2025-06-13_09-54-33](https://github.com/user-attachments/assets/fed4ac1e-1072-49bc-9faa-dcdbe5a836e5)
 
-(2025-June09) [GM-Duo-Hyprshade<sup>beta</sup> Orbitron Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Hyprshade-Script/python-solution) 
-![3Region-2025-06-09_17-51-46](https://github.com/user-attachments/assets/7c17ed81-d2a8-4eae-a4b9-21b72197fa09)
-
 (2025-May23) [Ghost-Matugen<sup>beta</sup> Azonix Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
 ![Region-2025-05-24_19-48-26](https://github.com/user-attachments/assets/ea7651fa-4014-41c8-9b5f-cff26bd6f868) 
 
