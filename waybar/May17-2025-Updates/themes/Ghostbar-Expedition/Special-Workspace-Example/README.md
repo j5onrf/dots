@@ -1,5 +1,7 @@
 # KeePassXC Scratchpad for Waybar
 
+![FullScreen-2025-06-13_17-46-03.png](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Special-Workspace-Example/FullScreen-2025-06-13_17-46-03.png)
+
 This guide helps you enable a "scratchpad" feature for KeePassXC, allowing you to quickly launch and toggle its visibility. The KeePassXC icon will appear in your Waybar.
 
 ## Prerequisites
