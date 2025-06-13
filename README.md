@@ -11,7 +11,7 @@
 <p>
 
 [Ghost-Matugen](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) &nbsp; [Duo](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Duotone) &nbsp; [v1.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/%20%20%20%20v1.5) &nbsp; [v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2) &nbsp; [v2.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2.5) &nbsp; [v3](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3) &nbsp; [v3.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3.5) &nbsp; [Cava-Wallust](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Cava-Matugen)  &nbsp; [Chafa](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/FastFetch/chafa)<img src="https://github.com/user-attachments/assets/9d4f4609-409d-4225-982f-94ab30bb8f5b" width="100" alt="w2">
-![FullScreen-2025-05-21_14-32-31](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/FullScreen-2025-05-25_10-37-22.png)
+![FullScreen-2025-05-21_14-32-31](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/FullScreen-2025-05-25_10-37-22.png#_uDarkdata-hpc=true&class=Box-sc-g0xbh4-0+fzFXnm)
 
 </details>
 
