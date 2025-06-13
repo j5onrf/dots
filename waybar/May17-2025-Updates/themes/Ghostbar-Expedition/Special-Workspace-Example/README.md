@@ -17,9 +17,16 @@ Add the following to your Hyprland user configuration file (e.g., `~/.config/hyp
 # --- KeePassXC Scratchpad ---
 workspace = special:scratchpad
 windowrule = workspace special:scratchpad silent, class:^(org.keepassxc.KeePassXC)$
+
+# Keybinds for KeePassXC Scratchpad
 bind = $mainMod ALT, K, exec, /usr/bin/keepassxc      # Launch KeePassXC to scratchpad
 bind = $mainMod ALT, S, togglespecialworkspace, scratchpad # Toggle scratchpad visibility
+
+# Optional: Make KeePassXC float and set a default size when on the scratchpad
+windowrulev2 = float,class:^(org.keepassxc.KeePassXC)$ # Make it float
+windowrulev2 = size 1300 1100,class:^(org.keepassxc.KeePassXC)$ # Set preferred size
 ```
+
 
 After adding, reload Hyprland (e.g., `hyprctl reload` or `$mainMod + SHIFT + R`).
 
