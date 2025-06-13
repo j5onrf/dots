@@ -26,7 +26,6 @@ bind = $mainMod ALT, N, togglespecialworkspace, music # Toggle 'special:music' v
 # Optional: Make KewMusicPlayer float and set a default size.
 windowrulev2 = float,class:^(KewMusicPlayer)$
 windowrulev2 = size 800 1000,class:^(KewMusicPlayer)$ # Adjust size as preferred
-# windowrulev2 = center,class:^(KewMusicPlayer)$ # Optional: Uncomment to explicitly center
 ```
 
 **Note on Keybinds:**
