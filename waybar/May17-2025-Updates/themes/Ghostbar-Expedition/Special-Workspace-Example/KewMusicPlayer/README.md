@@ -19,14 +19,14 @@ Add the following to your Hyprland user configuration file (e.g., `~/.config/hyp
 workspace = special:music                                      # Define a new special workspace for music
 windowrule = workspace special:music silent, class:^(KewMusicPlayer)$ # Rule to move KewMusicPlayer to it
 
+# Keybinds for KewMusicPlayer Scratchpad
+bind = $mainMod, m, exec, kitty --class "KewMusicPlayer" kew      # Launch KewMusicPlayer to scratchpad
+bind = $mainMod ALT, N, togglespecialworkspace, music # Toggle 'special:music' visibility
+
 # Optional: Make KewMusicPlayer float and set a default size.
 windowrulev2 = float,class:^(KewMusicPlayer)$
 windowrulev2 = size 800 1000,class:^(KewMusicPlayer)$ # Adjust size as preferred
 # windowrulev2 = center,class:^(KewMusicPlayer)$ # Optional: Uncomment to explicitly center
-
-# Keybinds for KewMusicPlayer Scratchpad
-bind = $mainMod, m, exec, kitty --class "KewMusicPlayer" kew      # Launch KewMusicPlayer to scratchpad
-bind = $mainMod ALT, N, togglespecialworkspace, music # Toggle 'special:music' visibility
 ```
 
 **Note on Keybinds:**
