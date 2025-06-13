@@ -77,4 +77,4 @@ After editing, restart Waybar (e.g., `killall waybar && waybar &` or `$mainMod +
 *   **Waybar Icon Visibility:** As discussed previously, the Waybar icon's behavior when the scratchpad overlay is hidden (but the window still exists in the special workspace) depends on your Hyprland version's IPC reporting. The `window-rewrite` ensures the icon shows when KewMusicPlayer is present in that workspace.
 *   **`$mainMod`:** Refers to your Super/Windows key (or whatever you have it set to in Hyprland).
 
----
+
