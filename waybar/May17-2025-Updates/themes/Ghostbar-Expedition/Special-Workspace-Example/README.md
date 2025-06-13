@@ -66,5 +66,5 @@ After editing, restart Waybar (e.g., `killall waybar && waybar &` or `$mainMod +
 *   The Waybar icon's behavior when the scratchpad is hidden depends on your Hyprland version's IPC. The `window-rewrite` ensures the icon shows when KeePassXC is in the scratchpad.
 *   `$mainMod` refers to your Super/Windows key (or whatever you have it set to in Hyprland).
 
----
+
 
