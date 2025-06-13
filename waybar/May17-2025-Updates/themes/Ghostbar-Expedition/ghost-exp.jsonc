@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W base
-//  Ghost-Expedition (beta) 2025-06-12
+//  Ghost-Expedition (beta) 2025-06-13
 
     // --- CORE WORKFLOW MODULES ---
 {
@@ -100,8 +100,6 @@
            "(.*) - Brave Search": "$1"
        },
        "rotate": 270,
-       "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-       "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
        "tooltip": true
    },
     "clock": {
