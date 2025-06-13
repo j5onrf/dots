@@ -1,5 +1,7 @@
 # KewMusicPlayer Scratchpad for Waybar
 
+![FullScreen-2025-06-13_17-43-05.png](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Special-Workspace-Example/KewMusicPlayer/FullScreen-2025-06-13_17-43-05.png)
+
 This guide helps you enable a "scratchpad" feature for KewMusicPlayer, allowing you to quickly launch and toggle its visibility. The KewMusicPlayer icon will appear in your Waybar when active.
 
 ## Prerequisites
