@@ -1,6 +1,6 @@
 # Dynamic Kew Theming with Matugen & Wallust
 
-![FullScreen-2025-06-14_10-13-30](https://github.com/user-attachments/assets/43c754bc-56df-4b13-b841-db2b9f8b2671)
+![FullScreen-2025-06-14_11-28-27](https://github.com/user-attachments/assets/0ec8f912-e822-4a9f-a338-afb1123a9e81)
 
 This project provides a robust method to dynamically theme `kewmusicplayer` in a Hyprland environment. It leverages `matugen` to define color *roles* (like "primary accent") and `wallust` to provide a rich, wallpaper-based terminal color palette for `kitty`.
 
