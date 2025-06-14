@@ -114,7 +114,7 @@ $HOME/.cargo/bin/matugen image $used_wallpaper -m "dark"
 # --- Apply Matugen theme to VSCodium ---
 if [ -f "$HOME/.config/hypr/scripts/vscodium-matugen.sh" ]; then
     echo ":: Applying Matugen theme to VSCodium"
-    bash "$HOME/.config/hypr/scripts/vscodium-matugen.sh" # Run the script
+    bash "$HOME/.config/hypr/scripts/vscodium-matugen.sh" &  # Run the script w/ optimization
 else
     echo ":: VSCodium Matugen script not found, skipping."
 fi
