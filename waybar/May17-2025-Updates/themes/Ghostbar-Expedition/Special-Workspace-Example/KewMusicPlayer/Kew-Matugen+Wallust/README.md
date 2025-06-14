@@ -187,7 +187,7 @@ enqueuedColor=2
 
 ### Step 4: Integrate into Your Wallpaper Script
 
-Finally, add the call to your `update_kew_colors.sh` script inside your main `wallpaper.sh`. Place it after both `matugen` and `wallust` have finished running.
+Finally, add the call to your `update_kew_colors.sh` script inside your main `$HOME/.config/hypr/scripts/wallpaper.sh`. Place it after both `matugen` and `wallust` have finished running.
 
 **Example addition to `wallpaper.sh`:**
 ```bash
