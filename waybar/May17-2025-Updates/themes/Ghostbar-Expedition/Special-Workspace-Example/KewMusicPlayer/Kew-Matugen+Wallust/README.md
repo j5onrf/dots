@@ -195,13 +195,8 @@ Finally, add the call to your `update_kew_colors.sh` script inside your main `$H
 KEW_UPDATE_SCRIPT="${XDG_CONFIG_HOME:-$HOME/.config}/hypr/scripts/update_kew_colors.sh"
 if [ -f "$KEW_UPDATE_SCRIPT" ]; then
     echo ":: Updating Kewmusicplayer colors..."
-    # Run in the background so it doesn't slow down the main script
+    # The config file is updated silently in the background. Kew will detect the change automatically.
     bash "$KEW_UPDATE_SCRIPT" &
-
-    # Check if 'kew' is running before sending a notification
-    if pgrep -x "kew" > /dev/null; then
-        notify-send "Kew colors updated!" "Restart kew to apply changes" -t 5000
-    fi
 else
     echo ":: Warning: Kew color update script not found at $KEW_UPDATE_SCRIPT" >&2
 fi
