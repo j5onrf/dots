@@ -11,7 +11,7 @@ This setup allows `kewmusicplayer` to dynamically match your Hyprland desktop's 
 ## How It Works
 
 1.  Your `wallpaper.sh` script sets the wallpaper and triggers `matugen`.
-2.  `matugen` generates a color palette (e.g., in `colors.css`).
+2.  `matugen` generates a color palette (e.g., in `colors.css` in your config directory).
 3.  A Python script converts specific `matugen` hex colors to `kew`'s 8-bit ANSI color numbers.
 4.  A Bash script updates your `kewmusicplayer` config (`kewrc`) with these new ANSI colors.
 5.  A notification reminds you to restart `kew` to apply the changes.
@@ -21,10 +21,10 @@ This setup allows `kewmusicplayer` to dynamically match your Hyprland desktop's 
 ### Prerequisites
 
 *   **Hyprland**
-*   **`matugen`** (configured to output to `/home/j5/.config/waybar/colors.css`)
+*   **`matugen`** (configured to output to a known `colors.css` location, typically `$HOME/.config/waybar/colors.css` or similar for other applications).
 *   **`kewmusicplayer`**
 *   **`python3`**
-*   **`notify-send`** (from `libnotify-bin`)
+*   **`notify-send`** (from `libnotify-bin` on Debian/Ubuntu-based systems, or `notification-daemon` etc. on others)
 *   Your existing **`wallpaper.sh`** script.
 
 ### Steps
@@ -63,9 +63,15 @@ This setup allows `kewmusicplayer` to dynamically match your Hyprland desktop's 
     #!/bin/bash
 
     # --- Configuration ---
-    MATUGEN_COLORS_FILE="/home/j5/.config/waybar/colors.css"
-    KEWRC_FILE="/home/j5/.config/kew/kewrc"
-    PYTHON_SCRIPT_PATH="/home/j5/.config/kew/hex_to_ansi.py"
+    # Path to your matugen generated colors.css
+    # This is typically where matugen outputs CSS variables for other apps like Waybar.
+    MATUGEN_COLORS_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/waybar/colors.css"
+
+    # Path to your kewrc config file
+    KEWRC_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/kew/kewrc"
+
+    # Path to the Python conversion script created in Step 1
+    PYTHON_SCRIPT_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/kew/hex_to_ansi.py"
 
     # --- Functions ---
     get_matugen_hex() { grep -m 1 "@define-color $1" "$MATUGEN_COLORS_FILE" | awk '{print $NF}' | tr -d ';'; }
@@ -77,11 +83,12 @@ This setup allows `kewmusicplayer` to dynamically match your Hyprland desktop's 
     KEW_TITLE_COLOR=$(convert_to_ansi "$(get_matugen_hex "primary")")
     KEW_ENQUEUED_COLOR=$(convert_to_ansi "$(get_matugen_hex "secondary")")
 
-    KEW_LOGO_COLOR=${KEW_LOGO_COLOR:-7}
-    KEW_ARTIST_COLOR=${KEW_ARTIST_COLOR:-6}
-    KEW_TITLE_COLOR=${KEW_TITLE_COLOR:-6}
-    KEW_ENQUEUED_COLOR=${KEW_ENQUEUED_COLOR:-2}
+    KEW_LOGO_COLOR=${KEW_LOGO_COLOR:-7} # Default to White if conversion fails
+    KEW_ARTIST_COLOR=${KEW_ARTIST_COLOR:-6} # Default to Cyan
+    KEW_TITLE_COLOR=${KEW_TITLE_COLOR:-6} # Default to Cyan
+    KEW_ENQUEUED_COLOR=${KEW_ENQUEUED_COLOR:-2} # Default to Green
 
+    # Update kewrc file
     sed -i '/^useConfigColors=/c\useConfigColors=1' "$KEWRC_FILE"
     sed -i "/^color=/c\color=$KEW_LOGO_COLOR" "$KEWRC_FILE"
     sed -i "/^artistColor=/c\artistColor=$KEW_ARTIST_COLOR" "$KEWRC_FILE"
@@ -91,7 +98,7 @@ This setup allows `kewmusicplayer` to dynamically match your Hyprland desktop's 
     echo "Kew colors in '$KEWRC_FILE' updated based on Matugen theme."
     exit 0
     ```
-    **Important:** Verify the `MATUGEN_COLORS_FILE`, `KEWRC_FILE`, and `PYTHON_SCRIPT_PATH` variables match your system's setup.
+    **Important:** Verify the `MATUGEN_COLORS_FILE`, `KEWRC_FILE`, and `PYTHON_SCRIPT_PATH` variables match your system's setup. `"${XDG_CONFIG_HOME:-$HOME/.config}"` is used for XDG Base Directory Specification compliance, falling back to `$HOME/.config`.
     Make executable: `chmod +x ~/.config/hypr/scripts/update_kew_colors.sh`
 
 3.  **Configure `~/.config/kew/kewrc`:**
@@ -100,18 +107,19 @@ This setup allows `kewmusicplayer` to dynamically match your Hyprland desktop's 
     ```ini
     [colors]
     useConfigColors=1
-    # color=X  (these will be overwritten)
+    # color=X  (these will be overwritten by the script)
     # artistColor=X
     # titleColor=X
     # enqueuedColor=X
     ```
 
-4.  **Modify `/home/j5/.config/hypr/scripts/wallpaper.sh`:**
-    Add the following block *after* the `matugen` execution in your wallpaper script:
+4.  **Modify your main wallpaper script (e.g., `~/.config/hypr/scripts/wallpaper.sh`):**
+    Add the following block *after* the `matugen` execution in your wallpaper script.
+    *(Note: If `matugen` is not in your `$PATH`, you might need to use its full path here, e.g., `$HOME/.cargo/bin/matugen`)*
 
     ```bash
     # --- Add this section to update Kew colors ---
-    KEW_UPDATE_SCRIPT="$HOME/.config/hypr/scripts/update_kew_colors.sh"
+    KEW_UPDATE_SCRIPT="${XDG_CONFIG_HOME:-$HOME/.config}/hypr/scripts/update_kew_colors.sh"
     if [ -f "$KEW_UPDATE_SCRIPT" ]; then
         echo ":: Updating Kewmusicplayer colors..."
         bash "$KEW_UPDATE_SCRIPT" & # Run in background
@@ -124,7 +132,7 @@ This setup allows `kewmusicplayer` to dynamically match your Hyprland desktop's 
 
 ## Usage
 
-1.  Change your wallpaper as usual.
+1.  Change your wallpaper as usual, triggering your `wallpaper.sh` script.
 2.  A desktop notification will appear.
 3.  Restart `kewmusicplayer` in your terminal:
     ```bash
@@ -134,5 +142,6 @@ This setup allows `kewmusicplayer` to dynamically match your Hyprland desktop's 
 
 ## Customization & Troubleshooting
 
-*   **Color Mapping:** Adjust how `matugen` colors map to `kew` elements by editing `update_kew_colors.sh` (e.g., change `primary` to `tertiary` for different accent colors).
-*   **Issues:** Double-check all script paths, ensure scripts are executable (`chmod +x`), verify `kewrc` has `useConfigColors=1`, and look for errors in your terminal when running `wallpaper.sh`.
+*   **Color Mapping:** Adjust how `matugen` colors map to `kew` elements by editing `update_kew_colors.sh` (e.g., change `primary` to `tertiary` for different accent colors in `kew`).
+*   **Issues:** Double-check all script paths, ensure scripts are executable (`chmod +x`), verify `kewrc` has `useConfigColors=1`, and look for errors in your terminal when running `wallpaper.sh` manually.
+*   **Matugen output:** Ensure your `matugen` command outputs its CSS variables to the path specified in `MATUGEN_COLORS_FILE` in `update_kew_colors.sh`.
