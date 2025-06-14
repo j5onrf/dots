@@ -34,7 +34,7 @@ After adding, reload Hyprland (e.g., `hyprctl reload` or `$mainMod + SHIFT + R`)
 
 ### 2. Waybar Configuration
 
-Modify your Waybar configuration file (e.g., `~/.config/waybar/conf/ghost-exp.jsonc`).
+Modify your Waybar configuration file (e.g., `~/.config/waybar/ghost-exp.jsonc`).
 Locate the `hyprland/workspaces#rw` module and ensure the following:
 
 ```json
