@@ -1,4 +1,4 @@
-/* File: ~/.config/waybar/themes/ */
+/* File: ~/.config/waybar/themes/~ */
 
 /* 1. Import the common Matugen-generated colors.css */
 @import '../../colors.css';
@@ -6,44 +6,44 @@
 /* 2. Define semantic color names for YOUR theme */
 
 /* --- Text Colors --- */
-@define-color ghost_text_primary @on_surface;               /* #f0dede */
-@define-color ghost_text_tooltip @on_surface;               /* #f0dede */
-@define-color ghost_text_on_accent @on_primary_container;   /* #ffdada */
+@define-color ghost_text_primary @on_surface;
+@define-color ghost_text_tooltip @on_surface;
+@define-color ghost_text_on_accent @on_primary_container;
 
 /* --- Accent & Special Colors --- */
-@define-color ghost_accent_red_bg @error_container;         /* #93000a */
-@define-color ghost_accent_red_fg @on_error_container;      /* #ffdad6 */
-@define-color ghost_icon_default @on_surface_variant;       /* #d7c1c1 */
+@define-color ghost_accent_red_bg @error_container;
+@define-color ghost_accent_red_fg @on_error_container;
+@define-color ghost_icon_default @on_surface_variant;
 
 /* --- Backgrounds & Surfaces --- */
-@define-color ghost_bar_background @background; /* Was transparent; changed to @background based on your screenshot */
-@define-color ghost_tooltip_background @surface_container_highest; /* #3d3232 */
+@define-color ghost_bar_background @background;
+@define-color ghost_tooltip_background @surface_container_highest;
 
 /* --- Shadows & Highlights (Glows) --- */
 @define-color ghost_light_glow alpha(@on_background, 0.3);
-@define-color ghost_hover_glow_color @primary;               /* #ffb3b4 */
+@define-color ghost_hover_glow_color @primary;
 
 /* --- Workspaces --- */
-@define-color ghost_ws_button_fg @on_surface_variant;         /* #d7c1c1 */
+@define-color ghost_ws_button_fg @on_surface_variant;
 @define-color ghost_ws_button_bg transparent;
-@define-color ghost_ws_button_shadow @outline;                /* #9f8c8c - Changed from @on_surface_variant for better blending */
+@define-color ghost_ws_button_shadow @outline;
 
-@define-color ghost_ws_button_active_fg @on_primary_container;/* #ffdada */
-@define-color ghost_ws_button_active_bg @primary_container;   /* #733337 */
+@define-color ghost_ws_button_active_fg @on_primary_container;
+@define-color ghost_ws_button_active_bg @primary_container;
 
-@define-color ghost_ws_button_hover_fg @on_secondary_container; /* #ffdada */
-@define-color ghost_ws_button_hover_bg @secondary_container;    /* #5d3f40 */
+@define-color ghost_ws_button_hover_fg @on_secondary_container;
+@define-color ghost_ws_button_hover_bg @secondary_container;
 
 /* --- Specific Modules --- */
 /* Hypridle */
-@define-color ghost_hypridle_active_icon @tertiary;           /* #e6c18d */
-@define-color ghost_hypridle_inactive_icon @error;            /* #ffb4ab */
+@define-color ghost_hypridle_active_icon @tertiary;
+@define-color ghost_hypridle_inactive_icon @error;
 
 /* PulseAudio Muted */
-@define-color ghost_pulseaudio_muted_fg @on_error_container;  /* #ffdad6 */
-@define-color ghost_pulseaudio_muted_bg @error_container;     /* #93000a */
-@define-color ghost_pulseaudio_muted_hover_fg @on_error;      /* #690005 */
-@define-color ghost_pulseaudio_muted_hover_bg @error;         /* #ffb4ab */
+@define-color ghost_pulseaudio_muted_fg @on_error_container;
+@define-color ghost_pulseaudio_muted_bg @error_container;
+@define-color ghost_pulseaudio_muted_hover_fg @on_error;
+@define-color ghost_pulseaudio_muted_hover_bg @error;
 
 /* For elements initially set to transparent text */
 @define-color ghost_hidden_text transparent;
