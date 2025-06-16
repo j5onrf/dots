@@ -220,7 +220,7 @@ trap cleanup_tmp_file EXIT # Ensure tmp file is cleaned up on script exit
 if [ -n "$CUSTOMIZATIONS_JSON" ] && jq -e . >/dev/null 2>&1 <<<"$CUSTOMIZATIONS_JSON"; then
     if [ -f "$VSCODIUM_SETTINGS_FILE" ]; then
         # Create a backup before attempting modification
-        cp "$VSCODIUM_SETTINGS_FILE" "${VSCODIUM_SETTINGS_FILE}.bak.$(date +%Y%m%d-%H%M%S)"
+         cp "$VSCODIUM_SETTINGS_FILE" "${VSCODIUM_SETTINGS_FILE}.bak" # Overwrites a single backup file (settings.json.bak)
         
         if jq -s '.[0] * .[1]' "$VSCODIUM_SETTINGS_FILE" <(echo "$CUSTOMIZATIONS_JSON") > "$TMP_SETTINGS_FILE"; then
             # Verify the tmp file is valid JSON before moving
