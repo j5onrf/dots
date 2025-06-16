@@ -88,6 +88,12 @@ window#waybar {
 #custom-exit {
     margin: 0.1em 0 0 0;
 }
+#custom-appmenu:hover,
+#custom-exit:hover {
+    background-color: @ghost_ws_button_hover_bg;
+    color: @ghost_ws_button_hover_fg; 
+    transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out;
+}
 
 /* --- Hidden Group Buttons (for Drawers/Groups) --- */
 #custom-settings,
