@@ -3,7 +3,7 @@
 /* 1. Import the common Matugen-generated colors.css */
 @import '../../colors.css';
 
-/* 2. Define semantic color names for YOUR Ghost-Modern-Matugen theme */
+/* 2. Define semantic color names for YOUR theme */
 
 /* --- Text Colors --- */
 @define-color ghost_text_primary @on_surface;               /* #f0dede */
