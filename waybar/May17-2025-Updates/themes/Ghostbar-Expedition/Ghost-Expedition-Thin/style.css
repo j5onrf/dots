@@ -76,11 +76,12 @@ window#waybar {
 #custom-appmenu,
 #custom-exit {
     font-family: "Font Awesome 6 Sharp Thin";
-    font-weight: 100;  /* 100 or 300 for Duotone Thin */
-    background-color: @ghost_ws_button_active_bg;   
+    font-weight: 100;
+    background-color: @ghost_ws_button_active_bg;
     color: @primary;
     font-size: 1.25em;
     padding: 0.2em 0;
+    border: 1px solid transparent;
 }
 #custom-appmenu {
     margin: 0 0 0.2em 0;
@@ -91,8 +92,9 @@ window#waybar {
 #custom-appmenu:hover,
 #custom-exit:hover {
     background-color: @ghost_ws_button_hover_bg;
-    color: @ghost_ws_button_hover_fg; 
-    transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out;
+    color: @ghost_ws_button_hover_fg;
+    border-color: @primary;
+
 }
 
 /* --- Hidden Group Buttons (for Drawers/Groups) --- */
