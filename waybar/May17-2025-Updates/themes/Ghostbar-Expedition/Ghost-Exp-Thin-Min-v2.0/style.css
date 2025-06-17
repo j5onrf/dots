@@ -149,7 +149,7 @@ window#waybar {
 #cpu, 
 #memory, 
 #custom-updates {
-    font-family: "Azonix", "Power Grotesk", "Orbitron", "Audiowide", sans-serif;
+    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-weight: 100;
     font-size: 0.57em;
     color: @ghost_text_primary;
