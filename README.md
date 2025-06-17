@@ -2,7 +2,7 @@
 <details open><summary>(2025-June11) Ghostbar Expedition Template</summary>
 <p>
 
-[Ghost-Expedition<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition) &nbsp; [Sharp-Thin](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Expedition-Thin) 
+[Ghost-Expedition<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition) &nbsp; [Sharp-Thin](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Expedition-Thin) &nbsp; [Min-v2.0](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Thin-Min-v2.0) 
 ![FullScreen-2025-06-11_20-07-43.png](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/FullScreen-2025-06-11_20-07-43.png#_uDarkdata-hpc=true&class=Box-sc-g0xbh4-0+fzFXnm)
 
 </details>
