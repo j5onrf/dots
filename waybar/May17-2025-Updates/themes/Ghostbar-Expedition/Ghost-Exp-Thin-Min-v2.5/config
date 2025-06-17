@@ -1,0 +1,44 @@
+//  __      __  _____ _____._____________   _____ __________ 
+// /  \    /  \/  _  \\__  |   \______   \ /  _  \\______   \
+// \   \/\/   /  /_\  \/   |   ||    |  _//  /_\  \|       _/
+//  \        /    |    \____   ||    |   /    |    |    |   \
+//   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
+//        \/         \/\/              \/        \/       \/     
+// ML4W, Edited by j5onrf
+// Ghost-Exp-Thin-Min-v2.5 (2025-6-17) beta
+// -----------------------------------------------------
+
+{
+  // General Settings
+  "layer": "top",
+  "position": "left",
+  "margin-bottom": 0,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "spacing": 0,
+
+  // Load Modules
+  "include": [
+    "~/.config/waybar/ghost-exp-thin-min.jsonc"
+  ],
+
+  // Modules Left
+  "modules-left": [
+    "custom/appmenu",
+    "hyprland/window",
+    "group/settings"
+  ],
+
+  // Modules Center
+  "modules-center": [
+    "hyprland/workspaces#rw"
+  ],
+
+  // Modules Right
+  "modules-right": [
+    "group/hardware",
+    "clock",
+    "custom/exit"
+  ],
+}
