@@ -81,7 +81,6 @@ window#waybar {
     color: @primary;
     font-size: 1.25em;
     padding: 0.2em 0;
-    border: 1px solid transparent;
 }
 #custom-appmenu {
     margin: 0 0 0.2em 0;
@@ -92,9 +91,9 @@ window#waybar {
 #custom-appmenu:hover,
 #custom-exit:hover {
     background-color: @ghost_ws_button_hover_bg;
-    color: @ghost_ws_button_hover_fg;
     border-color: @primary;
-
+    color: @ghost_text_on_accent;
+    font-weight: 300; 
 }
 
 /* --- Hidden Group Buttons (for Drawers/Groups) --- */
