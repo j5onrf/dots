@@ -51,7 +51,7 @@ window#waybar {
 /* --- Primary Launchers & Action Buttons --- */
 #custom-appmenu,
 #custom-exit {
-    font-family: "Font Awesome 6 Sharp Thin";
+    font-family: "Font Awesome 6 Sharp";
     font-weight: 100;
     color: @primary;
     font-size: 1.25em;
@@ -63,11 +63,12 @@ window#waybar {
 }
 #custom-exit {
     margin: 0.2em 0 0 0;
+    font-family: "Font Awesome 6 Sharp Thin";
+    font-weight: 700;
 }
 #custom-appmenu:hover,
 #custom-exit:hover {
     color: @ghost_text_on_accent;
-    font-weight: 400; 
 }
 
 /* --- Hidden Group Buttons (for Drawers/Groups) --- */
@@ -105,7 +106,8 @@ window#waybar {
     font-size: 0.857em;
     color: @primary;
     border: 1px solid transparent;
-    font-weight: 100; 
+    font-weight: 100;
+        margin: 0em 0.310em;
 }
 #clock:hover {
     color: @primary;
@@ -163,6 +165,7 @@ window#waybar {
 #custom-updates:hover {
     color: @ghost_text_primary;
     font-weight: 200;
+    border-color: @ghost_hover_glow_color;
 }
 /* State-based colors that apply ONLY to the CPU module */
 #cpu.medium {
