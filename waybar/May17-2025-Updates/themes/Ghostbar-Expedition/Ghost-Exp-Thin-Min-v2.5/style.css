@@ -42,7 +42,7 @@ window#waybar {
 }
 #workspaces button.active {
     color: @ghost_ws_button_active_fg;
-    border: 1px solid @primary;
+    background-color: @surface_container;
 }
 #workspaces button.empty {
     color: @primary;
