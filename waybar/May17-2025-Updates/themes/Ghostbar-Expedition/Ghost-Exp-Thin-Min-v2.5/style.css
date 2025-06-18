@@ -83,7 +83,7 @@ window#waybar {
     color: @primary;
     border-color: @ghost_hover_glow_color;
     padding: 0.19em 0;
-    margin: 0.1em 0 0 0;
+    margin: 0.25em 0 0 0;
 }
 
 /* --- Hidden Group Buttons (for Drawers/Groups) --- */
@@ -104,21 +104,24 @@ window#waybar {
 #window {
     font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-size: 0.643em;
-    padding: 0.2em 0.7em;
-    color: @primary;
+    padding: 0.5em 0em 0.5em 0.2em;
+    margin: 0em 0.6em;
+    color: @on_surface;
     font-weight: 100;
-    border: 1px solid transparent;
-    transition: border-color 0.2s ease-out, border-radius 0.2s ease-out;
+    background-color: @surface_container;
 }
 
 /* --- Clock --- */
 #clock {
     font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-size: 0.857em;
-    color: @primary;
+    color: @on_surface;
     font-weight: 100;
     border: 1px solid transparent;
     transition: color 0.2s ease-out, border-color 0.2s ease-out;
+    background-color: @surface_container;
+    padding: 0em 0em;
+    margin: 0em 0.35em;
 }
 
 /* --- Status Icon Group (PulseAudio, Network, Tray, etc.) --- */
