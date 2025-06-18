@@ -41,7 +41,7 @@ window#waybar {
     border: 1px solid @primary;
 }
 #workspaces button.active {
-    color: @on_surface;
+    color: @primary;
     background-color: @surface_container;
 }
 #workspaces button.empty {
