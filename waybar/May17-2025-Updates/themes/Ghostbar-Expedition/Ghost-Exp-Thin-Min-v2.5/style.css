@@ -10,7 +10,7 @@
  * /_______  /__/\_ |   __/ \___  \____ ||__||__| |__|\____/|___|  /
  *         \/      \|__|        \/     \/                        \/
  *  by j5onrf, from ML4W base
- *  Ghost-Exp-Thin-Min-v2.5 (beta) 2025-06-17
+ *  Ghost-Exp-Thin-Min-v2.5 (beta) 2025-06-18
  */
 
 @import 'ghost-matugen.css';
@@ -110,9 +110,6 @@ window#waybar {
     border: 1px solid transparent;
     transition: border-color 0.2s ease-out, border-radius 0.2s ease-out;
 }
-#window:hover {
-    border-radius: 0.4em;
-}
 
 /* --- Clock --- */
 #clock {
@@ -122,9 +119,6 @@ window#waybar {
     font-weight: 100;
     border: 1px solid transparent;
     transition: color 0.2s ease-out, border-color 0.2s ease-out;
-}
-#clock:hover {
-    color: @primary;
 }
 
 /* --- Status Icon Group (PulseAudio, Network, Tray, etc.) --- */
