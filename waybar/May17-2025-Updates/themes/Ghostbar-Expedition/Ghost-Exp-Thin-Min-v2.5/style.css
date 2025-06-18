@@ -106,7 +106,7 @@ window#waybar {
     font-size: 0.643em;
     padding: 0.5em 0em 0.5em 0.2em;
     margin: 0em 0.6em;
-    color: @on_surface;
+    color: @primary;
     font-weight: 100;
     background-color: @surface_container;
 }
@@ -115,7 +115,7 @@ window#waybar {
 #clock {
     font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-size: 0.857em;
-    color: @on_surface;
+    color: @primary;
     font-weight: 100;
     border: 1px solid transparent;
     transition: color 0.2s ease-out, border-color 0.2s ease-out;
