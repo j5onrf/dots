@@ -10,7 +10,7 @@
  * /_______  /__/\_ |   __/ \___  \____ ||__||__| |__|\____/|___|  /
  *         \/      \|__|        \/     \/                        \/
  *  by j5onrf, from ML4W base
- *  Ghost-Exp-Alpha-Wttr (beta) 2025-06-19
+ *  Ghost-Exp-Alpha-Wttr (beta) 2025-06-20
  */
 
 @import 'ghost-matugen.css';
@@ -81,30 +81,23 @@ window#waybar {
 #custom-exit {
     font-size: 4px;
     color: @ghost_hidden_text;
+    font-family: "Font Awesome 6 Sharp";
+    font-weight: 200;
     border: 1px solid transparent;
-    background-color: transparent;
     margin: 0;
     padding: 0;
     transition: font-size 0.2s ease-out,
                 color 0.2s ease-out,
                 border-color 0.2s ease-out,
                 margin 0.2s ease-out,
-                padding 0.2s ease-out,
-                background-color 0.2s ease-out;
-}
-#custom-appmenu {
-    font-family: "Font Awesome 6 Pro Thin";
-    font-weight: 400;
-}
-#custom-exit {
-    font-family: "Font Awesome 6 Pro";
-    font-weight: 400;
+                padding 0.2s ease-out
 }
 #custom-appmenu:hover {
-    font-size: 1.75em;
+    font-size: 1.25em;
     color: @primary;
     border-color: @ghost_hover_glow_color;
-    margin: 0 0 0.2em 0;
+    padding: 0.19em 0;
+    margin: 0 0 0.25em 0;
 }
 #custom-exit:hover {
     font-size: 1.25em;
@@ -134,18 +127,32 @@ window#waybar {
     background-color: transparent;
 }
 
+/* --- Window Title --- */
+#window {
+    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-size: 0.643em;
+    padding: 0.4em 0em 0.5em 0.2em;
+    margin: 0em 0.6em;
+    color: @primary;
+    font-weight: 100;
+    border: 1px solid transparent;
+}
+#window:hover {
+    color: @primary;
+    border: 1px solid @ghost_hover_glow_color;
+    border-radius: 0.4em;
+}
+
 /* --- Weather --- */
 #custom-temperature_wttr {
     font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-size: 0.857em;
     font-weight: 100;
     color: @primary;
-    border: none;
-    transition: background-color 0.2s ease-out, color 0.2s ease-out;
     border: 1px solid transparent;
+    margin: 0em 0em;
 }
 #custom-temperature_wttr:hover {
-    color: @primary;
     border: 1px solid @ghost_hover_glow_color;
 }
 
