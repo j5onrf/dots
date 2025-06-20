@@ -11,7 +11,7 @@ fi
 
 # Fetch data: Location, Current Temp (for display), Condition, Emoji, Feels Like, Humidity
 # We still fetch current temp (%t) to get the value for CURRENT_TEMP_FOR_DISPLAY
-FORMAT_STRING_FOR_DATA="%l;%t;%C;%c;%f;%h" # Removed Wind (%w) for more minimalism, can add back if desired
+FORMAT_STRING_FOR_DATA="%l;%t;%C;%c;%f" # Removed Wind (%w) for more minimalism, can add back if desired
 RAW_DATA=$(curl -sf "wttr.in/${CITY}${UNITS_PARAM}&format=${FORMAT_STRING_FOR_DATA}")
 
 CURRENT_TEMP_FOR_DISPLAY="N/A"
@@ -46,7 +46,7 @@ if [ -n "$RAW_DATA" ]; then
         [[ -n "$FEELS_LIKE_VALUE" ]] && TOOLTIP_PARTS+=("Feels like: ${FEELS_LIKE_VALUE}°${DISPLAY_UNIT_SHORT}")
         
         # Humidity
-        [[ -n "$HUMIDITY" ]] && TOOLTIP_PARTS+=("Humidity: $HUMIDITY")
+        # [[ -n "$HUMIDITY" ]] && TOOLTIP_PARTS+=("Humidity: $HUMIDITY")
         
         # Add other minimal things you want, e.g., Sunrise/Sunset if fetched
         # [[ -n "$SUNRISE_TIME" ]] && TOOLTIP_PARTS+=("Sunrise: $SUNRISE_TIME")
