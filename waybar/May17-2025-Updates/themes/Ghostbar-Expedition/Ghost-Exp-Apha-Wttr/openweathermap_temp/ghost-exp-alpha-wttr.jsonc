@@ -99,11 +99,11 @@
         "tooltip": false
     },
     "custom/temperature_wttr": { 
-        "exec": "$HOME/.config/hypr/scripts/get_openweathermap_temp.sh",
+        "exec": "~/.config//hypr/scripts/get_openweathermap_temp.sh",
         "format": "{}", 
         "return-type": "json",
         "interval": 900, // 15 minutes. OWM free tier usually allows 60 calls/minute.
-        "on-click": "$HOME/.config/hypr/scripts/wttr.sh",
+        "on-click": "~/.config//hypr/scripts/wttr.sh",
         "on-click-right": "gapplication launch org.gnome.Weather",
         "tooltip": true
     },
