@@ -99,7 +99,7 @@
         "tooltip": false
     },
    "custom/temperature_wttr": {
-       "exec": "/home/j5/.config/hypr/scripts/get_wttr_temp.sh", 
+       "exec": "~/.config/hypr/scripts/get_wttr_temp.sh", 
        "format": "{}", 
        "return-type": "json",
        "interval": 900, 
