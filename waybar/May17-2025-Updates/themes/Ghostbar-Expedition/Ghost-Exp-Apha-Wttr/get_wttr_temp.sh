@@ -1,4 +1,3 @@
-      
 #!/bin/bash
 # ~/.config/hypr/scripts/get_wttr_temp.sh (Minimal: Temp display; Emoji + Feels Like in tooltip)
 
