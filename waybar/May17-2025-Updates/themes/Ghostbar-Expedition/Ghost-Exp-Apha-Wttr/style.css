@@ -43,7 +43,6 @@ window#waybar {
 
 .modules-center {
     font-family: "Font Awesome 6 Sharp Thin";
-    font-weight: 100;
     font-size: 24px;
     border-radius: 0.4em;
     background-color: @ghost_bar_background; /* This IS dynamic */
@@ -81,14 +80,11 @@ window#waybar {
 #custom-exit {
     font-size: 4px;
     color: @ghost_hidden_text;
-    font-family: "Font Awesome 6 Sharp";
-    font-weight: 200;
+    font-family: "Font Awesome 6 Sharp Thin";
+    font-weight: 100;
     border: 1px solid transparent;
-    margin: 0;
-    padding: 0;
     transition: font-size 0.2s ease-out,
                 color 0.2s ease-out,
-                border-color 0.2s ease-out,
                 margin 0.2s ease-out,
                 padding 0.2s ease-out
 }
@@ -160,8 +156,8 @@ window#waybar {
 #clock {
     font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-size: 0.857em;
-    color: @primary;
     font-weight: 100;
+    color: @primary;
     border: 1px solid transparent;
     padding: 0em 0em;
     margin: 0em 0.35em;
