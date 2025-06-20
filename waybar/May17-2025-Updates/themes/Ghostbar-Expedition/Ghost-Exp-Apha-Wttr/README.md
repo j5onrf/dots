@@ -10,4 +10,5 @@
         windowrulev2 = float,class:^(org.gnome.Weather)$
         windowrulev2 = size 1100 900,class:^(org.gnome.Weather)$
 
-![FullScreen-2025-06-19_17-54-445](https://github.com/user-attachments/assets/12511b44-6f6e-4262-b88b-0e4b1e696579)
+![FullScreen-2025-06-19_19-23-19](https://github.com/user-attachments/assets/700fe05a-bf6a-4f5a-a65b-8cfa24125253)
+
