@@ -99,7 +99,7 @@
         "tooltip": false
     },
     "custom/temperature_wttr": { 
-        "exec": "/home/j5/.config/hypr/scripts/get_openweathermap_temp.sh",
+        "exec": "$HOME/.config/hypr/scripts/get_openweathermap_temp.sh",
         "format": "{}", 
         "return-type": "json",
         "interval": 900, // 15 minutes. OWM free tier usually allows 60 calls/minute.
