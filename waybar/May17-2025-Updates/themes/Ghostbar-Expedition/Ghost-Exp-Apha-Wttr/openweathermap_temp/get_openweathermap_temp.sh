@@ -1,7 +1,7 @@
 #!/bin/bash
 # ~/.config/hypr/scripts/get_openweathermap_temp.sh
 
-API_KEY="fb1c27ea915061d5876582e8bd77b339" # <<< PUT YOUR ACTUAL API KEY HERE
+API_KEY="you-api-key" # <<< PUT YOUR ACTUAL API KEY HERE
 LOCATION_QUERY="Imperial,US,MO" # Example: City,CountryCode,StateCode (for US)
                              # Or: "q=London,UK"
                              # Or: "id=YOUR_CITY_ID"
