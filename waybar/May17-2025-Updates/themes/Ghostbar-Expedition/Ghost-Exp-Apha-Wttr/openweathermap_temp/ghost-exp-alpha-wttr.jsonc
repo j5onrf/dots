@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W base
-//  Ghost-Exp-Alpha-Wttr (beta) 2025-06-19
+//  Ghost-Exp-Alpha-Wttr (beta) 2025-06-20
 
     // --- CORE WORKFLOW MODULES ---
 {
@@ -98,26 +98,6 @@
         "format": " ",
         "tooltip": false
     },
-    "custom/temperature_wttr": { 
-        "exec": "~/.config//hypr/scripts/get_openweathermap_temp.sh",
-        "format": "{}", 
-        "return-type": "json",
-        "interval": 900, // 15 minutes. OWM free tier usually allows 60 calls/minute.
-        "on-click": "~/.config//hypr/scripts/wttr.sh",
-        "on-click-right": "gapplication launch org.gnome.Weather",
-        "tooltip": true
-    },
-    "clock": {
-        "format": "{:%I\n%M}",
-        "tooltip": true,
-        "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
-        "on-click": "flatpak run com.ml4w.calendar",
-        "calendar": {
-            "format": {
-                "today": "<b><u>{}</u></b>"
-            }
-        }
-    },
     "custom/empty": {
         "format": ""
     },
@@ -177,6 +157,26 @@
     },
     
     // --- SYSTEM STATUS & SERVICE MODULES ---
+    "custom/temperature_wttr": { 
+        "exec": "~/.config//hypr/scripts/get_openweathermap_temp.sh",
+        "format": "{}", 
+        "return-type": "json",
+        "interval": 900, // 15 minutes. OWM free tier usually allows 60 calls/minute.
+        "on-click": "~/.config//hypr/scripts/wttr.sh",
+        "on-click-right": "gapplication launch org.gnome.Weather",
+        "tooltip": true
+    },
+    "clock": {
+        "format": "{:%I\n%M}",
+        "tooltip": true,
+        "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "on-click": "flatpak run com.ml4w.calendar",
+        "calendar": {
+            "format": {
+                "today": "<b><u>{}</u></b>"
+            }
+        }
+    },
     "cpu": {
         "format-critical": "<b>{usage}</b>",
         "format-high": "{usage}",
