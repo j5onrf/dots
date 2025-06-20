@@ -1,5 +1,6 @@
     * wttr.in directly into your Waybar module!
     * Scripts for temperature and floating Weather App
+    * More reliable get_openweathermap_temp.sh
 
         custom.conf
         # Window rules for the terminal running curl wttr.in
