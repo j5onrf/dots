@@ -105,7 +105,6 @@ window#waybar {
     border-color: @ghost_hover_glow_color;
     padding: 0.45em 0;
     margin: 0 0.25em 0.25em 0em;
-    font-family: "Font Awesome 6 Sharp Thin";
     border-radius: 0.4em;
     background-color: @ghost_bar_background; /* This IS dynamic */
 }
