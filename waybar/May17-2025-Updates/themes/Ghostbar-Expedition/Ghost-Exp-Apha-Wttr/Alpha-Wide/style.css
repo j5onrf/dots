@@ -164,7 +164,7 @@ window#waybar {
     color: @primary;
     border: 1px solid transparent;
     padding: 0em 0em;
-    margin: 0.35em 0.35em 0.5em 0.35em;
+    margin: 0.35em 0.35em 0.6em 0.35em;
 }
 #clock:hover {
     color: @primary;
@@ -178,7 +178,8 @@ window#waybar {
     font-weight: 100;
     color: @primary;
     border: 1px solid transparent;
-    margin: 0.6em 0em 0em 0.2em;
+    margin: 0.6em 0em 0em 0em;
+    padding: 0 0 0 0.2em;
 }
 #custom-temperature_wttr:hover {
     border: 1px solid @ghost_hover_glow_color;
