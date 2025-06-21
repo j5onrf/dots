@@ -44,7 +44,7 @@ window#waybar {
 
 .modules-center {
     font-family: "Font Awesome 6 Sharp Thin";
-    border-radius: 0.4em;
+    border-radius: 0.8em;
     background-color: @ghost_bar_background; /* This IS dynamic */
     margin: 5px;
     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.4);
