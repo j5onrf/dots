@@ -20,7 +20,7 @@
 
   // Load Modules
   "include": [
-    "~/.config/waybar/ghost-aw-wide-duo.jsonc"
+    "~/.config/waybar/ghost-aw-round-duo.jsonc"
   ],
 
   // Modules Left (Becomes TOP) - Now empty
