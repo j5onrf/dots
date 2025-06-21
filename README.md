@@ -200,6 +200,9 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # WayBar
 
+(2025-June21) [Ghost-Exp-Alpha-Wttr-Wide<sup>beta</sup> Adwaita Mono Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide) 
+![gggRegion-2025-06-21_09-41-39](https://github.com/user-attachments/assets/bd89adb5-8a43-47ec-91cd-3b660f86c034)
+
 (2025-June13) [Ghost-Expedition<sup>beta</sup> Audiowide Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition) 
 ![2khjRegion-2025-06-13_09-54-33](https://github.com/user-attachments/assets/fed4ac1e-1072-49bc-9faa-dcdbe5a836e5)
 
