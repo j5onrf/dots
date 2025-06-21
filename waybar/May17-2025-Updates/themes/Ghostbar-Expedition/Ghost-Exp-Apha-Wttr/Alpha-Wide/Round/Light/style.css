@@ -1,0 +1,247 @@
+/*   _______. __                   __
+ *  /  _____/|  |__   ____  ______/  |_
+ * /   \  ___|  |  \ /  _ \/  ___\   __\
+ * \    \_\  |   Y  (  <_> \___ \ |  |
+ *  \______  |___|  /\____/____  >|__|
+ * ___________    \/           \/     .__.__  __  .__
+ * \_   ________  ________   ____   __| _|___/  |_|__| ____   ____
+ *  |    __)_\  \/  \____ \_/ __ \ / __ ||  \   __|  |/  _ \ /    \
+ *  |        \>    <|  |_> \  ___// /_/ ||  ||  | |  (  <_> |   |  \
+ * /_______  /__/\_ |   __/ \___  \____ ||__||__| |__|\____/|___|  /
+ *         \/      \|__|        \/     \/                        \/
+ *  by j5onrf, from ML4W base
+ *  Ghost-AW-Round-Light (beta) 2025-06-21
+ */
+
+@import 'ghost-matugen.css';
+
+/* Applies to all elements */
+* {
+    border-radius: 0.8em;
+    background: none;
+    font-size: 24px;
+}
+
+window#waybar {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#waybar > box {
+    background: none;
+    border: none;
+    box-shadow: none; 
+}
+
+.modules-left,
+.modules-right {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modules-center {
+    font-family: "Font Awesome 6 Pro Thin";
+    border-radius: 0.8em;
+    background-color: @ghost_bar_background; /* This IS dynamic */
+    margin: 5px;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.4);
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+/* --- Workspaces --- */
+#workspaces {
+    font-family: "Font Awesome 6 Pro Light";
+}
+/* --- Workspaces --- */
+#workspaces button {
+    color: @primary;
+    margin: 0.15em 0.225em;
+    padding: 0.3em 0em;
+    min-width: 1.2em; 
+    transition: background-color 0.15s ease-out, color 0.15s ease-out, border-color 0.15s ease-out; 
+}
+
+#workspaces button:hover {
+    color: @ghost_ws_button_hover_fg;
+    border: 1px solid @primary;
+    background-color: rgba(255, 255, 255, 0.08); /* Subtle hover background */
+    font-weight: 500;
+}
+
+#workspaces button.active {
+    color: @primary;
+    border: 1px solid @primary;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+#workspaces button.empty {
+    color: @primary;
+}
+
+/* --- Primary Launchers & Action Buttons --- */
+#custom-appmenu,
+#custom-exit {
+    font-size: 4px;
+    color: @ghost_hidden_text;
+    font-family: "Font Awesome 6 Thin";
+    font-weight: 300;
+    border: 1px solid transparent;
+    transition: font-size 0.2s ease-out,
+                color 0.2s ease-out,
+                margin 0.2s ease-out,
+                padding 0.2s ease-out
+}
+#custom-appmenu:hover,
+#custom-exit:hover {
+    font-size: 1.25em;
+    color: @primary;
+    border-color: @ghost_hover_glow_color;
+    padding: 0.45em 0;
+    margin: 0 0.25em 0.25em 0em;
+    background-color: @ghost_bar_background; /* This IS dynamic */
+    border-radius: 1em;
+}
+#custom-exit:hover {
+    font-size: 1.25em;
+    color: @primary;
+    border-color: @ghost_hover_glow_color;
+    padding: 0.45em 0;
+    margin: 0.25em 0.25em 0 0;
+}
+
+/* --- Hidden Group Buttons (for Drawers/Groups) --- */
+#custom-settings,
+#custom-system {
+    font-size: 0.5em;
+    padding: 0.4em;
+    color: @ghost_text_primary;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+#custom-settings:hover,
+#custom-system:hover {
+    opacity: 1;
+}
+#custom-settings-drawer-spacer {
+    min-height: 15px;
+    font-size: 1px;
+    color: transparent;
+    background-color: transparent;
+}
+
+/* Example: More balanced padding for better interactive zones */
+#pulseaudio, #custom-cliphist, #custom-hyprshade, #network, #tray,
+#custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification,
+#cpu, #memory, #custom-updates,
+#custom-appmenu, #custom-exit,
+#window, #custom-temperature_wttr, #clock {
+    padding: 0.25em 0em;
+    margin: 0.15em 0.3em;
+}
+/* Shared hover styles for all icons in this group */
+#pulseaudio:hover, #custom-cliphist:hover, #custom-hyprshade:hover, #network:hover, #tray:hover,
+#custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
+#cpu:hover, #memory:hover, #custom-updates:hover,
+#workspaces button:hover {
+    color: @primary;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: @primary;
+    font-weight: 500;
+}
+
+/* --- Clock --- */
+#clock {
+    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-size: 0.857em;
+    font-weight: 100;
+    color: @primary;
+    padding: 0.2em 0.2em;
+    margin: 0.35em 0.35em 0.7em 0.35em;
+}
+#clock:hover {
+    color: @primary;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* --- Weather --- */
+#custom-temperature_wttr {
+    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-size: 0.857em;
+    font-weight: 100;
+    color: @primary;
+    margin: 0.7em 0em 0em 0em;
+    padding: 0.2em 0 0.2em 0.2em;
+}
+#custom-temperature_wttr:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Individual overrides and states for icons in this group */
+#custom-notification {
+    font-size: 1.1em;
+    padding: 0.2em 0.3em;
+}
+#custom-hypridle.active {
+    color: @ghost_hypridle_active_icon;
+}
+#custom-hypridle.notactive {
+    color: @ghost_hypridle_inactive_icon;
+}
+#pulseaudio.muted {
+    color: @ghost_pulseaudio_muted_fg;
+}
+#pulseaudio.muted:hover {
+    color: @ghost_pulseaudio_muted_hover__fg;
+}
+
+/* --- System Monitor Group (CPU, Memory, Updates) --- */
+#cpu, #memory, #custom-updates {
+    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-weight: 100;
+    font-size: 0.57em;
+    color: @ghost_text_primary;
+    padding: 0.25em;
+    margin: 0.15em 0.3em;
+    transition: color 0.15s ease-out, border-color 0.15s ease-out, font-weight 0.15s ease-out;
+}
+#cpu:hover, #memory:hover, #custom-updates:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+/* State-based colors that apply ONLY to the CPU module */
+#cpu.medium {
+    color: @tertiary_fixed;
+}
+#cpu.high {
+    color: @source_color;
+}
+#cpu.critical {
+    color: @error;
+    font-weight: bold; 
+}
+
+/* --- Tooltips --- */
+tooltip {
+    background-color: @ghost_bar_background;
+    border-radius: 0.5em;
+    padding: 0.8em;
+    opacity: 0.95;
+}
+tooltip label {
+    color: @primary;
+    font-size: 14px;
+}
+tooltip label big {
+    color: @on_surface;
+}
+tooltip label tt {
+    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
+}
+tooltip label tt small {
+    font-size: 0.9em;
+}
