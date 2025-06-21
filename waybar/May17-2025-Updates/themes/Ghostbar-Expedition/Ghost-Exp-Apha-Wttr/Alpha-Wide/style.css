@@ -10,7 +10,7 @@
  * /_______  /__/\_ |   __/ \___  \____ ||__||__| |__|\____/|___|  /
  *         \/      \|__|        \/     \/                        \/
  *  by j5onrf, from ML4W base
- *  Ghost-Alpha-Wide (beta) 2025-06-20
+ *  Ghost-Alpha-Wide (beta) 2025-06-21
  */
 
 @import 'ghost-matugen.css';
@@ -61,8 +61,8 @@ window#waybar {
 /* Make workspace buttons appear squarer and ensure consistent styling across states */
 #workspaces button {
     color: @primary;
-    margin: 0.2em;           /* Slightly larger, uniform margin for better spacing */
-    padding: 0.3em;          /* More pronounced, uniform padding for squarer shape */
+    margin: 0.15em 0.225em;           /* Slightly larger, uniform margin for better spacing */
+    padding: 0.3em 0em;          /* More pronounced, uniform padding for squarer shape */
     min-width: 1.2em;        /* Adjusted min-width; adjust slightly if icons seem too cramped or too wide */
     transition: background-color 0.15s ease-out, color 0.15s ease-out, border-color 0.15s ease-out; /* Add transition for smooth hover effect */
 }
@@ -83,8 +83,6 @@ window#waybar {
 #workspaces button.empty {
     color: @primary;
     /* Ensure empty buttons also follow the visual style */
-    margin: 0.2em;
-    padding: 0.3em;
 }
 
 /* --- Primary Launchers & Action Buttons --- */
@@ -100,18 +98,19 @@ window#waybar {
                 margin 0.2s ease-out,
                 padding 0.2s ease-out
 }
-#custom-appmenu:hover {
+#custom-appmenu:hover,
+#custom-exit:hover {
     font-size: 1.25em;
     color: @primary;
     border-color: @ghost_hover_glow_color;
-    padding: 0.35em 0;
-    margin: 0 0 0.25em 0;
+    padding: 0.3em 0;
+    margin: 0 0em 0.25em 0em;
 }
 #custom-exit:hover {
     font-size: 1.25em;
     color: @primary;
     border-color: @ghost_hover_glow_color;
-    padding: 0.35em 0;
+    padding: 0.3em 0;
     margin: 0.25em 0 0 0;
 }
 
@@ -169,8 +168,8 @@ window#waybar {
 #cpu, #memory, #custom-updates,
 #custom-appmenu, #custom-exit,
 #window, #custom-temperature_wttr, #clock {
-    padding: 0.25em 0.3em;  /* More balanced padding */
-    margin: 0.15em 0.2em;   /* Fine-tune horizontal margin */
+    padding: 0.25em 0em;  /* More balanced padding */
+    margin: 0.15em 0.3em;   /* Fine-tune horizontal margin */
 }
 /* Shared hover styles for all icons in this group */
 #pulseaudio:hover, #custom-cliphist:hover, #custom-hyprshade:hover, #network:hover, #tray:hover,
@@ -208,7 +207,7 @@ window#waybar {
     font-size: 0.57em; /* Retain */
     color: @ghost_text_primary; /* Retain */
     padding: 0.25em;  /* *** SET UNIFORM PADDING *** */
-    margin: 0.15em 0.2em;    /* *** SET UNIFORM MARGIN *** */
+    margin: 0.15em 0.3em;    /* *** SET UNIFORM MARGIN *** */
     transition: color 0.15s ease-out, border-color 0.15s ease-out, font-weight 0.15s ease-out; /* Retain */
 }
 #cpu:hover, #memory:hover, #custom-updates:hover {
