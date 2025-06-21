@@ -19,6 +19,7 @@
 * {
     border-radius: 0.2em;
     background: none;
+    font-size: 24px;
 }
 
 window#waybar {
@@ -43,7 +44,6 @@ window#waybar {
 
 .modules-center {
     font-family: "Font Awesome 6 Sharp Thin";
-    font-size: 24px;
     border-radius: 0.4em;
     background-color: @ghost_bar_background; /* This IS dynamic */
     margin: 5px;
@@ -103,15 +103,18 @@ window#waybar {
     font-size: 1.25em;
     color: @primary;
     border-color: @ghost_hover_glow_color;
-    padding: 0.3em 0;
-    margin: 0 0em 0.25em 0em;
+    padding: 0.45em 0;
+    margin: 0 0.25em 0.25em 0em;
+    font-family: "Font Awesome 6 Sharp Thin";
+    border-radius: 0.4em;
+    background-color: @ghost_bar_background; /* This IS dynamic */
 }
 #custom-exit:hover {
     font-size: 1.25em;
     color: @primary;
     border-color: @ghost_hover_glow_color;
-    padding: 0.3em 0;
-    margin: 0.25em 0 0 0;
+    padding: 0.45em 0;
+    margin: 0.25em 0.25em 0 0;
 }
 
 /* --- Hidden Group Buttons (for Drawers/Groups) --- */
@@ -134,34 +137,6 @@ window#waybar {
     background-color: transparent;
 }
 
-/* --- Weather --- */
-#custom-temperature_wttr {
-    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
-    font-size: 0.857em;
-    font-weight: 100;
-    color: @primary;
-    border: 1px solid transparent;
-    margin: 0em 0em;
-}
-#custom-temperature_wttr:hover {
-    border: 1px solid @ghost_hover_glow_color;
-}
-
-/* --- Clock --- */
-#clock {
-    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
-    font-size: 0.857em;
-    font-weight: 100;
-    color: @primary;
-    border: 1px solid transparent;
-    padding: 0em 0em;
-    margin: 0em 0.35em;
-}
-#clock:hover {
-    color: @primary;
-    border: 1px solid @ghost_hover_glow_color;
-}
-
 /* Example: More balanced padding for better interactive zones */
 #pulseaudio, #custom-cliphist, #custom-hyprshade, #network, #tray,
 #custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification,
@@ -180,6 +155,34 @@ window#waybar {
     background-color: rgba(255, 255, 255, 0.08); /* Very subtle, light overlay */
     border-color: @primary; /* Ensure border is still visible or strengthened */
     font-weight: 500; /* Slightly bolder on hover for these too */
+}
+
+/* --- Clock --- */
+#clock {
+    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-size: 0.857em;
+    font-weight: 100;
+    color: @primary;
+    border: 1px solid transparent;
+    padding: 0em 0em;
+    margin: 0.35em 0.35em 0.5em 0.35em;
+}
+#clock:hover {
+    color: @primary;
+    border: 1px solid @ghost_hover_glow_color;
+}
+
+/* --- Weather --- */
+#custom-temperature_wttr {
+    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-size: 0.857em;
+    font-weight: 100;
+    color: @primary;
+    border: 1px solid transparent;
+    margin: 0.5em 0em 0em 0em;
+}
+#custom-temperature_wttr:hover {
+    border: 1px solid @ghost_hover_glow_color;
 }
 
 /* Individual overrides and states for icons in this group */

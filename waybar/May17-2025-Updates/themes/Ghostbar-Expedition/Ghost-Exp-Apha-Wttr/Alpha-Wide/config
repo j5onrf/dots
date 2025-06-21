@@ -5,7 +5,7 @@
 //   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
 //        \/         \/\/              \/        \/       \/     
 // ML4W, Edited by j5onrf
-// Ghost-Exp-Alpha-Wttr (2025-6-20) beta
+// Ghost-Alpha-Wide (2025-6-21) beta
 // -----------------------------------------------------
 
 {
@@ -13,8 +13,8 @@
     "layer": "top",
     "position": "left",
     "spacing": 0,
-    "margin-top": 9,
-    "margin-bottom": 9,
+    "margin-top": 0,
+    "margin-bottom": 0,
     "margin-left": 0,
     "margin-right": 0,
 
@@ -24,19 +24,22 @@
   ],
 
   // Modules Left (Becomes TOP) - Now empty
-  "modules-left": [],
+  "modules-left": [
+    "custom/appmenu",
+  ],
 
   // Modules Center - All modules go here for a continuous stack
   "modules-center": [
-    "custom/appmenu",
+
     "custom/temperature_wttr",
     "group/settings",
     "hyprland/workspaces#rw",
     "group/hardware",
-    "clock",
-    "custom/exit"
+    "clock"
   ],
 
   // Modules Right (Becomes BOTTOM) - Now empty
-  "modules-right": []
+  "modules-right": [
+    "custom/exit"
+  ]
 }
