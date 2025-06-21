@@ -204,6 +204,7 @@ window#waybar {
 /* --- System Monitor Group (CPU, Memory, Updates) --- */
 #cpu, #memory, #custom-updates {
     font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    background-color: rgba(255, 255, 255, 0.03);
     font-weight: 400;
     font-size: 0.57em;
     color: @ghost_text_primary;
@@ -211,9 +212,7 @@ window#waybar {
     margin: 0.15em 0.3em;
     transition: color 0.15s ease-out, border-color 0.15s ease-out, font-weight 0.15s ease-out;
 }
-#cpu:hover, #memory:hover, #custom-updates:hover {
-    background-color: rgba(255, 255, 255, 0.03);
-}
+
 /* State-based colors that apply ONLY to the CPU module */
 #cpu.medium {
     color: @tertiary_fixed;
