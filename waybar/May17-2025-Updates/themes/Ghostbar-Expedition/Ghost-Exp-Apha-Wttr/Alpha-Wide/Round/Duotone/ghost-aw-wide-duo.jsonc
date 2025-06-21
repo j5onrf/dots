@@ -34,7 +34,7 @@
             "title<.*nvim ~.*>": " ",
               "class<firefox>": "<span font='18'>\ue24f</span>",
               "class<brave-browser>": "<span line-height='1'>\ue24f</span>",
-              "class<codium>": "<span line-height='0.8'>\ue5e8</span>",
+              "class<codium>": "<span line-height='0.8'> </span>",
               "class<kitty>": "<span line-height='1'>\ue13d</span>",
               "class<kitty-floating>": "<span line-height='1'>\ue13d</span>",
               "class<alacritty>": "<span font='16' line-height='0.7'>\uf120</span>",
