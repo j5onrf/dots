@@ -1,2 +1,2 @@
 #!/bin/bash
-theme_name="Ghost-Exp-Alpha-Wttr"
+theme_name="Ghost-Apha-Wide"
