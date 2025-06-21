@@ -1,4 +1,3 @@
-* better feedback for general interaction
 * adding emphasis to the text content itself
 * a slight increase of padding and margin can improve the clickable area and visual separation
 
