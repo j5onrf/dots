@@ -25,12 +25,11 @@
 
   // Modules Left (Becomes TOP) - Now empty
   "modules-left": [
-    "custom/appmenu",
+    "custom/appmenu"
   ],
 
   // Modules Center - All modules go here for a continuous stack
   "modules-center": [
-
     "custom/temperature_wttr",
     "group/settings",
     "hyprland/workspaces#rw",
