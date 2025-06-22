@@ -45,18 +45,12 @@ window#waybar {
 }
 
 /* This single rule defines the hover effect for ALL interactive modules. */
-#workspaces button:hover,
+#workspaces button:hover, #workspaces button.active,
 #pulseaudio:hover, #custom-cliphist:hover, #custom-hyprshade:hover, #network:hover, #tray:hover,
 #custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
 #cpu:hover, #memory:hover, #custom-updates:hover,
 #custom-appmenu:hover, #custom-exit:hover,
 #clock:hover, #custom-temperature_wttr:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-/* Specific state for active workspace */
-#workspaces button.active {
     background-color: alpha(@primary, 0.30);
     border-color: alpha(@primary, 0.50);
 }
