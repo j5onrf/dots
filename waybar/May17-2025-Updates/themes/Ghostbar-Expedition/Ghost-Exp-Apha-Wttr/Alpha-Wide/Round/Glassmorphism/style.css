@@ -10,7 +10,7 @@
  * /_______  /__/\_ |   __/ \___  \____ ||__||__| |__|\____/|___|  /
  *         \/      \|__|        \/     \/                        \/
  *  by j5onrf, from ML4W base
- *  Ghost-Glassmorphism (Optimized) 2025-06-21
+ *  Ghost-Glassmorphism (Optimized) 2025-06-22
  */
 
 @import 'ghost-matugen.css';
@@ -29,7 +29,7 @@ window#waybar {
 
 .modules-center {
     font-family: "Font Awesome 6 Pro Light";
-    font-size: 24px; /* Base font size for the bar */
+    font-size: 32px; /* Base font size for the bar - default 24 */
     border-radius: 1em;
     margin: 8px;
     padding: 2px 4px;
