@@ -1,6 +1,6 @@
 # Hyprdots
 
-<details open><summary>(2025-June21) Ghost-Glass Vertical Waybar with a Glass UI</summary>
+<details open><summary>(2025-June21) Vertical Waybar with a Glass UI</summary>
 <p>
  
 [Ghost-Glassmorphism<sup>optimized</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism) 
