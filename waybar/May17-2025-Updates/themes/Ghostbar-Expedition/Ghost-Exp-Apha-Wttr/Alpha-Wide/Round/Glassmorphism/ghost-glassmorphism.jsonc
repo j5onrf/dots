@@ -242,14 +242,14 @@
         "tooltip-format": "Left: Notifications\nRight: Do not disturb",
         "format": "{icon}",
         "format-icons": {
-            "notification": "<span font_size='20000'>\uf848</span>",
-            "none": "<span font_size='20000'>\uf0f3</span>",
-            "dnd-notification": "<span font_size='20000'>\uf1f6</span>",
-            "dnd-none": "<span font_size='20000'>\uf1f6</span>",
-            "inhibited-notification": "<span font_size='20000'>\uf1f7</span>",
-            "inhibited-none": "<span font_size='20000'>\uf1f6</span>",
-            "dnd-inhibited-notification": "<span font_size='20000'>\uf1f7</span>",
-            "dnd-inhibited-none": "<span font_size='20000'>\uf1f6</span>"
+            "notification": "\uf848",
+            "none": "\uf0f3",
+            "dnd-notification": "\uf1f6",
+            "dnd-none": "\uf1f6",
+            "inhibited-notification": "\uf1f7",
+            "inhibited-none": "\uf1f6",
+            "dnd-inhibited-notification": "\uf1f7",
+            "dnd-inhibited-none": "\uf1f6"
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
