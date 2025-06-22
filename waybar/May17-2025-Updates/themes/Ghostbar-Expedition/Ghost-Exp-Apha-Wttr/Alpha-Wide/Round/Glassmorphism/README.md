@@ -4,8 +4,6 @@
 **Description:**
 > Ghost-Glassmorphism brings a sleek, Apple-inspired "glass UI" to your desktop. This vertical Waybar theme is built on a highly optimized and consolidated CSS file, featuring fluid transitions and a responsive, translucent design that floats beautifully on your desktop.
 
-![FullScreen-2025-06-21_21-17-49](https://github.com/user-attachments/assets/17127dca-e195-4cba-b61d-78f16e827110)
-
-![FullScreen-2025-06-21_22-05-28](https://github.com/user-attachments/assets/cf2cf0d1-bc0a-4875-bf99-2c92b10c022f)
+![FullScreen-2025-06-21_22-15-40](https://github.com/user-attachments/assets/9eeeda84-f264-43f3-b5c2-05e5bcb1c67f)
 
 
