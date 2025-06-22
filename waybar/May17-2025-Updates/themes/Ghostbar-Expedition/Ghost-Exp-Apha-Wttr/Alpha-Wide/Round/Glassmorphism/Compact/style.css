@@ -135,7 +135,7 @@ window#waybar {
 /* --- Tooltips --- */
 tooltip {
     background-color: @ghost_bar_background;
-    border-radius: 0.6em;
+    border-radius: 0.8em;
     padding: 0.8em;
     opacity: 0.95;
     border: 1px solid rgba(255, 255, 255, 0.1);
