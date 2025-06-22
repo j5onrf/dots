@@ -66,12 +66,12 @@ window#waybar {
 /* App Menu & Exit Buttons*/
 #custom-appmenu,
 #custom-exit {
-    border-radius: 0.2em;
+    border-radius: 0.4em;
     opacity: 0;
 }
 #custom-appmenu:hover,
 #custom-exit:hover {
-    border-radius: 0.2em;
+    border-radius: 0.4em;
     opacity: 1; 
 }
 
@@ -93,7 +93,7 @@ window#waybar {
 #custom-temperature_wttr {
     font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-size: 0.857em;
-    border-radius: 0.2em;
+    border-radius: 0.4em;
 }
 
 /* System Monitors - Specific Fonts and Colors */
