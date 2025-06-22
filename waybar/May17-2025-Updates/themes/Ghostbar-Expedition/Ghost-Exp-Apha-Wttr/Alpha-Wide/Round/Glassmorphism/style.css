@@ -51,8 +51,10 @@ window#waybar {
 #cpu:hover, #memory:hover, #custom-updates:hover,
 #custom-appmenu:hover, #custom-exit:hover,
 #clock:hover, #custom-temperature_wttr:hover {
-    background-color: alpha(@primary, 0.30);
-    border-color: alpha(@primary, 0.50);
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+ /* background-color: alpha(@primary, 0.30);
+    border-color: alpha(@primary, 0.50); Matugen color */
 }
 
 /* --- Specific Module Overrides --- */
