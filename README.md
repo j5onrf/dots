@@ -1,4 +1,13 @@
 # Hyprdots
+
+<details open><summary>(2025-June21) Ghost-Glassmorphism: A Polished Vertical Waybar with a Glass UI</summary>
+<p>
+ 
+[Glassmorphism<sup>optimized</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism) 
+![FullScreen-2025-06-21_22-15-40](https://github.com/user-attachments/assets/9eeeda84-f264-43f3-b5c2-05e5bcb1c67f)
+
+</details>
+
 <details open><summary>(2025-June11-21) Ghostbar Expedition Template</summary>
 <p>
  
