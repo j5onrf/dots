@@ -1,14 +1,14 @@
 # Hyprdots
 
-<details open><summary>(2025-June21) Ghost-Glassmorphism: A Polished Vertical Waybar with a Glass UI</summary>
+<details open><summary>(2025-June21) Ghost-Glass Vertical Waybar with a Glass UI</summary>
 <p>
  
-[Glassmorphism<sup>optimized</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism) 
-![FullScreen-2025-06-21_22-15-40](https://github.com/user-attachments/assets/9eeeda84-f264-43f3-b5c2-05e5bcb1c67f)
+[Ghost-Glassmorphism<sup>optimized</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism) 
+![FullScreen-2025-06-21_23-50-25](https://github.com/user-attachments/assets/7e23633f-4c6e-4d43-886c-2577f26d3897)
 
 </details>
 
-<details open><summary>(2025-June11-21) Ghostbar Expedition Template</summary>
+<details open><summary>(2025-June11-21) Ghost-Expedition Template</summary>
 <p>
  
 [Ghost-Expedition<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition) &nbsp; [Sharp-Thin](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Expedition-Thin) &nbsp; [v2.0](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Thin-Min-v2.0) &nbsp; [v2.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Thin-Min-v2.5) &nbsp; [Alpha](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Alpha) &nbsp; [Wttr](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr) &nbsp; [Wide](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide) &nbsp; [Round](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round) &nbsp; [Glass<sup>morphism</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism) 
