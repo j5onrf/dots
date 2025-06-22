@@ -1,2 +1,1 @@
-![FullScreen-2025-06-22_12-05-56](https://github.com/user-attachments/assets/f91fcad7-846e-41f7-9d1f-97708343e201)
-
+![FullScreen-2025-06-22_14-49-47](https://github.com/user-attachments/assets/092633bd-2a86-4223-a517-34c32919f584)
