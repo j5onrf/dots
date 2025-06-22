@@ -4,8 +4,7 @@
 <p>
  
 [Glassmorphism<sup>optimized</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism) 
-![FullScreen-2025-06-22_00-16-28](https://github.com/user-attachments/assets/fdb42455-d2c4-4d39-aaad-0d4ee00a10a3)
-
+![FullScreen-2025-06-22_00-34-52](https://github.com/user-attachments/assets/4731f293-038c-49bb-86eb-fb6c84124c77)
 
 </details>
 
