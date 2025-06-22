@@ -20,7 +20,7 @@ window#waybar {
 .modules-center {
     font-family: "Font Awesome 6 Pro Light";
     font-size: 24px; /* Base font size for the bar - default 24 */
-    border-radius: 1em;
+    border-radius: 0.4em;
     margin: 0px;
     padding: 2px;
     background-color: rgba(50, 50, 50, 0.6);
@@ -39,7 +39,7 @@ window#waybar {
     color: @primary;
     margin: 0.2em;
     padding: 0.25em 0em; /* Adjust these values to get a perfect circle */
-    border-radius: 50%;
+    border-radius: 0.2em;
     border: 1px solid transparent;
     transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out, opacity 0.2s ease-out;
 }
@@ -66,12 +66,12 @@ window#waybar {
 /* App Menu & Exit Buttons*/
 #custom-appmenu,
 #custom-exit {
-    border-radius: 0.8em;
+    border-radius: 0.2em;
     opacity: 0;
 }
 #custom-appmenu:hover,
 #custom-exit:hover {
-    border-radius: 0.8em;
+    border-radius: 0.2em;
     opacity: 1; 
 }
 
@@ -93,7 +93,7 @@ window#waybar {
 #custom-temperature_wttr {
     font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-size: 0.857em;
-    border-radius: 0.8em;
+    border-radius: 0.2em;
 }
 
 /* System Monitors - Specific Fonts and Colors */
@@ -103,7 +103,7 @@ window#waybar {
     font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-weight: 100;
     font-size: 0.57em;
-    border-radius: 0.8em;
+    border-radius: 0.2em;
     color: @ghost_text_primary;
 }
 
