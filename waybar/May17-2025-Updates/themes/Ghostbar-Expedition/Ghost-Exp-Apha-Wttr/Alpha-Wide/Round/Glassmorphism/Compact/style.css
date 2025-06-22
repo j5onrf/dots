@@ -57,8 +57,8 @@ window#waybar {
 
 /* Specific state for active workspace */
 #workspaces button.active {
-    background-color: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.4);
+    background-color: alpha(@primary, 0.30);
+    border-color: alpha(@primary, 0.50);
 }
 
 /* --- Specific Module Overrides --- */
