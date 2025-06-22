@@ -137,7 +137,7 @@ tooltip {
     background-color: @ghost_bar_background;
     border-radius: 0.4em;
     padding: 0.8em;
-    opacity: 0.95;
+    opacity: 0.9;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 tooltip label {
