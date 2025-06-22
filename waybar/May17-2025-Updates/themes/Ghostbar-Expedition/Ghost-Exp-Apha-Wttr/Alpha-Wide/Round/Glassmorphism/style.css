@@ -51,14 +51,14 @@ window#waybar {
 #cpu:hover, #memory:hover, #custom-updates:hover,
 #custom-appmenu:hover, #custom-exit:hover,
 #clock:hover, #custom-temperature_wttr:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Specific state for active workspace */
 #workspaces button.active {
-    background-color: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.4);
+    background-color: alpha(@primary, 0.30);
+    border-color: alpha(@primary, 0.50);
 }
 
 /* --- Specific Module Overrides --- */
@@ -89,7 +89,7 @@ window#waybar {
 /* Clock & Weather - Specific Fonts and Alignment */
 #clock,
 #custom-temperature_wttr {
-    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-size: 0.857em;
 }
 
@@ -97,7 +97,7 @@ window#waybar {
 #cpu,
 #memory,
 #custom-updates {
-    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-weight: 100;
     font-size: 0.57em;
     color: @ghost_text_primary;
@@ -125,7 +125,6 @@ window#waybar {
     font-weight: bold;
 }
 
-
 /* --- Tooltips --- */
 tooltip {
     background-color: @ghost_bar_background;
@@ -142,7 +141,7 @@ tooltip label big {
     color: @on_surface;
 }
 tooltip label tt {
-    font-family: "Adwaita Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
 }
 tooltip label tt small {
     font-size: 0.9em;
