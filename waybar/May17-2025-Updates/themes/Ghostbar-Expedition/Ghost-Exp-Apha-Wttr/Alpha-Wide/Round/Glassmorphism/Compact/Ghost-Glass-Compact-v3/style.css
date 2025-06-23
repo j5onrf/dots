@@ -32,7 +32,7 @@ window#waybar {
 #workspaces button {
     color: @primary;
     margin: 0.15em 0.2em;
-    padding: 0.1em 0.01em;
+    padding: 0.1em 0em;
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
 }
