@@ -52,7 +52,7 @@ window#waybar {
 #custom-settings, #custom-system {
     opacity: 0;
 }
-/* --- Reveal Hidden Modules on Hover (FIXED) --- */
+/* --- Reveal Hidden Modules on Hover --- */
 #custom-appmenu:hover, #custom-exit:hover,
 #custom-settings:hover, #custom-system:hover {
     opacity: 1;
