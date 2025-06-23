@@ -24,7 +24,7 @@ The feature is controlled by a simple mouse click on the **Wallpaper icon** (`ï€
 
 > **Note:** There is no change to the wallpaper icon itself. The notification is the primary indicator of the current state. This was a deliberate choice to keep the configuration simple and easy to share.
 
-<br clear="all">
+<br>
 
 ## ðŸ”§ How It Works (Technical Details)
 
