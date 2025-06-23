@@ -8,7 +8,7 @@ This document explains the "Dynamic Theme Lock" feature, which allows you to tem
 
 This is useful when you find a color scheme you love and want to keep it while exploring different background images.
 
-## 🚀 How to Use It
+ 🚀 How to Use It
 
 The feature is controlled by a simple mouse click on the **Wallpaper icon** (``) in your Waybar panel.
 
