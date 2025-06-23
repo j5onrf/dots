@@ -38,7 +38,7 @@ window#waybar {
 #clock, #custom-temperature_wttr {
     color: @primary;
     margin: 0.2em;
-    padding: 0.25em 0em; /* Adjust these values to get a perfect circle */
+    padding: 0.3em 0em; /* Adjust these values to get a perfect circle */
     border-radius: 0.2em;
     border: 1px solid transparent;
     transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out, opacity 0.2s ease-out;
