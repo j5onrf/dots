@@ -1,6 +1,6 @@
 # 🎨 Dynamic Theme Lock Feature
 
-![FullScreen-2025-06-22_20-52-52](https://github.com/user-attachments/assets/b8b04d7d-a059-4a8e-9053-4b1dd834b1f9)
+![FullScreen-2025-06-22_21-02-39](https://github.com/user-attachments/assets/aae36dd8-fb6e-4f58-b15c-a8f6eaf66ca1)
 
 <img src="https://github.com/user-attachments/assets/58259a27-efd0-4fd1-b3a5-d1fe6693489f" alt="Screenshot of the theme lock feature" width="75" align="left" style="margin-right: 20px;"/>
 
