@@ -61,7 +61,7 @@ window#waybar {
 /* --- Text-Based Modules --- */
 #clock, #custom-temperature_wttr,
 #cpu, #memory, #custom-updates {
-    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-family: "JetBrainsMono Nerd Font Mono", monospace;
     color: @ghost_text_primary;
 }
 #clock, #custom-temperature_wttr {
@@ -106,7 +106,7 @@ tooltip label big {
     color: @on_surface;
 }
 tooltip label tt {
-    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-family: "JetBrainsMono Nerd Font Mono", monospace;
 }
 tooltip label tt small {
     font-size: 0.9em;
