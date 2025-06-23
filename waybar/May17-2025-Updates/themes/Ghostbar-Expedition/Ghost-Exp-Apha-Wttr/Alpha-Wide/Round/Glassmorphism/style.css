@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  Ghost-Glassmorphism (Optimized) 2025-06-22
+ *  Ghost-Glassmorphism (Optimized) 2025-06-23
  */
 
 @import 'ghost-matugen.css';
@@ -54,12 +54,12 @@ window#waybar {
     background-color: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.4);
  /* background-color: alpha(@primary, 0.30);
-    border-color: alpha(@primary, 0.50); Matugen color */
+    border-color: alpha(@primary, 0.50); --- Matugen color */
 }
 
 /* --- Specific Module Overrides --- */
 
-/* App Menu & Exit Buttons*/
+/* App Menu & Exit Buttons */
 #custom-appmenu,
 #custom-exit {
     opacity: 0;
