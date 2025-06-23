@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W base
-//  Ghost-Glassmorphism (beta) 2025-06-21
+//  Ghost-Glassmorphism (beta) 2025-06-23
 
     // --- CORE WORKFLOW MODULES ---
 {
@@ -159,7 +159,7 @@
         "exec": "~/.config//hypr/scripts/get_openweathermap_temp.sh",
         "format": "{}", 
         "return-type": "json",
-        "interval": 900, // 15 minutes. OWM free tier usually allows 60 calls/minute.
+        "interval": 900, // 15 minutes
         "on-click": "~/.config//hypr/scripts/wttr.sh",
         "on-click-right": "gapplication launch org.gnome.Weather",
         "tooltip": true
