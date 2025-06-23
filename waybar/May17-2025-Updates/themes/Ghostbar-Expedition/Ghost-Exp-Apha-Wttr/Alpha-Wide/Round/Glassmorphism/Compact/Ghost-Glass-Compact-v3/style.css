@@ -55,6 +55,8 @@ window#waybar {
 /* --- Reveal Hidden Modules on Hover --- */
 #custom-appmenu:hover, #custom-exit:hover,
 #custom-settings:hover, #custom-system:hover {
+    background-color: rgba(50, 50, 50, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     opacity: 1;
 }
 
