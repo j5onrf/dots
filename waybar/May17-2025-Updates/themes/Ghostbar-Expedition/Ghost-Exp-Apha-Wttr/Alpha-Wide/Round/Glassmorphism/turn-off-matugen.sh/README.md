@@ -1,10 +1,4 @@
-![2025-06-22T19:30:03,668139783-05:00](https://github.com/user-attachments/assets/0567e0f2-242f-428a-b4d9-2394199aa878)
-
-Of course. A good README is essential for a shared project. This document explains the feature, its purpose, and how to use it clearly and concisely.
-
-Here is a ready-to-use `README.md` file. You can save this directly into the root of your project directory.
-
----
+<img src="https://github.com/user-attachments/assets/0567e0f2-242f-428a-b4d9-2394199aa878" alt="Screenshot of the theme lock feature" width="75" align="left" style="margin-right: 20px;"/>
 
 ```md
 # 🎨 Dynamic Theme Lock Feature
