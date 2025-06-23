@@ -2,7 +2,7 @@
 
 ### Summary of Recent CSS Improvements
 
-The overall goal of the recent changes was to **refactor** `Ghost-Glassmorphism (Compact)` stylesheet to make it cleaner, more consistent, and easier to maintain without changing the core functionality.
+The overall goal of the recent changes in v2 was to **refactor** `Ghost-Glassmorphism (Compact)` stylesheet to make it cleaner, more consistent, and easier to maintain without changing the core functionality.
 
 Here’s a breakdown of what was done:
 
