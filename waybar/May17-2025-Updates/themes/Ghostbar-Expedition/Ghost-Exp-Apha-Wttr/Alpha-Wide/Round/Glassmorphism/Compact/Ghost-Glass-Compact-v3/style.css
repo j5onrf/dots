@@ -9,13 +9,12 @@
 * {
     background: none;
     border: none;
-    border-radius: 0.4em; /* Set a base border-radius reset for consistency */
+    border-radius: 0.4em; /* Set a base border-radius reset */
 }
 
 window#waybar {
     background-color: transparent;
 }
-
 .modules-center {
     font-family: "Font Awesome 6 Pro Light";
     font-size: 24px;
@@ -32,8 +31,8 @@ window#waybar {
 .modules-right > *,
 #workspaces button {
     color: @primary;
-    margin: 0.15em 0.2em; /* Creates space between each module */
-    padding: 0.1em 0em; /* Gives a small clickable area around the icon */
+    margin: 0.15em 0.2em;
+    padding: 0.1em 0em;
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
 }
@@ -82,7 +81,6 @@ window#waybar {
 #custom-hypridle.notactive { color: @ghost_hypridle_inactive_icon; }
 #pulseaudio.muted { color: @ghost_pulseaudio_muted_fg; }
 #pulseaudio.muted:hover { color: @ghost_pulseaGhaudi_muted_hover__fg; }
-
 #cpu.medium { color: @tertiary_fixed; }
 #cpu.high { color: @source_color; }
 #cpu.critical { color: @error; font-weight: bold; }
