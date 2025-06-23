@@ -47,7 +47,7 @@ For those interested in the mechanism behind the feature, here is a brief overvi
 
 *   **Toggle Script:** `~/.config/hypr/scripts/turn-off-matugen.sh`
 *   **Main Wallpaper Script:** `~/wallpaper.sh` (or its full path)
-*   **Waybar Configuration:** `~/.config/waybar/config` (or `config.jsonc`), where the `on-click-middle` action is defined for the `custom/wallpaper` module.
+*   **Waybar Configuration:** `~/.config/waybar/ghost-glassmorphism.jsonc` (or `config.jsonc`), where the `on-click-middle` action is defined for the `custom/wallpaper` module.
 *   **The Lock File (Created at Runtime):** `~/.config/ml4w/cache/matugen_lock`
 
 ---
