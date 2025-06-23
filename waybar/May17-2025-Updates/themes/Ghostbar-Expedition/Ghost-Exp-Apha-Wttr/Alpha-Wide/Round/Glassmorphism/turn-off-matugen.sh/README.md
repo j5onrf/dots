@@ -1,6 +1,6 @@
 # 🎨 Dynamic Theme Lock Feature
 
-<img src="https://github.com/user-attachments/assets/20bb521d-d21c-479a-a6f1-fc516892f4b0" alt="Screenshot of the theme lock feature" width="75" align="left" style="margin-right: 20px;"/>
+<img src="https://github.com/user-attachments/assets/58259a27-efd0-4fd1-b3a5-d1fe6693489f" alt="Screenshot of the theme lock feature" width="75" align="left" style="margin-right: 20px;"/>
 
 Ever find the perfect color theme for your Waybar and wish you could lock it in? That's exactly what the Theme-Lock feature is for. It allows you to keep your current color scheme even when you change wallpapers. A simple middle-click on the wallpaper icon enables or disables the dynamic theme generation, giving you full control.
 
