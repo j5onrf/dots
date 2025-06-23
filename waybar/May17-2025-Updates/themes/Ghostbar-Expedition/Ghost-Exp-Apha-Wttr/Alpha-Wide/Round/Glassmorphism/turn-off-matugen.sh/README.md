@@ -49,3 +49,12 @@ For those interested in the mechanism behind the feature, here is a brief overvi
 *   **Main Wallpaper Script:** `~/wallpaper.sh` (or its full path)
 *   **Waybar Configuration:** `~/.config/waybar/config` (or `config.jsonc`), where the `on-click-middle` action is defined for the `custom/wallpaper` module.
 *   **The Lock File (Created at Runtime):** `~/.config/ml4w/cache/matugen_lock`
+
+---
+    "custom/wallpaper": {
+        "format": "\uf03e",
+        "on-click": "waypaper",
+        "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
+        "on-click-middle": "~/.config/hypr/scripts/turn-off-matugen.sh",
+        "tooltip": false
+    },
