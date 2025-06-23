@@ -17,4 +17,4 @@ Here’s a breakdown of what was done:
     *   **Why:** This makes the stylesheet shorter, easier to read, and more maintainable. If you want to change a shared property in the future, you only need to edit it in one place.
 
 The final result is a stylesheet that produces the same look as before but is better organized!
-.
+
