@@ -50,6 +50,7 @@ window#waybar {
 /* --- Hidden Modules (Invisible by Default) --- */
 #custom-appmenu, #custom-exit, 
 #custom-settings, #custom-system {
+    border: 1px solid transparent;
     opacity: 0;
 }
 /* --- Reveal Hidden Modules on Hover --- */
