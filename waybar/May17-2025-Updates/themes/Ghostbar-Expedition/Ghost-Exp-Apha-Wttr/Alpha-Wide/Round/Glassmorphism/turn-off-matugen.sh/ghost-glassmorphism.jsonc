@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W base
-//  Ghost-Glassmorphism (beta) 2025-06-23
+//  Ghost-Glassmorphism (beta) 2025-06-21
 
     // --- CORE WORKFLOW MODULES ---
 {
@@ -97,9 +97,6 @@
     "custom/settings_drawer_spacer": {
         "format": " ",
         "tooltip": false
-    },
-    "custom/empty": {
-        "format": ""
     },
 
     // --- ACTION & LAUNCHER MODULES ---
