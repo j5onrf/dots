@@ -41,7 +41,7 @@ For those interested in the mechanism behind the feature, here is a brief overvi
     *   If the lock file **does not exist**, theming is considered **ENABLED**.
 
 3.  **The Main Script (`wallpaper.sh`):**
-    *   Before running `matugen` and `wallust`, the main `wallpaper.sh` script checks for the existence of the `matugen_lock` file.
+    *   Before running `matugen` and `wallust`, the main `/.config/hypr/scripts/wallpaper.sh` script checks for the existence of the `matugen_lock` file.
     *   If it finds the lock file, it skips all color generation steps and prints a message to the console (`:: Matugen is locked.`).
     *   If the lock file is not found, it proceeds with generating and applying the new theme as normal.
 
