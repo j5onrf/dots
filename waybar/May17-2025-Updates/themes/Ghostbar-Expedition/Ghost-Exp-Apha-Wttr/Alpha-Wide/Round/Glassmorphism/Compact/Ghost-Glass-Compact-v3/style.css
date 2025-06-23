@@ -1,0 +1,115 @@
+/* 
+ *  by j5onrf, from ML4W base
+ *  Ghost-Glass-Compact-v3 (wip) 2025-06-23
+ */
+
+@import 'ghost-matugen.css';
+
+/* --- Global & Window Styles --- */
+* {
+    background: none;
+    border: none;
+    border-radius: 0.4em; /* Set a base border-radius reset for consistency */
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+.modules-center {
+    font-family: "Font Awesome 6 Pro Light";
+    font-size: 24px;
+    margin: 8px;
+    padding: 0px;
+    background-color: rgba(50, 50, 50, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* This single rule defines the base look for ALL clickable modules. */
+.modules-left > *,
+.modules-center > *,
+.modules-right > *,
+#workspaces button {
+    color: @primary;
+    margin: 0.15em 0.2em; /* Creates space between each module */
+    padding: 0.1em 0em; /* Gives a small clickable area around the icon */
+    border: 1px solid transparent;
+    transition: all 0.2s ease-out;
+}
+
+/* --- Universal Hover/Active Effect --- */
+.modules-left > *:hover,
+.modules-center > *:hover,
+.modules-right > *:hover,
+#workspaces button:hover,
+#workspaces button.active {
+    background-color: alpha(@primary, 0.30);
+    border-color: alpha(@primary, 0.50);
+}
+
+/* --- Hidden Modules (Invisible by Default) --- */
+#custom-appmenu, #custom-exit, 
+#custom-settings, #custom-system {
+    opacity: 0;
+}
+/* --- Reveal Hidden Modules on Hover (FIXED) --- */
+#custom-appmenu:hover, #custom-exit:hover,
+#custom-settings:hover, #custom-system:hover {
+    opacity: 1;
+}
+
+/* --- Text-Based Modules --- */
+#clock, #custom-temperature_wttr,
+#cpu, #memory, #custom-updates {
+    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    color: @ghost_text_primary;
+}
+#clock, #custom-temperature_wttr {
+    font-size: 0.857em;
+}
+#custom-settings, #custom-system {
+    font-size: 0.5em;
+    padding: 0.4em;
+}
+#cpu, #memory, #custom-updates {
+    font-weight: 100;
+    font-size: 0.57em;
+}
+
+/* --- Module State Overrides --- */
+#custom-hypridle.active { color: @ghost_hypridle_active_icon; }
+#custom-hypridle.notactive { color: @ghost_hypridle_inactive_icon; }
+#pulseaudio.muted { color: @ghost_pulseaudio_muted_fg; }
+#pulseaudio.muted:hover { color: @ghost_pulseaGhaudi_muted_hover__fg; }
+
+#cpu.medium { color: @tertiary_fixed; }
+#cpu.high { color: @source_color; }
+#cpu.critical { color: @error; font-weight: bold; }
+
+#custom-drawer-spacer {
+    margin: 0;
+    padding: 0;
+    font-size: 0.3em;
+}
+
+/* --- Tooltips --- */
+tooltip {
+    background-color: @ghost_bar_background;
+    padding: 0.8em;
+    opacity: 0.95;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+tooltip label {
+    color: @primary;
+    font-size: 14px;
+}
+tooltip label big {
+    color: @on_surface;
+}
+tooltip label tt {
+    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
+}
+tooltip label tt small {
+    font-size: 0.9em;
+}
