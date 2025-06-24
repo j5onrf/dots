@@ -1,3 +1,5 @@
+---
+
 "custom/wallpaper": {
     "exec": "~/.config/hypr/scripts/get_wallpaper_status.sh",
     "return-type": "json",
