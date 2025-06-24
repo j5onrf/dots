@@ -41,3 +41,15 @@ While you won't get a new toolbox of CSS properties, you will get:
 3.  **A More Polished Experience:** The collection of small fixes and module updates will result in a better overall user experience.
 
 The upgrade is less about adding new styling commands and more about making the existing foundation more powerful and stable.
+
+**The Final Verdict**
+
+You are correct to assume that these fundamental limitations are not changing. The upgrade to 0.13.0 involves fixes and features within the existing GTK framework; it does not replace the rendering engine with a web browser engine.
+
+Therefore, the rule of thumb remains the same:
+
+    Use the config file for layout and positioning.
+
+    Use the style.css file for skinning (colors, borders, fonts, backgrounds, and margin/padding).
+
+Your understanding is spot on, and it's the key to successfully theming Waybar without running into these parsing errors.
