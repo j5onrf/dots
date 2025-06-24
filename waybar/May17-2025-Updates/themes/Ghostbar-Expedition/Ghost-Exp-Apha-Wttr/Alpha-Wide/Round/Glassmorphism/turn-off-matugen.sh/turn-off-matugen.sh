@@ -15,4 +15,4 @@ else
 fi
     
 # Reload Waybar to apply color changes to other modules if theming is re-enabled
-killall -SIGUSR2 waybar
+# killall -SIGUSR2 waybar
