@@ -1,4 +1,4 @@
-# HyprdotsWaybar 0.13.0 Release
+# Hyprdots
 
 <details open><summary>(2025-June24) Upgrading Waybar should bring tangible benefits, especially for theming</summary>
 <p>
