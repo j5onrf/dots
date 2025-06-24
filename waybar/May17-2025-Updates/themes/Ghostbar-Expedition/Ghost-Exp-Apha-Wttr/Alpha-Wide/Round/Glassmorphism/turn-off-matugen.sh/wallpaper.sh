@@ -144,14 +144,14 @@ echo ":: Execute wallust with $used_wallpaper"
 $HOME/.cargo/bin/wallust run $used_wallpaper
 
 # --- Add this section to update Kew colors ---
-KEW_UPDATE_SCRIPT="${XDG_CONFIG_HOME:-$HOME/.config}/hypr/scripts/update_kew_colors.sh"
-if [ -f "$KEW_UPDATE_SCRIPT" ]; then
-    echo ":: Updating Kewmusicplayer colors..."
-    # The config file is updated silently in the background. Kew will detect the change automatically.
-    bash "$KEW_UPDATE_SCRIPT" &
-else
-    echo ":: Warning: Kew color update script not found at $KEW_UPDATE_SCRIPT" >&2
-fi
+# KEW_UPDATE_SCRIPT="${XDG_CONFIG_HOME:-$HOME/.config}/hypr/scripts/update_kew_colors.sh"
+# if [ -f "$KEW_UPDATE_SCRIPT" ]; then
+#     echo ":: Updating Kewmusicplayer colors..."
+#     # The config file is updated silently in the background. Kew will detect the change automatically.
+#     bash "$KEW_UPDATE_SCRIPT" &
+# else
+#     echo ":: Warning: Kew color update script not found at $KEW_UPDATE_SCRIPT" >&2
+# fi
 # --- End of Kew color update section ---
 
 # -----------------------------------------------------
@@ -221,12 +221,12 @@ cp $squarewallpaper $generatedversions/square-$wallpaperfilename.png
 # ... (all other commands in wallpaper.sh, like reloading swaync, etc.) ...
 
 # --- Add this block to call your logo theming script ---
-THEME_LOGO_SCRIPT_PATH="$HOME/.config/hypr/scripts/theme_fastfetch_logo.sh"
-if [ -f "$THEME_LOGO_SCRIPT_PATH" ]; then
-    bash "$THEME_LOGO_SCRIPT_PATH" &
-else
-    echo "Logo theming script not found: $THEME_LOGO_SCRIPT_PATH" >&2 # Kept warning, but made it less verbose
-fi
+# THEME_LOGO_SCRIPT_PATH="$HOME/.config/hypr/scripts/theme_fastfetch_logo.sh"
+# if [ -f "$THEME_LOGO_SCRIPT_PATH" ]; then
+#     bash "$THEME_LOGO_SCRIPT_PATH" &
+# else
+#     echo "Logo theming script not found: $THEME_LOGO_SCRIPT_PATH" >&2 # Kept warning, but made it less verbose
+# fi
 # --- End of added block ---
 
 echo "Wallpaper script finished."
