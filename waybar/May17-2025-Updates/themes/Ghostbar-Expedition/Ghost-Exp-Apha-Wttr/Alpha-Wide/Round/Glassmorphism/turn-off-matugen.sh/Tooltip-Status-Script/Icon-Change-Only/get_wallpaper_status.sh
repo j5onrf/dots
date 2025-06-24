@@ -7,9 +7,9 @@ LOCK_FILE="$HOME/.config/ml4w/cache/matugen_lock"
 if [ -f "$LOCK_FILE" ]; then
     # If locked, output the JSON for the "locked" icon
     # The '' character is a common lock icon (\uf023)
-    echo '{"text": ""}'
+    echo '{"text": "\ue1b7"}'
 else
     # If not locked, output the JSON for the normal wallpaper icon
     # The '' character is your wallpaper icon (\uf03e)
-    echo '{"text": ""}'
+    echo '{"text": "\uf03e"}'
 fi
