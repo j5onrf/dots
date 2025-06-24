@@ -6,14 +6,15 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W base
-//  ghost-glass-v3.jsonc (beta) 2025-06-23
+//  ghost-glass-v3.jsonc (beta) 2025-06-24
 
     // --- CORE WORKFLOW MODULES ---
 {
     "hyprland/workspaces#rw": {
         "disable-scroll": true, "all-outputs": true, "warp-on-scroll": false, "sort-by-number": true,
-        "show-special": true, "on-click": "activate", "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-click": "activate", "on-scroll-up": "hyprctl dispatch workspace e-1",
         "on-scroll-down": "hyprctl dispatch workspace e+1", "format": "{icon}{windows}",
+        "show-special": true, // --- Special ON/OFF
         "persistent-workspaces": { "*": 5 },
         "format-window-separator": "\n",
         "format-icons": {
@@ -154,11 +155,14 @@
         "tooltip": false
     },
     "custom/wallpaper": {
-        "format": "\uf03e",
+        "exec": "~/.config/hypr/scripts/get_wallpaper_status.sh",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 1, 
+        "tooltip": false,
         "on-click": "waypaper",
         "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
-        "on-click-middle": "~/.config/hypr/scripts/turn-off-matugen.sh",
-        "tooltip": false
+        "on-click-middle": "~/.config/hypr/scripts/turn-off-matugen.sh"
     },
     "custom/waybarthemes": {
         "format": "\uf363",
