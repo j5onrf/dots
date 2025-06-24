@@ -3,7 +3,7 @@
 <details open><summary>(2025-June24) Upgrading Waybar should bring tangible benefits, especially for theming</summary>
 <p>
 
-[Waybar 0.13.0 Released](https://github.com/j5onrf/dots/tree/main/waybar/waybar-0.13.0-release) &nbsp; [official 0.13.0 release notes](https://github.com/Alexays/Waybar/releases/tag/0.13.0)
+[Waybar 0.13.0 Released](https://github.com/j5onrf/dots/tree/main/waybar/waybar-0.13.0-release) &nbsp; [Official 0.13.0 release notes](https://github.com/Alexays/Waybar/releases/tag/0.13.0)
 
 </details>
 
