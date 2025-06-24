@@ -4,7 +4,7 @@ Based on the official 0.13.0 release notes, here's a breakdown of why you would 
 
 ### No, There Are Not "New CSS Features"
 
-To answer your main question directly: No, Waybar 0.13.0 does not appear to add brand-new CSS properties or drastically change the GTK CSS parser. The core styling engine remains the same.
+Waybar 0.13.0 does not appear to add brand-new CSS properties or drastically change the GTK CSS parser. The core styling engine remains the same.
 
 However, the reasons to upgrade are still very compelling.
 
