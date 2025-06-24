@@ -5,10 +5,7 @@
         "return-type": "json",
         "interval": "once",
         "signal": 1, 
-        
-        "tooltip": false, // <-- SET THIS TO FALSE
-        
-        // Your click handlers remain exactly the same
+        "tooltip": false,
         "on-click": "waypaper",
         "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
         "on-click-middle": "~/.config/hypr/scripts/turn-off-matugen.sh"
