@@ -5,7 +5,7 @@
 //   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
 //        \/         \/\/              \/        \/       \/     
 // ML4W, Edited by j5onrf
-// Ghost-Glassmorphism (2025-6-21) beta
+// Ghost-Glassmorphism (2025-6-24) beta
 // -----------------------------------------------------
 
 {
@@ -23,12 +23,12 @@
     "~/.config/waybar/ghost-glassmorphism.jsonc"
   ],
 
-  // Modules Left (Becomes TOP) - Now empty
+  // Modules Left (Becomes TOP)
   "modules-left": [
     "custom/appmenu"
   ],
 
-  // Modules Center - All modules go here for a continuous stack
+  // Modules Center
   "modules-center": [
     "custom/temperature_wttr",
     "group/settings",
@@ -37,7 +37,7 @@
     "clock"
   ],
 
-  // Modules Right (Becomes BOTTOM) - Now empty
+  // Modules Right (Becomes BOTTOM)
   "modules-right": [
     "custom/exit"
   ]
