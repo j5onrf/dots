@@ -1,12 +1,17 @@
-# Hyprdots
+# HyprdotsWaybar 0.13.0 Release
+
+<details open><summary>(2025-June24) Upgrading Waybar should bring tangible benefits, especially for theming</summary>
+<p>
+
+[Waybar 0.13.0 Released](https://github.com/j5onrf/dots/tree/main/waybar/waybar-0.13.0-release) &nbsp; [official 0.13.0 release notes](https://github.com/Alexays/Waybar/releases/tag/0.13.0)
+
+</details>
 
 <details open><summary>(2025-June22) Vertical Waybar with a Glass UI</summary>
 <p>
 
 [Glassmorphism<sup>optimized</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism) &nbsp; [Compact](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact) &nbsp; [v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2) &nbsp; [v3](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v3) &nbsp; [Theme-Lock](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/turn-off-matugen.sh)
 ![FullScreen-2025-06-22_18-29-13](https://github.com/user-attachments/assets/920115b3-c3bd-469c-a59f-00d6a28189b4)
-
-
 
 </details>
 
