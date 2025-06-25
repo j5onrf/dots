@@ -2,19 +2,21 @@
 # ~/.config/hypr/scripts/get_openweathermap_forecast.sh
 
 # --- CONFIGURATION ---
-API_KEY="" # <<< YOUR API KEY
-LOCATION_QUERY="xyz,US,MO"    # Example: q=City,Country,State or lat=LAT&lon=LON
-UNITS="imperial"              # "metric" for Celsius, "imperial" for Fahrenheit
+API_KEY="x"
+LOCATION_QUERY="x,US,MO"
+UNITS="imperial"
 
 # --- SCRIPT LOGIC ---
 API_URL="http://api.openweathermap.org/data/2.5/forecast?q=${LOCATION_QUERY}&appid=${API_KEY}&units=${UNITS}"
 CACHE_FILE="/tmp/waybar_weather_cache.json"
 CACHE_TTL=1800
 
-if ! [ -f "$CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$CACHE_FILE"))) -gt $CACHE_TTL ]; then
+# MODIFIED: Added a check for an empty file to force a refresh.
+if ! [ -f "$CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$CACHE_FILE"))) -gt $CACHE_TTL ] || [ ! -s "$CACHE_FILE" ]; then
     curl -sf "$API_URL" > "$CACHE_FILE"
 fi
 
+# This second check is still useful as a final safety net.
 if [ ! -s "$CACHE_FILE" ]; then
     printf '{"text": "ERR", "tooltip": "Weather data fetch failed."}\n'
     exit 1
@@ -32,7 +34,6 @@ fi
 CURRENT_TEMP=$(echo "$RAW_DATA" | jq '.list[0].main.temp' | awk '{printf "%.0f°", $1}')
 FEELS_LIKE_TEMP=$(echo "$RAW_DATA" | jq '.list[0].main.feels_like' | awk '{printf "%.0f°", $1}')
 CURRENT_ICON_CODE=$(echo "$RAW_DATA" | jq -r '.list[0].weather[0].id')
-CURRENT_CONDITION_TEXT=$(echo "$RAW_DATA" | jq -r '.list[0].weather[0].description' | sed -e "s/\b\(.\)/\u\1/g")
 
 # Function to map weather ID to an emoji
 get_emoji() {
@@ -71,7 +72,6 @@ TOOLTIP_BODY=$(echo -e "${TOOLTIP_BODY%\\n}")
 # --- ASSEMBLE FINAL OUTPUT ---
 TEXT_OUTPUT="$CURRENT_TEMP"
 
-# Using your preferred format for the top line of the tooltip
 TOP_LINE="$CURRENT_EMOJI Feels $FEELS_LIKE_TEMP"
 TOOLTIP_TITLE="5-Day Forecast"
 FULL_TOOLTIP="$TOP_LINE\n\n$TOOLTIP_TITLE\n$TOOLTIP_BODY"
