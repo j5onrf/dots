@@ -14,10 +14,10 @@ UNITS="imperial"              # "metric" for Celsius, "imperial" for Fahrenheit
 # 4. The number at the end (0000000) is your City ID.
 
 # Examples:
-# LOCATION="4407074"         (City ID for Seckman, MO, USA - Recommended)
-# LOCATION="Seckman,US,MO"  (City, Country, State)
-# LOCATION="63052,us"        (ZIP Code)
-# LOCATION="lat=38.40&lon=-90.43" (Latitude & Longitude)
+# LOCATION="0000000"         (City ID for Seckman, MO, USA - Recommended)
+# LOCATION="xyz,US,MO"  (City, Country, State)
+# LOCATION="00000,us"        (ZIP Code)
+# LOCATION="lat=38.40&lon=-20.43" (Latitude & Longitude)
 LOCATION="0000000"
 
 # Set the query type. Options: "auto", "id", "q", "zip", "coords"
