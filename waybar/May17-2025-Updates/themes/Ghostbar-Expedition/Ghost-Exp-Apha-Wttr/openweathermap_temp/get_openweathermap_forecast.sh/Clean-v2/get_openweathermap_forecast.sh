@@ -11,12 +11,12 @@ API_URL="http://api.openweathermap.org/data/2.5/forecast?q=${LOCATION_QUERY}&app
 CACHE_FILE="/tmp/waybar_weather_cache.json"
 CACHE_TTL=1800
 
-# MODIFIED: Added a check for an empty file to force a refresh.
+# Self-healing logic: force a refresh if the cache is old, missing, or empty.
 if ! [ -f "$CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$CACHE_FILE"))) -gt $CACHE_TTL ] || [ ! -s "$CACHE_FILE" ]; then
     curl -sf "$API_URL" > "$CACHE_FILE"
 fi
 
-# This second check is still useful as a final safety net.
+# Final safety net check.
 if [ ! -s "$CACHE_FILE" ]; then
     printf '{"text": "ERR", "tooltip": "Weather data fetch failed."}\n'
     exit 1
@@ -33,7 +33,6 @@ fi
 # --- PARSE CURRENT WEATHER ---
 CURRENT_TEMP=$(echo "$RAW_DATA" | jq '.list[0].main.temp' | awk '{printf "%.0f°", $1}')
 FEELS_LIKE_TEMP=$(echo "$RAW_DATA" | jq '.list[0].main.feels_like' | awk '{printf "%.0f°", $1}')
-CURRENT_ICON_CODE=$(echo "$RAW_DATA" | jq -r '.list[0].weather[0].id')
 
 # Function to map weather ID to an emoji
 get_emoji() {
@@ -44,8 +43,6 @@ get_emoji() {
         *)  echo "";;
     esac
 }
-
-CURRENT_EMOJI=$(get_emoji $CURRENT_ICON_CODE)
 
 # --- PARSE 5-DAY FORECAST ---
 FORECAST_DATA=$(echo "$RAW_DATA" | jq -r '
@@ -72,9 +69,9 @@ TOOLTIP_BODY=$(echo -e "${TOOLTIP_BODY%\\n}")
 # --- ASSEMBLE FINAL OUTPUT ---
 TEXT_OUTPUT="$CURRENT_TEMP"
 
-TOP_LINE="$CURRENT_EMOJI Feels $FEELS_LIKE_TEMP"
-TOOLTIP_TITLE="5-Day Forecast"
-FULL_TOOLTIP="$TOP_LINE\n\n$TOOLTIP_TITLE\n$TOOLTIP_BODY"
+# MODIFIED: Assembling the final tooltip with a single newline for a compact look.
+TOP_LINE="Feels $FEELS_LIKE_TEMP"
+FULL_TOOLTIP="$TOP_LINE\n$TOOLTIP_BODY"
 
 # Escape newlines in the tooltip for valid JSON output for Waybar.
 printf '{"text": "%s", "tooltip": "%s"}\n' "$TEXT_OUTPUT" "${FULL_TOOLTIP//$'\n'/\\n}"
