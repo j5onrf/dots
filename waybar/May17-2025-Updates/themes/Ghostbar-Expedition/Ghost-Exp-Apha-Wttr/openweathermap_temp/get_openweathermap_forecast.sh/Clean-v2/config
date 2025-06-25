@@ -1,0 +1,45 @@
+//  __      __  _____ _____._____________   _____ __________ 
+// /  \    /  \/  _  \\__  |   \______   \ /  _  \\______   \
+// \   \/\/   /  /_\  \/   |   ||    |  _//  /_\  \|       _/
+//  \        /    |    \____   ||    |   /    |    |    |   \
+//   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
+//        \/         \/\/              \/        \/       \/     
+// ML4W, Edited by j5onrf
+// Ghost-Glassmorphism (2025-6-24) beta
+// -----------------------------------------------------
+
+{
+  // General Settings
+    "layer": "top",
+    "position": "left",
+    "spacing": 0,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+
+  // Load Modules
+  "include": [
+    "~/.config/waybar/ghost-glassmorphism.jsonc"
+  ],
+
+  // Modules Left (TOP)
+  "modules-left": [
+    "custom/appmenu"
+  ],
+
+  // Modules Center
+  "modules-center": [
+    // "custom/temperature_wttr",
+    "custom/weather",
+    "group/settings",
+    "hyprland/workspaces#rw",
+    "group/hardware",
+    "clock"
+  ],
+
+  // Modules Right (BOTTOM)
+  "modules-right": [
+    "custom/exit"
+  ]
+}

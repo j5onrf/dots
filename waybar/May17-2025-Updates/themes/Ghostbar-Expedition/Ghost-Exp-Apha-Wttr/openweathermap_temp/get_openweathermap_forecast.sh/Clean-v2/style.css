@@ -1,0 +1,142 @@
+/* 
+ *  by j5onrf, from ML4W base
+ *  Ghost-Glassmorphism (Optimized) 2025-06-23
+ */
+
+@import 'ghost-matugen.css';
+
+/* --- Global & Window Styles --- */
+* {
+    background: none;
+    border: none;
+    /* Set a base border-radius reset */
+    border-radius: 0.8em;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+.modules-center {
+    font-family: "Font Awesome 6 Pro Light";
+    font-size: 24px; /* Base font size - default 24 */
+    margin: 8px;
+    padding: 2px 4px;
+    background-color: rgba(50, 50, 50, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* This single rule defines the base look for ALL clickable modules. */
+#workspaces button,
+#pulseaudio, #custom-cliphist, #custom-hyprshade, #network, #tray,
+#custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification,
+#cpu, #memory, #custom-updates,
+#custom-appmenu, #custom-exit,
+#clock, #custom-weather {
+    color: @primary;
+    border-radius: 0.8em;
+    margin: 0.2em;
+    padding: 0.3em;
+    border: 1px solid transparent; 
+    transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+/* This single rule defines the hover effect for ALL interactive modules. */
+#workspaces button:hover, #workspaces button.active,
+#pulseaudio:hover, #custom-cliphist:hover, #custom-hyprshade:hover, #network:hover, #tray:hover,
+#custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
+#cpu:hover, #memory:hover, #custom-updates:hover,
+#custom-appmenu:hover, #custom-exit:hover,
+#clock:hover, #custom-weather:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+ /* background-color: alpha(@primary, 0.30);
+    border-color: alpha(@primary, 0.50); --- Matugen color */
+}
+
+/* --- Specific Module Overrides --- */
+
+/* App Menu & Exit Buttons */
+#custom-appmenu,
+#custom-exit {
+    opacity: 0;
+}
+#custom-appmenu:hover,
+#custom-exit:hover {
+    opacity: 1; 
+}
+
+/* Hidden Drawer Toggles */
+#custom-settings,
+#custom-system {
+    color: @ghost_text_primary;
+    font-size: 0.5em;
+    padding: 0.4em;
+    opacity: 0;
+}
+#custom-settings:hover,
+#custom-system:hover {
+    opacity: 1;
+}
+
+/* Clock & Weather - Specific Fonts and Alignment */
+#clock,
+#custom-weather {
+    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-size: 0.857em;
+}
+
+/* System Monitors - Specific Fonts and Colors */
+#cpu,
+#memory,
+#custom-updates {
+    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-weight: 100;
+    font-size: 0.57em;
+    color: @ghost_text_primary;
+}
+
+/* --- Module State Overrides --- */
+#custom-hypridle.active {
+    color: @ghost_hypridle_active_icon;
+}
+#custom-hypridle.notactive {
+    color: @ghost_hypridle_inactive_icon;
+}
+
+#pulseaudio.muted {
+    color: @ghost_pulseaudio_muted_fg;
+}
+#pulseaudio.muted:hover {
+    color: @ghost_pulseaudio_muted_hover__fg;
+}
+
+#cpu.medium { color: @tertiary_fixed; }
+#cpu.high { color: @source_color; }
+#cpu.critical {
+    color: @error;
+    font-weight: bold;
+}
+
+/* --- Tooltips --- */
+tooltip {
+    background-color: @ghost_bar_background;
+    border-radius: 0.6em;
+    padding: 0.8em;
+    opacity: 0.95;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+tooltip label {
+    color: @primary;
+    font-size: 14px;
+}
+tooltip label big {
+    color: @on_surface;
+}
+tooltip label tt {
+    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
+}
+tooltip label tt small {
+    font-size: 0.9em;
+}
