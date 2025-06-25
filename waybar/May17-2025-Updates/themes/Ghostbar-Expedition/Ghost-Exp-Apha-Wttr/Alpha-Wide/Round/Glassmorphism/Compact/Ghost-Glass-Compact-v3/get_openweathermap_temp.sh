@@ -10,7 +10,7 @@ UNITS="imperial"              # "metric" for Celsius, "imperial" for Fahrenheit
 # To find your City ID:
 # 1. Go to openweathermap.org
 # 2. Search for your city.
-# 3. The URL will be something like: openweathermap.org/city/4407074
+# 3. The URL will be something like: openweathermap.org/city/0000000
 # 4. The number at the end (0000000) is your City ID.
 
 # Examples:
