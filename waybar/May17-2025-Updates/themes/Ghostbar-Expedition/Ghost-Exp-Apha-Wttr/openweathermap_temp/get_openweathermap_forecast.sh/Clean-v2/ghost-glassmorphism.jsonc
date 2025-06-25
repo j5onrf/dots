@@ -157,15 +157,15 @@
         "on-click": "~/.config/waybar/themeswitcher.sh",
         "tooltip": false
     },
-    
-    // --- SYSTEM STATUS & SERVICE MODULES ---
-    "custom/weather": {
+        "custom/weather": {
         "format": "{}",
         "tooltip": true,
         "interval": 1800, // Update every 30 minutes
         "exec": "~/.config/hypr/scripts/get_openweathermap_forecast.sh",
         "return-type": "json"
     },
+    
+    // --- SYSTEM STATUS & SERVICE MODULES ---
     "clock": {
         "format": "{:%I\n%M}",
         "tooltip": true,
