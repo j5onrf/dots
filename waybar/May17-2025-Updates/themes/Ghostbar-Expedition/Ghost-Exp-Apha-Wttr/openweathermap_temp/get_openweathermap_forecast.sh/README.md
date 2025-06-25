@@ -6,7 +6,6 @@
         "interval": 1800, // Update every 30 minutes
         "exec": "~/.config/hypr/scripts/get_openweathermap_forecast.sh",
         "return-type": "json",
-        "markup": "pango"
     },
 
 ```
