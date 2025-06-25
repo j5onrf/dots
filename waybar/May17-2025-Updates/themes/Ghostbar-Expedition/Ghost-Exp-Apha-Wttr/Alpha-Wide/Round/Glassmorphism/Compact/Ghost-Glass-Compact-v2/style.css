@@ -32,7 +32,7 @@ window#waybar {
 #custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification,
 #cpu, #memory, #custom-updates,
 #custom-appmenu, #custom-exit, #custom-settings, #custom-system,
-#clock, #custom-temperature_wttr {
+#clock, #custom-weather {
     color: @primary;
     margin: 0.2em;
     padding: 0.3em 0em;
@@ -47,7 +47,7 @@ window#waybar {
 #custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
 #cpu:hover, #memory:hover, #custom-updates:hover,
 #custom-appmenu:hover, #custom-exit:hover, #custom-settings:hover, #custom-system:hover,
-#clock:hover, #custom-temperature_wttr:hover {
+#clock:hover, #custom-weather:hover {
     background-color: alpha(@primary, 0.30);
     border-color: alpha(@primary, 0.50);
 }
@@ -64,12 +64,12 @@ window#waybar {
 }
 
 /* --- Text-Based Modules --- */
-#clock, #custom-temperature_wttr,
+#clock, #custom-weather,
 #cpu, #memory, #custom-updates {
     font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
     color: @ghost_text_primary;
 }
-#clock, #custom-temperature_wttr {
+#clock, #custom-weather {
     font-size: 0.857em;
 }
 #custom-settings, #custom-system {
