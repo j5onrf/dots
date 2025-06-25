@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  Ghost-Glassmorphism (Compact) 2025-06-22
+ *  Ghost-Glassmorphism (Compact) 2025-06-25
  */
 
 @import 'ghost-matugen.css';
@@ -35,7 +35,7 @@ window#waybar {
 #custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification,
 #cpu, #memory, #custom-updates,
 #custom-appmenu, #custom-exit,
-#clock, #custom-temperature_wttr {
+#clock, #custom-weather {
     color: @primary;
     margin: 0.2em;
     padding: 0.3em 0em; /* Adjust these values to get a perfect circle */
@@ -50,7 +50,7 @@ window#waybar {
 #custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
 #cpu:hover, #memory:hover, #custom-updates:hover,
 #custom-appmenu:hover, #custom-exit:hover,
-#clock:hover, #custom-temperature_wttr:hover {
+#clock:hover, #custom-weather:hover {
     background-color: alpha(@primary, 0.30);
     border-color: alpha(@primary, 0.50);
 }
@@ -84,7 +84,7 @@ window#waybar {
 
 /* Clock & Weather - Specific Fonts and Alignment */
 #clock,
-#custom-temperature_wttr {
+#custom-weather  {
     font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
     font-size: 0.857em;
     border-radius: 0.4em;
