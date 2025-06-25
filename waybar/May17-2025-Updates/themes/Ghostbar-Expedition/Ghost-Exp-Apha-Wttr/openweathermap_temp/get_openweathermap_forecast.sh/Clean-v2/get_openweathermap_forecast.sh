@@ -32,7 +32,6 @@ fi
 CURRENT_TEMP=$(echo "$RAW_DATA" | jq '.list[0].main.temp' | awk '{printf "%.0f°", $1}')
 FEELS_LIKE_TEMP=$(echo "$RAW_DATA" | jq '.list[0].main.feels_like' | awk '{printf "%.0f°", $1}')
 CURRENT_ICON_CODE=$(echo "$RAW_DATA" | jq -r '.list[0].weather[0].id')
-# MODIFIED: Added parsing for the text description for the new tooltip format
 CURRENT_CONDITION_TEXT=$(echo "$RAW_DATA" | jq -r '.list[0].weather[0].description' | sed -e "s/\b\(.\)/\u\1/g")
 
 # Function to map weather ID to an emoji
@@ -69,12 +68,13 @@ done <<< "$FORECAST_DATA"
 
 TOOLTIP_BODY=$(echo -e "${TOOLTIP_BODY%\\n}")
 
+# --- ASSEMBLE FINAL OUTPUT ---
 TEXT_OUTPUT="$CURRENT_TEMP"
 
-CONDITION_LINE="$CURRENT_CONDITION_TEXT $CURRENT_EMOJI"
-FEELS_LIKE_LINE="Feels Like: $FEELS_LIKE_TEMP"
+# Using your preferred format for the top line of the tooltip
+TOP_LINE="$CURRENT_EMOJI Feels $FEELS_LIKE_TEMP"
 TOOLTIP_TITLE="5-Day Forecast"
-FULL_TOOLTIP="$CONDITION_LINE\n$FEELS_LIKE_LINE\n\n$TOOLTIP_TITLE\n$TOOLTIP_BODY"
+FULL_TOOLTIP="$TOP_LINE\n\n$TOOLTIP_TITLE\n$TOOLTIP_BODY"
 
 # Escape newlines in the tooltip for valid JSON output for Waybar.
 printf '{"text": "%s", "tooltip": "%s"}\n' "$TEXT_OUTPUT" "${FULL_TOOLTIP//$'\n'/\\n}"
