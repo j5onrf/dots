@@ -1,9 +1,6 @@
-#!/bin/bash
-# ~/.config/hypr/scripts/get_openweathermap_forecast.sh
-
 # --- CONFIGURATION ---
-API_KEY="---"
-LOCATION_QUERY="---,US,MO"
+API_KEY="x"
+LOCATION_QUERY="x,US,MO"
 UNITS="imperial"
 
 # --- SCRIPT LOGIC ---
@@ -108,7 +105,7 @@ done <<< "$REST_RAW"
 REST_FORMATTED=$(echo -e "${REST_FORMATTED%\\n}")
 
 # --- ASSEMBLE FINAL OUTPUT ---
-TEXT_OUTPUT="$CURRENT_TEMP"
+TEXT_OUTPUT=" $CURRENT_TEMP" # Adding a Hair Space for a tiny left nudge
 TOP_LINE="Feels $FEELS_LIKE_TEMP"
 TOOLTIP_TITLE="→ Next 5 Days"
 
