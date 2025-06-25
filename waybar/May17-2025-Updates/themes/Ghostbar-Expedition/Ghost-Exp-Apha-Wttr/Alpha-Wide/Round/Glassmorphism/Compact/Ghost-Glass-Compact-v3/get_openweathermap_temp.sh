@@ -1,8 +1,8 @@
 #!/bin/bash
 # ~/.config/hypr/scripts/get_openweathermap_temp.sh
 
-API_KEY="x" # <<< PUT YOUR ACTUAL API KEY HERE
-LOCATION_QUERY="x,US,MO" # Example: City,CountryCode,StateCode (for US)
+API_KEY="fb1c27ea915061d5876582e8bd77b339" # <<< PUT YOUR ACTUAL API KEY HERE
+LOCATION_QUERY="Seckman,US,MO" # Example: City,CountryCode,StateCode (for US)
                              # Or: "q=London,UK"
                              # Or: "id=YOUR_CITY_ID"
                              # Or: "lat=YOUR_LAT&lon=YOUR_LON"
@@ -64,7 +64,7 @@ if [ -n "$RAW_DATA" ] && [ "$(echo "$RAW_DATA" | jq -r '.cod')" == "200" ]; then
 
         TOOLTIP_PARTS=()
         [[ -n "$CONDITION_TEXT" || -n "$CONDITION_EMOJI" ]] && TOOLTIP_PARTS+=("$(echo "${CONDITION_TEXT}${CONDITION_EMOJI}" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')")
-        [[ -n "$FEELS_LIKE_VALUE" ]] && TOOLTIP_PARTS+=("Feels like: ${FEELS_LIKE_VALUE}°${DISPLAY_UNIT_SHORT}")
+        [[ -n "$FEELS_LIKE_VALUE" ]] && TOOLTIP_PARTS+=("Feels like ${FEELS_LIKE_VALUE}°${DISPLAY_UNIT_SHORT}")
         
         TEMP_TOOLTIP_STRING=""
         for i in "${!TOOLTIP_PARTS[@]}"; do
