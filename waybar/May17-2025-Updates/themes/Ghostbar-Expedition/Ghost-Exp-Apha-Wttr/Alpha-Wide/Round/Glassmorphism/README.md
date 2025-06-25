@@ -5,6 +5,9 @@
 > Ghost-Glassmorphism brings a sleek, Apple-inspired "glass UI" to your desktop. This vertical Waybar theme is built on a highly optimized and consolidated CSS file, featuring fluid transitions and a responsive, translucent design that floats beautifully on your desktop.
 
 ----
+Attention! You will need get_openweathermap_forecast.sh (Weather forecast - default) or 
+get_openweathermap_temp.sh (simple temp)
+
     /* Glassmorphism White Glass Original */
     background-color: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.4);
