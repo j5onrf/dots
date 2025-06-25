@@ -2,8 +2,8 @@
 # ~/.config/hypr/scripts/get_openweathermap_forecast.sh
 
 # --- CONFIGURATION ---
-API_KEY="x"
-LOCATION_QUERY="x,US,MO"
+API_KEY="---"
+LOCATION_QUERY="---,US,MO"
 UNITS="imperial"
 
 # --- SCRIPT LOGIC ---
@@ -30,6 +30,8 @@ fi
 
 CURRENT_TEMP=$(echo "$RAW_DATA" | jq '.list[0].main.temp' | awk '{printf "%.0f°", $1}')
 FEELS_LIKE_TEMP=$(echo "$RAW_DATA" | jq '.list[0].main.feels_like' | awk '{printf "%.0f°", $1}')
+CURRENT_ICON_CODE=$(echo "$RAW_DATA" | jq -r '.list[0].weather[0].id')
+CURRENT_CONDITION_RAW_TEXT=$(echo "$RAW_DATA" | jq -r '.list[0].weather[0].description')
 
 get_emoji() {
     local code=$1
@@ -39,6 +41,44 @@ get_emoji() {
         *)  echo "";;
     esac
 }
+
+# MODIFIED FUNCTION: To get a shorter, potentially two-word version of the weather description
+get_short_condition_text() {
+    local full_desc_raw="$1"
+    local full_desc_capitalized=$(echo "$full_desc_raw" | sed -e "s/\b\(.\)/\u\1/g")
+
+    case "$full_desc_capitalized" in
+        "Clear Sky") echo "Clear Sky";;
+        "Few Clouds") echo "Few Clouds";;
+        "Scattered Clouds") echo "Scat. Clouds";;
+        "Broken Clouds") echo "Brkn. Clouds";;
+        "Overcast Clouds") echo "Ovr. Clouds";; # Shortened "Overcast" to "Ovr."
+
+        "Light Rain") echo "Light Rain";;
+        "Moderate Rain") echo "Mod. Rain";;
+        "Heavy Intensity Rain") echo "Hvy. Rain";;
+        "Very Heavy Rain") echo "V. Hvy Rain";; # Shortened "Very Heavy"
+        "Extreme Rain") echo "Ext. Rain";;
+        "Freezing Rain") echo "Frz. Rain";;
+
+        "Thunderstorm With Light Rain") echo "T-Storm Rain";; # Concise "Thunderstorm Rain"
+        "Thunderstorm With Rain") echo "T-Storm Rain";;
+        "Thunderstorm With Heavy Rain") echo "T-Storm HvyR";; # More condensed for heavy T-storms
+        "Thunderstorm") echo "T-Storm";;
+
+        "Light Snow") echo "Light Snow";;
+        "Heavy Snow") echo "Hvy. Snow";;
+        "Sleet") echo "Sleet";;
+
+        # Atmospheric conditions - generally short enough already
+        "Mist" | "Fog" | "Haze" | "Smoke" | "Dust" | "Sand" | "Ash" | "Squall" | "Tornado") echo "$full_desc_capitalized";;
+
+        *) echo "$full_desc_capitalized";; # Default to original capitalized if no specific short form
+    esac
+}
+
+CURRENT_CONDITION_TEXT_SHORT=$(get_short_condition_text "$CURRENT_CONDITION_RAW_TEXT")
+
 
 # --- PARSE 6-DAY FORECAST ---
 FORECAST_DATA_RAW=$(echo "$RAW_DATA" | jq -r '
@@ -72,7 +112,6 @@ TEXT_OUTPUT="$CURRENT_TEMP"
 TOP_LINE="Feels $FEELS_LIKE_TEMP"
 TOOLTIP_TITLE="→ Next 5 Days"
 
-# MODIFIED: Assembling the final tooltip in the exact order you requested.
-FULL_TOOLTIP="$TOP_LINE\n$TODAY_FORMATTED\n\n$TOOLTIP_TITLE\n$REST_FORMATTED"
+FULL_TOOLTIP="$TOP_LINE\n$CURRENT_CONDITION_TEXT_SHORT\n$TODAY_FORMATTED\n\n$TOOLTIP_TITLE\n$REST_FORMATTED"
 
 printf '{"text": "%s", "tooltip": "%s"}\n' "$TEXT_OUTPUT" "${FULL_TOOLTIP//$'\n'/\\n}"
