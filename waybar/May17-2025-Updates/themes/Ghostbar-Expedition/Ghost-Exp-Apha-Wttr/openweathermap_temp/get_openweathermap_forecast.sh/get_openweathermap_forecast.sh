@@ -62,14 +62,19 @@ TOOLTIP_BODY=""
 while IFS= read -r line; do
     IFS=':' read -r day min max id <<< "$line"
     forecast_emoji=$(get_emoji $id)
-    TOOLTIP_BODY+="${forecast_emoji} ${day}: ${min}° / ${max}°\n"
+    TOOLTIP_BODY+="${forecast_emoji} ${day} ${min}° ${max}°\n"
 done <<< "$FORECAST_DATA"
 
 TOOLTIP_BODY=$(echo -e "${TOOLTIP_BODY%\\n}")
 
 
 TEXT_OUTPUT="$CURRENT_TEMP\n $CURRENT_EMOJI"
-TOOLTIP_TITLE="5-Day Forecast:"
+TOOLTIP_TITLE="5-Day Forecast"
+
+FULL_TOOLTIP="$TOOLTIP_TITLE\n$TOOLTIP_BODY"
+
+# Escape newlines in the tooltip for valid JSON output for Waybar.
+printf '{"text": "%s", "tooltip": "%s"}\n' "$TEXT_OUTPUT" "${FULL_TOOLTIP//$'\n'/\\n}"
 
 FULL_TOOLTIP="$TOOLTIP_TITLE\n$TOOLTIP_BODY"
 
