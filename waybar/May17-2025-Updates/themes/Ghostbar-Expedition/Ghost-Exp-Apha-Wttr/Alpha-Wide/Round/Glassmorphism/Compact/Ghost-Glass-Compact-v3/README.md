@@ -1,4 +1,4 @@
-* Super Compact. Minimal. Optimization of code over form.
+# Super Compact. Minimal. Optimization of code over form.
 
 *** Attention! You will need get_openweathermap_forecast.sh (Weather forecast) or get_openweathermap_temp.sh - default (simple temp) 
 
