@@ -59,7 +59,6 @@ API_URL="http://api.openweathermap.org/data/2.5/weather?${API_PARAM}&appid=${API
 RAW_DATA=$(curl -sf "$API_URL")
 
 # --- PARSING AND OUTPUT ---
-# This section is functionally the same as your original script
 if [ -z "$RAW_DATA" ]; then
     printf '{"text": "ERR", "tooltip": "Failed to fetch weather data."}\n'
     exit 1
