@@ -6,6 +6,7 @@ Fixed this by adding one more condition to our logic. We will tell the script:
 
 This single change makes the script self-healing.
 ```
-![2025-06-25T08:51:14,906797310-05:00](https://github.com/user-attachments/assets/01d9e43b-ef79-437f-be15-b8bb3c855681)
+
+![2025-06-25T09:06:34,501964285-05:00](https://github.com/user-attachments/assets/5e7101ec-092b-4712-a63d-518e7a729d60)
 
 
