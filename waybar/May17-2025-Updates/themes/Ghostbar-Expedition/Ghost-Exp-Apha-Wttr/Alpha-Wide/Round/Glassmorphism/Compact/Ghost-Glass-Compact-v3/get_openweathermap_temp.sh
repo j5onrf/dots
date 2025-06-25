@@ -6,13 +6,19 @@ API_KEY="YOUR_API_KEY_HERE" # <<< IMPORTANT: PUT YOUR KEY HERE
 UNITS="imperial"              # "metric" for Celsius, "imperial" for Fahrenheit
 
 # --- LOCATION SETTINGS ---
+#
+# Recommended Method: Use a City ID.
+# This script is optimized to use a City ID for the fastest and most reliable
+# weather lookup, completely avoiding any ambiguity with city names.
+#
 # Set your location. Using a City ID is the most reliable method.
 # To find your City ID:
 # 1. Go to openweathermap.org
 # 2. Search for your city.
 # 3. The URL will be something like: openweathermap.org/city/0000000
 # 4. The number at the end (0000000) is your City ID.
-
+#
+# --- Alternative Formats (Supported, but not recommended over City ID) ---
 # Examples:
 # LOCATION="0000000"         (City ID for xyz, MO, USA - Recommended)
 # LOCATION="xyz,US,MO"  (City, Country, State)
