@@ -1,17 +1,24 @@
+#!/bin/bash
+# ~/.config/hypr/scripts/get_openweathermap_forecast.sh
+
 # --- CONFIGURATION ---
-API_KEY="x"
-LOCATION_QUERY="x,US,MO"
+API_KEY="api-key"
+# MODIFIED: Using the city ID for a more reliable location lookup.
+LOCATION_QUERY="0000000"
 UNITS="imperial"
 
 # --- SCRIPT LOGIC ---
-API_URL="http://api.openweathermap.org/data/2.5/forecast?q=${LOCATION_QUERY}&appid=${API_KEY}&units=${UNITS}"
+# MODIFIED: Changed the query parameter from 'q=' to 'id='
+API_URL="http://api.openweathermap.org/data/2.5/forecast?id=${LOCATION_QUERY}&appid=${API_KEY}&units=${UNITS}"
 CACHE_FILE="/tmp/waybar_weather_cache.json"
 CACHE_TTL=1800
 
+# Self-healing logic: force a refresh if the cache is old, missing, or empty.
 if ! [ -f "$CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$CACHE_FILE"))) -gt $CACHE_TTL ] || [ ! -s "$CACHE_FILE" ]; then
     curl -sf "$API_URL" > "$CACHE_FILE"
 fi
 
+# Final safety net check.
 if [ ! -s "$CACHE_FILE" ]; then
     printf '{"text": "ERR", "tooltip": "Weather data fetch failed."}\n'
     exit 1
@@ -27,7 +34,6 @@ fi
 
 CURRENT_TEMP=$(echo "$RAW_DATA" | jq '.list[0].main.temp' | awk '{printf "%.0f°", $1}')
 FEELS_LIKE_TEMP=$(echo "$RAW_DATA" | jq '.list[0].main.feels_like' | awk '{printf "%.0f°", $1}')
-CURRENT_ICON_CODE=$(echo "$RAW_DATA" | jq -r '.list[0].weather[0].id')
 CURRENT_CONDITION_RAW_TEXT=$(echo "$RAW_DATA" | jq -r '.list[0].weather[0].description')
 
 get_emoji() {
@@ -39,38 +45,18 @@ get_emoji() {
     esac
 }
 
-# MODIFIED FUNCTION: To get a shorter, potentially two-word version of the weather description
 get_short_condition_text() {
     local full_desc_raw="$1"
     local full_desc_capitalized=$(echo "$full_desc_raw" | sed -e "s/\b\(.\)/\u\1/g")
-
     case "$full_desc_capitalized" in
-        "Clear Sky") echo "Clear Sky";;
-        "Few Clouds") echo "Few Clouds";;
-        "Scattered Clouds") echo "Scat. Clouds";;
-        "Broken Clouds") echo "Brkn. Clouds";;
-        "Overcast Clouds") echo "Ovr. Clouds";; # Shortened "Overcast" to "Ovr."
-
-        "Light Rain") echo "Light Rain";;
-        "Moderate Rain") echo "Mod. Rain";;
-        "Heavy Intensity Rain") echo "Hvy. Rain";;
-        "Very Heavy Rain") echo "V. Hvy Rain";; # Shortened "Very Heavy"
-        "Extreme Rain") echo "Ext. Rain";;
-        "Freezing Rain") echo "Frz. Rain";;
-
-        "Thunderstorm With Light Rain") echo "T-Storm Rain";; # Concise "Thunderstorm Rain"
-        "Thunderstorm With Rain") echo "T-Storm Rain";;
-        "Thunderstorm With Heavy Rain") echo "T-Storm HvyR";; # More condensed for heavy T-storms
-        "Thunderstorm") echo "T-Storm";;
-
-        "Light Snow") echo "Light Snow";;
-        "Heavy Snow") echo "Hvy. Snow";;
-        "Sleet") echo "Sleet";;
-
-        # Atmospheric conditions - generally short enough already
+        "Clear Sky") echo "Clear Sky";; "Few Clouds") echo "Few Clouds";; "Scattered Clouds") echo "Scat. Clouds";;
+        "Broken Clouds") echo "Brkn. Clouds";; "Overcast Clouds") echo "Ovr. Clouds";; "Light Rain") echo "Light Rain";;
+        "Moderate Rain") echo "Mod. Rain";; "Heavy Intensity Rain") echo "Hvy. Rain";; "Very Heavy Rain") echo "V. Hvy Rain";;
+        "Extreme Rain") echo "Ext. Rain";; "Freezing Rain") echo "Frz. Rain";; "Thunderstorm With Light Rain") echo "T-Storm Rain";;
+        "Thunderstorm With Rain") echo "T-Storm Rain";; "Thunderstorm With Heavy Rain") echo "T-Storm HvyR";; "Thunderstorm") echo "T-Storm";;
+        "Light Snow") echo "Light Snow";; "Heavy Snow") echo "Hvy. Snow";; "Sleet") echo "Sleet";;
         "Mist" | "Fog" | "Haze" | "Smoke" | "Dust" | "Sand" | "Ash" | "Squall" | "Tornado") echo "$full_desc_capitalized";;
-
-        *) echo "$full_desc_capitalized";; # Default to original capitalized if no specific short form
+        *) echo "$full_desc_capitalized";;
     esac
 }
 
@@ -105,7 +91,7 @@ done <<< "$REST_RAW"
 REST_FORMATTED=$(echo -e "${REST_FORMATTED%\\n}")
 
 # --- ASSEMBLE FINAL OUTPUT ---
-TEXT_OUTPUT=" $CURRENT_TEMP" # Adding a Hair Space for a tiny left nudge
+TEXT_OUTPUT="$CURRENT_TEMP"
 TOP_LINE="Feels $FEELS_LIKE_TEMP"
 TOOLTIP_TITLE="→ Next 5 Days"
 
