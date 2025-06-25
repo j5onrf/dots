@@ -1,3 +1,5 @@
+*** Attention! You will need get_openweathermap_forecast.sh (Weather forecast - default) or get_openweathermap_temp.sh (simple temp)
+
 ![FullScreen-2025-06-23_09-31-40](https://github.com/user-attachments/assets/1a91025c-fb85-4908-8b5b-d022e0762515)
 
 ### Summary of Recent CSS Improvements
