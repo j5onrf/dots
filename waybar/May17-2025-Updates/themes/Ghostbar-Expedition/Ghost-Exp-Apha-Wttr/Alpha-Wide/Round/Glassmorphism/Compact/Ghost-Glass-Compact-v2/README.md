@@ -2,6 +2,8 @@
 
 ![FullScreen-2025-06-23_09-31-40](https://github.com/user-attachments/assets/1a91025c-fb85-4908-8b5b-d022e0762515)
 
+![FullScreen-2025-06-25_16-40-13](https://github.com/user-attachments/assets/aebac04b-a397-47af-829e-81241a6b0118)
+
 ### Summary of Recent CSS Improvements
 
 The overall goal of the recent changes in v2 was to **refactor** `Ghost-Glassmorphism (Compact)` stylesheet to make it cleaner, more consistent, and easier to maintain without changing the core functionality.
