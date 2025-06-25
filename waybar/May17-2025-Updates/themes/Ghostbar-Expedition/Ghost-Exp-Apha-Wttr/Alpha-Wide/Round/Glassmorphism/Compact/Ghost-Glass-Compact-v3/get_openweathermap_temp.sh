@@ -20,9 +20,10 @@ UNITS="imperial"              # "metric" for Celsius, "imperial" for Fahrenheit
 # LOCATION="lat=38.40&lon=-20.43" (Latitude & Longitude)
 LOCATION="0000000"
 
-# Set the query type. Options: "auto", "id", "q", "zip", "coords"
-# "auto" will try to guess the type based on the LOCATION format.
-# It's best to set this explicitly if LOCATION is ambiguous (e.g., a numeric city name).
+# When you MUST override "auto":
+#   In the very rare case that your city's actual NAME consists only of numbers
+#   (e.g., the town of "1770" in Australia). In this situation, 'auto' would mistake
+#   the name for a City ID. You would then have to set QUERY_TYPE="q" to force a name search.
 QUERY_TYPE="auto"
 
 
