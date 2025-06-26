@@ -7,7 +7,7 @@
 # You MUST configure the 3 settings in this section to use the script.
 
 # 1. API_KEY: Get your free API key from https://openweathermap.org/
-API_KEY="API_KEY"
+API_KEY="YOUR_API_KEY_HERE"
 
 # 2. LOCATION_QUERY: Set this to your unique City ID.
 #    (See instructions in the "HOW-TO" section below this block)
