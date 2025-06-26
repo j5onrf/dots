@@ -1,50 +1,79 @@
 #!/bin/bash
-# ~/.config/hypr/scripts/get_openweathermap_forecast.sh
+#
+# Waybar Weather & Forecast Script (Self-Healing & FontAwesome Emoji Version) 2025-06-25
+#
 
 # --- CONFIGURATION ---
-API_KEY="api-key"
-# MODIFIED: Using the city ID for a more reliable location lookup.
-LOCATION_QUERY="0000000"
-UNITS="imperial"
+# You MUST configure the 3 settings in this section to use the script.
 
-# --- SCRIPT LOGIC ---
-# MODIFIED: Changed the query parameter from 'q=' to 'id='
-API_URL="http://api.openweathermap.org/data/2.5/forecast?id=${LOCATION_QUERY}&appid=${API_KEY}&units=${UNITS}"
-CACHE_FILE="/tmp/waybar_weather_cache.json"
-CACHE_TTL=1800
+# 1. API_KEY: Get your free API key from https://openweathermap.org/
+API_KEY="6da25b4e5b6989bc4cf70f471e6c9426"
 
-# Self-healing logic: force a refresh if the cache is old, missing, or empty.
-if ! [ -f "$CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$CACHE_FILE"))) -gt $CACHE_TTL ] || [ ! -s "$CACHE_FILE" ]; then
-    curl -sf "$API_URL" > "$CACHE_FILE"
+# 2. LOCATION_QUERY: Set this to your unique City ID.
+#    (See instructions in the "HOW-TO" section below this block)
+LOCATION_QUERY="4391808" # <-- Replace with your City ID
+
+# 3. UNITS: Choose your preferred measurement system.
+UNITS="imperial" # Options: "metric" for Celsius, "imperial" for Fahrenheit
+
+
+# --- HOW TO FIND YOUR CITY ID (for LOCATION_QUERY) ---
+# This script is optimized to use a City ID for the fastest and most reliable
+# weather lookup.
+#
+# 1. Go to openweathermap.org and search for your city.
+# 2. Click the correct city name in the search results.
+# 3. Look at the URL in your browser's address bar. It will be like this:
+#    https://openweathermap.org/city/000000 <-- This number is your ID
+#
+# 4. Copy that number and paste it into the LOCATION_QUERY variable above.
+
+# --- SCRIPT SETUP ---
+WEATHER_API_URL="http://api.openweathermap.org/data/2.5/weather?id=${LOCATION_QUERY}&appid=${API_KEY}&units=${UNITS}"
+FORECAST_API_URL="http://api.openweathermap.org/data/2.5/forecast?id=${LOCATION_QUERY}&appid=${API_KEY}&units=${UNITS}"
+
+WEATHER_CACHE_FILE="/tmp/waybar_weather_current_$(echo -n "$LOCATION_QUERY" | md5sum | cut -d' ' -f1).json"
+FORECAST_CACHE_FILE="/tmp/waybar_weather_forecast_$(echo -n "$LOCATION_QUERY" | md5sum | cut -d' ' -f1).json"
+
+WEATHER_CACHE_TTL=600
+FORECAST_CACHE_TTL=3600
+
+# --- DATA FETCHING & VALIDATION ---
+if ! [ -f "$WEATHER_CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$WEATHER_CACHE_FILE"))) -gt $WEATHER_CACHE_TTL ] || [ ! -s "$WEATHER_CACHE_FILE" ]; then
+    curl -sf "$WEATHER_API_URL" > "$WEATHER_CACHE_FILE"
+fi
+if ! [ -f "$FORECAST_CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$FORECAST_CACHE_FILE"))) -gt $FORECAST_CACHE_TTL ] || [ ! -s "$FORECAST_CACHE_FILE" ]; then
+    curl -sf "$FORECAST_API_URL" > "$FORECAST_CACHE_FILE"
 fi
 
-# Final safety net check.
-if [ ! -s "$CACHE_FILE" ]; then
-    printf '{"text": "ERR", "tooltip": "Weather data fetch failed."}\n'
+if [ ! -s "$WEATHER_CACHE_FILE" ] || [ ! -s "$FORECAST_CACHE_FILE" ]; then
+    printf '{"text": "ERR", "tooltip": "Data fetch failed."}\n'
     exit 1
 fi
 
-RAW_DATA=$(cat "$CACHE_FILE")
+WEATHER_RAW_DATA=$(cat "$WEATHER_CACHE_FILE")
+FORECAST_RAW_DATA=$(cat "$FORECAST_CACHE_FILE")
 
-if [ "$(echo "$RAW_DATA" | jq -r '.cod')" != "200" ]; then
-    ERROR_MESSAGE=$(echo "$RAW_DATA" | jq -r '.message')
-    printf '{"text": "API?", "tooltip": "API Error: %s"}\n' "$ERROR_MESSAGE"
+if [ "$(echo "$WEATHER_RAW_DATA" | jq -r '.cod')" != "200" ] || [ "$(echo "$FORECAST_RAW_DATA" | jq -r '.cod')" != "200" ]; then
+    printf '{"text": "API?", "tooltip": "API Error"}\n'
     exit 1
 fi
 
-CURRENT_TEMP=$(echo "$RAW_DATA" | jq '.list[0].main.temp' | awk '{printf "%.0f°", $1}')
-FEELS_LIKE_TEMP=$(echo "$RAW_DATA" | jq '.list[0].main.feels_like' | awk '{printf "%.0f°", $1}')
-CURRENT_CONDITION_RAW_TEXT=$(echo "$RAW_DATA" | jq -r '.list[0].weather[0].description')
+# --- PARSE CURRENT DATA ---
+CURRENT_TEMP=$(echo "$WEATHER_RAW_DATA" | jq '.main.temp' | awk '{printf "%.0f°", $1}')
+FEELS_LIKE_TEMP=$(echo "$WEATHER_RAW_DATA" | jq '.main.feels_like' | awk '{printf "%.0f°", $1}')
+CURRENT_CONDITION_RAW_TEXT=$(echo "$WEATHER_RAW_DATA" | jq -r '.weather[0].description')
+CURRENT_ICON_CODE=$(echo "$WEATHER_RAW_DATA" | jq -r '.weather[0].id')
 
+# --- HELPER FUNCTIONS ---
 get_emoji() {
     local code=$1
     case "$code" in
-        800) echo "☀️";; 801) echo "🌤️";; 802) echo "⛅";; 803|804) echo "☁️";;
-        5*) echo "🌧️";;  2*) echo "⛈️";;  6*) echo "❄️";;  7*) echo "🌫️";;
-        *)  echo "";;
+        800) echo "";; 801) echo "";; 802) echo "";; 803|804) echo "";;
+        5*) echo "";;  2*) echo "";;  6*) echo "";;  7*) echo "";;
+        *)  echo "";;
     esac
 }
-
 get_short_condition_text() {
     local full_desc_raw="$1"
     local full_desc_capitalized=$(echo "$full_desc_raw" | sed -e "s/\b\(.\)/\u\1/g")
@@ -59,42 +88,57 @@ get_short_condition_text() {
         *) echo "$full_desc_capitalized";;
     esac
 }
-
 CURRENT_CONDITION_TEXT_SHORT=$(get_short_condition_text "$CURRENT_CONDITION_RAW_TEXT")
+CURRENT_EMOJI=$(get_emoji $CURRENT_ICON_CODE)
 
+# --- PARSE 5-DAY FORECAST (BULLETPROOF METHOD) ---
+declare -A daily_min daily_max daily_icon daily_day_name
+while IFS=$'\t' read -r dt temp_min temp_max weather_id; do
+    local_date_key=$(date -d "@$dt" +'%Y-%m-%d')
+    if [[ -z "${daily_day_name[$local_date_key]}" ]]; then
+        daily_day_name[$local_date_key]=$(date -d "@$dt" +'%a')
+    fi
+    local_hour=$(date -d "@$dt" +'%H')
+    if (( local_hour >= 12 && local_hour <= 15 )); then
+        daily_icon[$local_date_key]=$weather_id
+    elif [[ -z "${daily_icon[$local_date_key]}" ]]; then
+        daily_icon[$local_date_key]=$weather_id
+    fi
+    temp_min_int=${temp_min%.*}
+    temp_max_int=${temp_max%.*}
+    if [[ -z "${daily_min[$local_date_key]}" ]] || (( temp_min_int < daily_min[$local_date_key] )); then
+        daily_min[$local_date_key]=$temp_min_int
+    fi
+    if [[ -z "${daily_max[$local_date_key]}" ]] || (( temp_max_int > daily_max[$local_date_key] )); then
+        daily_max[$local_date_key]=$temp_max_int
+    fi
+done < <(echo "$FORECAST_RAW_DATA" | jq -r '.list[] | [.dt, .main.temp_min, .main.temp_max, .weather[0].id] | @tsv')
 
-# --- PARSE 6-DAY FORECAST ---
-FORECAST_DATA_RAW=$(echo "$RAW_DATA" | jq -r '
-    .list | group_by(.dt_txt | .[:10]) | .[0:6] |
-    map(
-        { day: (.[0].dt_txt | strptime("%Y-%m-%d %H:%M:%S") | strftime("%a")),
-          min: (map(.main.temp_min) | min | round),
-          max: (map(.main.temp_max) | max | round),
-          id: (.[4].weather[0].id // .[0].weather[0].id) }
-        | "\(.day):\(.min):\(.max):\(.id)"
-    ) | .[]
-')
+# MODIFIED: Build the forecast using a reliable loop that generates the next 5 days.
+TOOLTIP_FORECAST=""
+for i in {1..5}; do
+    # Get the date string for tomorrow, the day after, etc., in YYYY-MM-DD format.
+    date_key=$(date -d "today +$i day" +'%Y-%m-%d')
+    
+    # Check if we have data for this future day in our arrays.
+    if [[ -n "${daily_day_name[$date_key]}" ]]; then
+        day_name=${daily_day_name[$date_key]}
+        min_temp=${daily_min[$date_key]}
+        max_temp=${daily_max[$date_key]}
+        icon_code=${daily_icon[$date_key]}
+        emoji=$(get_emoji $icon_code)
+        
+        TOOLTIP_FORECAST+="${emoji} ${day_name} ${min_temp}° ${max_temp}°\n"
+    fi
+done
+# Remove the final trailing newline character
+TOOLTIP_FORECAST=$(echo -e "${TOOLTIP_FORECAST%\\n}")
 
-# --- Process Today and The Rest of the Forecast Separately ---
-TODAY_RAW=$(echo "$FORECAST_DATA_RAW" | head -n 1)
-IFS=':' read -r day min max id <<< "$TODAY_RAW"
-emoji=$(get_emoji $id)
-TODAY_FORMATTED="${emoji} ${day} ${min}° ${max}°"
-
-REST_RAW=$(echo "$FORECAST_DATA_RAW" | tail -n +2)
-REST_FORMATTED=""
-while IFS= read -r line; do
-    IFS=':' read -r day min max id <<< "$line"
-    emoji=$(get_emoji $id)
-    REST_FORMATTED+="${emoji} ${day} ${min}° ${max}°\n"
-done <<< "$REST_RAW"
-REST_FORMATTED=$(echo -e "${REST_FORMATTED%\\n}")
 
 # --- ASSEMBLE FINAL OUTPUT ---
-TEXT_OUTPUT="$CURRENT_TEMP"
-TOP_LINE="Feels $FEELS_LIKE_TEMP"
-TOOLTIP_TITLE="→ Next 5 Days"
-
-FULL_TOOLTIP="$TOP_LINE\n$CURRENT_CONDITION_TEXT_SHORT\n$TODAY_FORMATTED\n\n$TOOLTIP_TITLE\n$REST_FORMATTED"
+# Added padding-left to TEMP for centering
+TEXT_OUTPUT=" $CURRENT_TEMP"
+TOP_LINE="$CURRENT_EMOJI Feels $FEELS_LIKE_TEMP"
+FULL_TOOLTIP="$TOP_LINE\n$CURRENT_CONDITION_TEXT_SHORT\n$TOOLTIP_FORECAST"
 
 printf '{"text": "%s", "tooltip": "%s"}\n' "$TEXT_OUTPUT" "${FULL_TOOLTIP//$'\n'/\\n}"
