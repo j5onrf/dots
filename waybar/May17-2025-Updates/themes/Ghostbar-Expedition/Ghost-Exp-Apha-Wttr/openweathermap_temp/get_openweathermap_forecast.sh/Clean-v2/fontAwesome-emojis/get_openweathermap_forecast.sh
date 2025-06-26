@@ -66,19 +66,19 @@ CURRENT_CONDITION_RAW_TEXT=$(echo "$WEATHER_RAW_DATA" | jq -r '.weather[0].descr
 CURRENT_ICON_CODE=$(echo "$WEATHER_RAW_DATA" | jq -r '.weather[0].id')
 
 # --- HELPER FUNCTIONS ---
-# MODIFIED: Using Font Awesome 6 Pro Light icons
+# MODIFIED: Using Font Awesome 6 Pro icons
 get_emoji() {
     local code=$1
     case "$code" in
-        800) echo "";;      # fa-sun (Light)
-        801) echo "";;      # fa-cloud-sun (Light)
-        802) echo "";;      # fa-cloud (Light)
-        803|804) echo "";;  # fa-cloud (Light)
-        5*) echo "";;      # fa-cloud-showers-heavy (Light)
-        2*) echo "";;      # fa-cloud-bolt (Light)
-        6*) echo "";;      # fa-snowflake (Light)
-        7*) echo "";;      # fa-smog (Light)
-        *)  echo "";;      # fa-circle-question (Light)
+        800) echo "";;      # fa-sun
+        801) echo "";;      # fa-cloud-sun 
+        802) echo "";;      # fa-cloud
+        803|804) echo "";;  # fa-cloud
+        5*) echo "";;      # fa-cloud-showers-heavy
+        2*) echo "";;      # fa-cloud-bolt
+        6*) echo "";;      # fa-snowflake
+        7*) echo "";;      # fa-smog
+        *)  echo "";;      # fa-circle-question
     esac
 }
 get_short_condition_text() {
