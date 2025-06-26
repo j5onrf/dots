@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Waybar Weather & Forecast Script (Self-Healing & FontAwesome Emoji Version) 2025-06-25
+# Waybar Weather & Forecast Script (Self-Healing & FontAwesome Emoji Version) 2025-06-26
 #
 
 # --- CONFIGURATION ---
