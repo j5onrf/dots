@@ -113,7 +113,7 @@ done <<< "$REST_RAW"
 REST_FORMATTED=$(echo -e "${REST_FORMATTED%\\n}")
 
 # --- ASSEMBLE FINAL OUTPUT ---
-# RESTORED: The thin space for left padding on the temperature.
+# Thin space for left padding on the temperature.
 TEXT_OUTPUT=" $CURRENT_TEMP"
 TOP_LINE="Feels $FEELS_LIKE_TEMP"
 TOOLTIP_TITLE="→ Next 5 Days"
