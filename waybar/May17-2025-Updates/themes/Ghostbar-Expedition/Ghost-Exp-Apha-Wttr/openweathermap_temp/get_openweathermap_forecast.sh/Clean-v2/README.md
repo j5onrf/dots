@@ -1,7 +1,7 @@
 ```jsonc
 Lots of Tweaks to the Tooltip.
 ```
-![2025-06-25T20:50:18,009819464-05:00](https://github.com/user-attachments/assets/05c524bb-6f4b-43ea-957b-67cbb4136d45)
+![2025-06-25T21:23:12,491769536-05:00](https://github.com/user-attachments/assets/edc50a68-69a1-46db-82df-54fa341d7d27)
 
 
 
