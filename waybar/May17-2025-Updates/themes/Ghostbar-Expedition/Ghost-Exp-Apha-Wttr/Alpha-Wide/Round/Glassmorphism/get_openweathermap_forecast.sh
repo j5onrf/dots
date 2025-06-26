@@ -24,7 +24,7 @@ UNITS="imperial" # Options: "metric" for Celsius, "imperial" for Fahrenheit
 # 1. Go to openweathermap.org and search for your city.
 # 2. Click the correct city name in the search results.
 # 3. Look at the URL in your browser's address bar. It will be like this:
-#    https://openweathermap.org/city/000000 <-- This number is your ID
+#    https://openweathermap.org/city/0000000 <-- This number is your ID
 #
 # 4. Copy that number and paste it into the LOCATION_QUERY variable above.
 
