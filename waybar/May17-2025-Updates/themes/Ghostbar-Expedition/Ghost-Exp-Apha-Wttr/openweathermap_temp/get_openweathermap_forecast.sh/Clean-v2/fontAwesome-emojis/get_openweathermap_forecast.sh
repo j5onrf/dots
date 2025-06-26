@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Waybar Weather & Forecast Script (Self-Healing & FA-Emoji Version) 2025-06-25
+# Waybar Weather & Forecast Script (Final Version)
 #
 
 # --- CONFIGURATION ---
@@ -38,8 +38,7 @@ FORECAST_CACHE_FILE="/tmp/waybar_weather_forecast_$(echo -n "$LOCATION_QUERY" | 
 WEATHER_CACHE_TTL=600
 FORECAST_CACHE_TTL=3600
 
-# --- DATA FETCHING & VALIDATION (with improved self-healing) ---
-# MODIFIED: Added '|| [ ! -s ... ]' to force a refresh if the cache file is empty.
+# --- DATA FETCHING & VALIDATION ---
 if ! [ -f "$WEATHER_CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$WEATHER_CACHE_FILE"))) -gt $WEATHER_CACHE_TTL ] || [ ! -s "$WEATHER_CACHE_FILE" ]; then
     curl -sf "$WEATHER_API_URL" > "$WEATHER_CACHE_FILE"
 fi
@@ -92,42 +91,50 @@ get_short_condition_text() {
 CURRENT_CONDITION_TEXT_SHORT=$(get_short_condition_text "$CURRENT_CONDITION_RAW_TEXT")
 CURRENT_EMOJI=$(get_emoji $CURRENT_ICON_CODE)
 
-# --- PARSE 5-DAY FORECAST (Optimized & Robust Bash Loop) ---
-TOOLTIP_FORECAST=$(
-    echo "$FORECAST_RAW_DATA" | jq -r '.list[] | [.dt, .main.temp_min, .main.temp_max, .weather[0].id] | @tsv' | {
-        declare -A daily_min daily_max daily_icon daily_day_name
-        while IFS=$'\t' read -r dt temp_min temp_max weather_id; do
-            local_date_key=$(date -d "@$dt" +'%Y-%m-%d')
-            if [[ -z "${daily_day_name[$local_date_key]}" ]]; then
-                daily_day_name[$local_date_key]=$(date -d "@$dt" +'%a')
-            fi
-            local_hour=$(date -d "@$dt" +'%H')
-            if (( local_hour >= 12 && local_hour <= 15 )); then
-                daily_icon[$local_date_key]=$weather_id
-            elif [[ -z "${daily_icon[$local_date_key]}" ]]; then
-                daily_icon[$local_date_key]=$weather_id
-            fi
-            temp_min_int=${temp_min%.*}
-            temp_max_int=${temp_max%.*}
-            if [[ -z "${daily_min[$local_date_key]}" ]] || (( temp_min_int < daily_min[$local_date_key] )); then
-                daily_min[$local_date_key]=$temp_min_int
-            fi
-            if [[ -z "${daily_max[$local_date_key]}" ]] || (( temp_max_int > daily_max[$local_date_key] )); then
-                daily_max[$local_date_key]=$temp_max_int
-            fi
-        done
+# --- PARSE 5-DAY FORECAST (BULLETPROOF METHOD) ---
+# First, create daily summaries from the API data. This part works fine.
+declare -A daily_min daily_max daily_icon daily_day_name
+while IFS=$'\t' read -r dt temp_min temp_max weather_id; do
+    local_date_key=$(date -d "@$dt" +'%Y-%m-%d')
+    if [[ -z "${daily_day_name[$local_date_key]}" ]]; then
+        daily_day_name[$local_date_key]=$(date -d "@$dt" +'%a')
+    fi
+    local_hour=$(date -d "@$dt" +'%H')
+    if (( local_hour >= 12 && local_hour <= 15 )); then
+        daily_icon[$local_date_key]=$weather_id
+    elif [[ -z "${daily_icon[$local_date_key]}" ]]; then
+        daily_icon[$local_date_key]=$weather_id
+    fi
+    temp_min_int=${temp_min%.*}
+    temp_max_int=${temp_max%.*}
+    if [[ -z "${daily_min[$local_date_key]}" ]] || (( temp_min_int < daily_min[$local_date_key] )); then
+        daily_min[$local_date_key]=$temp_min_int
+    fi
+    if [[ -z "${daily_max[$local_date_key]}" ]] || (( temp_max_int > daily_max[$local_date_key] )); then
+        daily_max[$local_date_key]=$temp_max_int
+    fi
+done < <(echo "$FORECAST_RAW_DATA" | jq -r '.list[] | [.dt, .main.temp_min, .main.temp_max, .weather[0].id] | @tsv')
 
-        day_count=0
-        for date_key in $(echo "${!daily_day_name[@]}" | tr ' ' '\n' | sort | tail -n +2 | head -n 5); do
-            day_name=${daily_day_name[$date_key]}
-            min_temp=${daily_min[$date_key]}
-            max_temp=${daily_max[$date_key]}
-            icon_code=${daily_icon[$date_key]}
-            emoji=$(get_emoji $icon_code)
-            echo "${emoji} ${day_name} ${min_temp}° ${max_temp}°"
-        done
-    }
-)
+# MODIFIED: Build the forecast using a reliable loop that generates the next 5 days.
+TOOLTIP_FORECAST=""
+for i in {1..5}; do
+    # Get the date string for tomorrow, the day after, etc., in YYYY-MM-DD format.
+    date_key=$(date -d "today +$i day" +'%Y-%m-%d')
+    
+    # Check if we have data for this future day in our arrays.
+    if [[ -n "${daily_day_name[$date_key]}" ]]; then
+        day_name=${daily_day_name[$date_key]}
+        min_temp=${daily_min[$date_key]}
+        max_temp=${daily_max[$date_key]}
+        icon_code=${daily_icon[$date_key]}
+        emoji=$(get_emoji $icon_code)
+        
+        TOOLTIP_FORECAST+="${emoji} ${day_name} ${min_temp}° ${max_temp}°\n"
+    fi
+done
+# Remove the final trailing newline character
+TOOLTIP_FORECAST=$(echo -e "${TOOLTIP_FORECAST%\\n}")
+
 
 # --- ASSEMBLE FINAL OUTPUT ---
 TEXT_OUTPUT=" $CURRENT_TEMP"
