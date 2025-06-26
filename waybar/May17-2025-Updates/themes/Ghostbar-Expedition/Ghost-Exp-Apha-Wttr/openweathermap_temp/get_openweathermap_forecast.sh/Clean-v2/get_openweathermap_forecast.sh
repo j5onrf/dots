@@ -60,8 +60,6 @@ get_short_condition_text() {
 CURRENT_CONDITION_TEXT_SHORT=$(get_short_condition_text "$CURRENT_CONDITION_RAW_TEXT")
 
 # --- PARSE FORECAST (NEW ROBUST METHOD) ---
-# This block uses basic bash and the system `date` command to build a correct forecast,
-# avoiding all the previous bugs.
 declare -A daily_min daily_max daily_icon daily_day_name
 while IFS=$'\t' read -r dt temp_min temp_max weather_id; do
     local_date_key=$(date -d "@$dt" +'%Y-%m-%d')
@@ -97,7 +95,7 @@ for date_key in $(echo "${!daily_day_name[@]}" | tr ' ' '\n' | sort); do
     fi
 done
 
-# --- YOUR ORIGINAL PARSING LOGIC (NOW RECEIVES CORRECT DATA) ---
+# --- PARSING LOGIC ---
 TODAY_RAW=$(echo -e "$FORECAST_DATA_RAW" | head -n 1)
 IFS=':' read -r day min max id <<< "$TODAY_RAW"
 emoji=$(get_emoji $id)
