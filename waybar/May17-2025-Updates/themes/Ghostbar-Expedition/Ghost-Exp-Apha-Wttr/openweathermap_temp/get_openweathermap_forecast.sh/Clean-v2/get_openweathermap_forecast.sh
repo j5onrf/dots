@@ -12,10 +12,12 @@ API_URL="http://api.openweathermap.org/data/2.5/forecast?id=${LOCATION_QUERY}&ap
 CACHE_FILE="/tmp/waybar_weather_cache.json"
 CACHE_TTL=1800
 
+# Superior self-healing cache logic.
 if ! [ -f "$CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$CACHE_FILE"))) -gt $CACHE_TTL ] || [ ! -s "$CACHE_FILE" ]; then
     curl -sf "$API_URL" > "$CACHE_FILE"
 fi
 
+# Final safety net check.
 if [ ! -s "$CACHE_FILE" ]; then
     printf '{"text": "ERR", "tooltip": "Weather data fetch failed."}\n'
     exit 1
@@ -59,7 +61,7 @@ get_short_condition_text() {
 
 CURRENT_CONDITION_TEXT_SHORT=$(get_short_condition_text "$CURRENT_CONDITION_RAW_TEXT")
 
-# --- PARSE FORECAST (NEW ROBUST METHOD) ---
+# --- PARSE FORECAST (TIMEZONE-CORRECT, ROBUST METHOD) ---
 declare -A daily_min daily_max daily_icon daily_day_name
 while IFS=$'\t' read -r dt temp_min temp_max weather_id; do
     local_date_key=$(date -d "@$dt" +'%Y-%m-%d')
@@ -111,7 +113,8 @@ done <<< "$REST_RAW"
 REST_FORMATTED=$(echo -e "${REST_FORMATTED%\\n}")
 
 # --- ASSEMBLE FINAL OUTPUT ---
-TEXT_OUTPUT="$CURRENT_TEMP"
+# RESTORED: The thin space for left padding on the temperature.
+TEXT_OUTPUT=" $CURRENT_TEMP"
 TOP_LINE="Feels $FEELS_LIKE_TEMP"
 TOOLTIP_TITLE="→ Next 5 Days"
 
