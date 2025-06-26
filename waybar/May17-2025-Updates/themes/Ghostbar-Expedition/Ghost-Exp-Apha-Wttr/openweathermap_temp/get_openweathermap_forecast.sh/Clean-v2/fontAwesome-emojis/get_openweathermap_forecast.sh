@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Waybar Weather & Forecast Script (Final Version)
+# Waybar Weather & Forecast Script (Self-Healing & FontAwesome Emoji Version) 2025-06-25
 #
 
 # --- CONFIGURATION ---
@@ -39,6 +39,7 @@ WEATHER_CACHE_TTL=600
 FORECAST_CACHE_TTL=3600
 
 # --- DATA FETCHING & VALIDATION ---
+# This block contains your self-healing logic.
 if ! [ -f "$WEATHER_CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$WEATHER_CACHE_FILE"))) -gt $WEATHER_CACHE_TTL ] || [ ! -s "$WEATHER_CACHE_FILE" ]; then
     curl -sf "$WEATHER_API_URL" > "$WEATHER_CACHE_FILE"
 fi
@@ -92,7 +93,6 @@ CURRENT_CONDITION_TEXT_SHORT=$(get_short_condition_text "$CURRENT_CONDITION_RAW_
 CURRENT_EMOJI=$(get_emoji $CURRENT_ICON_CODE)
 
 # --- PARSE 5-DAY FORECAST (BULLETPROOF METHOD) ---
-# First, create daily summaries from the API data. This part works fine.
 declare -A daily_min daily_max daily_icon daily_day_name
 while IFS=$'\t' read -r dt temp_min temp_max weather_id; do
     local_date_key=$(date -d "@$dt" +'%Y-%m-%d')
