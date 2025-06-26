@@ -63,7 +63,6 @@
         "orientation": "inherit",
         "drawer": {
             "transition-duration": 200,
-            "children-class": "not-memory",
             "transition-left-to-right": true
         },
         "modules": [
@@ -79,7 +78,6 @@
         "orientation": "inherit",
         "drawer": {
             "transition-duration": 200,
-            "children-class": "not-memory",
             "transition-left-to-right": false
         },
         "modules": [
