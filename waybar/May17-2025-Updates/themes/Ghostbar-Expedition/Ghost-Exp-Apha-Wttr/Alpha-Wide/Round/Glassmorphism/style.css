@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  Ghost-Glassmorphism (Optimized) 2025-06-25
+ *  Ghost-Glassmorphism (Optimized) 2025-06-26
  */
 
 @import 'ghost-matugen.css';
@@ -83,8 +83,11 @@ window#waybar {
 /* Clock & Weather - Specific Fonts */
 #clock,
 #custom-weather {
-    font-family: "SF Mono", "Font Awesome 6 Pro Light", monospace;
+    font-family: "SF Mono", "Font Awesome 6 Pro", monospace;
     font-size: 0.857em;
+}
+#custom-weather {
+    padding-left: 0.2em;
 }
 
 /* System Monitors - Specific Fonts and Colors */
