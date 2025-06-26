@@ -3,7 +3,7 @@ FontAwesome-Pro Weather Emoji's
 
 #clock,
 #custom-weather {
-    font-family: "SF Mono", "Font Awesome 6 Pro Light", monospace;
+    font-family: "SF Mono", "Font Awesome 6 Pro Thin", monospace;
     font-size: 0.857em;
 }
 
