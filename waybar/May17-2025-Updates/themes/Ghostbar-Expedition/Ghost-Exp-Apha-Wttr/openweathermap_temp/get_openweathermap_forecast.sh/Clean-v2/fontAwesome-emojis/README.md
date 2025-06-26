@@ -1,5 +1,5 @@
 ```jsonc
-FontAwsome-Pro Weather Emojis
+FontAwsome-Pro Weather Emoji's
 
 #clock,
 #custom-weather {
