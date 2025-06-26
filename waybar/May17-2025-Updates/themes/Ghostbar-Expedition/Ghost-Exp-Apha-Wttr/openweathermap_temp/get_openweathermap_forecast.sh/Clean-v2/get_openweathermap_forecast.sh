@@ -5,20 +5,38 @@
 # A robust script to display current temperature and a multi-day forecast
 # for Waybar, optimized for reliability and clear configuration.
 #
-# GitHub: https://github.com/j5onrf/dots
 # Author: j5onrf
-#
-# ~/.config/hypr/scripts/get_openweathermap_forecast.sh
+# Path: ~/.config/hypr/scripts/get_openweathermap_forecast.sh
 
 # --- CONFIGURATION ---
-API_KEY="your-api-key"
-# MODIFIED: Using the city ID for a more reliable location lookup.
-LOCATION_QUERY="0000000"
-UNITS="imperial"
+# You MUST configure the 3 settings in this section to use the script.
 
-# --- SCRIPT LOGIC ---
+# 1. API_KEY: Get your free API key from https://openweathermap.org/
+API_KEY="YOUR_API_KEY_HERE"
+
+# 2. LOCATION_QUERY: Set this to your unique City ID.
+#    (See instructions below on how to find your ID)
+LOCATION_QUERY="0000000" # <-- Replace with your City ID
+
+# 3. UNITS: Choose your preferred measurement system.
+UNITS="imperial" # Options: "metric" for Celsius, "imperial" for Fahrenheit
+
+
+# --- HOW TO FIND YOUR CITY ID ---
+# This script requires a City ID for the fastest and most reliable weather lookup.
+#
+# 1. Go to openweathermap.org and search for your city.
+# 2. Click the correct city name in the search results.
+# 3. Look at the URL in your browser's address bar. It will be like this:
+#    https://openweathermap.org/city/0000000  <-- This number is your ID
+#
+# 4. Copy that number and paste it into the LOCATION_QUERY variable above.
+
+
+# --- SCRIPT SETUP (Do not edit below this line) ---
 API_URL="http://api.openweathermap.org/data/2.5/forecast?id=${LOCATION_QUERY}&appid=${API_KEY}&units=${UNITS}"
-CACHE_FILE="/tmp/waybar_weather_cache.json"
+# Create a unique cache file based on location to support multiple instances
+CACHE_FILE="/tmp/waybar_weather_$(echo -n "$LOCATION_QUERY" | md5sum | cut -d' ' -f1).json"
 CACHE_TTL=1800
 
 # Superior self-healing cache logic.
