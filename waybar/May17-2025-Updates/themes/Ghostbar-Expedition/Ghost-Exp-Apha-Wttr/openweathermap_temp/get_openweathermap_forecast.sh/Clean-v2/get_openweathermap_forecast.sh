@@ -63,7 +63,6 @@ fi
 CURRENT_TEMP=$(echo "$WEATHER_RAW_DATA" | jq '.main.temp' | awk '{printf "%.0f°", $1}')
 FEELS_LIKE_TEMP=$(echo "$WEATHER_RAW_DATA" | jq '.main.feels_like' | awk '{printf "%.0f°", $1}')
 CURRENT_CONDITION_RAW_TEXT=$(echo "$WEATHER_RAW_DATA" | jq -r '.weather[0].description')
-# MODIFIED: Get the icon code for the current weather
 CURRENT_ICON_CODE=$(echo "$WEATHER_RAW_DATA" | jq -r '.weather[0].id')
 
 # --- HELPER FUNCTIONS ---
@@ -85,7 +84,6 @@ get_short_condition_text() {
     esac
 }
 CURRENT_CONDITION_TEXT_SHORT=$(get_short_condition_text "$CURRENT_CONDITION_RAW_TEXT")
-# MODIFIED: Get the emoji for the current weather
 CURRENT_EMOJI=$(get_emoji $CURRENT_ICON_CODE)
 
 # --- PARSE 5-DAY FORECAST (Optimized & Robust Bash Loop) ---
@@ -127,10 +125,6 @@ TOOLTIP_FORECAST=$(
 
 # --- ASSEMBLE FINAL OUTPUT ---
 TEXT_OUTPUT=" $CURRENT_TEMP"
-# MODIFIED: Added the current weather emoji to the "Feels Like" line
 TOP_LINE="$CURRENT_EMOJI Feels $FEELS_LIKE_TEMP"
-TOOLTIP_TITLE="→ Next 5 Days"
-
-FULL_TOOLTIP="$TOP_LINE\n$CURRENT_CONDITION_TEXT_SHORT\n\n$TOOLTIP_TITLE\n$TOOLTIP_FORECAST"
-
+FULL_TOOLTIP="$TOP_LINE\n$CURRENT_CONDITION_TEXT_SHORT\n$TOOLTIP_FORECAST"
 printf '{"text": "%s", "tooltip": "%s"}\n' "$TEXT_OUTPUT" "${FULL_TOOLTIP//$'\n'/\\n}"
