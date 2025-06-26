@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  Ghost-Glassmorphism (Optimized) 2025-06-23
+ *  Ghost-Glassmorphism (Optimized) 2025-06-25
  */
 
 @import 'ghost-matugen.css';
@@ -33,7 +33,7 @@ window#waybar {
 #custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification,
 #cpu, #memory, #custom-updates,
 #custom-appmenu, #custom-exit,
-#clock, #custom-temperature_wttr {
+#clock, #custom-weather {
     color: @primary;
     border-radius: 0.8em;
     margin: 0.2em;
@@ -48,7 +48,7 @@ window#waybar {
 #custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
 #cpu:hover, #memory:hover, #custom-updates:hover,
 #custom-appmenu:hover, #custom-exit:hover,
-#clock:hover, #custom-temperature_wttr:hover {
+#clock:hover, #custom-weather:hover {
     background-color: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.4);
  /* background-color: alpha(@primary, 0.30);
@@ -80,10 +80,10 @@ window#waybar {
     opacity: 1;
 }
 
-/* Clock & Weather - Specific Fonts and Alignment */
+/* Clock & Weather - Specific Fonts */
 #clock,
-#custom-temperature_wttr {
-    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
+#custom-weather {
+    font-family: "SF Mono", "Font Awesome 6 Pro Light", monospace;
     font-size: 0.857em;
 }
 
