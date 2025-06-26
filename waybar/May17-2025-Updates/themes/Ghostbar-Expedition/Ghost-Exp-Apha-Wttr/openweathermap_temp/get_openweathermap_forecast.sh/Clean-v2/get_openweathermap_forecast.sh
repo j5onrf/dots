@@ -4,9 +4,29 @@
 #
 
 # --- CONFIGURATION ---
-API_KEY="your-api-key"
-LOCATION_QUERY="0000000"
-UNITS="imperial"
+# You MUST configure the 3 settings in this section to use the script.
+
+# 1. API_KEY: Get your free API key from https://openweathermap.org/
+API_KEY="YOUR_API_KEY_HERE"
+
+# 2. LOCATION_QUERY: Set this to your unique City ID.
+#    (See instructions in the "HOW-TO" section below this block)
+LOCATION_QUERY="0000000" # <-- Replace with your City ID
+
+# 3. UNITS: Choose your preferred measurement system.
+UNITS="imperial" # Options: "metric" for Celsius, "imperial" for Fahrenheit
+
+
+# --- HOW TO FIND YOUR CITY ID (for LOCATION_QUERY) ---
+# This script is optimized to use a City ID for the fastest and most reliable
+# weather lookup.
+#
+# 1. Go to openweathermap.org and search for your city.
+# 2. Click the correct city name in the search results.
+# 3. Look at the URL in your browser's address bar. It will be like this:
+#    https://openweathermap.org/city/0000000  <-- This number is your ID
+#
+# 4. Copy that number and paste it into the LOCATION_QUERY variable above.
 
 # --- SCRIPT SETUP ---
 WEATHER_API_URL="http://api.openweathermap.org/data/2.5/weather?id=${LOCATION_QUERY}&appid=${API_KEY}&units=${UNITS}"
@@ -47,7 +67,6 @@ CURRENT_CONDITION_RAW_TEXT=$(echo "$WEATHER_RAW_DATA" | jq -r '.weather[0].descr
 CURRENT_ICON_CODE=$(echo "$WEATHER_RAW_DATA" | jq -r '.weather[0].id')
 
 # --- HELPER FUNCTIONS ---
-# MODIFIED: Moved get_emoji here to be a global helper function
 get_emoji() {
     local code=$1
     case "$code" in
