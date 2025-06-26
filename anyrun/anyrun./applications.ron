@@ -1,9 +1,0 @@
-Config(
-  desktop_actions: true, // Or false, your preference
-  max_entries: 10,       // Or your preferred number, e.g., 5
-  terminal: Some(Terminal(
-    command: "kitty", // Or your terminal
-    args: "-e {}",
-  )),
-  sort_by_usage: true, // This is good for seeing recent/frequent apps
-)
