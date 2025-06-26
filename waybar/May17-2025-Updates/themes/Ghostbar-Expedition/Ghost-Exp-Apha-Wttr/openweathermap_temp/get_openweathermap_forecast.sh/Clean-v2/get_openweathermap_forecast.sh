@@ -28,6 +28,7 @@ UNITS="imperial" # Options: "metric" for Celsius, "imperial" for Fahrenheit
 #
 # 4. Copy that number and paste it into the LOCATION_QUERY variable above.
 
+
 # --- SCRIPT SETUP ---
 WEATHER_API_URL="http://api.openweathermap.org/data/2.5/weather?id=${LOCATION_QUERY}&appid=${API_KEY}&units=${UNITS}"
 FORECAST_API_URL="http://api.openweathermap.org/data/2.5/forecast?id=${LOCATION_QUERY}&appid=${API_KEY}&units=${UNITS}"
@@ -74,12 +75,30 @@ get_emoji() {
         *)  echo "";;
     esac
 }
+# Superior, more detailed condition text function
 get_short_condition_text() {
-    local full_desc_capitalized=$(echo "$1" | sed -e "s/\b\(.\)/\u\1/g")
+    local full_desc_raw="$1"
+    local full_desc_capitalized=$(echo "$full_desc_raw" | sed -e "s/\b\(.\)/\u\1/g")
     case "$full_desc_capitalized" in
+        "Clear Sky") echo "Clear Sky";;
+        "Few Clouds") echo "Few Clouds";;
         "Scattered Clouds") echo "Scat. Clouds";;
         "Broken Clouds") echo "Brkn. Clouds";;
         "Overcast Clouds") echo "Ovr. Clouds";;
+        "Light Rain") echo "Light Rain";;
+        "Moderate Rain") echo "Mod. Rain";;
+        "Heavy Intensity Rain") echo "Hvy. Rain";;
+        "Very Heavy Rain") echo "V. Hvy Rain";;
+        "Extreme Rain") echo "Ext. Rain";;
+        "Freezing Rain") echo "Frz. Rain";;
+        "Thunderstorm With Light Rain") echo "T-Storm Rain";;
+        "Thunderstorm With Rain") echo "T-Storm Rain";;
+        "Thunderstorm With Heavy Rain") echo "T-Storm HvyR";;
+        "Thunderstorm") echo "T-Storm";;
+        "Light Snow") echo "Light Snow";;
+        "Heavy Snow") echo "Hvy. Snow";;
+        "Sleet") echo "Sleet";;
+        "Mist" | "Fog" | "Haze" | "Smoke" | "Dust" | "Sand" | "Ash" | "Squall" | "Tornado") echo "$full_desc_capitalized";;
         *) echo "$full_desc_capitalized";;
     esac
 }
@@ -127,4 +146,5 @@ TOOLTIP_FORECAST=$(
 TEXT_OUTPUT=" $CURRENT_TEMP"
 TOP_LINE="$CURRENT_EMOJI Feels $FEELS_LIKE_TEMP"
 FULL_TOOLTIP="$TOP_LINE\n$CURRENT_CONDITION_TEXT_SHORT\n$TOOLTIP_FORECAST"
+
 printf '{"text": "%s", "tooltip": "%s"}\n' "$TEXT_OUTPUT" "${FULL_TOOLTIP//$'\n'/\\n}"
