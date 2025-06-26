@@ -1,4 +1,13 @@
 #!/bin/bash
+#
+# Waybar Weather & Forecast Script
+#
+# A robust script to display current temperature and a multi-day forecast
+# for Waybar, optimized for reliability and clear configuration.
+#
+# GitHub: https://github.com/j5onrf/dots
+# Author: j5onrf
+#
 # ~/.config/hypr/scripts/get_openweathermap_forecast.sh
 
 # --- CONFIGURATION ---
