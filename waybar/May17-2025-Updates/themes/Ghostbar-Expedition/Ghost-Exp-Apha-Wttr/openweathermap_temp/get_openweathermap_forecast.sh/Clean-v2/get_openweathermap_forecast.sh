@@ -2,23 +2,20 @@
 # ~/.config/hypr/scripts/get_openweathermap_forecast.sh
 
 # --- CONFIGURATION ---
-API_KEY="api-key"
+API_KEY="your-api-key"
 # MODIFIED: Using the city ID for a more reliable location lookup.
 LOCATION_QUERY="0000000"
 UNITS="imperial"
 
 # --- SCRIPT LOGIC ---
-# MODIFIED: Changed the query parameter from 'q=' to 'id='
 API_URL="http://api.openweathermap.org/data/2.5/forecast?id=${LOCATION_QUERY}&appid=${API_KEY}&units=${UNITS}"
 CACHE_FILE="/tmp/waybar_weather_cache.json"
 CACHE_TTL=1800
 
-# Self-healing logic: force a refresh if the cache is old, missing, or empty.
 if ! [ -f "$CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$CACHE_FILE"))) -gt $CACHE_TTL ] || [ ! -s "$CACHE_FILE" ]; then
     curl -sf "$API_URL" > "$CACHE_FILE"
 fi
 
-# Final safety net check.
 if [ ! -s "$CACHE_FILE" ]; then
     printf '{"text": "ERR", "tooltip": "Weather data fetch failed."}\n'
     exit 1
@@ -62,26 +59,51 @@ get_short_condition_text() {
 
 CURRENT_CONDITION_TEXT_SHORT=$(get_short_condition_text "$CURRENT_CONDITION_RAW_TEXT")
 
+# --- PARSE FORECAST (NEW ROBUST METHOD) ---
+# This block uses basic bash and the system `date` command to build a correct forecast,
+# avoiding all the previous bugs.
+declare -A daily_min daily_max daily_icon daily_day_name
+while IFS=$'\t' read -r dt temp_min temp_max weather_id; do
+    local_date_key=$(date -d "@$dt" +'%Y-%m-%d')
+    if [[ -z "${daily_day_name[$local_date_key]}" ]]; then
+        daily_day_name[$local_date_key]=$(date -d "@$dt" +'%a')
+    fi
+    local_hour=$(date -d "@$dt" +'%H')
+    if (( local_hour >= 12 && local_hour <= 15 )); then
+        daily_icon[$local_date_key]=$weather_id
+    elif [[ -z "${daily_icon[$local_date_key]}" ]]; then
+        daily_icon[$local_date_key]=$weather_id
+    fi
+    temp_min_int=${temp_min%.*}
+    temp_max_int=${temp_max%.*}
+    if [[ -z "${daily_min[$local_date_key]}" ]] || (( temp_min_int < daily_min[$local_date_key] )); then
+        daily_min[$local_date_key]=$temp_min_int
+    fi
+    if [[ -z "${daily_max[$local_date_key]}" ]] || (( temp_max_int > daily_max[$local_date_key] )); then
+        daily_max[$local_date_key]=$temp_max_int
+    fi
+done < <(echo "$RAW_DATA" | jq -r '.list[] | [.dt, .main.temp_min, .main.temp_max, .weather[0].id] | @tsv')
 
-# --- PARSE 6-DAY FORECAST ---
-FORECAST_DATA_RAW=$(echo "$RAW_DATA" | jq -r '
-    .list | group_by(.dt_txt | .[:10]) | .[0:6] |
-    map(
-        { day: (.[0].dt_txt | strptime("%Y-%m-%d %H:%M:%S") | strftime("%a")),
-          min: (map(.main.temp_min) | min | round),
-          max: (map(.main.temp_max) | max | round),
-          id: (.[4].weather[0].id // .[0].weather[0].id) }
-        | "\(.day):\(.min):\(.max):\(.id)"
-    ) | .[]
-')
+FORECAST_DATA_RAW=""
+day_count=0
+for date_key in $(echo "${!daily_day_name[@]}" | tr ' ' '\n' | sort); do
+    if (( day_count < 6 )); then
+        day_name=${daily_day_name[$date_key]}
+        min_temp=${daily_min[$date_key]}
+        max_temp=${daily_max[$date_key]}
+        icon_code=${daily_icon[$date_key]}
+        FORECAST_DATA_RAW+="${day_name}:${min_temp}:${max_temp}:${icon_code}\n"
+        ((day_count++))
+    fi
+done
 
-# --- Process Today and The Rest of the Forecast Separately ---
-TODAY_RAW=$(echo "$FORECAST_DATA_RAW" | head -n 1)
+# --- YOUR ORIGINAL PARSING LOGIC (NOW RECEIVES CORRECT DATA) ---
+TODAY_RAW=$(echo -e "$FORECAST_DATA_RAW" | head -n 1)
 IFS=':' read -r day min max id <<< "$TODAY_RAW"
 emoji=$(get_emoji $id)
 TODAY_FORMATTED="${emoji} ${day} ${min}° ${max}°"
 
-REST_RAW=$(echo "$FORECAST_DATA_RAW" | tail -n +2)
+REST_RAW=$(echo -e "$FORECAST_DATA_RAW" | tail -n +2)
 REST_FORMATTED=""
 while IFS= read -r line; do
     IFS=':' read -r day min max id <<< "$line"
