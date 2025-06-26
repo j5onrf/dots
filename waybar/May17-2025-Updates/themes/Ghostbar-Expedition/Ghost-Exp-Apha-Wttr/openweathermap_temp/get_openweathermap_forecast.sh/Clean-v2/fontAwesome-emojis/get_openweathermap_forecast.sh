@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Waybar Weather & Forecast Script (Final Version)
+# Waybar Weather & Forecast Script (Final Self-Healing & FA-Emoji Version)
 #
 
 # --- CONFIGURATION ---
@@ -38,7 +38,8 @@ FORECAST_CACHE_FILE="/tmp/waybar_weather_forecast_$(echo -n "$LOCATION_QUERY" | 
 WEATHER_CACHE_TTL=600
 FORECAST_CACHE_TTL=3600
 
-# --- DATA FETCHING & VALIDATION ---
+# --- DATA FETCHING & VALIDATION (with improved self-healing) ---
+# MODIFIED: Added '|| [ ! -s ... ]' to force a refresh if the cache file is empty.
 if ! [ -f "$WEATHER_CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$WEATHER_CACHE_FILE"))) -gt $WEATHER_CACHE_TTL ] || [ ! -s "$WEATHER_CACHE_FILE" ]; then
     curl -sf "$WEATHER_API_URL" > "$WEATHER_CACHE_FILE"
 fi
@@ -66,43 +67,24 @@ CURRENT_CONDITION_RAW_TEXT=$(echo "$WEATHER_RAW_DATA" | jq -r '.weather[0].descr
 CURRENT_ICON_CODE=$(echo "$WEATHER_RAW_DATA" | jq -r '.weather[0].id')
 
 # --- HELPER FUNCTIONS ---
-# MODIFIED: Using Font Awesome 6 Pro icons
 get_emoji() {
     local code=$1
     case "$code" in
-        800) echo "";;      # fa-sun
-        801) echo "";;      # fa-cloud-sun 
-        802) echo "";;      # fa-cloud
-        803|804) echo "";;  # fa-cloud
-        5*) echo "";;      # fa-cloud-showers-heavy
-        2*) echo "";;      # fa-cloud-bolt
-        6*) echo "";;      # fa-snowflake
-        7*) echo "";;      # fa-smog
-        *)  echo "";;      # fa-circle-question
+        800) echo "";; 801) echo "";; 802) echo "";; 803|804) echo "";;
+        5*) echo "";;  2*) echo "";;  6*) echo "";;  7*) echo "";;
+        *)  echo "";;
     esac
 }
 get_short_condition_text() {
     local full_desc_raw="$1"
     local full_desc_capitalized=$(echo "$full_desc_raw" | sed -e "s/\b\(.\)/\u\1/g")
     case "$full_desc_capitalized" in
-        "Clear Sky") echo "Clear Sky";;
-        "Few Clouds") echo "Few Clouds";;
-        "Scattered Clouds") echo "Scat. Clouds";;
-        "Broken Clouds") echo "Brkn. Clouds";;
-        "Overcast Clouds") echo "Ovr. Clouds";;
-        "Light Rain") echo "Light Rain";;
-        "Moderate Rain") echo "Mod. Rain";;
-        "Heavy Intensity Rain") echo "Hvy. Rain";;
-        "Very Heavy Rain") echo "V. Hvy Rain";;
-        "Extreme Rain") echo "Ext. Rain";;
-        "Freezing Rain") echo "Frz. Rain";;
-        "Thunderstorm With Light Rain") echo "T-Storm Rain";;
-        "Thunderstorm With Rain") echo "T-Storm Rain";;
-        "Thunderstorm With Heavy Rain") echo "T-Storm HvyR";;
-        "Thunderstorm") echo "T-Storm";;
-        "Light Snow") echo "Light Snow";;
-        "Heavy Snow") echo "Hvy. Snow";;
-        "Sleet") echo "Sleet";;
+        "Clear Sky") echo "Clear Sky";; "Few Clouds") echo "Few Clouds";; "Scattered Clouds") echo "Scat. Clouds";;
+        "Broken Clouds") echo "Brkn. Clouds";; "Overcast Clouds") echo "Ovr. Clouds";; "Light Rain") echo "Light Rain";;
+        "Moderate Rain") echo "Mod. Rain";; "Heavy Intensity Rain") echo "Hvy. Rain";; "Very Heavy Rain") echo "V. Hvy Rain";;
+        "Extreme Rain") echo "Ext. Rain";; "Freezing Rain") echo "Frz. Rain";; "Thunderstorm With Light Rain") echo "T-Storm Rain";;
+        "Thunderstorm With Rain") echo "T-Storm Rain";; "Thunderstorm With Heavy Rain") echo "T-Storm HvyR";; "Thunderstorm") echo "T-Storm";;
+        "Light Snow") echo "Light Snow";; "Heavy Snow") echo "Hvy. Snow";; "Sleet") echo "Sleet";;
         "Mist" | "Fog" | "Haze" | "Smoke" | "Dust" | "Sand" | "Ash" | "Squall" | "Tornado") echo "$full_desc_capitalized";;
         *) echo "$full_desc_capitalized";;
     esac
@@ -150,7 +132,6 @@ TOOLTIP_FORECAST=$(
 # --- ASSEMBLE FINAL OUTPUT ---
 TEXT_OUTPUT=" $CURRENT_TEMP"
 TOP_LINE="$CURRENT_EMOJI Feels $FEELS_LIKE_TEMP"
-
 FULL_TOOLTIP="$TOP_LINE\n$CURRENT_CONDITION_TEXT_SHORT\n$TOOLTIP_FORECAST"
 
 printf '{"text": "%s", "tooltip": "%s"}\n' "$TEXT_OUTPUT" "${FULL_TOOLTIP//$'\n'/\\n}"
