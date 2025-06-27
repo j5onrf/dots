@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W base
-//  Ghost-Glassmorphism 2025-06-26
+//  Ghost-Glassmorphism 2025-06-27
 
     // --- CORE WORKFLOW MODULES ---
 {
@@ -181,6 +181,7 @@
         "format-low": "{usage}",
         "on-click": "kitty -e htop --sort-key PERCENT_CPU",
         "tooltip": false,
+        "interval": 5,
         "states": {
             "critical": 80,
             "high": 50,
@@ -203,7 +204,7 @@
         "on-click-right": "~/.config/ml4w/settings/software.sh"
     },
     "pulseaudio": {
-        "scroll-step": 3,
+        "scroll-step": 5,
         "format": "{icon}",
         "format-icons": {
             "default": ["\uf8f2"]
@@ -214,11 +215,15 @@
     },
     "network": {
         "format": "{ifname}",
-        "format-ethernet": "\uf1eb",
-        "format-disconnected": "\uf6ac",
-        "tooltip": false,
+        "format-ethernet": "\uf8dd",
+        "format-disconnected": "\ue250",
+        "tooltip": true,
+        "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 20,
+        "interval": 3,
+        "nospacing": 1,
         "on-click": "nm-connection-editor",
         "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
     },
