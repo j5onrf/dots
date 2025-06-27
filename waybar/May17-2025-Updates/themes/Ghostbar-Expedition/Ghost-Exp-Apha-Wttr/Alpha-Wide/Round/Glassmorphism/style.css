@@ -125,7 +125,6 @@ window#waybar {
 /* --- Tooltips --- */
 tooltip {
     font-family: "SF Mono", "Font Awesome 6 Pro", monospace;
-    font-weight: 400;
     background-color: @ghost_bar_background;
     padding: 0.8em;
     opacity: 0.95;
