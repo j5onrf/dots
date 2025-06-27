@@ -7,7 +7,7 @@
 # You MUST configure the 3 settings in this section to use the script.
 
 # 1. API_KEY: Get your free API key from https://openweathermap.org/
-API_KEY="your-api-key-here"
+API_KEY="your-api-key"
 
 # 2. LOCATION_QUERY: Set this to your unique City ID.
 #    (See instructions in the "HOW-TO" section below this block)
@@ -39,7 +39,6 @@ WEATHER_CACHE_TTL=600
 FORECAST_CACHE_TTL=3600
 
 # --- DATA FETCHING & VALIDATION ---
-# This block contains your self-healing logic.
 if ! [ -f "$WEATHER_CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$WEATHER_CACHE_FILE"))) -gt $WEATHER_CACHE_TTL ] || [ ! -s "$WEATHER_CACHE_FILE" ]; then
     curl -sf "$WEATHER_API_URL" > "$WEATHER_CACHE_FILE"
 fi
@@ -70,7 +69,7 @@ CURRENT_ICON_CODE=$(echo "$WEATHER_RAW_DATA" | jq -r '.weather[0].id')
 get_emoji() {
     local code=$1
     case "$code" in
-        800) echo "";; 801) echo "";; 802) echo "";; 803|804) echo "";;
+        800) echo "";; 801) echo "";; 802) echo " ";; 803|804) echo " ";;
         5*) echo "";;  2*) echo "";;  6*) echo "";;  7*) echo "";;
         *)  echo "";;
     esac
