@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  Ghost-Glassmorphism (Compact) 2025-06-25
+ *  Ghost-Glassmorphism (Compact) 2025-06-27
  */
 
 @import 'ghost-matugen.css';
@@ -23,6 +23,7 @@ window#waybar {
     border-radius: 0.4em;
     margin: 8px;
     padding: 2px;
+    min-width: 1.95em;
     background-color: rgba(50, 50, 50, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.2);
     /* Softer shadow for a more 'Apple-like' depth effect */
