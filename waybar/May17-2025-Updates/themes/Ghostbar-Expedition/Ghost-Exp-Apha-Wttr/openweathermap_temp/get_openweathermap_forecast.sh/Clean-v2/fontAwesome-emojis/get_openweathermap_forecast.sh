@@ -69,7 +69,7 @@ CURRENT_ICON_CODE=$(echo "$WEATHER_RAW_DATA" | jq -r '.weather[0].id')
 get_emoji() {
     local code=$1
     case "$code" in
-        800) echo "";; 801) echo "";; 802) echo " ";; 803|804) echo " ";;
+        800) echo "";; 801) echo "";; 802) echo "";; 803|804) echo "";;
         5*) echo "";;  2*) echo "";;  6*) echo "";;  7*) echo "";;
         *)  echo "";;
     esac
