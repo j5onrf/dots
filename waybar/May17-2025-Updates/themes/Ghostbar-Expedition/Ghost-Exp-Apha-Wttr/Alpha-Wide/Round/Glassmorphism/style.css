@@ -47,7 +47,7 @@ window#waybar {
 #workspaces button:hover, #workspaces button.active,
 #pulseaudio:hover, #custom-cliphist:hover, #custom-hyprshade:hover, #network:hover, #tray:hover,
 #custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
-#cpu:hover, #memory:hover, #custom-updates:hover, #custom-settings:hover, #custom-system:hover,
+#cpu:hover, #memory:hover, #custom-updates:hover,
 #custom-appmenu:hover, #custom-exit:hover,
 #clock:hover, #custom-weather:hover {
     background-color: rgba(255, 255, 255, 0.25);
@@ -73,7 +73,6 @@ window#waybar {
 #custom-system {
     color: @ghost_text_primary;
     font-size: 0.5em;
-    padding: 0.4em;
     opacity: 0;
 }
 #custom-settings:hover,
@@ -125,7 +124,7 @@ window#waybar {
 
 /* --- Tooltips --- */
 tooltip {
-        font-family: "SF Mono", "Font Awesome 6 Pro", monospace;
+    font-family: "SF Mono", "Font Awesome 6 Pro", monospace;
     font-weight: 300;
     background-color: @ghost_bar_background;
     padding: 0.8em;
