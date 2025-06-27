@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W base
-//  ghost-glass-v3.jsonc (beta) 2025-06-24
+//  ghost-glass-v3.jsonc (beta) 2025-06-26
 
     // --- CORE WORKFLOW MODULES ---
 {
@@ -171,15 +171,6 @@
     },
     
     // --- SYSTEM STATUS & SERVICE MODULES ---
-    "custom/temperature_wttr": { 
-        "exec": "~/.config//hypr/scripts/get_openweathermap_temp.sh",
-        "format": "{}", 
-        "return-type": "json",
-        "interval": 900, // 15 minutes
-        "on-click": "~/.config//hypr/scripts/wttr.sh",
-        "on-click-right": "gapplication launch org.gnome.Weather",
-        "tooltip": true
-    },
     "clock": {
         "format": "{:%I\n%M}",
         "tooltip": true,
@@ -190,6 +181,13 @@
                 "today": "<b><u>{}</u></b>"
             }
         }
+    },
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 1800, // Update every 30 minutes
+        "exec": "~/.config/hypr/scripts/get_openweathermap_forecast.sh",
+        "return-type": "json"
     },
     "cpu": {
         "format-critical": "<b>{usage}</b>",
