@@ -5,7 +5,7 @@
 //   \__/\  /\____|__  / ______||______  \____|__  |____|_  /
 //        \/         \/\/              \/        \/       \/     
 // ML4W, Edited by j5onrf
-// Ghost-Glass-Compact-v3 (2025-6-23) beta
+// Ghost-Glass-Compact-v3 (2025-6-26) beta
 // -----------------------------------------------------
 
 {
@@ -30,7 +30,7 @@
 
   // Modules Center
   "modules-center": [
-    "custom/temperature_wttr",
+    "custom/weather",
     "group/settings",
     "hyprland/workspaces#rw",
     "group/hardware",

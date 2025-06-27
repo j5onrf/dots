@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  Ghost-Glass-Compact-v3 (wip) 2025-06-23
+ *  Ghost-Glass-Compact-v3 (wip) 2025-06-26
  */
 
 @import 'ghost-matugen.css';
@@ -62,12 +62,12 @@ window#waybar {
 }
 
 /* --- Text-Based Modules --- */
-#clock, #custom-temperature_wttr,
+#clock, #custom-weather,
 #cpu, #memory, #custom-updates {
     font-family: "JetBrainsMono Nerd Font Mono", monospace;
     color: @ghost_text_primary;
 }
-#clock, #custom-temperature_wttr {
+#clock, #custom-weather{
     font-size: 0.857em;
 }
 #custom-settings, #custom-system {
