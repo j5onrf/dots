@@ -47,7 +47,7 @@ window#waybar {
 #workspaces button:hover, #workspaces button.active,
 #pulseaudio:hover, #custom-cliphist:hover, #custom-hyprshade:hover, #network:hover, #tray:hover,
 #custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
-#cpu:hover, #memory:hover, #custom-updates:hover,
+#cpu:hover, #memory:hover, #custom-updates:hover, #custom-settings:hover, #custom-system:hover,
 #custom-appmenu:hover, #custom-exit:hover,
 #clock:hover, #custom-weather:hover {
     background-color: rgba(255, 255, 255, 0.25);
@@ -95,8 +95,8 @@ window#waybar {
 #cpu,
 #memory,
 #custom-updates {
-    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
-    font-weight: 100;
+    font-family: "SF Mono", monospace;
+    font-weight: 300;
     font-size: 0.57em;
     color: @ghost_text_primary;
 }
@@ -125,6 +125,8 @@ window#waybar {
 
 /* --- Tooltips --- */
 tooltip {
+        font-family: "SF Mono", "Font Awesome 6 Pro", monospace;
+    font-weight: 300;
     background-color: @ghost_bar_background;
     padding: 0.8em;
     opacity: 0.95;
@@ -138,7 +140,6 @@ tooltip label big {
     color: @on_surface;
 }
 tooltip label tt {
-    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
 }
 tooltip label tt small {
     font-size: 0.9em;
