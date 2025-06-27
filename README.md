@@ -1,5 +1,12 @@
 # Hyprdots
 
+<details open><summary>(2025-June26) Omarchy is out!</summary>
+<p>
+
+[I will try this](https://reddit.idevicehacked.com/r/hyprland/comments/1lleu0f/omarchy_is_out/)
+
+</details>
+
 <details open><summary>(2025-June24) Upgrading Waybar should bring tangible benefits, especially for theming</summary>
 <p>
 
