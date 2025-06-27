@@ -9,7 +9,7 @@
 * {
     background: none;
     border: none;
-    border-radius: 0.4em; /* Set a base border-radius reset for consistency */
+    border-radius: 0.4em; /* Set a base border-radius reset */
 }
 
 window#waybar {
@@ -58,7 +58,7 @@ window#waybar {
 #custom-settings, #custom-system {
     opacity: 0;
 }
-/* --- Reveal Hidden Modules on Hover (FIXED) --- */
+/* --- Reveal Hidden Modules on Hover --- */
 #custom-appmenu:hover, #custom-exit:hover,
 #custom-settings:hover, #custom-system:hover {
     opacity: 1;
@@ -94,6 +94,8 @@ window#waybar {
 
 /* --- Tooltips --- */
 tooltip {
+    font-family: "SF Mono", "Font Awesome 6 Pro", monospace;
+    font-weight: 300;
     background-color: @ghost_bar_background;
     padding: 0.8em;
     opacity: 0.95;
@@ -107,7 +109,6 @@ tooltip label big {
     color: @on_surface;
 }
 tooltip label tt {
-    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
 }
 tooltip label tt small {
     font-size: 0.9em;
