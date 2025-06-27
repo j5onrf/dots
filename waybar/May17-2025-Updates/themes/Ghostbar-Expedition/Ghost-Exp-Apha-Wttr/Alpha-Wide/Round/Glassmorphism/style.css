@@ -126,10 +126,9 @@ window#waybar {
 tooltip {
     font-family: "SF Mono", "Font Awesome 6 Pro", monospace;
     background-color: @ghost_bar_background;
-    font-weight: 300;
-    padding: 0.8em;
     opacity: 0.95;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 300;
 }
 tooltip label {
     color: @primary;
