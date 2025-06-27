@@ -9,7 +9,7 @@
 * {
     background: none;
     border: none;
-    border-radius: 0.4em; /* Set a base border-radius reset */
+    border-radius: 0.4em; /* Set a base border-radius reset for consistency */
 }
 
 window#waybar {
@@ -32,7 +32,7 @@ window#waybar {
 #pulseaudio, #custom-cliphist, #custom-hyprshade, #network, #tray,
 #custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification,
 #cpu, #memory, #custom-updates,
-#custom-appmenu, #custom-exit, #custom-settings, #custom-system,
+#custom-appmenu, #custom-exit,
 #clock, #custom-weather {
     color: @primary;
     margin: 0.2em;
@@ -47,7 +47,7 @@ window#waybar {
 #pulseaudio:hover, #custom-cliphist:hover, #custom-hyprshade:hover, #network:hover, #tray:hover,
 #custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
 #cpu:hover, #memory:hover, #custom-updates:hover,
-#custom-appmenu:hover, #custom-exit:hover, #custom-settings:hover, #custom-system:hover,
+#custom-appmenu:hover, #custom-exit:hover,
 #clock:hover, #custom-weather:hover {
     background-color: alpha(@primary, 0.30);
     border-color: alpha(@primary, 0.50);
@@ -71,11 +71,18 @@ window#waybar {
     color: @ghost_text_primary;
 }
 #clock, #custom-weather {
+    color: @primary;
     font-size: 0.857em;
 }
-#custom-settings, #custom-system {
+/* Hidden Drawer Toggles */
+#custom-settings,
+#custom-system {
     font-size: 0.5em;
-    padding: 0.4em;
+    opacity: 0;
+}
+#custom-settings:hover,
+#custom-system:hover {
+    opacity: 1;
 }
 #cpu, #memory, #custom-updates {
     font-weight: 100;
