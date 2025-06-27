@@ -132,4 +132,5 @@ tooltip {
 }
 tooltip label {
     color: @primary;
+    font-size: 14px;
 }
