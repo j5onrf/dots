@@ -1,5 +1,7 @@
 *** Attention! You will need get_openweathermap_forecast.sh (Weather forecast - default) or get_openweathermap_temp.sh (simple temp)
 
+![FullScreen-2025-06-27_20-45-24](https://github.com/user-attachments/assets/397e8a0b-96cb-4679-b2bc-f1263643d7f2)
+
 ![FullScreen-2025-06-23_09-31-40](https://github.com/user-attachments/assets/1a91025c-fb85-4908-8b5b-d022e0762515)
 
 ![FullScreen-2025-06-25_16-40-13](https://github.com/user-attachments/assets/aebac04b-a397-47af-829e-81241a6b0118)
