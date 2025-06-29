@@ -89,9 +89,9 @@ window#waybar {
     font-family: "SF Mono", "Font Awesome 6 Pro", monospace;
     font-size: 0.857em;
 }
-/* #custom-weather {
+#custom-weather {
     padding-left: 0.3em;
-} */
+}
 
 /* System Monitors - Specific Fonts and Colors */
 #cpu,
