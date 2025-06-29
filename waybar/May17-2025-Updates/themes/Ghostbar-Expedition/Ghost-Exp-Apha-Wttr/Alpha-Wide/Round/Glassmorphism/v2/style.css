@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  Ghost-Glassmorphism2 (wip)(Optimized) 2025-06-28
+ *  Ghost-Glassmorphism2 (wip)(Optimized) 2025-06-29
  */
 
 @import 'ghost-matugen.css';
@@ -19,7 +19,7 @@ window#waybar {
 
 .modules-center {
     font-family: "Font Awesome 6 Pro Light";
-    font-size: 24px; /* Base font size - default 24 */
+    font-size: 24px; /* Base size - Defaults 24 - 20 - 28 */
     margin: 8px;
     padding: 2px 4px;
     min-width: 2.45em;
@@ -98,7 +98,6 @@ window#waybar {
 #memory,
 #custom-updates {
     font-family: "SF Mono", monospace;
-    font-weight: 400;
     font-size: 0.57em;
     color: @ghost_text_primary;
 }
@@ -131,7 +130,6 @@ tooltip {
     background-color: @ghost_bar_background;
     opacity: 0.95;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    font-weight: 400;
 }
 tooltip label {
     color: @primary;
