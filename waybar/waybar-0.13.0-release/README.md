@@ -1,6 +1,6 @@
 ---
 
-### Title: Waybar v0.13.0: Regression in `hyprland/workspaces` Dynamic Icon Updates
+### Waybar v0.13.0: Regression in `hyprland/workspaces` Dynamic Icon Updates
 
 #### Summary (TL;DR)
 
