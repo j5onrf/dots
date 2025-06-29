@@ -19,7 +19,7 @@ window#waybar {
 
 .modules-center {
     font-family: "Font Awesome 6 Pro Light";
-    font-size: 20px; /* Base size - Default 24 - HiRes 20 - LowRes 28 */
+    font-size: 24px; /* Base size - Default 24 - HiRes 20 - LowRes 28 */
     margin: 8px;
     padding: 2px 4px;
     min-width: 2.45em;
@@ -95,7 +95,7 @@ window#waybar {
 #memory,
 #custom-updates {
     font-family: "SF Mono", monospace;
-    font-weight: 400;
+    /* font-weight: 300; */
     font-size: 0.57em;
     color: @ghost_text_primary;
 }
@@ -128,7 +128,7 @@ tooltip {
     background-color: @ghost_bar_background;
     opacity: 0.95;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    font-weight: 400;
+    /* font-weight: 300; */
 }
 tooltip label {
     color: @primary;
