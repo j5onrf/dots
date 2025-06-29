@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W base
-//  Ghost-Glassmorphism 2025-06-27
+//  ghost-glassmorphism.jsonc 2025-06-29
 
     // --- CORE WORKFLOW MODULES ---
 {
@@ -113,7 +113,7 @@
         "tooltip": false
     },
     "custom/cliphist": {
-        "format": "\uf46d",
+        "format": "\ue214",
         "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
         "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
         "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
@@ -172,7 +172,8 @@
         "tooltip": true,
         "interval": 1800, // Update every 30 minutes
         "exec": "~/.config/hypr/scripts/get_openweathermap_forecast.sh",
-        "return-type": "json"
+        "return-type": "json",
+        "signal": 8 // Optional - Used for systemd reload after suspend
     },
     "cpu": {
         "format-critical": "<b>{usage}</b>",
@@ -183,10 +184,7 @@
         "tooltip": false,
         "interval": 5, // Update every 5 seconds
         "states": {
-            "critical": 80,
-            "high": 50,
-            "medium": 5,
-            "low": 0
+            "critical": 80, "high": 50, "medium": 5, "low": 0
         }
     },
     "memory": {
