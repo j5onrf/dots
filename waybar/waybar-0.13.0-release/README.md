@@ -52,4 +52,4 @@ To preserve the original, single-module configuration and its aesthetic, the mos
     IgnorePkg = waybar
     ```
 
-This ensures the restoration of critical functionality until a future version of Waybar either re-introduces this behavior or a decision is made to adopt the new two-module configuration paradigm.
+This ensures the restoration of critical functionality until a future version of Waybar either re-introduces this behavior or a decision is made to adopt another bar.
