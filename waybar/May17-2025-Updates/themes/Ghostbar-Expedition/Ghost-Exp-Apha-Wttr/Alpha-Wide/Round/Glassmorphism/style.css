@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  Ghost-Glassmorphism (Optimized) 2025-06-27
+ *  Ghost-Glassmorphism (Optimized) 2025-06-29
  */
 
 @import 'ghost-matugen.css';
@@ -19,7 +19,7 @@ window#waybar {
 
 .modules-center {
     font-family: "Font Awesome 6 Pro Light";
-    font-size: 24px; /* Base font size - default 24 */
+    font-size: 20px; /* Base size - Default 24 - HiRes 20 - LowRes 28 */
     margin: 8px;
     padding: 2px 4px;
     min-width: 2.45em;
