@@ -40,9 +40,7 @@ The impact of this change is that configurations relying on the old, unintention
 
 #### Current Solution and Justification
 
-The intended path forward in Waybar `v0.13.0` is to use two separate modules: `hyprland/workspaces` for workspace navigation and `hyprland/window` for displaying the active window's icon.
-
-However, to preserve the original, single-module configuration and its aesthetic, the most direct solution is to revert to a known-working version.
+To preserve the original, single-module configuration and its aesthetic, the most direct solution is to revert to a known-working version.
 
 1.  **Downgrade Waybar:** Revert the package from `v0.13.0` to `v0.12.0`. On Arch Linux, this can be done via the pacman cache:
     ```bash
