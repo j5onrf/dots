@@ -1,55 +1,57 @@
-# Waybar 0.13.0 Release
+---
 
-Based on the official 0.13.0 release notes, here's a breakdown of why you would want to upgrade. While it doesn't introduce a revolutionary new set of CSS properties, it offers significant improvements to **layout, behavior, and stability**, especially for features you're already using.
+### Title: Waybar v0.13.0: Regression in `hyprland/workspaces` Dynamic Icon Updates
 
-### No, There Are Not "New CSS Features"
+#### Summary (TL;DR)
 
-Waybar 0.13.0 does not appear to add brand-new CSS properties or drastically change the GTK CSS parser. The core styling engine remains the same.
+After upgrading from Waybar `v0.12.0` to `v0.13.0`, the `hyprland/workspaces` module no longer dynamically updates window icons based on `windowtitle` changes (e.g., switching browser tabs). The icon now remains static for the first-detected window on a workspace and only updates upon a full Waybar reload. The current solution is to downgrade to `v0.12.0` and lock the version.
 
-However, the reasons to upgrade are still very compelling.
+---
 
-### Yes, There Are New Features That Directly Affect Your Theme
+#### The Problem: Loss of Dynamic Behavior
 
-The most exciting changes are new configuration options that give you more control over the layout and behavior, which you would otherwise have to try and hack together with CSS.
+In Waybar `v0.12.0` and earlier, the following configuration allowed for a single, dynamic icon on each workspace that would update instantly based on the focused window's `class` or `title`. This was particularly useful for seeing the icon of the active browser tab.
 
-#### 1. Module Stretching and Center Module Toggling
+**Working Configuration (on Waybar v0.12.0):**
+```json
+"hyprland/workspaces#rw": {
+    "format": "{icon}{windows}",
+    "format-window-separator": "\n", // Ensures only one icon is visible
+    "window-rewrite": {
+        "title<.*youtube.*>": "\uf04b",
+        "class<firefox>": "\ue24f"
+        // ... more rules
+    }
+}
+```
+This provided a clean, single-module solution for both workspace navigation and active window identification.
 
-This is the biggest new visual feature. You can now make modules expand to fill available space and even hide the center module until you hover over the bar.
-*   **`"stretch": true`**: Add this to a module (like the `workspaces` module) to make it fill all available space in its container (`.modules-left`, etc.).
-*   **`"modules-center-on-hover": true`**: Add this at the top level of your config. It will make your entire `.modules-center` block invisible by default and only reveal it when you move your mouse over the Waybar window.
+Upon upgrading to Waybar `v0.13.0`, this behavior is broken. The icon displayed by `{windows}` becomes static. It represents the first window Waybar detects on the workspace and **does not change** when switching focus to another window or tab on the same workspace.
 
-#### 2. Bug Fixes for Features You Use
+#### Root Cause Analysis: A Change in Event Handling
 
-This is arguably the most important reason for you to upgrade. The release notes mention several fixes that directly address things we've discussed:
-*   **Drawer/Group Fix:** There is a specific fix for a "group revealer hover regression." This means the drawer pop-ups you use for your settings and hardware groups should be **more stable and reliable**. This alone could be worth the upgrade.
-*   **Hyprland Fixes:** There are several fixes related to how Waybar interacts with Hyprland, including how it handles window titles and workspace states, which could lead to a more stable experience.
+The breakage is due to a change in the event-handling logic within the `hyprland/workspaces` module between versions.
 
-#### 3. New Options for Existing Modules
+1.  **Previous Behavior (v0.12.0):** The `hyprland/workspaces` module was likely either subscribing to Hyprland's `windowtitle` change events or was receiving a window list that was sorted with the active window first. This allowed the `{windows}` formatter to seemingly react to focus changes, even though this was likely an unintended side effect rather than a designed feature.
 
-Many individual modules got small but useful quality-of-life updates. For example:
-*   **`cava` module:** Now has CSS triggers and a `format-silent` option.
-*   **`temperature` module:** Now has a `warning` threshold.
-*   **`backlight` module:** Added a `minimum` brightness option.
+2.  **Current Behavior (v0.13.0):** The module's logic has been refactored. It appears to have been optimized to **no longer subscribe to `windowtitle` events**. It now only reacts to more significant workspace events like `openwindow`, `closewindow`, and `movewindow`. This is a deliberate design choice to improve performance and enforce a clearer separation of concerns, where title monitoring is now the exclusive responsibility of the `hyprland/window` module.
 
-### Verdict: Should You Upgrade to Waybar 13?
+The impact of this change is that configurations relying on the old, unintentional behavior are no longer viable.
 
-**Yes, absolutely.**
+#### Current Solution and Justification
 
-While you won't get a new toolbox of CSS properties, you will get:
-1.  **More Stability:** Crucial bug fixes for the `group` drawers and Hyprland integration mean a smoother, more reliable bar.
-2.  **Better Layout Control:** The new `stretch` and `modules-center-on-hover` options give you powerful new ways to design your bar's layout directly from the config.
-3.  **A More Polished Experience:** The collection of small fixes and module updates will result in a better overall user experience.
+The intended path forward in Waybar `v0.13.0` is to use two separate modules: `hyprland/workspaces` for workspace navigation and `hyprland/window` for displaying the active window's icon.
 
-The upgrade is less about adding new styling commands and more about making the existing foundation more powerful and stable.
+However, to preserve the original, single-module configuration and its aesthetic, the most direct solution is to revert to a known-working version.
 
-**The Final Verdict**
+1.  **Downgrade Waybar:** Revert the package from `v0.13.0` to `v0.12.0`. On Arch Linux, this can be done via the pacman cache:
+    ```bash
+    sudo pacman -U /var/cache/pacman/pkg/waybar-0.12.0-1-x86_64.pkg.tar.zst
+    ```
 
-You are correct to assume that these fundamental limitations are not changing. The upgrade to 0.13.0 involves fixes and features within the existing GTK framework; it does not replace the rendering engine with a web browser engine.
+2.  **Lock the Version:** Prevent the package from being upgraded during routine system updates by adding it to the `IgnorePkg` list in `/etc/pacman.conf`.
+    ```
+    IgnorePkg = waybar
+    ```
 
-Therefore, the rule of thumb remains the same:
-
-    Use the config file for layout and positioning.
-
-    Use the style.css file for skinning (colors, borders, fonts, backgrounds, and margin/padding).
-
-Your understanding is spot on, and it's the key to successfully theming Waybar without running into these parsing errors.
+This ensures the restoration of critical functionality until a future version of Waybar either re-introduces this behavior or a decision is made to adopt the new two-module configuration paradigm.
