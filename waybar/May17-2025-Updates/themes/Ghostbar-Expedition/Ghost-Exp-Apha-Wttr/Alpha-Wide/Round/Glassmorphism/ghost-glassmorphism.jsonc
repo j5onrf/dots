@@ -173,7 +173,7 @@
         "interval": 1800, // Update every 30 minutes
         "exec": "~/.config/hypr/scripts/get_openweathermap_forecast.sh",
         "return-type": "json",
-        "signal": 8 // Optional - Used for systemd reload after suspend
+        "signal": 8 // Optional - Systemd resume from suspend
     },
     "cpu": {
         "format-critical": "<b>{usage}</b>",
