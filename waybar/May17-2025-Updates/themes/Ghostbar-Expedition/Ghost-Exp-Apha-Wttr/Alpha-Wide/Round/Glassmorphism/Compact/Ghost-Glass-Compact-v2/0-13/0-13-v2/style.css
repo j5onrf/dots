@@ -18,7 +18,7 @@ window#waybar {
 
 .modules-center {
     font-family: "Font Awesome 6 Pro Light";
-    font-size: 24px; /* Base font size - Defaults 24 - 20 - 28 */
+    font-size: 18px; /* Base font size - Defaults 24 - 20 - 28 */
     margin: 8px;
     padding: 2px;
     min-width: 1.95em;
