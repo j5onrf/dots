@@ -1,34 +1,45 @@
+![FullScreen-2025-07-01_11-33-12](https://github.com/user-attachments/assets/bb288a35-6cfd-4d7c-a2e7-f1f9bb12d2b6)
+
 ```markdown
 # Waybar Weather & Forecast Script
 
-  
-*Replace the image URL above with a screenshot of your actual Waybar module.*
+<img src="YOUR_WORKING_IMAGE_URL" alt="Waybar Weather Module Screenshot" width="700">
 
-A robust and feature-rich script for displaying current weather and a 5-day forecast in Waybar. It is optimized for performance, highly configurable, and provides dynamic, at-a-glance status indicators through color changes.
+A robust and feature-rich script for displaying current weather and a 5-day
+forecast in Waybar. It is optimized for performance, highly configurable, and
+provides dynamic, at-a-glance status indicators through color changes.
 
 ---
 
 ## Features
 
 -   **Current Weather Display**: Shows the current temperature.
--   **5-Day Forecast Tooltip**: Hover to see a detailed forecast for the next five days.
--   **Dynamic Color States**: Automatically changes text color based on user-defined "hot" and "cold" temperature thresholds, with a neutral default color for normal conditions.
--   **"Feels Like" Temperature**: The tooltip provides the "feels like" temperature for a more accurate sense of conditions.
--   **FontAwesome Icons**: Uses modern FontAwesome Pro icons for clear and stylish weather condition display.
--   **Robust Caching**: Caches API results to prevent rate-limiting and reduce unnecessary network calls, speeding up response time.
--   **Self-Healing Data**: Automatically re-fetches data if the cache is stale or corrupted.
--   **Performance Optimized**: Uses efficient shell scripting techniques and a single `jq` call to minimize CPU usage and process calls.
+-   **5-Day Forecast Tooltip**: Hover to see a detailed forecast for the next
+    five days.
+-   **Dynamic Color States**: Automatically changes text color based on user-defined
+    "hot" and "cold" thresholds, with a neutral color for normal conditions.
+-   **"Feels Like" Temperature**: The tooltip provides the "feels like" temperature for
+    a more accurate sense of conditions.
+-   **FontAwesome Icons**: Uses modern FontAwesome Pro icons for clear and stylish
+    weather condition display.
+-   **Robust Caching**: Caches API results to prevent rate-limiting and reduce
+    unnecessary network calls.
+-   **Self-Healing Data**: Automatically re-fetches data if the cache is stale or
+    corrupted.
+-   **Performance Optimized**: Uses efficient shell scripting techniques to minimize
+    CPU usage and process calls.
 
 ---
 
 ## Installation
 
-1.  **Dependencies**: Ensure you have the following installed on your system:
+1.  **Dependencies**: Ensure you have the following installed:
     -   `jq` (for parsing JSON)
     -   `curl` (for fetching data)
-    -   A **Nerd Font** or a font that includes **FontAwesome Pro** icons to correctly display the weather emojis.
+    -   A **Nerd Font** or font with **FontAwesome Pro** icons.
 
-2.  **Download the Script**: Place the `weather.sh` script (or whatever you name it) into your Waybar scripts directory. A common location is `~/.config/waybar/scripts/`.
+2.  **Download the Script**: Place the `weather.sh` script in your
+    Waybar scripts directory (e.g., `~/.config/waybar/scripts/`).
 
 3.  **Make it Executable**: Open a terminal and run:
     ```bash
@@ -47,18 +58,17 @@ You must edit the top section of the `weather.sh` script to add your personal de
 # --- CONFIGURATION ---
 # You MUST configure these settings to use the script.
 
-# 1. API_KEY: Get your free API key from https://openweathermap.org/
+# 1. API_KEY: Get a free API key from https://openweathermap.org/
 API_KEY="YOUR_API_KEY_HERE"
 
 # 2. LOCATION_QUERY: Find your City ID on the OpenWeatherMap website.
-#    (e.g., https://openweathermap.org/city/5128581 -> New York City ID is 5128581)
+#    (e.g., New York City ID is 5128581)
 LOCATION_QUERY="YOUR_CITY_ID_HERE"
 
 # 3. UNITS: "metric" for Celsius, "imperial" for Fahrenheit.
 UNITS="imperial"
 
-# 4. TEMPERATURE THRESHOLDS: Set your personal definitions for hot and cold.
-#    Based on the UNITS setting above (Fahrenheit in this example).
+# 4. TEMPERATURE THRESHOLDS: Set your personal definitions for hot/cold.
 HOT_THRESHOLD=92
 COLD_THRESHOLD=20
 ```
@@ -71,7 +81,7 @@ Add the following module block to your `~/.config/waybar/config` file:
 "custom/weather": {
     "format": "{}",
     "tooltip": true,
-    "interval": 3600, // Refresh every hour
+    "interval": 3600,
     "exec": "~/.config/waybar/scripts/weather.sh",
     "return-type": "json"
 },
@@ -79,33 +89,26 @@ Add the following module block to your `~/.config/waybar/config` file:
 
 ### 3. Waybar `style.css`
 
-Add the following rules to your `~/.config/waybar/style.css` to enable the dynamic colors. You can use hardcoded hex values or theme variables (like from `matugen`).
+Add these rules to your `~/.config/waybar/style.css` to enable dynamic colors.
 
 ```css
 /* --- Weather Temperature Styles --- */
-/*
- * The module's CSS ID is #custom-weather.
- * You can also use #weather if you add `"name": "weather"` to your config block.
-*/
-
 #custom-weather.hot {
-    /* Red for hot temperatures. Use a theme variable or a specific hex code. */
-    color: #bf616a; /* Example: Nord Red */
+    /* Red for hot temps. Use a theme variable or a hex code. */
+    color: #bf616a;
 }
 
 #custom-weather.cold {
-    /* Blue for cold temperatures. Use a theme variable or a specific hex code. */
-    color: #88c0d0; /* Example: Nord Frost Blue */
+    /* Blue for cold temps. Use a theme variable or a hex code. */
+    color: #88c0d0;
 }
-
-/* Note: No rule is needed for the "normal" state. It will use the default text color. */
 ```
 
 ### 4. (Optional) Refresh on Resume from Suspend
 
-To ensure the weather updates after your computer wakes from sleep, create a systemd service.
+To update the weather after waking from sleep, create a systemd service.
 
-Create the file `/etc/systemd/system/waybar-resume.service` with `sudo`:
+Create `/etc/systemd/system/waybar-resume.service` with `sudo`:
 
 ```ini
 [Unit]
@@ -123,7 +126,8 @@ WantedBy=suspend.target hibernate.target hybrid-sleep.target
 
 **Important**:
 -   Replace `<your_username>` with your actual Linux username.
--   The signal `SIGRTMIN+1` targets the first `custom/...` module. If your weather module is not the first one, adjust the number accordingly (e.g., `SIGRTMIN+8`). You may also need to add a `"signal"` property to your module in the Waybar `config`.
+-   `SIGRTMIN+1` targets the first `custom/...` module. Adjust the
+    number if needed (e.g., `SIGRTMIN+8`).
 
 Then, enable the service with `sudo`:
 ```bash
