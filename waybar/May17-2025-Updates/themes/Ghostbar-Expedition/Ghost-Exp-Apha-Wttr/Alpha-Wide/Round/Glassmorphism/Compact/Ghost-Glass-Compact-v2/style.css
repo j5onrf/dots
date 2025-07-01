@@ -18,7 +18,7 @@ window#waybar {
 
 .modules-center {
     font-family: "Font Awesome 6 Pro Light";
-    font-size: 24px; /* Base font size - Defaults 24 - 20 - 28 */
+    font-size: 20px; /* Base font size - Defaults 24 - 20 - 28 */
     margin: 8px;
     padding: 2px;
     min-width: 1.95em;
@@ -36,7 +36,7 @@ window#waybar {
 #clock, #custom-weather {
     color: @primary;
     margin: 0.2em;
-    padding: 0.3em 0; /* Based on font-size - 20px = 0.19em - 24px = 0.3em */
+    padding: 0.19em 0; /* Based on font-size - 20px = 0.19em - 24px = 0.3em */
     border-radius: 0.4em;
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
