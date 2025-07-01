@@ -3,8 +3,6 @@
 ```markdown
 # Waybar Weather & Forecast Script
 
-<img src="YOUR_WORKING_IMAGE_URL" alt="Waybar Weather Module Screenshot" width="700">
-
 A robust and feature-rich script for displaying current weather and a 5-day
 forecast in Waybar. It is optimized for performance, highly configurable, and
 provides dynamic, at-a-glance status indicators through color changes.
