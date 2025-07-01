@@ -14,6 +14,7 @@
     "hyprland/workspaces": {
       "on-click": "activate",
       "format": "{icon}",
+      "show-special": true, // --- Special On/Off
       "format-icons": {
         "default": "",
         "1": "1",
