@@ -30,6 +30,7 @@
             "title<.*chatgpt.*>": "\ue1ec",
             "title<.*grok.*>": "\ue1ec",
             "title<.*AI Studio.*>": "\ue5d6",
+            "title<.*Gemini.*>": "\uf054",
             "title<.*amazon.*>": "",
             "title<.*gmail.*>": "󰊫 ",
             "title<.*nvim ~.*>": " ",
@@ -170,7 +171,7 @@
     "custom/weather": {
         "format": "{}",
         "tooltip": true,
-        "interval": 1800, // Update every 30 minutes
+        "interval": 3600, // Update every hour
         "exec": "~/.config/hypr/scripts/get_openweathermap_forecast.sh",
         "return-type": "json",
         "signal": 8 // Optional - Systemd resume from suspend
@@ -190,6 +191,7 @@
     "memory": {
         "format": "{used:0.1f}",
         "on-click": "kitty -e htop --sort-key PERCENT_MEM",
+        "interval": 30,
         "tooltip": false
     },
     "custom/updates": {
