@@ -27,66 +27,9 @@ provides dynamic, at-a-glance status indicators through color changes.
     corrupted.
 -   **Performance Optimized**: Uses efficient shell scripting techniques to minimize
     CPU usage and process calls.
-
----
-
-## Installation
-
-1.  **Dependencies**: Ensure you have the following installed:
-    -   `jq` (for parsing JSON)
-    -   `curl` (for fetching data)
-    -   A **Nerd Font** or font with **FontAwesome Pro** icons.
-
-2.  **Download the Script**: Place the `weather.sh` script in your
-    Waybar scripts directory (e.g., `~/.config/waybar/scripts/`).
-
-3.  **Make it Executable**: Open a terminal and run:
-    ```bash
-    chmod +x ~/.config/waybar/scripts/weather.sh
-    ```
-
----
-
-## Configuration
-
-### 1. Script Configuration
-
-You must edit the top section of the `weather.sh` script to add your personal details.
-
-```bash
-# --- CONFIGURATION ---
-# You MUST configure these settings to use the script.
-
-# 1. API_KEY: Get a free API key from https://openweathermap.org/
-API_KEY="YOUR_API_KEY_HERE"
-
-# 2. LOCATION_QUERY: Find your City ID on the OpenWeatherMap website.
-#    (e.g., New York City ID is 5128581)
-LOCATION_QUERY="YOUR_CITY_ID_HERE"
-
-# 3. UNITS: "metric" for Celsius, "imperial" for Fahrenheit.
-UNITS="imperial"
-
-# 4. TEMPERATURE THRESHOLDS: Set your personal definitions for hot/cold.
-HOT_THRESHOLD=92
-COLD_THRESHOLD=20
 ```
 
-### 2. Waybar `config`
-
-Add the following module block to your `~/.config/waybar/config` file:
-
-```json
-"custom/weather": {
-    "format": "{}",
-    "tooltip": true,
-    "interval": 3600,
-    "exec": "~/.config/waybar/scripts/weather.sh",
-    "return-type": "json"
-},
-```
-
-### 3. Waybar `style.css`
+### Waybar `style.css`
 
 Add these rules to your `~/.config/waybar/style.css` to enable dynamic colors.
 
@@ -103,7 +46,7 @@ Add these rules to your `~/.config/waybar/style.css` to enable dynamic colors.
 }
 ```
 
-### 4. (Optional) Refresh on Resume from Suspend
+### (Optional) Refresh on Resume from Suspend
 
 To update the weather after waking from sleep, create a systemd service.
 
@@ -122,19 +65,6 @@ ExecStart=/usr/bin/pkill -SIGRTMIN+1 waybar
 [Install]
 WantedBy=suspend.target hibernate.target hybrid-sleep.target
 ```
-
-**Important**:
--   Replace `<your_username>` with your actual Linux username.
--   `SIGRTMIN+1` targets the first `custom/...` module. Adjust the
-    number if needed (e.g., `SIGRTMIN+8`).
-
-Then, enable the service with `sudo`:
-```bash
-sudo systemctl daemon-reload
-sudo systemctl enable --now waybar-resume.service
-```
-
----
 
 ## Acknowledgements
 
