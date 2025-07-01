@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Waybar Weather & Forecast Script (Self-Healing & FontAwesome Emoji Version) 2025-06-25
+# Waybar Weather & Forecast Script (Self-Healing & FontAwesome Emoji Version) 2025-07-01
 #
 
 # --- CONFIGURATION ---
@@ -91,46 +91,52 @@ get_short_condition_text() {
 CURRENT_CONDITION_TEXT_SHORT=$(get_short_condition_text "$CURRENT_CONDITION_RAW_TEXT")
 CURRENT_EMOJI=$(get_emoji $CURRENT_ICON_CODE)
 
-# --- PARSE 5-DAY FORECAST (BULLETPROOF METHOD) ---
-declare -A daily_min daily_max daily_icon daily_day_name
-while IFS=$'\t' read -r dt temp_min temp_max weather_id; do
-    local_date_key=$(date -d "@$dt" +'%Y-%m-%d')
-    if [[ -z "${daily_day_name[$local_date_key]}" ]]; then
-        daily_day_name[$local_date_key]=$(date -d "@$dt" +'%a')
-    fi
-    local_hour=$(date -d "@$dt" +'%H')
-    if (( local_hour >= 12 && local_hour <= 15 )); then
-        daily_icon[$local_date_key]=$weather_id
-    elif [[ -z "${daily_icon[$local_date_key]}" ]]; then
-        daily_icon[$local_date_key]=$weather_id
-    fi
-    temp_min_int=${temp_min%.*}
-    temp_max_int=${temp_max%.*}
-    if [[ -z "${daily_min[$local_date_key]}" ]] || (( temp_min_int < daily_min[$local_date_key] )); then
-        daily_min[$local_date_key]=$temp_min_int
-    fi
-    if [[ -z "${daily_max[$local_date_key]}" ]] || (( temp_max_int > daily_max[$local_date_key] )); then
-        daily_max[$local_date_key]=$temp_max_int
-    fi
-done < <(echo "$FORECAST_RAW_DATA" | jq -r '.list[] | [.dt, .main.temp_min, .main.temp_max, .weather[0].id] | @tsv')
+# --- PARSE 5-DAY FORECAST (JQ-OPTIMIZED METHOD) ---
 
-# MODIFIED: Build the forecast using a reliable loop that generates the next 5 days.
+# First, use a single, powerful jq command to process the entire forecast list.
+# This groups 3-hour data by day, calculates min/max temps, and picks an
+# icon for each day. The result is a structured JSON object where each key
+# is a date ("YYYY-MM-DD"), which is much faster than processing in a shell loop.
+PROCESSED_FORECAST=$(echo "$FORECAST_RAW_DATA" | jq '
+  .list |
+  group_by(.dt_txt | split(" ")[0]) | # Group by YYYY-MM-DD from dt_txt
+  map({
+    # Use the date string as the key for the new object
+    key: (.[0].dt_txt | split(" ")[0]),
+    value: {
+      day: (.[0].dt | strftime("%a")),
+      min: (map(.main.temp_min) | min | round),
+      max: (map(.main.temp_max) | max | round),
+      # Select icon from 15:00 UTC if available, otherwise fallback to the first of the day
+      icon: (map(select(.dt_txt | contains("15:00:00")))[0].weather[0].id // .[0].weather[0].id)
+    }
+  }) | from_entries # Convert the array of key/value pairs into a single JSON object
+')
+
+# Now, build the tooltip by looping through the next 5 days. This approach is
+# robust because it explicitly asks for "tomorrow", "the day after", etc.
 TOOLTIP_FORECAST=""
 for i in {1..5}; do
-    # Get the date string for tomorrow, the day after, etc., in YYYY-MM-DD format.
+    # Get the date key for the desired future day (e.g., "2025-07-02")
     date_key=$(date -d "today +$i day" +'%Y-%m-%d')
-    
-    # Check if we have data for this future day in our arrays.
-    if [[ -n "${daily_day_name[$date_key]}" ]]; then
-        day_name=${daily_day_name[$date_key]}
-        min_temp=${daily_min[$date_key]}
-        max_temp=${daily_max[$date_key]}
-        icon_code=${daily_icon[$date_key]}
-        emoji=$(get_emoji $icon_code)
-        
+
+    # Use jq to extract the data for that specific day from our processed JSON.
+    # The -c (compact) and -r (raw) flags are used for clean output.
+    # We check if the result for the key is not "null".
+    day_data=$(echo "$PROCESSED_FORECAST" | jq -c ".[\"$date_key\"]")
+
+    if [[ "$day_data" != "null" ]]; then
+        # Parse the JSON for the day to get the details
+        day_name=$(echo "$day_data" | jq -r '.day')
+        min_temp=$(echo "$day_data" | jq -r '.min')
+        max_temp=$(echo "$day_data" | jq -r '.max')
+        icon_code=$(echo "$day_data" | jq -r '.icon')
+        emoji=$(get_emoji "$icon_code")
+
         TOOLTIP_FORECAST+="${emoji} ${day_name} ${min_temp}° ${max_temp}°\n"
     fi
 done
+
 # Remove the final trailing newline character
 TOOLTIP_FORECAST=$(echo -e "${TOOLTIP_FORECAST%\\n}")
 
