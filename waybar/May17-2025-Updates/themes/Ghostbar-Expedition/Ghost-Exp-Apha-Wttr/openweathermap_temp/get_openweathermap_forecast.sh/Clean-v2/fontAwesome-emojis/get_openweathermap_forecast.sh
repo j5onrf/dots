@@ -35,8 +35,8 @@ FORECAST_API_URL="http://api.openweathermap.org/data/2.5/forecast?id=${LOCATION_
 WEATHER_CACHE_FILE="/tmp/waybar_weather_current_$(echo -n "$LOCATION_QUERY" | md5sum | cut -d' ' -f1).json"
 FORECAST_CACHE_FILE="/tmp/waybar_weather_forecast_$(echo -n "$LOCATION_QUERY" | md5sum | cut -d' ' -f1).json"
 
-WEATHER_CACHE_TTL=600
-FORECAST_CACHE_TTL=3600
+WEATHER_CACHE_TTL=600  # 10 minutes
+FORECAST_CACHE_TTL=3600 # 1 hour
 
 # --- DATA FETCHING & VALIDATION ---
 if ! [ -f "$WEATHER_CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$WEATHER_CACHE_FILE"))) -gt $WEATHER_CACHE_TTL ] || [ ! -s "$WEATHER_CACHE_FILE" ]; then
@@ -91,60 +91,65 @@ get_short_condition_text() {
 CURRENT_CONDITION_TEXT_SHORT=$(get_short_condition_text "$CURRENT_CONDITION_RAW_TEXT")
 CURRENT_EMOJI=$(get_emoji $CURRENT_ICON_CODE)
 
-# --- PARSE 5-DAY FORECAST (JQ-OPTIMIZED METHOD) ---
+# --- PARSE 5-DAY FORECAST (SAFE & FAST METHOD) ---
+declare -A daily_min daily_max daily_icon daily_day_name
 
-# First, use a single, powerful jq command to process the entire forecast list.
-# This groups 3-hour data by day, calculates min/max temps, and picks an
-# icon for each day. The result is a structured JSON object where each key
-# is a date ("YYYY-MM-DD"), which is much faster than processing in a shell loop.
-PROCESSED_FORECAST=$(echo "$FORECAST_RAW_DATA" | jq '
-  .list |
-  group_by(.dt_txt | split(" ")[0]) | # Group by YYYY-MM-DD from dt_txt
-  map({
-    # Use the date string as the key for the new object
-    key: (.[0].dt_txt | split(" ")[0]),
-    value: {
-      day: (.[0].dt | strftime("%a")),
-      min: (map(.main.temp_min) | min | round),
-      max: (map(.main.temp_max) | max | round),
-      # Select icon from 15:00 UTC if available, otherwise fallback to the first of the day
-      icon: (map(select(.dt_txt | contains("15:00:00")))[0].weather[0].id // .[0].weather[0].id)
-    }
-  }) | from_entries # Convert the array of key/value pairs into a single JSON object
-')
+# This loop reads the pre-formatted data. The 'jq' command is simple and only
+# adds the "dt_txt" field, which contains a ready-to-use timestamp string.
+while IFS=$'\t' read -r dt dt_txt temp_min temp_max weather_id; do
+    # OPTIMIZATION: Use fast shell string manipulation to get the date and hour
+    # from the "dt_txt" field (e.g., "2025-07-01 18:00:00"). This avoids calling
+    # the slow `date` command for every single forecast entry.
+    local_date_key=${dt_txt% *}                  # Gets "2025-07-01"
+    time_part=${dt_txt#* }                       # Gets "18:00:00"
+    local_hour=${time_part%%:*}                  # Gets "18"
 
-# Now, build the tooltip by looping through the next 5 days. This approach is
-# robust because it explicitly asks for "tomorrow", "the day after", etc.
+    # Get the day name (e.g., "Mon"). This is the only 'date' call left in the
+    # loop, and it will only run ONCE per day, making it very fast.
+    if [[ -z "${daily_day_name[$local_date_key]}" ]]; then
+        daily_day_name[$local_date_key]=$(date -d "@$dt" +'%a')
+    fi
+
+    # The rest of this logic is from your original, working script.
+    # It correctly chooses a representative icon for the day (preferring the afternoon).
+    if (( 10#$local_hour >= 12 && 10#$local_hour <= 15 )); then
+        daily_icon[$local_date_key]=$weather_id
+    elif [[ -z "${daily_icon[$local_date_key]}" ]]; then
+        daily_icon[$local_date_key]=$weather_id
+    fi
+
+    # It correctly finds the true minimum and maximum temperatures for the day.
+    temp_min_int=${temp_min%.*}
+    temp_max_int=${temp_max%.*}
+    if [[ -z "${daily_min[$local_date_key]}" ]] || (( temp_min_int < daily_min[$local_date_key] )); then
+        daily_min[$local_date_key]=$temp_min_int
+    fi
+    if [[ -z "${daily_max[$local_date_key]}" ]] || (( temp_max_int > daily_max[$local_date_key] )); then
+        daily_max[$local_date_key]=$temp_max_int
+    fi
+done < <(echo "$FORECAST_RAW_DATA" | jq -r '.list[] | [.dt, .dt_txt, .main.temp_min, .main.temp_max, .weather[0].id] | @tsv')
+
+# This final section for building the tooltip is from your original script.
+# Its logic is sound and correctly generates the forecast for the *next* 5 days.
 TOOLTIP_FORECAST=""
 for i in {1..5}; do
-    # Get the date key for the desired future day (e.g., "2025-07-02")
     date_key=$(date -d "today +$i day" +'%Y-%m-%d')
-
-    # Use jq to extract the data for that specific day from our processed JSON.
-    # The -c (compact) and -r (raw) flags are used for clean output.
-    # We check if the result for the key is not "null".
-    day_data=$(echo "$PROCESSED_FORECAST" | jq -c ".[\"$date_key\"]")
-
-    if [[ "$day_data" != "null" ]]; then
-        # Parse the JSON for the day to get the details
-        day_name=$(echo "$day_data" | jq -r '.day')
-        min_temp=$(echo "$day_data" | jq -r '.min')
-        max_temp=$(echo "$day_data" | jq -r '.max')
-        icon_code=$(echo "$day_data" | jq -r '.icon')
-        emoji=$(get_emoji "$icon_code")
-
+    if [[ -n "${daily_day_name[$date_key]}" ]]; then
+        day_name=${daily_day_name[$date_key]}
+        min_temp=${daily_min[$date_key]}
+        max_temp=${daily_max[$date_key]}
+        icon_code=${daily_icon[$date_key]}
+        emoji=$(get_emoji $icon_code)
+        
         TOOLTIP_FORECAST+="${emoji} ${day_name} ${min_temp}° ${max_temp}°\n"
     fi
 done
-
-# Remove the final trailing newline character
 TOOLTIP_FORECAST=$(echo -e "${TOOLTIP_FORECAST%\\n}")
 
-
 # --- ASSEMBLE FINAL OUTPUT ---
-# Added padding-left to TEMP for centering
 TEXT_OUTPUT="$CURRENT_TEMP"
 TOP_LINE="$CURRENT_EMOJI Feels $FEELS_LIKE_TEMP"
 FULL_TOOLTIP="$TOP_LINE\n$CURRENT_CONDITION_TEXT_SHORT\n$TOOLTIP_FORECAST"
 
+# The final printf statement which sends the data to Waybar.
 printf '{"text": "%s", "tooltip": "%s"}\n' "$TEXT_OUTPUT" "${FULL_TOOLTIP//$'\n'/\\n}"
