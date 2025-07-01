@@ -1,4 +1,5 @@
-![FullScreen-2025-07-01_11-33-12](https://github.com/user-attachments/assets/bb288a35-6cfd-4d7c-a2e7-f1f9bb12d2b6)
+![FullScreen-2025-07-01_11-57-09](https://github.com/user-attachments/assets/4753462b-69ab-4ab5-8be2-e08620bce089)
+
 
 ```markdown
 # Waybar Weather & Forecast Script
