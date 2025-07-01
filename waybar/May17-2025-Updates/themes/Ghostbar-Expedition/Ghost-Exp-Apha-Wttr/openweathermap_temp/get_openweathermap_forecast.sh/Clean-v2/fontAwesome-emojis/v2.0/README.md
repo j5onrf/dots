@@ -29,23 +29,6 @@ provides dynamic, at-a-glance status indicators through color changes.
     CPU usage and process calls.
 ```
 
-### Waybar `style.css`
-
-Add these rules to your `~/.config/waybar/style.css` to enable dynamic colors.
-
-```css
-/* --- Weather Temperature Styles --- */
-#custom-weather.hot {
-    /* Red for hot temps. Use a theme variable or a hex code. */
-    color: #bf616a;
-}
-
-#custom-weather.cold {
-    /* Blue for cold temps. Use a theme variable or a hex code. */
-    color: #88c0d0;
-}
-```
-
 ### (Optional) Refresh on Resume from Suspend
 
 To update the weather after waking from sleep, create a systemd service.
