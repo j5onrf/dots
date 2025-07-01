@@ -1,4 +1,4 @@
-*** Attention! You will need get_openweathermap_forecast.sh for fix it without it.
+*** Attention! You will need get_openweathermap_forecast.sh, or configure without it.
 
 *This is the bar im using 2025-06-30* *
 ![FullScreen-2025-06-30_20-37-49](https://github.com/user-attachments/assets/fa62239c-916d-4e73-9909-70a3f04765b6)
