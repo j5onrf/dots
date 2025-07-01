@@ -1,0 +1,239 @@
+//  __   __ _______ ______  __   __ ___     _______ _______ 
+// |  |_|  |       |      ||  | |  |   |   |       |       |
+// |       |   _   |  _    |  | |  |   |   |    ___|  _____|
+// |       |  | |  | | |   |  |_|  |   |   |   |___| |_____ 
+// |       |  |_|  | |_|   |       |   |___|    ___|_____  |
+// | ||_|| |       |       |       |       |   |___ _____| |
+// |_|   |_|_______|______||_______|_______|_______|_______|
+//  by j5onrf, from ML4W & Omarchy
+//  0-13.jsonc 2025-07-01
+
+    // --- CORE WORKFLOW MODULES ---
+
+    {
+    "hyprland/workspaces": {
+      "on-click": "activate",
+      "format": "{icon}",
+      "format-icons": {
+        "default": "",
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "active": ""
+      },
+      "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": []
+      }
+    },
+    // --- GROUP DEFINITIONS ---
+    "group/settings": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/settings",
+            "custom/waybarthemes",
+            "custom/wallpaper",
+            "custom/hypridle",
+            "custom/notification",
+            "custom/drawer_spacer"
+        ]
+    },
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/system",
+            "custom/drawer_spacer",
+            "cpu",
+            "memory",
+            "custom/updates",
+            "network",
+            "custom/hyprshade",
+            "custom/cliphist",
+            "pulseaudio",
+            "tray"
+        ]
+    },
+    "custom/drawer_spacer": {
+        "format": " ",
+        "tooltip": false
+    },
+
+    // --- ACTION & LAUNCHER MODULES ---
+    "custom/appmenu": {
+        "format": "\ue410",
+        "on-click": "~/.config/rofi/bin/launcher",
+        "on-click-right": "~/.config/rofi/bin/launcher2",
+        "tooltip": false
+    },
+    "custom/exit": {
+        "format": "\uf011",
+        "on-click": "~/.config/ml4w/scripts/wlogout.sh",
+        "on-click-right": "com.ml4w.welcome",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "tooltip": false
+    },
+    "custom/cliphist": {
+        "format": "\ue214",
+        "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
+        "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
+        "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
+        "tooltip": false
+    },
+    "custom/hyprshade": {
+        "format": "\ue0c9",
+        "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
+        "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi",
+        "tooltip": false
+    },
+    "custom/settings": {
+        "format": "\uf078",
+        "on-click": "flatpak run com.ml4w.sidebar",
+        "on-click-right": "/home/j5/.config/hypr/settings/com.ml4w.hyprland.settings",
+        "on-click-middle": "hyprctl dispatch exec 'kitty --class hyprpicker -e zsh -c \"sleep 0.5; hyprpicker; exec zsh\"'",
+        "tooltip": false
+    },
+    "custom/system": {
+        "format": "\uf077",
+        "on-click": "flatpak run com.ml4w.sidebar",
+        "on-click-right": "exec ~/.config/waybar/launch.sh",
+        "on-click-middle": "hyprctl dispatch swapsplit",
+        "tooltip": false
+    },
+    "custom/wallpaper": {
+        "exec": "~/.config/hypr/scripts/get_wallpaper_status.sh",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 1, 
+        "tooltip": false,
+        "on-click": "waypaper",
+        "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
+        "on-click-middle": "~/.config/hypr/scripts/turn-off-matugen.sh"
+    },
+    "custom/waybarthemes": {
+        "format": "\uf363",
+        "on-click": "~/.config/waybar/themeswitcher.sh",
+        "tooltip": false
+    },
+    
+    // --- SYSTEM STATUS & SERVICE MODULES ---
+    "clock": {
+        "format": "{:%I\n%M}",
+        "tooltip": true,
+        "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "on-click": "flatpak run com.ml4w.calendar",
+        "calendar": {
+            "format": {
+                "today": "<b><u>{}</u></b>"
+            }
+        }
+    },
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 3600, // Update every hour
+        "exec": "~/.config/hypr/scripts/get_openweathermap_forecast.sh",
+        "return-type": "json",
+        "signal": 8 // Optional - Systemd resume from suspend
+    },
+    "cpu": {
+        "format-critical": "<b>{usage}</b>",
+        "format-high": "{usage}",
+        "format-medium": "{usage}",
+        "format-low": "{usage}",
+        "on-click": "kitty -e htop --sort-key PERCENT_CPU",
+        "tooltip": false,
+        "interval": 5, // Update every 5 seconds
+        "states": {
+            "critical": 80, "high": 50, "medium": 5, "low": 0
+        }
+    },
+    "memory": {
+        "format": "{used:0.1f}",
+        "on-click": "kitty -e htop --sort-key PERCENT_MEM",
+        "interval": 30,
+        "tooltip": false
+    },
+    "custom/updates": {
+        "format": "{}",
+        "escape": true,
+        "return-type": "json",
+        "exec": "~/.config/ml4w/scripts/updates.sh",
+        "interval": 1800,
+        "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
+        "on-click-right": "~/.config/ml4w/settings/software.sh"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon}",
+        "format-icons": {
+            "default": ["\uf8f2"]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format-muted": "\uf7a4",
+        "tooltip": false
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-ethernet": "\uf8dd",
+        "format-disconnected": "\ue250",
+        "tooltip": true,
+        "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 20,
+        "interval": 3,
+        "nospacing": 1,
+        "on-click": "nm-connection-editor",
+        "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
+    },
+    "tray": {
+        "icon-size": 24,
+        "spacing": 10
+    },
+    "custom/hypridle": {
+        "format": "\uf30d",
+        "return-type": "json",
+        "escape": true,
+        "exec-on-event": true,
+        "interval": 60,
+        "exec": "~/.config/hypr/scripts/hypridle.sh status",
+        "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
+    },
+    "custom/notification": {
+        "tooltip-format": "Left: Notifications\nRight: Do not disturb",
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "\uf848",
+            "none": "\uf0f3",
+            "dnd-notification": "\uf1f6",
+            "dnd-none": "\uf1f6",
+            "inhibited-notification": "\uf1f7",
+            "inhibited-none": "\uf1f6",
+            "dnd-inhibited-notification": "\uf1f7",
+            "dnd-inhibited-none": "\uf1f6"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw"
+    }
+}
