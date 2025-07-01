@@ -88,7 +88,7 @@ window#waybar {
     opacity: 1;
 }
 #cpu, #memory, #custom-updates, #custom-weather {
-    font-size: 0.57em;
+    font-size: 0.67em;
 }
 
 /* --- Module State Overrides --- */
