@@ -7,10 +7,11 @@
 
 </details>
 
-<details><summary>(2025-June26) Omarchy is out!</summary>
+<details open><summary>(2025-June26) Omarchy is out!</summary>
 <p>
 
-[I will try this](https://reddit.idevicehacked.com/r/hyprland/comments/1lleu0f/omarchy_is_out/)
+[I try this<sup> wip</sup>](https://reddit.idevicehacked.com/r/hyprland/comments/1lleu0f/omarchy_is_out/)
+![FullScreen-2025-07-03_22-39-35](https://github.com/user-attachments/assets/779a19de-38c7-453d-befa-bd6ef98fb383)
 
 </details>
 
