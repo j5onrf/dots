@@ -1,11 +1,10 @@
 *** Attention! You will need get_openweathermap_forecast.sh, or configure without it.
 
 *This is the bar im using 2025-06-30* *
-![FullScreen-2025-06-30_20-37-49](https://github.com/user-attachments/assets/fa62239c-916d-4e73-9909-70a3f04765b6)
+
+![FullScreen-2025-07-03_22-46-46](https://github.com/user-attachments/assets/d668c39e-5dce-4b6c-bbcb-140375186849)
 
 ![FullScreen-2025-06-23_09-31-40](https://github.com/user-attachments/assets/1a91025c-fb85-4908-8b5b-d022e0762515)
-
-![FullScreen-2025-06-25_16-40-13](https://github.com/user-attachments/assets/aebac04b-a397-47af-829e-81241a6b0118)
 
 ### Summary of Recent CSS Improvements
 
