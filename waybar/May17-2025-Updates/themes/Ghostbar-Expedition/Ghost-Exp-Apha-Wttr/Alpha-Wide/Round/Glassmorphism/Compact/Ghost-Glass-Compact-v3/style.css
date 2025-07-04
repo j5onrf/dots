@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  Ghost-Glass-Compact-v3 (wip) 2025-06-26
+ *  Ghost-Glass-Compact-v3 (wip) 2025-07-04
  */
 
 @import 'ghost-matugen.css';
@@ -96,6 +96,8 @@ window#waybar {
 
 /* --- Tooltips --- */
 tooltip {
+    font-family: "JetBrainsMono Nerd Font Mono", "Font Awesome 6 Pro", monospace;
+    /* font-weight: 300; */
     background-color: @ghost_bar_background;
     padding: 0.8em;
     opacity: 0.95;
@@ -104,13 +106,4 @@ tooltip {
 tooltip label {
     color: @primary;
     font-size: 14px;
-}
-tooltip label big {
-    color: @on_surface;
-}
-tooltip label tt {
-    font-family: "JetBrainsMono Nerd Font Mono", monospace;
-}
-tooltip label tt small {
-    font-size: 0.9em;
 }
