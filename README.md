@@ -1,13 +1,20 @@
 # Hyprdots
 
-<details open><summary>(2025-June26) Omarchy is out!</summary>
+<details><summary>(2025-July3) Shader Wallpapers for gen Matugen Colors</summary>
+<p>
+
+[Shaders-Matugen-Wallpapers-Colors](https://github.com/j5onrf/walls/tree/main/Shaders-Matugen-Colors)
+
+</details>
+
+<details><summary>(2025-June26) Omarchy is out!</summary>
 <p>
 
 [I will try this](https://reddit.idevicehacked.com/r/hyprland/comments/1lleu0f/omarchy_is_out/)
 
 </details>
 
-<details open><summary>(2025-June24) Upgrading Waybar should bring tangible benefits, especially for theming</summary>
+<details><summary>(2025-June24) Upgrading Waybar should bring tangible benefits, especially for theming</summary>
 <p>
 
 [I had to Downgrade to Waybar v0.12.0](https://github.com/j5onrf/dots/tree/main/waybar/waybar-0.13.0-release)  &nbsp; [0-13](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13) &nbsp; [Official 0.13.0 release notes](https://github.com/Alexays/Waybar/releases/tag/0.13.0)
