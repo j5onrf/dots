@@ -7,6 +7,7 @@
 # color based on configurable hot/cold thresholds. Features robust caching,
 # data validation, and uses FontAwesome Pro icons for weather conditions.
 # Optimized for performance by minimizing external process calls.
+# Includes logic to automatically refresh data after resuming from suspend.
 #
 
 # --- CONFIGURATION ---
