@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W base
-//  ghost-glassmorphism.jsonc 2025-06-30
+//  ghost-glassmorphism.jsonc 2025-07-04
 
     // --- CORE WORKFLOW MODULES ---
 {
@@ -24,6 +24,7 @@
         "window-rewrite-default": "\ue3dd",
         "window-rewrite": {
           "org.keepassxc.KeePassXC": "\uf084", // --- Special ScratchPads
+          "GeminiScratchpad": "\uf054",
             "title<.*youtube.*>": "\uf144",
             "title<.*reddit.*>": "",
             "title<.*dot.*>": "\ue13a",
