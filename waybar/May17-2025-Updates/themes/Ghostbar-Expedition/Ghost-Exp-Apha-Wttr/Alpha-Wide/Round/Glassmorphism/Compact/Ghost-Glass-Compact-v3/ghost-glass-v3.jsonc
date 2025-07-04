@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W base
-//  ghost-glass-v3.jsonc (beta) 2025-06-26
+//  ghost-glass-v3.jsonc (beta) 2025-07-04
 
     // --- CORE WORKFLOW MODULES ---
 {
@@ -24,6 +24,7 @@
         "window-rewrite-default": "\ue3dd",
         "window-rewrite": {
           "org.keepassxc.KeePassXC": "\uf084", // --- Special ScratchPads
+          "GeminiScratchpad": "\uf054",
             "title<.*youtube.*>": "\uf04b",
             "title<.*reddit.*>": "",
             "title<.*dot.*>": "\ue13a",
@@ -185,7 +186,7 @@
     "custom/weather": {
         "format": "{}",
         "tooltip": true,
-        "interval": 1800, // Update every 30 minutes
+        "interval": 3600, // Update every hour
         "exec": "~/.config/hypr/scripts/get_openweathermap_forecast.sh",
         "return-type": "json"
     },
