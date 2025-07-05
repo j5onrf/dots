@@ -1,7 +1,5 @@
 *** Attention! You will need get_openweathermap_forecast.sh, or configure without it.
 
-*This is the bar im using 2025-06-30* *
-
 ![FullScreen-2025-07-03_22-46-46](https://github.com/user-attachments/assets/d668c39e-5dce-4b6c-bbcb-140375186849)
 
 ![FullScreen-2025-07-04_09-48-45](https://github.com/user-attachments/assets/4278e7a6-54b3-4df2-a8e8-93d929c765ce)
