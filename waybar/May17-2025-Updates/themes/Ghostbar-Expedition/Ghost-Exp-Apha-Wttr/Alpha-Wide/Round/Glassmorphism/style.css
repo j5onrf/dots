@@ -95,7 +95,6 @@ window#waybar {
 #memory,
 #custom-updates {
     font-family: "SF Mono", monospace;
-    /* font-weight: 300; */
     font-size: 0.57em;
     color: @ghost_text_primary;
 }
@@ -132,7 +131,6 @@ tooltip {
     background-color: @ghost_bar_background;
     opacity: 0.95;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* font-weight: 300; */
 }
 tooltip label {
     color: @primary;
