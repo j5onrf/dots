@@ -6,6 +6,7 @@
 #                /_/       /_/             
 # -----------------------------------------------------
 # Check to use wallpaper cache
+# 2025-07-05 more optimizations
 # -----------------------------------------------------
 
 if [ -f ~/.config/ml4w/settings/wallpaper_cache ]; then
@@ -139,9 +140,6 @@ fi
 # -----------------------------------------------------
 # Execute wallust
 # -----------------------------------------------------
-
-echo ":: Execute wallust with $used_wallpaper"
-$HOME/.cargo/bin/wallust run $used_wallpaper
 
 # --- Add this section to update Kew colors ---
 # KEW_UPDATE_SCRIPT="${XDG_CONFIG_HOME:-$HOME/.config}/hypr/scripts/update_kew_colors.sh"
