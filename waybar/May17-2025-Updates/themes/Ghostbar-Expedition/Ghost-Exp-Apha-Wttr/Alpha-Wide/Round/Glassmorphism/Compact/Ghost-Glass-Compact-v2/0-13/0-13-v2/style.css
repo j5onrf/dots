@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  0-13-v2 2025-07-01
+ *  0-13-v2 2025-07-04
  */
 
 @import 'ghost-matugen.css';
@@ -36,7 +36,7 @@ window#waybar {
 #clock, #custom-weather {
     color: @primary;
     margin: 0.2em;
-    padding: 0.11em 0em; /* Based on font-size - 20px = 0.19em - 24px = 0.3em */
+    padding: 0.11em 0em;
     border-radius: 0.4em;
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
@@ -67,12 +67,12 @@ window#waybar {
 /* --- Text-Based Modules --- */
 #clock, #custom-weather,
 #cpu, #memory, #custom-updates {
-    font-family: "SF Mono", "JetBrainsMono Nerd Font Mono", monospace;
+    font-family: "JetBrainsMono Nerd Font Mono", monospace;
     color: @ghost_text_primary;
 }
 #clock {
     color: @primary;
-    font-size: 0.857em;
+    font-size: 0.9em;
 }
 /* Hidden Drawer Toggles */
 #custom-settings {
@@ -107,8 +107,7 @@ window#waybar {
 
 /* --- Tooltips --- */
 tooltip {
-    font-family: "SF Mono", "Font Awesome 6 Pro", monospace;
-    /* font-weight: 300; */
+    font-family: "JetBrainsMono Nerd Font Mono", "Font Awesome 6 Pro", monospace;
     background-color: @ghost_bar_background;
     padding: 0.8em;
     opacity: 0.95;
