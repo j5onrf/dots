@@ -1,0 +1,82 @@
+/*                         
+* j5onrf from base Murzchnvok (2025-07-06) TokyoNight.rasi
+*/
+
+/* ---- Configuration ---- */
+configuration {
+    modi:                    "drun,run,window";
+    show-icons:              true;
+    icon-theme:              "";
+    dynamic:                 false;
+    fixed-num-lines:         true;
+    font:                    "JetbrainsMono Nerd Font Mono 14";
+    hover-select:            false;
+    scroll-method:           1;
+    me-select-entry:         "";
+    me-accept-entry:         "MousePrimary";
+
+    timeout {
+    delay: 10;
+    action: "kb-cancel";
+  }
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+
+  bg: #1a1b26;
+  bg-alt: #232433;
+  fg: #6a6f87;
+  fg-alt: #a9b1d6;
+
+  background-color: @bg;
+  text-color: @fg;
+}
+
+window {
+  transparency: "real";
+  width: 700px;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  background-color: @bg-alt;
+  children: [prompt, entry];
+}
+
+entry {
+  background-color: inherit;
+  padding: 12px 3px;
+}
+
+prompt {
+  background-color: inherit;
+  padding: 12px;
+}
+
+listview {
+  lines: 8;
+}
+
+element {
+  children: [element-icon, element-text];
+}
+
+element-icon {
+  padding: 10px 10px;
+  size: 20px;
+}
+
+element-text {
+  padding: 10px 0;
+}
+
+element-text selected {
+  text-color: @fg-alt;
+}
