@@ -55,6 +55,6 @@
       "type": "prompt"
     }
   ],
-  "final_space": true, // This was already here, adds space AFTER command output
+  "final_space": true,
   "version": 3
 }
