@@ -1,4 +1,4 @@
 # Rofi from base Murzchnvok (2025-07-06) TokyoNight.rasi
 #### NEW! timeout function
+![FullScreen-2025-07-06_16-52-07](https://github.com/user-attachments/assets/3029637d-ae9b-47e9-8840-cac6952d8d6d)
 
-![FullScreen-2025-07-06_16-32-36](https://github.com/user-attachments/assets/2c187d6d-a4f0-4f49-a11c-6f2823a39961)
