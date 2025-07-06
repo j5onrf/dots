@@ -11,7 +11,7 @@
   "blocks": [
     {
       "alignment": "left",
-      "newline": true, // <<< ADDED THIS LINE FOR SPACE AT THE TOP
+      "newline": true,
       "segments": [
         {
           "foreground": "p:user_fg",
