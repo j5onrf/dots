@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  Ghost-Glassmorphism (Optimized) 2025-07-05
+ *  Ghost-Glassmorphism (Optimized) 2025-07-06
  */
 
 @import 'ghost-matugen.css';
@@ -18,7 +18,7 @@ window#waybar {
 }
 
 .modules-center {
-    font-family: "Font Awesome 6 Pro Light";
+    font-family: "Font Awesome 6 Pro";
     font-size: 18px; /* Base size - Defaults 24 - 20 - 28 */
     margin: 8px;
     padding: 2px 4px;
@@ -95,7 +95,7 @@ window#waybar {
 #memory,
 #custom-updates {
     font-family: "SF Mono", monospace;
-    font-size: 0.57em;
+    font-size: 0.7em;
     color: @ghost_text_primary;
 }
 
