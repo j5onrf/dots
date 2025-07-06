@@ -1,5 +1,5 @@
 /*                         
-* j5onrf from base Murzchnvok (2025-07-06) TokyoNight.rasi
+* j5onrf from base Murzchnvok (2025-07-06) TokyoNight
 */
 
 /* ---- Configuration ---- */
@@ -15,10 +15,8 @@ configuration {
     me-select-entry:         "";
     me-accept-entry:         "MousePrimary";
 
-    timeout {
-    delay: 10;
-    action: "kb-cancel";
-  }
+    drun { display-name: ""; }
+    timeout { delay: 10; action: "kb-cancel"; }
 }
 
 * {
