@@ -1,0 +1,89 @@
+/* 
+ *  by j5onrf, from ML4W base
+ *  GGC-v4 2025-07-06
+ */
+
+@import 'ghost-matugen.css';
+
+* {
+    background: none;
+    border: none;
+    border-radius: 0em;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+.modules-center {
+    font-family: "Font Awesome 6 Duotone";
+    font-size: 24px;
+    margin: 0px;
+    padding: 0px;
+}
+.modules-left > *,
+.modules-center > *,
+.modules-right > *,
+#workspaces button {
+    color: @primary;
+    margin: 0.15em 0.2em;
+    padding: 0.1em 0.01em;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-out;
+}
+.modules-left > *:hover,
+.modules-center > *:hover,
+.modules-right > *:hover,
+#workspaces button:hover,
+#workspaces button.active {
+    box-shadow: inset 0.07em 0 @primary;
+    border-radius: 0.2em;
+}
+
+#custom-appmenu, #custom-exit, 
+#custom-settings, #custom-system {
+    opacity: 0;
+}
+#custom-appmenu:hover, #custom-exit:hover,
+#custom-settings:hover, #custom-system:hover {
+    opacity: 1;
+}
+
+#clock, #custom-weather,
+#cpu, #memory, #custom-updates {
+    font-family: "JetBrainsMono Nerd Font Mono", monospace;
+    color: @ghost_text_primary;
+}
+#clock, #custom-weather{
+    font-size: 0.857em;
+}
+#custom-settings, #custom-system {
+    font-size: 0.5em;
+    padding: 0.4em;
+}
+#cpu, #memory, #custom-updates {
+    font-size: 0.57em;
+}
+
+#custom-hypridle.active { color: @ghost_hypridle_active_icon; }
+#custom-hypridle.notactive { color: @ghost_hypridle_inactive_icon; }
+#pulseaudio.muted { color: @ghost_pulseaudio_muted_fg; }
+#pulseaudio.muted:hover { color: @ghost_pulseaGhaudi_muted_hover__fg; }
+#cpu.medium { color: @tertiary_fixed; }
+#cpu.high { color: @source_color; }
+#cpu.critical { color: @error; font-weight: bold; }
+
+#custom-drawer-spacer {
+    font-size: 0.3em;
+}
+
+tooltip {
+    font-family: "JetBrainsMono Nerd Font Mono", "Font Awesome 6 Pro", monospace;
+    background-color: @ghost_bar_background;
+    padding: 0.8em;
+    opacity: 0.95;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+tooltip label {
+    color: @primary;
+    font-size: 14px;
+}
