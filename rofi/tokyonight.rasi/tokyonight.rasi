@@ -2,10 +2,8 @@
 * j5onrf from base Murzchnvok (2025-07-06) TokyoNight
 */
 
-/* ---- Configuration ---- */
 configuration {
     modi:                    "drun,run,window";
-    dynamic:                 false;
     font:                    "JetbrainsMono Nerd Font Mono 14";
     me-select-entry:         "";
     me-accept-entry:         "MousePrimary";
