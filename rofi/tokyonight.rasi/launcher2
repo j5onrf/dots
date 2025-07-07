@@ -4,5 +4,4 @@
 rofi \
 	-show drun \
 	-drun-display-format "{name}" \
-	-kb-cancel Escape \
 	-theme "$HOME"/.config/rofi/config/themes/tokyonight.rasi
