@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  GGC-v4 2025-07-06 (wip)
+ *  GGC-v4 2025-07-06
  */
 
 @import 'ghost-matugen.css';
@@ -12,13 +12,13 @@
 }
 
 window#waybar {
-    background-color: transparent;
+    background-color: rgba(50, 50, 50, 0.3);
 }
 .modules-center {
     font-family: "Font Awesome 6 Duotone";
     font-size: 24px;
-    margin: 0px;
-    padding: 0px;
+    padding: 2px 0px;
+    /* background-color: @ghost_bar_background; */
 }
 .modules-left > *,
 .modules-center > *,
@@ -27,7 +27,8 @@ window#waybar {
     color: @primary;
     margin: 0.15em 0.2em;
     padding: 0.1em 0.01em;
-    border-left: 0.07em solid transparent; 
+    border-radius: 0em;
+    border-left: 0.07em solid transparent;
     transition: all 0s;
 }
 .modules-left > *:hover,
