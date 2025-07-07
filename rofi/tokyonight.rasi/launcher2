@@ -3,9 +3,6 @@
 
 rofi \
 	-show drun \
-	-scroll-method 0 \
-	-drun-match-fields all \
 	-drun-display-format "{name}" \
-	-no-drun-show-actions \
-        -kb-cancel Escape \
+	-kb-cancel Escape \
 	-theme "$HOME"/.config/rofi/config/themes/tokyonight.rasi
