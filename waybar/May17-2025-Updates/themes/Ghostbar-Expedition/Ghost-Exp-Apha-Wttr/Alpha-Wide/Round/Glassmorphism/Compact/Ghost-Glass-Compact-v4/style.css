@@ -8,7 +8,7 @@
 * {
     background: none;
     border: none;
-    border-radius: 0.2em;
+    border-radius: 0em;
 }
 
 window#waybar {
@@ -27,7 +27,7 @@ window#waybar {
     color: @primary;
     margin: 0.15em 0.2em;
     padding: 0.1em 0.01em;
-    border: 1px solid transparent;
+    border-left: 0.07em solid transparent; 
     transition: all 0s;
 }
 .modules-left > *:hover,
@@ -35,19 +35,19 @@ window#waybar {
 .modules-right > *:hover,
 #workspaces button:hover,
 #workspaces button.active {
-    box-shadow: inset 0.07em 0 @primary;
+    border-left-color: @primary;
 }
 
 #custom-appmenu, #custom-exit, 
 #custom-settings, #custom-system {
-    font-size: 20px;
-    box-shadow: inset 0.07em 0 @primary;
     opacity: 0;
 }
 #custom-appmenu:hover, #custom-exit:hover,
 #custom-settings:hover, #custom-system:hover {
-    box-shadow: inset 0.07em 0 @primary;
     opacity: 1;
+}
+#custom-exit:hover {
+    padding-right: 0.3em;
 }
 
 #clock, #custom-weather,
