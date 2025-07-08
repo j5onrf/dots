@@ -66,6 +66,7 @@ window#waybar {
     background-color: alpha(@primary, 0.30);
     border: 1px solid;
     opacity: 1;
+    padding-right: 0.4em;
 }
 #custom-exit:hover {
     padding-right: 0.2em;
