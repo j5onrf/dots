@@ -1,4 +1,4 @@
-### Omarchy
+### Ghostarchy
 
 ![FullScreen-2025-07-05_10-45-03](https://github.com/user-attachments/assets/fb2f19e1-2020-4b37-b863-0aadd13af356)
 
