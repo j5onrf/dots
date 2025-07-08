@@ -1,13 +1,12 @@
 #!/bin/bash
 #
 # Waybar Weather & Forecast Script
-# Version 2.1 (2025-07-04)
+# Version 2.0 (2025-07-01)
 #
 # Displays the current temperature, a 5-day forecast, and dynamically changes
 # color based on configurable hot/cold thresholds. Features robust caching,
 # data validation, and uses FontAwesome Pro icons for weather conditions.
 # Optimized for performance by minimizing external process calls.
-# Includes logic to automatically refresh data after resuming from suspend.
 #
 
 # --- CONFIGURATION ---
@@ -44,26 +43,14 @@ WEATHER_API_URL="http://api.openweathermap.org/data/2.5/weather?id=${LOCATION_QU
 FORECAST_API_URL="http://api.openweathermap.org/data/2.5/forecast?id=${LOCATION_QUERY}&appid=${API_KEY}&units=${UNITS}"
 WEATHER_CACHE_FILE="/tmp/waybar_weather_current_$(echo -n "$LOCATION_QUERY" | md5sum | cut -d' ' -f1).json"
 FORECAST_CACHE_FILE="/tmp/waybar_weather_forecast_$(echo -n "$LOCATION_QUERY" | md5sum | cut -d' ' -f1).json"
-WEATHER_CACHE_TTL=3600 # 1 hour
-FORECAST_CACHE_TTL=7200 # 2 hours
-
-# --- RESUME-FROM-SUSPEND DETECTION ---
-LAST_RUN_TIMESTAMP_FILE="/tmp/waybar_weather_last_run_timestamp_$(echo -n "$LOCATION_QUERY" | md5sum | cut -d' ' -f1)"
-FORCE_REFRESH=false
-if [ -f "$LAST_RUN_TIMESTAMP_FILE" ]; then
-    last_run=$(cat "$LAST_RUN_TIMESTAMP_FILE")
-    time_since_last_run=$(($(date +%s) - last_run))
-    # If last run was > 900s (15 mins) ago, force a refresh to handle resume from suspend.
-    if [ "$time_since_last_run" -gt 900 ]; then
-        FORCE_REFRESH=true
-    fi
-fi
+WEATHER_CACHE_TTL=3600
+FORECAST_CACHE_TTL=7200
 
 # --- DATA FETCHING & VALIDATION ---
-if [ "$FORCE_REFRESH" = true ] || ! [ -f "$WEATHER_CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$WEATHER_CACHE_FILE"))) -gt $WEATHER_CACHE_TTL ] || [ ! -s "$WEATHER_CACHE_FILE" ]; then
+if ! [ -f "$WEATHER_CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$WEATHER_CACHE_FILE"))) -gt $WEATHER_CACHE_TTL ] || [ ! -s "$WEATHER_CACHE_FILE" ]; then
     curl -sf "$WEATHER_API_URL" > "$WEATHER_CACHE_FILE"
 fi
-if [ "$FORCE_REFRESH" = true ] || ! [ -f "$FORECAST_CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$FORECAST_CACHE_FILE"))) -gt $FORECAST_CACHE_TTL ] || [ ! -s "$FORECAST_CACHE_FILE" ]; then
+if ! [ -f "$FORECAST_CACHE_FILE" ] || [ $(($(date +%s) - $(stat -c %Y "$FORECAST_CACHE_FILE"))) -gt $FORECAST_CACHE_TTL ] || [ ! -s "$FORECAST_CACHE_FILE" ]; then
     curl -sf "$FORECAST_API_URL" > "$FORECAST_CACHE_FILE"
 fi
 if [ ! -s "$WEATHER_CACHE_FILE" ] || [ ! -s "$FORECAST_CACHE_FILE" ]; then
@@ -76,8 +63,6 @@ if [ "$(echo "$WEATHER_RAW_DATA" | jq -r '.cod')" != "200" ] || [ "$(echo "$FORE
     printf '{"text": "API?", "tooltip": "API Error"}\n'
     exit 1
 fi
-# After a successful validation, update the timestamp of the last successful run.
-date +%s > "$LAST_RUN_TIMESTAMP_FILE"
 
 # --- PARSE CURRENT DATA & DETERMINE TEMP CLASS ---
 CURRENT_TEMP_NUM=$(echo "$WEATHER_RAW_DATA" | jq '.main.temp | round')
@@ -132,7 +117,7 @@ while IFS=$'\t' read -r dt dt_txt temp_min temp_max weather_id; do
         if [[ "$local_date_key" == "$future_date" ]]; then skip_date=false; break; fi
     done
     [[ "$skip_date" == true ]] && continue
-    if [[ -z "${daily_day_name[$local_date_key]}" ]]; then daily_day_name[$local_date_key]=$(date -d " @$dt" '+%a'); fi
+    if [[ -z "${daily_day_name[$local_date_key]}" ]]; then daily_day_name[$local_date_key]=$(date -d "@$dt" '+%a'); fi
     if (( 10#$local_hour >= 12 && 10#$local_hour <= 15 )); then daily_icon[$local_date_key]=$weather_id; elif [[ -z "${daily_icon[$local_date_key]}" ]]; then daily_icon[$local_date_key]=$weather_id; fi
     temp_min_int=${temp_min%.*}; temp_max_int=${temp_max%.*}
     if [[ -z "${daily_min[$local_date_key]}" ]] || (( temp_min_int < daily_min[$local_date_key] )); then daily_min[$local_date_key]=$temp_min_int; fi
@@ -154,5 +139,4 @@ TEXT_OUTPUT="${CURRENT_TEMP_NUM}°"
 TOP_LINE="$CURRENT_EMOJI Feels $FEELS_LIKE_TEMP"
 FULL_TOOLTIP="$TOP_LINE\n$CURRENT_CONDITION_TEXT_SHORT\n$TOOLTIP_FORECAST"
 
-printf '{"text": "%s", "tooltip": "%s", "class": "%s"}\n' "$TEXT_OUTPUT" "${FULL_TOOLTIP//$'
-'/\\n}" "$temp_class"
+printf '{"text": "%s", "tooltip": "%s", "class": "%s"}\n' "$TEXT_OUTPUT" "${FULL_TOOLTIP//$'\n'/\\n}" "$temp_class"
