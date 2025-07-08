@@ -20,6 +20,10 @@ general {
 # toggle_float_resize.sh
 
 `````
+bind = $mainMod, T, exec, ~/.config/hypr/scripts/toggle_float_resize.sh                     # Toggle active windows into floating mode
+`````
+
+`````
 #!/bin/bash
 
 if hyprctl activewindow -j | jq -e '.floating == false'; then
