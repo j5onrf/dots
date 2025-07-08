@@ -62,8 +62,9 @@ window#waybar {
 }
 #custom-appmenu:hover, #custom-exit:hover,
 #custom-settings:hover, #custom-system:hover {
-    background-color: rgba(50, 50, 50, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-color: alpha(@primary, 0.50);
+    background-color: alpha(@primary, 0.30);
+    border: 1px solid;
     opacity: 1;
 }
 #custom-exit:hover {
