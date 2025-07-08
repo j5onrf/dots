@@ -15,3 +15,25 @@ general {
     # MODIFIED: Does the same for inactive windows using $outline color.
     col.inactive_border = $outline rgba(00000000) $outline rgba(00000000) $outline rgba(00000000) $outline rgba(00000000) 45deg
 }
+`````
+
+# toggle_float_resize.sh
+
+`````
+#!/bin/bash
+
+if hyprctl activewindow -j | jq -e '.floating == false'; then
+
+    read -r mon_width mon_height <<< $(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | "\(.width) \(.height)"')
+
+    target_width=$((mon_width * 60 / 100))
+    target_height=$((mon_height * 70 / 100))
+
+    hyprctl --batch "\
+        dispatch togglefloating; \
+        dispatch resizeactive exact $target_width $target_height; \
+        dispatch centerwindow"
+else
+    hyprctl dispatch togglefloating
+fi
+`````
