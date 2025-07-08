@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  GGC-v3.75 2025-07-07
+ *  GGC-v3.75 2025-07-08
  */
 
 @import 'ghost-matugen.css';
@@ -8,12 +8,13 @@
 * {
     background: none;
     border: none;
-    border-radius: 0em;
+    border-radius: 0.15em;
 }
 
 window#waybar {
     background-color: transparent;
 }
+
 .modules-center {
     font-family: "Font Awesome 6 Sharp Light";
     font-size: 24px;
@@ -21,44 +22,27 @@ window#waybar {
     padding: 0px;
     background-color: rgba(50, 50, 50, 0.6);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-
     /* --- Border Configuration --- */
     border: none;
-
-    /* Define the 4 lines for the two corners */
     background-image:
-        /* Top-left corner */
         linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
         linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
-        /* Bottom-right corner */
         linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
         linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
-
     background-repeat: no-repeat;
-
-    /* Define the size of each line */
     background-size:
-        /* Top-left */
-        15px 2px, /* Horizontal line */
-        2px 15px, /* Vertical line */
-        /* Bottom-right */
-        15px 2px,
-        2px 15px;
-
-    /* Position each line */
+        15px 2px, 2px 15px, 15px 2px, 2px 15px;
     background-position:
-        top left,
-        top left,
-        bottom right,
-        bottom right;
+        top left, top left, bottom right, bottom right;
 }
+
 .modules-left > *,
 .modules-center > *,
 .modules-right > *,
 #workspaces button {
     color: @primary;
     margin: 0.15em 0.2em;
-    padding: 0.1em 0.01em;
+    padding: 0.1em 0.1em;
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
 }
@@ -81,6 +65,9 @@ window#waybar {
     background-color: rgba(50, 50, 50, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.2);
     opacity: 1;
+}
+#custom-exit:hover {
+    padding-right: 0.2em;
 }
 
 #clock, #custom-weather,
