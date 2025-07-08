@@ -16,7 +16,7 @@ In Waybar `v0.12.0` and earlier, the following configuration allowed for a singl
 ```json
 "hyprland/workspaces#rw": {
     "format": "{icon}{windows}",
-    "format-window-separator": "\n", // Ensures only one icon is visible
+    "format-window-separator": "\n", // Ensures vertical icon visibility
     "window-rewrite": {
         "title<.*youtube.*>": "\uf04b",
         "class<firefox>": "\ue24f"
