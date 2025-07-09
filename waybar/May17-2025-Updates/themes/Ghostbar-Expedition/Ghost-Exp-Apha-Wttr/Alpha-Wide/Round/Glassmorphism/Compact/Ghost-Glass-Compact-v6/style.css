@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  GGC-v6 2025-07-07
+ *  GGC-v6 2025-07-08
  */
 
 @import 'ghost-matugen.css';
@@ -53,6 +53,9 @@ window#waybar {
 }
 #custom-exit:hover {
     padding-right: 0.25em;
+}
+#custom-appmenu:hover {
+    font-size: 1.1em;
 }
 
 #clock, #custom-weather,
