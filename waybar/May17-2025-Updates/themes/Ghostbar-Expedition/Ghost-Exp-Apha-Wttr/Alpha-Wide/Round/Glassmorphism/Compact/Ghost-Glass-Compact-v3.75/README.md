@@ -1,6 +1,5 @@
 # Border Gradients
 ![FullScreen-2025-07-07_19-30-28](https://github.com/user-attachments/assets/918430a6-56c5-4bcd-8117-6841ba0995df)
-![FullScreen-2025-07-08_20-22-36](https://github.com/user-attachments/assets/78f44d4f-77e8-4cdc-8e5d-768f84d348ea)
 
 `````
 general {
@@ -19,7 +18,7 @@ general {
     col.inactive_border = $outline rgba(00000000) rgba(00000000) $outline rgba(00000000) rgba(00000000) $outline 90deg
 `````
 `````
-    #3 MODIFIED: Full Border Size
+    #3 MODIFIED: Larger Mid Border Size
     col.active_border = $primary rgba(00000000) rgba(00000000) $primary $primary $primary $primary rgba(00000000) rgba(00000000) $primary 90deg
     col.inactive_border = $outline rgba(00000000) rgba(00000000) $outline $outline $outline $outline rgba(00000000) rgba(00000000) $outline 90deg
 `````
