@@ -16,6 +16,12 @@ general {
     col.inactive_border = $outline rgba(00000000) $outline rgba(00000000) $outline rgba(00000000) $outline rgba(00000000) 45deg
 }
 `````
+`````
+    #2 Borders on all corners + Top and Bottom. Only sides have transparent gaps. 90deg allows this.
+    col.active_border = $primary rgba(00000000) rgba(00000000) $primary rgba(00000000) rgba(00000000) $primary 90deg
+    col.inactive_border = $outline rgba(00000000) rgba(00000000) $outline rgba(00000000) rgba(00000000) $outline 90deg
+
+`````
 
 # toggle_float_resize.sh
 
