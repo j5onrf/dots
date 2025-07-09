@@ -7,20 +7,25 @@ general {
     gaps_in = 5
     gaps_out = 10
 
-    #1 MODIFIED: Uses an 8-point gradient
+    #1 Uses an 8-point gradient
     col.active_border = $primary rgba(00000000) $primary rgba(00000000) $primary rgba(00000000) $primary rgba(00000000) 45deg
     col.inactive_border = $outline rgba(00000000) $outline rgba(00000000) $outline rgba(00000000) $outline rgba(00000000) 45deg
 }
 `````
 `````
-    #2 MODIFIED: Borders on all corners + Top and Bottom. Only sides have transparent gaps. 90deg allows this.
+    #2 Borders on all corners + Top and Bottom. 90deg allows this.
     col.active_border = $primary rgba(00000000) rgba(00000000) $primary rgba(00000000) rgba(00000000) $primary 90deg
     col.inactive_border = $outline rgba(00000000) rgba(00000000) $outline rgba(00000000) rgba(00000000) $outline 90deg
 `````
 `````
-    #3 MODIFIED: Larger Mid Border Size
+    #3 More
     col.active_border = $primary rgba(00000000) rgba(00000000) $primary $primary $primary $primary rgba(00000000) rgba(00000000) $primary 90deg
     col.inactive_border = $outline rgba(00000000) rgba(00000000) $outline $outline $outline $outline rgba(00000000) rgba(00000000) $outline 90deg
+`````
+`````
+    #4 Less
+    col.active_border = $primary rgba(00000000) rgba(00000000) rgba(00000000) rgba(00000000) $primary 90deg
+    col.inactive_border = $outline rgba(00000000) rgba(00000000) rgba(00000000) rgba(00000000) $outline 90deg
 `````
 
 # toggle_float_resize.sh
