@@ -1,6 +1,6 @@
 # Border Gradients
 ![FullScreen-2025-07-07_19-30-28](https://github.com/user-attachments/assets/918430a6-56c5-4bcd-8117-6841ba0995df)
-![FullScreen-2025-07-08_10-44-43](https://github.com/user-attachments/assets/036eaa90-7364-421f-945c-3c6d59bfdb9e)
+![FullScreen-2025-07-08_20-19-47](https://github.com/user-attachments/assets/49b9fede-a472-455f-aa1a-94a7d732a0b2)
 
 `````
 general {
