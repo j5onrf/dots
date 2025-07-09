@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  0-13-v2 2025-07-04
+ *  0-13-v2 2025-07-08
  */
 
 @import 'ghost-matugen.css';
@@ -9,7 +9,7 @@
 * {
     background: none;
     border: none;
-    border-radius: 0.4em; /* Set a base border-radius */
+    border-radius: 0.4em;
 }
 
 window#waybar {
@@ -18,7 +18,7 @@ window#waybar {
 
 .modules-center {
     font-family: "Font Awesome 6 Pro Light";
-    font-size: 18px; /* Base font size - Defaults 24 - 20 - 28 */
+    font-size: 18px;
     margin: 8px;
     padding: 2px;
     min-width: 1.95em;
@@ -63,11 +63,14 @@ window#waybar {
 #custom-settings:hover, #custom-system:hover {
     opacity: 1;
 }
+#custom-appmenu:hover {
+    font-size: 1.2em;
+}
 
 /* --- Text-Based Modules --- */
 #clock, #custom-weather,
 #cpu, #memory, #custom-updates {
-    font-family: "JetBrainsMono Nerd Font Mono", monospace;
+    font-family: "JetBrains Mono", monospace;
     color: @ghost_text_primary;
 }
 #clock {
@@ -101,13 +104,11 @@ window#waybar {
 #cpu.high { color: @source_color; }
 #cpu.critical { color: @error; font-weight: bold; }
 
-/* --- Add new styles for weather temperature --- */
 #custom-weather.hot { color: #ffb4ab; }
 #custom-weather.cold { color: #88c0d0; }
 
-/* --- Tooltips --- */
 tooltip {
-    font-family: "JetBrainsMono Nerd Font Mono", "Font Awesome 6 Pro", monospace;
+    font-family: "JetBrains Mono", "Font Awesome 6 Pro", monospace;
     background-color: @ghost_bar_background;
     padding: 0.8em;
     opacity: 0.95;
