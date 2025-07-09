@@ -83,7 +83,7 @@ fi
 get_emoji() {
     local code=$1
     case "$code" in
-        800) printf "\uf185";; 801) printf "\uf6c4";; 802|803|804) printf "\uf0c2";;
+        800) printf "\uf185";; 801) printf "\uf6c4";; 802|803|804) printf "\uf0c2 ";;
         5*) printf "\uf73d";;  2*) printf "\uf0e7";;  6*) printf "\uf2dc";;
         7*) printf "\uf75f";;  *) printf "\uf2c9";;
     esac
