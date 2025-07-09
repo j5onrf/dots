@@ -8,16 +8,13 @@ general {
     gaps_in = 5
     gaps_out = 10
 
-    # MODIFIED: Uses an 8-point gradient to place a color at each corner and make
-    # the space between them transparent.
+    #1 MODIFIED: Uses an 8-point gradient
     col.active_border = $primary rgba(00000000) $primary rgba(00000000) $primary rgba(00000000) $primary rgba(00000000) 45deg
-
-    # MODIFIED: Does the same for inactive windows using $outline color.
     col.inactive_border = $outline rgba(00000000) $outline rgba(00000000) $outline rgba(00000000) $outline rgba(00000000) 45deg
 }
 `````
 `````
-    #2 Borders on all corners + Top and Bottom. Only sides have transparent gaps. 90deg allows this.
+    #2 MODIFIED: Borders on all corners + Top and Bottom. Only sides have transparent gaps. 90deg allows this.
     col.active_border = $primary rgba(00000000) rgba(00000000) $primary rgba(00000000) rgba(00000000) $primary 90deg
     col.inactive_border = $outline rgba(00000000) rgba(00000000) $outline rgba(00000000) rgba(00000000) $outline 90deg
 
