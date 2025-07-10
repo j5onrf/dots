@@ -26,6 +26,10 @@ window#waybar {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
+#workspaces button:not(.empty):not(.active) {
+    background-color: alpha(@primary, 0.1);
+}
+
 /* This single rule defines the base look for ALL clickable modules. */
 #workspaces button,
 #pulseaudio, #custom-cliphist, #custom-hyprshade, #network, #tray,
@@ -52,15 +56,12 @@ window#waybar {
     border-color: alpha(@primary, 0.50);
 }
 
-#workspaces button:not(.empty):not(.active) {
-    background-color: alpha(@primary, 0.1);
-}
-
 /* --- Hidden Modules (Invisible by Default) --- */
 #custom-appmenu, #custom-exit,
 #custom-settings, #custom-system {
     opacity: 0;
 }
+
 /* --- Reveal Hidden Modules on Hover --- */
 #custom-appmenu:hover, #custom-exit:hover,
 #custom-settings:hover, #custom-system:hover {
@@ -83,6 +84,7 @@ window#waybar {
     color: @primary;
     font-size: 0.9em;
 }
+
 /* Hidden Drawer Toggles */
 #custom-settings {
     font-size: 0.1em;
