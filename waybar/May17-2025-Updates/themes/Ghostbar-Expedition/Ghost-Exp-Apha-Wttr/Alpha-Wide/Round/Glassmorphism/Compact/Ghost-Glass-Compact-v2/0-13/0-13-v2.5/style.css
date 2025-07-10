@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  0-13-v2.5 2025-07-08
+ *  0-13-v2.5 2025-07-10
  */
 
 @import 'ghost-matugen.css';
@@ -40,9 +40,6 @@ window#waybar {
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
 }
-#workspaces button:not(.empty):not(.active) {
-    background-color: alpha(@primary, 0.1);
-}
 
 /* This single rule defines the hover/active effect for ALL interactive modules. */
 #workspaces button:hover, #workspaces button.active,
@@ -53,6 +50,10 @@ window#waybar {
 #clock:hover, #custom-weather:hover {
     background-color: alpha(@primary, 0.30);
     border-color: alpha(@primary, 0.50);
+}
+
+#workspaces button:not(.empty):not(.active) {
+    background-color: alpha(@primary, 0.1);
 }
 
 /* --- Hidden Modules (Invisible by Default) --- */
