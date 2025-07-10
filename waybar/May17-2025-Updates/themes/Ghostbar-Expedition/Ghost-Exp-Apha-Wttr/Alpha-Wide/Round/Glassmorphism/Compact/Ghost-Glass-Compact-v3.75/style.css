@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  GGC-v3.75 2025-07-08
+ *  GGC-v3.75 2025-07-10
  */
 
 @import 'ghost-matugen.css';
@@ -66,15 +66,17 @@ window#waybar {
     background-color: alpha(@primary, 0.30);
     border: 1px solid;
     opacity: 1;
-    padding-right: 0.4em;
 }
 #custom-exit:hover {
     padding-right: 0.2em;
 }
+#custom-appmenu:hover {
+    font-size: 1.2em;
+}
 
 #clock, #custom-weather,
 #cpu, #memory, #custom-updates {
-    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-family: "JetBrains Mono", monospace;
     color: @ghost_text_primary;
 }
 #clock, #custom-weather{
@@ -101,7 +103,7 @@ window#waybar {
 }
 
 tooltip {
-    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Pro", monospace;
+    font-family: "JetBrains Mono", "Font Awesome 6 Pro", monospace;
     background-color: @ghost_bar_background;
     opacity: 0.95;
     border: 1px solid rgba(255, 255, 255, 0.1);
