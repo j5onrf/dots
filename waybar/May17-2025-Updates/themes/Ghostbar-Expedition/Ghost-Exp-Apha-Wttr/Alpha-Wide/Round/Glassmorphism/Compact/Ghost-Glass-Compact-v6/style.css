@@ -60,7 +60,7 @@ window#waybar {
 
 #clock, #custom-weather,
 #cpu, #memory, #custom-updates {
-    font-family: "JetBrainsMono Nerd Font Mono", monospace;
+    font-family: "JetBrains Mono", monospace;
     margin: 0.15em 0em;
     color: @ghost_text_primary;
 }
@@ -88,7 +88,7 @@ window#waybar {
 }
 
 tooltip {
-    font-family: "JetBrainsMono Nerd Font Mono", "Font Awesome 6 Pro", monospace;
+    font-family: "JetBrains Mono", "Font Awesome 6 Pro", monospace;
     background-color: @ghost_bar_background;
     padding: 0.8em;
     opacity: 0.95;
