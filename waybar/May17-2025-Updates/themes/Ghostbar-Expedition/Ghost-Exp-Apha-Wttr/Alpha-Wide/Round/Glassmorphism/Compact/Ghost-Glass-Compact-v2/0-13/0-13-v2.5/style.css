@@ -35,7 +35,7 @@ window#waybar {
 #clock, #custom-weather {
     color: @primary;
     margin: 0.2em;
-    padding: 0em 0.001em;
+    padding: 0em 0em;
     border-radius: 0.4em;
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
