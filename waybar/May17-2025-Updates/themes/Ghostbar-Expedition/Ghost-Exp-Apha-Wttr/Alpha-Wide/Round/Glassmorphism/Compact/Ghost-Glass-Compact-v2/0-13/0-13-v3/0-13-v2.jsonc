@@ -163,7 +163,7 @@
     "interval": 10, // ← Consider 10 seconds unless real-time monitoring
     "states": {
         "critical": 80, "high": 50, "medium": 5, "low": 0
-    }
+        }
     },
     "memory": {
         "format": "{used:0.1f}",
