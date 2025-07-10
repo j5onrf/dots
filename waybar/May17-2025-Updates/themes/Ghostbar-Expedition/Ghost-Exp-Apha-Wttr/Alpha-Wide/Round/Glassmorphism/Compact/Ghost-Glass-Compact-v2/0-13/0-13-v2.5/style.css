@@ -40,6 +40,9 @@ window#waybar {
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
 }
+#workspaces button:not(.empty):not(.active) {
+    background-color: alpha(@primary, 0.1);
+}
 
 /* This single rule defines the hover/active effect for ALL interactive modules. */
 #workspaces button:hover, #workspaces button.active,
