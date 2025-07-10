@@ -36,6 +36,7 @@
         "5": []
       }
     },
+    
     // --- GROUP DEFINITIONS ---
     "group/settings": {
         "orientation": "inherit",
