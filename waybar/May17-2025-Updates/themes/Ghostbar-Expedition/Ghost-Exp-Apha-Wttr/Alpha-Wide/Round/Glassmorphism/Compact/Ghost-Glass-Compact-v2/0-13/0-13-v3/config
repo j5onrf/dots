@@ -1,0 +1,38 @@
+//  
+// j5onrf, from ML4W base
+// 0-13-v3 (2025-7-10)
+//
+
+{
+  // General Settings
+    "layer": "top",
+    "position": "left",
+    "spacing": 0,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+
+  // Load Modules
+  "include": [
+    "~/.config/waybar/0-13-v2.jsonc"
+  ],
+
+  // Modules Left (TOP)
+  "modules-left": [
+    "custom/appmenu"
+  ],
+
+  // Modules Center
+  "modules-center": [
+    "group/settings",
+    "hyprland/workspaces",
+    "group/hardware",
+    "clock"
+  ],
+
+  // Modules Right (BOTTOM)
+  "modules-right": [
+    "custom/exit"
+  ]
+}
