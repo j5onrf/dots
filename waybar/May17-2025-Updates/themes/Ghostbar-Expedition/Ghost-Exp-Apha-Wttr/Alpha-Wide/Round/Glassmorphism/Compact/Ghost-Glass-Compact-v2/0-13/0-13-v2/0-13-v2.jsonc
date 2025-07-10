@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W & Omarchy
-//  0-13-v2.jsonc 2025-07-01
+//  0-13-v2.jsonc 2025-07-10 - Optimized
 
     // --- CORE WORKFLOW MODULES ---
 
@@ -14,7 +14,7 @@
     "hyprland/workspaces": {
       "on-click": "activate",
       "format": "{icon}",
-      "show-special": true, // --- Special On/Off
+      "show-special": true, // ← Special On/Off
       "format-icons": {
         "default": "",
         "1": "1",
@@ -36,6 +36,7 @@
         "5": []
       }
     },
+    
     // --- GROUP DEFINITIONS ---
     "group/settings": {
         "orientation": "inherit",
@@ -80,8 +81,9 @@
     // --- ACTION & LAUNCHER MODULES ---
     "custom/appmenu": {
         "format": "\ue410",
-        "on-click": "~/.config/rofi/bin/launcher",
+        "on-click": "~/.config/rofi/bin/launcher3",
         "on-click-right": "~/.config/rofi/bin/launcher2",
+        "on-click-middle": "~/.config/rofi/bin/launcher",
         "tooltip": false
     },
     "custom/exit": {
@@ -149,23 +151,19 @@
     },
     "custom/weather": {
         "format": "{}",
- 
         "tooltip": true,
-        "interval": 3600, // Update every hour
+        "interval": 3600, // ← Update every hour
         "exec": "~/.config/hypr/scripts/get_openweathermap_forecast.sh",
-        "return-type": "json",
-        "signal": 8 // Optional - Systemd resume from suspend
+        "return-type": "json"
     },
     "cpu": {
-        "format-critical": "<b>{usage}</b>",
-        "format-high": "{usage}",
-        "format-medium": "{usage}",
-        "format-low": "{usage}",
-        "on-click": "kitty -e htop --sort-key PERCENT_CPU",
-        "tooltip": false,
-        "interval": 5, // Update every 5 seconds
-        "states": {
-            "critical": 80, "high": 50, "medium": 5, "low": 0
+    "format": "{usage}",
+    "format-critical": "<b>{usage}</b>",
+    "on-click": "kitty -e htop --sort-key PERCENT_CPU",
+    "tooltip": false,
+    "interval": 10, // ← Consider 10 seconds unless real-time monitoring
+    "states": {
+        "critical": 80, "high": 50, "medium": 5, "low": 0
         }
     },
     "memory": {
@@ -179,7 +177,7 @@
         "escape": true,
         "return-type": "json",
         "exec": "~/.config/ml4w/scripts/updates.sh",
-        "interval": 1800,
+        "interval": 3600,
         "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
         "on-click-right": "~/.config/ml4w/settings/software.sh"
     },
@@ -198,11 +196,10 @@
         "format-ethernet": "\uf8dd",
         "format-disconnected": "\ue250",
         "tooltip": true,
-        "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        // "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-disconnected": "Disconnected",
-        "max-length": 20,
-        "interval": 3,
+        "interval": 15, // ← 10-15 seconds
         "nospacing": 1,
         "on-click": "nm-connection-editor",
         "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
