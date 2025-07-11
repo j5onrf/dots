@@ -8,7 +8,7 @@
 * {
     background: none;
     border: none;
-    border-radius: 0.4em; /* ← Set a base border-radius */
+    border-radius: 0.2em; /* ← Set a base border-radius */
 }
 
 window#waybar {
