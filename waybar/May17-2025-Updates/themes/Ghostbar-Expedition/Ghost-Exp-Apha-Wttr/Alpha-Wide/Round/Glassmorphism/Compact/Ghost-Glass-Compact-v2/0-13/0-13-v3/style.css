@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  0-13-v3 2025-07-10 - Optimized
+ *  0-13-v3 2025-07-11 - Optimized
  */
 
 @import 'ghost-matugen.css';
@@ -24,6 +24,7 @@ window#waybar {
     background-color: rgba(50, 50, 50, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    min-width: 1.67em;
 }
 
 /* --- Base Interactive Module Styles --- */
