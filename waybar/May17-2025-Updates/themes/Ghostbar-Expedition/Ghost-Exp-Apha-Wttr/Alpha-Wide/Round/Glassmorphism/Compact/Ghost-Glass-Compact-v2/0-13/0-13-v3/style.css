@@ -8,7 +8,7 @@
 * {
     background: none;
     border: none;
-    border-radius: 0.2em;
+    border-radius: 0.2em; /* ← Set a base border-radius */
 }
 
 window#waybar {
@@ -34,7 +34,6 @@ window#waybar {
     color: @primary;
     margin: 0.2em;
     padding: 0;
-    border-radius: 0.2em;
     border: 1px solid transparent;
     transition: none;
 }
@@ -114,7 +113,6 @@ tooltip {
     padding: 0.8em;
     opacity: 0.95;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.4em;
 }
 tooltip label {
     color: @primary;
