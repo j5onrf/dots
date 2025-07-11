@@ -36,7 +36,7 @@ window#waybar {
     padding: 0;
     border-radius: 0.4em;
     border: 1px solid transparent;
-    transition: all 0.2s ease-out;
+    transition: none;
 }
 
 #workspaces button:hover, #workspaces button.active,
