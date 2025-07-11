@@ -46,7 +46,7 @@ window#waybar {
 #workspaces button:hover, #workspaces button.active,
 #pulseaudio:hover, #custom-cliphist:hover, #custom-hyprshade:hover, #network:hover, #tray:hover,
 #custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
-#cpu:hover, #memory:hover, #custom-updates:hover, #custom-system:hover,
+#cpu:hover, #memory:hover, #custom-updates:hover,
 #custom-appmenu:hover, #custom-exit:hover,
 #clock:hover, #custom-weather:hover {
     background-color: alpha(@primary, 0.30);
