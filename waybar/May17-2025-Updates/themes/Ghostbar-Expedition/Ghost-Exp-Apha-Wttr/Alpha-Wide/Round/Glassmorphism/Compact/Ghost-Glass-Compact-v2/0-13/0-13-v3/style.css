@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  0-13-v3 2025-07-11 - Optimized
+ *  0-13-v3 (2025-07-11) - Optimized
  */
 
 @import 'ghost-matugen.css';
@@ -46,7 +46,7 @@ window#waybar {
 #workspaces button:hover, #workspaces button.active,
 #pulseaudio:hover, #custom-cliphist:hover, #custom-hyprshade:hover, #network:hover, #tray:hover,
 #custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
-#cpu:hover, #memory:hover, #custom-updates:hover,
+#cpu:hover, #memory:hover, #custom-updates:hover, #custom-system:hover,
 #custom-appmenu:hover, #custom-exit:hover,
 #clock:hover, #custom-weather:hover {
     background-color: alpha(@primary, 0.30);
@@ -90,24 +90,17 @@ window#waybar {
     font-size: 0.9em;
 }
 
+#cpu, #memory, #custom-updates, #custom-weather {
+    font-size: 0.67em;
+}
+
 /* --- Hidden Drawer Toggles --- */
 #custom-settings {
     font-size: 0.1em;
-    opacity: 0;
 }
 
 #custom-system {
     font-size: 0.5em;
-    opacity: 0;
-}
-
-#custom-settings:hover,
-#custom-system:hover {
-    opacity: 1;
-}
-
-#cpu, #memory, #custom-updates, #custom-weather {
-    font-size: 0.67em;
 }
 
 /* --- State-Specific Styles --- */
