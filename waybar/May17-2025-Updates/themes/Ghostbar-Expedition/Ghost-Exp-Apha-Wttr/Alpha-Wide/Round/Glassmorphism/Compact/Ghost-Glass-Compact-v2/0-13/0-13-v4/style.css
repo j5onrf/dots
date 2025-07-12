@@ -50,6 +50,7 @@ window#waybar {
 }
 #workspaces button:not(.empty):not(.active) {
     background-color: alpha(@primary, 0.1);
+    border-color: alpha(@primary, 0.2);
 }
 
 #custom-appmenu, #custom-exit,
@@ -76,9 +77,11 @@ window#waybar {
 #clock {
     color: @primary;
     font-size: 0.78em;
+    margin: 0.4em 0.2em;
 }
 #cpu, #memory, #custom-updates, #custom-weather {
     font-size: 0.72em;
+    margin: 0.1em 0.2em;
 }
 
 #custom-settings {
