@@ -75,10 +75,10 @@ window#waybar {
 }
 #clock {
     color: @primary;
-    font-size: 0.9em;
+    font-size: 0.78em;
 }
 #cpu, #memory, #custom-updates, #custom-weather {
-    font-size: 0.67em;
+    font-size: 0.72em;
 }
 
 #custom-settings {

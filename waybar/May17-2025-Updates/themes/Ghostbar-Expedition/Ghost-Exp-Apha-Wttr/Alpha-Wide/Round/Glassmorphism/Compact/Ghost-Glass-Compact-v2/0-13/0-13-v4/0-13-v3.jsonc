@@ -144,7 +144,7 @@
     "custom/weather": {
         "format": "{}",
         "tooltip": true,
-        "interval": 3600, // ← Update every hour
+        "interval": 3600, // ← Update every hour synchronized
         "exec": "~/.config/hypr/scripts/get_openweathermap_forecast.sh",
         "return-type": "json"
     },
@@ -153,7 +153,7 @@
     "format-critical": "<b>{usage}</b>",
     "on-click": "kitty -e htop --sort-key PERCENT_CPU",
     "tooltip": false,
-    "interval": 10, // ← Consider 10 seconds unless real-time monitoring
+    "interval": 10, // ← 10 seconds synchronized
     "states": {
         "critical": 80, "high": 50, "medium": 5, "low": 0
         }
@@ -161,7 +161,7 @@
     "memory": {
         "format": "{used:0.1f}",
         "on-click": "kitty -e htop --sort-key PERCENT_MEM",
-        "interval": 30,
+        "interval": 10,
         "tooltip": false
     },
     "custom/updates": {
@@ -191,7 +191,7 @@
         // "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-disconnected": "Disconnected",
-        "interval": 15, // ← 10-15 seconds
+        "interval": 10, // ← 10 seconds synchronized
         "nospacing": 1,
         "on-click": "nm-connection-editor",
         "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
