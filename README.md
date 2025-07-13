@@ -231,7 +231,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # WayBar
 
-(2025-June24) [Ghostarchy<sup>preview</sup> Jetbrains Mono Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13/0-13-v4) 
+(2025-July13) [Ghostarchy<sup>preview</sup> Jetbrains Mono Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13/0-13-v4) 
 <img width="1440" height="65" alt="ghostarcy-p" src="https://github.com/user-attachments/assets/bd9470d4-9109-4545-8c93-716b323b94bf" />
 
 `Waybar v0.13 and above`
