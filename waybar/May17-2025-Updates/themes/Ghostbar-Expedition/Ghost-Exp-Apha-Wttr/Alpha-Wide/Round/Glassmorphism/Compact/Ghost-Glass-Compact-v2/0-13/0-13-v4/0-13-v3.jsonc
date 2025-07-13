@@ -131,7 +131,8 @@
     
     // --- SYSTEM STATUS & SERVICE MODULES ---
     "clock": {
-        "format": "{:%I\n%M}",
+        // "format": "{:%I\n%M}",
+        "format": "{:%I\n<span line_height='0.6'>%M</span>}",
         // "format": "{:%I\n%M\n%S}",
         // "format": "  \n{:%d\n<span font_size='2pt'> </span>\n  \n%I\n<span line_height='0.6'>%M</span>}",
         // "format": "{:%d\n%I\n<span line_height='0.6'>%M</span>}",
