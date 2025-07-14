@@ -5,9 +5,9 @@
 * {
     font-family: "Zed Mono", "JetBrains Mono", "Font Awesome 6 Pro Light", monospace;
     font-size: 18px;
+    border-radius: 4px;
     background: none;
     border: none;
-    border-radius: 4px;
 }
 ```
 <img width="3440" height="1440" alt="FullScreen-2025-07-13_20-52-54" src="https://github.com/user-attachments/assets/cecb4973-3686-448b-89d7-e348ea1e3c01" />
