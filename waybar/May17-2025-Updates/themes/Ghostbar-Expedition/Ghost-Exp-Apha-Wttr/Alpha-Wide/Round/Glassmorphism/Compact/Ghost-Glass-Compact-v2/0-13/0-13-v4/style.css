@@ -77,8 +77,10 @@ window#waybar {
 #clock {
     color: @primary;
     font-size: 0.78em;
-    margin: 0.3em 0.3em;
+    margin: 0.4em 0.3em;
     padding-bottom: 0.3em;
+    background-color: alpha(@primary, 0.1);
+    border-color: alpha(@primary, 0.1);
 }
 #cpu, #memory, #custom-updates, #custom-weather {
     font-size: 0.72em;
