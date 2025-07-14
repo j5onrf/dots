@@ -69,11 +69,10 @@ window#waybar {
 #cpu, #memory, #custom-updates {
     color: @ghost_text_primary;
 }
-#clock {
+#clock, #clock-cal, #clock-sec {
     color: @primary;
     font-size: 0.78em;
-    margin: 0.5em 0.3em 0.3em 0.3em;
-    padding-bottom: 0.3em;
+    margin: 0em 0.3em 0.3em 0.3em;
     background-color: alpha(@primary, 0.1);
     border-color: alpha(@primary, 0.1);
 }
