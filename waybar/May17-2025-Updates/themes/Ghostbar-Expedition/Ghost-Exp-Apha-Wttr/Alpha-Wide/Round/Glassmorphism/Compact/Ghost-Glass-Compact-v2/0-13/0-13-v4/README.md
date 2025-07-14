@@ -10,5 +10,5 @@
     border: none;
 }
 ```
-<img width="3440" height="1440" alt="FullScreen-2025-07-13_20-52-54" src="https://github.com/user-attachments/assets/cecb4973-3686-448b-89d7-e348ea1e3c01" />
-<img width="3440" height="1440" alt="FullScreen-2025-07-14_17-31-44" src="https://github.com/user-attachments/assets/ca2f221d-0cb2-41fd-adb2-9dd4ad014e59" />
+<img width="3440" height="1440" alt="FullScreen-2025-07-14_18-09-15" src="https://github.com/user-attachments/assets/1ec6a15e-9515-4faf-87bb-a97bb5fbae75" />
+<img width="3440" height="1440" alt="FullScreen-2025-07-14_18-06-11" src="https://github.com/user-attachments/assets/cb61c458-c396-4c0e-b2c9-17b1add61c00" />
