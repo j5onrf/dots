@@ -51,13 +51,14 @@
 
 |||||||||||
 
+  // Modules Center
   "modules-center": [
     "group/settings",
     "hyprland/workspaces",
     "group/hardware",
     "clock#cal",
-    "clock#sec",
-    "clock"
+    "clock",
+    "clock#sec"
   ],
 
 
