@@ -61,12 +61,8 @@ window#waybar {
 #custom-settings:hover, #custom-system:hover {
     opacity: 1;
 }
-
 #custom-appmenu:hover {
     font-size: 1.2em;
-}
-#custom-exit:hover {
-    padding-right: 0.275em;
 }
 
 #clock, #custom-weather,
