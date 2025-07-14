@@ -75,7 +75,7 @@ window#waybar {
 }
 #clock {
     color: @primary;
-    font-size: 0.78em;
+    font-size: 0.8333em;
     margin: 0em 0.3em 0.3em 0.3em;
     background-color: alpha(@primary, 0.1);
     border-color: alpha(@primary, 0.1);
