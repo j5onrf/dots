@@ -32,3 +32,8 @@
             }
         }
     },
+    "clock#sec": {
+        "format": "{:%S}",
+        "interval": 1,
+        "tooltip": false
+    },
