@@ -11,5 +11,4 @@
 }
 ```
 <img width="3440" height="1440" alt="FullScreen-2025-07-13_20-52-54" src="https://github.com/user-attachments/assets/cecb4973-3686-448b-89d7-e348ea1e3c01" />
-<img width="3440" height="1440" alt="FullScreen-2025-07-14_14-09-06" src="https://github.com/user-attachments/assets/79d0fbf5-386b-43c1-ad7d-e6d5263e551e" />
-
+<img width="3440" height="1440" alt="FullScreen-2025-07-14_17-31-44" src="https://github.com/user-attachments/assets/ca2f221d-0cb2-41fd-adb2-9dd4ad014e59" />
