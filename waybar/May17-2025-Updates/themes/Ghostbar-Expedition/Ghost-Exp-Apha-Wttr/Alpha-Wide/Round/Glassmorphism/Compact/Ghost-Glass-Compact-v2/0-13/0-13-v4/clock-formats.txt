@@ -1,65 +1,124 @@
-    "clock": {
-        // "format": "{:%I\n%M}",
-        // "format": "{:%I\n%M\n%S}",
-        // "format": "  \n{:%d\n<span font_size='2pt'> </span>\n  \n%I\n<span line_height='0.6'>%M</span>}",
-        // "format": "{:%d\n%I\n<span line_height='0.6'>%M</span>}",
-        // "interval": 1,
-        "format": "{:%I\n<span line_height='0.6'>%M</span>}",
-        "tooltip": true,
-        "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
-        "on-click": "flatpak run com.ml4w.calendar",
-        "calendar": {
-            "format": {
-                "today": "<b><u>{}</u></b>"
-            }
-        }
-    },
+/* 
+ *  by j5onrf, from ML4W base
+ *  0-13-v4 (2025-07-14)
+ */
 
-----------------------
+@import 'ghost-matugen.css';
 
-    "clock": {
-        "format": "{:%I\n<span line_height='0.6'>%M</span>\n<span font_size='1pt'> </span>}",
-        "tooltip": false
-    },
-    "clock#cal": {
-        "format": "{:%d}",
-        "tooltip": true,
-        "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
-        "on-click": "flatpak run com.ml4w.calendar",
-        "calendar": {
-            "format": {
-                "today": "<b><u>{}</u></b>"
-            }
-        }
-    },
-    "clock#sec": {
-        "format": "{:%S}",
-        "interval": 1,
-        "tooltip": false
-    },
+/* --- GLOBAL BASE STYLES --- */
+* {
+    font-family: "Zed Mono", "JetBrains Mono", "Font Awesome 6 Pro Light";
+    font-size: 18px;
+    border-radius: 4px;
+    background: none;
+    border: none;
+}
 
+window#waybar {
+    background-color: transparent;
+}
 
-|||||||||||
+.modules-center {
+  padding: 0;
+  margin-right: 2px;
+  border: 1px solid alpha(@primary, 0.30);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  background-color: @ghost_bar_background;
+}
 
-#clock, #clock-cal, #clock-sec {
-    color: @primary;
-    font-size: 0.78em;
-    margin: 0em 0.3em 0.3em 0.3em;
+#workspaces button:not(.empty):not(.active) {
     background-color: alpha(@primary, 0.1);
     border-color: alpha(@primary, 0.1);
 }
+#workspaces button {
+  font-weight: 300;
+}
 
-|||||||||||
+#workspaces button,
+#pulseaudio, #custom-cliphist, #custom-hyprshade, #network, #tray,
+#custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification,
+#cpu, #memory, #custom-updates,
+#custom-appmenu, #custom-exit,
+#clock, #custom-weather {
+  color: @primary;
+  margin: 0.15em 0.2em;
+  padding: 0px 0px;
+  border: 1px solid transparent;
+  transition: none;
+}
 
-  // Modules Center
-  "modules-center": [
-    "group/settings",
-    "hyprland/workspaces",
-    "group/hardware",
-    "clock#cal",
-    "clock",
-    "clock#sec"
-  ],
+#workspaces button:hover, #workspaces button.active,
+#pulseaudio:hover, #custom-cliphist:hover, #custom-hyprshade:hover, #network:hover, #tray:hover,
+#custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
+#cpu:hover, #memory:hover, #custom-updates:hover,
+#custom-appmenu:hover, #custom-exit:hover,
+#clock:hover, #custom-weather:hover {
+    background-color: alpha(@primary, 0.30);
+    border-color: alpha(@primary, 0.50);
+}
 
+#custom-appmenu, #custom-exit,
+#custom-settings, #custom-system {
+    opacity: 0;
+}
+#custom-appmenu:hover, #custom-exit:hover,
+#custom-settings:hover, #custom-system:hover {
+    opacity: 1;
+}
+#custom-appmenu:hover {
+    font-size: 1.2em;
+}
 
-------------------------------------------------
+#clock, #custom-weather,
+#cpu, #memory, #custom-updates {
+    color: @ghost_text_primary;
+}
+#clock {
+    color: @primary;
+    font-size: 0.8333em;
+    margin: 0em 0.3em 0.3em 0.3em;
+    padding-left: 1px;
+    background-color: alpha(@primary, 0.1);
+    border-color: alpha(@primary, 0.1);
+}
+#cpu, #memory, #custom-updates, #custom-weather {
+    font-size: 0.72em;
+    margin: 0em 0.2em;
+}
+
+#custom-settings {
+    font-size: 0.05em;
+}
+#custom-system {
+    font-size: 0.5em;
+}
+#custom-exit {
+    font-size: 1.25em;
+}
+
+#custom-hypridle.active { color: @ghost_hypridle_active_icon; }
+#custom-hypridle.notactive { color: @ghost_hypridle_inactive_icon; }
+
+#pulseaudio.muted { color: @ghost_pulseaudio_muted_fg; }
+#pulseaudio.muted:hover { color: @ghost_pulseaudio_muted_hover_fg; }
+
+#cpu.medium { color: @tertiary_fixed; }
+#cpu.high { color: @source_color; }
+#cpu.critical { 
+    color: @error; 
+    font-weight: bold;
+}
+
+#custom-weather.hot { color: #ffb4ab; }
+#custom-weather.cold { color: #88c0d0; }
+
+tooltip {
+    background-color: @ghost_bar_background;
+    padding: 0.8em;
+    opacity: 0.95;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+tooltip label {
+    color: @primary;
+    font-size: 14px;
+}
