@@ -91,6 +91,10 @@ window#waybar {
 #custom-system {
     font-size: 0.5em;
 }
+#custom-exit {
+    font-weight: 900;
+    font-size: 1.25em;
+}
 
 #custom-hypridle.active { color: @ghost_hypridle_active_icon; }
 #custom-hypridle.notactive { color: @ghost_hypridle_inactive_icon; }
