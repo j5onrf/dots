@@ -1,5 +1,5 @@
 # Ghostarchy
-#### Preview compact vertical bar concept for ML4W and eventually port to Omarchy as it matures
+#### Preview compact vertical bar concept for ML4W and eventually port to Omarchy
 ```
 /* --- GLOBAL BASE STYLES --- */
 * {
