@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  0-13-v4 (2025-07-12) - Optimized
+ *  0-13-v4 (2025-07-13) - Optimized
  */
 
 @import 'ghost-matugen.css';
@@ -8,7 +8,7 @@
 * {
     background: none;
     border: none;
-    border-radius: 0.2em;
+    border-radius: 4px;
 }
 
 window#waybar {
@@ -18,10 +18,10 @@ window#waybar {
 .modules-center {
   font-family: "Font Awesome 6 Pro Light";
   padding: 0;
-  margin: 0px 2px 0px 0px;
+  margin-right: 2px;
   background-color: rgba(50, 50, 50, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); */
   font-size: 18px;
   min-width: 1.67em;
 }
