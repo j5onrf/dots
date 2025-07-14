@@ -26,6 +26,14 @@ window#waybar {
   background-color: @ghost_bar_background;
 }
 
+#workspaces button:not(.empty):not(.active) {
+    background-color: alpha(@primary, 0.1);
+    border-color: alpha(@primary, 0.1);
+}
+#workspaces button {
+  font-weight: 300;
+}
+
 #workspaces button,
 #pulseaudio, #custom-cliphist, #custom-hyprshade, #network, #tray,
 #custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification,
@@ -47,10 +55,6 @@ window#waybar {
 #clock:hover, #custom-weather:hover {
     background-color: alpha(@primary, 0.30);
     border-color: alpha(@primary, 0.50);
-}
-#workspaces button:not(.empty):not(.active) {
-    background-color: alpha(@primary, 0.1);
-    border-color: alpha(@primary, 0.1);
 }
 
 #custom-appmenu, #custom-exit,
