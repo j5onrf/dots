@@ -3,7 +3,7 @@
 ```
 /* --- GLOBAL BASE STYLES --- */
 * {
-    font-family: "Zed Mono", "JetBrains Mono", "Font Awesome 6 Pro Light", monospace;
+    font-family: "Zed Mono", "JetBrains Mono", "Font Awesome 6 Pro Light";
     font-size: 18px;
     border-radius: 4px;
     background: none;
