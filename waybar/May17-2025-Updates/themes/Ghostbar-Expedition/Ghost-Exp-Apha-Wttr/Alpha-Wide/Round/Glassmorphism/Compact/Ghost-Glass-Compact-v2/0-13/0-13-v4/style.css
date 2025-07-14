@@ -33,7 +33,7 @@ window#waybar {
 #custom-appmenu, #custom-exit,
 #clock, #custom-weather {
   color: @primary;
-  margin: 0.2em;
+  margin: 0.15em 0.2em;
   padding: 0px 0px;
   border: 1px solid transparent;
   transition: none;
