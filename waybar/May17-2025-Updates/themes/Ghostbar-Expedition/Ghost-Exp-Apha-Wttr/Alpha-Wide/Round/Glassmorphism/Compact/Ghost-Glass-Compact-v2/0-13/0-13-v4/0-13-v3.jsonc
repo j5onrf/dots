@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W & Omarchy
-//  0-13-v3.jsonc (2025-07-14)
+//  0-13-v3.jsonc 2025-07-14
 
     // --- CORE WORKFLOW MODULES ---
 
@@ -21,8 +21,7 @@
         "3": "3",
         "4": "4",
         "5": "5",
-        "keepassxc": "\uf084",  // Use the label of the scratchpad
-        // "special:scratchpad": "󰌆", // Some setups use this name
+        "keepassxc": "\uf084",
         "active": "",
         "default": ""
       },
