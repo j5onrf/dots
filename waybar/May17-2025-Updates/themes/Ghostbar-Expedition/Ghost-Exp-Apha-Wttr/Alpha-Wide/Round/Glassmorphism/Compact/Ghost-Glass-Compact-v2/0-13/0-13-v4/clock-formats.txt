@@ -56,8 +56,8 @@
     "hyprland/workspaces",
     "group/hardware",
     "clock#cal",
-    "clock",
-    "clock#sec"
+    "clock#sec",
+    "clock"
   ],
 
 
