@@ -16,7 +16,7 @@ window#waybar {
 }
 
 .modules-center {
-  font-family: "Font Awesome 6 Pro Light";
+  font-family: "JetBrains Mono", "Font Awesome 6 Pro";
   padding: 0;
   margin-right: 2px;
   background-color: rgba(50, 50, 50, 0.6);
