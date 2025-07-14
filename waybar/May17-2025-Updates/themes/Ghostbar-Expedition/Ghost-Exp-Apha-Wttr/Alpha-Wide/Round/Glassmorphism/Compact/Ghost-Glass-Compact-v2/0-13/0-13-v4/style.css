@@ -24,6 +24,7 @@ window#waybar {
   background-color: rgba(50, 50, 50, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  background-color: @ghost_bar_background;
 }
 
 #workspaces button,
@@ -69,7 +70,7 @@ window#waybar {
 #cpu, #memory, #custom-updates {
     color: @ghost_text_primary;
 }
-#clock, #clock-cal, #clock-sec {
+#clock {
     color: @primary;
     font-size: 0.78em;
     margin: 0em 0.3em 0.3em 0.3em;
