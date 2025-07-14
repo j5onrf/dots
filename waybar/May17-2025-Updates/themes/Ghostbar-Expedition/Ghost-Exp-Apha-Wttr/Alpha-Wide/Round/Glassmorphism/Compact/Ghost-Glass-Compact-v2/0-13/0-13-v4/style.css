@@ -46,7 +46,7 @@ window#waybar {
 #custom-appmenu:hover, #custom-exit:hover,
 #clock:hover, #custom-weather:hover {
     background-color: alpha(@primary, 0.30);
-    border-color: alpha(@primary, 0.2);
+    border-color: alpha(@primary, 0.50);
 }
 #workspaces button:not(.empty):not(.active) {
     background-color: alpha(@primary, 0.1);
