@@ -14,3 +14,21 @@
             }
         }
     },
+
+----------------------
+
+    "clock": {
+        "format": "{:%I\n<span line_height='0.6'>%M</span>\n<span font_size='1pt'> </span>}",
+        "tooltip": false
+    },
+    "clock#cal": {
+        "format": "{:%d}",
+        "tooltip": true,
+        "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "on-click": "flatpak run com.ml4w.calendar",
+        "calendar": {
+            "format": {
+                "today": "<b><u>{}</u></b>"
+            }
+        }
+    },
