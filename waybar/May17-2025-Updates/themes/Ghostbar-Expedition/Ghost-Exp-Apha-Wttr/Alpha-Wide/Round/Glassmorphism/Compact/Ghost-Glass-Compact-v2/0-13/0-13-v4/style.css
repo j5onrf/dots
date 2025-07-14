@@ -24,7 +24,6 @@ window#waybar {
   background-color: rgba(50, 50, 50, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  min-width: 1.67em;
 }
 
 #workspaces button,
