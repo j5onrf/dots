@@ -18,13 +18,28 @@ window#waybar {
     background-color: transparent;
 }
 
+/* Border gradient */
 .modules-center {
+    padding: 0;
+    margin-right: 2px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    background-color: @ghost_bar_background;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(
+        to bottom,
+        alpha(@primary, 0.50),
+        transparent,
+        alpha(@primary, 0.50)
+    ) 1;
+}
+/* .modules-center {
   padding: 0;
   margin-right: 2px;
   border: 1px solid alpha(@primary, 0.30);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   background-color: @ghost_bar_background;
-}
+} */
 
 #workspaces button:not(.empty):not(.active) {
     background-color: alpha(@primary, 0.1);
