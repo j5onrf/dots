@@ -32,9 +32,9 @@ window#waybar {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     background: linear-gradient(
         to bottom,
-        alpha(@primary, 0.50),
+        alpha(@primary, 0.20),
         transparent,
-        alpha(@primary, 0.50)
+        alpha(@primary, 0.20)
     );
     border-radius: 10px;
 }
@@ -78,7 +78,6 @@ window#waybar {
 #clock, #custom-weather {
     color: @primary;
     font-size: 0.8333em;
-    padding-left: 1px;
     margin: 0em 0.3em 0.3em 0.3em;
 }
 #custom-weather {
