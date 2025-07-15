@@ -16,6 +16,7 @@
 
 window#waybar {
     background-color: @ghost_bar_background;
+    border-radius: 10px;
 }
 
 #workspaces button:not(.empty):not(.active) {
