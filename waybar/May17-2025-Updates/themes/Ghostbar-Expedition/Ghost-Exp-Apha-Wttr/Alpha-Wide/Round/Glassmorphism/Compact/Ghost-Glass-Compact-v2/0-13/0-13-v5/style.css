@@ -7,7 +7,7 @@
 
 /* --- GLOBAL BASE STYLES --- */
 * {
-    font-family: "Zed Mono", "JetBrains Mono", "Font Awesome 6 Pro Light";
+    font-family: "JetBrains Mono", "Font Awesome 6 Pro Light";
     font-size: 18px;
     border-radius: 4px;
     background: none;
@@ -30,7 +30,7 @@ window#waybar {
 .modules-center {
     padding: 1px;
     margin-right: 2px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     background: linear-gradient(
         to bottom,
         alpha(@primary, 0.20),
@@ -117,5 +117,4 @@ tooltip {
 }
 tooltip label {
     color: @primary;
-    font-size: 14px;
 }
