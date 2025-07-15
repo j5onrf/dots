@@ -18,7 +18,13 @@ window#waybar {
     background-color: transparent;
 }
 
-/* Border gradient */
+#workspaces button {
+    font-weight: 300;
+}
+#workspaces button.empty {
+    color: alpha(@primary, 0.5);
+}
+
 .modules-center {
     padding: 0;
     margin-right: 2px;
@@ -33,21 +39,6 @@ window#waybar {
         alpha(@primary, 0.50)
     ) 1;
 }
-/* .modules-center {
-  padding: 0;
-  margin-right: 2px;
-  border: 1px solid alpha(@primary, 0.30);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  background-color: @ghost_bar_background;
-} */
-
-#workspaces button:not(.empty):not(.active) {
-    background-color: alpha(@primary, 0.1);
-    border-color: alpha(@primary, 0.1);
-}
-#workspaces button {
-  font-weight: 300;
-}
 
 #workspaces button,
 #pulseaudio, #custom-cliphist, #custom-hyprshade, #network, #tray,
@@ -55,11 +46,11 @@ window#waybar {
 #cpu, #memory, #custom-updates,
 #custom-appmenu, #custom-exit,
 #clock, #custom-weather {
-  color: @primary;
-  margin: 0.15em 0.2em;
-  padding: 0px 0px;
-  border: 1px solid transparent;
-  transition: none;
+    color: @primary;
+    margin: 0.15em 0.2em;
+    padding: 0px 0px;
+    border: 0.5px solid alpha(@primary, 0.05);
+    transition: none;
 }
 
 #workspaces button:hover, #workspaces button.active,
@@ -92,9 +83,6 @@ window#waybar {
     color: @primary;
     font-size: 0.8333em;
     margin: 0em 0.3em 0.3em 0.3em;
-    padding-left: 1px;
-    background-color: alpha(@primary, 0.1);
-    border-color: alpha(@primary, 0.1);
 }
 #cpu, #memory, #custom-updates, #custom-weather {
     font-size: 0.72em;
@@ -108,7 +96,7 @@ window#waybar {
     font-size: 0.5em;
 }
 #custom-exit {
-    font-size: 1.25em;
+    font-size: 1.2em;
 }
 
 #custom-hypridle.active { color: @ghost_hypridle_active_icon; }
