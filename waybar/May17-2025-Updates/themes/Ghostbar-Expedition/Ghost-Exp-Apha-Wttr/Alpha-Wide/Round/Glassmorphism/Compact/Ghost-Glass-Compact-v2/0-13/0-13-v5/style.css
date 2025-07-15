@@ -70,9 +70,6 @@ window#waybar {
 #custom-settings:hover, #custom-system:hover {
     opacity: 1;
 }
-#custom-appmenu:hover {
-    font-size: 1.2em;
-}
 
 #clock, #custom-weather,
 #cpu, #memory, #custom-updates {
@@ -94,9 +91,6 @@ window#waybar {
 
 #custom-settings, #custom-system {
     font-size: 0.5em;
-}
-#custom-exit {
-    font-size: 1.2em;
 }
 
 #custom-hypridle.active { color: @ghost_hypridle_active_icon; }
