@@ -15,16 +15,16 @@
 }
 
 window#waybar {
-    background-color: transparent;
+    background-color: @ghost_bar_background;
 }
 
 #workspaces button:not(.empty):not(.active) {
     background-color: alpha(@primary, 0.1);
     border-color: alpha(@primary, 0.1);
 }
-#workspaces button.empty {
-    color: alpha(@primary, 0.5);
-}
+#workspaces button {
+    font-weight: 300;
+} 
 
 .modules-center {
     padding: 1px;
