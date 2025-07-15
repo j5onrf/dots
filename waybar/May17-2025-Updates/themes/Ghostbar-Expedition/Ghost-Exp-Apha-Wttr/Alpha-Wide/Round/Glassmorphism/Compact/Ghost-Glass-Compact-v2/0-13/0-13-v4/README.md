@@ -9,4 +9,4 @@
 }
 ```
 <img width="3440" height="1440" alt="FullScreen-2025-07-14_23-10-07" src="https://github.com/user-attachments/assets/a604d02a-c8e0-4c06-8972-39504e7b1630" />
-<img width="3440" height="1440" alt="FullScreen-2025-07-15_13-41-00" src="https://github.com/user-attachments/assets/58b73014-cb14-4642-b522-3878dad4ffb1" />
+<img width="3440" height="1440" alt="FullScreen-2025-07-15_14-09-54" src="https://github.com/user-attachments/assets/635d0d9e-4b11-4e9b-89f1-4d53c464ee4f" />
