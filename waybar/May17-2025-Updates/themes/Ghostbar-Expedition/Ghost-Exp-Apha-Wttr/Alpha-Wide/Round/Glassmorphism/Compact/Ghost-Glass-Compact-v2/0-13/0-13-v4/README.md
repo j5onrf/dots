@@ -11,4 +11,6 @@
 }
 ```
 <img width="3440" height="1440" alt="FullScreen-2025-07-14_18-09-15" src="https://github.com/user-attachments/assets/1ec6a15e-9515-4faf-87bb-a97bb5fbae75" />
-<img width="3440" height="1440" alt="FullScreen-2025-07-14_18-06-11" src="https://github.com/user-attachments/assets/cb61c458-c396-4c0e-b2c9-17b1add61c00" />
+
+#### Border gradient
+<img width="3440" height="1440" alt="FullScreen-2025-07-14_21-22-33" src="https://github.com/user-attachments/assets/584f2887-254e-441b-ae0d-fb757a5a6e6c" />
