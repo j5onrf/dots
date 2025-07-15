@@ -1,6 +1,6 @@
 /* 
  *  by j5onrf, from ML4W base
- *  0-13-v4 (2025-07-14)
+ *  0-13-v4 (2025-07-15)
  */
 
 @import 'ghost-matugen.css';
@@ -18,9 +18,9 @@ window#waybar {
     background-color: transparent;
 }
 
-/* #workspaces button {
+#workspaces button {
     font-weight: 300;
-} */
+} 
 #workspaces button.empty {
     color: alpha(@primary, 0.5);
 }
@@ -71,9 +71,6 @@ window#waybar {
 #custom-settings:hover, #custom-system:hover {
     opacity: 1;
 }
-#custom-appmenu:hover {
-    font-size: 1.2em;
-}
 
 #clock, #custom-weather,
 #cpu, #memory, #custom-updates {
@@ -96,9 +93,6 @@ window#waybar {
 }
 #custom-system {
     font-size: 0.5em;
-}
-#custom-exit {
-    font-size: 1.2em;
 }
 
 #custom-hypridle.active { color: @ghost_hypridle_active_icon; }
