@@ -18,9 +18,9 @@ window#waybar {
     background-color: transparent;
 }
 
-#workspaces button {
+/* #workspaces button {
     font-weight: 300;
-}
+} */
 #workspaces button.empty {
     color: alpha(@primary, 0.5);
 }
