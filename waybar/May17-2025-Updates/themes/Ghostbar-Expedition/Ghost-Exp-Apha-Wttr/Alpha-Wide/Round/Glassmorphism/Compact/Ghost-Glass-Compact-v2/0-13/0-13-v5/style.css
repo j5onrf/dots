@@ -18,6 +18,10 @@ window#waybar {
     background-color: transparent;
 }
 
+#workspaces button:not(.empty):not(.active) {
+    background-color: alpha(@primary, 0.1);
+    border-color: alpha(@primary, 0.1);
+}
 #workspaces button.empty {
     color: alpha(@primary, 0.5);
 }
