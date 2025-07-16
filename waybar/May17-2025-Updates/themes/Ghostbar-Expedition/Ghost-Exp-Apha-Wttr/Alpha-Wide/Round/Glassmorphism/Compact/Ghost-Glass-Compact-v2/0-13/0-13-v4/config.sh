@@ -1,2 +1,2 @@
 #!/bin/bash
-theme_name="0-13-v4"
+theme_name="0-13-v4-Ghostarchy"
