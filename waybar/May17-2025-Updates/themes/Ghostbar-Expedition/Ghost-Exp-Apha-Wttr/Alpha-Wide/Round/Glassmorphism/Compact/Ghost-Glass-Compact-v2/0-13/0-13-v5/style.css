@@ -19,6 +19,7 @@ window#waybar {
     border-radius: 10px;
 }
 
+
 #workspaces button:not(.empty):not(.active) {
     background-color: alpha(@primary, 0.1);
     border-color: alpha(@primary, 0.1);
@@ -76,19 +77,20 @@ window#waybar {
 #cpu, #memory, #custom-updates {
     color: @ghost_text_primary;
 }
-#clock, #custom-weather {
+#clock {
     color: @primary;
     font-size: 0.8333em;
     margin: 0em 0.3em 0.3em 0.3em;
 }
 #custom-weather {
+    color: @primary;
+    font-size: 0.78em;
     margin-top: 0.3em;
 }
 #cpu, #memory, #custom-updates {
     font-size: 0.72em;
     margin: 0em 0.2em;
 }
-
 #custom-settings, #custom-system {
     font-size: 0.5em;
 }
