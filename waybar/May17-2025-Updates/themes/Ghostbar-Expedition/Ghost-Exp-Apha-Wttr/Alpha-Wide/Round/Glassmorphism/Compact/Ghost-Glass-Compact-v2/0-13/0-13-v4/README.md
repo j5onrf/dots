@@ -1,9 +1,8 @@
 # Ghostarchy
 #### Preview compact vertical bar concept for ML4W and eventually port to Omarchy
 ```
-/* --- GLOBAL BASE STYLES --- */
 * {
-    font-family: "Zed Mono", "JetBrains Mono", "Font Awesome 6 Pro Light";
+    font-family: "Cascadia Mono", "Font Awesome 6 Pro Light";
     font-size: 18px;
     border-radius: 4px;
 }
