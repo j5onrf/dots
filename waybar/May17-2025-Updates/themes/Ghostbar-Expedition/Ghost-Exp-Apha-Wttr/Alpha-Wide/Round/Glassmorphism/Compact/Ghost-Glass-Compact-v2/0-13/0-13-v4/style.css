@@ -73,8 +73,8 @@ window#waybar {
 }
 #clock {
     color: @primary;
-    padding-top: 0.2em;
     font-size: 0.7778em;
+    padding-top: 0.2px;
     margin: 0em 0.3em 0.3em 0.3em;
 }
 #cpu, #memory, #custom-updates, #custom-weather {
