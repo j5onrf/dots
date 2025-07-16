@@ -14,7 +14,7 @@
 
   // Load Modules
   "include": [
-    "~/.config/waybar/0-13-v4.jsonc"
+    "~/.config/waybar/0-13-v3.jsonc"
   ],
 
   // Modules Left (TOP)
