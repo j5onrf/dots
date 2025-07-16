@@ -26,8 +26,8 @@
         "8": "8",
         "9": "9",
         "keepassxc": "\uf084",
-        "active": "",
-     // "active": "<span font_family='Font Awesome 6 Pro Solid'>\ue27e</span>",
+     // "active": "",
+        "active": "<span font_family='Font Awesome 6 Pro Solid'>\ue27e</span>",
         "default": ""
       },
         "persistent-workspaces": { "*": 5 }
@@ -136,7 +136,7 @@
     
     // --- SYSTEM STATUS & SERVICE MODULES --- 	//
     "clock": {
-        "format": "{:%I\n%M}",
+        "format": "{:%I\n<span line_height='0.6'>%M</span>\n<span font_size='1pt'> </span>}",
         "tooltip": true,
         "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
         "on-click": "flatpak run com.ml4w.calendar",
