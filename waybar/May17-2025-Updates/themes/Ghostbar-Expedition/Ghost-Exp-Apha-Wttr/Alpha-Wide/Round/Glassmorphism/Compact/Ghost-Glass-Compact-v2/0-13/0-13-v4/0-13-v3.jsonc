@@ -26,8 +26,8 @@
         "8": "8",
         "9": "9",
         "keepassxc": "\uf084",
-        "active": "",
-     // "active": "<span font_family='Font Awesome 6 Pro Solid'>\ue27e</span>",
+     // "active": "",
+        "active": "<span font_family='Font Awesome 6 Pro Solid'>\ue27e</span>",
         "default": ""
       },
         "persistent-workspaces": { "*": 5 }
