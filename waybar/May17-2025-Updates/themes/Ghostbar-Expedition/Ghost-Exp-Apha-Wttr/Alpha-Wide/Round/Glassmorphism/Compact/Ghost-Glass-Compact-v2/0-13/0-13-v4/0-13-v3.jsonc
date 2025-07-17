@@ -6,28 +6,19 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W & Omarchy
-//  0-13-v3.jsonc 2025-07-16
+//  0-13-v3.jsonc 2025-07-17
 
     // --- CORE WORKFLOW MODULES ---
 
     {
     "hyprland/workspaces": {
-      "on-click": "activate",
-      "format": "{icon}",
       "show-special": true,
-      "format-icons": {
-        "1": "1",
-        "2": "2",
-        "3": "3",
-        "4": "4",
-        "5": "5",
-        "6": "6",
-        "7": "7",
-        "8": "8",
-        "9": "9",
-        "keepassxc": "\uf084",
+      "format": "{icon}",
+      "format-icons": { 
+        "1": "1", "2": "2", "3": "3", "4": "4", "5": "5",
         "active": "<span font_family='Font Awesome 6 Pro Solid' rise='-17000'>\ue27e</span>",
-        "default": ""
+        "default": "*",
+            "keepassxc": "\uf084"
       },
         "persistent-workspaces": { "*": 5 }
     },
@@ -200,7 +191,7 @@
         "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
     },
     "tray": {
-        "icon-size": 24,
+        "icon-size": 18,
         "spacing": 10
     },
     "custom/hypridle": {
