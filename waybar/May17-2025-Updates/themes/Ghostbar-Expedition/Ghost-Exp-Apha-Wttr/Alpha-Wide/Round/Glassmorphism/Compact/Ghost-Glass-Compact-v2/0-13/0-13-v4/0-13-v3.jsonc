@@ -1,7 +1,5 @@
 //  0-13-v3.jsonc 2025-07-17
 
-    // --- CORE WORKFLOW MODULES ---
-
     {
     "hyprland/workspaces": {
         "show-special": true,
@@ -14,7 +12,6 @@
         "persistent-workspaces": { "*": 5 }
     },
 
-    // --- GROUP DEFINITIONS ---
     "group/settings": {
         "orientation": "inherit",
         "drawer": {
@@ -43,7 +40,6 @@
         "tooltip": false
     },
 
-    // --- ACTION & LAUNCHER MODULES ---
     "custom/appmenu": {
         "format": "\ue410",
         "on-click": "~/.config/rofi/bin/launcher3",
@@ -102,7 +98,6 @@
         "tooltip": false
     },
     
-    // --- SYSTEM STATUS & SERVICE MODULES --- 	//
     "clock": {
         "format": "{:%I\n<span line_height='0.6'>%M</span>\n<span font_size='1pt'> </span>}",
         "tooltip": true,
