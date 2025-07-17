@@ -120,8 +120,9 @@
         "on-click": "nm-connection-editor",
         "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
     },
-    "tray": { "icon-size": 18, "spacing": 10 },
-
+    "tray": { 
+        "icon-size": 18, "spacing": 10 
+    },
     "custom/hypridle": {
         "format": "\uf30d", "return-type": "json", "escape": true,
         "exec-on-event": true, "interval": 60,
