@@ -30,12 +30,8 @@
             "transition-left-to-right": true
         },
         "modules": [
-            "custom/settings",
-            "custom/waybarthemes",
-            "custom/wallpaper",
-            "custom/hypridle",
-            "custom/notification",
-            "custom/drawer_spacer"
+            "custom/settings", "custom/waybarthemes", "custom/wallpaper",
+            "custom/hypridle", "custom/notification", "custom/drawer_spacer"
         ]
     },
     "group/hardware": {
@@ -45,18 +41,9 @@
             "transition-left-to-right": false
         },
         "modules": [
-            "custom/system",
-            "custom/drawer_spacer",
-            "custom/weather",
-            "cpu",
-            "memory",
-            "custom/updates",
-            "network",
-            "custom/hyprshade",
-            "custom/cliphist",
-            "pulseaudio",
-            "tray",
-            "custom/drawer_spacer"
+            "custom/system", "custom/drawer_spacer", "custom/weather",
+            "cpu", "memory", "custom/updates", "network", "custom/hyprshade",
+            "custom/cliphist", "pulseaudio", "tray", "custom/drawer_spacer"
         ]
     },
     "custom/drawer_spacer": {
