@@ -26,7 +26,7 @@
     "group/settings": {
         "orientation": "inherit",
         "drawer": {
-            "transition-duration": 175,
+            "transition-duration": 150,
             "transition-left-to-right": true
         },
         "modules": [
@@ -37,7 +37,7 @@
     "group/hardware": {
         "orientation": "inherit",
         "drawer": {
-            "transition-duration": 175,
+            "transition-duration": 150,
             "transition-left-to-right": false
         },
         "modules": [
