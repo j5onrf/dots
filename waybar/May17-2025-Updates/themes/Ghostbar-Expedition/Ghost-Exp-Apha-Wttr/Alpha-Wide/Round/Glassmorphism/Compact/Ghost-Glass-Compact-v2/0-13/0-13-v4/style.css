@@ -28,6 +28,7 @@
 window#waybar {
     background-color: transparent;
 }
+
 #workspaces button.active {
     font-weight: 300;
 }
