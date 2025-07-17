@@ -12,11 +12,11 @@
 
     {
     "hyprland/workspaces": {
-      "show-special": true,
-      "format": "{icon}",
-      "format-icons": { 
-        "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "default": "*",
-        "active": "<span font_family='Font Awesome 6 Pro Solid' rise='-17000'>\ue27e</span>",
+        "show-special": true,
+        "format": "{icon}",
+        "format-icons": { 
+            "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "default": "*",
+            "active": "<span font_family='Font Awesome 6 Pro Solid' rise='-17000'>\ue27e</span>",
             "keepassxc": "\uf084"
       },
         "persistent-workspaces": { "*": 5 }
