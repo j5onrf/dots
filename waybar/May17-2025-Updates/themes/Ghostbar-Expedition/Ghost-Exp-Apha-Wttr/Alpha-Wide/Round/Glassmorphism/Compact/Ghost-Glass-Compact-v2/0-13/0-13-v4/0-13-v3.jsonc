@@ -1,23 +1,19 @@
 //  0-13-v3.jsonc 2025-07-17
 
-    {
+{
     "hyprland/workspaces": {
         "show-special": true,
         "format": "{icon}",
         "format-icons": { 
-            "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "default": "*",
+            "1":"1", "2":"2", "3":"3", "4":"4", "5":"5", "default":"*",
             "active": "<span font_family='Font Awesome 6 Pro Solid' rise='-17000'>\ue27e</span>",
-                "keepassxc": "\uf084"
+            "keepassxc": "\uf084"
         },
         "persistent-workspaces": { "*": 5 }
     },
-
     "group/settings": {
         "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 150,
-            "transition-left-to-right": true
-        },
+        "drawer": { "transition-duration": 150, "transition-left-to-right": true },
         "modules": [
             "custom/settings", "custom/waybarthemes", "custom/wallpaper",
             "custom/hypridle", "custom/notification", "custom/drawer_spacer"
@@ -25,10 +21,7 @@
     },
     "group/hardware": {
         "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 150,
-            "transition-left-to-right": false
-        },
+        "drawer": { "transition-duration": 150, "transition-left-to-right": false },
         "modules": [
             "custom/system", "custom/drawer_spacer", "custom/weather",
             "cpu", "memory", "custom/updates", "network", "custom/hyprshade",
@@ -39,7 +32,6 @@
         "format": " ",
         "tooltip": false
     },
-
     "custom/appmenu": {
         "format": "\ue410",
         "on-click": "~/.config/rofi/bin/launcher3",
@@ -97,21 +89,14 @@
         "on-click": "~/.config/waybar/themeswitcher.sh",
         "tooltip": false
     },
-    
     "clock": {
         "format": "{:%I\n<span line_height='0.6'>%M</span>\n<span font_size='1pt'> </span>}",
-        "tooltip": true,
         "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
         "on-click": "flatpak run com.ml4w.calendar",
-        "calendar": {
-            "format": {
-                "today": "<b><u>{}</u></b>"
-            }
-        }
+        "calendar": { "format": { "today": "<b><u>{}</u></b>" } }
     },
     "custom/weather": {
         "format": "{}",
-        "tooltip": true,
         "interval": 3600,
         "exec": "~/.config/hypr/scripts/get_openweathermap_forecast.sh",
         "return-type": "json"
@@ -120,11 +105,9 @@
         "format": "{usage}",
         "format-critical": "<b>{usage}</b>",
         "on-click": "kitty -e htop --sort-key PERCENT_CPU",
-        "tooltip": false,
         "interval": 10,
-        "states": {
-            "critical": 80, "high": 50, "medium": 5, "low": 0
-        }
+        "tooltip": false,
+        "states": { "critical": 80, "high": 50, "medium": 5, "low": 0 }
     },
     "memory": {
         "format": "{used:0.1f}",
@@ -144,9 +127,7 @@
     "pulseaudio": {
         "scroll-step": 5,
         "format": "{icon}",
-        "format-icons": {
-            "default": ["\uf8f2"]
-        },
+        "format-icons": { "default": ["\uf8f2"] },
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "format-muted": "\uf7a4",
         "tooltip": false
@@ -155,7 +136,6 @@
         "format": "{ifname}",
         "format-ethernet": "\uf8dd",
         "format-disconnected": "\ue250",
-        "tooltip": true,
         "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-disconnected": "Disconnected",
         "interval": 10,
@@ -163,10 +143,7 @@
         "on-click": "nm-connection-editor",
         "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
     },
-    "tray": {
-        "icon-size": 18,
-        "spacing": 10
-    },
+    "tray": { "icon-size": 18, "spacing": 10 },
     "custom/hypridle": {
         "format": "\uf30d",
         "return-type": "json",
