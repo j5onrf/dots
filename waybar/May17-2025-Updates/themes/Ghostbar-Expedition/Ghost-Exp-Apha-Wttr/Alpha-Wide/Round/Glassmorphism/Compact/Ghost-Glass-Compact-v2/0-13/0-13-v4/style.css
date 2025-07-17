@@ -5,23 +5,12 @@
 
 @import 'ghost-matugen.css';
 
-/* --- GLOBAL BASE STYLES --- */
 * {
     font-family: "Cascadia Mono", "Font Awesome 6 Pro Light";
     font-size: 18px;
     border-radius: 4px;
     background: none;
     border: none;
-}
-
-window#waybar {
-    background-color: transparent;
-}
-#workspaces button.active {
-    font-weight: 300;
-}
-#workspaces button.empty {
-    color: alpha(@primary, 0.5);
 }
 
 .modules-center {
@@ -35,6 +24,16 @@ window#waybar {
         to bottom, alpha(@primary, 0.50),
         transparent, alpha(@primary, 0.50)
     ) 1;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+#workspaces button.active {
+    font-weight: 300;
+}
+#workspaces button.empty {
+    color: alpha(@primary, 0.5);
 }
 
 #workspaces button,
