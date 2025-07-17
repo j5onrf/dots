@@ -130,13 +130,13 @@
         "return-type": "json"
     },
     "cpu": {
-    "format": "{usage}",
-    "format-critical": "<b>{usage}</b>",
-    "on-click": "kitty -e htop --sort-key PERCENT_CPU",
-    "tooltip": false,
-    "interval": 10,
-    "states": {
-        "critical": 80, "high": 50, "medium": 5, "low": 0
+        "format": "{usage}",
+        "format-critical": "<b>{usage}</b>",
+        "on-click": "kitty -e htop --sort-key PERCENT_CPU",
+        "tooltip": false,
+        "interval": 10,
+        "states": {
+            "critical": 80, "high": 50, "medium": 5, "low": 0
         }
     },
     "memory": {
