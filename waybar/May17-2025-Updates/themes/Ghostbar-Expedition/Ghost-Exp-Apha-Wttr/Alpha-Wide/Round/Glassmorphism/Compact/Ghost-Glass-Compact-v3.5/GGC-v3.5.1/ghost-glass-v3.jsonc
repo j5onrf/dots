@@ -1,10 +1,8 @@
-//  GGC-v3.5.1 (2025-07-19)
+//  GGC-v3.5 (2025-07-19)
 
 {
     "hyprland/workspaces#rw": {
-        "disable-scroll": true, "all-outputs": true, "warp-on-scroll": false, "sort-by-number": true,
-        "on-click": "activate", "on-scroll-up": "hyprctl dispatch workspace e-1",
-        "on-scroll-down": "hyprctl dispatch workspace e+1", "format": "{icon}{windows}",
+        "format": "{icon}{windows}",
         "show-special": true,
         "persistent-workspaces": { "*": 5 },
         "format-window-separator": "\n",
