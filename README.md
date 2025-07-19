@@ -232,7 +232,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 # WayBar
 
 (2025-July13) [Ghostarchy<sup>preview</sup> Cascadia Mono](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13/0-13-v4) 
-<img width="1440" height="61" alt="cas-2025-07-19_16-01-59" src="https://github.com/user-attachments/assets/95e30a24-350e-48f3-b7ca-63b991378ba9" />
+<img width="1440" height="61" alt="cas-2025-07-19_16-01-59" src="https://github.com/user-attachments/assets/1c4bf8f7-9296-4321-9c87-94588a301276" />
 
 ---
 `Waybar < v0.13`
