@@ -147,6 +147,21 @@ if [ ! -f $HOME/.config/ml4w/settings/waybar-disabled ]; then
 else
     echo ":: Waybar disabled"
 fi
+```
+---
+
+## Usage: Selecting a Legacy Theme
+
+Your system is now fully configured. The `launch.sh` script will use the modern `waybar` by default.
+
+To tell the script to use the legacy version for a specific theme, simply create an empty file named `.legacy` inside that theme's directory.
+
+**Example:** To make `my-old-theme` use `waybar-0.12`, run this command:
+```bash
+touch ~/.config/waybar/themes/my-old-theme/.legacy
+```
+
+The script will handle the rest automatically the next time you switch themes. To switch it back to using the modern Waybar, just delete the `.legacy` file.
 
 Finally, make sure the new script is executable:
 ```bash
