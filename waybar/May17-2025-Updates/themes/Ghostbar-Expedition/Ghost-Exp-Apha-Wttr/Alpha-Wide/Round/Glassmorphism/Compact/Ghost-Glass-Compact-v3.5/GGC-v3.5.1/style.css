@@ -68,7 +68,7 @@ window#waybar {
     font-size: 0.857em;
 }
 #clock, #custom-weather{
-    padding-bottom: 5px;
+    padding-bottom: 3px;
 }
 #custom-settings, #custom-system {
     font-size: 0.5em;
