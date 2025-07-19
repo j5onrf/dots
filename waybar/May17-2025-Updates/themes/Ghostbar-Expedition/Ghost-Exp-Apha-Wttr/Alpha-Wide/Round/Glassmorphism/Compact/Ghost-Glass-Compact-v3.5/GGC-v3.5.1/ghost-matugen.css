@@ -1,46 +1,13 @@
-/* File: ~/.config/waybar/themes/~ */
+/* 
+ *  Optimized Matugen Colors for 0.13-v3 (2025-07-11)
+ *  Contains only the colors used in theme.
+ */
 
 @import '../../colors.css';
 
-/* --- Text Colors --- */
 @define-color ghost_text_primary @on_surface;
-@define-color ghost_text_tooltip @on_surface;
-@define-color ghost_text_on_accent @on_primary_container;
-
-/* --- Accent & Special Colors --- */
-@define-color ghost_accent_red_bg @error_container;
-@define-color ghost_accent_red_fg @on_error_container;
-@define-color ghost_icon_default @on_surface_variant;
-
-/* --- Backgrounds & Surfaces --- */
 @define-color ghost_bar_background @background;
-@define-color ghost_tooltip_background @surface_container_highest;
-
-/* --- Shadows & Highlights (Glows) --- */
-@define-color ghost_light_glow alpha(@on_background, 0.3);
-@define-color ghost_hover_glow_color @primary;
-
-/* --- Workspaces --- */
-@define-color ghost_ws_button_fg @on_surface_variant;
-@define-color ghost_ws_button_bg transparent;
-@define-color ghost_ws_button_shadow @outline;
-
-@define-color ghost_ws_button_active_fg @on_primary_container;
-@define-color ghost_ws_button_active_bg @primary_container;
-
-@define-color ghost_ws_button_hover_fg @on_secondary_container;
-@define-color ghost_ws_button_hover_bg @secondary_container;
-
-/* --- Specific Modules --- */
-/* Hypridle */
 @define-color ghost_hypridle_active_icon @tertiary;
 @define-color ghost_hypridle_inactive_icon @error;
-
-/* PulseAudio Muted */
 @define-color ghost_pulseaudio_muted_fg @on_error_container;
-@define-color ghost_pulseaudio_muted_bg @error_container;
 @define-color ghost_pulseaudio_muted_hover_fg @on_error;
-@define-color ghost_pulseaudio_muted_hover_bg @error;
-
-/* For elements initially set to transparent text */
-@define-color ghost_hidden_text transparent;
