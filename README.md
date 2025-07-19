@@ -231,11 +231,14 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # WayBar
 
-(2025-July13) [Ghostarchy<sup>preview</sup> Cascadia Mono](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13/0-13-v4) 
+(2025-July13-19) [Ghostarchy<sup>preview</sup> Cascadia Mono](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13/0-13-v4) 
 <img width="1440" height="61" alt="cas-2025-07-19_16-01-59" src="https://github.com/user-attachments/assets/1c4bf8f7-9296-4321-9c87-94588a301276" />
 
 ---
 `Waybar < v0.13`
+
+(2025-July19) [GGCv3.5.1<sup>legacy</sup> Cascadia Mono](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v3.5/GGC-v3.5.1) 
+<img width="1440" height="72" alt="ggc-2025-07-19_16-10-42" src="https://github.com/user-attachments/assets/34c41f5c-0f3f-4273-a175-78a060c943bb" />
 
 (2025-June24) [Glassmorphism<sup>optimized</sup> SF Mono](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism) 
 ![2025-06-24T17:19:46,098629386-05:00](https://github.com/user-attachments/assets/0c6d1799-1731-4003-98ce-ab970cefc7cb)
