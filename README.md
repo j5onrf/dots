@@ -237,7 +237,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 ---
 `Waybar < v0.13`
 
-(2025-July19) [GGCv3.5.1<sup>legacy</sup> Cascadia Mono](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v3.5/GGC-v3.5.1) 
+(2025-July19) [GGC-v3.5.1<sup>legacy</sup> Cascadia Mono](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v3.5/GGC-v3.5.1) 
 <img width="1440" height="72" alt="ggc-2025-07-19_16-10-42" src="https://github.com/user-attachments/assets/34c41f5c-0f3f-4273-a175-78a060c943bb" />
 
 (2025-June24) [Glassmorphism<sup>optimized</sup> SF Mono](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism) 
