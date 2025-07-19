@@ -59,7 +59,34 @@ Now, completely replace the contents of `~/.config/waybar/launch.sh` with the fo
 # MODIFIED to support multiple Waybar versions
 # -----------------------------------------------------
 
-# Quit all running waybar instances (both old and new)
+# -----------------------------------------------------
+# --- SCRIPT ENVIRONMENT SETUP ---
+# Prepend common user binary directories to the script's PATH.
+# This makes the script robust for execution by other scripts, keybinds, or services.
+# -----------------------------------------------------
+export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+
+# -----------------------------------------------------
+# Find and Verify Waybar Executables
+# -----------------------------------------------------
+WAYBAR_CMD_NEW=$(command -v waybar)
+WAYBAR_CMD_LEGACY=$(command -v waybar-0.12)
+
+# Check if the new Waybar (v0.13+) was found
+if ! [ -x "$WAYBAR_CMD_NEW" ]; then
+    echo "ERROR: The 'waybar' executable was not found in your PATH. Please ensure it's installed correctly." >&2
+    exit 1
+fi
+
+# Check if the legacy Waybar (v0.12) was found
+if ! [ -x "$WAYBAR_CMD_LEGACY" ]; then
+    echo "ERROR: The 'waybar-0.12' executable was not found in your PATH. Please ensure it's installed correctly." >&2
+    exit 1
+fi
+
+# -----------------------------------------------------
+# Quit all running waybar instances
+# -----------------------------------------------------
 pkill waybar
 pkill waybar-0.12
 sleep 0.2
@@ -104,11 +131,12 @@ fi
 #  NEW LOGIC: Determine which Waybar executable to use
 #
 # -----------------------------------------------------
-WAYBAR_CMD="waybar"
+WAYBAR_CMD="$WAYBAR_CMD_NEW" # Default to the new version
 THEME_PATH="$HOME/.config/waybar/themes${arrThemes[0]}"
+
 if [ -f "$THEME_PATH/.legacy" ]; then
     echo ":: Legacy theme detected, using Waybar v0.12"
-    WAYBAR_CMD="waybar-0.12"
+    WAYBAR_CMD="$WAYBAR_CMD_LEGACY" # Switch to the legacy version if flagged
 fi
 # -----------------------------------------------------
 
@@ -119,7 +147,6 @@ if [ ! -f $HOME/.config/ml4w/settings/waybar-disabled ]; then
 else
     echo ":: Waybar disabled"
 fi
-```
 
 Finally, make sure the new script is executable:
 ```bash
