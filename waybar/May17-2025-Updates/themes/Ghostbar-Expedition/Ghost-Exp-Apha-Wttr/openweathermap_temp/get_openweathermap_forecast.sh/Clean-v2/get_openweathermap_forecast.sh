@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Waybar Weather & Forecast Script (Final Version)
+# Waybar Weather & Forecast Script
 #
 
 # --- CONFIGURATION ---
