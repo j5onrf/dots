@@ -64,7 +64,7 @@ window#waybar {
     font-size: 0.857em;
 }
 #custom-weather {
-    padding-top: 2px;
+    padding-top: 0px;
     font-size: 0.857em;
 }
 #custom-settings, #custom-system {
