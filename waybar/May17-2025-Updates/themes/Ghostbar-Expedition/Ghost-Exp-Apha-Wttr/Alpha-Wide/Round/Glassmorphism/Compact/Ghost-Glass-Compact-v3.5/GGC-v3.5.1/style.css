@@ -6,9 +6,9 @@
 
 * {
     font-family: "Cascadia Mono", "Font Awesome 6 Sharp Light";
+    border-radius: 0em;
     background: none;
     border: none;
-    border-radius: 0em;
 }
 
 window#waybar {
