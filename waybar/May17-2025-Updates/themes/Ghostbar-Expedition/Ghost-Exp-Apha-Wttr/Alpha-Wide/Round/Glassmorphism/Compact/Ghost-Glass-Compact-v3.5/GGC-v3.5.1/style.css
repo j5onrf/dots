@@ -6,6 +6,7 @@
 @import 'ghost-matugen.css';
 
 * {
+    font-family: "Cascadia Mono", "Font Awesome 6 Sharp Light";
     background: none;
     border: none;
     border-radius: 0em;
@@ -14,9 +15,9 @@
 window#waybar {
     background-color: transparent;
 }
+
 .modules-center {
-    font-family: "Font Awesome 6 Sharp Light";
-    font-size: 24px;
+    font-size: 20px;
     margin: 8px;
     padding: 0px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
@@ -29,6 +30,7 @@ window#waybar {
         transparent, alpha(@primary, 1)
     ) 1;
 }
+
 .modules-left > *,
 .modules-center > *,
 .modules-right > *,
@@ -60,15 +62,13 @@ window#waybar {
     opacity: 1;
 }
 
-#clock, #custom-weather,
-#cpu, #memory, #custom-updates {
-    font-family: "Cascadia Mono";
-}
-#clock, #custom-weather{
-    font-size: 0.857em;
-}
 #clock {
     padding-bottom: 3px;
+    font-size: 0.857em;
+}
+#custom-weather {
+    padding-top: 2px;
+    font-size: 0.857em;
 }
 #custom-settings, #custom-system {
     font-size: 0.5em;
@@ -91,7 +91,6 @@ window#waybar {
 }
 
 tooltip {
-    font-family: "Cascadia Mono", "Font Awesome 6 Pro";
     background-color: @ghost_bar_background;
     border: 0.5px solid @primary;
 }
