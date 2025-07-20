@@ -93,8 +93,7 @@ window#waybar {
 tooltip {
     font-family: "Cascadia Mono", "Font Awesome 6 Pro";
     background-color: @ghost_bar_background;
-    padding: 0.8em;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 0.5px solid @primary;
 }
 tooltip label {
     color: @primary;
