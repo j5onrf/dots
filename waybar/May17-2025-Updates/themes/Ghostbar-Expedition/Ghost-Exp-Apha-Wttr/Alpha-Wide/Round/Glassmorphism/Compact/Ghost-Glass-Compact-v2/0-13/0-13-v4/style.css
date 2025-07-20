@@ -36,12 +36,7 @@ window#waybar {
     color: alpha(@primary, 0.5);
 }
 
-#workspaces button,
-#pulseaudio, #custom-cliphist, #custom-hyprshade, #network, #tray,
-#custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification,
-#cpu, #memory, #custom-updates,
-#custom-appmenu, #custom-exit,
-#clock, #custom-weather {
+#workspaces button, #pulseaudio, #cpu, #memory, #network, #tray, #clock, #custom-updates, #custom-cliphist, #custom-hyprshade, #custom-weather, #custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification, #custom-appmenu, #custom-exit {
     color: @primary;
     margin: 0.15em 0.2em;
     padding: 0px 0px;
@@ -49,12 +44,7 @@ window#waybar {
     transition: none;
 }
 
-#workspaces button:hover, #workspaces button.active,
-#pulseaudio:hover, #custom-cliphist:hover, #custom-hyprshade:hover, #network:hover, #tray:hover,
-#custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
-#cpu:hover, #memory:hover, #custom-updates:hover,
-#custom-appmenu:hover, #custom-exit:hover,
-#clock:hover, #custom-weather:hover {
+#workspaces button:hover, #workspaces button.active, #pulseaudio:hover, #cpu:hover, #memory:hover, #network:hover, #tray:hover, #clock:hover, #custom-updates:hover, #custom-cliphist:hover, #custom-hyprshade:hover, #custom-weather:hover, #custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover,  #custom-notification:hover {
     background-color: alpha(@primary, 0.30);
     border-color: alpha(@primary, 0.50);
 }
@@ -113,5 +103,4 @@ tooltip {
 }
 tooltip label {
     color: @primary;
-    font-size: 14px;
 }
