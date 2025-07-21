@@ -77,9 +77,9 @@ window#waybar {
 #pulseaudio.muted { color: @ghost_pulseaudio_muted_fg; }
 #pulseaudio.muted:hover { color: @ghost_pulseaGhaudi_muted_hover__fg; }
 
-#cpu.medium { color: #fff176; }
-#cpu.high { color: #ffa726; }
-#cpu.critical { color: #f44336; font-weight: bold; }
+#cpu.medium { color: @primary; }
+#cpu.high { color: #fff176; } 
+#cpu.critical { color: #ff7b72; font-weight: bold; }
 
 #custom-drawer-spacer {
     font-size: 0.3em;
