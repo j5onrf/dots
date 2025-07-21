@@ -1,0 +1,93 @@
+/* 
+ *  GGC-v3.5.2 2025-07-20
+ */
+
+@import 'ghost-matugen.css';
+
+* {
+    font-family: "Cascadia Mono", "Font Awesome 6 Sharp Light";
+    border-radius: 0em;
+    background: none;
+    border: none;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+.modules-center {
+    font-size: 20px;
+    margin: 8px 2px 8px 8px;
+    padding: 0px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    background-color: @ghost_bar_background;
+    border: 1px solid;
+    border-image: linear-gradient(
+        to bottom, alpha(@primary, 1),
+        transparent, alpha(@primary, 1)
+    ) 1;
+}
+
+.modules-center > *,
+#workspaces button {
+    color: @primary;
+    margin: 0.15em 0.2em;
+    padding: 0em 0.01em;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-out;
+}
+.modules-center > *:hover,
+#workspaces button:hover,
+#workspaces button.active {
+    background-color: alpha(@primary, 0.30);
+    border-color: alpha(@primary, 0.50);
+}
+
+#custom-appmenu, #custom-exit, 
+#custom-settings, #custom-system {
+    background-color: @ghost_bar_background;
+    border: 1px solid transparent;
+    opacity: 0;
+}
+#custom-appmenu:hover, #custom-exit:hover,
+#custom-settings:hover, #custom-system:hover {
+    background-color: @ghost_bar_background;
+    border: 1px solid alpha(@primary, 1);
+    opacity: 1;
+}
+
+#clock {
+    padding-bottom: 0.2em;
+    font-size: 0.857em;
+}
+#custom-weather {
+    padding-top: 0.1em;
+    font-size: 0.857em;
+}
+#custom-settings, #custom-system {
+    font-size: 0.5em;
+    padding: 0.4em;
+}
+#cpu, #memory, #custom-updates {
+    font-size: 0.57em;
+}
+
+#custom-hypridle.active { color: @ghost_hypridle_active_icon; }
+#custom-hypridle.notactive { color: @ghost_hypridle_inactive_icon; }
+#pulseaudio.muted { color: @ghost_pulseaudio_muted_fg; }
+#pulseaudio.muted:hover { color: @ghost_pulseaGhaudi_muted_hover__fg; }
+#cpu.medium { color: @tertiary_fixed; }
+#cpu.high { color: @source_color; }
+#cpu.critical { color: @error; font-weight: bold; }
+
+#custom-drawer-spacer {
+    font-size: 0.3em;
+}
+
+tooltip {
+    background-color: @ghost_bar_background;
+    border: 0.5px solid @primary;
+}
+tooltip label {
+    color: @primary;
+}
