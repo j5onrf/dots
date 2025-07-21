@@ -17,7 +17,7 @@ window#waybar {
 
 .modules-center {
     font-size: 20px;
-    margin: 8px 2px 8px 8px;
+    margin: 8px 2px 8px 0px;
     padding: 0px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     background-color: @ghost_bar_background;
