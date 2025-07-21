@@ -1,5 +1,5 @@
 /* 
- *  0-13-v4 style.css 2025-07-19
+ *  0-13-v4 style.css 2025-07-21
  */
 
 @import 'ghost-matugen.css';
@@ -91,11 +91,15 @@ window#waybar {
 #pulseaudio.muted { color: @ghost_pulseaudio_muted_fg; }
 #pulseaudio.muted:hover { color: @ghost_pulseaudio_muted_hover_fg; }
 
-#cpu.medium { color: @tertiary_fixed; }
-#cpu.high { color: @source_color; }
+#cpu.medium { 
+  color: #FFD600; 
+} 
+#cpu.high { 
+  color: #FF9100; 
+} 
 #cpu.critical { 
-    color: @error; 
-    font-weight: bold;
+  color: #FF3D00; 
+  font-weight: bold; 
 }
 
 #custom-weather.hot { color: #ffb4ab; }
