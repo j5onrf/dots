@@ -1,5 +1,5 @@
 /* 
- *  GGC-v3.5.2 2025-07-20
+ *  GGC-v3.5.2 2025-07-21
  */
 
 @import 'ghost-matugen.css';
@@ -76,9 +76,10 @@ window#waybar {
 #custom-hypridle.notactive { color: @ghost_hypridle_inactive_icon; }
 #pulseaudio.muted { color: @ghost_pulseaudio_muted_fg; }
 #pulseaudio.muted:hover { color: @ghost_pulseaGhaudi_muted_hover__fg; }
-#cpu.medium { color: @tertiary_fixed; }
-#cpu.high { color: @source_color; }
-#cpu.critical { color: @error; font-weight: bold; }
+
+#cpu.medium { color: #FFD600; }
+#cpu.high { color: #FF9100; }
+#cpu.critical { color: #FF3D00; font-weight: bold; }
 
 #custom-drawer-spacer {
     font-size: 0.3em;
