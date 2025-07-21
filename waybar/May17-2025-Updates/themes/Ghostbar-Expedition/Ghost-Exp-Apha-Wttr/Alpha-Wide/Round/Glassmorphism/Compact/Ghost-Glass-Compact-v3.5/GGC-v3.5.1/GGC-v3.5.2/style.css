@@ -79,7 +79,7 @@ window#waybar {
 
 #cpu.medium { color: #fff176; }
 #cpu.high { color: #ffa726; }
-#cpu.critical { color: #ef9a9a; font-weight: bold; }
+#cpu.critical { color: #f44336; font-weight: bold; }
 
 #custom-drawer-spacer {
     font-size: 0.3em;
