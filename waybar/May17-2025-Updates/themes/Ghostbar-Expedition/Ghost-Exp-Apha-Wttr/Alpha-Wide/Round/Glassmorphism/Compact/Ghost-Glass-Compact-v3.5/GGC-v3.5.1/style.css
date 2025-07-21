@@ -28,9 +28,7 @@ window#waybar {
     ) 1;
 }
 
-.modules-left > *,
 .modules-center > *,
-.modules-right > *,
 #workspaces button {
     color: @primary;
     margin: 0.15em 0.2em;
@@ -38,9 +36,7 @@ window#waybar {
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
 }
-.modules-left > *:hover,
 .modules-center > *:hover,
-.modules-right > *:hover,
 #workspaces button:hover,
 #workspaces button.active {
     background-color: alpha(@primary, 0.30);
