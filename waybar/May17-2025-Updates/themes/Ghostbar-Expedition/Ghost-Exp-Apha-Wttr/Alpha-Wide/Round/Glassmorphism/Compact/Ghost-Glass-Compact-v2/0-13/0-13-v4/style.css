@@ -91,9 +91,9 @@ window#waybar {
 #pulseaudio.muted { color: @ghost_pulseaudio_muted_fg; }
 #pulseaudio.muted:hover { color: @ghost_pulseaudio_muted_hover_fg; }
 
-#cpu.medium { color: #FFD600; }
-#cpu.high { color: #FF9100; }
-#cpu.critical { color: #FF3D00; font-weight: bold; }
+#cpu.medium { color: #fff176; }
+#cpu.high { color: #ffa726; }
+#cpu.critical { color: #ef9a9a; font-weight: bold; }
 
 #custom-weather.hot { color: #ffb4ab; }
 #custom-weather.cold { color: #88c0d0; }
