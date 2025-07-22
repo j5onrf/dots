@@ -80,7 +80,7 @@
     "clock": {
         "format": "{:%I\n<span line_height='0.6'>%M</span>\n<span font_size='1pt'> </span>}",
         "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
-        "calendar": { "format": { "today": "<span font_size='13pt'><b><u>{}</u></b></span>" } }
+        "calendar": { "format": { "today": "<b><u>{}</u></b>" } }
     },
     "custom/weather": {
         "format": "{}", "return-type": "json",
