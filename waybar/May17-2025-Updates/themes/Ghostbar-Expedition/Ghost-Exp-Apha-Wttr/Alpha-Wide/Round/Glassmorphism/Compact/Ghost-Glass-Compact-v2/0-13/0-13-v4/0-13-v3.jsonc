@@ -1,11 +1,11 @@
-//  0-13-v3.jsonc 2025-07-20
+//  0-13-v3.jsonc 2025-07-22
 
 {
     "hyprland/workspaces": {
         "show-special": true,
         "format": "{icon}",
         "format-icons": { 
-            "1":"1", "2":"2", "3":"3", "4":"4", "5":"5", "default":"*",
+            "1":"1", "2":"2", "3":"3", "4":"4", "5":"5", "default":"*", "urgent": "",
             "active": "<span font_family='Font Awesome 6 Pro Solid' rise='-17000'>\ue27e</span>",
             "keepassxc": "\uf084"
         },
@@ -40,7 +40,6 @@
     "custom/exit": {
         "format": "\uf011", "tooltip": false,
         "on-click": "~/.config/ml4w/scripts/wlogout.sh",
-        "on-click-right": "com.ml4w.welcome",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
     },
@@ -81,7 +80,7 @@
     "clock": {
         "format": "{:%I\n<span line_height='0.6'>%M</span>\n<span font_size='1pt'> </span>}",
         "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
-        "calendar": { "format": { "today": "<span font_size='14pt'><b><u>{}</u></b></span>" } }
+        "calendar": { "format": { "today": "<span font_size='13pt'><b><u>{}</u></b></span>" } }
     },
     "custom/weather": {
         "format": "{}", "return-type": "json",
@@ -124,7 +123,7 @@
     },
     "custom/hypridle": {
         "format": "\uf30d", "return-type": "json", "escape": true,
-        "exec-on-event": true, "interval": 60,
+        "exec-on-event": true, "interval": 3600,
         "exec": "~/.config/hypr/scripts/hypridle.sh status",
         "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
     },
