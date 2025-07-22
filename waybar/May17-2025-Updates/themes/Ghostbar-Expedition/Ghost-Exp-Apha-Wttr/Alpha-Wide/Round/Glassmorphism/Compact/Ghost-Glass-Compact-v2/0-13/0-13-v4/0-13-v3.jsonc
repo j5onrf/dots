@@ -91,7 +91,7 @@
         "format": "{usage}", "format-critical": "<b>{usage}</b>", "tooltip": false,
         "on-click": "kitty -e htop --sort-key PERCENT_CPU",
         "interval": 10,
-        "states": { "critical": 80, "high": 50, "medium": 5, "low": 0 }
+        "states": { "critical": 80, "high": 50, "low": 0 }
     },
     "memory": {
         "format": "{used:0.1f}", "tooltip": false,
