@@ -89,13 +89,15 @@
     },
     "cpu": {
         "format": "{usage}", "format-critical": "<b>{usage}</b>", "tooltip": false,
-        "on-click": "kitty -e htop --sort-key PERCENT_CPU",
+        "on-click": "kitty --class kitty-htop -e htop --sort-key PERCENT_CPU",
+        "on-click-right": "kitty --class kitty-htop -e btop",
         "interval": 10,
         "states": { "critical": 80, "high": 50, "low": 0 }
     },
     "memory": {
         "format": "{used:0.1f}", "tooltip": false,
-        "on-click": "kitty -e htop --sort-key PERCENT_MEM",
+        "on-click": "kitty --class kitty-htop -e htop --sort-key PERCENT_MEM",
+        "on-click-right": "kitty --class kitty-htop -e btop",
         "interval": 10
     },
     "custom/updates": {
