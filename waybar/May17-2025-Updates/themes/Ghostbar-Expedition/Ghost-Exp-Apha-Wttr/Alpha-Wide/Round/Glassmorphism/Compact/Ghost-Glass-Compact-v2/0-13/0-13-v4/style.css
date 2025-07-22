@@ -91,7 +91,7 @@ window#waybar {
 #pulseaudio.muted { color: @ghost_pulseaudio_muted_fg; }
 #pulseaudio.muted:hover { color: @ghost_pulseaudio_muted_hover_fg; }
 
-#cpu.medium { color: @primary; }
+#cpu.low { color: @primary; }
 #cpu.high { color: #fff176; } 
 #cpu.critical { color: #ff7b72; font-weight: bold; }
 
