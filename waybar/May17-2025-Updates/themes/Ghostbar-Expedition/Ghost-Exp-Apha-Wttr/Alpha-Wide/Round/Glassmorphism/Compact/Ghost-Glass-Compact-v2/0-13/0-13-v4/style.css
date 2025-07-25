@@ -1,5 +1,5 @@
 /* 
- *  0-13-v4 style.css 2025-07-21
+ *  0-13-v4 style.css 2025-07-24
  */
 
 @import 'ghost-matugen.css';
@@ -70,7 +70,7 @@ window#waybar {
 #clock {
     color: @primary;
     font-size: 0.7778em;
-    padding-top: 0.2px;
+    padding-top: 0.2px ;
     margin: 0em 0.3em 0.3em 0.3em;
 }
 #cpu, #memory, #custom-updates, #custom-weather {
@@ -100,9 +100,9 @@ window#waybar {
 
 tooltip {
     background-color: @ghost_bar_background;
-    padding: 0.8em;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid alpha(@primary, 0.10);
 }
 tooltip label {
     color: @primary;
+    font-size: 14px;
 }
