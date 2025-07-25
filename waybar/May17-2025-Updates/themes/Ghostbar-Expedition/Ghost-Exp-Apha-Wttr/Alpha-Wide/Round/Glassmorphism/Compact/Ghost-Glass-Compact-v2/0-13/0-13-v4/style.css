@@ -16,9 +16,8 @@
     padding: 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     background-color: @ghost_bar_background;
-    border-width: 1px;
-    border-style: solid;
     margin-right: 2px;
+    border: 1px solid transparent; /* Optimized line */
     border-image: linear-gradient(
         to bottom, alpha(@primary, 0.50),
         transparent, alpha(@primary, 0.50)
