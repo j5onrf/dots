@@ -1,9 +1,11 @@
 ```
 /* --- GLOBAL BASE STYLES --- */
 * {
-    font-family: "Cascadia Mono", "Font Awesome 6 Pro Light";
+    font-family: "Samsung UI 6", "Font Awesome 6 Pro Light";
     font-size: 18px;
     border-radius: 4px;
 }
 ```
+<img width="3440" height="1440" alt="FullScreen-2025-08-04_14-48-21" src="https://github.com/user-attachments/assets/d3cc313b-67ce-4561-9471-6e3c1930f350" />
+
 <img width="3440" height="1440" alt="FullScreen-2025-07-16_13-04-24" src="https://github.com/user-attachments/assets/dab0e1a2-4b29-478a-bcac-248280cf55e0" />
