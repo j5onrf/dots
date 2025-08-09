@@ -18,7 +18,7 @@
 <details><summary>(2025-June24) Upgrading Waybar should bring tangible benefits, especially for theming</summary>
 <p>
 
-[I had to Downgrade to Waybar v0.12.0](https://github.com/j5onrf/dots/tree/main/waybar/waybar-0.13.0-release)  &nbsp; [0-13](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13) &nbsp; [Official 0.13.0 release notes](https://github.com/Alexays/Waybar/releases/tag/0.13.0)
+Aug-09 fixed for me in 0.14 &nbsp; [I had to Downgrade to Waybar v0.12.0](https://github.com/j5onrf/dots/tree/main/waybar/waybar-0.13.0-release)  &nbsp; [0-13](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13) &nbsp; [Official 0.13.0 release notes](https://github.com/Alexays/Waybar/releases/tag/0.13.0)
 
 </details>
 
