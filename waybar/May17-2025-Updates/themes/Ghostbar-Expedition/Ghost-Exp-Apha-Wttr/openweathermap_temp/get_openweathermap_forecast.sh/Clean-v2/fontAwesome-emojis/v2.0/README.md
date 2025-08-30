@@ -1,5 +1,4 @@
-![FullScreen-2025-07-01_11-57-09](https://github.com/user-attachments/assets/4753462b-69ab-4ab5-8be2-e08620bce089)
-
+<img width="1416" height="652" alt="2025-08-30T12:51:08,152593573-05:00" src="https://github.com/user-attachments/assets/a0e2788a-772e-4f49-b7c8-03e2169b5e3b" />
 
 ```markdown
 # Waybar Weather & Forecast Script
@@ -27,26 +26,6 @@ provides dynamic, at-a-glance status indicators through color changes.
     corrupted.
 -   **Performance Optimized**: Uses efficient shell scripting techniques to minimize
     CPU usage and process calls.
-```
-
-### (Optional) Refresh on Resume from Suspend
-
-To update the weather after waking from sleep, create a systemd service.
-
-Create `/etc/systemd/system/waybar-resume.service` with `sudo`:
-
-```ini
-[Unit]
-Description=Refresh Waybar on resume for user <your_username>
-After=suspend.target hibernate.target hybrid-sleep.target
-
-[Service]
-Type=oneshot
-User=<your_username>
-ExecStart=/usr/bin/pkill -SIGRTMIN+1 waybar
-
-[Install]
-WantedBy=suspend.target hibernate.target hybrid-sleep.target
 ```
 
 ## Acknowledgements
