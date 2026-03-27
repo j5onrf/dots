@@ -1,5 +1,13 @@
 # Hyprdots
 
+<details open><summary>(2026-March27) Caelestia-Shell</summary>
+<p>
+
+[Caelestia-Shell](https://github.com/caelestia-dots/shell)
+<img width="3440" height="1440" alt="screenshot_27032026_102418" src="https://github.com/user-attachments/assets/514a8490-c7a9-4814-870d-6d95685f5b86" />
+
+</details>
+
 <details><summary>(2025-July3) Shader Wallpapers for gen Matugen Colors</summary>
 <p>
 
@@ -7,7 +15,7 @@
 
 </details>
 
-<details open><summary>(2025-June26) Omarchy is out!</summary>
+<details><summary>(2025-June26) Omarchy is out!</summary>
 <p>
 
 [I try this<sup> testing</sup>](https://reddit.idevicehacked.com/r/hyprland/comments/1lleu0f/omarchy_is_out/)  &nbsp; [alias paruf](https://github.com/j5onrf/dots/tree/main/waybar/Omarchy) &nbsp; [animations<sup> {</sup>](https://github.com/j5onrf/dots/blob/main/waybar/Omarchy/Omarchy.conf)
@@ -22,7 +30,7 @@ Aug-09 fixed for me in 0.14 &nbsp; [I had to Downgrade to Waybar v0.12.0](https:
 
 </details>
 
-<details open><summary>(2025-June22) Vertical Waybar with a Glass UI</summary>
+<details><summary>(2025-June22) Vertical Waybar with a Glass UI</summary>
 <p>
 
 [Glassmorphism<sup>optimized</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism) &nbsp; [v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/v2) &nbsp; [Compact](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact)-[v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2)-[v3](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v3)-[v3.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v3.5)-[v3.5.1](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v3.5/GGC-v3.5.1)-[v3.75](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v3.75)-[v4](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v4)-[v5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v5)-[v6](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v6) &nbsp; [Weather](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/openweathermap_temp/get_openweathermap_forecast.sh/Clean-v2/fontAwesome-emojis)-[v2.0](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/openweathermap_temp/get_openweathermap_forecast.sh/Clean-v2/fontAwesome-emojis/v2.0) &nbsp; [0-13-v4<sup>*</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13/0-13-v4) &nbsp; [tokyonight.rasi](https://github.com/j5onrf/dots/tree/main/rofi/tokyonight.rasi)
@@ -30,7 +38,7 @@ Aug-09 fixed for me in 0.14 &nbsp; [I had to Downgrade to Waybar v0.12.0](https:
 
 </details>
 
-<details open><summary>(2025-June11-21) Ghost-Expedition Template</summary>
+<details><summary>(2025-June11-21) Ghost-Expedition Template</summary>
 <p>
  
 [Ghost-Expedition<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition) &nbsp; [Sharp-Thin](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Expedition-Thin) &nbsp; [v2.0](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Thin-Min-v2.0) &nbsp; [v2.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Thin-Min-v2.5) &nbsp; [Alpha](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Alpha) &nbsp; [Wttr](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr) &nbsp; [Wide](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide) &nbsp; [Round](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round) &nbsp; [Special<sup>scratchpads</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Special-Workspace-Example) 
@@ -38,7 +46,7 @@ Aug-09 fixed for me in 0.14 &nbsp; [I had to Downgrade to Waybar v0.12.0](https:
 
 </details>
 
-<details open><summary>(2025-May21-June05) Matugen Inspired Waybar Template</summary>
+<details><summary>(2025-May21-June05) Matugen Inspired Waybar Template</summary>
 <p>
 
 [Ghost-Matugen](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) &nbsp; [Duo](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Duotone) &nbsp; [v1.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/%20%20%20%20v1.5) &nbsp; [v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2) &nbsp; [v2.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2.5) &nbsp; [v3](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3) &nbsp; [v3.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3.5) &nbsp; [Cava-Wallust](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Cava-Matugen)  &nbsp; [Chafa](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/FastFetch/chafa)<img src="https://github.com/user-attachments/assets/9d4f4609-409d-4225-982f-94ab30bb8f5b" width="100" alt="w2">
