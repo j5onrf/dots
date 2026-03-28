@@ -6,7 +6,7 @@
 [Caelestia-Shell](https://github.com/caelestia-dots/shell)
 <img width="3440" height="1440" alt="screenshot_27032026_102418" src="https://github.com/user-attachments/assets/514a8490-c7a9-4814-870d-6d95685f5b86" />
 
-Samsung UI 6 Font
+Samsung UI 6/7 OneUISans SEC Fonts
 <img width="3440" height="1440" alt="FullScreen-2026-03-28_07-28-58" src="https://github.com/user-attachments/assets/9d162d34-e24e-405e-bba8-3ef0da13e6b6" />
 
 
