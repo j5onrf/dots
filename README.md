@@ -13,7 +13,7 @@ OneUISans SEC (Samsung UI 7)
 <img width="3440" height="1440" alt="FullScreen-2026-03-28_11-37-57" src="https://github.com/user-attachments/assets/6e083b0e-bc6a-4cb0-8cbe-5791d288d801" />
 
 Google Sans Flex
-<img width="3440" height="1440" alt="FullScreen-2026-03-29_08-34-06" src="https://github.com/user-attachments/assets/1562cbd0-de43-4c43-857b-228f8e56dce6" />
+<img width="3440" height="1440" alt="FullScreen-2026-03-29_09-20-00" src="https://github.com/user-attachments/assets/401d0e86-3aaa-4650-9157-48be2f9aa48e" />
 
 </details>
 
