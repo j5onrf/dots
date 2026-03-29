@@ -9,8 +9,12 @@
 Samsung UI 6 Font
 <img width="3440" height="1440" alt="FullScreen-2026-03-28_07-28-58" src="https://github.com/user-attachments/assets/9d162d34-e24e-405e-bba8-3ef0da13e6b6" />
 
-OneUISans SEC (Samsung UI 7) | Google Sans Flex
+OneUISans SEC (Samsung UI 7)
 <img width="3440" height="1440" alt="FullScreen-2026-03-28_11-37-57" src="https://github.com/user-attachments/assets/6e083b0e-bc6a-4cb0-8cbe-5791d288d801" />
+
+Google Sans Flex
+<img width="3440" height="1440" alt="FullScreen-2026-03-28_19-23-38" src="https://github.com/user-attachments/assets/2677e7bf-b131-4283-85ab-33a227842599" />
+
 
 </details>
 
