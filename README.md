@@ -6,7 +6,7 @@
 [Caelestia-Shell](https://github.com/caelestia-dots/shell)
 <img width="3440" height="1440" alt="FullScreen-2026-03-29_19-29-24" src="https://github.com/user-attachments/assets/5bbc65cf-0611-4c74-8ef2-6a468a169c86" />
 
-Google Sans Flex | GeistMono NF
+Google Sans Flex | OneUIsans SEC | GeistMono NF
 <img width="3440" height="1440" alt="FullScreen-2026-03-30_14-25-20" src="https://github.com/user-attachments/assets/2203f2bd-cfd6-4cf0-bcf0-e7e5febf13be" />
 
 </details>
