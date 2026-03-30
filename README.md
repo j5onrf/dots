@@ -4,7 +4,7 @@
 <p>
 
 [Caelestia-Shell](https://github.com/caelestia-dots/shell)
-<img width="3440" height="1440" alt="FullScreen-2026-03-29_19-29-35" src="https://github.com/user-attachments/assets/98e6db34-f5d3-4e3f-9fa6-329fccdba4d3" />
+<img width="3440" height="1440" alt="FullScreen-2026-03-29_19-29-24" src="https://github.com/user-attachments/assets/5bbc65cf-0611-4c74-8ef2-6a468a169c86" />
 
 Samsung UI 6 Font
 <img width="3440" height="1440" alt="FullScreen-2026-03-28_07-28-58" src="https://github.com/user-attachments/assets/9d162d34-e24e-405e-bba8-3ef0da13e6b6" />
