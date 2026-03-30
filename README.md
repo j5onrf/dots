@@ -6,14 +6,8 @@
 [Caelestia-Shell](https://github.com/caelestia-dots/shell)
 <img width="3440" height="1440" alt="FullScreen-2026-03-29_19-29-24" src="https://github.com/user-attachments/assets/5bbc65cf-0611-4c74-8ef2-6a468a169c86" />
 
-Samsung UI 6 Font
-<img width="3440" height="1440" alt="FullScreen-2026-03-28_07-28-58" src="https://github.com/user-attachments/assets/9d162d34-e24e-405e-bba8-3ef0da13e6b6" />
-
-OneUISans SEC (Samsung UI 7)
-<img width="3440" height="1440" alt="FullScreen-2026-03-28_11-37-57" src="https://github.com/user-attachments/assets/6e083b0e-bc6a-4cb0-8cbe-5791d288d801" />
-
 Google Sans Flex
-<img width="3440" height="1440" alt="FullScreen-2026-03-29_09-20-00" src="https://github.com/user-attachments/assets/401d0e86-3aaa-4650-9157-48be2f9aa48e" />
+<img width="3440" height="1440" alt="FullScreen-2026-03-30_13-16-36" src="https://github.com/user-attachments/assets/45fe5958-ac9c-47e4-874e-93f607b756a9" />
 
 </details>
 
