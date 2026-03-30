@@ -7,7 +7,7 @@
 <img width="3440" height="1440" alt="FullScreen-2026-03-29_19-29-24" src="https://github.com/user-attachments/assets/5bbc65cf-0611-4c74-8ef2-6a468a169c86" />
 
 Google Sans Flex
-<img width="3440" height="1440" alt="FullScreen-2026-03-30_14-01-29" src="https://github.com/user-attachments/assets/6cb561bf-52c3-4347-b284-e9b5e0b42bcb" />
+<img width="3440" height="1440" alt="FullScreen-2026-03-30_14-25-20" src="https://github.com/user-attachments/assets/2203f2bd-cfd6-4cf0-bcf0-e7e5febf13be" />
 
 </details>
 
