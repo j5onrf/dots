@@ -1,6 +1,5 @@
 /* 
- *  by j5onrf, from ML4W base
- *  0-13-v5 (2025-07-15)
+ *  0-13-v5 (2026-04-01)
  */
 
 @import 'ghost-matugen.css';
@@ -18,7 +17,6 @@ window#waybar {
     background-color: @ghost_bar_background;
     border-radius: 10px;
 }
-
 
 #workspaces button:not(.empty):not(.active) {
     background-color: alpha(@primary, 0.1);
@@ -52,6 +50,9 @@ window#waybar {
     padding: 0px 0px;
     border: 0.5px solid alpha(@primary, 0.05);
     transition: none;
+    box-shadow: none;
+    text-shadow: none;
+    outline: none;
 }
 
 #workspaces button:hover, #workspaces button.active,
@@ -62,6 +63,9 @@ window#waybar {
 #clock:hover, #custom-weather:hover {
     background-color: alpha(@primary, 0.30);
     border-color: alpha(@primary, 0.50);
+    box-shadow: none;
+    text-shadow: none;
+    outline: none;
 }
 
 #custom-appmenu, #custom-exit,
@@ -113,10 +117,10 @@ window#waybar {
 
 tooltip {
     background-color: @ghost_bar_background;
-    padding: 0.8em;
-    opacity: 0.95;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid alpha(@primary, 0.20);
+    border-radius: 10px;
 }
 tooltip label {
     color: @primary;
+    font-size: 14px;
 }

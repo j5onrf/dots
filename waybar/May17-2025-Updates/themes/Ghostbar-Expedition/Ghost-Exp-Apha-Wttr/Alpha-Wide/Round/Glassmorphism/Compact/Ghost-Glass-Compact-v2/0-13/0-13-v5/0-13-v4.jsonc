@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W & Omarchy
-//  0-13-v4.jsonc 2025-07-15
+//  0-13-v4.jsonc 2026-03-27
 
     // --- CORE WORKFLOW MODULES ---
 
@@ -16,11 +16,7 @@
       "format": "{icon}",
       "show-special": true,
       "format-icons": {
-        "1": "1",
-        "2": "2",
-        "3": "3",
-        "4": "4",
-        "5": "5",
+        "1": "1", "2": "2", "3": "3", "4": "4", "5": "5",
         "keepassxc": "\uf084",
         "active": "",
         "default": ""
@@ -37,7 +33,6 @@
         },
         "modules": [
             "custom/settings",
-            "custom/drawer_spacer",
             "custom/waybarthemes",
             "custom/wallpaper",
             "custom/hypridle",
