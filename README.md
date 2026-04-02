@@ -10,7 +10,7 @@ Google Sans Flex | GeistMono NF
 <img width="3440" height="1440" alt="FullScreen-2026-03-30_14-25-20" src="https://github.com/user-attachments/assets/2203f2bd-cfd6-4cf0-bcf0-e7e5febf13be" />
 
 Gruvbox Soft
-<img width="3440" height="1440" alt="FullScreen-2026-04-01_22-52-54" src="https://github.com/user-attachments/assets/f0225c1e-8458-4248-9098-ee2dbe57fc7b" />
+<img width="3440" height="1440" alt="FullScreen-2026-04-02_07-08-54" src="https://github.com/user-attachments/assets/eae6ac8e-f6bb-469b-9133-4cc68118a5dd" />
 
 
 </details>
