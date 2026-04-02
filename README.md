@@ -6,8 +6,12 @@
 [Caelestia-Shell](https://github.com/caelestia-dots/shell)
 <img width="3440" height="1440" alt="FullScreen-2026-03-29_19-29-24" src="https://github.com/user-attachments/assets/5bbc65cf-0611-4c74-8ef2-6a468a169c86" />
 
-Google Sans Flex | OneUISans SEC | GeistMono NF
+Google Sans Flex | OneUISans | GeistMono NF
 <img width="3440" height="1440" alt="FullScreen-2026-03-30_14-25-20" src="https://github.com/user-attachments/assets/2203f2bd-cfd6-4cf0-bcf0-e7e5febf13be" />
+
+Gruvbox Soft
+<img width="3440" height="1440" alt="FullScreen-2026-04-01_22-52-54" src="https://github.com/user-attachments/assets/f0225c1e-8458-4248-9098-ee2dbe57fc7b" />
+
 
 </details>
 
