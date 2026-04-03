@@ -6,8 +6,7 @@
 
 ## ⌨️ Keybindings
 
-Add the following to your `custom.conf`
-
+Add the following to your `keybindings.conf`
 ```bash
 # ----------------------------------
 # Keybindings (j5onrf Dots)
