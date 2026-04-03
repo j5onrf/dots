@@ -24,9 +24,6 @@ bind = $mainMod, R, exec, zsh "$HOME/.config/rofi/bin/launcher"
 bind = $mainMod, C, exec, ~/.config/waybar/toggle.sh
 bind = $mainMod, X, exec, ~/.config/caelestia/toggle.sh
 
-# --- Utilities
-bind = $mainMod, H, exec, ~/.config/hypr/scripts/hyprsunset.sh toggle
-
 # Open ML4W Settings TUI with Super + Ctrl + S
 bind = $mainMod CTRL, S, exec, kitty --class ml4w-tui -e ml4w-dotfiles-settings com.ml4w.dotfiles
 
