@@ -53,7 +53,7 @@
             "memory",
             "custom/updates",
             "network",
-            "custom/hyprshade",
+            "custom/hyprsunset",
             "custom/cliphist",
             "pulseaudio",
             "tray",
@@ -73,14 +73,14 @@
         "on-click-middle": "~/.config/rofi/bin/launcher",
         "tooltip": false
     },
-    "custom/exit": {
-        "format": "\uf011",
-        "on-click": "~/.config/ml4w/scripts/wlogout.sh",
-        "on-click-right": "com.ml4w.welcome",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-        "tooltip": false
-    },
+"custom/exit": {
+    "format": "\uf011",
+    "on-click": "/home/j5/.config/ml4w/scripts/wlogout.sh",
+    "on-click-right": "kitty --class ml4w-tui -e ml4w-dotfiles-settings",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "tooltip": false
+},
     "custom/cliphist": {
         "format": "\ue214",
         "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
@@ -88,12 +88,12 @@
         "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
         "tooltip": false
     },
-    "custom/hyprshade": {
+        "custom/hyprsunset": {
         "format": "\ue0c9",
-        "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
-        "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi",
+        "on-click": "sleep 0.1; ~/.config/hypr/scripts/hyprsunset.sh toggle",
+        "on-click-right": "sleep 0.1; ~/.config/hypr/scripts/hyprsunset.sh rofi",
         "tooltip": false
-    },
+},
     "custom/settings": {
         "format": "\uf078",
         "on-click": "flatpak run com.ml4w.sidebar",
