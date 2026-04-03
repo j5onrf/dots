@@ -13,11 +13,11 @@
 # You MUST configure the 3 settings in this section to use the script.
 
 # 1. API_KEY: Get your free API key from https://openweathermap.org/
-API_KEY="6da25b4e5b6989bc4cf70f471e6c9426"
+API_KEY=""
 
 # 2. LOCATION_QUERY: Set this to your unique City ID.
 #    (See instructions in the "HOW-TO" section below this block)
-LOCATION_QUERY="4391808" # <-- Replace with your City ID
+LOCATION_QUERY="" # <-- Replace with your City ID
 
 # 3. UNITS: Choose your preferred measurement system.
 UNITS="imperial" # Options: "metric" for Celsius, "imperial" for Fahrenheit
