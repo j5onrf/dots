@@ -34,4 +34,4 @@ bind = $mainMod CTRL, S, exec, kitty --class ml4w-tui -e ml4w-dotfiles-settings 
 # --- Screenshots
 bind = , Print, exec, ~/.config/hypr/scripts/fast_screenshot.sh
 bind = SHIFT, Print, exec, ~/.config/hypr/scripts/fast_screenshot_full.sh
-bind = $mainMod ALT, P, exec, grimblast --freeze copysave area ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png
+bind = $mainMod ALT, Print, exec, grimblast --freeze copysave area ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png
