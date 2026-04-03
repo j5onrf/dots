@@ -1,12 +1,12 @@
 /* 
- *  0-13-v5 (2026-04-01)
+ *  0-13-v5 (2026-04-03)
  */
 
 @import 'ghost-matugen.css';
 
 /* --- GLOBAL BASE STYLES --- */
 * {
-    font-family: "Google Sans Flex", "Font Awesome 6 Pro Light";
+    font-family: "JetBrainsMono NF", "Font Awesome 6 Pro Light";
     font-size: 18px;
     border-radius: 4px;
     background: none;
