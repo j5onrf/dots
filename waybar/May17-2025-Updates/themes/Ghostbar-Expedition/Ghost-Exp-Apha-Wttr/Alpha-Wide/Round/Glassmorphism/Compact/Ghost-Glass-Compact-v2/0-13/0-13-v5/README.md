@@ -6,7 +6,7 @@
 
 ## ⌨️ Keybindings
 
-Add the following to your `keybindings.conf`
+Add to your `keybindings.conf`
 ```bash
 # ----------------------------------
 # Keybindings (j5onrf Dots)
@@ -23,7 +23,6 @@ bind = $mainMod, R, exec, zsh "$HOME/.config/rofi/bin/launcher"
 # --- UI Toggles (Waybar & Caelestia)
 bind = $mainMod, C, exec, ~/.config/waybar/toggle.sh
 bind = $mainMod, X, exec, ~/.config/caelestia/toggle.sh
-# bind = $mainMod, D, exec, caelestia shell drawers toggle dashboard
 
 # --- Utilities
 bind = $mainMod, H, exec, ~/.config/hypr/scripts/hyprsunset.sh toggle
@@ -34,4 +33,4 @@ bind = $mainMod CTRL, S, exec, kitty --class ml4w-tui -e ml4w-dotfiles-settings 
 # --- Screenshots
 bind = , Print, exec, ~/.config/hypr/scripts/fast_screenshot.sh
 bind = SHIFT, Print, exec, ~/.config/hypr/scripts/fast_screenshot_full.sh
-bind = $mainMod ALT, Print, exec, grimblast --freeze copysave area ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png
+bind = CTRL, Print, exec, grimblast --freeze copysave area ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png
