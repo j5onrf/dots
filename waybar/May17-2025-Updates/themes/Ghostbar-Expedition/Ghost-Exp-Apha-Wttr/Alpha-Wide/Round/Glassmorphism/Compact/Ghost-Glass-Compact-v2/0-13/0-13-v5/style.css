@@ -6,7 +6,7 @@
 
 /* --- GLOBAL BASE STYLES --- */
 * {
-    font-family: "JetBrains Mono", "Font Awesome 6 Pro Light";
+    font-family: "Google Sans Flex", "Font Awesome 6 Pro Light";
     font-size: 18px;
     border-radius: 4px;
     background: none;
@@ -40,7 +40,7 @@ window#waybar {
 }
 
 #workspaces button,
-#pulseaudio, #custom-cliphist, #custom-hyprshade, #network, #tray,
+#pulseaudio, #custom-cliphist, #custom-hyprsunset, #network, #tray,
 #custom-waybarthemes, #custom-wallpaper, #custom-hypridle, #custom-notification,
 #cpu, #memory, #custom-updates,
 #custom-appmenu, #custom-exit,
@@ -56,7 +56,7 @@ window#waybar {
 }
 
 #workspaces button:hover, #workspaces button.active,
-#pulseaudio:hover, #custom-cliphist:hover, #custom-hyprshade:hover, #network:hover, #tray:hover,
+#pulseaudio:hover, #custom-cliphist:hover, #custom-hyprsunset:hover, #network:hover, #tray:hover,
 #custom-waybarthemes:hover, #custom-wallpaper:hover, #custom-hypridle:hover, #custom-notification:hover,
 #cpu:hover, #memory:hover, #custom-updates:hover,
 #custom-appmenu:hover, #custom-exit:hover,
