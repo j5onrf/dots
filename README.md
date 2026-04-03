@@ -61,7 +61,7 @@ Aug-09 fixed for me in 0.14 &nbsp; [I had to Downgrade to Waybar v0.12.0](https:
 
 </details>
 
-<details><summary>(2025-May17) Updated dots to ML4W v2.9.8.6 - Anyrun Launcher</summary> 
+<details><summary>(2025-May17) Updated dots to ML4W v1.9.8.6 - Anyrun Launcher</summary> 
 <p>
  
 [Dotfile-Updates](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates) 
@@ -246,8 +246,13 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # WayBar
 
-(2026-April-01) [I still use Waybar](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13/0-13-v5) 
+(2026-April-03) [I still use Waybar](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13/0-13-v5) 
 <img width="1440" height="106" alt="Waybar-2026-03-31_20-38-47" src="https://github.com/user-attachments/assets/72f80905-46c1-4717-b3e5-d1630686993d" />
+
+
+`ML4W < v2.12.1`
+
+---
 
 (2025-July13-19) [Ghostarchy<sup>preview</sup> Cascadia Mono](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13/0-13-v4) 
 <img width="1440" height="61" alt="cas-2025-07-19_16-01-59" src="https://github.com/user-attachments/assets/1c4bf8f7-9296-4321-9c87-94588a301276" />
