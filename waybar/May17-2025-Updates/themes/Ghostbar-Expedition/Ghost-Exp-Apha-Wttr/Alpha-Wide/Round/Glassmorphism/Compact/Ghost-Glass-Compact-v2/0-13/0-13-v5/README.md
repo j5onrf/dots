@@ -24,7 +24,7 @@ bind = $mainMod, R, exec, zsh "$HOME/.config/rofi/bin/launcher"
 # --- UI Toggles (Waybar & Caelestia)
 bind = $mainMod, C, exec, ~/.config/waybar/toggle.sh
 bind = $mainMod, X, exec, ~/.config/caelestia/toggle.sh
-bind = $mainMod, D, exec, caelestia shell drawers toggle dashboard
+# bind = $mainMod, D, exec, caelestia shell drawers toggle dashboard
 
 # --- Utilities
 bind = $mainMod, H, exec, ~/.config/hypr/scripts/hyprsunset.sh toggle
