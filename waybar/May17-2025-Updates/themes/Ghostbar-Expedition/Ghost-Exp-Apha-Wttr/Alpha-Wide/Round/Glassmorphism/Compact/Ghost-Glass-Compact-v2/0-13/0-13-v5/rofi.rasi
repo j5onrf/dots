@@ -4,7 +4,7 @@
 
 configuration {
     modi:                    "drun";
-    font:                    "JetBrains Mono 14"; /* Font preference */
+    font:                    "JetBrains Mono 14";
     me-select-entry:         "";
     me-accept-entry:         "MousePrimary";
 
@@ -22,10 +22,10 @@ configuration {
   spacing: 0;
 
   /* Mapping Matugen Variables */
-  bg:      @surface;                /* Was #1a1b26 */
-  bg-alt:  @surface-container;      /* Was #232433 */
-  fg:      @on-surface-variant;     /* Was #6a6f87 */
-  fg-alt:  @primary;                /* Was #a9b1d6 */
+  bg:      @surface; 
+  bg-alt:  @surface-container;
+  fg:      @on-surface-variant;
+  fg-alt:  @primary; 
 
   background-color: @bg;
   text-color: @fg;
@@ -34,7 +34,7 @@ configuration {
 window {
   transparency: "real";
   width: 700px;
-  border: 1px;                      /* Added thin border for "Active" look */
+  border: 1px;
   border-color: @primary;
   border-radius: 10px;
 }
@@ -51,7 +51,7 @@ inputbar {
 entry {
   background-color: inherit;
   padding: 12px 3px;
-  text-color: @primary;             /* Added so search text matches theme */
+  text-color: @primary;
 }
 
 prompt {
@@ -62,7 +62,7 @@ prompt {
 
 listview {
   lines: 8;
-  padding: 8px;                     /* Slight padding for the list */
+  padding: 8px;
 }
 
 element {
@@ -74,7 +74,7 @@ element {
 /* --- The Selection Look --- */
 element selected {
   background-color: @bg-alt;
-  border: 1px;                      /* Thin border like Waybar active */
+  border: 1px; 
   border-color: @primary;
 }
 
