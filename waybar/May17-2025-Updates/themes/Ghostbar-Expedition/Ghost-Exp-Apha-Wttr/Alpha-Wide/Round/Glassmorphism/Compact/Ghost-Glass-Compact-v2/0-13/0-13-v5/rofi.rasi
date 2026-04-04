@@ -7,9 +7,7 @@ configuration {
     font:                    "JetBrains Mono 14";
     me-select-entry:         "";
     me-accept-entry:         "MousePrimary";
-
     drun { display-name: ""; }
-    timeout { delay: 20; action: "kb-cancel"; }
 }
 
 /* --- LOAD MATUGEN COLORS --- */
