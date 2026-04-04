@@ -6,7 +6,7 @@
 // | ||_|| |       |       |       |       |   |___ _____| |
 // |_|   |_|_______|______||_______|_______|_______|_______|
 //  by j5onrf, from ML4W & Omarchy
-//  0-13-v4.jsonc 2026-04-03
+//  0-13-v4.jsonc 2026-03-27
 
     // --- CORE WORKFLOW MODULES ---
 
@@ -163,9 +163,9 @@
         "format": "{}",
         "escape": true,
         "return-type": "json",
-        "exec": "~/.config/ml4w/scripts/updates.sh",
+        "exec": "~/.config/ml4w/scripts/ml4w-check-system-updates",
         "interval": 3600,
-        "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
+        "on-click": "~/.config/ml4w/settings/installupdates.sh",
         "on-click-right": "~/.config/ml4w/settings/software.sh"
     },
     "pulseaudio": {
