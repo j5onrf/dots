@@ -1,5 +1,12 @@
 # Hyprdots
 
+<details open><summary>(2026-April05) WayBar Bridged to Caelestia Themes</summary>
+<p>
+ 
+<img width="3440" height="1440" alt="FullScreen-2026-04-04_20-56-20" src="https://github.com/user-attachments/assets/0240e1c4-ed63-4447-a0f4-074ec217e906" />
+
+</details>
+
 <details open><summary>(2026-March27) Caelestia-Shell</summary>
 <p>
 
