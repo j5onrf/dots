@@ -149,7 +149,7 @@
     },
 
     "memory": {
-        "format": "{used:0.1f}",
+        "format": "{used:0.0f}",
         "on-click": "kitty -e htop --sort-key PERCENT_MEM",
         "interval": 10,
         "tooltip": false
