@@ -1,0 +1,92 @@
+/**
+ * GHOST THEME - MATCHING 0-13-v5
+ */
+
+configuration {
+    modi:                       "drun,run";
+    show-icons:                 true;
+    display-drun:               "";
+    font:                       "JetBrains Mono 12";
+}
+
+@import "~/.config/rofi/colors.rasi"
+
+* {
+    bg-col:             @surface; 
+    accent-col:         @primary;
+    text-col:           @on-surface;
+    selected-col:       rgba(255, 255, 255, 0.1); 
+}
+
+window {
+    width:              600px;
+    border:             1px;
+    border-color:       @accent-col;
+    border-radius:      12px;
+    background-color:   @bg-col;
+}
+
+mainbox {
+    padding:            20px;
+    background-color:   transparent;
+    children:           [ "inputbar", "listview" ];
+}
+
+inputbar {
+    spacing:            10px;
+    padding:            12px;
+    background-color:   rgba(255, 255, 255, 0.03);
+    border-radius:      10px;
+    border:             1px;
+    border-color:       rgba(255, 255, 255, 0.05);
+    children:           [ "entry" ]; 
+}
+
+prompt {
+    text-color:         @accent-col;
+    background-color:   transparent;
+}
+
+entry {
+    placeholder:        "Search...";
+    placeholder-color:  rgba(255, 255, 255, 0.3);
+    text-color:         @text-col;
+    background-color:   transparent;
+}
+
+listview {
+    columns:            1;
+    lines:              8;
+    spacing:            5px;
+    margin:             10px 0 0 0;
+    background-color:   transparent;
+}
+
+element {
+    padding:            8px 12px;
+    spacing:            10px;
+    border-radius:      4px;
+    background-color:   transparent;
+    text-color:         @text-col;
+    border:             1px; 
+    border-color:       transparent; 
+}
+
+element selected.normal {
+    background-color:   rgba(255, 255, 255, 0.1); 
+    text-color:         @accent-col;
+    
+    border:             1px; 
+    border-color:       @accent-col; 
+}
+
+element-icon {
+    size:               24px;
+    background-color:   transparent;
+}
+
+element-text {
+    background-color:   transparent;
+    text-color:         inherit;
+    vertical-align:     0.5;
+}

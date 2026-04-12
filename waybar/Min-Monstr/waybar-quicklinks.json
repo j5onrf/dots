@@ -1,0 +1,52 @@
+{
+    "custom/quicklink1": {
+        "format": " ",
+        "on-click": "/usr/bin/brave-beta %U",
+        "tooltip-format": "Open Brave"
+    }, 
+     /*
+       "custom/quicklink2": {
+        "format": "",
+        "on-click": "~/.config/ml4w/settings/browser.sh",
+        "tooltip-format": "Open Firefox"
+    },
+   */
+    "custom/quicklink3": {
+        "format": "",
+        "on-click": "~/.config/ml4w/settings/filemanager.sh",
+        "tooltip-format": "Open filemanager"
+    }, 
+    "custom/quicklink4": {
+        "format": "",
+        "on-click": "gnome-text-editor",
+        "tooltip-format": "Text Editor"
+    }, 
+    "custom/quicklink5": {
+        "format": "",
+        "on-click": "~/.config/ml4w/settings/calculator.sh",
+        "tooltip-format": "Open calculator"
+    }, 
+    "custom/quicklink6": {
+        "format": "",
+        "on-click": "~/.config/ml4w/settings/emojipicker.sh",
+        "tooltip-format": "Open emoji picker"
+    }, 
+       "custom/quicklink7": {
+        "format": "",
+        "on-click": "/home/j5/.config/firefox-129.0.2/firefox/firefox",
+        "tooltip-format": "Open Firefox"
+    },
+    "custom/quicklinkempty": {
+    }, 
+    "group/quicklinks": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/quicklink2",
+            "custom/quicklink3",
+            /*
+            "custom/quicklink4",
+            */
+            "custom/quicklinkempty"
+        ]
+    }
+}

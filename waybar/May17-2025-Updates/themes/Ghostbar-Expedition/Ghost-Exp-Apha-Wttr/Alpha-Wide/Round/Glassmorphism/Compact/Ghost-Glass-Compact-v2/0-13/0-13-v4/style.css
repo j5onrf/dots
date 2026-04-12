@@ -1,0 +1,105 @@
+/* 
+ *  0-13-v4 style.css 2025-07-26
+ */
+
+@import 'ghost-matugen.css';
+
+* {
+    font-family: "Cascadia Mono", "Font Awesome 6 Pro Light";
+    font-size: 18px;
+    border-radius: 4px;
+    background: none;
+    border: none;
+}
+
+.modules-center {
+    background-color: @ghost_bar_background;
+    border: 1px solid transparent;
+    margin-right: 2px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-image: linear-gradient(
+        to bottom, alpha(@primary, 0.50),
+        transparent, alpha(@primary, 0.50)
+    ) 1;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#workspaces button.active {
+    font-weight: 300;
+}
+#workspaces button.empty {
+    color: alpha(@primary, 0.5);
+}
+
+#workspaces button, #pulseaudio, #cpu, #memory, #network, #tray, #clock, #custom-updates,
+#custom-cliphist, #custom-hyprshade, #custom-weather, #custom-waybarthemes, #custom-wallpaper,
+#custom-hypridle, #custom-notification, #custom-appmenu, #custom-exit {
+    color: @primary;
+    margin: 0.15em 0.2em;
+    padding: 0px 0px;
+    border: 0.5px solid alpha(@primary, 0.05);
+    transition: none;
+}
+
+#workspaces button:hover, #workspaces button.active, #pulseaudio:hover, #cpu:hover, #memory:hover,
+#network:hover, #tray:hover, #clock:hover, #custom-updates:hover, #custom-cliphist:hover,
+#custom-hyprshade:hover, #custom-weather:hover, #custom-waybarthemes:hover, #custom-wallpaper:hover,
+#custom-hypridle:hover,  #custom-notification:hover {
+    background-color: alpha(@primary, 0.30);
+    border-color: alpha(@primary, 0.50);
+}
+
+#custom-appmenu, #custom-exit,
+#custom-settings, #custom-system {
+    opacity: 0;
+}
+#custom-appmenu:hover, #custom-exit:hover,
+#custom-settings:hover, #custom-system:hover {
+    opacity: 1;
+}
+
+#custom-weather, #cpu, #memory, #custom-updates {
+    color: @ghost_text_primary;
+}
+#cpu, #memory, #custom-updates, #custom-weather {
+    font-size: 0.72em;
+    margin: 0em 0.2em;
+}
+#clock {
+    color: @primary;
+    font-size: 0.7778em;
+    padding-top: 0.2px ;
+    margin: 0em 0.3em 0.3em 0.3em;
+}
+
+#custom-settings {
+    font-size: 0.05em;
+}
+#custom-system {
+    font-size: 0.5em;
+}
+
+#custom-hypridle.active { color: @ghost_hypridle_active_icon; }
+#custom-hypridle.notactive { color: @ghost_hypridle_inactive_icon; }
+
+#pulseaudio.muted { color: @ghost_pulseaudio_muted_fg; }
+#pulseaudio.muted:hover { color: @ghost_pulseaudio_muted_hover_fg; }
+
+#cpu.low { color: @primary; }
+#cpu.high { color: #fff176; } 
+#cpu.critical { color: #ff7b72; font-weight: bold; }
+
+#custom-weather.hot { color: #ffb4ab; }
+#custom-weather.cold { color: #88c0d0; }
+
+tooltip {
+    background-color: @ghost_bar_background;
+    border: 1px solid alpha(@primary, 0.10);
+}
+tooltip label {
+    color: @primary;
+    font-size: 14px;
+}

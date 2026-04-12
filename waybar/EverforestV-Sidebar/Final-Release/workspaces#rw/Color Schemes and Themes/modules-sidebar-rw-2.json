@@ -1,0 +1,174 @@
+//  __   __ _______ ______  __   __ ___     _______ _______ 
+// |  |_|  |       |      ||  | |  |   |   |       |       |
+// |       |   _   |  _    |  | |  |   |   |    ___|  _____|
+// |       |  | |  | | |   |  |_|  |   |   |   |___| |_____ 
+// |       |  |_|  | |_|   |       |   |___|    ___|_____  |
+// | ||_|| |       |       |       |       |   |___ _____| |
+// |_|   |_|_______|______||_______|_______|_______|_______|
+// ML4W, Edited by j5onrf (2025)
+// Vertical-Sidebar-RW-2 (12-27-2024)
+
+{
+  // Workspaces
+  "hyprland/workspaces#rw": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "sort-by-number": true,
+    "show-special": false,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "format": "{windows}",
+    "persistent-workspaces": { "*": 5 },
+    "format-window-separator": "\n",
+    "window-rewrite-default": "",
+    "window-rewrite": {
+      "title<.*youtube.*>": "",
+      "title<.*amazon.*>": "",
+      "title<.*reddit.*>": "",
+      "title<.*dot.*>": "",
+      // "title<.*youtube.*>": "",
+      // "title<.*Picture-in-Picture.*>": "",
+      "class<gimp-3.0>": "",
+      "class<org.gnome.Weather>": "",
+      "class<io.missioncenter.MissionCenter>": "",
+      "class<firefox>": "",
+      "class<kitty>": "󰄛",
+      "class<org.gnome.Console>": "",
+      "class<alacritty>": "",
+      "class<brave-browser-beta>": "",
+      "class<org.gnome.Nautilus>": "",
+      "class<mousepad>": "",
+      "class<org.gnome.TextEditor>": "",
+      "class<polkit-gnome-authentication-agent-1>": "󰒃",
+      "class<nwg-look>": "",
+      "class<thunar>": "󰝰",
+      // "class<obsidian>": "󰠮",
+      // "class<freetube>": "",
+      // "class<[Ss]potify>": "",
+      // "class<VSCode|code-url-handler>": "󰨞",
+      // "class<sublime_text>": "󰅳",
+      // "class<codium|codium-url-handler|VSCodium>": "󰨞",
+      // "class<codeblocks>": "󰅩",
+      // "class<com.obsproject.Studio>": "",
+      // "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "",
+      // "class<zen-alpha>": "󰰷",
+      // "class<vlc>": "󰕼"
+    }
+},
+
+  // Empty
+  "custom/empty": {
+    "format": ""
+  },
+
+  // Clipboard History
+  "custom/cliphist": {
+    "format": "󱓥",
+    "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
+    "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
+    "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
+    "tooltip-format": "Clipboard Manager"
+  },
+
+  // Hyprshade
+  "custom/hyprshade": {
+    "format": "󰗘",
+    "tooltip-format": "Toggle Screen Shader",
+    "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
+    "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi"
+  },
+
+  // Wallpaper
+  "custom/wallpaper": {
+    "format": "󰸉",
+    "on-click": "waypaper",
+    "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
+    "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect"
+  },
+
+  // Waybar Themes
+  "custom/waybarthemes": {
+    "format": "",
+    "on-click": "~/.config/waybar/themeswitcher.sh",
+    "tooltip-format": "Select a waybar theme"
+  },
+
+  // Settings
+  "custom/settings": {
+    "format": "",
+    "on-click": "/home/j5/file_backups/com.ml4w.dotfilessettings",
+    "on-click-right": "/home/j5/file_backups/com.ml4w.hyprland.settings",
+    "on-click-middle": "hyprctl dispatch exec 'alacritty --class hyprpicker -e bash -c \"hyprpicker; exec bash\"'",
+    "tooltip": false
+  },
+
+  // System Tray
+  "tray": {
+    "icon-size": 24,
+    "spacing": 10
+  },
+
+  // Custom Modules
+  "custom/system": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "custom/chevron": {
+    "format": "",
+    "tooltip": false
+  },
+
+  // Group: Hardware
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 200,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/system",
+      "cpu",
+      "memory",
+      "custom/updates",
+      "network",
+      "custom/hyprshade",
+      "custom/cliphist",
+      "pulseaudio",
+      "tray"
+    ]
+  },
+
+  // Group: Settings
+  "group/settings": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 200,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/settings",
+      "pulseaudio",
+      "custom/waybarthemes",
+      "custom/wallpaper",
+      "custom/chevron"
+    ]
+  },
+
+  // Network Module
+  "network": {
+    "format": "{ifname}",
+    "format-ethernet": "󰤨",
+    "format-disconnected": "󰤨",
+    "tooltip-format-ethernet": "󰤨 {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 20,
+    "on-click": "nm-connection-editor",
+    "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
+  }
+}
+

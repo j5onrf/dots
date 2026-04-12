@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Rofi launcher. Place launcher in rofi/bin.
+
+rofi \
+	-show drun \
+	-modi run,drun \
+	-scroll-method 0 \
+	-drun-match-fields all \
+	-drun-display-format "{name}" \
+	-no-drun-show-actions \
+        -kb-cancel Escape \
+	-theme "$HOME"/.config/rofi/config/simple/NordV-Sidebar-Harmonized.rasi

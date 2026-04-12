@@ -1,0 +1,162 @@
+=============================================================
+ Dynamic Themed Cava for Kitty (with Wallust) - Setup Guide for ML4W
+=============================================================
+
+This guide explains how to set up Cava (Console Audio Visualizer)
+to run in a Kitty terminal, with its gradient colors dynamically
+updated by Wallust based on your current wallpaper.
+
+Prerequisites:
+----------------
+1. Cava installed (e.g., `sudo pacman -S cava` on Arch).
+2. Wallust installed and configured to theme Kitty.
+   Specifically, Wallust should be updating a Kitty color configuration
+   file (typically `~/.config/kitty/colors-wallust.conf` or similar).
+3. Kitty terminal emulator.
+4. Basic shell utilities (`bash`, `grep`, `awk`, `sed`, `cp`, `rm`).
+
+-------------------------------------------------------------
+Step 1: Place Required Files
+-------------------------------------------------------------
+
+1.  **`run_themed_cava.sh` (The Wrapper Script):**
+    *   Place this script in your preferred scripts directory.
+        Example location: `$HOME/.config/hypr/scripts/run_themed_cava.sh`
+    *   Make it executable:
+        ```bash
+        chmod +x $HOME/.config/hypr/scripts/run_themed_cava.sh
+        ```
+
+2.  **`config_template` (Cava Configuration Template):**
+    *   Place this file in your Cava configuration directory.
+        Location: `$HOME/.config/cava/config_template`
+    *   The content of this file should be:
+        ```ini
+        # Cava Config Template
+        [general]
+        framerate = 60
+        bars = 24
+        autosens = 1
+        sensitivity = 100
+        lower_cutoff_freq = 50
+        higher_cutoff_freq = 15000
+
+        [input]
+        method = pulse
+        source = auto
+
+        [output]
+        method = ncurses
+        channels = stereo
+
+        [color]
+        background = "default"
+        foreground = "default"
+        gradient = 1
+        gradient_count = 6 ; MUST match number of colors in run_themed_cava.sh
+        # These placeholders will be replaced by the script:
+        gradient_color_1 = '__GRADIENT_COLOR_1__'
+        gradient_color_2 = '__GRADIENT_COLOR_2__'
+        gradient_color_3 = '__GRADIENT_COLOR_3__'
+        gradient_color_4 = '__GRADIENT_COLOR_4__'
+        gradient_color_5 = '__GRADIENT_COLOR_5__'
+        gradient_color_6 = '__GRADIENT_COLOR_6__'
+        # Add/remove placeholders if gradient_count changes
+
+        [smoothing]
+        monstercat = 1
+        noise_reduction = 77
+
+        [eq]
+        ; Your EQ settings if any
+        ```
+
+-------------------------------------------------------------
+Step 2: Configure the `run_themed_cava.sh` Script
+-------------------------------------------------------------
+
+Open the `run_themed_cava.sh` script (e.g., `$HOME/.config/hypr/scripts/run_themed_cava.sh`) in a text editor and adjust the following variables at the top:
+
+1.  **`WALLUST_COLORS_FILE`**:
+    *   This variable must point to the color file that Wallust generates/updates for Kitty.
+    *   Default in script: `WALLUST_COLORS_FILE="$HOME/.config/kitty/colors-wallust.conf"`
+    *   Verify this path is correct for your Wallust setup.
+
+2.  **`CAVA_CONFIG_TEMPLATE`**:
+    *   This variable must point to your Cava template file.
+    *   Default in script: `CAVA_CONFIG_TEMPLATE="$HOME/.config/cava/config_template"`
+    *   This should be correct if you followed Step 1.
+
+3.  **`GRADIENT_ANSI_COLORS` Array**:
+    *   This array defines WHICH terminal ANSI colors (by name, e.g., "color1", "color5") the script should fetch from `WALLUST_COLORS_FILE` to use in Cava's gradient.
+    *   The order matters and corresponds to `gradient_color_1`, `gradient_color_2`, etc., in the Cava template.
+    *   The number of colors listed here MUST match the `gradient_count` setting in your `config_template`.
+    *   **How to choose:**
+        1. Open your `WALLUST_COLORS_FILE` (e.g., `$HOME/.config/kitty/colors-wallust.conf`).
+        2. Identify the hex codes for `color0` through `color15` that Wallust has set.
+        3. Decide which of these colors you want in your Cava gradient and in what order.
+        4. Update the `GRADIENT_ANSI_COLORS` array in the script with these names.
+           Example (for a 6-color gradient, customize this!):
+           ```bash
+           GRADIENT_ANSI_COLORS=(
+               "color1"  # Will be used for __GRADIENT_COLOR_1__
+               "color3"  # Will be used for __GRADIENT_COLOR_2__
+               "color2"  # Will be used for __GRADIENT_COLOR_3__
+               "color6"  # Will be used for __GRADIENT_COLOR_4__
+               "color4"  # Will be used for __GRADIENT_COLOR_5__
+               "color5"  # Will be used for __GRADIENT_COLOR_6__
+           )
+           ```
+
+-------------------------------------------------------------
+Step 3: Test the Setup
+-------------------------------------------------------------
+
+1.  Open any terminal (doesn't have to be Kitty for this initial test).
+2.  Run the script directly:
+    ```bash
+    $HOME/.config/hypr/scripts/run_themed_cava.sh
+    ```
+3.  If everything is configured correctly, Cava should launch in that terminal using the colors fetched from your Wallust file.
+4.  Press `Ctrl+C` to exit Cava. The temporary config file (`/tmp/cava_dynamic_config_...`) should be automatically removed.
+
+-------------------------------------------------------------
+Step 4: (Optional) Integrate with Waybar and Hyprland
+-------------------------------------------------------------
+
+1.  **Waybar Button:**
+    *   Add a custom module to your Waybar config:
+        ```json
+        "custom/cava-launcher": {
+            "format": "", // Or your preferred icon
+            "on-click": "kitty --title \"CavaVisualizer\" -e $HOME/.config/hypr/scripts/run_themed_cava.sh",
+            "tooltip": "Launch Dynamic CAVA Visualizer"
+        }
+        ```
+    *   Style `#custom-cava-launcher` in your Waybar CSS as desired.
+
+2.  **Hyprland Window Rule (in `hyprland.conf`):**
+    *   To make the Cava Kitty window float and have a specific size/position:
+        ```ini
+        # Example rules for Cava running in Kitty
+        windowrulev2 = float, title:^(CavaVisualizer)$
+        windowrulev2 = size 800 300, title:^(CavaVisualizer)$   ; Adjust size
+        windowrulev2 = center, title:^(CavaVisualizer)$        ; Or use 'move X Y'
+        # windowrulev2 = workspace special:cava, title:^(CavaVisualizer)$ ; Optional
+        ```
+    *   Remember to reload Hyprland after adding rules.
+
+3.  **custom.conf Keybinding (in '$HOME/.config/hypr/conf') **
+        # Cava binding kitty font-size & #rw class
+        bind = $mainMod, Z, exec, kitty --class CavaVisualizer -o font_size=6 -e $HOME/.config/hypr/scripts/run_themed_cava.sh
+
+-------------------------------------------------------------
+How it Works Dynamically:
+-------------------------------------------------------------
+When you change your wallpaper:
+1. Wallust updates your Kitty color file (`WALLUST_COLORS_FILE`).
+2. The next time you run `run_themed_cava.sh` (e.g., by clicking the Waybar button),
+   the script reads the NEW hex colors from the updated Wallust file.
+3. Cava launches with a temporary config reflecting these new colors.
+
+Enjoy your dynamically themed Cava!

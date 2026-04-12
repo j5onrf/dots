@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Define the theme path for easier editing later
+THEME="$HOME/.config/rofi/config.rasi"
+
+rofi \
+    -show drun \
+    -scroll-method 0 \
+    -drun-match-fields all \
+    -drun-display-format "{name}" \
+    -no-drun-show-actions \
+    -kb-cancel "Escape,MousePrimary" \
+    -theme "$THEME"

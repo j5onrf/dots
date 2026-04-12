@@ -1,0 +1,43 @@
+/*
+  This userChrome.css file combines three customizations:
+  1. Hides the top native tab bar.
+  2. Hides the sidebar's header (title and close button).
+  3. Makes the sidebar auto-hide (collapse) and expand on mouse-over.
+*/
+
+/* 1. Hide the top tab bar */
+#TabsToolbar {
+  visibility: collapse !important;
+}
+
+/* 2. Hide the sidebar header */
+#sidebar-header {
+  display: none !important;
+}
+
+/* 3. Auto-hide the sidebar */
+:root {
+  --uc-sidebar-width: 42px; /* Set the collapsed width */
+  --uc-sidebar-hover-width: 280px; /* Set the expanded width */
+}
+
+#sidebar-box {
+  position: relative !important;
+  min-width: var(--uc-sidebar-width) !important;
+  width: var(--uc-sidebar-width) !important;
+  max-width: var(--uc-sidebar-width) !important;
+  transition: all 150ms ease-in-out !important;
+  z-index: 1; /* Ensures the expanded sidebar is on top */
+}
+
+#sidebar-box:hover {
+  min-width: var(--uc-sidebar-hover-width) !important;
+  width: var(--uc-sidebar-hover-width) !important;
+  max-width: var(--uc-sidebar-hover-width) !important;
+  transition-delay: 100ms !important; /* Adds a slight delay before expanding */
+}
+
+/* Hide the sidebar splitter, as it's not needed with auto-hiding */
+#sidebar-splitter {
+  display: none !important;
+}

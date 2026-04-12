@@ -1,0 +1,40 @@
+//  
+// Modern-Fusion (2026-04-05)
+//
+{
+  "reload_style_on_change": true,
+
+  // General Settings
+  "layer": "top",
+  "position": "left",
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "spacing": 0,
+
+  // Load Modules
+  "include": [
+    "$HOME/.config/waybar/themes/modern-fusion/modules.json"
+  ],
+
+  // Modules Left (TOP)
+  "modules-left": [
+    "custom/appmenu",
+    "group/settings",
+    "hyprland/workspaces"
+  ],
+
+  // Modules Center
+  "modules-center": [
+     "hyprland/window"
+  ],
+
+  // Modules Right (BOTTOM)
+  "modules-right": [
+    "group/hardware",
+    // "custom/weather",
+    "clock",
+    "custom/exit"
+  ]
+}

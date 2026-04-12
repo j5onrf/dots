@@ -1,0 +1,138 @@
+// Modern-Fusion modules.json 2026-04-09
+{
+    // --- CORE WORKFLOW MODULES ---
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "show-special": true,
+        "format-icons": { "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", 
+        "keepassxc": "\uf51a", "default": "" },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+    "hyprland/window": {
+        "format": "{title:.13}",
+        "tooltip-format": "{title}",
+        "rewrite": {
+            "^(\\s*)$": "Desktop",
+            "(.*) - Brave": "$1"
+        },
+        "rotate": 90,
+        "tooltip": true
+    },
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/system",
+            "custom/waybarthemes",
+            "custom/wallpaper",
+            "cpu",
+            "memory",
+            "network",
+            "custom/hyprsunset",
+            "custom/cliphist",
+            "pulseaudio",
+            "tray"
+        ]
+    },
+    // --- ACTION & LAUNCHER MODULES ---
+    "custom/appmenu": {
+        "format": "\ue5d3",
+        "on-click": "rofi -show drun -config ~/.config/rofi/config.rasi",
+        "on-click-right": "~/.config/walker/launch.sh",
+        "tooltip": false
+    },    
+    "custom/exit": {
+        "format": "\ue8ac",
+        "on-click": "sh -c 'res=$(echo -e \"󰐥 Sleep\\n󰍃 Reboot\\n󰐥 Shutdown\\n󰜉 Logout\" | rofi -dmenu -p \"Power\" -config ~/.config/rofi/config.rasi); case \"$res\" in *Sleep*) systemctl suspend ;; *Reboot*) systemctl reboot ;; *Shutdown*) hyprctl dispatch exit ;; esac'",
+        "on-click-right": "exec ~/.config/waybar/launch.sh",
+        "on-click-middle": "sh -c 'kitty --class ml4w-tui -e ~/.local/bin/ml4w-dotfiles-settings com.ml4w.dotfiles'",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "tooltip": false
+    },
+    "custom/cliphist": {
+        "format": "\ue14f",
+        "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/ml4w-cliphist",
+        "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/ml4w-cliphist d",
+        "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/ml4w-cliphist w",
+        "tooltip": true,
+        "tooltip-format": "Clipboard"
+    },
+    "custom/hyprsunset": {
+        "format": "\ue3a9",
+        "on-click": "sleep 0.1; ~/.config/hypr/scripts/hyprsunset.sh toggle",
+        "on-click-right": "sleep 0.1; ~/.config/hypr/scripts/hyprsunset.sh rofi",
+        "tooltip": true,
+        "tooltip-format": "Hyprsunset"
+    },
+    "custom/system": {
+        "format": ".",
+        "tooltip": false
+    },
+    "custom/wallpaper": {
+        "format": "\ue1bc",
+        // "exec": "~/.config/hypr/scripts/get_wallpaper_status.sh",
+        // "return-type": "json",
+        // "interval": "once",
+        "on-click": "waypaper",
+        // "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
+        // "on-click-middle": "~/.config/hypr/scripts/turn-off-matugen.sh",
+        "tooltip": true,
+        "tooltip-format": "Wallpaper"
+    },
+    "custom/waybarthemes": {
+        "format": "\uf1d2",
+        "on-click": "~/.config/waybar/themeswitcher.sh",
+        "tooltip": true,
+        "tooltip-format": "Theme"
+    },
+    // --- SYSTEM STATUS & SERVICE MODULES ---
+    "clock": {
+        "format": "{:%I\n<span line_height='0.6'>%M</span>\n<span font_size='1pt'> </span>}",
+        "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "on-click": "",
+        "calendar": {
+            "format": { "today": "<b><u>{}</u></b>" }
+        }
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "{usage}",
+        "on-click": "kitty btop",
+        "states": { "low": 0, "medium": 5, "high": 50, "critical": 80 },
+        "tooltip": true
+    },
+    "memory": {
+        "format": "{used:0.0f}",
+        "on-click": "kitty btop",
+        "interval": 10,
+        "tooltip": true
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "\ue04f",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format-icons": { "default": ["\ue050"] },
+        "tooltip": true,
+        "tooltip-format": "Volume"
+    },
+    "network": {
+        "format": "{icon}  ",
+        "format-ethernet": "\ue640",
+        "format-disconnected": "\ue640",
+        "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "on-click": "nm-connection-editor",
+        "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui",
+        "interval": 10
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 8
+    }
+  }

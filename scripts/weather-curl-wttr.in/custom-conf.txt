@@ -1,0 +1,9 @@
+# Window rules for the terminal running curl wttr.in
+windowrulev2 = float, class:^(wttr-floating)$
+windowrulev2 = size 1300 950, class:^(wttr-floating)$
+
+# Keybind Custom Optional
+bind = $mainMod, H, exec, ~/.config/hypr/scripts/wttr.sh
+
+# Dimaround Optional
+windowrulev2 = dimaround, class:^(wttr-floating)

@@ -1,0 +1,95 @@
+/*
+  Instant Open, Animated & Delayed Autohide for Sidebery
+  - Hides native tabs and sidebar header.
+  - Sidebar opens INSTANTLY on hover.
+  - After mouse leaves, waits for a specified delay.
+  - Sidebar then animates smoothly as it closes.
+*/
+
+/* --- CHROME HIDES --- */
+#TabsToolbar {
+  visibility: collapse !important;
+}
+#sidebar-header {
+  display: none !important;
+}
+#sidebar-splitter {
+  display: none !important;
+}
+
+
+/* --- SIDEBAR --- */
+:root {
+  /* --- CUSTOMIZE THESE VALUES --- */
+  --uc-sidebar-expanded-width: 200px; /* The width of the sidebar when open */
+  --uc-sidebar-collapsed-width: 3px;  /* The width when hidden */
+  --uc-autohide-delay: 2s;           /* The delay before hiding */
+  --uc-sidebar-close-speed: 0.3s;     /* How fast the sidebar animates shut. Set to 0s for an instant close. */
+  /* --- END OF CUSTOMIZATION --- */
+}
+
+/* Base state for the sidebar */
+#sidebar-box {
+  position: relative !important;
+  z-index: 100;
+  
+  /* Default state is expanded */
+  min-width: var(--uc-sidebar-expanded-width) !important;
+  max-width: var(--uc-sidebar-expanded-width) !important;
+  
+  /* Define which properties should be transitioned */
+  transition-property: min-width, max-width, background-color !important;
+}
+
+/* --- HIDING LOGIC (ANIMATED) --- */
+
+/* This rule applies ONLY when the mouse is NOT hovering over the sidebar */
+#sidebar-box:not(:hover) {
+  /* Shrink the sidebar */
+  min-width: var(--uc-sidebar-collapsed-width) !important;
+  max-width: var(--uc-sidebar-collapsed-width) !important;
+
+  /* Make it invisible */
+  background-color: transparent !important;
+  
+  /* THE TIMER: Wait for the delay before starting the animation */
+  transition-delay: var(--uc-autohide-delay) !important;
+  /* THE ANIMATION: Set the closing speed */
+  transition-duration: var(--uc-sidebar-close-speed) !important;
+}
+
+/* --- HOVER LOGIC (INSTANT) --- */
+
+/* This rule applies ONLY when the mouse IS hovering over the sidebar */
+#sidebar-box:hover {
+  /* Expand the sidebar to its full width */
+  min-width: var(--uc-sidebar-expanded-width) !important;
+  max-width: var(--uc-sidebar-expanded-width) !important;
+  
+  /* CANCEL TIMER: Reset the delay to 0 */
+  transition-delay: 0s !important;
+  /* MAKE IT INSTANT: Set the opening animation speed to 0s */
+  transition-duration: 0s !important;
+}
+
+
+/* --- HIDE SIDEBAR CONTENT --- */
+/* Match the content's animation to the sidebar's animation */
+
+#sidebar {
+  transition-property: opacity !important;
+}
+
+/* When the sidebar is closing, fade the content out */
+#sidebar-box:not(:hover) #sidebar {
+  opacity: 0 !important;
+  transition-delay: var(--uc-autohide-delay) !important;
+  transition-duration: var(--uc-sidebar-close-speed) !important;
+}
+
+/* When the sidebar is opening, snap the content in */
+#sidebar-box:hover #sidebar {
+  opacity: 1 !important;
+  transition-delay: 0s !important;
+  transition-duration: 0s !important;
+}

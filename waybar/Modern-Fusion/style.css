@@ -1,0 +1,110 @@
+/* * Modern-Fusion (2026-04-09)
+ * Caelesta Schemes + Material Symbols Edition
+ */
+
+@import "caelestia-colors.css";
+
+/* --- GLOBAL BASE STYLES --- */
+* {
+    font-family: "JetBrains Mono", "Material Symbols Rounded", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.2);
+    background: transparent;
+}
+
+/* -----------------------------------------------------
+ * Shared Module Geometry
+ * ----------------------------------------------------- */
+
+#workspaces button, #custom-appmenu, #custom-exit, #clock, #pulseaudio, #network, #cpu, #memory, 
+#tray, #custom-cliphist, #custom-hyprsunset, #custom-waybarthemes, #custom-wallpaper {
+    min-width: 26px;
+    padding: 3px 0px; 
+    margin: 3px 3px;
+    border-radius: 8px;
+    background-color: @background;
+    color: @on_surface;
+    border: 2px solid @border_color;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Module Hovers --- */
+#custom-appmenu:hover, #custom-exit:hover, #clock:hover, #pulseaudio:hover, #network:hover, #cpu:hover, #memory:hover, 
+#tray:hover, #custom-cliphist:hover, #custom-hyprsunset:hover, #custom-waybarthemes:hover,  #custom-wallpaper:hover {
+    background-color: @primary_container;
+    color: @on_primary_container;
+    border-color: @primary;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hidden System/Settings */
+#custom-system {
+    opacity: 0;
+    font-size: 0.5em;
+    transition: opacity 0.3s ease;
+}
+
+/* -----------------------------------------------------
+ * Workspaces (Fixed Width for perfect circles)
+ * ----------------------------------------------------- */
+
+#workspaces {
+    margin: 0px;
+    min-width: 0px;
+}
+#workspaces button {
+    border-color: @primary;
+    padding: 1px 0px;
+}
+#workspaces button.active {
+    color: @on_primary;
+    background: @primary;
+    border-radius: 12px;
+}
+#workspaces button:hover {
+    background: @primary_container;
+    border-radius: 15px;
+}
+
+/* -----------------------------------------------------
+ * Window Title & Special Formatting
+ * ----------------------------------------------------- */
+
+#window label {
+    font-size: 11px;
+    padding: 3px 0px;
+    min-width: 0px;
+}
+
+ #cpu, #memory {
+    padding: 2px 0px;
+}
+
+#pulseaudio.muted {
+    background-color: @on_primary_fixed;
+}
+
+/* -----------------------------------------------------
+ * Tooltips CPU & Weather
+ * ----------------------------------------------------- */
+
+#cpu.medium { color: #74c7ec; }
+#cpu.high { color: #f9e2af; }
+#cpu.critical { color: #f38ba8; }
+
+tooltip {
+    border-radius: 10px;
+    background-color: @surface;
+    border: 2px solid @border_color;
+    padding: 5px;
+}
+
+tooltip label {
+    color: @on_surface;
+}

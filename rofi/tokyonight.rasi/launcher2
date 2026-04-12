@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Rofi launcher. Place launcher in rofi/bin.
+
+rofi \
+	-show drun \
+	-drun-display-format "{name}" \
+	-theme "$HOME"/.config/rofi/config/themes/tokyonight.rasi

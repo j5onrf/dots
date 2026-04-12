@@ -1,0 +1,185 @@
+/*_________                 ___________                          __   
+\_   _____/__  __ __________\_   _____/__________  ____   ______/  |_ 
+ |    __)_\  \/ // __ \_  __ \    __)/  _ \_  __ \/ __ \ /  ___|   __\
+ |        \\   /\  ___/|  | \/     \(  <_> )  | \|  ___/ \___ \ |  |  
+/_______  / \_/  \___  >__|  \___  / \____/|__|   \___  >____  >|__|  
+        \/           \/          \/                   \/     \/       
+*  ML4W, Edited by j5onrf (2025)
+*  EverforestV SideBar Final (11-10-2024)
+* -----------------------------------------------------  
+*/
+
+/* Everforest Theme Colors */
+@define-color color0 #A7C080;        /* Accent green color */
+@define-color color1 #323D43;        /* Dark icons\text */
+@define-color bgcolor1 #DBBC7F;      /* Yellow for hover effects */
+@define-color bgcolor2 #2B3339;      /* Dark background color */
+@define-color bgcolor3 #E69875;      /* Red background color */
+@define-color bgcolor4 #83C092;      /* Aqua background color */
+
+/* General Styles */
+* {
+    font-family: "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free", sans-serif;  
+    border-radius: 0.2em; /* Set rounding radius, 0.2em 2em */
+    font-weight: 600; /* 400-900 */
+    font-size: 28; /* Set the sidebar size */
+}
+
+window#waybar {
+    background-color: @bgcolor2;
+/*  border: 0.05em solid @color1;  */
+}
+
+/* Workspaces Styles */
+#workspaces {
+}
+
+#workspaces button {
+    color: @bgcolor3; /* Change color of inactive icons, red bgcolor3 */
+    background: @color1;
+    border: 0.05em solid @color1;  
+    padding: 0.2em 0.3em; /* Minimal padding while maintaining shape */
+    margin: 0.1em 0.2em; /* Optional: spacing between buttons */
+}
+
+#workspaces button.active {
+    color: @color1;
+    background: @bgcolor1; /* Active button with yellow background */
+    border: 0.05em solid @bgcolor1;
+}
+
+#workspaces button:hover {
+    background: @bgcolor3; /* Red background on hover */
+    color: @color1; /* Ensures contrast */
+    border: 0.05em solid @bgcolor3;
+/*  transition: background-color 0.3s, color 0.3s; */
+}
+
+#workspaces button.empty {
+    color: @color0; /* Change color of empty icons */
+}
+
+#workspaces button.empty.active {
+    color: @color1;
+    background: @color0; /* Change the background for empty active buttons */
+    border: 0.05em solid @color0; 
+}
+
+#workspaces button.empty:hover {
+    color: @color1; 
+}
+
+/* Module Styles */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+} 
+
+/* General Hover Styles */
+#cpu:hover, 
+#memory:hover,
+#custom-hyprshade:hover,
+#custom-cliphist:hover,
+#custom-updates:hover,
+#network:hover,
+#custom-wallpaper:hover,
+#custom-waybarthemes:hover,
+#tray:hover,
+#custom-appmenu:hover,
+#custom-exit:hover,
+#pulseaudio:hover {
+    color: @color1;
+    background: @bgcolor1;
+    padding: 0.37em 0; /* Button size */
+    transition: background-color, 0.2s ease-in-out;
+}
+
+/* Specific Adjustments */
+#cpu:hover, 
+#memory:hover {
+    background: @color1;
+}
+
+#custom-appmenu:hover, 
+#custom-exit:hover {
+    font-size: 1em; /* App\Exit button icon size */
+    background: @bgcolor3;
+    padding: 0.37em 0.3em;
+}
+
+#custom-appmenu, 
+#custom-exit {
+    font-size: 4;  /* !Accessibility invariable */
+    color: @bgcolor2;
+}
+
+#custom-settings, 
+#custom-system {
+    font-size: 0.5em;  /* !Accessibility invariable */
+    color: @bgcolor2; /* Match @bgcolor2 to hide chevrons */
+}
+
+/* Show chevrons on hover */
+#custom-settings:hover, 
+#custom-system:hover {
+    color: @bgcolor3; 
+} 
+
+/* Styles for System Info Modules */
+#pulseaudio,
+#custom-cliphist,
+#custom-hyprshade,
+#network, #tray,
+#custom-waybarthemes, 
+#custom-wallpaper {
+    color: @color0;
+    padding: 0.37em 0; /* Button size */
+}
+
+#cpu, 
+#memory,
+#custom-updates {
+    font-size: 0.64em;
+    color: @color0;
+    padding: 0.37em 0; /* Button size */
+}
+
+/* Pulseaudio Muted State */
+#pulseaudio.muted {
+    color: @bgcolor3;
+}
+
+#pulseaudio.muted:hover {
+    color: @color1;
+    background-color: @bgcolor3;
+}
+
+/* Clock Styles */
+#clock {
+    font-size: 0.85em;
+    margin: 0.3em;
+    color: @color0;
+    padding: 0.25em 0;
+    background-color: @color1;
+}
+
+#clock:hover {
+    margin: 0.3em;
+    color: @color1;
+    padding: 0.25em 0;
+    background-color: @bgcolor3;
+}
+
+/* Tooltip */
+tooltip {
+    background-color: @bgcolor2;
+    opacity: 0.8;
+}
+
+tooltip label {
+    color: @color0;
+    font-size: 14;
+}
+

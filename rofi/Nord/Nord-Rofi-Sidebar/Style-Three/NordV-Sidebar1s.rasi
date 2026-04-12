@@ -1,0 +1,138 @@
+/*
+ * Edited by j5onrf (2025) 󰆨
+ * For NordV-Sidebar
+ */
+
+/* Define color variables */
+* {
+  al:   #00000000;    /* Transparent */
+  bg:   #2E3440FF;    /* Background color for the window */
+  bga:  #3B4252FF;    /* Accent background */
+  fg:   #88C0D0FF;    /* Light bluish-gray text */
+  ac:   #81A1C1FF;    /* Light blue accent color */
+  se:   #88C0D0FF;    /* Border and accent color (light bluish-gray) */
+  search-bg: #2E3440FF;  /* Search area background color (#2E3440) */
+}
+
+/* General Configuration */
+configuration {
+    font:                "JetBrainsMono Nerd Font Propo 12";
+    show-icons:          true;
+    icon-theme:          "Papirus";
+    display-drun:        "";
+    drun-display-format: "{name}";
+    disable-history:     false;
+    fullscreen:          false;
+    hide-scrollbar:      true;
+    sidebar-mode:        true;
+}
+
+/* Window (Background and Border) */
+window {
+    transparency:        "real";
+    background-color:    @bg;    /* Window background color (#3B4252) */
+    text-color:          @fg;    /* Light bluish-gray text */
+    border:              3px;    /* Border thickness */
+    border-color:        @se;    /* Border color (#88C0D0) */
+    border-radius:       2em; /* Soft rounded corners */
+    width:               500px;
+    location:            west;   /* Move to the left side of the screen */
+    x-offset:            10px;   /* Small offset from the left edge */
+    y-offset:            0px;    /* No vertical offset (top of the screen) */
+}
+
+/* Prompt (Search Bar) */
+prompt {
+    enabled:             true;
+    padding:             0px;
+    background-color:    @search-bg;    /* Set search prompt background to #2E3440 */
+    text-color:          @ac;           /* Accent color for the prompt text */
+    font:                "JetBrainsMono Nerd Font Propo 12";
+}
+
+/* Entry (Search Input) */
+entry {
+    background-color:    @search-bg;    /* Set search entry background to #2E3440 */
+    text-color:          @fg;           /* Text color for the input field */
+    placeholder-color:   @fg;           /* Placeholder color */
+    expand:              true;
+    horizontal-align:    0.5;
+    placeholder:         "Search...";    /* Placeholder text */
+    padding:             8px 0px 8px 5px;
+    blink:               true;
+}
+
+/* Input Bar (Search Input Bar) */
+inputbar {
+    children:            [ prompt, entry ];
+    background-color:    @search-bg;    /* Set background to #2E3440 */
+    text-color:          @fg;           /* Text color */
+    expand:              false;
+    border:              0px 0px 1px 0px;
+    border-radius:       0px;
+    border-color:        @search-bg;           /* Border color (#88C0D0) */
+    margin:              0px;
+    padding:             10px;
+}
+
+/* Listview */
+listview {
+    background-color:    @al;  /* Transparent background */
+    padding:             0px;
+    columns:             1;
+    lines:               17;
+    spacing:             5px;
+    cycle:               true;
+    dynamic:             true;
+    layout:              vertical;
+}
+
+/* Main Box */
+mainbox {
+    background-color:    @al;  /* Transparent background */
+    border:              0px;
+    border-radius:       0px;
+    border-color:        @ac;
+    children:            [ inputbar, listview ];
+    spacing:             5px;
+    padding:             5px;
+}
+
+/* Elements (for listview items) */
+element {
+    background-color:    #313743;
+    text-color:          @fg;
+    orientation:         horizontal;
+    border-radius:       0.4em;
+    padding:             8px 5px;   /* Small horizontal space between icon and border */
+    margin: 0.1em 0.2em; 
+}
+
+/* Element Icon (for listview items) */
+element-icon {
+    background-color:    transparent;
+    text-color:          inherit;
+    size:                50px;    /* icon size */
+    border:              0px;
+    margin-right:        5px;     /* Space between icon and text */
+}
+
+/* Element Text (for listview items) */
+element-text {
+    background-color:    transparent;
+    text-color:          inherit;
+    expand:              true;
+    horizontal-align:    0;
+    vertical-align:      0.5;
+    margin:              0px 0px 0px 2.5px; /* Adjust text position if needed */
+}
+
+/* Selected Element (highlighted list item) */
+element selected {
+    background-color:    @se;     /* Background color for selected items (#88C0D0) */
+    text-color:          @bg;     /* Text color for selected items (dark blue-gray) */
+    border:              0px;
+    border-radius:       0.4em;
+    border-color:        @ac;     /* Accent border color (#81A1C1) */
+}
+

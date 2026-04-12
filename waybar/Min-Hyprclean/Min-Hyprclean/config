@@ -1,0 +1,71 @@
+// __        __          _                 
+// \ \      / /_ _ _   _| |__   __ _ _ __  
+//  \ \ /\ / / _` | | | | '_ \ / _` | '__| 
+//   \ V  V / (_| | |_| | |_) | (_| | |    
+//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
+//                 |___/                   
+//  ML4W
+// 2025 Min-Hyprclean
+// ----------------------------------------------------- 
+//
+{
+    // General Settings
+    "layer": "top",
+    "margin-bottom": 0,
+    "margin-top": 0,
+    "layer": "top",
+    "margin-left": 0,
+    "margin-right": 0,    
+    "spacing": 0,
+
+    // Load Modules
+    "include": [
+        "~/.config/ml4w/settings/waybar-quicklinks.json",
+        "~/.config/waybar/modules.json"
+    ],
+
+    // Pulseaudio
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "                                                                                                                                                                                                                                                                                                                       <span font='11'>{icon}</span> {volume}",
+        "format-muted": " {volume}",
+        "format-icons": {
+        "default": ["󰖀", "󰕾", "󰕾"]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "ags -t bar-0",
+        "format-muted": "                                                                                                                                                                                                                                                                                                                         <span font='11'>{icon}</span> {volume}",
+    },
+    
+      // Clock
+  "clock": {
+    "format": "{:%I:%M  %a%e}",
+//    "on-click": "ags -t calendar",
+     "on-click": "ags -t calendarmenu",
+
+     "on-click-right": "gapplication launch org.gnome.Weather",
+    "tooltip": false
+  },
+  
+    // Modules Left
+    "modules-left": [
+        "custom/appmenu",
+        "group/links",
+        "group/settings",        
+        "hyprland/workspaces#rw"
+    ],
+
+    // Modules Center
+    "modules-center": [
+        "clock" 
+    ],
+
+    // Modules Right    
+    "modules-right": [  
+        "pulseaudio",  
+        "cpu",
+        "memory",
+        "group/hardware",
+        "custom/exit"
+    ]
+}

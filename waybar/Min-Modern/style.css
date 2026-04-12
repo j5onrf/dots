@@ -1,0 +1,213 @@
+/*
+ * __        __          _                  ____  _         _       
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___  
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \ 
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/ 
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___| 
+ *                 |___/                              |___/         
+ *  
+ * 2025 Min-Modern
+ * ----------------------------------------------------- 
+*/
+
+ /* Colors
+* #e1e1e1;                             Light white background color 
+* #74c7ec; #69e8ff;                    Bright blue background color 
+* #cba6f7;                             Bright magenta background color 
+* #c5b69d;                             Light brown background color 
+* <Add more colors as needed>
+* #90ebd0;                             Mint green background color 
+*/
+ 
+/* Color Definitions */
+@define-color textcolor1 #333;  /* Color for Workspace Text */
+@define-color waybarcolor #69e8ff;      /* Color for Waybar */
+
+/* General Styles */
+* {
+    font-family: "Inter", FontAwesome, Helvetica, Arial, sans-serif;
+    border: none;
+    border-radius: 8px 18px;
+    font-weight: 600;
+    margin: 1px 0;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid @waybarcolor;
+    transition: background-color 0.5s;
+}
+
+/* Workspaces Styles */
+#workspaces {
+    margin: 0 7px;
+    font-size: 14px;
+    color: @textcolor1;
+}
+
+#workspaces button {
+    border: none;
+    margin: 4px 10px 4px 0;
+    padding-right: 15px;
+    color: @waybarcolor;
+}
+
+#workspaces button.active {
+    color: @textcolor1;
+    border-radius: 8px 18px;
+    background: @waybarcolor;
+}
+
+#workspaces button:hover {
+    opacity: 0.0;
+}
+
+#workspaces button.empty {
+    opacity: 0.0;
+}
+
+/* Tooltip Styles */
+tooltip {
+    border-radius: 10px;
+    background-color: @waybarcolor;
+    opacity: 0.8;
+    padding: 20px;
+}
+
+tooltip label {
+    color: @textcolor1;
+}
+
+/* Window Styles */
+#window {
+    margin: 0 15px 0 0;
+    border-radius: 12px;
+    color: @waybarcolor;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+/* Module Styles */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* Custom Quicklinks Styles */
+#custom-quicklink1,
+#custom-quicklink2,
+#custom-quicklink3,
+#custom-quicklink4,
+#custom-quicklink5,
+#custom-quicklink6,
+#custom-quicklink7,
+#custom-quicklink8,
+#custom-quicklink9,
+#custom-quicklink10,
+#custom-waybarthemes {
+    margin-right: 20px;
+    font-size: 18px;
+    color: @waybarcolor;
+}
+
+/* Quicklinks Wallpaper */
+#custom-wallpaper {
+    margin-right: 10px;
+    font-size: 18px;
+    color: @waybarcolor;
+}
+
+/* Custom Settings */
+#custom-settings {
+    margin-right: 15px;
+    color: @waybarcolor;
+    font-size: 8px;
+}
+
+/* Hardware Group / Apps */
+#custom-system {
+    margin: 0px 8px 0px 8px;
+    font-size: 8px;
+    color: @waybarcolor;
+}
+
+/* Clipboard Manager */
+/* Screen Shader */
+#custom-hyprshade,
+#custom-cliphist
+{
+    margin-right: 23px;
+    font-size: 14px;
+}
+
+/* Custom Module Styles */
+#custom-appmenu {
+    font-size: 24px;
+    color: @waybarcolor;
+    margin: 0 20px 0 18px;
+}
+
+/* Custom Exit Styles */
+#custom-exit {
+    margin: 0 22px 0 12px;
+    padding: 0;
+    font-size: 8px;
+    color: @waybarcolor;
+}
+
+/* Custom Updates Styles */
+#custom-updates {
+    font-size: 14px;
+    margin: 0 20px 0 0;
+}
+#custom-updates.yellow {
+    color: #ff9a3c;
+}
+#custom-updates.red {
+    color: #dc2f2f;
+}
+
+/* Clock Styles */
+#clock {
+    font-size: 15px;
+    color: @waybarcolor;
+    margin: 0 22px 0 0;
+}
+
+/* Pulseaudio Styles */
+#pulseaudio {
+    font-size: 15px;
+    color: @waybarcolor;
+    margin: 0 15px 0 0;
+}
+#pulseaudio.muted {
+    color: #ed8796;
+}
+
+/* Network Styles */
+#network {
+    font-size: 14px;
+    margin: 0 10px 0 0;
+}
+
+/* Tray Styles */
+#tray {
+    margin: 0 20px 0 5px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+

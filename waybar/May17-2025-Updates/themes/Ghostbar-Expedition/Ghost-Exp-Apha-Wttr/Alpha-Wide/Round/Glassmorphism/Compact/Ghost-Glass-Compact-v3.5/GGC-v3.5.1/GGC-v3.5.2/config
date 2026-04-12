@@ -1,0 +1,9 @@
+// GGC-v3.5.2 (2025-07-06)
+
+{
+  "layer": "top", "position": "left",
+  "include": ["~/.config/waybar/ghost-glass-v3.jsonc"],
+  "modules-left": ["custom/appmenu"],
+  "modules-center": ["custom/weather", "group/settings", "hyprland/workspaces#rw", "group/hardware", "clock"],
+  "modules-right": ["custom/exit"]
+}

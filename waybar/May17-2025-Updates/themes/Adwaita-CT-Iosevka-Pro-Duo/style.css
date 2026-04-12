@@ -1,0 +1,226 @@
+/* _____       .___              .__  __          
+  /  _  \    __| _/_  _  ______  |__|/  |______   
+ /  /_\  \  / __ |\ \/ \/ |__  \ |  \   __\__  \  
+/    |    \/ /_/ | \     / / __ \|  ||  |  / __ \_
+\____|__  /\____ |  \/\_/ (____  /__||__| (____  /
+        \/      \/             \/              \/
+* ML4W, Edited by j5onrf (2025)
+* Adwaita-CT-Iosevka-Pro-Duo (05-18-2025) beta
+* -----------------------------------------------------  
+*/
+
+/* Adwaita Color Scheme */
+@define-color color0 #D8DEE9; /* Light neutral for primary text */
+@define-color color1 #242424; /* Dark neutral for base background */
+@define-color color2 #333333; /* Slightly lighter dark neutral for icons background */
+
+/* General Styles */
+* {
+    border-radius: 0.2em;
+}
+
+window#waybar {
+    font-family: "Font Awesome 6 Duotone";
+    font-weight: 900; /* Thin 100, Light 300, Duotone 900 */
+    font-size: 26px;
+    background: @color1;
+    border-radius: 0.4em;
+    background-color: rgba(36, 36, 36, 0.8); /* Bar Opacity */
+}
+
+/* Workspaces Styles */
+#workspaces, .window-rewrite {
+    font-family: "Font Awesome 6 Duotone";
+    font-weight: 900; /* Thin 100, Light 300, Duotone 900 */
+}
+
+#workspaces button {
+    color: @color0;
+    background: @color2;
+    margin: 0.1em 0.25em;
+    padding: 0.18em 0.14em;
+}
+
+#workspaces button.active {
+    color: @color0;
+    background: @color2;
+    margin: 0.1em 0.25em;
+    border-radius: 0.2em;
+    padding: 0.18em 0.14em;
+    box-shadow: inset 0.07em 0 @color0;
+}
+
+#workspaces button:hover {
+    background: @color0;
+    color: @color2;
+    margin: 0.1em 0.25em;
+    padding: 0.18em 0.14em;
+}
+
+#workspaces button.empty {
+    opacity: 0.3;
+    padding: 0em 0.14em;
+}
+
+#workspaces button.empty {
+    opacity: 0.3;
+    padding: 0.16em 0;
+}
+
+/* Module Hover Styles */
+#cpu:hover, 
+#memory:hover,
+#custom-hyprshade:hover,
+#custom-cliphist:hover,
+#custom-updates:hover,
+#network:hover,
+#custom-wallpaper:hover,
+#custom-waybarthemes:hover,
+#custom-hypridle:hover,
+#custom-notification:hover,
+#tray:hover,
+#custom-appmenu:hover,
+#custom-exit:hover,
+#pulseaudio:hover,
+#custom-hypridle:hover,
+#custom-notification:hover {
+    color: @color1;
+    background: @color0;
+    padding: 0.15em 0;
+    transition: all 0.1s linear;
+    margin: 0.1em 0.3em; 
+}
+
+/* Hyprland/window */
+#window {
+    font-family: "Iosevka Nerd Font Propo";
+    font-weight: 400; 
+    margin: 0.3em 0.83em;
+    padding: 0.5em 0;
+    color: @color0;
+    font-size: 0.643em;
+    background-color: @color2;
+}
+
+#window:hover {
+    color: @color2;
+    background-color: @color0;
+}
+
+/* Specific Adjustments */
+#cpu:hover, 
+#memory:hover,
+#custom-updates:hover{
+    color: @color0;
+    background-color: #333333;
+    padding: 0.15em 0;
+}
+
+#custom-appmenu:hover,
+#custom-exit:hover {
+    font-size: 1em;
+    background: @color0;
+    margin: 0.3em 0 0 0; 
+}
+#custom-exit:hover,
+#custom-exit {
+    font-family: "Font Awesome 6 Duotone Thin";
+    font-weight: 400; /* Thin 100, Light 300, Duotone 900 */
+    padding: 0.39em 0.3em;
+}
+#custom-appmenu:hover {
+    font-family: "Iosevka Nerd Font Propo";
+    font-weight: 400; 
+    margin: 0 0 0.3em 0; 
+    padding: 0.27em 0.3em;
+}
+
+#custom-appmenu, 
+#custom-exit {
+    font-size: 4;
+    color: @color1;
+}
+
+#custom-settings, 
+#custom-system {
+    font-size: 0.5em;
+    color: @color1;
+    color: transparent;
+}
+
+/* Show chevrons on hover */
+#custom-settings:hover, 
+#custom-system:hover {
+    color: @color0; 
+}
+
+/* System Info Modules */
+#pulseaudio,
+#custom-cliphist,
+#custom-hyprshade,
+#network, #tray,
+#custom-waybarthemes, 
+#custom-wallpaper,
+#custom-hypridle,
+#custom-notification {
+    color: @color0;
+    padding: 0.15em 0;
+    margin: 0.1em 0.3em; 
+}
+
+#custom-hypridle.active {
+    color: @iconcolor;
+}
+#custom-hypridle.notactive {
+    color: #dc2f2f;
+}
+
+#cpu,
+#memory,
+#custom-updates {
+    font-family: "Iosevka Nerd Font Propo";
+    font-weight: 400; 
+    font-size: 0.6em;
+    color: @color0;
+    padding: 0.15em 0;
+    margin: 0.1em 0.3em; 
+}
+
+/* Pulseaudio Muted State */
+#pulseaudio.muted {
+    color: @color0;
+}
+
+#pulseaudio.muted:hover {
+    color: @color1;
+    background-color: @color0;
+}
+
+/* Clock Styles */
+#clock {
+    font-family: "Iosevka Nerd Font Propo";
+    font-weight: 400; 
+    font-size: 0.857em;
+    margin: 0.3em 0.5em;
+    color: @color0;
+    padding: 0.25em 0;
+    background-color: @color2;
+}
+
+#clock:hover {
+    margin: 0.3em 0.5em;
+    color: #343051;
+    padding: 0.25em 0;
+    background-color: @color0;
+}
+
+/* Tooltip */
+tooltip {
+    background-color: @color1;
+    opacity: 0.8;
+}
+
+tooltip label {
+    color: @color0;
+    font-size: 14;
+}

@@ -1,0 +1,218 @@
+/*________.__                   __   
+ /  _____/|  |__   ____  ______/  |_ 
+/   \  ___|  |  \ /  _ \/  ___|   __\
+\    \_\  \   Y  (  <_> )___ \ |  |  
+ \______  /___|  /\____/____  >|__|  
+        \/     \/           \/     
+* ML4W, Edited by j5onrf (2025)
+* Ghost-Modern-White (05-18-2025) beta
+* ----------------------------------------------------- 
+*/
+
+/* Color */
+@define-color color0 #D8DEE9; /* Light neutral for primary text */
+@define-color color3 #E1203F; /* yt red */
+@define-color color1 #1A1A1A;
+
+/* General Styles */
+* {
+    border-radius: 0.2em;
+    background: none;
+}
+
+window#waybar {
+}
+.modules-left,
+.modules-right,
+.modules-center {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 100; /* Thin 100, Light 300, Duotone 900 */
+    font-size: 24px;
+    border-radius: 0.2em;
+    box-shadow: inset 0 0 1em rgba(255, 255, 255, 0.5);
+}
+.modules-left,
+.modules-right {
+   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* Workspaces Styles */
+#workspaces {
+    font-family: "Font Awesome 6 Pro Light";
+    font-weight: 200; /* Thin 100, Light 300, Duotone 900 */
+}
+#workspaces button {
+    color: @color0;
+    margin: 0.1em 0.14em;
+    padding: 0.17em 0.14em;
+    box-shadow: inset 0 0 0.2em @color0;
+    border: none;
+}
+#workspaces button.active {
+    color: @color1;
+    margin: 0.1em 0.14em;
+    padding: 0.17em 0.14em;
+    background-color: @color0;
+    border: none;
+}
+#workspaces button:hover {
+    color: @color1;
+    margin: 0.1em 0.14em;
+    padding: 0.17em 0.14em;
+    background-color: @color0;
+    border: none;
+}
+#workspaces button.empty {
+    padding: 0.16em 0;
+}
+
+/* Module Hover Styles */
+#cpu:hover, 
+#memory:hover,
+#custom-hyprshade:hover,
+#custom-cliphist:hover,
+#custom-updates:hover,
+#network:hover,
+#custom-wallpaper:hover,
+#custom-waybarthemes:hover,
+#tray:hover,
+#custom-appmenu:hover,
+#custom-exit:hover,
+#pulseaudio:hover,
+#custom-hypridle:hover,
+#custom-notification:hover {
+    color: @color0;
+    box-shadow: inset 0 0 0.2em @color0;
+    padding: 0.15em 0;
+    transition: all 0.1s linear;
+    margin: 0.1em 0.2em;
+    font-weight: 300;  /* Thin 100, Light 300 */
+}
+
+/* Hyprland/window */
+#window {
+    font-size: 0.643em;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-weight: 400;  /* Thin 100, Light 300 */
+    margin: 0.3em 0.35em;
+    padding: 0.5em 0 0.5em 0.2em; 
+    color: @color0;
+}
+#window:hover {
+    color: @color0;
+    box-shadow: inset 0 0 0.2em @color0;
+}
+
+/* Specific Adjustments */
+#cpu:hover, 
+#memory:hover,
+#custom-updates:hover{
+    color: @color0;
+    padding: 0.15em 0;
+    font-weight: 200;  /* Thin 100, Light 300 */
+}
+
+#custom-appmenu:hover,
+#custom-exit:hover {
+    font-size: 1em;
+    margin: 0.3em 0 0 0;
+    color: @color0;
+    box-shadow: inset 0 0 0.2em @color0;
+}
+#custom-exit:hover,
+#custom-exit {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 400; /* Thin 100, Light 300, Duotone 900 */
+    padding: 0.34em 0.3em;
+}
+#custom-appmenu:hover {
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-weight: 100; 
+    margin: 0 0 0.3em 0; 
+    padding: 0.18em 0.3em;
+}
+
+#custom-appmenu, 
+#custom-exit {
+    font-size: 4;
+    color: transparent;
+}
+
+#custom-settings, 
+#custom-system {
+    font-size: 0.5em;
+    color: @color1;
+    color: transparent;
+}
+
+/* Show chevrons on hover */
+#custom-settings:hover, 
+#custom-system:hover {
+    color: @color0; 
+}
+
+/* System Info Modules */
+#pulseaudio,
+#custom-cliphist,
+#custom-hyprshade,
+#network, #tray,
+#custom-waybarthemes, 
+#custom-wallpaper,
+#custom-hypridle,
+#custom-notification {
+    color: @color0;
+    padding: 0.15em 0;
+    margin: 0.1em 0.2em; 
+}
+#custom-hypridle.active {
+    color: @iconcolor;
+}
+#custom-hypridle.notactive {
+    color: #dc2f2f;
+}
+
+#cpu,
+#memory,
+#custom-updates {
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-weight: 200; 
+    font-size: 0.57em;
+    color: @color0;
+    padding: 0.15em 0;
+    margin: 0.1em 0.2em; 
+}
+
+/* Pulseaudio Muted State */
+#pulseaudio.muted {
+    color: @color0;
+    background-color: @color2;
+}
+#pulseaudio.muted:hover {
+    color: @color0;
+    background-color: @color3;
+}
+
+/* Clock Styles */
+#clock {
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-weight: 400; 
+    font-size: 0.857em;
+    margin: 0.3em 0.2em;
+    padding: 0.15em 0.15em;
+    color: @color0;
+}
+#clock:hover {
+    color: @color0;
+    box-shadow: inset 0 0 0.2em @color0;
+}
+
+/* Tooltip */
+tooltip {
+    background-color: #000;
+    opacity: 0.8;
+}
+tooltip label {
+    color: @color0;
+    font-size: 14;
+}
+

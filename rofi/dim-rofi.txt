@@ -1,0 +1,5 @@
+# Dim Background of Rofi
+layerrule = dimaround, rofi
+
+# This launches rofi on startup using rofi launcher.
+exec-once = ~/.config/rofi/bin/launcher2

@@ -1,0 +1,127 @@
+/* _____                   .______   ___.__      .__    .___
+ \      \   ___________  __| _\   \ /   |_____  _|__| __| _/
+ /   |   \ /  _ \_  __ \/ __ | \   Y   /|  \  \/ |  |/ __ | 
+/    |    (  <_> |  | \/ /_/ |  \     / |  |\   /|  / /_/ | 
+\____|__  /\____/|__|  \____ |   \___/  |__| \_/ |__\____ | 
+        \/                  \/                           \/   
+* Edited by j5onrf (2025)
+* -----------------------------------------------------  
+* Harmonized Rofi Config for NordV-Sidebar
+*/
+
+/* Define color variables */
+* {
+  al:           #00000000;    /* Transparent */
+  bg:           #2E3440FF;    /* Dark primary background color */
+  bga:          #3B4252FF;    /* Secondary background */
+  fg:           #88C0D0FF;    /* Light blue for text and icons */
+  ac:           #81A1C1FF;    /* Accent blue for hover effects */
+  se:           #8FBCBBFF;    /* Aqua highlight (active/selected items) */
+}
+
+/* General Configuration */
+configuration {
+    font:                "JetBrainsMono Nerd Font Propo 16";
+    show-icons:          true;
+    icon-theme:          "Papirus";
+    display-drun:        "";
+    drun-display-format: "{name}";
+    disable-history:     false;
+    fullscreen:          false;
+    hide-scrollbar:      true;
+    sidebar-mode:        true;
+    cycle: false; /* Disable wrapping when scrolling */
+}
+
+/* Window (Background and Border) */
+window {
+    transparency:        "real";
+    background-color:    @bg;    /* Window background color */
+    text-color:          @fg;    /* Text color */
+    border:              0.05em; /* Border thickness (match Waybar) */
+    border-color:        @bga;   /* Border color (secondary background) */
+    border-radius:       0.4em;    /* Rounded corners */
+    width:               500px;
+    location:            west;   /* Align with Waybar sidebar */
+    x-offset:            10px;   /* Slight horizontal offset */
+    y-offset:            0px;    /* Align vertically with screen */
+}
+
+/* Input Bar (Search Area) */
+inputbar {
+    background-color:    @bg;
+    text-color:          @fg;
+    padding:             0.3em 0.5em;
+    border:              0.05em;
+    border-radius:       0.4em;
+    children:            [ prompt, entry ];
+}
+
+/* Prompt (Label before Input) */
+prompt {
+    text-color:          @ac;    /* Accent color for prompt text */
+    background-color:    transparent;
+    padding:             0px;
+}
+
+/* Entry (Search Input) */
+entry {
+    background-color:    transparent;
+    text-color:          @fg;
+    placeholder-color:   @fg;
+    placeholder:         "Search...";
+    padding:             0.2em 0.5em;
+    horizontal-align:    0.5;    /* Centered alignment */
+}
+
+/* Listview (Result Items) */
+listview {
+    background-color:    @al;    /* Transparent background */
+    columns:             1;
+    lines:               15;     /* Set the height with # of lines */
+    spacing:             0.2em;  /* Space between items */
+    padding:             0.5em;
+    layout:              vertical;
+}
+
+/* Elements (Items in Listview) */
+element {
+    background-color:    @bga;
+    text-color:          @fg;
+    border-radius:       0.4em;    /* Match Waybar button shape */
+    padding:             0.3em 0.5em;
+    margin:              0.1em 0.2em;
+    border:              0.05em;
+}
+
+/* Selected Element */
+element selected {
+    background-color:    @se;
+    text-color:          @bg;     /* Contrast text for selection */
+    border-color:        @ac;     /* Accent border color */
+}
+
+/* Icons (Optional for Listview Items) */
+element-icon {
+    background-color:    transparent;
+    text-color:          inherit;
+    size:                50px;    /* Icon size */
+    margin-right:        0.5em;
+}
+
+/* Text for Elements */
+element-text {
+    background-color:    transparent;
+    text-color:          inherit;
+    expand:              true;
+    horizontal-align:    0;
+    vertical-align:      0.5;
+}
+
+/* Main Box (Container for Input and Listview) */
+mainbox {
+    children:            [ inputbar, listview ];
+    spacing:             0.5em;
+    background-color:    @al;    /* Transparent container */
+}
+

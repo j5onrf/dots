@@ -1,0 +1,190 @@
+/*________                  ________                __    
+ /  _____/______ __ _____  _\______ \ _____ _______|  | __
+/   \  __\_  __ \  |  \  \/ /|    |  \\__  \\_  __ \  |/ /
+\    \_\  \  | \/  |  /\   / |    `   \/ __ \|  | \/    < 
+ \______  /__|  |____/  \_/ /_______  (____  /__|  |__|_ \
+        \/                          \/     \/           \/ 
+*  ML4W, Edited by j5onrf (2025)
+*  Gruvbox_Dark SideBar-RW (12-10-2024)
+* -----------------------------------------------------  
+*/
+
+/* Theme Colors */
+@define-color color0 #EBDBB2;  /* Gruvbox Light Gray - foreground text */
+@define-color color1 #282828;  /* Gruvbox Dark Gray - primary background */
+@define-color color2 #928374;  /* Gruvbox Gray - muted text/elements */
+@define-color bgcolor1 #FE8019;  /* Gruvbox Orange - accent/highlight */
+@define-color bgcolor2 #3C3836;  /* Gruvbox Medium Gray - secondary background */
+@define-color bgcolor3 #FABD2F;  /* Gruvbox Yellow - vibrant action color */
+
+/* General Styles */
+* {
+    font-family: "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free", sans-serif;
+    border-radius: 0.2em; /* Set rounding radius, 0.2em 2em */
+    font-weight: 600; /* 400-900 */
+    font-size: 28; /* Set the sidebar size */
+}
+
+window#waybar {
+    background: @bgcolor2;
+    border: 0.06em solid @color1;  /* Optional border hinting */
+/*  background-color: rgba(60, 56, 54, 0.8); Optional transparent sidebar */
+}
+
+/* Workspaces Styles */
+#workspaces {
+}
+
+#workspaces button {
+    color: @color0; /* Change color of inactive icons */
+    background: @color1;
+    border: 0.05em solid @color1;  
+    margin: 0.1em 0.2em; /* Optional: spacing between buttons */
+}
+
+#workspaces button.active {
+    color: @color1;
+    background: @bgcolor3; /* Active button background */
+/*  border: 0.05em solid @bgcolor3; */ /* Optional border */
+}
+
+#workspaces button:hover {
+    background: @bgcolor1; /* background on hover */
+    color: @color1; /* Ensures contrast */
+/*  border: 0.05em solid @bgcolor1; */ /* Optional border */
+}
+
+#workspaces button.empty {
+    opacity: 0.2;
+}
+
+/* Module Styles */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* General Hover Styles */
+#cpu:hover, 
+#memory:hover,
+#custom-hyprshade:hover,
+#custom-cliphist:hover,
+#custom-updates:hover,
+#network:hover,
+#custom-wallpaper:hover,
+#custom-waybarthemes:hover,
+#tray:hover,
+#custom-appmenu:hover,
+#custom-exit:hover,
+#pulseaudio:hover {
+    color: @color1;
+    background: @bgcolor1;
+    padding: 0.19em 0; /* Button size */
+    border: 0.05em solid @color1; 
+/*  transition: background-color, 0.2s ease-in-out; */ /* Previous transitions */
+    transition: all 0.1s linear; /* Fast transitions */
+    margin: 0em 0.2em; /* spacing between buttons */    
+}
+
+/* Specific Adjustments */
+#cpu:hover, 
+#memory:hover,
+#custom-updates:hover{
+    color: @color0;
+    background: @color1;
+}
+
+#custom-chevron { /* fix for #RW em scale spacing */
+    border: 0.05em solid; 
+    padding: 0em 0.35em; /* Minimal padding while maintaining shape */
+    margin: 0em 0.2em; 
+    color: @bgcolor2;
+}
+
+#custom-appmenu:hover, 
+#custom-exit:hover {
+    font-size: 1em; /* App\Exit button icon size */
+    background: @bgcolor1;
+    padding: 0.19em 0.3em;
+    margin: 0em; 
+}
+
+#custom-appmenu, 
+#custom-exit {
+    font-size: 4;  /* !Accessibility invariable */
+    color: @bgcolor2;
+}
+
+#custom-settings, 
+#custom-system {
+    font-size: 0.5em;  /* !Accessibility invariable */
+    color: @bgcolor2; /* Match @bgcolor2 to hide chevrons */
+}
+
+/* Show chevrons on hover */
+#custom-settings:hover, 
+#custom-system:hover {
+    color: @bgcolor3; 
+}
+
+/* Styles for System Info Modules */
+#pulseaudio,
+#custom-cliphist,
+#custom-hyprshade,
+#network, #tray,
+#custom-waybarthemes, 
+#custom-wallpaper {
+    color: @color0;
+    padding: 0.19em 0; /* Button size */
+    border: 0.05em solid @bgcolor2;
+    margin: 0em 0.2em; /* spacing between buttons */ 
+}
+
+#cpu,
+#memory,
+#custom-updates {
+    font-size: 0.64em;
+    color: @color0;
+    padding: 0.19em 0; /* Button size */
+    border: 0.05em solid @bgcolor2;     
+    margin: 0em 0.2em; /* spacing between buttons */ 
+}
+
+/* Pulseaudio Muted State */
+#pulseaudio.muted {
+    color: @bgcolor3;
+}
+
+#pulseaudio.muted:hover {
+    color: @color1;
+    background-color: @bgcolor3;
+}
+
+/* Clock Styles */
+#clock {
+    font-size: 0.85em;
+    margin: 0.3em;
+    color: @color0;
+    padding: 0.25em 0;
+    background-color: @color1;
+}
+
+#clock:hover {
+    margin: 0.3em;
+    color: @color1;
+    padding: 0.25em 0;
+    background-color: @bgcolor3;
+}
+
+/* Tooltip */
+tooltip {
+    background-color: @bgcolor2;
+    opacity: 0.8;
+}
+
+tooltip label {
+    color: @color0;
+    font-size: 14;
+}

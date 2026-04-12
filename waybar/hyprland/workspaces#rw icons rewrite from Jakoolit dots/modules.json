@@ -1,0 +1,55 @@
+//  __  __           _       _
+// |  \/  | ___   __| |_   _| | ___  ___
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __|
+// | |  | | (_) | (_| | |_| | |  __/\__ \
+// |_|  |_|\___/ \__,_|\__,_|_|\___||___/
+//
+// 
+// (oct2024) Min-Hyprtidy
+
+// Workspaces
+{
+"hyprland/workspaces#rw": {
+	"disable-scroll": true,
+	"all-outputs": true,
+	"warp-on-scroll": false,
+	"sort-by-number": true,
+	"show-special": false,
+        "on-click": "activate",
+	"on-scroll-up": "hyprctl dispatch workspace e-1",
+	"on-scroll-down": "hyprctl dispatch workspace e+1",
+     // "format": "{icon} {windows}",
+	"format": "{windows}",  
+	"persistent-workspaces": {"*": 27},
+	"format-window-separator": " ",
+	"window-rewrite-default": "",
+	"window-rewrite": {
+		"title<.*youtube.*>": "",	  
+		"title<.*amazon.*>": "",
+		"title<.*reddit.*>": "",
+		"title<.*dot.*>": "",
+		"title<.*Picture-in-Picture.*>": "",
+		"class<freetube>": "",
+		"class<gimp-2.10>": "",
+		"class<org.gnome.Weather>": "",
+		"class<io.missioncenter.MissionCenter>": "",
+		"class<firefox>": "",
+		"class<kitty>": "󰄛",
+		"class<org.gnome.Console>": "",
+		"class<alacritty>": "",
+		"class<brave-browser-beta>": "",	
+		"class<org.telegram.desktop|io.github.tdesktop_x64.TDesktop>": "<span font='12'></span>",
+		"class<[Ss]potify>": "<span font='12'> </span>",
+		"class<VSCode|code-url-handler>": "<span font='12'>󰨞</span>",
+		"class<org.gnome.Nautilus>": "󰝰",
+		"class<subl>": "󰅳",
+		"class<codium|codium-url-handler|VSCodium>": "󰨞",
+		"class<codeblocks>": "󰅩",
+		"class<mousepad>": "",
+		"class<org.gnome.TextEditor>": "",
+		"class<com.obsproject.Studio>": "",
+		"class<polkit-gnome-authentication-agent-1>": "󰒃",
+		"class<nwg-look>": ""
+		}   
+  },
+

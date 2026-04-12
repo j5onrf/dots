@@ -1,0 +1,4 @@
+# screenshot custom.conf
+# Fast screenshot using grim and slurp (via wrapper script)
+bind = , Print, exec, ~/.config/hypr/scripts/fast_screenshot.sh
+bind = SHIFT, Print, exec, ~/.config/hypr/scripts/fast_screenshot_full.sh

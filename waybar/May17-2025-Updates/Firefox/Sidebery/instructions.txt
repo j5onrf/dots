@@ -1,0 +1,95 @@
+======================================================================
+     HOW TO HIDE THE FIREFOX TOP TAB BAR (FOR SIDEBERY USERS)
+======================================================================
+
+GOAL:
+This guide will help you hide the default horizontal tab bar at the top of the Firefox window. This is ideal for users who manage their tabs with a vertical sidebar extension like Sidebery, creating a cleaner, more minimal interface.
+
+This simplified plan assumes you are using the default Firefox setting where the tabs are already shown in the window's title bar area. We will not be modifying system-level window rules.
+
+---------------------------------
+STEPS
+---------------------------------
+
+### STEP 1: ALLOW FIREFOX TO USE CUSTOM CSS
+
+By default, Firefox blocks user-made style changes. You must enable this feature first.
+
+1.  Open a new tab in Firefox.
+2.  In the address bar, type `about:config` and press Enter.
+3.  Click the "Accept the Risk and Continue" button if it appears.
+4.  In the search bar at the top of the page, paste the following:
+    `toolkit.legacyUserProfileCustomizations.stylesheets`
+5.  This option will be set to `false`. Click the toggle button (arrows icon) on the far right to change its value to `true`.
+
+
+### STEP 2: FIND YOUR FIREFOX PROFILE FOLDER
+
+This is where your personal settings are stored and where we need to create our file.
+
+1.  Open a new tab in Firefox.
+2.  In the address bar, type `about:support` and press Enter.
+3.  Look for the row labeled "Profile Directory".
+4.  Click the "Open Directory" button. A file manager window will open to your specific profile folder.
+
+
+### STEP 3: CREATE THE `userChrome.css` FILE
+
+This file will contain the code that tells Firefox to hide the tab bar.
+
+1.  Inside your profile folder (which you just opened), create a NEW FOLDER and name it exactly `chrome`.
+    NOTE: The name must be all lowercase.
+
+2.  Enter the new `chrome` folder.
+
+3.  Inside the `chrome` folder, create a NEW TEXT FILE and name it exactly `userChrome.css`.
+    NOTE: The name is case-sensitive. It must be `userChrome.css`, not `UserChrome.css` or `userchrome.css`.
+
+4.  Open the `userChrome.css` file with any text editor (like Notepad, VSCode, Gedit, etc.).
+
+5.  Copy and paste the following code into the file:
+
+    /* Hides the top tab bar */
+    #TabsToolbar {
+      display: none !important;
+    }
+
+6.  Save the file and close the text editor.
+
+
+### STEP 4: RESTART FIREFOX
+
+The changes will not apply until you fully restart the browser.
+
+1.  Close ALL Firefox windows.
+2.  Open Firefox again.
+
+
+---------------------------------
+RESULT
+---------------------------------
+
+The horizontal tab bar at the top of the Firefox window should now be gone. Your address bar will be at the very top of the window, and you will manage your tabs exclusively using the Sidebery sidebar.
+
+---------------------------------
+HOW TO REVERT THE CHANGE
+---------------------------------
+
+If you want to bring the tab bar back, simply:
+- Go back to your Firefox profile folder (`about:support` -> "Open Directory").
+- Open the `chrome` folder.
+- Delete the `userChrome.css` file (or rename it to something else, like `userChrome.css.bak`).
+
+- Restart Firefox.
+
+----------------------------------
+RECOMMENDED ADDON
+----------------------------------
+
+"Auto Tab Discard" is a lightweight browser extension that automatically reduces the amount of memory used by open but inactive tabs, helping to conserve battery life on portable devices by disabling JavaScript code and DOM events on discarded tabs.
+
+Preview:
+
+https://addons.mozilla.org/en-US/firefox/addon/auto-tab-discard/
+
+

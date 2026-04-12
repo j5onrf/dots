@@ -1,0 +1,236 @@
+/*
+*  ___.   .__               ___.                               
+*  \_ |__ |  |  __ __   ____\_ |__   _____(2025)_j5onrf ___.__.
+*  | __ \|  | |  |  \_/ __ \| __ \_/ __ \_  __ \_  __ <   |  |
+*  | \_\ \  |_|  |  /\  ___/| \_\ \  ___/|  | \/|  | \/\___  |
+*  |___  /____/____/  \___  >___  /\___  >__|   |__|   / ____|
+*      \/                 \/    \/     \/              \/  
+*    ML4W
+*  Min-Blueberry-Floating-B2 1.2  (Updated on 10-25-2024)
+* -----------------------------------------------------  
+*/
+ 
+/* Color Definitions */
+@define-color waybarcolor #BBBBFF;
+
+/* General Styles */
+
+/* 
+Brave Icon Glyph Working in workspaces []
+You need to download FontAwesome "Font Awesome 6 Brands"
+*/
+
+* {
+    border: 0px;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: #14131D;
+    border: 0px;
+    border-radius: 10px;
+}
+
+/* Workspaces Styles */
+#workspaces {
+    font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free", "JetBrainsMono Nerd Font Propo";
+    margin-top: 3px;
+    font-size: 28px;
+    font-weight: 600;
+}
+#workspaces button {
+    margin: 0px;
+    padding: 2px 15px;
+    color: @waybarcolor;
+    border: 0.15px solid rgba(0, 0, 0, 0.0);
+    border-bottom: 3px solid #14131D;
+}
+#workspaces button.active {
+    color: @waybarcolor;
+    border-radius: 6px;
+    border: 0.15px solid rgb(187, 187, 255);
+/* background: #373250; */
+    border-bottom: 3px solid #BBBBFF;
+}
+#workspaces button:hover {
+    border-radius: 3px;
+    background: #373250;
+}
+#workspaces button.empty {
+    opacity: 0.0;
+}
+
+/* Module Styles */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+} 
+
+/* hyprland/window */
+#window {
+    margin: 5px;
+    padding: 0px 10px;
+    color: #BBBBFF;
+    font-size:18px;
+}
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+/* Hover Styles */
+#window:hover,
+#clock:hover,
+#cpu:hover, 
+#memory:hover,
+#custom-appmenu:hover,
+#custom-exit:hover,
+#custom-hyprshade:hover,
+#custom-cliphist:hover,
+#custom-updates:hover,
+#network:hover,
+#custom-wallpaper:hover,
+#custom-waybarthemes:hover,
+#custom-quicklink1:hover,
+#custom-quicklink2:hover,
+#custom-quicklink3:hover,
+#custom-quicklink4:hover,
+#tray:hover
+ {
+    color: @waybarcolor;
+    border-radius: 5px;
+    background: #373250;
+    transition-duration: .5s;
+}
+
+/* Custom Quicklinks Styles */
+#custom-quicklink2,
+#custom-quicklink3,
+#custom-quicklink4,
+#custom-waybarthemes {
+    margin: 5px 0px;
+    font-size: 21px;
+    color: @waybarcolor;
+}
+
+/* Brave Quicklink */
+#custom-quicklink1{
+    margin: 5px 0px;
+    padding: 0px 5px;
+    font-size: 21px;
+    color: @waybarcolor;
+}
+
+/* Quicklinks Wallpaper */
+#custom-wallpaper {
+    margin: 5px 0px;
+    font-size: 21px;
+    color: @waybarcolor;
+}
+
+/* Left-side App Tray Slider */
+#custom-settings {
+    margin-right: 0px;
+    opacity: 0.0;
+}
+
+/* Right-side App Tray Slider */
+#custom-system {
+    margin-left: 0px;
+    opacity: 0.0;
+}
+
+/* Screen Shader */
+#custom-hyprshade {
+    color: @waybarcolor;
+    margin: 5px 0px;
+    padding: 0px 15px;
+    font-size: 20px;
+}
+
+/* Clipboard Manager */
+#custom-cliphist {
+    color: @waybarcolor;
+    margin: 5px 12px 5px 0px;
+    padding: 0px 15px;
+    font-size: 21px;
+}
+
+/* Custom Module appmenu rofi */
+#custom-appmenu {
+    color: @waybarcolor;
+    margin: 0px;
+}
+
+/* Custom Exit Styles wlogout */
+#custom-exit {
+    margin: 0px;
+    color: @waybarcolor;
+}
+
+/* Custom Updates Styles */
+#custom-updates {
+    color: @waybarcolor;
+    font-size: 21px;
+    margin: 5px 0px;
+    padding: 0px 13px;
+}
+#custom-updates.yellow {
+    color: #ff9a3c;
+}
+#custom-updates.red {
+    color: #dc2f2f;
+}
+
+/* Clock Styles */
+#cpu, #memory, #clock  {
+    margin: 5px 0px;
+    color: @waybarcolor;
+    font-size: 18px;
+}
+
+/* Pulseaudio Styles */
+#pulseaudio {
+    color: @waybarcolor;
+    margin-right: 15px;
+    font-size: 18px;
+}
+#pulseaudio.muted {
+    color: #ed8796;
+    font-size: 18px;
+}
+
+/* Network Styles */
+#network {
+    color: @waybarcolor;
+    font-size: 20px;
+    margin: 5px 0px;
+    padding: 0px 15px;
+}
+
+/* Tray Styles */
+#tray {
+    margin: 5px 0px;
+    padding: 0px 15px;
+}
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+/* tooltip */
+tooltip {
+    background-color: #14131D;
+    border-radius: 5px;
+    opacity:0.96;
+    padding:20px;
+    margin:0px;
+}
+tooltip label {
+    color: @waybarcolor;
+}
+

@@ -1,0 +1,170 @@
+/* _____       .___              .__  __          
+  /  _  \    __| _/_  _  ______  |__|/  |______   
+ /  /_\  \  / __ |\ \/ \/ |__  \ |  \   __\__  \  
+/    |    \/ /_/ | \     / / __ \|  ||  |  / __ \_
+\____|__  /\____ |  \/\_/ (____  /__||__| (____  /
+        \/      \/             \/              \/
+* HYDE, Edited by j5onrf (2025)
+* Adwaita-Dark-Rofi-Dock-2 (12-26-2024)
+* -----------------------------------------------------  
+*/
+
+// Config //
+configuration {
+    modi:                        "drun,filebrowser,window,run";
+    show-icons:                  true;
+    display-drun:                " ";
+    display-run:                 " ";
+    display-filebrowser:         " ";
+    display-window:              " ";
+    drun-display-format:         "{name}";
+    window-format:               "{w}{t}";
+    font:                        "JetBrainsMono Nerd Font Propo 10";
+    icon-theme:                  "Papirus";
+}
+
+// Theme //
+* {
+    main-bg:            #242424; /* Base background */
+    main-fg:            #D8DEE9; /* Primary text */
+    main-br:            #D8DEE9; /* Borders using the primary text color */
+    main-ex:            #D8DEE9; /* Accent highlights */
+    select-bg:          #333333; /* Slightly lighter background for selected items */
+    select-fg:          #D8DEE9; /* Text for selected items */
+    separatorcolor:     transparent; /* Separator remains transparent */
+    border-color:       #242424; /* Border matches the base background */
+}
+
+/* ---- Load border radius ---- */
+@import "~/.config/ml4w/settings/rofi-border-radius.rasi"
+
+/* ---- Load border width ---- */
+@import "~/.config/ml4w/settings/rofi-border.rasi"
+
+// Main //
+window {
+    height:                      31em;
+    width:                       50em;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border-color:                #D8DEE9; /* Border using primary text color */
+    background-color:            rgba(36, 36, 36, 0.8);
+    border-radius:               @border-radius;
+    border:                      @border-width;
+}
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 vertical;
+    children:                    [ "inputbar" , "listbox" , "mode-switcher" ];
+    background-color:            transparent;
+}
+
+
+// Inputs //
+inputbar {
+    enabled:                     true;
+    children:                    [ "entry" ];
+}
+entry {
+    enabled:                     false;
+}
+
+
+// Lists //
+listbox {
+    padding:                     0em;
+    spacing:                     0em;
+    orientation:                 horizontal;
+    children:                    [ "listview" ];
+    background-color:            transparent;
+}
+listview {
+    padding:                     2em;
+    spacing:                     1em;
+    enabled:                     true;
+    columns:                     5;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            rgba(36, 36, 36, 0.8);
+    text-color:                  #D8DEE9; /* Primary text */
+}
+
+
+// Modes //
+mode-switcher {
+    orientation:                 horizontal;
+    enabled:                     true;
+    padding:                     2em 9.8em 2em 9.8em;
+    spacing:                     2em;
+    background-color:            transparent;
+}
+button {
+    cursor:                      pointer;
+    padding:                     2.5em;
+    spacing:                     0em;
+    border-radius:               3em;
+    background-color:            #242424; /* Base background */
+    text-color:                  #D8DEE9; /* Primary text */
+}
+button selected {
+    background-color:            #333333; /* Selected background */
+    text-color:                  #D8DEE9; /* Selected text */
+}
+
+
+// Elements //
+element {
+    orientation:                 vertical;
+    enabled:                     true;
+    spacing:                     0.2em;
+    padding:                     0.5em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  #D8DEE9; /* Primary text */
+    border-radius:               2em;
+}
+element selected.normal {
+    background-color:            #333333; /* Selected background */
+    text-color:                  #D8DEE9; /* Selected text */
+}
+element-icon {
+    size:                        5.5em;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+// Error message //
+error-message {
+    text-color:                  #D8DEE9; /* Primary text */
+    background-color:            #242424; /* Base background */
+    text-transform:              capitalize;
+    children:                    [ "textbox" ];
+}
+
+textbox {
+    text-color:                  inherit;
+    background-color:            inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+

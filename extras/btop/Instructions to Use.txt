@@ -1,0 +1,2 @@
+Instructions to Use
+Put btop.theme in the ~/.config/btop/themes directory.

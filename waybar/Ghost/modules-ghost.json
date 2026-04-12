@@ -1,0 +1,171 @@
+//  __   __ _______ ______  __   __ ___     _______ _______ 
+// |  |_|  |       |      ||  | |  |   |   |       |       |
+// |       |   _   |  _    |  | |  |   |   |    ___|  _____|
+// |       |  | |  | | |   |  |_|  |   |   |   |___| |_____ 
+// |       |  |_|  | |_|   |       |   |___|    ___|_____  |
+// | ||_|| |       |       |       |       |   |___ _____| |
+// |_|   |_|_______|______||_______|_______|_______|_______|
+// ML4W, Edited by j5onrf (2025)
+// Vertical-Sidebar Ghost-Modern (01-29-2025) beta
+
+{
+  // Workspaces
+  "hyprland/workspaces#rw": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "sort-by-number": true,
+    "show-special": false,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "format": "{windows}",
+    "persistent-workspaces": { "*": 5 },
+    "format-window-separator": "\n",
+    "window-rewrite-default": "\uf059",
+    "window-rewrite": {
+      "title<.*youtube.*>": "\uf04b",
+      "title<.*reddit.*>": "<span line-height='0.8'></span>",
+      "title<.*dot.*>": "<span line-height='0.8'></span>",
+      "title<.*chatgpt.*>": "\ue1ec",
+      "title<.*deepseek.*>": "\uf72c",
+      // "title<.*amazon.*>": "",
+      // "title<.*Picture-in-Picture.*>": "\ue2c8",
+      "class<gimp-3.0>": "\uf1fc",
+      "class<org.gnome.Weather>": "\uf76b",
+      "class<wttr-floating>": "\uf76b",
+      "class<firefox>": "<span font='18'></span>",
+      "class<kitty>": "<span font='17' line-height='1'>\ue13d</span>",
+      "class<alacritty>": "<span font='16' line-height='0.7'>\uf120</span>",
+      "class<brave-browser-beta>": "\uf37e",
+      "class<org.gnome.Nautilus>": "\uf07b",
+      "class<org.gnome.TextEditor>": "",
+      "class<polkit-gnome-authentication-agent-1>": "\ue575",
+      "class<nwg-look>": "\uf3f1",
+      "class<org.gnome.Boxes>": "<span line-height='0.8'>󰖳</span>",
+      // "class<io.missioncenter.MissionCenter>": "\uf085",
+      // "class<org.gnome.Console>": "",
+      // "class<mousepad>": "\uf15c",
+      // "class<thunar>": "\uf07c",
+      // "class<obsidian>": "󰠮",
+      // "class<freetube>": "",
+      // "class<[Ss]potify>": "\uf001",
+      // "class<VSCode|code-url-handler>": "󰨞",
+      // "class<sublime_text>": "󰅳",
+      // "class<codium|codium-url-handler|VSCodium>": "󰨞",
+      // "class<codeblocks>": "󰅩",
+      // "class<com.obsproject.Studio>": "",
+      // "class<brave-ojibjkjikcpjonjjngfkegflhmffeemk-Default>": "\uf073",
+      // "class<zen-alpha>": "󰰷",
+      // "class<vlc>": "\uf636"
+    }
+},
+
+  // Empty
+  "custom/empty": {
+    "format": ""
+  },
+
+  // Clipboard History
+  "custom/cliphist": {
+    "format": "\uf328",
+    "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
+    "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
+    "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
+    "tooltip-format": "Clipboard Manager"
+  },
+
+  // Hyprshade
+  "custom/hyprshade": {
+    "format": "\uf87f",
+    "tooltip-format": "Toggle Screen Shader",
+    "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
+    "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi"
+  },
+
+  // Wallpaper
+  "custom/wallpaper": {
+    "format": "\uf03e",
+    "on-click": "waypaper",
+    "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
+    "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect"
+  },
+
+  // Waybar Themes
+  "custom/waybarthemes": {
+    "format": "\uf856",
+    "on-click": "~/.config/waybar/themeswitcher.sh",
+    "tooltip-format": "Select a waybar theme"
+  },
+
+  // Settings
+  "custom/settings": {
+    "format": "\uf078",
+    "on-click": "/usr/bin/com.ml4w.dotfilessettings",
+    "on-click-right": "/usr/bin/com.ml4w.hyprland.settings",
+    "on-click-middle": "hyprctl dispatch exec 'kitty --class hyprpicker -e zsh -c \"sleep 0.5; hyprpicker; exec zsh\"'",
+    "tooltip": false
+  },
+
+  // System Tray
+  "tray": {
+    "icon-size": 24,
+    "spacing": 10
+  },
+
+  // System
+  "custom/system": {
+    "format": "\uf077",
+    "on-click-right": "exec ~/.config/waybar/launch.sh",
+    "tooltip": false
+  },
+
+  // Group: Hardware
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 200,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/system",
+      "cpu",
+      "memory",
+      "custom/updates",
+      "network",
+      "custom/hyprshade",
+      "custom/cliphist",
+      "pulseaudio",
+      "tray"
+    ]
+  },
+
+  // Group: Settings
+  "group/settings": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 200,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/settings",
+      "pulseaudio",
+      "custom/waybarthemes",
+      "custom/wallpaper"
+    ]
+  },
+
+    // Network Module
+  "network": {
+    "format": "{ifname}",
+    "format-ethernet": "\uf1eb",
+    "format-disconnected": "\uf6ac",
+    "tooltip-format-ethernet": "\uf1eb {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 20,
+    "on-click": "nm-connection-editor",
+    "on-click-right": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nmtui"
+  }
+}

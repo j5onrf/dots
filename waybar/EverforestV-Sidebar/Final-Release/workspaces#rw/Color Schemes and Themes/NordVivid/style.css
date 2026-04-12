@@ -1,0 +1,181 @@
+/* _____                   .______   ___.__      .__    .___
+ \      \   ___________  __| _\   \ /   |_____  _|__| __| _/
+ /   |   \ /  _ \_  __ \/ __ | \   Y   /|  \  \/ |  |/ __ | 
+/    |    (  <_> |  | \/ /_/ |  \     / |  |\   /|  / /_/ | 
+\____|__  /\____/|__|  \____ |   \___/  |__| \_/ |__\____ | 
+        \/                  \/                           \/   
+*  ML4W, Edited by j5onrf (2025)
+*  Nord Vivid SideBar-RW (12-02-2024)
+* -----------------------------------------------------  
+*/
+
+/* Nord Theme Colors */
+@define-color color0 #88C0D0;        /* Light blue */
+@define-color color1 #3B4252;        /* Secondary background */
+@define-color color2 #495E6C;        /* Empty workspace icons */
+@define-color bgcolor1 #81A1C1;      /* Accent blue for hover effects */
+@define-color bgcolor2 #2E3440;      /* Dark primary background color */
+@define-color bgcolor3 #8FBCBB;      /* Aqua background */
+
+/* General Styles */
+* {
+    font-family: "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free", sans-serif;  
+    border-radius: 0.2em; /* Set rounding radius, 0.2em 2em */
+    font-weight: 600; /* 400-900 */
+    font-size: 28; /* Set the sidebar size */
+}
+
+window#waybar {
+    background: @bgcolor2;
+    border: 0.05em solid @color1;  /* Optional border hinting */
+}
+
+/* Workspaces Styles */
+#workspaces {
+}
+
+#workspaces button {
+    color: @color0; /* Change color of inactive icons */
+    background: @color1;
+    border: 0.05em solid @color1;  
+    margin: 0.1em 0.2em; /* Optional: spacing between buttons */
+}
+
+#workspaces button.active {
+    color: @color1;
+    background: @bgcolor3; /* Active button background */
+    border: 0.05em solid @bgcolor3;
+}
+
+#workspaces button:hover {
+    background: @bgcolor1; /* background on hover */
+    color: @color1; /* Ensures contrast */
+    border: 0.05em solid @bgcolor1;
+}
+
+#workspaces button.empty {
+    opacity: 0.2;
+}
+
+/* Module Styles */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* General Hover Styles */
+#cpu:hover, 
+#memory:hover,
+#custom-hyprshade:hover,
+#custom-cliphist:hover,
+#custom-updates:hover,
+#network:hover,
+#custom-wallpaper:hover,
+#custom-waybarthemes:hover,
+#tray:hover,
+#custom-appmenu:hover,
+#custom-exit:hover,
+#pulseaudio:hover {
+    color: @color1;
+    background: @bgcolor1;
+    padding: 0.19em 0; /* Button size */
+    transition: background-color, 0.2s ease-in-out;
+}
+
+/* Specific Adjustments */
+#cpu:hover, 
+#memory:hover,
+#custom-updates:hover{
+    color: @color0;
+    background: @color1;
+}
+
+#custom-chevron { /* fix for #RW em scale spacing */
+    border: 0.05em solid; 
+    padding: 0em 0.35em; /* Minimal padding while maintaining shape */
+    margin: 0em 0.2em; 
+    color: @bgcolor2;
+}
+
+#custom-appmenu:hover, 
+#custom-exit:hover {
+    font-size: 1em; /* App\Exit button icon size */
+    background: @bgcolor1;
+    padding: 0.19em 0.3em;
+}
+
+#custom-appmenu, 
+#custom-exit {
+    font-size: 4;  /* !Accessibility invariable */
+    color: @bgcolor2;
+}
+
+#custom-settings, 
+#custom-system {
+    font-size: 0.5em;  /* !Accessibility invariable */
+    color: @bgcolor2; /* Match @bgcolor2 to hide chevrons */
+}
+
+/* Show chevrons on hover */
+#custom-settings:hover, 
+#custom-system:hover {
+    color: @bgcolor3; 
+}
+
+/* Styles for System Info Modules */
+#pulseaudio,
+#custom-cliphist,
+#custom-hyprshade,
+#network, #tray,
+#custom-waybarthemes, 
+#custom-wallpaper {
+    color: @color0;
+    padding: 0.19em 0; /* Button size */
+}
+
+#cpu,
+#memory,
+#custom-updates {
+    font-size: 0.64em;
+    color: @color0;
+    padding: 0.19em 0; /* Button size */
+}
+
+/* Pulseaudio Muted State */
+#pulseaudio.muted {
+    color: @bgcolor3;
+}
+
+#pulseaudio.muted:hover {
+    color: @color1;
+    background-color: @bgcolor3;
+}
+
+/* Clock Styles */
+#clock {
+    font-size: 0.85em;
+    margin: 0.3em;
+    color: @color0;
+    padding: 0.25em 0;
+    background-color: @color1;
+}
+
+#clock:hover {
+    margin: 0.3em;
+    color: @color1;
+    padding: 0.25em 0;
+    background-color: @bgcolor3;
+}
+
+/* Tooltip */
+tooltip {
+    background-color: @bgcolor2;
+    opacity: 0.8;
+}
+
+tooltip label {
+    color: @color0;
+    font-size: 14;
+}

@@ -1,0 +1,13 @@
+/* 
+ *  Optimized Matugen Colors for 0.13-v3 (2025-07-11)
+ *  Contains only the colors used in theme.
+ */
+
+@import '../../colors.css';
+
+@define-color ghost_text_primary @on_surface;
+@define-color ghost_bar_background @background;
+@define-color ghost_hypridle_active_icon @tertiary;
+@define-color ghost_hypridle_inactive_icon @error;
+@define-color ghost_pulseaudio_muted_fg @on_error_container;
+@define-color ghost_pulseaudio_muted_hover_fg @on_error;

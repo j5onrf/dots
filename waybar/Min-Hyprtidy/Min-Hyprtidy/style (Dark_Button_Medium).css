@@ -1,0 +1,214 @@
+/*
+ * __        __          _                  ____  _         _       
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___  
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \ 
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/ 
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___| 
+ *                 |___/                              |___/         
+ *   ML4W
+ * 2025 Min-Hyprtidy
+ * -----------------------------------------------------  
+*/
+
+ /* Colors
+* #74c7ec; #69e8ff;                    Bright blue background color 
+* #cba6f7;                             Bright magenta background color 
+* #c5b69d;                             Light brown background color 
+* <Add more colors as needed>
+* #90ebd0; #83C092;                    Mint, green background color 
+*/
+ 
+/* Color Definitions */
+@define-color glyphbutton #333;  /* Color for Workspace Glyph default #333 */
+@define-color waybarcolor #FFF;        /* Color for Waybar default #FFF */
+
+/* General Styles */
+
+/* font-weight
+400	Normal (Regular)
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+*/
+
+* {
+font-family: "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free", Helvetica, Arial, sans-serif;
+    border: none;
+    border-radius: 0px;
+    margin: 0px;
+    font-weight: 500;
+}
+
+/* default rgba(0, 0, 0, 0.4); */
+/* white rgba(255,255,255,0.1); */
+/* blk #000; */
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 0px;
+}
+
+/* Workspaces Styles */
+#workspaces {
+    margin: 0px;
+    font-size: 18px;
+    color: @glyphbutton;
+}
+
+#workspaces button {
+    border: none;
+    margin: 0px;
+    padding: 0px 12px;
+    color: @waybarcolor;
+}
+
+/* Modern Futuristic 8px 18px; default 3px; */
+#workspaces button.active {
+    color: @waybarcolor;
+    border-radius: 3px;
+    background: #44475A;
+}
+
+#workspaces button:hover {
+    border-radius: 3px;
+}
+
+#workspaces button.empty {
+    opacity: 0.0;
+}
+
+/* Module Styles */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+} 
+
+/* window#waybar.empty */
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+/* Hover Styles */
+#clock:hover {
+    padding: 0px 8px;
+    color: @waybarcolor;
+    border-radius: 3px;
+    background: #373737;
+    transition-duration: .5s;
+}
+
+#cpu:hover, 
+#memory:hover,
+#custom-appmenu:hover,
+#custom-exit:hover
+ {
+    color: @waybarcolor;
+    border-radius: 3px;
+    background: #373737;
+    transition-duration: .5s;
+}
+
+/* Custom Quicklinks Styles */
+#custom-quicklink1,
+#custom-quicklink2,
+#custom-quicklink3,
+#custom-quicklink4,
+#custom-waybarthemes {
+    margin-right: 15px;
+    font-size: 18px;
+    color: @waybarcolor;
+}
+
+/* Quicklinks Wallpaper */
+#custom-wallpaper {
+    margin-right: 5px;
+    font-size: 18px;
+    color: @waybarcolor;
+}
+
+/* Left-side App Tray Slider */
+#custom-settings {
+    margin-right: 13px;
+    opacity: 0.0;
+}
+
+/* Right-side App Tray Slider */
+#custom-system {
+    margin-left: 0px;
+    opacity: 0.0;
+}
+
+/* Clipboard Manager */
+/* Screen Shader */
+#custom-hyprshade,
+#custom-cliphist
+{
+    margin-right: 23px;
+    font-size: 14px;
+}
+
+/* Custom Module appmenu rofi */
+#custom-appmenu {
+    color: @waybarcolor;
+    margin: 0 0px 0 0px;
+}
+
+/* Custom Exit Styles wlogout */
+#custom-exit {
+    margin: 0 0px 0 5px;
+    color: @waybarcolor;
+}
+
+/* Custom Updates Styles */
+#custom-updates {
+    font-size: 14px;
+    margin-right: 20px;
+}
+#custom-updates.yellow {
+    color: #ff9a3c;
+}
+#custom-updates.red {
+    color: #dc2f2f;
+}
+
+/* Clock Styles */
+#clock {
+    color: @waybarcolor;
+    margin: 0;
+}
+
+#cpu, #memory {
+    color: @waybarcolor;
+}
+
+/* Pulseaudio Styles */
+#pulseaudio {
+    color: @waybarcolor;
+    margin-right: 13px;
+}
+#pulseaudio.muted {
+    color: #ed8796;
+}
+
+/* Network Styles */
+#network {
+    font-size: 14px;
+    margin: 0 20px 0 15px;
+}
+
+/* Tray Styles */
+#tray {
+    margin: 0 15px 0 5px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
