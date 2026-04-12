@@ -10,7 +10,7 @@ Mine Minimal
 <img width="3440" height="1440" alt="FullScreen-2026-04-11_18-22-22" src="https://github.com/user-attachments/assets/b8c03191-88bc-44b2-936e-4571f2d203b2" />
 
 GitHub Dark
-<img width="3440" height="1440" alt="noctalia-bar" src="https://github.com/user-attachments/assets/d4dad48a-8da7-45f2-8dac-365925f0cfea" />
+<img width="3440" height="1440" alt="noctalia-bar2" src="https://github.com/user-attachments/assets/58b5dca4-c690-4485-84de-f6d0035f612b" />
 
 </p>
 </details>
