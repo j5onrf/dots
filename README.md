@@ -13,7 +13,7 @@ GitHub Dark
 <img width="3440" height="1440" alt="noctalia-bar2" src="https://github.com/user-attachments/assets/58b5dca4-c690-4485-84de-f6d0035f612b" />
 
 Dracula - Auto-Hide
-<img width="3440" height="1440" alt="Dracul" src="https://github.com/user-attachments/assets/9063645b-c538-497e-942a-d8c616ce83e8" />
+<img width="3440" height="1440" alt="Dracul2" src="https://github.com/user-attachments/assets/29752512-7401-43b2-a2de-728c080b4e81" />
 
 </p>
 </details>
