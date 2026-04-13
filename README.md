@@ -12,9 +12,6 @@ Mine Minimal
 GitHub Dark
 <img width="3440" height="1440" alt="noctalia-bar2" src="https://github.com/user-attachments/assets/58b5dca4-c690-4485-84de-f6d0035f612b" />
 
-Dracula Medium
-<img width="3440" height="1440" alt="FullScreen-2026-04-12_23-19-54" src="https://github.com/user-attachments/assets/ec52d8bd-bd46-4b0b-b6fa-a9904a427bbf" />
-
 </p>
 </details>
 
