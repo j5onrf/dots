@@ -1,18 +1,12 @@
 # Hyprdots
 
-<details open><summary>(2026-April11) Noctalia-Shell <sup>expansive feature set</sup></summary>
+<details open><summary>(2026-April11) Noctalia-Shell <sup>expansive-feature-set</sup></summary>
 <p>
     
 [Noctalia-Shell](https://github.com/noctalia-dev/noctalia-shell)
-<img width="3440" height="1440" alt="FullScreen-2026-04-11_16-40-34" src="https://github.com/user-attachments/assets/671efa4c-e93b-4a6f-8bf0-7867f24925fe" />
-
-Mine Minimal
-<img width="3440" height="1440" alt="FullScreen-2026-04-11_18-22-22" src="https://github.com/user-attachments/assets/b8c03191-88bc-44b2-936e-4571f2d203b2" />
-
-GitHub Dark
 <img width="3440" height="1440" alt="noctalia-bar2" src="https://github.com/user-attachments/assets/58b5dca4-c690-4485-84de-f6d0035f612b" />
 
-Dracula - Auto-Hide
+Auto-Hide
 <img width="3440" height="1440" alt="Dracul2" src="https://github.com/user-attachments/assets/29752512-7401-43b2-a2de-728c080b4e81" />
 
 </p>
