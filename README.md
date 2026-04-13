@@ -6,7 +6,8 @@
 [Noctalia-Shell](https://github.com/noctalia-dev/noctalia-shell)
 <img width="3440" height="1440" alt="noctalia-bar2" src="https://github.com/user-attachments/assets/58b5dca4-c690-4485-84de-f6d0035f612b" />
 
-<img width="3440" height="1440" alt="dracu4" src="https://github.com/user-attachments/assets/f8f83513-1f11-4af6-8753-aa6e96a1358b" />
+Auto-Hide
+<img width="3440" height="1440" alt="Dracul2" src="https://github.com/user-attachments/assets/29752512-7401-43b2-a2de-728c080b4e81" />
 
 </p>
 </details>
