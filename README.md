@@ -39,7 +39,7 @@ If you are currently on Waybar," do yourself a favor: **Try Noctalia.**
 
 ## Next
 
-I will "maybe-probably" see how well **Noctalia.** works on top of Omarchy.
+I will "maybe-probably" see how well **Noctalia.** and **Caelestia.** works on top of Omarchy.
 
 That is the ultimate "Best of Both Worlds" strategy. Having a toggle script that allows you to treat your desktop like a high-end workstation that can change its entire personality with one keybind.
 
