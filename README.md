@@ -2,11 +2,11 @@
 
 </details>
 
-<details><summary>(2026-April14) DankMaterialShell <sup>testing</sup></summary>
+<details open><summary>(2026-April14) DankMaterialShell <sup>testing</sup></summary>
 <p>
     
 [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
-
+<img width="3440" height="1440" alt="FullScreen-2026-04-14_17-55-21" src="https://github.com/user-attachments/assets/cb71478f-8a71-414e-9da3-536b5326716d" />
 
 </p>
 </details>
