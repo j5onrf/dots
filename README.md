@@ -1,7 +1,7 @@
 # Hyprdots
 
 
-<details><summary>(2026-April14) Noctalia-Shell replaced Waybar</summary>
+<details><summary>(2026-April14) Noctalia-Shell compared to Waybar</summary>
 <p>
 
 <br>
@@ -42,8 +42,6 @@ If you are currently on Waybar," do yourself a favor: **Try Noctalia.**
 I will "maybe-probably" see how well **Noctalia.** works on top of Omarchy.
 
 That is the ultimate "Best of Both Worlds" strategy. Having a toggle script that allows you to treat your desktop like a high-end workstation that can change its entire personality with one keybind.
-
-Since both setups use different "backends" for notifications and launching, the script needs to be decisive.
 
 <br>
 
