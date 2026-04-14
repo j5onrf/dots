@@ -18,7 +18,7 @@
 
 # Quickshell/Noctalia-Shell is the New Standard
 
-After switching to **Noctalia-Shell**, I’ve realized I can’t go back. There are no downsides—only upsides. 
+After switching to **Noctalia-Shell**, I’ve realized I can’t go back. There are no downsides—only upsides. Not exactly. I will still use Waybar per usecase. It is custom and custom always works better.
 
 ##  The Performance
 One hesitation people have when moving away from Waybar is speed.
