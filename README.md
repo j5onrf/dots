@@ -1,5 +1,15 @@
 # Hyprdots
 
+</details>
+
+<details><summary>(2026-April14) DankMaterialShell <sup>testing</sup></summary>
+<p>
+    
+[DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
+
+
+</p>
+</details>
 
 <details><summary>(2026-April14) Noctalia-Shell compared to Waybar</summary>
 <p>
