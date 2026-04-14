@@ -1,5 +1,55 @@
 # Hyprdots
 
+
+<details><summary>(2026-April14) Noctalia-Shell replaced Waybar</summary>
+<p>
+
+<br>
+
+# Quickshell/Noctalia-Shell is the New Standard
+
+After switching to **Noctalia-Shell**, I’ve realized I can’t go back. There are no downsides—only upsides. 
+
+##  The Performance
+One hesitation people have when moving away from Waybar is speed.
+
+**I can’t tell the difference.**
+
+Noctalia-Shell is just as fast and responsive as Waybar. There is zero lag, zero stutter, and the interaction feels instantaneous. It proves that you can have a full-featured, beautiful shell without the "performance tax."
+
+##  A Built-in Ecosystem
+Full functional desktop, a launcher, a clipboard manager, and a theme switcher. Noctalia-Shell does it all, and it does it better.
+
+* **The Launcher & Clipboard:** I’ve used other standalone launchers. The built-in launcher and clipboard manager in Noctalia are just as good, if not better. It’s snappy, integrated, and feels like part of the system.
+* **The Color-Scheme System:** This is the killer feature. Creating and applying custom schemes is effortless. It’s built to play nice with the rest of your setup—syncing perfectly with **pywalfox**, **kitty**, and your system colors out of the box. 
+
+##  Smart Usability
+The way Noctalia handles workspaces is a improvement over the standard "numbered list" or "dots." 
+
+It shows you the actual applications running in each workspace. Being able to see those icons and click on a specific one to focus that application is a increased level of usability.
+
+##  The Customization Paradox
+With Noctalia, **I’m unable to find anything I don’t like.**
+
+It’s so well-designed that there is almost nothing left for me to customize. That said, the architecture is completely open. If I ever decide I want to build a custom bar with only specific modules in the future. 
+
+## Final Verdict
+
+If you are currently on Waybar," do yourself a favor: **Try Noctalia.**
+
+## Next
+
+I will "maybe-probably" see how well **Noctalia.** works on top of Omarchy.
+
+That is the ultimate "Best of Both Worlds" strategy. Having a toggle script that allows you to treat your desktop like a high-end workstation that can change its entire personality with one keybind.
+
+Since both setups use different "backends" for notifications and launching, the script needs to be decisive.
+
+<br>
+
+</p>
+</details>
+
 <details open><summary>(2026-April11) Noctalia-Shell <sup>expansive-feature-set</sup></summary>
 <p>
     
