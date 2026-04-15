@@ -8,6 +8,7 @@
 [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
 <img width="3440" height="1440" alt="FullScreen-2026-04-14_17-55-21" src="https://github.com/user-attachments/assets/cb71478f-8a71-414e-9da3-536b5326716d" />
 
+<img width="3440" height="1440" alt="FullScreen-2026-04-14_20-08-24" src="https://github.com/user-attachments/assets/0d8cde89-9a43-4067-b5ea-57cc69c9628f" />
 </p>
 </details>
 
