@@ -135,8 +135,8 @@ animations {
 `Layouts.conf`
 ```bash
 
-# Horizontal scrolling behavior (Niri-style). By setting the column_width to 0.5, every window
-# defaults to exactly half, creating a perfect, consistent split.
+# Horizontal scrolling behavior (Niri-style). By setting the column_width to 0.5,
+# -every window defaults to exactly half, creating a perfect, consistent split.
 
 general {
     layout = scrolling
