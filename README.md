@@ -6,8 +6,7 @@
 <p>
     
 [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
-<img width="3440" height="1440" alt="dank" src="https://github.com/user-attachments/assets/d68b4dd6-6de8-41a8-b32b-f2cacfc21fde" />
-
+![dank](https://github.com/user-attachments/assets/d68b4dd6-6de8-41a8-b32b-f2cacfc21fde)
 
 </p>
 </details>
@@ -63,7 +62,7 @@ That is the ultimate "Best of Both Worlds" strategy. Having a toggle script that
 <p>
     
 [Noctalia-Shell](https://github.com/noctalia-dev/noctalia-shell)
-<img width="3440" height="1440" alt="noctalia-bar2" src="https://github.com/user-attachments/assets/58b5dca4-c690-4485-84de-f6d0035f612b" />
+![dank](https://github.com/user-attachments/assets/58b5dca4-c690-4485-84de-f6d0035f612b)
 
 </p>
 </details>
@@ -178,7 +177,7 @@ Because you aren't modifying files tracked by the repository, using the **Update
 <details><summary>(2026-April05) WayBar Bridged to Caelestia Schemes</summary>
 <p>
  
-<img width="3440" height="1440" alt="FullScreen-2026-04-04_20-56-20" src="https://github.com/user-attachments/assets/0240e1c4-ed63-4447-a0f4-074ec217e906" />
+![dank](https://github.com/user-attachments/assets/0240e1c4-ed63-4447-a0f4-074ec217e906)
 
 </details>
 
@@ -186,13 +185,13 @@ Because you aren't modifying files tracked by the repository, using the **Update
 <p>
 
 [Caelestia-Shell](https://github.com/caelestia-dots/shell)
-<img width="3440" height="1440" alt="FullScreen-2026-03-29_19-29-24" src="https://github.com/user-attachments/assets/5bbc65cf-0611-4c74-8ef2-6a468a169c86" />
+![dank](https://github.com/user-attachments/assets/5bbc65cf-0611-4c74-8ef2-6a468a169c86)
 
 Google Sans Flex | GeistMono NF
-<img width="3440" height="1440" alt="FullScreen-2026-03-30_14-25-20" src="https://github.com/user-attachments/assets/2203f2bd-cfd6-4cf0-bcf0-e7e5febf13be" />
+![dank](https://github.com/user-attachments/assets/2203f2bd-cfd6-4cf0-bcf0-e7e5febf13be)
 
 Gruvbox Soft
-<img width="3440" height="1440" alt="FullScreen-2026-04-02_07-08-54" src="https://github.com/user-attachments/assets/eae6ac8e-f6bb-469b-9133-4cc68118a5dd" />
+![dank](https://github.com/user-attachments/assets/eae6ac8e-f6bb-469b-9133-4cc68118a5dd)
 
 
 </details>
