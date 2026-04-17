@@ -54,12 +54,12 @@ alias p='paru'
 alias pr='paru -Rns'
 alias x='paru -Syu'
 alias um="sudo reflector --verbose --country 'United States' --protocol https --age 12 --latest 30 --sort rate --download-timeout 5 --number 10 --save /etc/pacman.d/mirrorlist"
+alias uk='sudo ~/.config/scripts/kernel-update-toggle.sh'
 
 ## Desktop & Window Manager
 alias hr='hyprctl reload'
-alias hrr='hyprctl dispatch layoutmsg colresize all 0.5'
 alias hc='hyprctl clients'
-alias uk='sudo ~/.config/scripts/kernel-update-toggle.sh'
+alias hrr='hyprctl dispatch layoutmsg colresize all 0.5'
 
 ```
 
