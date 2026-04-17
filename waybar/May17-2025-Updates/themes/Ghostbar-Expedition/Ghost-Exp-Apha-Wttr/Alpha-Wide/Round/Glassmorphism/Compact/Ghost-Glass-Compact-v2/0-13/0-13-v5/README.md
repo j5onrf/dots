@@ -71,10 +71,6 @@ alias hrr='hyprctl dispatch layoutmsg colresize all 0.5'
 ```bash
 
 # --- Floating Rules (New Syntax) ---
-# --- Kitty Float ---
-windowrule = match:title ^(floating_kitty)$, float on
-windowrule = match:title ^(floating_kitty)$, center on
-windowrule = match:title ^(floating_kitty)$, size 800 500
 
 # File Pickers (GTK and KDE)
 windowrule = float on, match:class ^(xdg-desktop-portal-gtk)$
@@ -90,6 +86,10 @@ windowrule = center on, match:class ^(org.gnome.FileRoller)$
 windowrule = float on, match:title ^(Open File)$
 windowrule = float on, match:title ^(Save As)$
 windowrule = float on, match:title ^(File Upload)$
+# --- Kitty Float ---
+windowrule = match:title ^(floating_kitty)$, float on
+windowrule = match:title ^(floating_kitty)$, center on
+windowrule = match:title ^(floating_kitty)$, size 800 500
 
 ```
 
