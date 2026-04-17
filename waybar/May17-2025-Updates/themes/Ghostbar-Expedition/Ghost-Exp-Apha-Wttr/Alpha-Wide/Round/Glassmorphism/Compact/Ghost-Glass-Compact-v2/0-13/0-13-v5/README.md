@@ -17,9 +17,6 @@ bind = $mainMod ALT, S, exec, kitty --title floating_kitty
 bind = $mainMod, A, exec, alacritty
 bind = $mainMod, Z, exec, ghostty
 
-# Move KeePassXC to a special workspace named 'keepass' silently
-windowrule = workspace special:keepassxc, match:class ^(org.keepassxc.KeePassXC)$
-
 # Shell & Bar Toggles
 bind = $mainMod, X, exec, ~/.config/waybar/toggle.sh
 bind = $mainMod, C, exec, ~/.config/quickshell/caelestia/toggle.sh
@@ -28,8 +25,8 @@ bind = $mainMod, V, exec, ~/.config/noctalia/toggle.sh
 # Open ML4W Settings TUI with Super + Ctrl + S
 bind = $mainMod CTRL, S, exec, kitty --class ml4w-tui -e ml4w-dotfiles-settings com.ml4w.dotfiles
 
-# --- Swapsplit
-bind = $mainMod SHIFT, S, layoutmsg, swapsplit
+# Swaps the current window with the one to its right in the strip
+bind = $mainMod SHIFT, S, layoutmsg, swapcol r
 
 # --- Screenshots
 bind = , Print, exec, ~/.config/hypr/scripts/fast_screenshot.sh
