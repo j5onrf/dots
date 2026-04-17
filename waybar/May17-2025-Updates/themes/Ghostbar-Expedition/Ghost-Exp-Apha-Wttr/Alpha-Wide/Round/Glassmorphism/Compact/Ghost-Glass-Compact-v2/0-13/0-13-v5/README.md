@@ -86,6 +86,7 @@ windowrule = center on, match:class ^(org.gnome.FileRoller)$
 windowrule = float on, match:title ^(Open File)$
 windowrule = float on, match:title ^(Save As)$
 windowrule = float on, match:title ^(File Upload)$
+
 # --- Kitty Float ---
 windowrule = match:title ^(floating_kitty)$, float on
 windowrule = match:title ^(floating_kitty)$, center on
