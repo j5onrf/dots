@@ -53,6 +53,7 @@ alias ff='fastfetch'
 alias p='paru'
 alias pr='paru -Rns'
 alias x='paru -Syu'
+alias xclean='paru -Rns $(paru -Qtdq)'
 alias um="sudo reflector --verbose --country 'United States' --protocol https --age 12 --latest 30 --sort rate --download-timeout 5 --number 10 --save /etc/pacman.d/mirrorlist"
 alias uk='sudo ~/.config/scripts/kernel-update-toggle.sh'
 
