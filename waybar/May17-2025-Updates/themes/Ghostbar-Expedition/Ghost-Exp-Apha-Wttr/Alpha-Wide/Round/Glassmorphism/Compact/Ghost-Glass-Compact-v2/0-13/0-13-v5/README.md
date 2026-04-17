@@ -66,12 +66,12 @@ alias uk='sudo ~/.config/scripts/kernel-update-toggle.sh'
 `Windowrules`
 ```bash
 
+# --- Floating Rules (New Syntax) ---
 # --- Kitty Float ---
 windowrule = match:title ^(floating_kitty)$, float on
 windowrule = match:title ^(floating_kitty)$, center on
 windowrule = match:title ^(floating_kitty)$, size 800 500
 
-# --- Floating Rules (New Syntax) ---
 # File Pickers (GTK and KDE)
 windowrule = float on, match:class ^(xdg-desktop-portal-gtk)$
 windowrule = size 800 500, match:class ^(xdg-desktop-portal-gtk)$
