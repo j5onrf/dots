@@ -45,22 +45,22 @@ bind = CTRL, Print, exec, grimblast --freeze copysave area ~/Pictures/Screenshot
 `~/.config/zshrc/25-aliases`
 ```bash
 
-## System & Navigation
+## --- System & UI ---
 alias c='clear'
 alias ff='fastfetch'
-
-## Package Management
-alias p='paru'
-alias pr='paru -Rns'
-alias x='paru -Syu'
-alias xclean='paru -Rns $(paru -Qtdq)'
-alias um="sudo reflector --verbose --country 'United States' --protocol https --age 12 --latest 30 --sort rate --download-timeout 5 --number 10 --save /etc/pacman.d/mirrorlist"
-alias uk='sudo ~/.config/scripts/kernel-update-toggle.sh'
-
-## Desktop & Window Manager
 alias hr='hyprctl reload'
+alias hrr='hyprctl dispatch layoutmsg colresize all 0.5' # Reset layout
 alias hc='hyprctl clients'
-alias hrr='hyprctl dispatch layoutmsg colresize all 0.5'
+
+## --- Package Management ---
+alias p='paru'
+alias x='paru -Syu'                        # Full upgrade
+alias pr='paru -Rns'                       # Remove + Configs + Unneeded deps
+alias xclean='paru -Rns $(paru -Qtdq)'     # Orphan sweep
+alias um='sudo reflector --country "United States" --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist'
+
+## --- Scripts & Toggles ---
+alias uk='sudo ~/.config/scripts/kernel-update-toggle.sh'
 
 ```
 
