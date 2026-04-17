@@ -13,6 +13,7 @@
 
 # --- Terminals
 bind = $mainMod, S, exec, kitty
+bind = $mainMod ALT, S, exec, kitty --title floating_kitty
 bind = $mainMod, A, exec, alacritty
 bind = $mainMod, Z, exec, ghostty
 
