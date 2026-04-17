@@ -28,6 +28,10 @@ bind = $mainMod CTRL, S, exec, kitty --class ml4w-tui -e ml4w-dotfiles-settings 
 # Swaps the current window with the one to its right in the strip
 bind = $mainMod SHIFT, S, layoutmsg, swapcol r
 
+# One-handed navigation (WASD) using Shift
+bind = $mainMod SHIFT, A, movefocus, l
+bind = $mainMod SHIFT, D, movefocus, r
+
 # --- Screenshots
 bind = , Print, exec, ~/.config/hypr/scripts/fast_screenshot.sh
 bind = SHIFT, Print, exec, ~/.config/hypr/scripts/fast_screenshot_full.sh
