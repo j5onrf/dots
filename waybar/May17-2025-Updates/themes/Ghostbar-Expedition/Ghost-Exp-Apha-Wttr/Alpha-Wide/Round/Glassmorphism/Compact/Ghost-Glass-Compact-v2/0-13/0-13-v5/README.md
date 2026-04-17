@@ -155,7 +155,7 @@ scrolling {
 `Monitors`
 ```bash
 
-# # Toggle between Android-style (2x) and High-Density (1x)
+## Toggle between Android-style (2x) and High-Density (1x)
 bind = ALT, R, exec, ~/.config/hypr/conf/scripts/toggle_scale.sh
 
 monitor=, 3440x1440@120, auto, 2
