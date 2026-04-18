@@ -105,21 +105,19 @@ windowrule = match:title ^(floating_kitty)$, size 800 500
 
 animations {
     enabled = yes
-
-    # Ultra-fast curves for igpu
-    bezier = quick, 0.15, 0, 0.1, 1
-    bezier = direct, 0.23, 1, 0.32, 1
-    # Global speed: 3-4 is the "sweet spot" for igpu
-    animation = global, 1, 3, direct
-    # The 'Niri' Scroll: MUST be enabled for the scrolling layout
-    # Use 'slide' to see the windows move across the 'tape'
-    animation = workspaces, 1, 4, direct, slide
-    # Fast window spawns
-    animation = windows, 1, 3, quick, popin 90%
-    animation = windowsOut, 1, 2, quick, popin 90%
-    # Fades: Keep these very fast (under 200ms) to avoid 'ghosting'
-    animation = fadeIn, 1, 2, quick
-    animation = fadeOut, 1, 2, quick
+    bezier = quick, 0.05, 0.9, 0.1, 1.05
+    bezier = direct, 0.2, 1, 0.3, 1
+    animation = global, 1, 2.5, direct
+    animation = windows, 1, 2, quick, popin 95%
+    animation = windowsIn, 1, 2, quick, popin 95%
+    animation = windowsOut, 1, 1.5, direct, popin 95%
+    animation = workspaces, 1, 2, direct, fade
+    animation = layers, 1, 2, quick, fade
+    animation = layersIn, 1, 2, quick, fade
+    animation = layersOut, 1, 1.5, direct, fade
+    animation = fadeIn, 1, 1.5, direct
+    animation = fadeOut, 1, 1.5, direct
+    animation = border, 1, 1, direct
 }
 
 ```
