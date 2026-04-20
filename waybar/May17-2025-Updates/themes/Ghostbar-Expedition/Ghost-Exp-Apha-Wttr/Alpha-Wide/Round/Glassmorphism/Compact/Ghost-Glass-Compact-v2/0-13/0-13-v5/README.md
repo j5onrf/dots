@@ -42,7 +42,7 @@ bind = ALT, comma, exec, hyprctl dispatch layoutmsg colresize all 0.5
 # --- Screenshots
 bind = , Print, exec, ~/.config/hypr/scripts/fast_screenshot.sh
 bind = SHIFT, Print, exec, ~/.config/hypr/scripts/fast_screenshot_full.sh
-bind = CTRL, Print, exec, grimblast --freeze copysave area ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png
+bind = CTRL, Print, exec, sh -c 'grimblast --freeze copysave area ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png'
 
 ```
 >
