@@ -40,9 +40,14 @@ binde = $mainMod CTRL, D, resizeactive, 40 0
 bind = ALT, comma, exec, hyprctl dispatch layoutmsg colresize all 0.5
 
 # --- Screenshots
-bind = , Print, exec, ~/.config/hypr/scripts/fast_screenshot.sh
-bind = SHIFT, Print, exec, ~/.config/hypr/scripts/fast_screenshot_full.sh
-bind = CTRL, Print, exec, sh -c 'grimblast --freeze copysave area ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png'
+env = XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots
+
+# Quick Area Select (Standard)
+bind = , Print, exec, grimblast --notify copysave area
+# Full Screen (Standard)
+bind = SHIFT, Print, exec, grimblast --notify copysave screen
+# Frozen Area Select (Best for Video/Menus)
+bind = CTRL, Print, exec, grimblast --notify --freeze copysave area
 
 ```
 >
