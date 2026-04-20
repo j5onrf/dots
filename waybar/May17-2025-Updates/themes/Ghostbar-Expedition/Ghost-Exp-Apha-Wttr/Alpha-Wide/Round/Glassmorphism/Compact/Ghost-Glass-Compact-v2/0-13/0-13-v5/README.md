@@ -32,7 +32,7 @@ bind = $mainMod SHIFT, S, layoutmsg, swapcol r
 bind = $mainMod SHIFT, A, movefocus, l
 bind = $mainMod SHIFT, D, movefocus, r
 
-# Smoothly resize with Super + Alt + Arrow Keys
+# Smoothly resize with Super + Alt + a-d
 binde = $mainMod CTRL, a,  resizeactive, -40 0
 binde = $mainMod CTRL, d, resizeactive, 40 0
 
