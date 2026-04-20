@@ -33,8 +33,8 @@ bind = $mainMod SHIFT, A, movefocus, l
 bind = $mainMod SHIFT, D, movefocus, r
 
 # Smoothly resize with Super + CTRL + (WASD)
-binde = $mainMod CTRL, a,  resizeactive, -40 0
-binde = $mainMod CTRL, d, resizeactive, 40 0
+binde = $mainMod CTRL, A,  resizeactive, -40 0
+binde = $mainMod CTRL, D, resizeactive, 40 0
 
 # Bind Alt + Comma to reset the Master layout columns to 50%
 bind = ALT, comma, exec, hyprctl dispatch layoutmsg colresize all 0.5
