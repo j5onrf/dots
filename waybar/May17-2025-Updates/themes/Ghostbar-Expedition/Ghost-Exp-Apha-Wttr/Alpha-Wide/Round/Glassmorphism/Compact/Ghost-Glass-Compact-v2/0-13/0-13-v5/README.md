@@ -32,6 +32,13 @@ bind = $mainMod SHIFT, S, layoutmsg, swapcol r
 bind = $mainMod SHIFT, A, movefocus, l
 bind = $mainMod SHIFT, D, movefocus, r
 
+# Smoothly resize with Super + Alt + Arrow Keys
+binde = $mainMod CTRL, a,  resizeactive, -40 0
+binde = $mainMod CTRL, d, resizeactive, 40 0
+
+# Bind Alt + Comma to reset the Master layout columns to 50%
+bind = ALT, comma, exec, hyprctl dispatch layoutmsg colresize all 0.5
+
 # --- Screenshots
 bind = , Print, exec, ~/.config/hypr/scripts/fast_screenshot.sh
 bind = SHIFT, Print, exec, ~/.config/hypr/scripts/fast_screenshot_full.sh
@@ -49,7 +56,6 @@ bind = CTRL, Print, exec, grimblast --freeze copysave area ~/Pictures/Screenshot
 alias c='clear'
 alias ff='fastfetch'
 alias hr='hyprctl reload'
-alias hrr='hyprctl dispatch layoutmsg colresize all 0.5' # Reset layout
 alias hc='hyprctl clients'
 
 ## --- Package Management ---
