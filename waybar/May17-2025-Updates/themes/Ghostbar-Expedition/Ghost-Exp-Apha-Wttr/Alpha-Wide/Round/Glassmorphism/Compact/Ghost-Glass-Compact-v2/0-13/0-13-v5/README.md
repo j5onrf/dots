@@ -139,7 +139,11 @@ animations {
 # -every window defaults to exactly half, creating a perfect, consistent split.
 
 general {
+    # Sets the active window layout to 'scrolling' (film-strip style)
     layout = scrolling
+
+    # --- Border Dragging Control ---
+    # resize_on_border = false
 }
 
 scrolling {
