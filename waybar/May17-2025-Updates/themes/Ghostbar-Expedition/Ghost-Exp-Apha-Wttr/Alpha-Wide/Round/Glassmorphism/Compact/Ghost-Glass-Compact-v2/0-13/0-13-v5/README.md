@@ -33,7 +33,7 @@ bind = $mainMod SHIFT, A, movefocus, l
 bind = $mainMod SHIFT, D, movefocus, r
 
 # Smoothly resize with Super + CTRL + (WASD)
-binde = $mainMod CTRL, A,  resizeactive, -40 0
+binde = $mainMod CTRL, A, resizeactive, -40 0
 binde = $mainMod CTRL, D, resizeactive, 40 0
 
 # Bind Alt + Comma to reset the Master layout columns to 50%
