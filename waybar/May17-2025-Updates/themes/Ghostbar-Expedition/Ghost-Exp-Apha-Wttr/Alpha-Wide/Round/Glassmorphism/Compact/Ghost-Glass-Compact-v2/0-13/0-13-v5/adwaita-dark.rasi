@@ -1,0 +1,90 @@
+/**
+ * ROFI Adwaita-Dark Theme
+ * A solid, modern GNOME-style window switcher
+ */
+
+configuration {
+    modi:                        "window";
+    show-icons:                  true;
+    display-window:              "Windows";
+    window-format:               "{c}  {t}";
+    font:                        "JetBrainsMono 10";
+    me-accept-entry:             "MousePrimary";
+    kb-cancel:                   "Escape,MousePrimary";
+}
+
+/* Adwaita Dark Colors */
+* {
+    bg0:    #1e1e1e;
+    bg1:    #242424;
+    bg2:    #2d2d2d;
+    bg3:    #353535;
+    fg0:    #ffffff;
+    fg1:    #dedede;
+    accent: #ffffff; /* GNOME Blue #3584e4 */
+    border: #303030;
+}
+
+window {
+    width:                        600px;
+    border:                       1px solid;
+    border-color:                 @border;
+    border-radius:                12px;
+    background-color:             @bg1;
+    padding:                      0px;
+}
+
+mainbox {
+    spacing:                      0px;
+    background-color:             transparent;
+    children:                     [ "inputbar", "listview" ];
+}
+
+inputbar {
+    padding:                      12px;
+    background-color:             @bg0;
+    border:                       0px 0px 1px 0px;
+    border-color:                 @border;
+    children:                     [ "entry" ];
+}
+
+entry {
+    placeholder:                  "Search windows...";
+    placeholder-color:            #777777;
+    text-color:                   @fg0;
+    background-color:             transparent;
+}
+
+listview {
+    columns:                      1;
+    lines:                        8;
+    cycle:                        true;
+    padding:                      8px;
+    background-color:             transparent;
+}
+
+element {
+    padding:                      10px;
+    border-radius:                8px;
+    background-color:             transparent;
+    text-color:                   @fg1;
+    spacing:                      12px;
+}
+
+element selected {
+    background-color:             @bg3;
+    text-color:                   @fg0;
+    border:                       1px solid;
+    border-color:                 @accent;
+}
+
+element-icon {
+    size:                         32px;
+    background-color:             transparent;
+}
+
+element-text {
+    vertical-align:               0.5;
+    background-color:             transparent;
+    text-color:                   inherit;
+}
