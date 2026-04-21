@@ -89,11 +89,11 @@ alias uk='sudo ~/.config/scripts/kernel-update-toggle.sh'
 
 # File Pickers (GTK and KDE)
 windowrule = float on, match:class ^(xdg-desktop-portal-gtk)$
-windowrule = size 800 500, match:class ^(xdg-desktop-portal-gtk)$
+windowrule = size 875 600, match:class ^(xdg-desktop-portal-gtk)$
 windowrule = center on, match:class ^(xdg-desktop-portal-gtk)$
 
 windowrule = float on, match:class ^(org.gnome.FileRoller)$
-windowrule = size 800 500, match:class ^(org.gnome.FileRoller)$
+windowrule = size 875 600, match:class ^(org.gnome.FileRoller)$
 windowrule = center on, match:class ^(org.gnome.FileRoller)$
 
 # --- Specific Title Matches ---
@@ -105,7 +105,7 @@ windowrule = float on, match:title ^(File Upload)$
 # --- Kitty Float ---
 windowrule = match:title ^(floating_kitty)$, float on
 windowrule = match:title ^(floating_kitty)$, center on
-windowrule = match:title ^(floating_kitty)$, size 800 500
+windowrule = match:title ^(floating_kitty)$, size 875 600
 
 ```
 
