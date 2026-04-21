@@ -25,6 +25,9 @@ bind = $mainMod, V, exec, ~/.config/noctalia/toggle.sh
 # Open ML4W Settings TUI with Super + Ctrl + S
 bind = $mainMod CTRL, S, exec, kitty --class ml4w-tui -e ml4w-dotfiles-settings com.ml4w.dotfiles
 
+# Window Switcher (window mode)
+bind = $mainMod, Tab, exec, rofi -show window -theme ~/.config/rofi/adwaita-dark.rasi
+
 # Swaps the current window with the one to its right in the strip
 bind = $mainMod SHIFT, S, layoutmsg, swapcol r
 
