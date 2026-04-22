@@ -118,6 +118,11 @@ windowrule = match:title ^(floating_kitty)$, size 875 600
 ```bash
 
 animations {
+    enabled = true
+    animation = global, 1, 0.5, default
+}
+
+animations {
     enabled = yes
     bezier = quick, 0.05, 0.9, 0.1, 1.05
     bezier = direct, 0.2, 1, 0.3, 1
