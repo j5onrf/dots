@@ -42,16 +42,12 @@ binde = $mainMod CTRL, D, resizeactive, 100 0
 # Bind Alt + Comma to reset the Master layout columns to 50%
 bind = ALT, comma, exec, hyprctl dispatch layoutmsg colresize all 0.5
 
-# --- Screenshots
+# --- Screenshots ---
 env = XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots
-
-# Quick Area Select (Standard)
-bind = , Print, exec, grimblast --notify copysave area
-# Full Screen (Standard)
+bind = , Print, exec, pkill slurp; grimblast --notify copysave area
 bind = SHIFT, Print, exec, grimblast --notify copysave screen
-# Frozen Area Select (Best for Video/Menus)
-bind = CTRL, Print, exec, grimblast --notify --freeze copysave area
-
+bind = CTRL, Print, exec, pkill slurp; grimblast --notify --freeze copysave area
+bind = SUPER, Print, exec, hyprctl clients | grep -q "class: org.gnome.Nautilus" && hyprctl dispatch focuswindow class:org.gnome.Nautilus || uwsm app -- nautilus $XDG_SCREENSHOTS_DIR
 ```
 >
 >
