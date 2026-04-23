@@ -42,10 +42,10 @@ binde = SUPER CTRL, W, resizeactive, 0 -100
 binde = SUPER CTRL, A, resizeactive, -100 0
 binde = SUPER CTRL, S, resizeactive, 0 100
 binde = SUPER CTRL, D, resizeactive, 100 0
-bind = SUPER ALT, W, moveactive, 0 -100
-bind = SUPER ALT, Z, moveactive, 0 100
-bind = SUPER ALT, A, moveactive, -100 0
-bind = SUPER ALT, D, moveactive, 100 0
+binde = SUPER ALT, W, moveactive, 0 -100
+binde = SUPER ALT, Z, moveactive, 0 100
+binde = SUPER ALT, A, moveactive, -100 0
+binde = SUPER ALT, D, moveactive, 100 0
 
 # --- Screenshots ---
 # env = XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots
