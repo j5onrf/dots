@@ -20,7 +20,6 @@ bind = SUPER, F, exec, hyprctl clients | grep -q "class: org.gnome.Nautilus" && 
 
 # --- Utilities & Clipboard ---
 bind = ALT, C, exec, walker -m clipboard
-bind = SUPER, H, exec, ~/.config/hypr/scripts/hyprsunset.sh toggle
 bind = ALT, R, exec, ~/.config/hypr/conf/scripts/toggle_scale.sh
 bind = SUPER, H, exec, omarchy-toggle-nightlight
 
