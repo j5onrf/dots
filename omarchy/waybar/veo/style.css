@@ -1,0 +1,73 @@
+/* Veo Version: 0.1.2 April 23, 2026 */
+@import "/home/j5/.config/omarchy/current/theme/waybar.css";
+
+* {
+    background-color: @background;
+    color: @foreground;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 12px;
+}
+
+.modules-left, 
+.modules-center, 
+.modules-right {
+    margin: 0;
+    padding: 0;
+}
+
+#workspaces button {
+    background: transparent;
+    padding: 4px 0;
+    margin: 0;
+}
+
+#workspaces button.empty {
+    opacity: 0.5;
+}
+
+#cpu,
+#pulseaudio,
+#network,
+#bluetooth,
+#tray,
+#custom-omarchy,
+#custom-update,
+#clock {
+    margin: 0;
+    padding: 4px 0;
+}
+
+#custom-omarchy {
+    margin: 5px 0;
+}
+
+#clock {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+#custom-update {
+    font-size: 10px;
+}
+
+#network {
+    padding-right: 4px; 
+}
+
+#tray {
+    min-width: 26px;
+    padding: 0;
+    margin: 0;
+}
+
+tooltip {
+    padding: 2px;
+}
+
+.hidden {
+    opacity: 0;
+}
