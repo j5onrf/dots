@@ -90,3 +90,42 @@ windowrule = float on, match:title ^(Open File)$
 windowrule = float on, match:title ^(Save As)$
 windowrule = float on, match:title ^(File Upload)$
 ```
+
+
+`looknfeel.conf `
+```bash
+wip
+
+# --- Personal Look'n'Feel ---
+
+general {
+    gaps_in = 0
+    gaps_out = 0
+    border_size = 0
+    layout = scrolling
+}
+
+decoration {
+    active_opacity = 2
+    inactive_opacity = 2
+    fullscreen_opacity = 2
+
+    blur {
+        enabled = false
+    }
+
+    shadow {
+        enabled = false
+    }
+}
+
+animations {
+    enabled = true
+    animation = global, 1, 0.5, default
+}
+
+scrolling {
+    column_width = 0.5
+    focus_fit_method = 1
+}
+```
