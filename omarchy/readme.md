@@ -79,18 +79,6 @@ bind = SUPER SHIFT, 8, movetoworkspace, 8
 bind = SUPER SHIFT, 9, movetoworkspace, 9
 bind = SUPER SHIFT, 0, movetoworkspace, 10
 
-# Move ALL Windows to Workspace (1-10)
-bind = SUPER CTRL, 1, exec, $HYPRSCRIPTS/moveTo.sh 1
-bind = SUPER CTRL, 2, exec, $HYPRSCRIPTS/moveTo.sh 2
-bind = SUPER CTRL, 3, exec, $HYPRSCRIPTS/moveTo.sh 3
-bind = SUPER CTRL, 4, exec, $HYPRSCRIPTS/moveTo.sh 4
-bind = SUPER CTRL, 5, exec, $HYPRSCRIPTS/moveTo.sh 5
-bind = SUPER CTRL, 6, exec, $HYPRSCRIPTS/moveTo.sh 6
-bind = SUPER CTRL, 7, exec, $HYPRSCRIPTS/moveTo.sh 7
-bind = SUPER CTRL, 8, exec, $HYPRSCRIPTS/moveTo.sh 8
-bind = SUPER CTRL, 9, exec, $HYPRSCRIPTS/moveTo.sh 9
-bind = SUPER CTRL, 0, exec, $HYPRSCRIPTS/moveTo.sh 10
-
 # --- Window Rules ---
 windowrule = match:title ^(floating_kitty)$, float on
 windowrule = match:title ^(floating_kitty)$, center on
