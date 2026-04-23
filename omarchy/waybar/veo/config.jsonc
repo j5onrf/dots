@@ -121,7 +121,7 @@
     },
     "modules": [
       "custom/expand-icon",
-      "cpu",
+      "network",
       "tray"
     ]
   },
