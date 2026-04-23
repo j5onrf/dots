@@ -14,7 +14,6 @@ bind = SUPER, A, exec, alacritty
 bind = SUPER, R, exec, omarchy-menu
 bind = SUPER ALT, S, exec, kitty --title floating_kitty
 bind = SUPER SHIFT, F, exec, uwsm-app -- nautilus --new-window
-bind = SUPER SHIFT ALT, F, exec, uwsm-app -- nautilus --new-window "$(omarchy-cmd-terminal-cwd)"
 bind = SUPER SHIFT, N, exec, omarchy-launch-editor
 bind = SUPER, B, exec, hyprctl clients | grep -q "class: brave-origin-beta" && hyprctl dispatch focuswindow class:brave-origin-beta || uwsm app brave-origin-beta.desktop
 bind = SUPER, F, exec, hyprctl clients | grep -q "class: org.gnome.Nautilus" && hyprctl dispatch focuswindow class:org.gnome.Nautilus || uwsm app -- nautilus --new-window
