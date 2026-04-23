@@ -1,4 +1,4 @@
-/* Veo Version: 0.1.2 April 23, 2026 */
+/* Veo Version: 0.1.3 April 23, 2026 */
 {
   "reload_style_on_change": true,
   "layer": "top",
@@ -54,7 +54,15 @@
     "on-click": "omarchy-menu",
     "on-click-right": "xdg-terminal-exec",
     "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
-  }, 
+  },
+   "custom/update": {
+    "format": "",
+    "exec": "omarchy-update-available",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+    "tooltip-format": "Omarchy update available",
+    "signal": 7,
+    "interval": 21600
+  },
 
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
@@ -121,7 +129,7 @@
     },
     "modules": [
       "custom/expand-icon",
-      "network",
+      "custom/update",
       "tray"
     ]
   },
