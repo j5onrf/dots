@@ -28,8 +28,8 @@ bind = SUPER, V, exec, ~/.config/hypr/Scripts/veo-toggle.sh
 bind = SUPER, X, exec, ~/.config/hypr/Scripts/w-toggle.sh
 # bind = SUPER, C, exec, ~/.config/quickshell/caelestia/c-toggle.sh
 # bind = SUPER, V, exec, ~/.config/noctalia/n-toggle.sh
-# bind = SUPER, B, exec, ~/.config/DankMaterialShell/toggle.sh
-# bind = SUPER, Z, exec, ~/.config/quickshell/shell-fusion/toggle.sh
+# bind = SUPER, B, exec, ~/.config/DankMaterialShell/d-toggle.sh
+# bind = SUPER, Z, exec, ~/.config/quickshell/shell-fusion/f-toggle.sh
 
 # --- Navigation & Scrolling Layout ---
 bind = SUPER SHIFT, A, movefocus, l
