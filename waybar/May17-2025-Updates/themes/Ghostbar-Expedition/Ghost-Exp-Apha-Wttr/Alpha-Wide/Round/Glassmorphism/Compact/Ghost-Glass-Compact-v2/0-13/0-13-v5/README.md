@@ -71,7 +71,7 @@ alias p='paru'
 alias x='paru -Syu'                        # Full upgrade
 alias pr='paru -Rns'                       # Remove + Configs + Unneeded deps
 alias xclean='paru -Rns $(paru -Qtdq)'     # Orphan sweep
-alias um='sudo reflector --country "United States" --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist'
+alias um='sudo reflector --country "United States" --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
 
 ## --- Scripts & Toggles ---
 alias uk='sudo ~/.config/scripts/kernel-update-toggle.sh'
