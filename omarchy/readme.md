@@ -1,5 +1,5 @@
-wip testing veo = vertical omarchy
-<img width="3440" height="1440" alt="20260423_173111" src="https://github.com/user-attachments/assets/09f2d1e9-08ff-4b6f-9831-01db2a0ff286" />
+veo = vertical omarchy
+<img alt="20260423_182531" src="https://github.com/user-attachments/assets/f6b4f758-96b1-4442-b4ec-74b376402b99" />
 
 `bindings.conf`
 ```bash
