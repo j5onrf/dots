@@ -35,7 +35,7 @@ bind = SUPER, X, exec, ~/.config/hypr/Scripts/w-toggle.sh
 bind = SUPER SHIFT, A, movefocus, l
 bind = SUPER SHIFT, D, movefocus, r
 bind = SUPER SHIFT, S, layoutmsg, swapcol r
-bind = ALT, comma, exec, hyprctl dispatch layoutmsg colresize all 0.5
+# bind = ALT, comma, exec, hyprctl dispatch layoutmsg colresize all 0.5
 
 # --- Resizing (WASD) ---
 binde = SUPER CTRL, A, resizeactive, -100 0
