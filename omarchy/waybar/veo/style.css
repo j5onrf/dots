@@ -1,5 +1,5 @@
-/* Veo Version: 0.1.2 April 23, 2026 */
-@import "/home/j5/.config/omarchy/current/theme/waybar.css";
+/* Veo Version: 0.1.3 April 23, 2026 */
+@import "../../omarchy/current/theme/waybar.css";
 
 * {
     background-color: @background;
