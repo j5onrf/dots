@@ -167,14 +167,5 @@ alias uk='sudo /home/j5/.config/hypr/Scripts/kernel-update-toggle.sh'
 
 # Basic Management
 alias sl='sudo snapper list'
-alias sd='sudo snapper delete'
 
-# Comparison (The most useful one)
-# Usage: sc [pre_number] [post_number]
-alias sc='sudo snapper status'
-alias sdiff='sudo snapper diff'
-
-# Cleaning / Manual Snapshots
-alias s-shot='sudo snapper create --description "Manual Snapshot"'
-alias s-clean='sudo snapper cleanup number'
 ```
