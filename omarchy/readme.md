@@ -38,6 +38,7 @@ bind = SUPER SHIFT, A, movefocus, l
 bind = SUPER SHIFT, D, movefocus, r
 bind = SUPER SHIFT, S, layoutmsg, swapcol r
 # bind = ALT, comma, exec, hyprctl dispatch layoutmsg colresize all 0.5
+bind = SUPER, Tab, exec, kitty -o font_size=16 --title floating_kitty -e $HOME/.config/hypr/Scripts/window-selector.sh
 
 # --- Resizing (WASD) ---
 binde = SUPER CTRL, W, resizeactive, 0 -100
