@@ -24,7 +24,7 @@ bind = SUPER, R, exec, omarchy-menu
 bind = SUPER ALT, S, exec, kitty --title floating_kitty
 bind = SUPER SHIFT, F, exec, uwsm-app -- nautilus --new-window
 bind = SUPER SHIFT, N, exec, omarchy-launch-editor
-bind = SUPER, B, exec, hyprctl clients | grep -q "class: brave-origin-beta" && hyprctl dispatch focuswindow class:brave-origin-beta || uwsm app brave-origin-beta.desktop
+bind = SUPER, B, exec, hyprctl clients | grep -q "class: brave-origin-beta" && hyprctl dispatch focuswindow class:brave-origin-beta || uwsm app -- brave-origin-beta.desktop
 bind = SUPER, F, exec, hyprctl clients | grep -q "class: org.gnome.Nautilus" && hyprctl dispatch focuswindow class:org.gnome.Nautilus || uwsm app -- nautilus --new-window
 
 # --- Utilities & Clipboard ---
@@ -159,8 +159,6 @@ alias hc='hyprctl clients'
 alias no='yay -S --noconfirm --provides=false'
 
 ## --- Backups ---
-# Full Btrfs Snapshot (Home)
-alias bh='mountpoint -q /run/media/j5/SSD_BACKUPS || udisksctl mount -b /dev/sda1; ~/.config/hypr/Scripts/home-backup.sh'
 # Lightweight Config Sync
 alias bc='mountpoint -q /run/media/j5/SSD_BACKUPS || udisksctl mount -b /dev/sda1; ~/.config/hypr/Scripts/config-backup.sh'
 
