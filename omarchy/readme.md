@@ -8,7 +8,14 @@
 wip
 
 # --- Core System ---
-bind = SUPER, Q, killactive
+# bind = SUPER, Q, killactive
+# Press SUPER+Q, then tap Q to kill. Any other key resets.
+bind = SUPER, Q, submap, kill
+
+submap = kill
+    bind = , Q, killactive
+    bind = , catchall, submap, reset
+submap = reset
 
 # --- Applications ---
 bind = SUPER, S, exec, kitty
