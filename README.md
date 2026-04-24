@@ -326,7 +326,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 # WayBar
 
 (2026-April-26) [Veo | Vertical Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy) 
-<img alt="veo20260423_191902" src="https://github.com/user-attachments/assets/7a0c5476-6c3b-47c6-b562-387d8c2a2e7f" />
+<img alt="veo20260423_191902" src="https://github.com/user-attachments/assets/f6c5c73a-afee-48d2-b495-bc09493cc9fe" />
 
 
 `Omarchy v3.5.1`
