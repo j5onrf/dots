@@ -137,3 +137,44 @@ scrolling {
     focus_fit_method = 1
 }
 ```
+
+`.bashrc`
+```bash
+wip
+
+## --- System & UI ---
+alias c='clear'
+alias ff='fastfetch'
+alias hr='hyprctl reload'
+alias hrr='hyprctl dispatch layoutmsg colresize all 0.5' 
+alias hc='hyprctl clients'
+alias no='yay -S --noconfirm --provides=false'
+
+## --- Backups ---
+# Full Btrfs Snapshot (Home)
+alias bh='mountpoint -q /run/media/j5/SSD_BACKUPS || udisksctl mount -b /dev/sda1; ~/.config/hypr/Scripts/home-backup.sh'
+# Lightweight Config Sync
+alias bc='mountpoint -q /run/media/j5/SSD_BACKUPS || udisksctl mount -b /dev/sda1; ~/.config/hypr/Scripts/config-backup.sh'
+
+## --- Package Management ---
+alias y='yay'
+alias x='yay -Syu'
+alias xx='sudo yay -Syu --hookdir /dev/null'
+alias yr='yay -Rns'
+alias xclean='bash ~/.config/hypr/Scripts/check-orphans.sh'
+alias um='sudo reflector --country "United States" --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
+alias uk='sudo /home/j5/.config/hypr/Scripts/kernel-update-toggle.sh'
+
+# Basic Management
+alias sl='sudo snapper list'
+alias sd='sudo snapper delete'
+
+# Comparison (The most useful one)
+# Usage: sc [pre_number] [post_number]
+alias sc='sudo snapper status'
+alias sdiff='sudo snapper diff'
+
+# Cleaning / Manual Snapshots
+alias s-shot='sudo snapper create --description "Manual Snapshot"'
+alias s-clean='sudo snapper cleanup number'
+```
