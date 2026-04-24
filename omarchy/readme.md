@@ -1,4 +1,6 @@
-veo = vertical omarchy
+# ⚡ Veo | Vertical Omarchy
+`Omarchy v3.6.0`
+
 <img alt="20260423_182531" src="https://github.com/user-attachments/assets/f6b4f758-96b1-4442-b4ec-74b376402b99" />
 
 `bindings.conf`
