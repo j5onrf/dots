@@ -122,9 +122,9 @@ general {
 }
 
 decoration {
-    active_opacity = 2
-    inactive_opacity = 2
-    fullscreen_opacity = 2
+    active_opacity = 1
+    inactive_opacity = 1
+    fullscreen_opacity = 1
 
     blur {
         enabled = false
