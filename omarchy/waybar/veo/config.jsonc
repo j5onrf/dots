@@ -59,14 +59,10 @@
     "interval": 10,
     "spacing": 1,
     "format": "{icon}",
-    "format-wifi": "{icon}",
     "format-ethernet": " 󰀂",
     "format-disconnected": "󰤮",
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "tooltip-format-wifi": "{essid} ({frequency} GHz)\nIP: {ipaddr}",
-    "tooltip-format-ethernet": "Ethernet\nIP: {ipaddr}",
+    "tooltip-format-ethernet": "Speed: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "omarchy-launch-wifi"
   },
 
   "pulseaudio": {
@@ -74,8 +70,6 @@
     "format": "{icon}",
     "format-muted": "",
     "format-icons": {
-      "headphone": "",
-      "headset": "",
       "default": ["", "", ""]
     },
     "tooltip-format": "Volume: {volume}%",
@@ -92,7 +86,7 @@
   },
 
   "custom/update": {
-    "interval": 21600,
+    "interval": 86400,
     "signal": 7,
     "format": "",
     "tooltip-format": "Omarchy update available",
@@ -101,7 +95,8 @@
   },
 
   "custom/expand-icon": {
-    "format": "󰅃" 
+    "format": "󰅃",
+    "tooltip": false
   },
 
   // --- 5. Groups & System Tray --- //
@@ -113,9 +108,17 @@
     },
     "modules":[
       "custom/expand-icon",
+      "custom/test-tray",
       "custom/update",
       "tray"
     ]
+  },
+  
+// --- 6. Custom Modules (remove after testing) --- //
+  "custom/test-tray": {
+    "format": "󰙨", // Lab flask icon
+    "tooltip": "This is a test module to verify tray expansion.",
+    "on-click": "notify-send 'Tray Test' 'Drawer is working!'"
   },
 
   "tray": {

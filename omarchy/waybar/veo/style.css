@@ -1,4 +1,4 @@
-/* Veo Version: 0.1.4 April 25, 2026 - Optimized */
+/* Veo Version: 0.1.5 April 26, 2026 - Optimized */
 @import "../../omarchy/current/theme/waybar.css";
 
 * {
@@ -22,7 +22,7 @@ window#waybar {
 }
 
 #workspaces button {
-    background: transparent;
+    all: initial;
     color: @foreground;
     padding: 4px 0;
     margin: 0;
@@ -67,8 +67,6 @@ window#waybar {
 
 tooltip {
     background-color: @background;
-    color: @foreground;
-    border: 1px solid @foreground;
     padding: 2px;
 }
 
