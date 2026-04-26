@@ -64,17 +64,17 @@
     "tooltip-format-disconnected": "Disconnected",
   },
 
-  "pulseaudio": {
+"pulseaudio": {
     "scroll-step": 5,
     "format": "{icon}",
+    "tooltip": false,
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", ""]
+        "default": ["", "", ""]
     },
-    "tooltip-format": "Volume: {volume}%",
     "on-click": "pamixer -t",
     "on-click-right": "omarchy-launch-audio"
-  },
+},
 
   // --- 4. Custom Modules --- //
   "custom/omarchy": {

@@ -67,6 +67,8 @@ window#waybar {
 
 tooltip {
     background-color: @background;
+    color: @foreground;
+    opacity: 1.0;
     padding: 2px;
 }
 
