@@ -1,4 +1,4 @@
-/* Veo Version: 0.1.6 04.26.26 - Optimized */
+/* Veo Version: 0.2.0 04.26.26 - Optimized */
 @import "../../omarchy/current/theme/waybar.css";
 
 * {
@@ -24,7 +24,6 @@ window#waybar {
     padding: 4px 0;
     margin: 0;
 }
-
 #workspaces button.empty {
     opacity: 0.5;
 }

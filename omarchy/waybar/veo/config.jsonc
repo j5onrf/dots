@@ -1,13 +1,11 @@
-/* Veo Version: 0.1.6 04.26.26 - Optimized */
+/* Veo Version: 0.2.0 04.26.26 - Optimized */
 {
-  // --- 1. Global Bar Settings --- //
   "layer": "top",
   "position": "left",
   "width": 26,
   "spacing": 0,
   "reload_style_on_change": true,
 
-  // --- 2. Module Layout --- //
   "modules-left":[
     "custom/omarchy",
     "hyprland/workspaces"
@@ -21,7 +19,6 @@
     "clock"
   ],
 
-  // --- 3. Built-in Modules --- //
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{icon}",
@@ -75,7 +72,6 @@
     "on-click-right": "omarchy-launch-audio"
 },
 
-  // --- 4. Custom Modules --- //
   "custom/omarchy": {
     "format": "<span font='omarchy'>\ue900</span>",
     "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space",
@@ -97,7 +93,6 @@
     "tooltip": false
   },
 
-  // --- 5. Groups & System Tray --- //
   "group/tray-expander": {
     "orientation": "inherit",
     "drawer": {
@@ -106,20 +101,20 @@
     },
     "modules":[
       "custom/expand-icon",
-      "custom/test-tray", // --- Custom Module (remove after testing) --- //
+      "custom/test-tray", // --- (remove after testing) --- //
       "custom/update",
       "tray"
     ]
   },
   
-// --- 6. Custom Modules (remove after testing) --- //
+// --- (remove after testing) --- //
 "custom/test-tray": {
     "format": " ",
     "tooltip": true,
     "tooltip-format": "This is a test module to verify tray expansion.",
     "on-click": "notify-send 'Tray Test' 'Drawer is working!'"
   },
-
+  
   "tray": {
     "icon-size": 16,
     "spacing": 10
