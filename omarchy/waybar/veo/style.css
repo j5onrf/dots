@@ -33,8 +33,7 @@ window#waybar {
 }
 
 #cpu,
-#pulseaudio,
-#bluetooth {
+#pulseaudio {
     margin: 0;
     padding: 4px 0;
 }
