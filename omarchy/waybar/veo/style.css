@@ -31,7 +31,6 @@ window#waybar {
 #cpu, 
 #pulseaudio, 
 #network, 
-#custom-expand-icon,
 #custom-update, 
 #custom-test-tray { /* (REMOVE AFTER TESTING) */
     margin: 0;
