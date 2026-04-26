@@ -9,13 +9,6 @@ wip
 
 # --- Core System ---
 bind = SUPER, Q, killactive
-# Press SUPER+Q, then tap Q to kill. Any other key resets.
-# bind = SUPER, Q, submap, kill
-
-# submap = kill
-#     bind = , Q, killactive
-#     bind = , catchall, submap, reset
-# submap = reset
 
 # --- Applications ---
 bind = SUPER, S, exec, kitty
@@ -32,13 +25,13 @@ bind = ALT, C, exec, walker -m clipboard
 bind = ALT, R, exec, ~/.config/hypr/Scripts/toggle_scale.sh
 bind = SUPER, H, exec, omarchy-toggle-nightlight
 
-# --- Shell & UI Toggles ---
-bind = SUPER, V, exec, ~/.config/hypr/Scripts/veo-toggle.sh
-bind = SUPER, X, exec, ~/.config/hypr/Scripts/w-toggle.sh
-# bind = SUPER, C, exec, ~/.config/quickshell/caelestia/c-toggle.sh
-# bind = SUPER, V, exec, ~/.config/noctalia/n-toggle.sh
-# bind = SUPER, B, exec, ~/.config/DankMaterialShell/d-toggle.sh
-# bind = SUPER, Z, exec, ~/.config/quickshell/shell-fusion/f-toggle.sh
+# --- Shell & UI Toggles (Physical Switchboard) ---
+bind = , XF86Tools,   exec, ~/.config/hypr/Scripts/w-toggle.sh      # G1: Waybar / W-Shell
+bind = , XF86Launch6, exec, ~/.config/hypr/Scripts/veo-toggle.sh    # G2: Veo UI
+bind = , XF86Launch5, exec, ~/.config/hypr/Scripts/ww-toggle.sh     # G3: Veo reload
+bind = , XF86Launch7, exec, ~/.config/hypr/Scripts/c-toggle.sh      # G4: Caelestia
+bind = , XF86Launch8, exec, ~/.config/hypr/Scripts/n-toggle.sh      # G5: Noctalia
+bind = , XF86Launch9, exec, ~/.config/hypr/Scripts/d-toggle.sh      # G6: DankMaterialShell
 
 # --- Navigation & Scrolling Layout ---
 bind = SUPER SHIFT, A, movefocus, l
