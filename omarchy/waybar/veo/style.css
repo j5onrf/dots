@@ -33,13 +33,13 @@ window#waybar {
 #network, 
 #custom-expand-icon,
 #custom-update, 
-#custom-test-tray { /* #custom-test-tray: REMOVE AFTER TESTING */
+#custom-test-tray { /* (REMOVE AFTER TESTING) */
     margin: 0;
     padding: 4px 0;
 }
 
 #custom-update, 
-#custom-test-tray { /* #custom-test-tray: REMOVE AFTER TESTING */
+#custom-test-tray { /* (REMOVE AFTER TESTING) */
     font-size: 10px;
 }
 
