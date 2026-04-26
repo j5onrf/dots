@@ -135,7 +135,19 @@ decoration {
 
 animations {
     enabled = true
-    animation = global, 1, 0.5, default
+    bezier = quick, 0.05, 0.9, 0.1, 1.05
+    bezier = direct, 0.2, 1, 0.3, 1
+    animation = global, 1, 2.5, direct
+    animation = windows, 1, 2, quick, popin 95%
+    animation = windowsIn, 1, 2, quick, popin 95%
+    animation = windowsOut, 1, 1.5, direct, popin 95%
+    animation = workspaces, 1, 2, direct, fade
+    animation = layers, 1, 2, quick, fade
+    animation = layersIn, 1, 2, quick, fade
+    animation = layersOut, 1, 1.5, direct, fade
+    animation = fadeIn, 1, 1.5, direct
+    animation = fadeOut, 1, 1.5, direct
+    animation = border, 1, 1, direct
 }
 
 scrolling {
