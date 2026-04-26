@@ -18,7 +18,7 @@ else
 fi
 
 # 2. Apply the monitor scale
-hyprctl keyword monitor "$MONITOR, 3440x1440@120, auto, $NEW_SCALE"
+hyprctl keyword monitor "$MONITOR, 3440x1440@75, auto, $NEW_SCALE"
 
 # 3. Update the GTK files directly
 [ -f "$GTK3_FILE" ] && sed -i "s/^gtk-font-name=.*/gtk-font-name=$FONT_VAL/" "$GTK3_FILE"

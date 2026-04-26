@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Get current governor and clean up the output
+# We use grep -o to find the word exactly
+CURRENT=$(cpupower frequency-info -p | grep -o 'performance')
+
+if [ "$CURRENT" = "performance" ]; then
+    sudo cpupower frequency-set -g powersave
+    notify-send "Power Mode" "Switched to BALANCED" -u low -t 2000
+else
+    sudo cpupower frequency-set -g performance
+    notify-send "Power Mode" "Switched to PERFORMANCE" -u critical -t 2000
+fi
