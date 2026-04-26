@@ -1,4 +1,4 @@
-/* Veo Version: 0.1.5 04.26.26 - Optimized */
+/* Veo Version: 0.1.6 04.26.26 - Optimized */
 {
   // --- 1. Global Bar Settings --- //
   "layer": "top",
@@ -49,17 +49,16 @@
 
   "cpu": {
     "interval": 10,
-    "format": "󰍛",
+    "format": "󰍛 ",
     "on-click": "omarchy-launch-or-focus-tui btop",
     "on-click-right": "alacritty"
   },
 
   "network": {
     "interval": 10,
-    "spacing": 1,
     "format": "{icon}",
-    "format-ethernet": " 󰀂",
-    "format-disconnected": "󰤮",
+    "format-ethernet": "󰀂 ",
+    "format-disconnected": "󰤮 ",
     "tooltip-format-ethernet": "Speed: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
   },
@@ -68,9 +67,9 @@
     "scroll-step": 5,
     "format": "{icon}",
     "tooltip": false,
-    "format-muted": "",
+    "format-muted": " ",
     "format-icons": {
-        "default": ["", "", ""]
+        "default": [" ", " ", " "]
     },
     "on-click": "pamixer -t",
     "on-click-right": "omarchy-launch-audio"
@@ -87,7 +86,7 @@
   "custom/update": {
     "interval": 86400,
     "signal": 7,
-    "format": "",
+    "format": " ",
     "tooltip-format": "Omarchy update available",
     "exec": "omarchy-update-available",
     "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update"
@@ -100,10 +99,10 @@
 
   // --- 5. Groups & System Tray --- //
   "group/tray-expander": {
-    "orientation": "vertical",
+    "orientation": "inherit",
     "drawer": {
-      "transition-duration": 400,
-      "children-class": "tray-child"
+      "transition-duration": 350,
+      "children-class": "tray-group-item"
     },
     "modules":[
       "custom/expand-icon",
@@ -114,14 +113,15 @@
   },
   
 // --- 6. Custom Modules (remove after testing) --- //
-  "custom/test-tray": {
-    "format": "󰙨", // Lab flask icon
-    "tooltip": "This is a test module to verify tray expansion.",
+"custom/test-tray": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": "This is a test module to verify tray expansion.",
     "on-click": "notify-send 'Tray Test' 'Drawer is working!'"
   },
 
   "tray": {
-    "icon-size": 14,
-    "spacing": 8
+    "icon-size": 16,
+    "spacing": 10
   },
 }

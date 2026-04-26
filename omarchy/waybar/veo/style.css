@@ -1,6 +1,7 @@
-/* Veo Version: 0.1.5 04.26.26 - Optimized */
+/* Veo Version: 0.1.6 04.26.26 - Optimized */
 @import "../../omarchy/current/theme/waybar.css";
 
+/* --- Global Reset --- */
 * {
     border: none;
     border-radius: 0;
@@ -14,13 +15,13 @@ window#waybar {
     color: @foreground;
 }
 
-.modules-left, 
-.modules-center, 
-.modules-right {
+/* --- Layout --- */
+.modules-left, .modules-center, .modules-right {
     margin: 0;
     padding: 0;
 }
 
+/* --- Workspaces --- */
 #workspaces button {
     all: initial;
     color: @foreground;
@@ -32,21 +33,20 @@ window#waybar {
     opacity: 0.5;
 }
 
-#cpu,
-#pulseaudio {
+/* --- System & Custom Modules --- */
+#cpu, 
+#pulseaudio, 
+#network, 
+#custom-expand-icon,
+#custom-update, 
+#custom-test-tray { /* #custom-test-tray: REMOVE AFTER TESTING */
     margin: 0;
     padding: 4px 0;
 }
 
-#custom-update {
-    margin: 0;
-    padding: 4px 0;
+#custom-update, 
+#custom-test-tray { /* #custom-test-tray: REMOVE AFTER TESTING */
     font-size: 10px;
-}
-
-#network {
-    margin: 0;
-    padding: 4px 4px 4px 0; 
 }
 
 #custom-omarchy {
@@ -59,19 +59,18 @@ window#waybar {
     padding: 0;
 }
 
-#tray {
-    min-width: 26px;
-    margin: 0;
-    padding: 0;
-}
-
+/* --- Tooltips --- */
 tooltip {
     background-color: @background;
-    color: @foreground;
-    opacity: 1.0;
-    padding: 2px;
+    border: 1px solid @foreground;
 }
 
+tooltip label {
+    color: @foreground;
+    padding: 4px;
+}
+
+/* --- Helpers --- */
 .hidden {
     opacity: 0;
 }
