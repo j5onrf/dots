@@ -11,19 +11,24 @@ wip
 bind = SUPER, Q, killactive
 
 # --- Applications ---
-bind = SUPER, S, exec, kitty
-bind = SUPER, A, exec, alacritty
-bind = SUPER, R, exec, omarchy-menu
-bind = SUPER ALT, S, exec, kitty --title floating_kitty
-bind = SUPER SHIFT, F, exec, uwsm-app -- nautilus --new-window
-bind = SUPER SHIFT, N, exec, omarchy-launch-editor
-bind = SUPER, B, exec, hyprctl clients | grep -q "class: brave-origin-beta" && hyprctl dispatch focuswindow class:brave-origin-beta || uwsm app -- brave-origin-beta.desktop
+bind = SUPER, S, exec, uwsm app -- kitty
+bind = SUPER, A, exec, uwsm app -- alacritty
+bind = SUPER, R, exec, uwsm app -- omarchy-menu
+bind = SUPER ALT, S, exec, uwsm app -- kitty --title floating_kitty
+bind = SUPER SHIFT, F, exec, uwsm app -- nautilus --new-window
+bind = SUPER, G, exec, hyprctl clients | grep -q "class: brave-origin-beta" && hyprctl dispatch focuswindow class:brave-origin-beta || uwsm app -- brave-origin-beta
 bind = SUPER, F, exec, hyprctl clients | grep -q "class: org.gnome.Nautilus" && hyprctl dispatch focuswindow class:org.gnome.Nautilus || uwsm app -- nautilus --new-window
 
+# Window Switcher using the custom selector script
+bind = SUPER, Tab, exec, uwsm app -- kitty -o font_size=16 --title floating_kitty -e $HOME/.config/hypr/Scripts/window-selector.sh
+
 # --- Utilities & Clipboard ---
-bind = ALT, C, exec, walker -m clipboard
+bind = ALT, C, exec, uwsm app -- walker -m clipboard
+bind = ALT, X, exec, /usr/local/bin/qs -c noctalia ipc call launcher clipboard
 bind = ALT, R, exec, ~/.config/hypr/Scripts/toggle_scale.sh
 bind = SUPER, H, exec, omarchy-toggle-nightlight
+bind = SUPER, P, exec, ~/.config/hypr/Scripts/power-toggle
+bind = , F1, exec, uwsm app -- keepassxc
 
 # --- Shell & UI Toggles (Physical Switchboard) ---
 bind = , XF86Tools,   exec, ~/.config/hypr/Scripts/w-toggle.sh      # G1: Waybar / W-Shell
