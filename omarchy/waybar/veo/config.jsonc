@@ -1,39 +1,38 @@
-/* Veo Version: 0.1.3 April 23, 2026 */
+/* Veo Version: 0.1.4 April 25, 2026 - Optimized */
 {
-  "reload_style_on_change": true,
+  // --- 1. Global Bar Settings --- //
   "layer": "top",
   "position": "left",
   "width": 26,
   "spacing": 0,
+  "reload_style_on_change": true,
 
-  "modules-left": [
+  // --- 2. Module Layout --- //
+  "modules-left":[
     "custom/omarchy",
     "hyprland/workspaces"
   ],
-
-  "modules-center": [],
-
-  "modules-right": [
+  "modules-center":[],
+  "modules-right":[
     "group/tray-expander",
-    "network",
-    "bluetooth",
-    "pulseaudio",
-    "battery",
     "cpu",
+    "network",
+    "pulseaudio",
     "clock"
   ],
 
+  // --- 3. Built-in Modules --- //
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{icon}",
     "show-special": true,
-    "format-icons": { 
-        "1": "1", "2": "2", "3": "3", "4": "4", "5": "5",
-        "active": "󱓻",
-        "default": "" 
-    },
     "persistent-workspaces": {
-        "*": 5
+      "*": 5
+    },
+    "format-icons": { 
+      "1": "1", "2": "2", "3": "3", "4": "4", "5": "5",
+      "active": "󱓻",
+      "default": "" 
     }
   },
 
@@ -41,105 +40,86 @@
     "format": "{:%I\n<span line_height='0.6'>%M</span>}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
-        "mode": "month",
-        "on-scroll": 1,
-        "format": {
-            "today": "<span color='#a6e3a1'><b><u>{}</u></b></span>"
-        }
+      "mode": "month",
+      "on-scroll": 1,
+      "format": {
+        "today": "<span color='#a6e3a1'><b><u>{}</u></b></span>"
+      }
     }
-  },
-
-  "custom/omarchy": {
-    "format": "<span font='omarchy'>\ue900</span>",
-    "on-click": "omarchy-menu",
-    "on-click-right": "xdg-terminal-exec",
-    "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
-  },
-   "custom/update": {
-    "format": "",
-    "exec": "omarchy-update-available",
-    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
-    "tooltip-format": "Omarchy update available",
-    "signal": 7,
-    "interval": 21600
-  },
-
-  "network": {
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "format": "{icon}",
-    "format-wifi": "{icon}",
-    "format-ethernet": " 󰀂",
-    "format-disconnected": "󰤮",
-    "tooltip-format-wifi": "{essid} ({frequency} GHz)",
-    "tooltip-format-ethernet": "Connected",
-    "tooltip-format-disconnected": "Disconnected",
-    "interval": 3,
-    "spacing": 1,
-    "on-click": "omarchy-launch-wifi"
-  },
-
-  "bluetooth": {
-    "format": "",
-    "format-off": "󰂲",
-    "format-disabled": "󰂲",
-    "format-connected": "󰂱",
-    "format-no-controller": "",
-    "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "omarchy-launch-bluetooth"
-  },
-
-  "pulseaudio": {
-    "format": "{icon}",
-    "on-click-right": "omarchy-launch-audio",
-    "on-click": "pamixer -t",
-    "tooltip-format": "Playing at {volume}%",
-    "scroll-step": 5,
-    "format-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "headset": "",
-      "default": ["", "", ""]
-    }
-  },
-
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{icon}",
-    "format-charging": "󱐋",
-    "format-plugged": "",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    "tooltip-format": "{capacity}% - {time} left"
   },
 
   "cpu": {
-    "interval": 5,
+    "interval": 10,
     "format": "󰍛",
     "on-click": "omarchy-launch-or-focus-tui btop",
     "on-click-right": "alacritty"
   },
 
-  "group/tray-expander": {
-    "orientation": "vertical",
-    "drawer": {
-      "transition-duration": 400,
-      "children-class": "tray-child"
+  "network": {
+    "interval": 10,
+    "spacing": 1,
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": " 󰀂",
+    "format-disconnected": "󰤮",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\nIP: {ipaddr}",
+    "tooltip-format-ethernet": "Ethernet\nIP: {ipaddr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "omarchy-launch-wifi"
+  },
+
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": ["", "", ""]
     },
-    "modules": [
-      "custom/expand-icon",
-      "custom/update",
-      "tray"
-    ]
+    "tooltip-format": "Volume: {volume}%",
+    "on-click": "pamixer -t",
+    "on-click-right": "omarchy-launch-audio"
+  },
+
+  // --- 4. Custom Modules --- //
+  "custom/omarchy": {
+    "format": "<span font='omarchy'>\ue900</span>",
+    "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space",
+    "on-click": "omarchy-menu",
+    "on-click-right": "xdg-terminal-exec"
+  },
+
+  "custom/update": {
+    "interval": 21600,
+    "signal": 7,
+    "format": "",
+    "tooltip-format": "Omarchy update available",
+    "exec": "omarchy-update-available",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update"
   },
 
   "custom/expand-icon": {
     "format": "󰅃" 
   },
 
+  // --- 5. Groups & System Tray --- //
+  "group/tray-expander": {
+    "orientation": "vertical",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "tray-child"
+    },
+    "modules":[
+      "custom/expand-icon",
+      "custom/update",
+      "tray"
+    ]
+  },
+
   "tray": {
     "icon-size": 14,
     "spacing": 8
-  }
+  },
 }
