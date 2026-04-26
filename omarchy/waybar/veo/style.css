@@ -54,7 +54,7 @@ window#waybar {
 
 tooltip {
     background-color: @background;
-    border: 1px solid @foreground;
+    border: 0.2px solid @foreground;
 }
 tooltip label {
     color: @foreground;
