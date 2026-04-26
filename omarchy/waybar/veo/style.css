@@ -1,11 +1,8 @@
 /* Veo Version: 0.1.6 04.26.26 - Optimized */
 @import "../../omarchy/current/theme/waybar.css";
 
-/* --- Global Reset --- */
 * {
     border: none;
-    border-radius: 0;
-    min-height: 0;
     font-family: 'JetBrainsMono Nerd Font', monospace; 
     font-size: 12px;
 }
@@ -15,13 +12,11 @@ window#waybar {
     color: @foreground;
 }
 
-/* --- Layout --- */
 .modules-left, .modules-center, .modules-right {
     margin: 0;
     padding: 0;
 }
 
-/* --- Workspaces --- */
 #workspaces button {
     all: initial;
     color: @foreground;
@@ -33,7 +28,6 @@ window#waybar {
     opacity: 0.5;
 }
 
-/* --- System & Custom Modules --- */
 #cpu, 
 #pulseaudio, 
 #network, 
@@ -59,18 +53,15 @@ window#waybar {
     padding: 0;
 }
 
-/* --- Tooltips --- */
 tooltip {
     background-color: @background;
     border: 1px solid @foreground;
 }
-
 tooltip label {
     color: @foreground;
     padding: 4px;
 }
 
-/* --- Helpers --- */
 .hidden {
     opacity: 0;
 }
