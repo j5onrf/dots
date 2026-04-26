@@ -25,7 +25,6 @@
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{icon}",
-    "show-special": true,
     "persistent-workspaces": {
       "*": 5
     },
