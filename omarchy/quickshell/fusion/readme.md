@@ -1,4 +1,4 @@
-# Shell-Fusion | Omarchy
+# ⚡ Shell-Fusion | Omarchy
 
 > **Minimalist industrial vertical UI for Hyprland & Omarchy**
 
