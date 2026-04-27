@@ -1,6 +1,6 @@
 # Shell-Fusion | Omarchy
 
-> **Minimalist vertical UI for Hyprland & Omarchy**
+> **Minimalist industrial vertical UI for Hyprland & Omarchy**
 
 Built with **Quickshell 0.2.1+**
 
