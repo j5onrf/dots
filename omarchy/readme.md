@@ -11,42 +11,42 @@ wip
 bind = SUPER, Q, killactive
 
 # --- Applications ---
-bind = SUPER, S, exec, uwsm app -- kitty
-bind = SUPER, A, exec, uwsm app -- alacritty
-bind = SUPER, R, exec, uwsm app -- omarchy-menu
-bind = SUPER ALT, S, exec, uwsm app -- kitty --title floating_kitty
-bind = SUPER SHIFT, F, exec, uwsm app -- nautilus --new-window
+bind = SUPER, S, exec, kitty
+bind = SUPER, A, exec, alacritty
+bind = SUPER, R, exec, omarchy-menu
+bind = SUPER ALT, S, exec, kitty --title floating_kitty
+bind = SUPER SHIFT, F, exec, uwsm-app -- nautilus --new-window
 bind = SUPER, G, exec, hyprctl clients | grep -q "class: brave-origin-beta" && hyprctl dispatch focuswindow class:brave-origin-beta || uwsm app -- brave-origin-beta
 bind = SUPER, F, exec, hyprctl clients | grep -q "class: org.gnome.Nautilus" && hyprctl dispatch focuswindow class:org.gnome.Nautilus || uwsm app -- nautilus --new-window
 
 # --- Utilities & Clipboard ---
-bind = ALT, C, exec, uwsm app -- walker -m clipboard
+bind = ALT, C, exec, walker -m clipboard
 bind = ALT, X, exec, /usr/local/bin/qs -c noctalia ipc call launcher clipboard
-bind = ALT, R, exec, ~/.config/hypr/Scripts/toggle_scale.sh
-bind = SUPER, H, exec, omarchy-toggle-nightlight
-bind = SUPER, P, exec, ~/.config/hypr/Scripts/power-toggle
-bind = , F1, exec, uwsm app -- keepassxc
+bind = ALT, R, exec, ~/.config/hypr/scripts/toggle_scale.sh
+bind = , F2, exec, omarchy-toggle-nightlight
+bind = , F3, exec, ~/.config/hypr/scripts/power-toggle
+bind = , F1, exec, keepassxc
 
 # --- Shell & UI Toggles (Physical Switchboard) ---
-bind = , XF86Tools,   exec, ~/.config/hypr/Scripts/w-toggle.sh      # G1: Waybar / Omarchy
-bind = , XF86Launch5, exec, ~/.config/hypr/Scripts/veo-toggle.sh    # G2: Veo UI
-bind = , XF86Launch6, exec, ~/.config/hypr/Scripts/f-toggle.sh      # G3: Shell-Fusion
-bind = , XF86Launch7, exec, ~/.config/hypr/Scripts/c-toggle.sh      # G4: Caelestia
-bind = , XF86Launch8, exec, ~/.config/hypr/Scripts/n-toggle.sh      # G5: Noctalia
-bind = , XF86Launch9, exec, ~/.config/hypr/Scripts/d-toggle.sh      # G6: DankMaterialShell
+bind = , XF86Tools,   exec, ~/.config/hypr/scripts/w-toggle.sh      # G1: Waybar / Omarchy
+bind = , XF86Launch5, exec, ~/.config/hypr/scripts/veo-toggle.sh    # G2: Veo UI
+bind = , XF86Launch6, exec, ~/.config/hypr/scripts/f-toggle.sh      # G3: Shell-Fusion
+bind = , XF86Launch7, exec, ~/.config/hypr/scripts/c-toggle.sh      # G4: Caelestia
+bind = , XF86Launch8, exec, ~/.config/hypr/scripts/n-toggle.sh      # G5: Noctalia
+bind = , XF86Launch9, exec, ~/.config/hypr/scripts/d-toggle.sh      # G6: DankMaterialShell
 
 # Launch Walker in dmenu mode to switch between active windows
-bind = , F4, exec, ~/.config/hypr/Scripts/walker-windows.sh
+bind = , F4, exec, ~/.config/hypr/scripts/walker-windows.sh
 
 # Launch Walker in dmenu mode to switch UI / Shells / Status Bars
-bind = , F5, exec, ~/.config/hypr/Scripts/walker-switchboard.sh
+bind = , F5, exec, ~/.config/hypr/scripts/walker-switchboard.sh
 
 # --- Navigation & Scrolling Layout ---
 bind = SUPER SHIFT, A, movefocus, l
 bind = SUPER SHIFT, D, movefocus, r
 bind = SUPER SHIFT, S, layoutmsg, swapcol r
 # bind = ALT, comma, exec, hyprctl dispatch layoutmsg colresize all 0.5
-bind = SUPER, Tab, exec, kitty -o font_size=16 --title floating_kitty -e $HOME/.config/hypr/Scripts/window-selector.sh
+bind = SUPER, Tab, exec, kitty -o font_size=16 --title floating_kitty -e $HOME/.config/hypr/scripts/window-selector.sh
 
 # --- Resizing (WASD) ---
 binde = SUPER CTRL, W, resizeactive, 0 -100
@@ -172,16 +172,16 @@ alias no='yay -S --noconfirm --provides=false'
 
 ## --- Backups ---
 # Lightweight Config Sync
-alias bc='mountpoint -q /run/media/j5/SSD_BACKUPS || udisksctl mount -b /dev/sda1; ~/.config/hypr/Scripts/config-backup.sh'
+alias bc='mountpoint -q /run/media/j5/SSD_BACKUPS || udisksctl mount -b /dev/sda1; ~/.config/hypr/scripts/config-backup.sh'
 
 ## --- Package Management ---
 alias y='yay'
 alias x='yay -Syu'
 alias xx='sudo yay -Syu --hookdir /dev/null'
 alias yr='yay -Rns'
-alias xclean='bash ~/.config/hypr/Scripts/check-orphans.sh'
+alias xclean='bash ~/.config/hypr/scripts/check-orphans.sh'
 alias um='sudo reflector --country "United States" --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
-alias uk='sudo /home/j5/.config/hypr/Scripts/kernel-update-toggle.sh'
+alias uk='sudo /home/j5/.config/hypr/scripts/kernel-update-toggle.sh'
 
 # Basic Management
 alias sl='sudo snapper list'
