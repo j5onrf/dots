@@ -68,9 +68,6 @@ That is the ultimate "Best of Both Worlds" strategy. Having a toggle script that
 </details>
 
 
-<br>
-</p>
-</details>
 
 <details><summary>(2026-April05) WayBar Bridged to Caelestia Schemes</summary>
 <p>
