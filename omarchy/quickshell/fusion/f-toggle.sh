@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-TARGET_DIR="/home/j5/.config/quickshell/shell-fusion"
+TARGET_DIR="$HOME/.config/quickshell/shell-fusion"
 # The exact command string used to launch (for precise pgrep matching)
 LAUNCH_CMD="quickshell -c $TARGET_DIR"
 
