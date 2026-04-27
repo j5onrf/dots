@@ -323,6 +323,15 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 </details>
 <br>
 
+# Shell
+
+(2026-April-26) [Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion) 
+<img alt="20260427_120546" src="https://github.com/user-attachments/assets/60c74941-992b-4382-88be-4e914ef3a4d3" />
+
+`Quickshell 0.2.1+`
+
+---
+
 # WayBar
 
 (2026-April-26) [Veo | Vertical Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy) 
