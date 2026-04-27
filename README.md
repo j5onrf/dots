@@ -323,7 +323,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 </details>
 <br>
 
-# Shell
+# Quickshell
 
 (2026-April-27) [Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion) 
 <img alt="20260427_120546" src="https://github.com/user-attachments/assets/60c74941-992b-4382-88be-4e914ef3a4d3" />
