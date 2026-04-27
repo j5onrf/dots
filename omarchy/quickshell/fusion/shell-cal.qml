@@ -4,7 +4,6 @@ import Quickshell
 import Quickshell.Io
 import Quickshell.Hyprland
 import QtQuick
-import QtQuick.Controls
 
 PanelWindow {
     id: shellFusion
@@ -18,8 +17,8 @@ PanelWindow {
     anchors { left: true; top: true; bottom: true }
     margins { left: 0; right: 0; top: 0; bottom: 0 }
 
-    // Dynamic Width: Expands when calendar is open
-    implicitWidth: calendarOpen ? 240 : ((autoHideEnabled && !isHovered && slidingContent.x <= -33) ? 0 : 34)
+    // NOTE: This line is what causes the bar to "jump" (resize) when opening the calendar.
+    implicitWidth: calendarOpen ? 250 : ((autoHideEnabled && !isHovered && slidingContent.x <= -33) ? 0 : 34)
     exclusionMode: (autoHideEnabled || calendarOpen) ? 0 : 2
     color: "transparent"
 
@@ -132,6 +131,18 @@ PanelWindow {
                         property bool isOccupied: Hyprland.toplevels.values.some(t => t.workspace === modelData)
                         radius: isHovered ? 15 : (isActive ? 12 : 8)
                         color: isActive ? theme.mPrimary : (isHovered ? theme.mSurfaceVariant : theme.mSurface)
+
+                        // ── WORKSPACE DOT INDICATOR (From Backup) ──
+                        Rectangle {
+                            visible: parent.isOccupied && !parent.isActive
+                            width: 4; height: 4; radius: 2
+                            color: theme.mPrimary
+                            anchors.verticalCenter: parent.verticalCenter
+                            anchors.horizontalCenter: parent.left
+                            anchors.horizontalCenterOffset: 2
+                            z: 1
+                        }
+
                         Text {
                             anchors.centerIn: parent; text: modelData.id
                             color: parent.isActive ? theme.mOnPrimary : theme.mOnSurface
@@ -237,35 +248,29 @@ PanelWindow {
         }
 
         // ── INTEGRATED CALENDAR POPUP ──────────────────────────
-        // 1. Calendar pushing the bar's layout? (wip)
         Item {
             anchors { left: slidingContent.right; leftMargin: 6; bottom: parent.bottom; bottomMargin: 6 }
 
             Rectangle {
                 id: calendarView
                 visible: calendarOpen
-                width: 200; height: 220
+                // Width increased to 210 to fit the 187px grid properly
+                width: 210; height: 240
 
-                // Anchor to the 0x0 wrapper so it pops UP and RIGHT without affecting the bar
                 anchors.left: parent.left
                 anchors.bottom: parent.bottom
 
                 color: theme.mSurface; radius: 12
                 border { color: theme.mPrimary; width: 2 }
 
-                // 2. ── ULTIMATE EVENT SWALLOWER ──
-                // Blocks standard clicks
+                // Swallow mouse events inside the calendar
                 MouseArea {
                     anchors.fill: parent; preventStealing: true
                     onPressed: (mouse) => mouse.accepted = true
                 }
-                // Blocks modern tap handlers
                 TapHandler { acceptedButtons: Qt.AllButtons }
-                // Blocks modern window drag handlers!
                 DragHandler { target: null }
-                // Blocks scroll wheels bleeding through
                 WheelHandler { target: null }
-                // ─────────────────────────────────
 
                 Column {
                     anchors.fill: parent; anchors.margins: 10; spacing: 8
@@ -280,6 +285,7 @@ PanelWindow {
 
                     // Weekday Labels
                     Row {
+                        anchors.horizontalCenter: parent.horizontalCenter
                         spacing: 2
                         Repeater {
                             model:["S", "M", "T", "W", "T", "F", "S"]
@@ -294,6 +300,7 @@ PanelWindow {
 
                     // Days Grid
                     Grid {
+                        anchors.horizontalCenter: parent.horizontalCenter
                         columns: 7; spacing: 2
                         Repeater {
                             model: {
