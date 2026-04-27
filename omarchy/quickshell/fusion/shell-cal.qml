@@ -237,7 +237,7 @@ PanelWindow {
         }
 
         // ── INTEGRATED CALENDAR POPUP ──────────────────────────
-        // 1. Wrap in a 0x0 Item to stop the calendar from pushing the bar's layout
+        // 1. Calendar pushing the bar's layout? (wip)
         Item {
             anchors { left: slidingContent.right; leftMargin: 6; bottom: parent.bottom; bottomMargin: 6 }
 
