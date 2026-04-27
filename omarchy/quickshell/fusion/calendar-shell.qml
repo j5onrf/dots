@@ -1,4 +1,4 @@
-/* Shell-Fusion V4.2 4.26.26 Calendar + Omarchy-Sync */
+/* Shell-Fusion V4.2 4.26.26 Calendar(wip) + Omarchy-Sync */
 
 import Quickshell
 import Quickshell.Io
