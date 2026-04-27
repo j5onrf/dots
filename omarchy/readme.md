@@ -177,7 +177,6 @@ alias bc='mountpoint -q /run/media/j5/SSD_BACKUPS || udisksctl mount -b /dev/sda
 ## --- Package Management ---
 alias y='yay'
 alias x='yay -Syu'
-alias xx='sudo yay -Syu --hookdir /dev/null'
 alias yr='yay -Rns'
 alias xclean='bash ~/.config/hypr/scripts/check-orphans.sh'
 alias um='sudo reflector --country "United States" --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
