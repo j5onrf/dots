@@ -31,9 +31,9 @@ bind = SUPER, P, exec, ~/.config/hypr/Scripts/power-toggle
 bind = , F1, exec, uwsm app -- keepassxc
 
 # --- Shell & UI Toggles (Physical Switchboard) ---
-bind = , XF86Tools,   exec, ~/.config/hypr/Scripts/w-toggle.sh      # G1: Waybar / W-Shell
-bind = , XF86Launch6, exec, ~/.config/hypr/Scripts/veo-toggle.sh    # G2: Veo UI
-bind = , XF86Launch5, exec, ~/.config/hypr/Scripts/ww-toggle.sh     # G3: Veo reload
+bind = , XF86Tools,   exec, ~/.config/hypr/Scripts/w-toggle.sh      # G1: Waybar / Omarchy
+bind = , XF86Launch5, exec, ~/.config/hypr/Scripts/veo-toggle.sh    # G2: Veo UI
+bind = , XF86Launch6, exec, ~/.config/hypr/Scripts/f-toggle.sh      # G3: Shell-Fusion
 bind = , XF86Launch7, exec, ~/.config/hypr/Scripts/c-toggle.sh      # G4: Caelestia
 bind = , XF86Launch8, exec, ~/.config/hypr/Scripts/n-toggle.sh      # G5: Noctalia
 bind = , XF86Launch9, exec, ~/.config/hypr/Scripts/d-toggle.sh      # G6: DankMaterialShell
