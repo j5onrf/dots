@@ -1,4 +1,4 @@
-/* Shell-Fusion V4.5 4.27.26 Omarchy-Sync + Calendar */
+/* Shell-Fusion V4.7 4.27.26 Omarchy-Sync + Calendar + Btop */
 
 import Quickshell
 import Quickshell.Io
@@ -74,8 +74,11 @@ PanelWindow {
                 FusionModule {
                     Text { anchors.centerIn: parent; text: "\ue5d3"; color: theme.mOnSurface; font { family: iconFont; pixelSize: 22 } }
                     hoverArea.onClicked: (mouse) => {
-                        if (mouse.button === Qt.RightButton) Hyprland.dispatch("exec " + walkerScript)
-                        else Hyprland.dispatch("exec omarchy-menu")
+                        if (mouse.button === Qt.RightButton) {
+                            Hyprland.dispatch("exec kitty --class=sys-monitor -e btop")
+                        } else {
+                            Hyprland.dispatch("exec omarchy-menu")
+                        }
                     }
                 }
 
@@ -94,7 +97,6 @@ PanelWindow {
                         radius: hoverArea.containsMouse ? 15 : (isActive ? 12 : 8)
                         color: isActive ? theme.mPrimary : (hoverArea.containsMouse ? theme.mSurfaceVariant : theme.mSurface)
 
-                        // ── INDICATOR LOGIC ──
                         Rectangle {
                             visible: parent.isOccupied && !parent.isActive
                             width: 4; height: 4; radius: width / 2
@@ -171,9 +173,8 @@ PanelWindow {
 
                 FusionModule {
                     height: 42
-                    border.width: 0 /* Clock Border */
-                    /* hoverArea.onClicked: Hyprland.dispatch("exec gtk-launch 'Proton Calendar.desktop'") */
-                    hoverArea.onClicked: Hyprland.dispatch("exec kitty --class=calendar-pwa -o cursor_shape=underline -o cursor_underline_thickness=0 -e sh -c 'cal -m; read -n 1'")
+                    border.width: 2
+                    hoverArea.onClicked: Hyprland.dispatch("exec kitty --class=calendar-pwa -e sh -c 'cal -m; read -n 1'")
                     Column {
                         anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
                         topPadding: 2.3; spacing: -2
