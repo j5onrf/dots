@@ -1,4 +1,4 @@
-/** * Shell-Fusion V4.0
+/** * Shell-Fusion V4.0 4.26.26
  * Fully Integrated Omarchy-Sync Bridge
  */
 
