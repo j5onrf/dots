@@ -12,3 +12,12 @@ Built with **Quickshell 0.2.1+**
 | <img src="https://github.com/user-attachments/assets/ee2447b0-cd3f-4a5b-abab-17522299a1f0" width="100" /> | <img src="https://github.com/user-attachments/assets/55388b09-bd7d-454d-9f57-28d86bd2fbf3" width="100" /> | <img src="https://github.com/user-attachments/assets/481944d7-8601-41b5-8922-ac2a9fc1fdce" width="100" /> |
 
 *Real-time color injection based on your current Omarchy `.toml`*
+<br><br>
+
+```bash
+# Kitty Calendar Rules
+windowrule = float 1, match:class ^(calendar-pwa)$
+windowrule = size 180 185, match:class ^(calendar-pwa)$
+windowrule = move 40 510, match:class ^(calendar-pwa)$
+windowrule = pin 1, match:class ^(calendar-pwa)$
+```
