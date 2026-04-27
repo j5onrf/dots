@@ -1,4 +1,4 @@
-/* Shell-Fusion V4.4 4.27.26 Omarchy-Sync */
+/* Shell-Fusion V4.5 4.27.26 Omarchy-Sync + Calendar */
 
 import Quickshell
 import Quickshell.Io
@@ -94,7 +94,7 @@ PanelWindow {
                         radius: hoverArea.containsMouse ? 15 : (isActive ? 12 : 8)
                         color: isActive ? theme.mPrimary : (hoverArea.containsMouse ? theme.mSurfaceVariant : theme.mSurface)
 
-                        // ── EXACT V3.7.0 INDICATOR LOGIC ──
+                        // ── INDICATOR LOGIC ──
                         Rectangle {
                             visible: parent.isOccupied && !parent.isActive
                             width: 4; height: 4; radius: width / 2
@@ -143,7 +143,7 @@ PanelWindow {
                 }
 
                 Column {
-                    spacing: 6; clip: true
+                    spacing: 4; clip: true
                     height: drawerOpen ? implicitHeight : 0; opacity: drawerOpen ? 1.0 : 0
                     Behavior on height { NumberAnimation { duration: 250; easing.type: Easing.OutCubic } }
                     Behavior on opacity { NumberAnimation { duration: 250 } }
@@ -171,6 +171,9 @@ PanelWindow {
 
                 FusionModule {
                     height: 42
+                    border.width: 0 /* Clock Border */
+                    /* hoverArea.onClicked: Hyprland.dispatch("exec gtk-launch 'Proton Calendar.desktop'") */
+                    hoverArea.onClicked: Hyprland.dispatch("exec kitty --class=calendar-pwa -o cursor_shape=underline -o cursor_underline_thickness=0 -e sh -c 'cal -m; read -n 1'")
                     Column {
                         anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
                         topPadding: 2.3; spacing: -2
