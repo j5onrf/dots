@@ -183,6 +183,7 @@ alias um='sudo reflector --country "United States" --protocol https --latest 20 
 alias uk='sudo /home/j5/.config/hypr/scripts/kernel-update-toggle.sh'
 
 # Basic Management
+alias ss='~/.config/hypr/scripts/snap.sh'
 alias sl='sudo snapper list'
 
 ```
