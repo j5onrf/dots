@@ -28,10 +28,10 @@ bind = SUPER, P, exec, ~/.config/hypr/Scripts/power-toggle
 bind = , F1, exec, uwsm app -- keepassxc
 
 # Launch Walker in dmenu mode to switch between active windows
-bind = , F4, exec, /home/j5/.config/hypr/Scripts/walker-windows.sh
+bind = , F4, exec, ~/.config/hypr/Scripts/walker-windows.sh
 
 # Launch Walker in dmenu mode to switch Omarchy desktop themes
-bind = , F5, exec, /home/j5/.config/hypr/Scripts/walker-switcher.sh
+bind = , F5, exec, ~/.config/hypr/Scripts/walker-switchboard.sh
 
 # --- Shell & UI Toggles (Physical Switchboard) ---
 bind = , XF86Tools,   exec, ~/.config/hypr/Scripts/w-toggle.sh      # G1: Waybar / Omarchy
