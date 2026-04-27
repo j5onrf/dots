@@ -38,7 +38,7 @@ bind = , XF86Launch9, exec, ~/.config/hypr/Scripts/d-toggle.sh      # G6: DankMa
 # Launch Walker in dmenu mode to switch between active windows
 bind = , F4, exec, ~/.config/hypr/Scripts/walker-windows.sh
 
-# Launch Walker in dmenu mode to switch UI / shells/status bars
+# Launch Walker in dmenu mode to switch UI / Shells / Status Bars
 bind = , F5, exec, ~/.config/hypr/Scripts/walker-switchboard.sh
 
 # --- Navigation & Scrolling Layout ---
