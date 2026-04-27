@@ -1,8 +1,8 @@
-testing
+# Shell-Fusion | Omarchy
 
->    A minimalist, industrial vertical status bar for Hyprland. Built with Quickshell 0.2.1+ and fully integrated with Omarchy color schemes.
+> **Minimalist vertical UI for Hyprland & Omarchy**
 
->    Required Fonts: This configuration requires Material Symbols Rounded (for icons) and JetBrainsMono Nerd Font (for the clock and workspace indicators) to be installed on your system.
+Built with **Quickshell 0.2.1+**
 
 <img alt="20260426_164415" src="https://github.com/user-attachments/assets/af25b0eb-9fdc-434e-9aa8-d27d317f1a76" />
 <br><br>
