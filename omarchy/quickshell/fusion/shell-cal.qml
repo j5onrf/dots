@@ -365,7 +365,7 @@ PanelWindow {
                 visible: calendarOpen
                 // Width increased to 210 to fit the 187px grid properly
                 width: 210
-                height: 240
+                height: 220
 
                 anchors.left: parent.left
                 anchors.bottom: parent.bottom
