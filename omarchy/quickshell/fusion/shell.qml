@@ -1,4 +1,4 @@
-/* Shell-Fusion V4.1 4.26.27 Fully Integrated Omarchy-Sync */
+/* Shell-Fusion V4.1 4.27.26 Fully Integrated Omarchy-Sync */
 
 import Quickshell
 import Quickshell.Io
