@@ -465,58 +465,6 @@ gruv
 </details>
 <br>
 
-# HyprPanel
-
-(2024-oct1) Trying out [HyprPanel](https://www.reddit.com/r/unixporn/comments/1frzwbx/hyprland_hyprpanel_w_25_new_themes_20_prebuilt/#lightbox)
-
-<details><summary>Toggle on/off [i]</summary>
-<p>
-
-```
-bind = $mainMod, H, exec, agsv1 -t bar-0 # Toggle Hyprpanel
-bind = $mainMod, C, exec, ~/.config/waybar/toggle.sh # Toggle WayBar
-```
-
-</p>
-
-</details>
-
-<details><summary>HyprPanel Blueberry</summary> 
-<p>
-
-(2024-oct27) Blueberry [HyprPanel <sup>theme</sup>](https://github.com/j5onrf/dots/tree/main/HyprPanel) & [Wallpapers](https://github.com/j5onrf/walls/tree/main/Blueberry/Blueberry-Arch-Blur)
-![Screenshot-2024-10-27_13:17:04](https://github.com/user-attachments/assets/5f92cc50-62c7-46c3-ac23-81b716305b8c)
-
-</details>
-
-<details><summary>(2024-oct26) HyprPanel & WayBar</summary> 
-  
-![Screenshot-2024-10-27_18:21:11](https://github.com/user-attachments/assets/851678ef-a440-469e-b485-867240ebf268)
-
-<p>
-
-</details>
-
-<details><summary>+ScreenShots</summary>
-<p>
-
-(2024-oct27) HyprPanel & WayBar
-![Screenshot-2024-10-27_16:35:55](https://github.com/user-attachments/assets/f0cdebe9-56e6-4e46-b400-a07b801838e0)
-
-<details><summary>+ScreenShots</summary>
-<p>
-  
-HyprPanel & Waybar [Screenshot Archive](https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive%202/Screenshots2.md)
-```diff
-https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive%202/Screenshots2.md
-```
-</details>
-</details>
-</details>
-</details>
-</details>
-</details></p>
-<br>
 
 
 # Hyprland
