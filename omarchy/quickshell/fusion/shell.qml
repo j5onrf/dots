@@ -1,6 +1,4 @@
-/** * Shell-Fusion V4.0 4.26.26
- * Fully Integrated Omarchy-Sync Bridge
- */
+/* Shell-Fusion V4.1 4.26.27 Fully Integrated Omarchy-Sync */
 
 import Quickshell
 import Quickshell.Io
@@ -30,36 +28,35 @@ PanelWindow {
     readonly property string iconFont: "Material Symbols Rounded"
     readonly property string monoFont: "JetBrainsMono Nerd Font"
 
-    // ── Omarchy Theme Sync (Original File Direct Link) ───────────────────────
-        readonly property string colorsFile: homeDir + "/.config/omarchy/current/theme/colors.toml"
+    // ── Omarchy Theme Sync ──────────────────────────────────
+    readonly property string colorsFile: homeDir + "/.config/omarchy/current/theme/colors.toml"
 
-        FileView {
-            id: colorFileSource
-            path: colorsFile
+    FileView {
+        id: colorFileSource
+        path: colorsFile
+    }
+
+    QtObject {
+        id: theme
+        readonly property string raw: {
+            try {
+                return (typeof colorFileSource.text === "function") ? colorFileSource.text() : colorFileSource.text
+            } catch(e) { return "" }
         }
 
-        QtObject {
-            id: theme
-            readonly property string raw: {
-                try {
-                    return (typeof colorFileSource.text === "function") ? colorFileSource.text() : colorFileSource.text
-                } catch(e) { return "" }
-            }
-
-            // Improved Regex: ignores lines starting with # and handles optional quotes
-            function parse(key, fallback) {
-                const pattern = new RegExp("^\\s*" + key + "\\s*=\\s*[\"']?(#[A-Fa-f0-9]{6})[\"']?", "m");
-                const m = raw.match(pattern);
-                return m ? m[1] : fallback;
-            }
-
-            readonly property string mSurface:        parse("background", "#060B1E")
-            readonly property string mOnSurface:      parse("foreground", "#ffcead")
-            readonly property string mPrimary:        parse("accent",     "#7d82d9")
-            readonly property string mOnPrimary:      "#060B1E"
-            readonly property string mSurfaceVariant: parse("color0",     "#333333")
-            readonly property string mError:          parse("color1",     "#ED5B5A")
+        function parse(key, fallback) {
+            const pattern = new RegExp("^\\s*" + key + "\\s*=\\s*[\"']?(#[A-Fa-f0-9]{6})[\"']?", "m");
+            const m = raw.match(pattern);
+            return m ? m[1] : fallback;
         }
+
+        readonly property string mSurface:        parse("background", "#060B1E")
+        readonly property string mOnSurface:      parse("foreground", "#ffcead")
+        readonly property string mPrimary:        parse("accent",     "#7d82d9")
+        readonly property string mOnPrimary:      "#060B1E"
+        readonly property string mSurfaceVariant: parse("color0",     "#333333")
+        readonly property string mError:          parse("color1",     "#ED5B5A")
+    }
 
     // ── UI COMPONENTS ───────────────────────────────────────
 
@@ -71,7 +68,6 @@ PanelWindow {
         color: isHovered ? theme.mSurfaceVariant : theme.mSurface
         border { color: theme.mPrimary; width: 2 }
 
-        // Smooth color transitions
         Behavior on color { ColorAnimation { duration: 200 } }
         Behavior on border.color { ColorAnimation { duration: 200 } }
 
@@ -79,6 +75,7 @@ PanelWindow {
             id: mArea;
             anchors.fill: parent;
             hoverEnabled: true;
+            // Explicitly allow Right Clicks globally for all modules
             acceptedButtons: Qt.LeftButton | Qt.RightButton
         }
     }
@@ -107,7 +104,7 @@ PanelWindow {
             Behavior on x { NumberAnimation { duration: 250; easing.type: Easing.OutCubic } }
             color: theme.mSurface
 
-            // Top Section: Menu & Workspaces
+            // Top Section
             Column {
                 anchors { top: parent.top; topMargin: 6; horizontalCenter: parent.horizontalCenter }
                 spacing: 4
@@ -129,28 +126,22 @@ PanelWindow {
                         required property var modelData
                         property bool isActive: modelData === Hyprland.focusedWorkspace
                         property bool isOccupied: Hyprland.toplevels.values.some(t => t.workspace === modelData)
-
                         radius: isHovered ? 15 : (isActive ? 12 : 8)
                         color: isActive ? theme.mPrimary : (isHovered ? theme.mSurfaceVariant : theme.mSurface)
-
-                        // Occupied Dot
-                        Rectangle {
-                            visible: parent.isOccupied && !parent.isActive
-                            width: 4; height: 4; radius: 2; color: theme.mPrimary
-                            anchors { verticalCenter: parent.verticalCenter; horizontalCenter: parent.left; horizontalCenterOffset: 2 }
-                        }
 
                         Text {
                             anchors.centerIn: parent; text: modelData.id
                             color: parent.isActive ? theme.mOnPrimary : theme.mOnSurface
                             font { weight: Font.DemiBold; family: monoFont; pixelSize: 17 }
                         }
-                        hoverArea.onClicked: Hyprland.dispatch("workspace " + modelData.id)
+                        hoverArea.onClicked: (mouse) => {
+                             if (mouse.button === Qt.LeftButton) Hyprland.dispatch("workspace " + modelData.id)
+                        }
                     }
                 }
             }
 
-            // Center Section: Active Window Title
+            // Center Section
             Item {
                 anchors.centerIn: parent; width: parent.width; height: 300
                 Text {
@@ -163,21 +154,19 @@ PanelWindow {
                 }
             }
 
-            // Bottom Section: Clock & Controls
+            // Bottom Section
             Column {
                 anchors { bottom: parent.bottom; bottomMargin: 6; horizontalCenter: parent.horizontalCenter }
                 spacing: 4
 
-                // Drawer Toggle
                 FusionModule {
                     height: 18
                     FusionIcon { text: "\ue5cf"; size: 18; rotation: drawerOpen ? 180 : 0
                         Behavior on rotation { NumberAnimation { duration: 250 } }
                     }
-                    hoverArea.onClicked: drawerOpen = !drawerOpen
+                    hoverArea.onClicked: (mouse) => { if (mouse.button === Qt.LeftButton) drawerOpen = !drawerOpen }
                 }
 
-                // Expandable Tools
                 Column {
                     clip: true; spacing: 6
                     height: drawerOpen ? implicitHeight : 0; opacity: drawerOpen ? 1.0 : 0
@@ -205,7 +194,6 @@ PanelWindow {
                     }
                 }
 
-                // Vertical Clock
                 FusionModule {
                     height: 42
                     Column {
@@ -224,14 +212,38 @@ PanelWindow {
                     }
                 }
 
-                // Power/Vol
+                // THE POWER / VOL BUTTON
                 FusionModule {
+                    id: powerVolModule
                     height: 30
-                    FusionIcon { activeHover: parent.isHovered; text: "\ue8ac"; size: 18; baseColor: theme.mPrimary; hoverColor: theme.mError }
-                    hoverArea.onClicked: Hyprland.dispatch("exec omarchy-menu")
+                    property bool isMuted: false
+
+                    FusionIcon {
+                        activeHover: parent.isHovered
+                        // \ue04f = volume_off, \ue8ac = power
+                        text: powerVolModule.isMuted ? "\ue04f" : "\ue8ac"
+                        size: 18
+                        baseColor: powerVolModule.isMuted ? theme.mError : theme.mPrimary
+                        hoverColor: theme.mError
+                    }
+
+                    hoverArea.onClicked: (mouse) => {
+                        if (mouse.button === Qt.RightButton) {
+                            console.log("Right click detected! Toggling mute...");
+                            powerVolModule.isMuted = !powerVolModule.isMuted;
+                            Hyprland.dispatch("exec pactl set-sink-mute @DEFAULT_SINK@ toggle");
+                        } else if (mouse.button === Qt.LeftButton) {
+                            console.log("Left click detected! Opening menu...");
+                            Hyprland.dispatch("exec omarchy-menu");
+                        }
+                    }
+
                     hoverArea.onWheel: (wheel) => {
                         const step = wheel.angleDelta.y > 0 ? "+5%" : "-5%";
-                        Hyprland.dispatch(`exec pactl set-sink-volume @DEFAULT_SINK@ ${step}`);
+                        Hyprland.dispatch("exec pactl set-sink-volume @DEFAULT_SINK@ " + step);
+                        if (wheel.angleDelta.y > 0 && powerVolModule.isMuted) {
+                            powerVolModule.isMuted = false;
+                        }
                     }
                 }
             }
@@ -240,7 +252,6 @@ PanelWindow {
 
     SystemClock { id: mainClock; precision: SystemClock.Minutes }
 
-    // Auto-refresh Hyprland state on change
     Connections {
         target: Hyprland
         function onActiveToplevelChanged() { Hyprland.refreshToplevels() }
