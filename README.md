@@ -1,4 +1,4 @@
-# HyprDots
+# Hyprdots
 
 </details>
 
