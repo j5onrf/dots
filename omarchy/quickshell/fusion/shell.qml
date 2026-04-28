@@ -29,7 +29,6 @@ PanelWindow {
 
     QtObject {
         id: theme
-        // Keeping your working dynamic raw property exactly as it was
         readonly property string raw: {
             try { return (typeof colorFileSource.text === "function") ? colorFileSource.text() : colorFileSource.text }
             catch(e) { return "" }
