@@ -182,11 +182,11 @@ alias um='sudo reflector --country "United States" --protocol https --latest 20 
 alias uk='sudo /home/j5/.config/hypr/scripts/kernel-update-toggle.sh'
 
 ## --- Snapper Management ---
-alias ss='~/.config/hypr/scripts/snap.sh'
-alias sl='sudo snapper list'
+alias ss='~/.config/hypr/scripts/snap.sh'      # Manual Snapshot + Sync
+alias sl='sudo snapper list'                   # View Snapshots
+alias sd='sudo snapper delete'                 # Delete Snapshot (Hook handles Sync)
 
-# Deletes snapshot(s) and updates Limine boot menu
-sd() {
-    sudo snapper delete "$@"
-    sudo limine-snapper-sync
-}
+# Reference Commands:
+# alias sc='sudo snapper status'               # See file changes between snaps
+# alias sdiff='sudo snapper diff'              # See line-by-line diff
+# alias sy='sudo limine-snapper-sync'          # Manual Sync only
