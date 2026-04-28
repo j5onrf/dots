@@ -165,7 +165,6 @@ wip
 ## --- System & UI ---
 alias c='clear'
 alias ff='fastfetch'
-alias hr='hyprctl reload'
 alias hc='hyprctl clients'
 alias no='yay -S --noconfirm --provides=false'
 
