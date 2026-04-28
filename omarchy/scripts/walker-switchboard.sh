@@ -16,15 +16,15 @@ choice=$(echo -e "$options" | /usr/bin/walker --dmenu | xargs)
 
 # Selection Logic
 if [[ "$choice" == *"G1"* ]]; then
-    bash "/home/j5/.config/hypr/Scripts/w-toggle.sh" &
+    bash "/home/j5/.config/hypr/scripts/w-toggle.sh" &
 elif [[ "$choice" == *"G2"* ]]; then
-    bash "/home/j5/.config/hypr/Scripts/veo-toggle.sh" &
+    bash "/home/j5/.config/hypr/scripts/veo-toggle.sh" &
 elif [[ "$choice" == *"G3"* ]]; then
-    bash "/home/j5/.config/hypr/Scripts/f-toggle.sh" &
+    bash "/home/j5/.config/hypr/scripts/f-toggle.sh" &
 elif [[ "$choice" == *"G4"* ]]; then
-    bash "/home/j5/.config/hypr/Scripts/c-toggle.sh" &
+    bash "/home/j5/.config/hypr/scripts/c-toggle.sh" &
 elif [[ "$choice" == *"G5"* ]]; then
-    bash "/home/j5/.config/hypr/Scripts/n-toggle.sh" &
+    bash "/home/j5/.config/hypr/scripts/n-toggle.sh" &
 elif [[ "$choice" == *"G6"* ]]; then
-    bash "/home/j5/.config/hypr/Scripts/d-toggle.sh" &
+    bash "/home/j5/.config/hypr/scripts/d-toggle.sh" &
 fi
