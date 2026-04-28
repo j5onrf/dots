@@ -21,10 +21,8 @@ windowrule = size 180 185, match:class ^(calendar-pwa)$
 windowrule = move 40 510, match:class ^(calendar-pwa)$
 windowrule = pin 1, match:class ^(calendar-pwa)$
 ```
-```markdown
+```
 # Quickshell Theme Sync
+# To automate Quickshell bar reloads on theme changes, append the reload script to the Omarchy master setter:
 
-To automate Quickshell bar reloads on theme changes, append the reload script to the Omarchy master setter:
-
-```bash
-echo "~/.config/hypr/scripts/f-reload.sh &" >> ~/.local/share/omarchy/bin/omarchy-theme-set
+echo "/home/j5/.config/hypr/scripts/f-reload.sh &" >> /home/j5/.local/share/omarchy/bin/omarchy-theme-set
