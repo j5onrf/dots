@@ -175,18 +175,15 @@ alias bc='mountpoint -q /run/media/j5/SSD_BACKUPS || udisksctl mount -b /dev/sda
 
 ## --- Package Management ---
 y() {
-    yay -S "$@"
-    sudo limine-snapper-sync
+    yay "$@" && sudo limine-snapper-sync
 }
 
 x() {
-    yay -Syu
-    sudo limine-snapper-sync
+    yay -Syu && sudo limine-snapper-sync
 }
 
 yr() {
-    yay -Rns "$@"
-    sudo limine-snapper-sync
+    yay -Rns "$@" && sudo limine-snapper-sync
 }
 
 alias xclean='bash ~/.config/hypr/scripts/check-orphans.sh'
@@ -198,8 +195,7 @@ alias ss='~/.config/hypr/scripts/snap.sh'      # Manual Snapshot + Sync
 alias sl='sudo snapper list'                   # View current snapshots
 
 sd() {
-    sudo snapper delete "$@"
-    sudo limine-snapper-sync
+    sudo snapper delete "$@" && sudo limine-snapper-sync
 }
 
 ## --- Reference: Hook Management ---
