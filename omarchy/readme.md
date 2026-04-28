@@ -182,6 +182,6 @@ alias um='sudo reflector --country "United States" --protocol https --latest 20 
 alias uk='sudo ~/.config/hypr/scripts/kernel-update-toggle.sh'
 
 ## --- Snapper Management ---
-alias ss='~/.config/hypr/scripts/snap.sh'      # Manual Snapshot + Sync 
-alias sl='sudo snapper list'                   # View current snapshots
-alias sd='sudo snapper delete'                 # Delete snapshot
+alias ss='~/.config/hypr/scripts/snap.sh'
+alias sl='sudo snapper list'
+alias sd='sudo snapper delete'
