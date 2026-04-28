@@ -193,9 +193,9 @@ sd() {
 
 ## --- Reference: Hook Management ---
 # Mask (Disable) the auto-hook: 
-# sudo ln -s /dev/null /etc/pacman.d/hooks/limine-snapper-sync.hook
+# sudo ln -sf /dev/null /etc/pacman.d/hooks/10-limine-snapper-lock.hook
 
 # Unmask (Enable) the auto-hook: 
-# sudo rm /etc/pacman.d/hooks/limine-snapper-sync.hook
+# sudo rm /etc/pacman.d/hooks/10-limine-snapper-lock.hook
 
 ```
