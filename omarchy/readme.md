@@ -184,15 +184,18 @@ alias uk='sudo /home/j5/.config/hypr/scripts/kernel-update-toggle.sh'
 ## --- Snapper Management ---
 alias ss='~/.config/hypr/scripts/snap.sh'
 alias sl='sudo snapper list'
+
+# Deletes snapshot(s) and updates Limine boot menu
 sd() {
     sudo snapper delete "$@"
     sudo limine-snapper-sync
 }
 
-Bash Mask
-sudo ln -s /dev/null /etc/pacman.d/hooks/limine-snapper-sync.hook
+## --- Reference: Hook Management ---
+# Mask (Disable) the auto-hook: 
+# sudo ln -s /dev/null /etc/pacman.d/hooks/limine-snapper-sync.hook
 
-Bash UnMask
-sudo rm /etc/pacman.d/hooks/limine-snapper-sync.hook
+# Unmask (Enable) the auto-hook: 
+# sudo rm /etc/pacman.d/hooks/limine-snapper-sync.hook
 
 ```
