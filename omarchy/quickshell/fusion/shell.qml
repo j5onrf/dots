@@ -1,4 +1,4 @@
-/* Shell-Fusion V4.7 4.27.26 Omarchy-Sync + Calendar + Btop */
+/* Shell-Fusion V4.8 4.28.26 Omarchy-Sync + Opmimizations */
 
 import Quickshell
 import Quickshell.Io
@@ -29,6 +29,7 @@ PanelWindow {
 
     QtObject {
         id: theme
+        // Keeping your working dynamic raw property exactly as it was
         readonly property string raw: {
             try { return (typeof colorFileSource.text === "function") ? colorFileSource.text() : colorFileSource.text }
             catch(e) { return "" }
@@ -38,12 +39,12 @@ PanelWindow {
             const m = raw.match(pattern);
             return m ? m[1] : fallback;
         }
-        readonly property string mSurface:        parse("background", "#060B1E")
-        readonly property string mOnSurface:      parse("foreground", "#ffcead")
-        readonly property string mPrimary:        parse("accent",     "#7d82d9")
-        readonly property string mOnPrimary:      "#060B1E"
-        readonly property string mSurfaceVariant: parse("color0",     "#333333")
-        readonly property string mError:          parse("color1",     "#ED5B5A")
+        readonly property string mSurface:        parse("background", "#242424")
+        readonly property string mOnSurface:      parse("foreground", "#ffffff")
+        readonly property string mPrimary:        parse("accent",     "#ffffff")
+        readonly property string mOnPrimary:      "#ffffff"
+        readonly property string mSurfaceVariant: parse("color0",     "#303030")
+        readonly property string mError:          parse("color1",     "#ff7b63")
     }
 
     component FusionModule : Rectangle {
@@ -53,7 +54,12 @@ PanelWindow {
         color: mArea.containsMouse ? theme.mSurfaceVariant : theme.mSurface
         border { color: theme.mPrimary; width: 2 }
         Behavior on color { ColorAnimation { duration: 150 } }
-        MouseArea { id: mArea; anchors.fill: parent; hoverEnabled: true; acceptedButtons: Qt.LeftButton | Qt.RightButton }
+        MouseArea {
+            id: mArea;
+            anchors.fill: parent;
+            hoverEnabled: true;
+            acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
+        }
     }
 
     MouseArea {
@@ -85,30 +91,32 @@ PanelWindow {
                 Repeater {
                     model: Hyprland.workspaces
                     FusionModule {
+                        layer.enabled: true
+                        layer.effect: null
                         required property var modelData
                         property bool isActive: modelData === Hyprland.focusedWorkspace
-                        property bool isOccupied: {
-                            for (let i = 0; i < Hyprland.toplevels.values.length; i++) {
-                                if (Hyprland.toplevels.values[i].workspace === modelData) return true;
-                            }
-                            return false;
-                        }
+
+                        // OPTIMIZED: Replaced for-loop with declarative some()
+                        property bool isOccupied: Hyprland.toplevels.values.some(t => t.workspace === modelData)
 
                         radius: hoverArea.containsMouse ? 15 : (isActive ? 12 : 8)
                         color: isActive ? theme.mPrimary : (hoverArea.containsMouse ? theme.mSurfaceVariant : theme.mSurface)
 
                         Rectangle {
                             visible: parent.isOccupied && !parent.isActive
-                            width: 4; height: 4; radius: width / 2
-                            color: theme.mPrimary
-                            anchors.verticalCenter: parent.verticalCenter
-                            anchors.horizontalCenter: parent.left
-                            anchors.horizontalCenterOffset: 2
+                            width: 4; height: 4; radius: 2; color: theme.mPrimary
+                            anchors {
+                                verticalCenter: parent.verticalCenter
+                                horizontalCenter: parent.left
+                                horizontalCenterOffset: 2
+                            }
                             z: 1
                         }
 
                         Text {
-                            anchors.centerIn: parent; text: modelData.id
+                            anchors.centerIn: parent
+                            text: modelData.id
+                            renderType: Text.NativeRendering // Uses system-level font rendering (lighter)
                             color: parent.isActive ? theme.mOnPrimary : theme.mOnSurface
                             font { weight: Font.DemiBold; family: monoFont; pixelSize: 17 }
                         }
@@ -202,6 +210,8 @@ PanelWindow {
                         if (mouse.button === Qt.RightButton) {
                             powerVolModule.isMuted = !powerVolModule.isMuted;
                             Hyprland.dispatch("exec pactl set-sink-mute @DEFAULT_SINK@ toggle");
+                        } else if (mouse.button === Qt.MiddleButton) {
+                            Hyprland.dispatch("exec /home/j5/.config/hypr/scripts/f-reload.sh");
                         } else {
                             Hyprland.dispatch("exec omarchy-menu");
                         }
@@ -216,5 +226,10 @@ PanelWindow {
     }
 
     SystemClock { id: mainClock; precision: SystemClock.Minutes }
-    Connections { target: Hyprland; function onActiveToplevelChanged() { Hyprland.refreshToplevels() } }
+    Connections {
+        target: Hyprland
+        // Only refresh when a window is actually opened or closed
+        function onToplevelOpened() { Hyprland.refreshToplevels() }
+        function onToplevelClosed() { Hyprland.refreshToplevels() }
+    }
 }
