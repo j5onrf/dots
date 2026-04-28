@@ -42,12 +42,10 @@ bind = , F4, exec, ~/.config/hypr/scripts/walker-windows.sh
 bind = , F5, exec, ~/.config/hypr/scripts/walker-switchboard.sh
 
 # --- Navigation & Scrolling Layout ---
-bind = SUPER SHIFT, A, movefocus, l
-bind = SUPER SHIFT, D, movefocus, l
 bind = CTRL, Left,  movefocus, l
 bind = CTRL, Right, movefocus, r
-bind = SUPER SHIFT, S, layoutmsg, swapcol l
-# bind = ALT, comma, exec, hyprctl dispatch layoutmsg colresize all 0.5
+bind = SHIFT, Left,  swapwindow, l
+bind = SHIFT, Right, swapwindow, r
 
 # --- Resizing (WASD) ---
 binde = SUPER CTRL, W, resizeactive, 0 -100
