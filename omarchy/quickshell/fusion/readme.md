@@ -25,4 +25,4 @@ windowrule = pin 1, match:class ^(calendar-pwa)$
 # Quickshell Theme Sync
 # To automate Quickshell bar reloads on theme changes, append the reload script to the Omarchy master setter:
 
-echo "/home/j5/.config/hypr/scripts/f-reload.sh &" >> /home/j5/.local/share/omarchy/bin/omarchy-theme-set
+echo "~/.config/hypr/scripts/f-reload.sh &" >> ~/.local/share/omarchy/bin/omarchy-theme-set
