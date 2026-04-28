@@ -194,9 +194,13 @@ alias um='sudo reflector --country "United States" --protocol https --latest 20 
 alias uk='sudo ~/.config/hypr/scripts/kernel-update-toggle.sh'
 
 ## --- Snapper Management ---
-alias ss='~/.config/hypr/scripts/snap.sh'      # Manual Snapshot + Sync (For pre-config edits)
+alias ss='~/.config/hypr/scripts/snap.sh'      # Manual Snapshot + Sync
 alias sl='sudo snapper list'                   # View current snapshots
-alias sd='sudo snapper delete'                 # Delete snapshot (System hook handles the sync)
+
+sd() {
+    sudo snapper delete "$@"
+    sudo limine-snapper-sync
+}
 
 ## --- Reference: Hook Management ---
 # Mask (Disable) the auto-hook: 
