@@ -174,33 +174,14 @@ alias no='yay -S --noconfirm --provides=false'
 alias bc='mountpoint -q /run/media/j5/SSD_BACKUPS || udisksctl mount -b /dev/sda1; ~/.config/hypr/scripts/config-backup.sh'
 
 ## --- Package Management ---
-y() {
-    yay "$@" && sudo limine-snapper-sync
-}
-
-x() {
-    yay -Syu && sudo limine-snapper-sync
-}
-
-yr() {
-    yay -Rns "$@" && sudo limine-snapper-sync
-}
-
+alias y='yay'
+alias x='yay -Syu'
+alias yr='yay -Rns'
 alias xclean='bash ~/.config/hypr/scripts/check-orphans.sh'
 alias um='sudo reflector --country "United States" --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
 alias uk='sudo ~/.config/hypr/scripts/kernel-update-toggle.sh'
 
 ## --- Snapper Management ---
-alias ss='~/.config/hypr/scripts/snap.sh'      # Manual Snapshot + Sync
+alias ss='~/.config/hypr/scripts/snap.sh'      # Manual Snapshot + Sync 
 alias sl='sudo snapper list'                   # View current snapshots
-
-sd() {
-    sudo snapper delete "$@" && sudo limine-snapper-sync
-}
-
-## --- Reference: Hook Management ---
-# Mask (Disable) the auto-hook: 
-# sudo ln -sf /dev/null /etc/pacman.d/hooks/10-limine-snapper-lock.hook
-
-# Unmask (Enable) the auto-hook: 
-# sudo rm /etc/pacman.d/hooks/10-limine-snapper-lock.hook
+alias sd='sudo snapper delete'                 # Delete snapshot
