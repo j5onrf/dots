@@ -181,8 +181,12 @@ alias xclean='bash ~/.config/hypr/scripts/check-orphans.sh'
 alias um='sudo reflector --country "United States" --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
 alias uk='sudo /home/j5/.config/hypr/scripts/kernel-update-toggle.sh'
 
-# Basic Management
+## --- Snapper Management ---
 alias ss='~/.config/hypr/scripts/snap.sh'
 alias sl='sudo snapper list'
+sd() {
+    sudo snapper delete "$@"
+    sudo limine-snapper-sync
+}
 
 ```
