@@ -189,4 +189,10 @@ sd() {
     sudo limine-snapper-sync
 }
 
+Bash Mask
+sudo ln -s /dev/null /etc/pacman.d/hooks/limine-snapper-sync.hook
+
+Bash UnMask
+sudo rm /etc/pacman.d/hooks/limine-snapper-sync.hook
+
 ```
