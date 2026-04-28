@@ -4,21 +4,37 @@
 echo -n "Enter snapshot label: "
 read LABEL
 
-# 2. Handle empty labels (default to 'manual')
+# 2. Ask if this should be pinned
+echo -n "Pin this snapshot? (y/N): "
+read PIN
+
+# 3. Handle empty labels
 if [ -z "$LABEL" ]; then
     LABEL="manual"
 fi
 
-# 3. Format the description
-DESC="Manual-$(date +%Y-%m-%d)-${LABEL// /-}"
+# 4. Format description (Keeping it clean for Limine/Snapper)
+DATE_STR=$(date +%Y-%m-%d)
+DESC="Manual-${DATE_STR}-${LABEL// /-}"
 
-# 4. Create the snapshot with the 5-limit rule
-sudo snapper create -t single -d "$DESC" -c number --read-only
+# 5. Create Snapshot based on Pin choice
+if [[ "$PIN" =~ ^[Yy]$ ]]; then
+    # Add 'PIN' to the end so the main label shows first
+    FINAL_DESC="${DESC}-PIN"
+    sudo snapper create -t single -d "$FINAL_DESC" --read-only
+    echo -e "\n📌 Snapshot PINNED (Excluded from auto-cleanup)."
+else
+    sudo snapper create -t single -d "$DESC" -c number --read-only
+fi
 
-# 5. Force the cleanup so the list stays at 5
+# 6. Run cleanup
 sudo snapper cleanup number
 
-# 6. Show the result
-echo -e "\n✅ Snapshot created: $DESC"
+# 7. Sync to Limine
+echo "🔄 Updating Limine boot menu..."
+sudo limine-snapper-sync
+
+# 8. Show result
+echo -e "\n✅ Process Complete"
 echo "--------------------------------------------------"
-sudo snapper list | tail -n 7
+sudo snapper list | tail -n 8
