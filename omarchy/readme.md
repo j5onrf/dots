@@ -62,7 +62,6 @@ binde = SUPER ALT, D, moveactive, 100 0
 bind = , Print, exec, pkill slurp; grimblast --notify copysave area
 bind = SHIFT, Print, exec, grimblast --notify copysave screen
 bind = CTRL, Print, exec, pkill slurp; grimblast --notify --freeze copysave area
-bind = SUPER, Print, exec, hyprctl clients | grep -q "class: org.gnome.Nautilus" && hyprctl dispatch focuswindow class:org.gnome.Nautilus || uwsm app -- nautilus $XDG_SCREENSHOTS_DIR
 
 # --- Workspace Management ---
 workspace = 1, persistent:true
