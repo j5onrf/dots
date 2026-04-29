@@ -221,7 +221,7 @@ alias y='yay'
 alias x='yay -Syu'
 alias yr='yay -Rns'
 alias xclean='bash ~/.config/hypr/scripts/check-orphans.sh'
-alias um='sudo reflector --country "United States" --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
+alias um='sudo reflector --country "United States" --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syu'
 alias uk='sudo ~/.config/hypr/scripts/kernel-update-toggle.sh'
 
 ## --- Snapper Management ---
