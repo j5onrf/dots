@@ -4,7 +4,7 @@
 
 `Omarchy v3.6.0` `Quickshell 0.2.1+`
 
-<img alt="20260429_163006" src="https://github.com/user-attachments/assets/3fc0d7af-8283-4134-825c-ebaf38d3a470" />
+<img width="3440" height="1440" alt="20260429_184843" src="https://github.com/user-attachments/assets/987e37b3-d062-474b-b746-b326a253ab3d" />
 <br><br>
 <img alt="20260426_164415" src="https://github.com/user-attachments/assets/af25b0eb-9fdc-434e-9aa8-d27d317f1a76" />
 <br><br>
