@@ -137,19 +137,16 @@ decoration {
 
 animations {
     enabled = true
-    bezier = quick, 0.05, 0.9, 0.1, 1.05
-    bezier = direct, 0.2, 1, 0.3, 1
-    animation = global, 1, 2.5, direct
-    animation = windows, 1, 2, quick, popin 95%
-    animation = windowsIn, 1, 2, quick, popin 95%
-    animation = windowsOut, 1, 1.5, direct, popin 95%
-    animation = workspaces, 1, 2, direct, fade
-    animation = layers, 1, 2, quick, fade
-    animation = layersIn, 1, 2, quick, fade
-    animation = layersOut, 1, 1.5, direct, fade
-    animation = fadeIn, 1, 1.5, direct
-    animation = fadeOut, 1, 1.5, direct
-    animation = border, 1, 1, direct
+    bezier = smoothOut, 0.36, 0, 0.66, -0.56
+    bezier = smoothIn, 0.4, 0, 0.2, 1
+    bezier = snap, 0.34, 1.56, 0.64, 1
+    animation = windowsIn, 1, 3, smoothIn, popin 80%
+    animation = windowsOut, 1, 3, smoothIn, popin 80%
+    animation = windowsMove, 1, 3, smoothIn, slide
+    animation = border, 1, 5, default
+    animation = workspaces, 1, 4, smoothIn, slide
+    animation = layersIn, 1, 2, smoothIn, fade
+    animation = layersOut, 1, 2, smoothIn, fade
 }
 
 scrolling {
