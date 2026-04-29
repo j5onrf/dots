@@ -150,7 +150,7 @@ animations {
 }
 
 scrolling {
-    column_width = 0.45
+    column_width = 0.50
     focus_fit_method = 0
 }
 ```
