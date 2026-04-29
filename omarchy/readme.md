@@ -210,7 +210,6 @@ source ~/.local/share/omarchy/default/bash/rc
 alias c='clear'
 alias ff='fastfetch'
 alias hc='hyprctl clients'
-alias no='yay -S --noconfirm --provides=false'
 
 ## --- Backups ---
 # Lightweight Config Sync
