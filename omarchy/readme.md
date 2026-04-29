@@ -128,10 +128,19 @@ decoration {
 
     blur {
         enabled = false
+        size = 3
+        passes = 3
+        new_optimizations = true
+        xray = true
+        vibrancy = 0.2
     }
 
     shadow {
-        enabled = false
+        enabled = true
+        range = 4
+        render_power = 4
+        color = rgba(00000099)
+        offset = 2, 2
     }
 }
 
