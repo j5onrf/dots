@@ -7,70 +7,75 @@
 ```bash
 wip
 
-# --- Core System ---
+# -----------------------------------------------------
+# HYPRLAND BINDINGS - ACTIVE CONFIG (V4.9.1)
+# -----------------------------------------------------
+
+# --- 1. Core System ---
 bind = SUPER, Q, killactive
 
-# --- Applications ---
-bind = SUPER, S, exec, kitty
-bind = SUPER, A, exec, alacritty
-bind = SUPER, R, exec, omarchy-menu
-bind = SUPER ALT, S, exec, kitty --title floating_kitty
-bind = SUPER SHIFT, F, exec, uwsm-app -- nautilus --new-window
-bind = SUPER, G, exec, hyprctl clients | grep -q "class: brave-origin-beta" && hyprctl dispatch focuswindow class:brave-origin-beta || uwsm app -- brave-origin-beta
-bind = SUPER, F, exec, hyprctl clients | grep -q "class: org.gnome.Nautilus" && hyprctl dispatch focuswindow class:org.gnome.Nautilus || uwsm app -- nautilus --new-window
+# --- 2. Applications ---
+bind = SUPER,       S, exec, kitty
+bind = SUPER,       A, exec, alacritty
+bind = SUPER,       R, exec, omarchy-menu
+bind = SUPER ALT,   S, exec, kitty --title floating_kitty
 
-# --- Utilities & Clipboard ---
+# --- 2. Applications (Smart Launchers) ---
+bind = ALT, Space, exec, ~/.config/hypr/scripts/smart-launch.sh brave-origin-beta
+bind = CTRL, Space, exec, ~/.config/hypr/scripts/smart-launch.sh org.gnome.Nautilus "nautilus --new-window"
+bind = SUPER, Z, exec, ~/.config/hypr/scripts/smart-launch.sh zeditor
+
+# --- 3. Utilities & Clipboard ---
 bind = ALT, C, exec, walker -m clipboard
 bind = ALT, X, exec, /usr/local/bin/qs -c noctalia ipc call launcher clipboard
 bind = ALT, R, exec, ~/.config/hypr/scripts/toggle_scale.sh
-bind = , F2, exec, omarchy-toggle-nightlight
-bind = , F3, exec, ~/.config/hypr/scripts/power-toggle
+bind = ,     F2, exec, omarchy-toggle-nightlight
+bind = ,     F3, exec, ~/.config/hypr/scripts/power-toggle
+bind = ,     F4, exec, ~/.config/hypr/scripts/walker-windows.sh
+bind = ,     F5, exec, ~/.config/hypr/scripts/walker-switchboard.sh
+
+# --- 4. Special Workspaces (F-Keys) ---
+bind = , F1, workspace, 6
 bind = , F1, exec, keepassxc
+bind = , F9, workspace, 7
+bind = , F9, exec, omarchy-launch-webapp https://music.youtube.com/
 
-# --- Shell & UI Toggles (Physical Switchboard) ---
-bind = , XF86Tools,   exec, ~/.config/hypr/scripts/w-toggle.sh      # G1: Waybar / Omarchy
-bind = , XF86Launch5, exec, ~/.config/hypr/scripts/veo-toggle.sh    # G2: Veo UI
-bind = , XF86Launch6, exec, ~/.config/hypr/scripts/f-toggle.sh      # G3: Shell-Fusion
-bind = , XF86Launch7, exec, ~/.config/hypr/scripts/c-toggle.sh      # G4: Caelestia
-bind = , XF86Launch8, exec, ~/.config/hypr/scripts/n-toggle.sh      # G5: Noctalia
-bind = , XF86Launch9, exec, ~/.config/hypr/scripts/d-toggle.sh      # G6: DankMaterialShell
+# --- 5. Shell & UI Switchboard (Physical G-Keys) ---
+bind = , XF86Tools,   exec, ~/.config/hypr/scripts/w-toggle.sh   # G1
+bind = , XF86Launch5, exec, ~/.config/hypr/scripts/veo-toggle.sh # G2
+bind = , XF86Launch6, exec, ~/.config/hypr/scripts/f-toggle.sh   # G3
+bind = , XF86Launch7, exec, ~/.config/hypr/scripts/c-toggle.sh   # G4
+bind = , XF86Launch8, exec, ~/.config/hypr/scripts/n-toggle.sh   # G5
+bind = , XF86Launch9, exec, ~/.config/hypr/scripts/d-toggle.sh   # G6
 
-# Launch Walker in dmenu mode to switch between active windows
-bind = , F4, exec, ~/.config/hypr/scripts/walker-windows.sh
-
-# Launch Walker in dmenu mode to switch UI / Shells / Status Bars
-bind = , F5, exec, ~/.config/hypr/scripts/walker-switchboard.sh
-
-# --- Navigation & Scrolling Layout ---
-bind = CTRL, Left,  movefocus, l
-bind = CTRL, Right, movefocus, r
+# --- 6. Navigation & Layout ---
+bind = CTRL,  Left,  movefocus, l
+bind = CTRL,  Right, movefocus, r
 bind = SHIFT, Left,  swapwindow, l
 bind = SHIFT, Right, swapwindow, r
 
-# --- Resizing (WASD) ---
+# --- 7. Resizing & Moving (WASD/Z) ---
 binde = SUPER CTRL, W, resizeactive, 0 -100
 binde = SUPER CTRL, A, resizeactive, -100 0
 binde = SUPER CTRL, S, resizeactive, 0 100
 binde = SUPER CTRL, D, resizeactive, 100 0
-binde = SUPER ALT, W, moveactive, 0 -100
-binde = SUPER ALT, Z, moveactive, 0 100
-binde = SUPER ALT, A, moveactive, -100 0
-binde = SUPER ALT, D, moveactive, 100 0
+binde = SUPER ALT,  W, moveactive, 0 -100
+binde = SUPER ALT,  Z, moveactive, 0 100
+binde = SUPER ALT,  A, moveactive, -100 0
+binde = SUPER ALT,  D, moveactive, 100 0
 
-# --- Screenshots ---
-# env = XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots
-bind = , Print, exec, pkill slurp; grimblast --notify copysave area
+# --- 8. Screenshots ---
+bind = ,      Print, exec, pkill slurp; grimblast --notify copysave area
 bind = SHIFT, Print, exec, grimblast --notify copysave screen
-bind = CTRL, Print, exec, pkill slurp; grimblast --notify --freeze copysave area
+bind = CTRL,  Print, exec, pkill slurp; grimblast --notify --freeze copysave area
 
-# --- Workspace Management ---
+# --- 9. Workspace Management ---
 workspace = 1, persistent:true
 workspace = 2, persistent:true
 workspace = 3, persistent:true
 workspace = 4, persistent:true
 workspace = 5, persistent:true
 
-# Switch Workspaces (1-10)
 bind = SUPER, 1, workspace, 1
 bind = SUPER, 2, workspace, 2
 bind = SUPER, 3, workspace, 3
@@ -82,7 +87,6 @@ bind = SUPER, 8, workspace, 8
 bind = SUPER, 9, workspace, 9
 bind = SUPER, 0, workspace, 10
 
-# Move Window to Workspace (1-10)
 bind = SUPER SHIFT, 1, movetoworkspace, 1
 bind = SUPER SHIFT, 2, movetoworkspace, 2
 bind = SUPER SHIFT, 3, movetoworkspace, 3
@@ -94,16 +98,24 @@ bind = SUPER SHIFT, 8, movetoworkspace, 8
 bind = SUPER SHIFT, 9, movetoworkspace, 9
 bind = SUPER SHIFT, 0, movetoworkspace, 10
 
-# --- Window Rules ---
+# Disable Mouse Back/Forward
+bind = , mouse:275, exec, 
+bind = , mouse:276, exec,
+
+# --- 10. Window Rules (Floating & Pinned) ---
 windowrule = match:title ^(floating_kitty)$, float on
 windowrule = match:title ^(floating_kitty)$, center on
 windowrule = match:title ^(floating_kitty)$, size 875 600
+
 windowrule = float on, match:class ^(xdg-desktop-portal-gtk)$
 windowrule = size 875 600, match:class ^(xdg-desktop-portal-gtk)$
 windowrule = center on, match:class ^(xdg-desktop-portal-gtk)$
-windowrule = float on, match:title ^(Open File)$
-windowrule = float on, match:title ^(Save As)$
-windowrule = float on, match:title ^(File Upload)$
+windowrule = float on, match:title ^(Open File|Save As|File Upload)$
+
+windowrule = float 1, match:class ^(calendar-pwa)$
+windowrule = size 180 185, match:class ^(calendar-pwa)$
+windowrule = move 40 510, match:class ^(calendar-pwa)$
+windowrule = pin 1, match:class ^(calendar-pwa)$
 ```
 
 
@@ -118,12 +130,22 @@ general {
     gaps_out = 0
     border_size = 0
     layout = scrolling
+    col.active_border = rgb(e20342) 
+    col.inactive_border = rgb(2a153c)
 }
 
 decoration {
-    active_opacity = 1
-    inactive_opacity = 1
-    fullscreen_opacity = 1
+    dim_modal = false
+    dim_around = 0.4
+    dim_special = 0.4
+    dim_inactive = false
+    dim_strength = 0.4
+}
+
+decoration {
+    rounding = 12
+    active_opacity = 1.0
+    inactive_opacity = 1.0 # 0.92
 
     blur {
         enabled = false
@@ -135,12 +157,23 @@ decoration {
     }
 
     shadow {
-        enabled = true
+        enabled = false
         range = 4
         render_power = 4
         color = rgba(00000099)
         offset = 2, 2
     }
+}
+
+misc {
+    vfr = true
+    vrr = 1
+    animate_manual_resizes = false
+    animate_mouse_windowdragging = false
+    disable_hyprland_logo = true
+    background_color = 0x000000
+    key_press_enables_dpms = true  # key press will trigger wake
+    mouse_move_enables_dpms = true # mouse move will trigger wake
 }
 
 animations {
@@ -161,6 +194,8 @@ scrolling {
     column_width = 0.50
     focus_fit_method = 1
 }
+
+layerrule = match:namespace quickshell, no_anim on
 ```
 
 `.bashrc`
