@@ -24,7 +24,6 @@ windowrule = pin 1, match:class ^(calendar-pwa)$
 ```bash
 # Pin the Quickshell bar for auto-hide
 layerrule = match:namespace quickshell, no_anim on
-# layerrule = match:namespace wallpaper, no_anim on
 ```
 ```
 # Quickshell Theme Sync
