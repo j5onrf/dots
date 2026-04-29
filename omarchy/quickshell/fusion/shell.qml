@@ -1,4 +1,4 @@
-/* Shell-Fusion V4.8 4.28.26 Omarchy-Sync + Opmimizations */
+/* Shell-Fusion V4.9 4.29.26 Omarchy-Sync + Opmimizations */
 
 import Quickshell
 import Quickshell.Io
@@ -72,12 +72,24 @@ PanelWindow {
             Behavior on x { NumberAnimation { duration: 250; easing.type: Easing.OutCubic } }
             color: theme.mSurface
 
+            // TOP COLUMN (Launcher)
             Column {
-                anchors { top: parent.top; topMargin: 6; horizontalCenter: parent.horizontalCenter }
+                anchors { top: parent.top; topMargin: 4; horizontalCenter: parent.horizontalCenter }
                 spacing: 4
 
                 FusionModule {
-                    Text { anchors.centerIn: parent; text: "\ue5d3"; color: theme.mOnSurface; font { family: iconFont; pixelSize: 22 } }
+                    height: 30
+                    Text {
+                        anchors {
+                            top: parent.top
+                            topMargin: 2
+                            horizontalCenter: parent.horizontalCenter
+                        }
+                        text: "\ue5d3"
+                        color: theme.mOnSurface
+                        font { family: iconFont; pixelSize: 22 }
+                    }
+
                     hoverArea.onClicked: (mouse) => {
                         if (mouse.button === Qt.RightButton) {
                             Hyprland.dispatch("exec kitty --class=sys-monitor -e btop")
@@ -94,8 +106,6 @@ PanelWindow {
                         layer.effect: null
                         required property var modelData
                         property bool isActive: modelData === Hyprland.focusedWorkspace
-
-                        // OPTIMIZED: Replaced for-loop with declarative some()
                         property bool isOccupied: Hyprland.toplevels.values.some(t => t.workspace === modelData)
 
                         radius: hoverArea.containsMouse ? 15 : (isActive ? 12 : 8)
@@ -115,8 +125,8 @@ PanelWindow {
                         Text {
                             anchors.centerIn: parent
                             text: modelData.id
-                            renderType: Text.NativeRendering // Uses system-level font rendering (lighter)
-                            color: parent.isActive ? theme.mOnPrimary : theme.mOnSurface
+                            visible: !parent.isActive
+                            color: theme.mOnSurface
                             font { weight: Font.DemiBold; family: monoFont; pixelSize: 17 }
                         }
 
@@ -125,6 +135,7 @@ PanelWindow {
                 }
             }
 
+            // MIDDLE ITEM (Window Title)
             Item {
                 anchors.centerIn: parent; width: parent.width; height: 300
                 Text {
@@ -137,8 +148,13 @@ PanelWindow {
                 }
             }
 
+            // BOTTOM COLUMN (Drawer, Clock, Power/Vol)
             Column {
-                anchors { bottom: parent.bottom; bottomMargin: 6; horizontalCenter: parent.horizontalCenter }
+                anchors {
+                    bottom: parent.bottom;
+                    bottomMargin: 4;
+                    horizontalCenter: parent.horizontalCenter
+                }
                 spacing: 4
 
                 FusionModule {
@@ -179,12 +195,12 @@ PanelWindow {
                 }
 
                 FusionModule {
-                    height: 42
+                    height: 40
                     border.width: 2
                     hoverArea.onClicked: Hyprland.dispatch("exec kitty --class=calendar-pwa -e sh -c 'cal -m; read -n 1'")
                     Column {
                         anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
-                        topPadding: 2.3; spacing: -2
+                        topPadding: 2.4; spacing: -5
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter; color: theme.mPrimary
                             text: mainClock.date ? (mainClock.date.getHours() % 12 || 12).toString().padStart(2, '0') : "--"
@@ -227,7 +243,6 @@ PanelWindow {
     SystemClock { id: mainClock; precision: SystemClock.Minutes }
     Connections {
         target: Hyprland
-        // Only refresh when a window is actually opened or closed
         function onToplevelOpened() { Hyprland.refreshToplevels() }
         function onToplevelClosed() { Hyprland.refreshToplevels() }
     }
