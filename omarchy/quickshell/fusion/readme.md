@@ -22,7 +22,7 @@ windowrule = move 40 510, match:class ^(calendar-pwa)$
 windowrule = pin 1, match:class ^(calendar-pwa)$
 ```
 ```bash
-# Pin the Quickshell bar so it never moves or fades
+# Pin the Quickshell bar for auto-hide
 layerrule = match:namespace quickshell, no_anim on
 # layerrule = match:namespace wallpaper, no_anim on
 ```
