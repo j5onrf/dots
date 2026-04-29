@@ -1,4 +1,4 @@
-/* Shell-Fusion V4.9 4.29.26 Omarchy-Sync + Opmimizations */
+/* Shell-Fusion V5.1 4.29.26 Omarchy-Sync + 6-7 icons */
 
 import Quickshell
 import Quickshell.Io
@@ -72,24 +72,18 @@ PanelWindow {
             Behavior on x { NumberAnimation { duration: 250; easing.type: Easing.OutCubic } }
             color: theme.mSurface
 
-            // TOP COLUMN (Launcher)
             Column {
-                anchors { top: parent.top; topMargin: 4; horizontalCenter: parent.horizontalCenter }
-                spacing: 4
+                anchors { top: parent.top; topMargin: 2; horizontalCenter: parent.horizontalCenter }
+                spacing: 2
 
                 FusionModule {
                     height: 30
                     Text {
-                        anchors {
-                            top: parent.top
-                            topMargin: 2
-                            horizontalCenter: parent.horizontalCenter
-                        }
+                        anchors { top: parent.top; topMargin: 2; horizontalCenter: parent.horizontalCenter }
                         text: "\ue5d3"
                         color: theme.mOnSurface
                         font { family: iconFont; pixelSize: 22 }
                     }
-
                     hoverArea.onClicked: (mouse) => {
                         if (mouse.button === Qt.RightButton) {
                             Hyprland.dispatch("exec kitty --class=sys-monitor -e btop")
@@ -103,7 +97,6 @@ PanelWindow {
                     model: Hyprland.workspaces
                     FusionModule {
                         layer.enabled: true
-                        layer.effect: null
                         required property var modelData
                         property bool isActive: modelData === Hyprland.focusedWorkspace
                         property bool isOccupied: Hyprland.toplevels.values.some(t => t.workspace === modelData)
@@ -124,10 +117,19 @@ PanelWindow {
 
                         Text {
                             anchors.centerIn: parent
-                            text: modelData.id
-                            visible: !parent.isActive
-                            color: theme.mOnSurface
-                            font { weight: Font.DemiBold; family: monoFont; pixelSize: 17 }
+                            text: {
+                                if (parent.isActive) return ""
+                                if (modelData.id === 6) return "\uf51a"
+                                if (modelData.id === 7) return "\uf391"
+                                return modelData.id
+                            }
+                            renderType: Text.NativeRendering
+                            color: parent.isActive ? theme.mOnPrimary : theme.mOnSurface
+                            font {
+                                weight: Font.DemiBold
+                                family: (modelData.id === 6 || modelData.id === 7) ? iconFont : monoFont
+                                pixelSize: (modelData.id === 6 || modelData.id === 7) ? 22 : 17
+                            }
                         }
 
                         hoverArea.onClicked: Hyprland.dispatch("workspace " + modelData.id)
@@ -135,7 +137,6 @@ PanelWindow {
                 }
             }
 
-            // MIDDLE ITEM (Window Title)
             Item {
                 anchors.centerIn: parent; width: parent.width; height: 300
                 Text {
@@ -148,14 +149,9 @@ PanelWindow {
                 }
             }
 
-            // BOTTOM COLUMN (Drawer, Clock, Power/Vol)
             Column {
-                anchors {
-                    bottom: parent.bottom;
-                    bottomMargin: 4;
-                    horizontalCenter: parent.horizontalCenter
-                }
-                spacing: 4
+                anchors { bottom: parent.bottom; bottomMargin: 2; horizontalCenter: parent.horizontalCenter }
+                spacing: 2
 
                 FusionModule {
                     height: 18
@@ -168,7 +164,7 @@ PanelWindow {
                 }
 
                 Column {
-                    spacing: 4; clip: true
+                    spacing: 2; clip: true
                     height: drawerOpen ? implicitHeight : 0; opacity: drawerOpen ? 1.0 : 0
                     Behavior on height { NumberAnimation { duration: 250; easing.type: Easing.OutCubic } }
                     Behavior on opacity { NumberAnimation { duration: 250 } }
@@ -241,9 +237,4 @@ PanelWindow {
     }
 
     SystemClock { id: mainClock; precision: SystemClock.Minutes }
-    Connections {
-        target: Hyprland
-        function onToplevelOpened() { Hyprland.refreshToplevels() }
-        function onToplevelClosed() { Hyprland.refreshToplevels() }
-    }
 }
