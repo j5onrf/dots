@@ -21,6 +21,11 @@ windowrule = size 180 185, match:class ^(calendar-pwa)$
 windowrule = move 40 510, match:class ^(calendar-pwa)$
 windowrule = pin 1, match:class ^(calendar-pwa)$
 ```
+```bash
+# Pin the Quickshell bar so it never moves or fades
+layerrule = match:namespace quickshell, no_anim on
+# layerrule = match:namespace wallpaper, no_anim on
+```
 ```
 # Quickshell Theme Sync
 # To automate Quickshell bar reloads on theme changes, append the reload script to the Omarchy master setter:
