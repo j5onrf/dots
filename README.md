@@ -5,7 +5,7 @@
 <details open><summary>(2026-April28) Omarchy Web App >< Brave Origin </summary>
 <p>
     
-[⚡ Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion)
+[Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion)
 <img alt="20260428_202850" src="https://github.com/user-attachments/assets/a7e10b93-abbb-4dda-a8bf-89fbd75f7a33" />
 
 
