@@ -202,6 +202,10 @@ layerrule = match:namespace quickshell, no_anim on
 ```bash
 wip
 
+# (leave this at the top of this file)
+[[ $- != *i* ]] && return
+source ~/.local/share/omarchy/default/bash/rc
+
 ## --- System & UI ---
 alias c='clear'
 alias ff='fastfetch'
