@@ -1,4 +1,4 @@
-/* Shell-Fusion V5.1 4.29.26 Omarchy-Sync + 6-7 icons */
+/* Shell-Fusion V5.1 4.30.26 + dateLabel*/
 
 import Quickshell
 import Quickshell.Io
@@ -119,15 +119,14 @@ PanelWindow {
                             anchors.centerIn: parent
                             text: {
                                 if (parent.isActive) return ""
-                                if (modelData.id === 6) return "\uf084" // KeePass / Key Icon (󰌆)
-                                if (modelData.id === 7) return "\uf001" // Music Note ()
+                                if (modelData.id === 6) return "\uf084"
+                                if (modelData.id === 7) return "\uf001"
                                 return modelData.id
                             }
                             renderType: Text.NativeRendering
                             color: parent.isActive ? theme.mOnPrimary : theme.mOnSurface
                             font {
                                 weight: Font.DemiBold
-                                // Use monoFont for everything now so Nerd Font icons render correctly
                                 family: monoFont
                                 pixelSize: (modelData.id === 6 || modelData.id === 7) ? 20 : 17
                             }
@@ -138,15 +137,22 @@ PanelWindow {
                 }
             }
 
+            // REPLACED WINDOW TITLE WITH DATE LABEL
             Item {
-                anchors.centerIn: parent; width: parent.width; height: 300
+                anchors.centerIn: parent
+                width: 20
+                height: dateLabel.implicitWidth
+
                 Text {
-                    anchors.centerIn: parent; width: 300; rotation: 270; horizontalAlignment: Text.AlignHCenter
-                    opacity: 0.5; color: theme.mOnSurface
-                    font { family: monoFont; weight: Font.Medium; pixelSize: 9 }
-                    readonly property string title: Hyprland.activeToplevel
-                        ? (Hyprland.activeToplevel.title || Hyprland.activeToplevel.class || "Desktop") : "Desktop"
-                    text: title.length > 13 ? title.substring(0, 13) + "…" : title
+                    id: dateLabel
+                    anchors.centerIn: parent
+                    text: mainClock.date ? mainClock.date.toLocaleDateString(Qt.locale(), "dddd d").toLowerCase() : "..."
+                    color: theme.mOnSurface
+                    opacity: 0.7
+                    font { family: monoFont; pixelSize: 9; weight: Font.Regular }
+                    rotation: 270
+                    renderType: Text.NativeRendering
+                    antialiasing: true
                 }
             }
 
