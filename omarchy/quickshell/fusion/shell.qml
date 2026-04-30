@@ -119,16 +119,17 @@ PanelWindow {
                             anchors.centerIn: parent
                             text: {
                                 if (parent.isActive) return ""
-                                if (modelData.id === 6) return "\uf51a"
-                                if (modelData.id === 7) return "\uf391"
+                                if (modelData.id === 6) return "\uf084" // KeePass / Key Icon (󰌆)
+                                if (modelData.id === 7) return "\uf001" // Music Note ()
                                 return modelData.id
                             }
                             renderType: Text.NativeRendering
                             color: parent.isActive ? theme.mOnPrimary : theme.mOnSurface
                             font {
                                 weight: Font.DemiBold
-                                family: (modelData.id === 6 || modelData.id === 7) ? iconFont : monoFont
-                                pixelSize: (modelData.id === 6 || modelData.id === 7) ? 22 : 17
+                                // Use monoFont for everything now so Nerd Font icons render correctly
+                                family: monoFont
+                                pixelSize: (modelData.id === 6 || modelData.id === 7) ? 20 : 17
                             }
                         }
 
