@@ -143,7 +143,7 @@ PanelWindow {
                 Text {
                     anchors.centerIn: parent; width: 300; rotation: 270; horizontalAlignment: Text.AlignHCenter
                     opacity: 0.5; color: theme.mOnSurface
-                    font { family: monoFont; weight: Font.DemiBold; pixelSize: 9 }
+                    font { family: monoFont; weight: Font.Medium; pixelSize: 9 }
                     readonly property string title: Hyprland.activeToplevel
                         ? (Hyprland.activeToplevel.title || Hyprland.activeToplevel.class || "Desktop") : "Desktop"
                     text: title.length > 13 ? title.substring(0, 13) + "…" : title
