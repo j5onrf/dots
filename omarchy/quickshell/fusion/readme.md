@@ -4,7 +4,7 @@
 
 `Omarchy v3.6.0` `Quickshell 0.2.1+`
 
-<img alt="20260429_195435" src="https://github.com/user-attachments/assets/15913d92-603d-4d12-8f55-86b0f669ca3b" />
+<img alt="20260429_200056" src="https://github.com/user-attachments/assets/852add48-aeb3-4d7b-8d5e-a5f3a1fdaff3" />
 <br><br>
 
 | Red / Rossetto | Green / Osaka Jade | Blue / Tokyo Night |
