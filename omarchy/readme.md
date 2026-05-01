@@ -147,7 +147,7 @@ alias uk='sudo ~/.config/hypr/scripts/kernel-update-toggle.sh'
 alias or='sudo /home/j5/.config/hypr/scripts/omarchy-restore.sh'
 
 # Search history with FZF (if you have fzf installed)
-alias hs='history | fzf --tac --no-sort | cb copy'
+alias hh='history | fzf --tac --no-sort | cb copy'
 
 # Keep only the last 5000 lines and wipe the rest manually
 alias ch='sed -i -e :a -e "$q;N;5001,$D;ba" ~/.bash_history'
