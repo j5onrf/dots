@@ -150,7 +150,7 @@ alias or='sudo /home/j5/.config/hypr/scripts/omarchy-restore.sh'
 alias hs='history | fzf --tac --no-sort | cb copy'
 
 # Keep only the last 5000 lines and wipe the rest manually
-alias xclean-h='sed -i -e :a -e "$q;N;5001,$D;ba" ~/.bash_history'
+alias ch='sed -i -e :a -e "$q;N;5001,$D;ba" ~/.bash_history'
 
 ## --- Snapper Management ---
 alias ss='~/.config/hypr/scripts/snap.sh'
