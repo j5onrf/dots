@@ -220,7 +220,7 @@ alias hc='hyprctl clients'
 
 ## --- Backups ---
 # Lightweight Config Sync
-alias bc='mountpoint -q /run/media/j5/SSD_BACKUPS || udisksctl mount -b /dev/sda1; ~/.config/hypr/scripts/config-backup.sh'
+alias bc='mountpoint -q /run/media/j5/SSD_BACKUPS || udisksctl mount -b /dev/disk/by-uuid/102d3179-5cc0-43b0-be2f-9ab1a016db28; ~/.config/hypr/scripts/config-backup.sh'
 
 ## --- Package Management ---
 alias y='yay'
