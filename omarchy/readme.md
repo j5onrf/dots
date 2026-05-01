@@ -176,8 +176,8 @@ misc {
     animate_mouse_windowdragging = false
     disable_hyprland_logo = true
     background_color = 0x000000
-    key_press_enables_dpms = true  # key press will trigger wake
-    mouse_move_enables_dpms = true # mouse move will trigger wake
+    key_press_enables_dpms = true
+    mouse_move_enables_dpms = true
     always_follow_on_dnd = true
     layers_hog_keyboard_focus = true
 }
