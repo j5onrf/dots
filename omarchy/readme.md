@@ -171,7 +171,7 @@ decoration {
 
 misc {
     vfr = true
-    vrr = 0
+    vrr = 2
     animate_manual_resizes = false
     animate_mouse_windowdragging = false
     disable_hyprland_logo = true
