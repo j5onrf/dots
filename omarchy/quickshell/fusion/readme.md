@@ -7,12 +7,7 @@
 <img alt="20260429_200056" src="https://github.com/user-attachments/assets/852add48-aeb3-4d7b-8d5e-a5f3a1fdaff3" />
 <br><br>
 
-| Red / Rossetto | Green / Osaka Jade | Blue / Tokyo Night |
-| :---: | :---: | :---: |
-| <img src="https://github.com/user-attachments/assets/ee2447b0-cd3f-4a5b-abab-17522299a1f0" width="100" /> | <img src="https://github.com/user-attachments/assets/55388b09-bd7d-454d-9f57-28d86bd2fbf3" width="100" /> | <img src="https://github.com/user-attachments/assets/481944d7-8601-41b5-8922-ac2a9fc1fdce" width="100" /> |
-
-*Real-time color injection based on your current Omarchy `.toml`*
-<br><br>
+> *Real-time color injection based on your current Omarchy `.toml`*
 
 ```bash
 # Kitty Calendar Rules
