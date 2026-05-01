@@ -128,90 +128,6 @@ windowrule = pin 1, match:class ^(calendar-pwa)$
 ```bash
 wip
 
-# --- Personal Look'n'Feel ---
-source = ~/.config/omarchy/current/theme/hyprland.conf
-
-general {
-    gaps_in = 0
-    gaps_out = 0
-    border_size = 0
-    layout = scrolling
-}
-
-decoration {
-    dim_modal = false
-    dim_around = 0.4
-    dim_special = 0.4
-    dim_inactive = false
-    dim_strength = 0.4
-}
-
-decoration {
-    rounding = 12
-    active_opacity = 1.0
-    inactive_opacity = 1.0 # 0.92
-
-    blur {
-        enabled = false
-        size = 3
-        passes = 3
-        new_optimizations = true
-        xray = true
-        vibrancy = 0.2
-    }
-
-    shadow {
-        enabled = false
-        range = 4
-        render_power = 4
-        color = rgba(00000099)
-        offset = 2, 2
-    }
-}
-
-misc {
-    vfr = true
-    vrr = 2
-    animate_manual_resizes = false
-    animate_mouse_windowdragging = false
-    disable_hyprland_logo = true
-    background_color = 0x000000
-    key_press_enables_dpms = true  # key press will trigger wake
-    mouse_move_enables_dpms = true # mouse move will trigger wake
-    always_follow_on_dnd = true
-    layers_hog_keyboard_focus = true
-}
-
-animations {
-    enabled = true
-    bezier = smoothOut, 0.36, 0, 0.66, -0.56
-    bezier = smoothIn, 0.4, 0, 0.2, 1
-    bezier = snap, 0.34, 1.56, 0.64, 1
-    animation = windowsIn, 1, 3, snap, slide
-    animation = windowsOut, 1, 3, smoothIn, slide
-    animation = windowsMove, 1, 3, smoothIn, slide
-    animation = border, 1, 5, default
-    animation = workspaces, 1, 4, smoothIn, slide
-    animation = layersIn, 1, 2, smoothIn, fade
-    animation = layersOut, 1, 2, smoothIn, fade
-}
-
-scrolling {
-    column_width = 0.50
-    focus_fit_method = 1
-}
-
-layerrule = match:namespace quickshell, no_anim on
-```
-
-`.bashrc`
-```bash
-wip
-
-# (leave this at the top of this file)
-[[ $- != *i* ]] && return
-source ~/.local/share/omarchy/default/bash/rc
-
 ## --- System & UI ---
 alias c='clear'
 alias ff='fastfetch'
@@ -228,6 +144,13 @@ alias yr='yay -Rns'
 alias xclean='bash ~/.config/hypr/scripts/check-orphans.sh'
 alias um='sudo reflector --country "United States" --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
 alias uk='sudo ~/.config/hypr/scripts/kernel-update-toggle.sh'
+alias or='sudo /home/j5/.config/hypr/scripts/omarchy-restore.sh'
+
+# Search history with FZF (if you have fzf installed)
+alias hs='history | fzf --tac --no-sort | cb copy'
+
+# Keep only the last 5000 lines and wipe the rest manually
+alias xclean-h='sed -i -e :a -e "$q;N;5001,$D;ba" ~/.bash_history'
 
 ## --- Snapper Management ---
 alias ss='~/.config/hypr/scripts/snap.sh'
