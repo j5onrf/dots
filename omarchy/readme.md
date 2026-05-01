@@ -8,7 +8,7 @@
 wip
 
 # -----------------------------------------------------
-# HYPRLAND BINDINGS - ACTIVE CONFIG (V4.9.1)
+# HYPRLAND BINDINGS - ACTIVE CONFIG (V4.9.2)
 # -----------------------------------------------------
 
 # --- 1. Core System ---
@@ -22,8 +22,13 @@ bind = SUPER ALT,   S, exec, kitty --title floating_kitty
 
 # --- 2. Applications (Smart Launchers) ---
 bind = ALT, Space, exec, ~/.config/hypr/scripts/smart-launch.sh brave-origin-beta
+bind = SHIFT, Space, exec, ~/.config/hypr/scripts/smart-launch.sh brave-origin-beta --incognito
 bind = CTRL, Space, exec, ~/.config/hypr/scripts/smart-launch.sh org.gnome.Nautilus "nautilus --new-window"
 bind = SUPER, Z, exec, ~/.config/hypr/scripts/smart-launch.sh zeditor
+
+bind = SUPER SHIFT, F, exec, uwsm app -- nautilus --new-window
+# bind = SUPER SHIFT, B, exec, uwsm app -- brave-origin-beta --new-window
+bind = SHIFT, Space, exec, uwsm app -- brave-origin-beta --incognito
 
 # --- 3. Utilities & Clipboard ---
 bind = ALT, C, exec, walker -m clipboard
@@ -59,10 +64,10 @@ binde = SUPER CTRL, W, resizeactive, 0 -100
 binde = SUPER CTRL, A, resizeactive, -100 0
 binde = SUPER CTRL, S, resizeactive, 0 100
 binde = SUPER CTRL, D, resizeactive, 100 0
-binde = SUPER ALT,  W, moveactive, 0 -100
-binde = SUPER ALT,  Z, moveactive, 0 100
-binde = SUPER ALT,  A, moveactive, -100 0
-binde = SUPER ALT,  D, moveactive, 100 0
+binde = SUPER ALT,  W, moveactive, 0 -50
+binde = SUPER ALT,  Z, moveactive, 0 50
+binde = SUPER ALT,  A, moveactive, -50 0
+binde = SUPER ALT,  D, moveactive, 50 0
 
 # --- 8. Screenshots ---
 bind = ,      Print, exec, pkill slurp; grimblast --notify copysave area
@@ -124,14 +129,13 @@ windowrule = pin 1, match:class ^(calendar-pwa)$
 wip
 
 # --- Personal Look'n'Feel ---
+source = ~/.config/omarchy/current/theme/hyprland.conf
 
 general {
     gaps_in = 0
     gaps_out = 0
     border_size = 0
     layout = scrolling
-    col.active_border = rgb(e20342) 
-    col.inactive_border = rgb(2a153c)
 }
 
 decoration {
@@ -174,6 +178,8 @@ misc {
     background_color = 0x000000
     key_press_enables_dpms = true  # key press will trigger wake
     mouse_move_enables_dpms = true # mouse move will trigger wake
+    always_follow_on_dnd = true
+    layers_hog_keyboard_focus = true
 }
 
 animations {
@@ -181,8 +187,8 @@ animations {
     bezier = smoothOut, 0.36, 0, 0.66, -0.56
     bezier = smoothIn, 0.4, 0, 0.2, 1
     bezier = snap, 0.34, 1.56, 0.64, 1
-    animation = windowsIn, 1, 3, smoothIn, popin 95%
-    animation = windowsOut, 1, 3, smoothIn, popin 95%
+    animation = windowsIn, 1, 3, snap, slide
+    animation = windowsOut, 1, 3, smoothIn, slide
     animation = windowsMove, 1, 3, smoothIn, slide
     animation = border, 1, 5, default
     animation = workspaces, 1, 4, smoothIn, slide
