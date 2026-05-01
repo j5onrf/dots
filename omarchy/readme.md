@@ -182,20 +182,6 @@ misc {
     layers_hog_keyboard_focus = true
 }
 
-animations {
-    enabled = true
-    bezier = smoothOut, 0.36, 0, 0.66, -0.56
-    bezier = smoothIn, 0.4, 0, 0.2, 1
-    bezier = snap, 0.34, 1.56, 0.64, 1
-    animation = windowsIn, 1, 3, snap, slide
-    animation = windowsOut, 1, 3, smoothIn, slide
-    animation = windowsMove, 1, 3, smoothIn, slide
-    animation = border, 1, 5, default
-    animation = workspaces, 1, 4, smoothIn, slide
-    animation = layersIn, 1, 2, smoothIn, fade
-    animation = layersOut, 1, 2, smoothIn, fade
-}
-
 scrolling {
     column_width = 0.50
     focus_fit_method = 1
