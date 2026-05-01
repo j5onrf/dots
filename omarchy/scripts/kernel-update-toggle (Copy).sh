@@ -2,6 +2,7 @@
 
 # --- CONFIGURATION ---
 PACMAN_CONF="/etc/pacman.conf"
+# Order doesn't strictly matter here, but keeping them paired is clean
 PACKAGES_TO_TOGGLE="linux-zen-headers linux-zen linux-headers linux"
 # --- END CONFIGURATION ---
 
@@ -20,24 +21,18 @@ if grep -q "^IgnorePkg.*linux-zen\b" "$PACMAN_CONF"; then
     cp "$PACMAN_CONF" "$PACMAN_CONF.bak"
 
     for pkg in $PACKAGES_TO_TOGGLE; do
-        # Use \b for exact word matching
+        # Use \b for exact word matching so 'linux' doesn't accidentally 
+        # mangle 'linux-zen'
         sed -i "s/\b$pkg\b//g" "$PACMAN_CONF"
     done
 
-    # Clean up excess whitespace left behind
+    # Clean up excess whitespace left behind on the IgnorePkg line
     sed -i "/^IgnorePkg/s/  */ /g; /^IgnorePkg/s/ *= */ = /; /^IgnorePkg/s/ *$//" "$PACMAN_CONF"
 
     echo -e "${GREEN}SUCCESS:${NC} Kernel packages are now ENABLED for upgrade."
 else
-    echo "Kernels are currently ENABLED (or line is missing). Re-ignoring..."
+    echo "Kernels are currently ENABLED. Re-ignoring..."
     cp "$PACMAN_CONF" "$PACMAN_CONF.bak"
-
-    # --- SAFETY NET: Create line if Omarchy deleted it ---
-    if ! grep -q "^IgnorePkg" "$PACMAN_CONF"; then
-        echo "IgnorePkg line was missing! Re-creating it under [options]..."
-        sed -i "/^\[options\]/a IgnorePkg =" "$PACMAN_CONF"
-    fi
-    # ----------------------------------------------------
 
     # Append the full list to the end of the IgnorePkg line
     sed -i "/^IgnorePkg/ s/$/ $PACKAGES_TO_TOGGLE/" "$PACMAN_CONF"
