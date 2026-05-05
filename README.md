@@ -2,7 +2,7 @@
 
 </details>
 
-<details ><summary>(2026-May06) qwen3.6:35b-a3b >>> 32gb </summary>
+<details ><summary>(2026-May06) Qwen3.6:35b-a3b >>> 32gb </summary>
 <p>
     
 [Qwen 3.6 35B-A3B ollama consumer CPU](https://github.com/j5onrf/dots/blob/main/omarchy/ai/readme.md)
