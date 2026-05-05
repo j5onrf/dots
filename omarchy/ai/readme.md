@@ -1,37 +1,37 @@
-# Qwen-35B AI Assistant Trigger
+# Qwen-36B AI Assistant Trigger
 ```ini
 bind = , F8, Open Qwen-35b in Alacritty, exec, uwsm app -- alacritty --title "Qwen-35b" -e ollama run qwen36-35b-a3b:latest --think=false --verbose
 ```
-## Qwen 3.5 35B-A3B: The CPU Optimization King
+## Qwen 3.6 35B-A3B: The "No-GPU" Frontier
 
-Released on **February 25, 2026**, this model is the current gold standard for high-intelligence local AI without a dedicated GPU.
+Released on **April 14, 2026**, this model is the absolute gold standard for high-intelligence local inference on standard consumer hardware. 
 
 ### The A3B Architecture (Active 3 Billion)
-Unlike "dense" models that use every parameter for every word, Qwen 3.5 uses a **Hybrid Sparse Mixture-of-Experts (MoE)**.
-*   **Total Knowledge:** 35 Billion parameters in the library.
-*   **Active Brain:** Only **3 Billion parameters** fire per token.
-*   **Expert Routing:** 256 independent experts; only ~3.5% (9 experts) activate per request.
-*   **Efficiency:** You get **35B-level reasoning** at **3B-level speeds**.
+The "A3B" designation is the secret to its speed. It uses a **Hybrid Sparse Mixture-of-Experts (MoE)** architecture.
+*   **Massive Library:** Contains **35 Billion total parameters** sitting in its weights.
+*   **Surgical Precision:** It only activates **3 Billion parameters** per token.
+*   **Expert Routing:** Uses **256 independent experts**, but only 9 (8 routed + 1 shared) process any single request.
+*   **The Benefit:** You get the deep world knowledge of a 35B model at the **compute cost and speed of a 3B model**.
 
-### Top Features
-*   **Native Multimodal:** Built from day one to "see" images and "understand" video without external adapters.
-*   **Massive Context:** Supports **262,144 tokens** natively (extensible to 1M+ via YaRN).
-*   **Gated Delta Networks:** High-throughput architecture designed to minimize RAM latency on consumer CPUs.
-*   **Built-in Reasoning:** Native "Chain of Thought" traces for complex problem solving.
+### Top Features in 3.6
+*   **Agentic Coding Power:** Optimized for repository-level reasoning and frontend workflows, outperforming much larger dense models on coding benchmarks.
+*   **Multimodal Native:** Native support for text, image, and video inputs without needing external adapters.
+*   **Massive Context:** Supports **262,144 tokens** natively, extensible to over **1 million** via YaRN.
+*   **Thinking Preservation:** Includes an integrated "thinking mode" that preserves reasoning traces across multi-turn conversations.
 
-### Why it's the best right now
-It breaks the "RAM vs. Speed" bottleneck. It is the only model providing **frontier-class intelligence** (comparable to GPT-4o) that maintains **6-10 tokens/s to 30–35 tokens/s range** on a mid-range CPU like an i5 or Ryzen 5.
+### Why it's the best for CPU right now
+It breaks the scaling myth. Because only 3B parameters are active per forward pass, it is bottlenecked by **memory bandwidth** rather than raw CPU compute (FLOPs). On a pure CPU setup, it can reach **20+ tokens/s** depending on your RAM speed (DDR5).
 
 ---
 
 ### Optimized Modelfile
 ```dockerfile
-FROM qwen3.5:35b-a3b
+FROM qwen3.6:35b-a3b
 
-# Forces the context window to 1024 to save RAM and stop the '2048' default lag (optional for 32gb ram)
+# Forces the context window to 1024 to save RAM (optional)
 PARAMETER num_ctx 1024
 
-# Set to your PHYSICAL core count (e.g., one per core)
+# Set to your PHYSICAL core count (e.g., 1 per core)
 PARAMETER num_thread 8
 
 # Optimized for logic-heavy tasks
