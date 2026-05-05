@@ -25,6 +25,9 @@ It breaks the scaling myth. Because only 3B parameters are active per forward pa
 
 ---
 
+### CPU Management (Chill Governor)
+For added stability, a toggle script can be used to manage CPU governors. This allows you to switch to a "chill" mode—capping frequencies to keep fans and temperatures down during long inference sessions—or a performance mode when raw speed is required.
+
 ### Optimized Modelfile
 ```dockerfile
 FROM qwen3.6:35b-a3b
