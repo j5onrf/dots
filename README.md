@@ -5,7 +5,7 @@
 <details open><summary>(2026-May06) Qwen 3.6 35b-a3b >>> 32gb </summary>
 <p>
     
-[Qwen 3.6 35B-A3B ollama](https://github.com/j5onrf/dots/blob/main/omarchy/ai/readme.md)
+[Qwen 3.6 35B-A3B <sup>micro-agents</sup>](https://github.com/j5onrf/dots/blob/main/omarchy/ai/readme.md)
 <img alt="20260505_172954" src="https://github.com/user-attachments/assets/09ecf22a-8c91-4880-bfad-4f30ffef69ce" />
 
 </p>
