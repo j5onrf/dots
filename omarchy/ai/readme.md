@@ -1,9 +1,7 @@
-```bash
-
-bind = , F8, exec, uwsm app -- alacritty --title "Qwen-35b" -e ollama run qwen36-35b-a3b:latest --think=false --verbose
-
+# Qwen-35B AI Assistant Trigger
+```ini
+bind = , F8, Open Qwen-35b in Alacritty, exec, uwsm app -- alacritty --title "Qwen-35b" -e ollama run qwen36-35b-a3b:latest --think=false --verbose
 ```
-
 ## Qwen 3.5 35B-A3B: The CPU Optimization King
 
 Released on **February 25, 2026**, this model is the current gold standard for high-intelligence local AI without a dedicated GPU.
