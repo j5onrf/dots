@@ -6,7 +6,7 @@
 <p>
     
 [Qwen 3.6 35B-A3B ollama consumer CPU]()
-<img alt="20260505_003840" src="https://github.com/user-attachments/assets/f50f8b4b-3e76-465f-953e-b731689abad4" />
+<img alt="20260505_003840" src="https://github.com/j5onrf/dots/blob/main/omarchy/ai/readme.md" />
 
 </p>
 </details>
