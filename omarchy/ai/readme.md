@@ -1,6 +1,6 @@
 # Qwen-36B AI Assistant Trigger
 ```ini
-bind = , F8, Open Qwen-35b in Alacritty, exec, uwsm app -- alacritty --title "Qwen-35b" -e ollama run qwen36-35b-a3b:latest --think=false --verbose
+bind = , F8, exec, uwsm app -- alacritty --title "Qwen-35b" -e ollama run qwen36-35b-a3b:latest --think=false --verbose
 ```
 ## Qwen 3.6 35B-A3B: The "No-GPU" Frontier
 
