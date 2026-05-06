@@ -1,6 +1,18 @@
-## Qwen 3.6 35B-A3B Q4_K_M (4-bit): The CPU Optimization King
+<img alt="logo" src="https://github.com/user-attachments/assets/96ffa0ac-fe73-4edd-b81f-f6fe6db94e2b" />
+
+
+### Qwen 3.6:35b-a3b Q4_K_M (4-bit)
+**The "Active-3B" Sparse Expert**
 
 Released on **April 14, 2026**, this model is the absolute gold standard for high-intelligence local inference on standard consumer hardware.
+
+A frontier-class Mixture-of-Experts (MoE) model designed for high-speed local inference. It provides 35B-level logic with the resource footprint of a 3B model.
+
+*   **Intelligence:** 35B total parameters for high-fidelity reasoning and coding.
+*   **Speed:** Only **3B parameters active** per token, ensuring 10+ TPS even on mid-range CPUs.
+*   **Efficiency:** Optimized for low-bandwidth memory (DDR4/DDR5) and non-GPU environments.
+*   **Capability:** Native 262k context; excels at "Thinking" tasks and agentic workflows.
+*   **Optimization:** Best run with `--think=false` for instant, deterministic micro-agent responses.
 
 ---
 
@@ -27,6 +39,17 @@ The secret to its speed is the **Hybrid Sparse Mixture-of-Experts (MoE)** archit
 ### Why it's the best for CPU right now
 
 It breaks the scaling myth. Because only 3B parameters are active per forward pass, it is bottlenecked by **memory bandwidth** (RAM speed) rather than raw CPU compute. On a setup with fast DDR5, it provides frontier-class intelligence without the sub-1 token/s crawl of dense 35B models.
+
+---
+
+### ⚙️ Universal Hardware Configuration
+
+| Setting | Value | Rationale |
+| :--- | :--- | :--- |
+| **`num_thread`** | Core Count | Match **physical** core count (not threads) for optimal cache usage. |
+| **`temperature`** | 0.0 - 0.1 | Required for deterministic micro-agent accuracy. |
+| **`num_ctx`** | 4096+ | Adjust based on RAM; `/clear` after topics to maintain speed. |
+| **`Architecture`** | MoE | Hybrid Gated DeltaNet scales across Intel/AMD architectures. |
 
 ---
 
