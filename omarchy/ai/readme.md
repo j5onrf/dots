@@ -47,19 +47,10 @@ bind = , F8, exec, uwsm app -- alacritty --title "Qwen-35b" -e ollama run qwen36
 ### Optimized Modelfile
 
 ```dockerfile
-# Works best with micro agents
 FROM qwen3.6:35b-a3b
-
-# Forces context window to 1024 to save RAM and ensure instant response
-PARAMETER num_ctx 1024
-
-# Matches physical core count for max efficiency (e.g., 1 per core)
-PARAMETER num_thread 8
-
-# Tighter parameters for decisive logic
-PARAMETER temperature 0
-PARAMETER top_k 1
-PARAMETER top_p 0.1
+PARAMETER num_thread 6
+PARAMETER temperature 0.1
+PARAMETER top_p 0.9
 
 SYSTEM "START IMMEDIATELY. NO THINKING."
 ```
