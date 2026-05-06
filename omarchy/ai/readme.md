@@ -47,6 +47,9 @@ bind = , F8, exec, uwsm app -- alacritty --title "Qwen-35b" -e ollama run qwen-m
 ### Optimized Modelfile
 
 ```dockerfile
+
+wip
+
 FROM qwen3.6:35b-a3b
 PARAMETER num_thread 6
 PARAMETER temperature 0.1
