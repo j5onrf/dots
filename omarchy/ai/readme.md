@@ -53,4 +53,42 @@ PARAMETER temperature 0.1
 PARAMETER top_p 0.9
 
 SYSTEM "START IMMEDIATELY. NO THINKING."
+
+--------
+
+chat bot
+
+FROM qwen3.6:35b-a3b
+# 6-8 threads matches your 6-8 physical cores perfectly for cache efficiency
+PARAMETER num_thread 8
+# Slightly deterministic but still natural
+PARAMETER temperature 0.4
+PARAMETER top_p 0.8
+# Keeps the model from getting stuck in loops at low temps
+PARAMETER repeat_penalty 1.15
+# Speeds up processing by ignoring the "noise" of rare words
+PARAMETER top_k 30
+
+SYSTEM """
+You are a high-efficiency Research Assistant. 
+Respond directly. No preamble. No "thinking" blocks.
+Use Markdown only for critical structure.
+"""
+
+-----------
+
+micro agent
+
+FROM qwen3.6:35b-a3b
+PARAMETER num_thread 8
+# Zero randomness = fast, single-path token selection
+PARAMETER temperature 0.0
+# Only looks at the most mathematically certain tokens
+PARAMETER top_p 0.2
+PARAMETER top_k 10
+# Safety cap: kills the generation if it goes longer than a task result should
+PARAMETER num_predict 100
+
+SYSTEM "START IMMEDIATELY. NO PREAMBLE. NO THINKING. OUTPUT RAW DATA ONLY."
+"""
 ```
