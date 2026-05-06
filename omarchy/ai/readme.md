@@ -38,7 +38,7 @@ The secret to its speed is the **Hybrid Sparse Mixture-of-Experts (MoE)** archit
 
 ### Why it's the best for CPU right now
 
-It breaks the scaling myth. Because only 3B parameters are active per forward pass, it is bottlenecked by **memory bandwidth** (RAM speed) rather than raw CPU compute. On a setup with fast DDR5, it provides frontier-class intelligence without the sub-1 token/s crawl of dense 35B models.
+It breaks the scaling myth. Because only 3B parameters are active per forward pass, it is bottlenecked by **memory bandwidth** (RAM speed) rather than raw CPU compute. On a setup with fast DDR4/DDR5, it provides frontier-class intelligence without the sub-1 token/s crawl of dense 35B models.
 
 ---
 
