@@ -47,7 +47,7 @@ bind = , F8, exec, uwsm app -- alacritty --title "Qwen-35b" -e ollama run qwen36
 ### Optimized Modelfile
 
 ```dockerfile
-# Works best without agents
+# Works best with micro agents
 FROM qwen3.6:35b-a3b
 
 # Forces context window to 1024 to save RAM and ensure instant response
