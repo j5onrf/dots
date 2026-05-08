@@ -20,29 +20,31 @@ func main() {
 	sigChan := make(chan os.Signal, 1)
 	signal.Notify(sigChan, syscall.SIGINT)
 	go func() {
-    for {
-        <-sigChan
-        // Added \n at the end to move the cursor down
-        fmt.Printf("\n%s[Interrupt trapped]%s\n", "\033[31m", reset)
-    }
-}()
+		for {
+			<-sigChan
+			fmt.Printf("\n%s[Interrupt trapped]%s\n", "\033[31m", reset)
+		}
+	}()
 
 	reader := bufio.NewReader(os.Stdin)
 
 	for {
-		// Updated Label
 		fmt.Printf("\n%sQwen3.6:35b-a3b%s %s❯%s ", blue, reset, white, reset)
 		input, _ := reader.ReadString('\n')
 		input = strings.TrimSpace(input)
 
-		if input == "exit" || input == "quit" { break }
+		if input == "exit" || input == "quit" {
+			break
+		}
 		if input == "/clear" || input == "/c" {
-    fmt.Print("\033[H\033[2J") // Standard ANSI clear screen
-    continue
-}
+			fmt.Print("\033[H\033[2J")
+			continue
+		}
 
-		// Model Tag
 		cmd := exec.Command("ollama", "run", "qwen3.6:35b-a3b", "--think=false", "--verbose", input)
+		// Set to 15m to stay warm during active work sessions
+		cmd.Env = append(os.Environ(), "OLLAMA_KEEP_ALIVE=15m")
+		
 		stdout, _ := cmd.StdoutPipe()
 		stderr, _ := cmd.StderrPipe()
 		var errBuf bytes.Buffer
@@ -59,7 +61,9 @@ func main() {
 		buf := make([]byte, 1)
 		for {
 			_, err := stdout.Read(buf)
-			if err != nil { break }
+			if err != nil {
+				break
+			}
 			char := buf[0]
 			charCount++
 			
@@ -67,7 +71,13 @@ func main() {
 				backticks++
 			} else {
 				if backticks == 3 {
-					if !inCode { fmt.Print(yellow); inCode = true } else { fmt.Print(green); inCode = false }
+					if !inCode {
+						fmt.Print(yellow)
+						inCode = true
+					} else {
+						fmt.Print(green)
+						inCode = false
+					}
 				}
 				backticks = 0
 			}
@@ -76,7 +86,6 @@ func main() {
 
 		cmd.Wait()
 		duration := time.Since(start)
-
 		tps := (float64(charCount) / 4.0) / duration.Seconds()
 
 		fmt.Print(reset)
