@@ -3,5 +3,5 @@
 ```bash
 bind = , F8, exec, uwsm app -- alacritty --title "Qwen-Fast" -e sh -c "until /home/j5/.config/hypr/scripts/go/qwen-logic; do echo 'Engine crashed, restarting...'; sleep 1; done"
 
-bind = , F8, exec, uwsm app -- kitty --class="qwen-terminal" --title "Qwen-Fast" -e sh -c "until /home/j5/.config/hypr/scripts/go/qwen-logic; do echo 'Engine crashed, restarting...'; sleep 1; done"
+bind = , F8, exec, uwsm app -- kitty --title "Qwen-Fast" -e sh -c "until /home/j5/.config/hypr/scripts/go/qwen-logic; do echo 'Engine crashed, restarting...'; sleep 1; done"
 
