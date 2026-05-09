@@ -85,7 +85,6 @@ PARAMETER num_gpu 33
 PARAMETER temperature 0.6
 PARAMETER min_p 0.06
 PARAMETER repeat_penalty 1.12
-
 """
 
 
