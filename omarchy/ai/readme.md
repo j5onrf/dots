@@ -80,7 +80,6 @@ PARAMETER num_thread 6
 PARAMETER num_ctx 4096
 PARAMETER num_batch 128
 PARAMETER num_gpu 10
-PARAMETER num_thread 8
 # The Accuracy/Speed Balance
 PARAMETER temperature 0.6
 PARAMETER min_p 0.06
