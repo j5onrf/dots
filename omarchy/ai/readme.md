@@ -98,7 +98,7 @@ chat bot
 
 FROM qwen3.6:35b-a3b
 # 6-8 threads matches your 6-8 physical cores perfectly for cache efficiency
-PARAMETER num_thread 8
+PARAMETER num_thread 6
 # Slightly deterministic but still natural
 PARAMETER temperature 0.4
 PARAMETER top_p 0.8
@@ -118,7 +118,7 @@ Use Markdown only for critical structure.
 micro agent
 
 FROM qwen3.6:35b-a3b
-PARAMETER num_thread 8
+PARAMETER num_thread 6
 # Zero randomness = fast, single-path token selection
 PARAMETER temperature 0.0
 # Only looks at the most mathematically certain tokens
