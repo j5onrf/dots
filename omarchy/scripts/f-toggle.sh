@@ -18,7 +18,7 @@ else
         pgrep swaybg > /dev/null || swaybg -i "$WALLPAPER" -m fill &
     fi
 
-    # Performance & Memory (Adjusted for Intel Xe)
+    # Performance & Memory
     export QSG_RENDER_LOOP=threaded     # Threaded is better for 120Hz/Ultrawide
     export QML_DISABLE_DISK_CACHE=0     # Enable cache to prevent re-parsing crashes
     export MALLOC_ARENA_MAX=1
