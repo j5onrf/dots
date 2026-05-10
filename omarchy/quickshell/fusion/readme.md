@@ -2,6 +2,8 @@
 
 > **Minimalist industrial vertical UI for Hyprland & Omarchy**
 
+`Porting to Noctalia v5 architecture, Fusion-Shell will no longer be a standalone QML script. Instead, it will be a Scripted Widget or a C++ Module`
+
 `Omarchy v3.6.0` `Quickshell 0.2.1+`
 
 <img alt="20260429_200056" src="https://github.com/user-attachments/assets/852add48-aeb3-4d7b-8d5e-a5f3a1fdaff3" />
