@@ -1,5 +1,31 @@
 # Hyprdots
 
+
+</details>
+
+<details ><summary>(2026-May10) Porting to Noctalia v5 architecture, Fusion-Shell will no longer be a standalone QML script. Instead, it will be a C++ Module</summary>
+<p>
+    
+[Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion)
+<img width="3440" height="1440" alt="20260510_095504" src="https://github.com/user-attachments/assets/4ff3a0f3-2275-498e-84a7-09c3437612d5" />
+
+*** Why C++ is the move for you
+
+On CachyOS system with the v4 kernel, a native C++ build of a single module will actually be lightning fast.
+
+Because v5 drops the massive Qt libraries, you aren't compiling a giant monolith anymore.
+
+*** Why the "Module" approach is better:
+
+Zero Overhead: In btop screenshot, we see 543 MiB of RAM. A C++ module adds almost zero additional memory because it's just a few lines of machine code added to the main binary.
+
+The Result: likely see shell process drop from 648 MiB down to something like 30 MiB or 40 MiB.
+<br><br>
+
+</p>
+</details>
+
+
 </details>
 
 <details ><summary>(2026-May06) Qwen 3.6 35b-a3b >>> 32gb </summary>
