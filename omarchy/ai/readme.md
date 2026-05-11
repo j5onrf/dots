@@ -79,7 +79,7 @@ FROM qwen3.6:35b-a3b
 PARAMETER num_thread 6
 PARAMETER num_ctx 8192      # 3.6 handles 128k, but 4096-8192 is the sweet spot for VRAM/Speed
 PARAMETER num_batch 128
-PARAMETER num_gpu 33
+PARAMETER num_gpu 33        # 35 Slightly higher to push the GPU
 
 # The Accuracy/Speed Balance
 PARAMETER temperature 0.8   # Raised slightly; 0.6 is a bit stiff for the 3.6 MoE
