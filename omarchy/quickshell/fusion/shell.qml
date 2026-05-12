@@ -23,8 +23,6 @@ PanelWindow {
         bottom: true
     }
     
-    // THE FIX: We never let the width be 0. 
-    // 2px is enough to catch a mouse event but too small to block your apps.
     implicitWidth: (autoHideEnabled && !isHovered) ? 2 : 34
     color: "transparent"
 
