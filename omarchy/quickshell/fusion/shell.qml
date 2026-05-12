@@ -1,4 +1,4 @@
-/* Shell-Fusion V5.3 5.10.26 + Vulkan Optimizations */
+/* Shell-Fusion V5.3 5.12.26 + Vulkan Optimizations */
 
 import Quickshell
 import Quickshell.Io
