@@ -1,24 +1,23 @@
-/* Shell-Fusion V5.3 5.12.26 + Vulkan Optimizations */
+/* Shell-Fusion V5.4 5.12.26 + Upstream Optimizations */
 
 import Quickshell
 import Quickshell.Io
 import Quickshell.Hyprland
-import Quickshell.Wayland // Required for WlrLayershell optimizations
+import Quickshell.Wayland 
 import QtQuick
 
 PanelWindow {
     id: shellFusion
 
-    // --- NOCTALIA V4 / VULKAN HEADERS ---
-    WlrLayershell.namespace: "noctalia-shell"
+    WlrLayershell.namespace: "fusion-shell"
     WlrLayershell.layer: WlrLayer.Top
     
-    // Reserve space on the screen only if auto-hide is off
+    // IMPORTANT: exclusiveZone must stay 0 for auto-hide to work without 
+    // pushing your windows around every time the bar peeks.
     exclusiveZone: autoHideEnabled ? 0 : 34
 
     readonly property string homeDir: Quickshell.env("HOME")
     readonly property string omarchyConfig: homeDir + "/.config/omarchy/current/theme/colors.toml"
-    readonly property string walkerScript: homeDir + "/.config/walker/launch.sh"
 
     anchors {
         left: true
@@ -26,14 +25,9 @@ PanelWindow {
         bottom: true
     }
     
-    margins {
-        left: 0
-        right: 0
-        top: 0
-        bottom: 0
-    }
-    
-    implicitWidth: (autoHideEnabled && !isHovered && slidingContent.x <= -33) ? 0 : 34
+    // THE FIX: We never let the width be 0. 
+    // 2px is enough to catch a mouse event but too small to block your apps.
+    implicitWidth: (autoHideEnabled && !isHovered) ? 2 : 34
     color: "transparent"
 
     property bool autoHideEnabled: false
@@ -92,9 +86,11 @@ PanelWindow {
         }
     }
 
+    // MAIN INTERACTION AREA
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true
+        // Small margin ensures the bar stays open while your mouse is on it
         onEntered: isHovered = true
         onExited: isHovered = false
 
@@ -103,9 +99,11 @@ PanelWindow {
             width: 34
             anchors.top: parent.top
             anchors.bottom: parent.bottom
+            
+            // Slide it out of view. 
+            // We use -34 so it is completely gone visually.
             x: (autoHideEnabled && !isHovered) ? -34 : 0
             
-            // GPU-accelerated transition
             Behavior on x {
                 NumberAnimation {
                     duration: 250
@@ -132,7 +130,6 @@ PanelWindow {
                         }
                         text: "\ue5d3"
                         color: theme.mOnSurface
-                        // VULKAN OPTIMIZATION: QtRendering is faster for GPU-texture handling
                         renderType: Text.QtRendering
                         font {
                             family: iconFont
@@ -151,9 +148,7 @@ PanelWindow {
                 Repeater {
                     model: Hyprland.workspaces
                     FusionModule {
-                        // VULKAN OPTIMIZATION: Only enable layers during state changes
                         layer.enabled: isActive || hoverArea.containsMouse
-                        
                         required property var modelData
                         property bool isActive: modelData === Hyprland.focusedWorkspace
                         property bool isOccupied: Hyprland.toplevels.values.some(t => t.workspace === modelData)
@@ -163,10 +158,7 @@ PanelWindow {
 
                         Rectangle {
                             visible: parent.isOccupied && !parent.isActive
-                            width: 4
-                            height: 4
-                            radius: 2
-                            color: theme.mPrimary
+                            width: 4; height: 4; radius: 2; color: theme.mPrimary
                             anchors {
                                 verticalCenter: parent.verticalCenter
                                 horizontalCenter: parent.left
@@ -183,7 +175,6 @@ PanelWindow {
                                 if (modelData.id === 7) return "\uf001";
                                 return modelData.id;
                             }
-                            // VULKAN OPTIMIZATION: QtRendering
                             renderType: Text.QtRendering
                             color: parent.isActive ? theme.mOnPrimary : theme.mOnSurface
                             font {
@@ -192,35 +183,8 @@ PanelWindow {
                                 pixelSize: (modelData.id === 6 || modelData.id === 7) ? 20 : 17
                             }
                         }
-
                         hoverArea.onClicked: Hyprland.dispatch("workspace " + modelData.id)
                     }
-                }
-            }
-
-            Item {
-                anchors.centerIn: parent
-                width: 20
-                height: dateLabel.implicitWidth
-
-                Text {
-                    id: dateLabel
-                    anchors.centerIn: parent
-                    text: mainClock.date ? (function() {
-                    let s = mainClock.date.toLocaleDateString(Qt.locale(), "ddd d").toLowerCase();
-                    return s.charAt(0).toUpperCase() + s.slice(1);
-                    })() : "..."
-                    color: theme.mOnSurface
-                    opacity: 0.7
-                    font {
-                        family: monoFont
-                        pixelSize: 9
-                        weight: Font.Regular
-                    }
-                    rotation: 270
-                    // VULKAN OPTIMIZATION: QtRendering for transformed/rotated text
-                    renderType: Text.QtRendering
-                    antialiasing: true
                 }
             }
 
@@ -238,15 +202,10 @@ PanelWindow {
                         anchors.centerIn: parent
                         text: "\ue5cf"
                         renderType: Text.QtRendering
-                        font {
-                            family: iconFont
-                            pixelSize: 18
-                        }
+                        font { family: iconFont; pixelSize: 18 }
                         color: theme.mOnSurface
                         rotation: drawerOpen ? 180 : 0
-                        Behavior on rotation {
-                            NumberAnimation { duration: 250 }
-                        }
+                        Behavior on rotation { NumberAnimation { duration: 250 } }
                     }
                     hoverArea.onClicked: drawerOpen = !drawerOpen
                 }
@@ -256,12 +215,8 @@ PanelWindow {
                     clip: true
                     height: drawerOpen ? implicitHeight : 0
                     opacity: drawerOpen ? 1.0 : 0
-                    Behavior on height {
-                        NumberAnimation { duration: 250; easing.type: Easing.OutCubic }
-                    }
-                    Behavior on opacity {
-                        NumberAnimation { duration: 250 }
-                    }
+                    Behavior on height { NumberAnimation { duration: 250; easing.type: Easing.OutCubic } }
+                    Behavior on opacity { NumberAnimation { duration: 250 } }
 
                     FusionModule {
                         Text {
@@ -291,13 +246,7 @@ PanelWindow {
                             color: autoHideEnabled ? theme.mOnSurface : theme.mPrimary
                             font { family: iconFont; pixelSize: 20 }
                         }
-                        hoverArea.onClicked: {
-                            autoHideEnabled = !autoHideEnabled;
-                            shellFusion.margins.bottom = 1;
-                            Qt.callLater(() => {
-                                shellFusion.margins.bottom = 0;
-                            });
-                        }
+                        hoverArea.onClicked: autoHideEnabled = !autoHideEnabled
                     }
                 }
 
@@ -306,10 +255,7 @@ PanelWindow {
                     border.width: 2
                     hoverArea.onClicked: Hyprland.dispatch("exec kitty --class=calendar-pwa -e sh -c 'cal -m; read -n 1'")
                     Column {
-                        anchors {
-                            horizontalCenter: parent.horizontalCenter
-                            top: parent.top
-                        }
+                        anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
                         topPadding: 2.4
                         spacing: -5
                         Text {
@@ -349,18 +295,10 @@ PanelWindow {
                             Hyprland.dispatch("exec omarchy-menu");
                         }
                     }
-                    hoverArea.onWheel: wheel => {
-                        Hyprland.dispatch("exec pactl set-sink-volume @DEFAULT_SINK@ " + (wheel.angleDelta.y > 0 ? "+5%" : "-5%"));
-                        if (wheel.angleDelta.y > 0 && powerVolModule.isMuted)
-                            powerVolModule.isMuted = false;
-                    }
                 }
             }
         }
     }
 
-    SystemClock {
-        id: mainClock
-        precision: SystemClock.Minutes
-    }
+    SystemClock { id: mainClock; precision: SystemClock.Minutes }
 }
