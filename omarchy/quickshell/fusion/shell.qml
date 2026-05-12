@@ -12,8 +12,6 @@ PanelWindow {
     WlrLayershell.namespace: "fusion-shell"
     WlrLayershell.layer: WlrLayer.Top
     
-    // IMPORTANT: exclusiveZone must stay 0 for auto-hide to work without 
-    // pushing your windows around every time the bar peeks.
     exclusiveZone: autoHideEnabled ? 0 : 34
 
     readonly property string homeDir: Quickshell.env("HOME")
