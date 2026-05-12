@@ -1,4 +1,4 @@
-/* Shell-Fusion V5.2 5.10.26 + Vulkan Optimizations */
+/* Shell-Fusion V5.3 5.10.26 + Vulkan Optimizations */
 
 import Quickshell
 import Quickshell.Io
@@ -206,7 +206,10 @@ PanelWindow {
                 Text {
                     id: dateLabel
                     anchors.centerIn: parent
-                    text: mainClock.date ? mainClock.date.toLocaleDateString(Qt.locale(), "dddd d").toLowerCase() : "..."
+                    text: mainClock.date ? (function() {
+                    let s = mainClock.date.toLocaleDateString(Qt.locale(), "ddd d").toLowerCase();
+                    return s.charAt(0).toUpperCase() + s.slice(1);
+                    })() : "..."
                     color: theme.mOnSurface
                     opacity: 0.7
                     font {
