@@ -82,7 +82,7 @@ PARAMETER num_batch 128
 PARAMETER num_gpu 33        # 35 Slightly higher to push the GPU
 
 # The Accuracy/Speed Balance
-PARAMETER temperature 0.8   # Raised slightly; 0.6 is a bit stiff for the 3.6 MoE
+PARAMETER temperature 0.7   # Raised slightly; 0.6 is a bit stiff for the 3.6 MoE
 PARAMETER min_p 0.05        # Essential for MoE to filter "low-probability" experts
 PARAMETER repeat_penalty 1.05 # Lowered; the 3.6 version is much less prone to loops than 3.5
 
