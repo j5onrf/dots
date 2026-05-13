@@ -25,7 +25,6 @@ export QT_QML_SINGLETON_REUSE=1
 # Scaling & HiDPI Fixes
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCALE_FACTOR=1
-export QT_FONT_DPI=96
 
 # Memory Management
 export MALLOC_ARENA_MAX=1
