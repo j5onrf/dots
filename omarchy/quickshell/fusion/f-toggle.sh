@@ -20,14 +20,10 @@ else
     fi
 
     # Performance & Memory
-    export QSG_RENDER_LOOP=threaded     # Threaded is better for 120Hz/Ultrawide
+    export QSG_RENDER_LOOP=threaded 
     export QML_DISABLE_DISK_CACHE=0     # Enable cache to prevent re-parsing crashes
     export MALLOC_ARENA_MAX=1
     export QT_QML_SINGLETON_REUSE=1
-    
-    # Scaling Fixes
-    export QT_AUTO_SCREEN_SCALE_FACTOR=0
-    export QT_SCALE_FACTOR=1
 
     # Launch using uwsm for session tracking
     uwsm app -- $LAUNCH_CMD &>/dev/null &
