@@ -1,37 +1,36 @@
 #!/bin/bash
-# --- SHELL-FUSION TOGGLE ---
+# --- SHELL-FUSION TOGGLE V5.9 ---
 
-TARGET_FILE="$HOME/.config/quickshell/shell-fusion/shell.qml"
-BINARY="/usr/bin/quickshell"
+TARGET_DIR="$HOME/.config/quickshell/shell-fusion"
+# Use -p for an explicit path to avoid config-name resolution issues
+LAUNCH_CMD="quickshell -p $TARGET_DIR"
 
-if pgrep -x "quickshell" > /dev/null && pgrep -f "$TARGET_FILE" > /dev/null; then
-    echo "Bar detected. Terminating..."
+if pgrep -f "quickshell -p $TARGET_DIR" > /dev/null; then
+    # --- SHUTDOWN LOGIC ---
+    pkill -f "quickshell -p $TARGET_DIR"
+    # Don't kill mako here if the system manages it; just dismiss alerts
+    makoctl dismiss -a 2>/dev/null
+else
+    # --- STARTUP LOGIC ---
     
-    # Kill every instance of quickshell running this specific file
-    pkill -9 -f "$TARGET_FILE"
+    # Wallpaper (Check if swaybg is already running to avoid flickering)
+    WALLPAPER="$HOME/.config/omarchy/current/background"
+    if [ -e "$WALLPAPER" ]; then
+        pgrep swaybg > /dev/null || swaybg -i "$WALLPAPER" -m fill &
+    fi
+
+    # Performance & Memory
+    export QSG_RENDER_LOOP=threaded     # Threaded is better for 120Hz/Ultrawide
+    export QML_DISABLE_DISK_CACHE=0     # Enable cache to prevent re-parsing crashes
+    export MALLOC_ARENA_MAX=1
+    export QT_QML_SINGLETON_REUSE=1
     
-    # Essential: Clear the Wayland/Quickshell sockets
-    rm -rf /run/user/$(id -u)/quickshell/* 2>/dev/null
-    
-    # Exit here so we don't start a new one
-    exit 0
+    # Scaling Fixes
+    export QT_AUTO_SCREEN_SCALE_FACTOR=0
+    export QT_SCALE_FACTOR=1
+    export QT_FONT_DPI=96
+
+    # Launch using uwsm for session tracking
+    uwsm app -- $LAUNCH_CMD &>/dev/null &
+    disown
 fi
-
-# 2. THE STARTUP: (If we reached here, no bar was found)
-
-# Performance Exports
-export QT_QPA_PLATFORM="wayland;xcb"
-export QSG_RENDER_LOOP=threaded
-export QML_DISABLE_DISK_CACHE=0
-export QT_QML_SINGLETON_REUSE=1
-export MALLOC_ARENA_MAX=1
-
-# Double-check cleanup before launch just to be safe
-pkill -f "$TARGET_FILE" 2>/dev/null
-rm -rf /run/user/$(id -u)/quickshell/* 2>/dev/null
-
-# Launch
-uwsm app -- "$BINARY" -p "$TARGET_FILE" &>/dev/null &
-
-disown
-exit 0
