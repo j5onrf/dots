@@ -21,7 +21,7 @@ Zero Overhead: In btop screenshot, we see 648 MiB of RAM. A C++ module adds almo
 
 The Result: likely see shell process drop to something like 30 MiB or 40 MiB.
 
-update* 5-13 looks like Omarchy is introducting quickshell into the dev branch.
+update* 5-13 looks like Omarchy is introducting quickshell into the dev branch. Maybe i can "side-load" a custom bar into Omarchy's quickshell process without actually changing Omarchy's code
 <br><br>
 
 </p>
