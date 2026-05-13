@@ -1,4 +1,4 @@
-/* Shell-Fusion V5.4 5.12.26 + Upstream Optimizations */
+/* Shell-Fusion V5.5 5.13.26 + Optimizations */
 
 import Quickshell
 import Quickshell.Io
@@ -86,6 +86,7 @@ PanelWindow {
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true
+        // Small margin ensures the bar stays open while your mouse is on it
         onEntered: isHovered = true
         onExited: isHovered = false
 
@@ -179,6 +180,27 @@ PanelWindow {
                             }
                         }
                         hoverArea.onClicked: Hyprland.dispatch("workspace " + modelData.id)
+                    }
+                }
+
+                Item {
+                    width: 30
+                    height: 80
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    Text {
+                        id: dateLabel
+                        anchors.centerIn: parent
+                        rotation: 270
+                        // FIXED: Use mainClock.date instead of mainClock.time
+                        text: mainClock.date ? mainClock.date.toLocaleDateString(Qt.locale(), "ddd d") : "..."
+                        color: theme.mOnSurface
+                        opacity: 0.7
+                        renderType: Text.QtRendering
+                        font {
+                            family: monoFont
+                            pixelSize: 9
+                            weight: Font.Regular
+                        }
                     }
                 }
             }
