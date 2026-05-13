@@ -86,7 +86,6 @@ PanelWindow {
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true
-        // Small margin ensures the bar stays open while your mouse is on it
         onEntered: isHovered = true
         onExited: isHovered = false
 
