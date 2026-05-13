@@ -20,6 +20,8 @@ Because v5 drops the massive Qt libraries, you aren't compiling a giant monolith
 Zero Overhead: In btop screenshot, we see 648 MiB of RAM. A C++ module adds almost zero additional memory because it's just a few lines of machine code added to the main binary.
 
 The Result: likely see shell process drop to something like 30 MiB or 40 MiB.
+
+update* 5-13 looks like Omarchy is introducting quickshell into the dev branch.
 <br><br>
 
 </p>
