@@ -10,7 +10,7 @@ if pgrep -f "$BINARY -p $TARGET_FILE" > /dev/null; then
     exit 0
 fi
 
-# Performance & Auto-Scaling Env
+# Performance
 export QT_QPA_PLATFORM="wayland;xcb"
 export QSG_RENDER_LOOP=threaded
 export QML_DISABLE_DISK_CACHE=0
