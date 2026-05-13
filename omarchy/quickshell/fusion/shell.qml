@@ -1,4 +1,4 @@
-/* Shell-Fusion V5.5 5.13.26 + Optimizations */
+/* Shell-Fusion V5.6 5.13.26 */
 
 import Quickshell
 import Quickshell.Io
@@ -86,7 +86,6 @@ PanelWindow {
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true
-        // Small margin ensures the bar stays open while your mouse is on it
         onEntered: isHovered = true
         onExited: isHovered = false
 
@@ -96,8 +95,6 @@ PanelWindow {
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             
-            // Slide it out of view. 
-            // We use -34 so it is completely gone visually.
             x: (autoHideEnabled && !isHovered) ? -34 : 0
             
             Behavior on x {
@@ -108,6 +105,7 @@ PanelWindow {
             }
             color: theme.mSurface
 
+            // --- TOP SECTION (Workspaces) ---
             Column {
                 anchors {
                     top: parent.top
@@ -182,29 +180,32 @@ PanelWindow {
                         hoverArea.onClicked: Hyprland.dispatch("workspace " + modelData.id)
                     }
                 }
+            }
 
-                Item {
-                    width: 30
-                    height: 80
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    Text {
-                        id: dateLabel
-                        anchors.centerIn: parent
-                        rotation: 270
-                        // FIXED: Use mainClock.date instead of mainClock.time
-                        text: mainClock.date ? mainClock.date.toLocaleDateString(Qt.locale(), "ddd d") : "..."
-                        color: theme.mOnSurface
-                        opacity: 0.7
-                        renderType: Text.QtRendering
-                        font {
-                            family: monoFont
-                            pixelSize: 9
-                            weight: Font.Regular
-                        }
+            // --- FIXED CENTER SECTION (Date) ---
+            Item {
+                width: 30
+                height: 80
+                // This anchors it to the absolute center of the slidingContent panel
+                anchors.centerIn: parent 
+                
+                Text {
+                    id: dateLabel
+                    anchors.centerIn: parent
+                    rotation: 270
+                    text: mainClock.date ? mainClock.date.toLocaleDateString(Qt.locale(), "ddd d") : "..."
+                    color: theme.mOnSurface
+                    opacity: 0.7
+                    renderType: Text.QtRendering
+                    font {
+                        family: monoFont
+                        pixelSize: 9
+                        weight: Font.Regular
                     }
                 }
             }
 
+            // --- BOTTOM SECTION (Tools & Clock) ---
             Column {
                 anchors {
                     bottom: parent.bottom
