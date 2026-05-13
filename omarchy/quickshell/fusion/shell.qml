@@ -1,4 +1,4 @@
-/* Shell-Fusion V5.6 5.13.26 */
+/* Shell-Fusion V5.7 5.13.26 */
 
 import Quickshell
 import Quickshell.Io
@@ -186,7 +186,6 @@ PanelWindow {
             Item {
                 width: 30
                 height: 80
-                // This anchors it to the absolute center of the slidingContent panel
                 anchors.centerIn: parent 
                 
                 Text {
@@ -303,15 +302,19 @@ PanelWindow {
                         color: parent.hoverArea.containsMouse ? theme.mError : theme.mPrimary
                         font { family: iconFont; pixelSize: 18 }
                     }
-                    hoverArea.onClicked: mouse => {
+                    hoverArea.onClicked: (mouse) => {
                         if (mouse.button === Qt.RightButton) {
                             powerVolModule.isMuted = !powerVolModule.isMuted;
                             Hyprland.dispatch("exec pactl set-sink-mute @DEFAULT_SINK@ toggle");
                         } else if (mouse.button === Qt.MiddleButton) {
-                            Hyprland.dispatch("exec /home/j5/.config/hypr/scripts/f-reload.sh");
+                            Hyprland.dispatch("exec " + homeDir + "/.config/hypr/scripts/f-reload.sh");
                         } else {
                             Hyprland.dispatch("exec omarchy-menu");
                         }
+                    }
+                    hoverArea.onWheel: (wheel) => {
+                        Hyprland.dispatch("exec pactl set-sink-volume @DEFAULT_SINK@ " + (wheel.angleDelta.y > 0 ? "+5%" : "-5%"));
+                        if (wheel.angleDelta.y > 0 && powerVolModule.isMuted) powerVolModule.isMuted = false;
                     }
                 }
             }
