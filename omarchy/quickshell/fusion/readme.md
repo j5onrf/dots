@@ -24,7 +24,7 @@ windowrule = match:class ^(brave-music.youtube.com__-Default)$, workspace 7 sile
 ```
 ```bash
 # Pin the Quickshell bar for auto-hide
-layerrule = match:namespace noctalia-shell, no_anim on
+layerrule = match:namespace fusion-shell, no_anim on
 ```
 ```
 # Quickshell Theme Sync
