@@ -4,6 +4,8 @@
 ### Qwen 3.6:35b-a3b Q4_K_M (4-bit)
 **The "Active-3B" Sparse Expert**
 
+> testing hf.co/HauhauCS/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:Q4_K_M
+
 Released on **April 14, 2026**, this model is the absolute gold standard for high-intelligence local inference on standard consumer hardware.
 
 A frontier-class Mixture-of-Experts (MoE) model designed for high-speed local inference. It provides 35B-level logic with the resource footprint of a 3B model.
