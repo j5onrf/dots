@@ -65,6 +65,9 @@ For added stability, a toggle script can be used to manage CPU governors. This a
 
 ```ini
 bind = , F8, exec, uwsm app -- kitty --title "Qwen-35b" sh -c 'ollama run qwen-micro-agent-35b:latest --think=false --keepalive 1h --verbose; bash'
+
+# Launch your hyper-fast AVX-512 C++ AI Engine inside Kitty
+bind = , F8, exec, uwsm app -- kitty sh -c 'echo "Loading compressed IQ4_NL logic engine..." && llama-cli -m /home/j5/ollama_backup/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 4096 -t 6 -b 128 --cache-type-k q4_0 --cache-type-v q4_0 --reasoning off -sys "Concise, analytical, and objective. No preamble." --temp 0.7 --min-p 0.05 --repeat-penalty 1.05; exec bash'
 ```
 
 ---
