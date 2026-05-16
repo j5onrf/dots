@@ -75,22 +75,6 @@ bind = , F8, exec, uwsm app -- kitty --title "Qwen-35b" sh -c 'ollama run qwen-m
 
 wip
 
-FROM qwen3.6:35b-a3b
 
-# Hardware Alignment
-PARAMETER num_thread 6
-PARAMETER num_ctx 8192      # 3.6 handles 128k, but 4096-8192 is the sweet spot for VRAM/Speed
-PARAMETER num_batch 128
-PARAMETER num_gpu 33        # 35 Slightly higher to push the GPU
-
-# The Accuracy/Speed Balance
-PARAMETER temperature 0.7   # Raised slightly; 0.6 is a bit stiff for the 3.6 MoE
-PARAMETER min_p 0.05        # Essential for MoE to filter "low-probability" experts
-PARAMETER repeat_penalty 1.05 # Lowered; the 3.6 version is much less prone to loops than 3.5
-
-# Minimalist System Prompt
-SYSTEM """
-Concise, analytical, and objective. No preamble.
-"""
 
 
