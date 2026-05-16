@@ -68,11 +68,11 @@ For added stability, a toggle script can be used to manage CPU governors. This a
 
 ```ini
 # --- AI / Qwen-35b (Non-Thinking) ---
-bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading IQ4_NL in Non-Thinking Mode..." && llama-cli -m $HOME/ollama/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 4096 -t 6 -b 128 --cache-type-k q4_0 --cache-type-v q8_0 --reasoning off --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --presence-penalty 1.5 -sys "Concise and direct. No preamble."; exec bash'
+bind = , F9, exec, uwsm app -- foot sh -c 'echo "Loading IQ4_NL in Direct Non-Thinking Mode..." && llama-cli -m /home/j5/ollama_backup/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 4096 -t 6 -b 128 --cache-type-k q4_0 --cache-type-v q8_0 --reasoning off --multiline-input --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --presence-penalty 1.5 -sys "Concise and direct. No preamble."; exec bash'
 ```
 ```ini
 # --- AI / Gemma4-26b (Non-Thinking) ---
-bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading Gemma4 K_P MoE in Non-Thinking Mode..." && llama-cli -m $HOME/ollama/Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_P.gguf -c 8192 -t 6 -b 128 --cache-type-k q4_0 --cache-type-v q8_0 --reasoning off --jinja --chat-template-kwargs "{\"enable_thinking\": false}" --temp 1.0 --top-p 0.95 --top-k 64 --min-p 0.0 --presence-penalty 0.0 -sys "Concise and direct. No preamble."; exec bash'
+bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading Gemma4 K_P MoE in Instant Non-Thinking Mode..." && llama-cli -m /home/j5/ollama_backup/Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_P.gguf -c 8192 -t 6 -b 128 --cache-type-k q4_0 --cache-type-v q8_0 --reasoning off --multiline-input --jinja --chat-template-kwargs "{\"enable_thinking\": false}" --temp 1.0 --top-p 0.95 --top-k 64 --min-p 0.0 --presence-penalty 0.0 -sys "Concise and direct. No preamble."; exec bash'
 ```
 ---
 
