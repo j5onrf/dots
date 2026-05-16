@@ -2,9 +2,12 @@
 
 
 ### Qwen 3.6:35b-a3b Q4_K_M (4-bit)
-**The "Active-3B" Sparse Expert**
 
-> testing hf.co/HauhauCS/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf (works with llama.cpp c++)
+> testing (works with llama.cpp c++) <br>
+> Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf <br>
+> Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_P.gguf
+> 
+**The "Active-3B" Sparse Expert**
 
 Released on **April 14, 2026**, this model is the absolute gold standard for high-intelligence local inference on standard consumer hardware.
 
@@ -67,7 +70,10 @@ For added stability, a toggle script can be used to manage CPU governors. This a
 # --- AI / Qwen-35b optimzed (Non-Thinking) ---
 bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading IQ4_NL in Direct Non-Thinking Mode..." && llama-cli -m /home/j5/ollama_backup/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 4096 -t 6 -b 128 --cache-type-k q4_0 --cache-type-v q8_0 --reasoning off --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --presence-penalty 1.5 -sys "Concise and direct. No preamble."; exec bash'
 ```
-
+```ini
+# --- AI / Gemma4-26b (Non-Thinking MoE Mode via Foot) ---
+bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading Gemma4 K_P MoE in Instant Non-Thinking Mode..." && llama-cli -m /home/j5/ollama_backup/Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_P.gguf -c 8192 -t 6 -b 128 --cache-type-k q4_0 --cache-type-v q8_0 --reasoning off --jinja --chat-template-kwargs "{\"enable_thinking\": false}" --temp 1.0 --top-p 0.95 --top-k 64 --min-p 0.0 --presence-penalty 0.0 -sys "Concise and direct. No preamble."; exec bash'
+```
 ---
 
 ### Optimized Modelfile
