@@ -32,6 +32,10 @@ update* 5-13 looks like Omarchy is introducting quickshell into the dev branch.
 
 <details ><summary>(2026-May06) Qwen 3.6 35b-a3b >>> 32gb </summary>
 <p>
+
+[Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive <sup>IQ4_NL.gguf</sup>](https://github.com/j5onrf/dots/blob/main/omarchy/ai/readme.md)
+<img width="3440" height="1440" alt="20260515_193427" src="https://github.com/user-attachments/assets/d350aafc-e5a1-4ea1-a1dc-09294a2e9c9b" />
+
     
 [Qwen 3.6 35B-A3B <sup>micro-agents</sup>](https://github.com/j5onrf/dots/blob/main/omarchy/ai/readme.md)
 <img alt="20260505_172954" src="https://github.com/user-attachments/assets/09ecf22a-8c91-4880-bfad-4f30ffef69ce" />
