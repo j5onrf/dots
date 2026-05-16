@@ -49,7 +49,7 @@ It breaks the scaling myth. Because only 3B parameters are active per forward pa
 | Setting | Value | Rationale |
 | :--- | :--- | :--- |
 | **`num_thread`** | Core Count | Match **physical** core count (not threads) for optimal cache usage. |
-| **`temperature`** | 0.0 - 0.8 | Required for deterministic micro-agent accuracy. |
+| **`temperature`** | 0.0 - 1.0 | Required for deterministic micro-agent accuracy. |
 | **`num_ctx`** | 4096+ | Adjust based on RAM; `/clear` after topics to maintain speed. |
 | **`Architecture`** | MoE | Hybrid Gated DeltaNet scales across Intel/AMD architectures. |
 
