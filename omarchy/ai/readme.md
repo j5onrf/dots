@@ -64,11 +64,8 @@ For added stability, a toggle script can be used to manage CPU governors. This a
 ### Hyprland Keybind
 
 ```ini
-# --- AI / Qwen-35b (Thinking) ---
-bind = , F8, exec, uwsm app -- kitty sh -c 'echo "Loading IQ4_NL in Native Thinking Mode..." && llama-cli -m "$HOME/ollama/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 16384 -t 6 -b 128 --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0.0 --presence-penalty 1.5 -sys "Concise and direct. No preamble."; exec bash'
-
-# --- AI / Qwen-35b (Non-Thinking) ---
-bind = , F8, exec, uwsm app -- kitty sh -c 'echo "Loading IQ4_NL in Direct Non-Thinking Mode..." && llama-cli -m "$HOME/ollama/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 4096 -t 6 -b 128 --cache-type-k q4_0 --cache-type-v q4_0 --reasoning off --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --presence-penalty 1.5 -sys "Concise and direct. No preamble."; exec bash'
+# --- AI / Qwen-35b optimzed (Non-Thinking) ---
+bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading IQ4_NL in Direct Non-Thinking Mode..." && llama-cli -m /home/j5/ollama_backup/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 4096 -t 6 -b 128 --cache-type-k q4_0 --cache-type-v q8_0 --reasoning off --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --presence-penalty 1.5 -sys "Concise and direct. No preamble."; exec bash'
 ```
 
 ---
