@@ -14,7 +14,7 @@ A frontier-class Mixture-of-Experts (MoE) model designed for high-speed local in
 *   **Speed:** Only **3B parameters active** per token, ensuring 10+ TPS even on mid-range CPUs.
 *   **Efficiency:** Optimized for low-bandwidth memory (DDR4/DDR5) and non-GPU environments.
 *   **Capability:** Native 262k context; excels at "Thinking" tasks and agentic workflows.
-*   **Optimization:** Best run with `--think=false` for instant, deterministic micro-agent responses.
+*   **Optimization:** Best run with `--reasoning off` for instant, deterministic micro-agent responses.
 
 ---
 
