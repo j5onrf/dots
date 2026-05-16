@@ -3,7 +3,7 @@
 
 ### Qwen 3.6:35b-a3b Q4_K_M (4-bit)
 
-> testing (works with llama.cpp c++) <br>
+> testing (llama.cpp c++) <br>
 > Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf <br>
 > Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_P.gguf
 > 
