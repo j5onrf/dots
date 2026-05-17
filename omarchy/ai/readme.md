@@ -72,7 +72,7 @@ bind = , F9, exec, uwsm app -- foot sh -c 'echo "Loading IQ4_NL in Direct Non-Th
 ```
 ```ini
 # --- AI / Gemma4-26b (Non-Thinking) ---
-bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading Gemma4 K_P MoE in Instant Non-Thinking Mode..." && llama-cli -m /home/j5/ollama_backup/Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_P.gguf -c 8192 -t 6 -b 128 --cache-type-k q4_0 --cache-type-v q8_0 --reasoning off --jinja --chat-template-kwargs "{\"enable_thinking\": false}" --temp 1.0 --top-p 0.95 --top-k 64 --min-p 0.0 --presence-penalty 0.0 -sys "Concise and direct. No preamble."; exec bash'
+bind = , F8, exec, uwsm app -- kitty sh -c 'echo "Loading Gemma4 K_P MoE in Instant Non-Thinking Mode..." && llama-cli -m /home/j5/ollama_backup/Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_P.gguf -c 8192 -t 6 -b 128 --cache-type-k q4_0 --cache-type-v q8_0 --reasoning off --jinja --chat-template-kwargs "{\"enable_thinking\": false}" --temp 1.0 --top-p 0.95 --top-k 64 --min-p 0.0 --presence-penalty 0.0 -sys "Concise and direct. No preamble."; exec bash'
 ```
 ---
 
