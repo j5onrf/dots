@@ -203,7 +203,6 @@ source ~/.local/share/omarchy/default/bash/rc
 alias cc='clear'
 alias ff='fastfetch'
 alias hc='hyprctl clients'
-alias sb='sudo btop'
 
 ## --- Backups ---
 # Lightweight Config Sync
