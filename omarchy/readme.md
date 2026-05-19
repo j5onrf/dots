@@ -203,6 +203,10 @@ source ~/.local/share/omarchy/default/bash/rc
 alias cc='clear'
 alias ff='fastfetch'
 alias hc='hyprctl clients'
+# alias sb='sudo btop'
+
+# Type 'ai' to pick a micro-agent
+#  alias ai='echo -e "qa\nqweb\nqyt\nqlog" | fzf --height 40% --reverse | xargs -r -I {} bash -c "read -p \"Enter Input: \" input; {} \$input"'
 
 ## --- Backups ---
 # Lightweight Config Sync
