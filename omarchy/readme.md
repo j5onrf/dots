@@ -224,8 +224,8 @@ alias uk='sudo ~/.config/hypr/scripts/kernel-update-toggle.sh'
 # Search history with FZF (if you have fzf installed)
 alias fh="history | fzf --tac --no-sort | awk '{\$1=\"\"; print}' | sed 's/^[ \t]*//' | wl-copy"
 
-# Keep only the last 5000 lines and wipe the rest manually
-alias ch='sed -i -e :a -e "$q;N;5001,$D;ba" ~/.bash_history'
+# Keep only the last 500 lines and wipe the rest manually
+alias ch='sed -i -e :a -e "$q;N;501,$D;ba" ~/.bash_history'
 
 ## --- Snapper Management ---
 alias snap='~/.config/hypr/scripts/snap.sh'
