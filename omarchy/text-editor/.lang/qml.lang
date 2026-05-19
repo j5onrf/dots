@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="qml" name="QML" version="2.0" _section="Script">
+  <metadata>
+    <property name="mimetypes">text/x-qml</property>
+    <property name="globs">*.qml</property>
+    <property name="line-comment-start">//</property>
+    <property name="block-comment-start">/*</property>
+    <property name="block-comment-end">*/</property>
+  </metadata>
+  <styles>
+    <style id="keyword" name="Keyword" map-to="def:keyword"/>
+    <style id="type" name="Type" map-to="def:type"/>
+    <style id="string" name="String" map-to="def:string"/>
+    <style id="comment" name="Comment" map-to="def:comment"/>
+  </styles>
+  <definitions>
+    <context id="qml">
+      <include>
+        <context id="comment" style-ref="comment">
+          <start>//</start>
+          <end>$</end>
+        </context>
+        <context id="keywords" style-ref="keyword">
+          <keyword>import</keyword>
+          <keyword>property</keyword>
+          <keyword>id</keyword>
+          <keyword>alias</keyword>
+          <keyword>signal</keyword>
+        </context>
+        <context id="string" style-ref="string">
+          <start>"</start>
+          <end>"</end>
+        </context>
+      </include>
+    </context>
+  </definitions>
+</language>

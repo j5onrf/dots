@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="modelfile" name="Ollama Modelfile" version="2.0" _section="Source">
+  <metadata>
+    <property name="mimetypes">text/x-modelfile</property>
+    <property name="globs">Modelfile;*.modelfile</property>
+    <property name="line-comment-start">#</property>
+  </metadata>
+  <definitions>
+    <context id="modelfile">
+      <include>
+        <context id="comment" style-ref="def:comment">
+          <start>#</start>
+          <end>$</end>
+        </context>
+        <context id="instructions" style-ref="def:keyword">
+          <keyword>FROM</keyword>
+          <keyword>PARAMETER</keyword>
+          <keyword>SYSTEM</keyword>
+          <keyword>TEMPLATE</keyword>
+          <keyword>ADAPTER</keyword>
+          <keyword>LICENSE</keyword>
+          <keyword>MESSAGE</keyword>
+        </context>
+        <context id="string" style-ref="def:string">
+          <start>"</start>
+          <end>"</end>
+        </context>
+        <context id="number" style-ref="def:decimal">
+          <match>\b[0-9.]+\b</match>
+        </context>
+      </include>
+    </context>
+  </definitions>
+</language>

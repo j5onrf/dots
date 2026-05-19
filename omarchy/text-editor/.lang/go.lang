@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="go" name="Go" version="2.0" _section="Source">
+  <metadata>
+    <property name="mimetypes">text/x-go</property>
+    <property name="globs">*.go</property>
+    <property name="line-comment-start">//</property>
+    <property name="block-comment-start">/*</property>
+    <property name="block-comment-end">*/</property>
+  </metadata>
+  <definitions>
+    <context id="go">
+      <include>
+        <context id="line-comment" style-ref="def:comment">
+          <start>//</start>
+          <end>$</end>
+        </context>
+        <context id="keywords" style-ref="def:keyword">
+          <keyword>package</keyword>
+          <keyword>import</keyword>
+          <keyword>func</keyword>
+          <keyword>var</keyword>
+          <keyword>type</keyword>
+          <keyword>struct</keyword>
+          <keyword>interface</keyword>
+          <keyword>return</keyword>
+          <keyword>go</keyword>
+          <keyword>chan</keyword>
+        </context>
+        <context id="string" style-ref="def:string">
+          <start>"</start>
+          <end>"</end>
+        </context>
+      </include>
+    </context>
+  </definitions>
+</language>

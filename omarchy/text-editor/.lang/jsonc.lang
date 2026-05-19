@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="jsonc" name="JSON with Comments" version="2.0" _section="Markup">
+  <metadata>
+    <property name="mimetypes">application/json;text/x-jsonc</property>
+    <property name="globs">*.jsonc</property>
+    <property name="line-comment-start">//</property>
+    <property name="block-comment-start">/*</property>
+    <property name="block-comment-end">*/</property>
+  </metadata>
+  <definitions>
+    <!-- Use a direct inclusion of the system's own json spec -->
+    <context id="jsonc">
+      <include>
+        <context ref="json:json"/>
+        <context id="line-comment" style-ref="def:comment">
+          <start>//</start>
+          <end>$</end>
+        </context>
+      </include>
+    </context>
+  </definitions>
+</language>

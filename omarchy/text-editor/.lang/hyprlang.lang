@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="hyprlang" name="Hyprlang" version="2.0" _section="Source">
+  <metadata>
+    <property name="mimetypes">text/x-hyprlang</property>
+    <property name="globs">hyprland.conf;*.conf</property>
+    <property name="line-comment-start">#</property>
+  </metadata>
+  <definitions>
+    <context id="hyprlang">
+      <include>
+        <context id="comment" style-ref="def:comment">
+          <start>#</start>
+          <end>$</end>
+        </context>
+        <context id="keywords" style-ref="def:keyword">
+          <keyword>exec-once</keyword>
+          <keyword>exec</keyword>
+          <keyword>monitor</keyword>
+          <keyword>source</keyword>
+          <keyword>env</keyword>
+          <keyword>bind</keyword>
+          <keyword>bindm</keyword>
+          <keyword>windowrule</keyword>
+          <keyword>windowrulev2</keyword>
+          <keyword>layerrule</keyword>
+          <keyword>bezier</keyword>
+          <keyword>animation</keyword>
+        </context>
+        <context id="sections" style-ref="def:type">
+          <keyword>general</keyword>
+          <keyword>decoration</keyword>
+          <keyword>animations</keyword>
+          <keyword>input</keyword>
+          <keyword>gestures</keyword>
+          <keyword>misc</keyword>
+          <keyword>scrolling</keyword>
+          <keyword>blur</keyword>
+          <keyword>shadow</keyword>
+        </context>
+        <context id="boolean" style-ref="def:boolean">
+          <keyword>true</keyword>
+          <keyword>false</keyword>
+          <keyword>yes</keyword>
+          <keyword>no</keyword>
+          <keyword>on</keyword>
+          <keyword>off</keyword>
+        </context>
+        <context id="string" style-ref="def:string">
+          <start>"</start>
+          <end>"</end>
+        </context>
+      </include>
+    </context>
+  </definitions>
+</language>
