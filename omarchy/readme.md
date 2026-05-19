@@ -200,9 +200,10 @@ wip
 source ~/.local/share/omarchy/default/bash/rc
 
 ## --- System & UI ---
-alias c='clear'
+alias cc='clear'
 alias ff='fastfetch'
 alias hc='hyprctl clients'
+alias sb='sudo btop'
 
 ## --- Backups ---
 # Lightweight Config Sync
@@ -215,17 +216,21 @@ alias yr='yay -Rns'
 alias xclean='bash ~/.config/hypr/scripts/check-orphans.sh'
 alias um='sudo reflector --country "United States" --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
 alias uk='sudo ~/.config/hypr/scripts/kernel-update-toggle.sh'
-alias or='sudo /home/j5/.config/hypr/scripts/omarchy-restore.sh'
+# alias or='sudo /home/j5/.config/hypr/scripts/omarchy-restore.sh'
 
 # Search history with FZF (if you have fzf installed)
-alias fh='history | fzf --tac --no-sort | cb copy'
+alias fh="history | fzf --tac --no-sort | awk '{\$1=\"\"; print}' | sed 's/^[ \t]*//' | wl-copy"
 
 # Keep only the last 5000 lines and wipe the rest manually
 alias ch='sed -i -e :a -e "$q;N;5001,$D;ba" ~/.bash_history'
 
 ## --- Snapper Management ---
-alias ss='~/.config/hypr/scripts/snap.sh'
+alias snap='~/.config/hypr/scripts/snap.sh'
 alias sl='sudo snapper list'
 alias sd='sudo snapper delete'
+# alias sr='sudo snapper rollback'
 
+# Hide the ^C, ^Z, etc. from being printed to the screen
+# stty -echoctl
+stty -ixon
 ```
