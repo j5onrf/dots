@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 5-20-26
 
 # --- Configuration ---
 SSD_MOUNT="/run/media/j5/SSD_BACKUPS"
@@ -46,7 +46,7 @@ for SRC in "${!SOURCES[@]}"; do
     # -v: Verbose
     # -P: Show progress bar and allow resumed transfers
     # -h: Human-readable numbers
-    COMMON_FLAGS="-avPh --delete --ignore-errors"
+    COMMON_FLAGS="-avPhAX --delete"
 
     if [[ "$SRC" == *".config/" ]]; then
         rsync $COMMON_FLAGS --delete-excluded --exclude-from="$EXCLUDE_LIST" "$SRC" "$TARGET/"
