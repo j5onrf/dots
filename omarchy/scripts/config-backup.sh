@@ -1,4 +1,5 @@
-#!/bin/bash 5-20-26
+#!/bin/bash
+# 5-20-26
 
 # --- Configuration ---
 SSD_MOUNT="/run/media/j5/SSD_BACKUPS"
