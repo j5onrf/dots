@@ -1,12 +1,15 @@
 #!/bin/bash
 
-# 1. Ask for a custom label
-echo -n "Enter snapshot label: "
-read LABEL
+# 1. Check if ANY arguments were passed
+if [ -n "$*" ]; then
+    LABEL="$*"
+    echo "Using label from argument: $LABEL"
+else
+    read -e -p "Enter snapshot label: " LABEL
+fi
 
 # 2. Ask if this should be pinned
-echo -n "Pin this snapshot? (y/N): "
-read PIN
+read -e -p "Pin this snapshot? (y/N): " PIN
 
 # 3. Handle empty labels
 if [ -z "$LABEL" ]; then
