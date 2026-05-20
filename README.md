@@ -9,6 +9,10 @@
 [Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion)
 <img width="3440" height="1440" alt="20260510_095504" src="https://github.com/user-attachments/assets/4ff3a0f3-2275-498e-84a7-09c3437612d5" />
 
+<br>
+
+update* 5-13 looks like Omarchy is introducting quickshell into the dev branch.
+
 *** Why C++ is the move for you
 
 On CachyOS system with the v4 kernel, a native C++ build of a single module will actually be lightning fast.
@@ -21,8 +25,7 @@ Zero Overhead: In btop screenshot, we see 648 MiB of RAM. A C++ module adds almo
 
 The Result: likely see shell process drop to something like 30 MiB or 40 MiB.
 
-update* 5-13 looks like Omarchy is introducting quickshell into the dev branch.
-<br><br>
+<br>
 
 </p>
 </details>
