@@ -1,5 +1,5 @@
 #!/bin/bash
-# --- NOCTALIA TOGGLE (Robust v5) ---
+# --- NOCTALIA TOGGLE (Robust v5) 5-20-26 ---
 
 NOCTALIA_BIN_PATH="/home/j5/.config/quickshell/noctalia/noctalia-bin"
 # Identify the process name (usually the filename of the binary)
@@ -29,10 +29,8 @@ fi
 export QT_QPA_PLATFORM="wayland;xcb"
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCALE_FACTOR=1
-export QT_FONT_DPI=96
 export QSG_RENDER_LOOP=threaded
 export QML_DISABLE_DISK_CACHE=0
-export MALLOC_ARENA_MAX=1
 export QT_QML_SINGLETON_REUSE=1
 
 # Kill mako to let Noctalia handle notifications
