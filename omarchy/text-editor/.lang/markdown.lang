@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="markdown" name="Markdown (Color-Max)" version="2.0" _section="Markup">
+  <metadata>
+    <property name="mimetypes">text/x-markdown</property>
+    <property name="globs">*.md;*.markdown</property>
+  </metadata>
+
+  <styles>
+    <style id="header" name="Header Line" map-to="def:keyword"/>
+    <style id="brackets" name="Structural Enclosures" map-to="def:type"/>
+    <style id="bold-text" name="Important Weights" map-to="def:statement"/>
+    <style id="list-marker" name="Bullet/Number Bullets" map-to="def:identifier"/>
+    <style id="code-span" name="Inline Monospace" map-to="def:string"/>
+    <style id="code-block" name="Fenced Language Blocks" map-to="def:string"/>
+  </styles>
+
+  <definitions>
+    <context id="atx-header" style-ref="header">
+      <match>^#+\s+.*$</match>
+    </context>
+
+    <context id="bracket-blocks" style-ref="brackets">
+      <match>\[[^\]]+\]</match>
+    </context>
+
+    <context id="list-items" style-ref="list-marker">
+      <match>^\s*([\-\*\+]|[0-9]+\.)\s</match>
+    </context>
+
+    <context id="strong-bold" style-ref="bold-text">
+      <match>\*\*.*?\*\*</match>
+    </context>
+
+    <context id="inline-code" style-ref="code-span" class="no-spell-check">
+      <match>`[^`\n]+`</match>
+    </context>
+
+    <context id="fenced-code" style-ref="code-block" class="no-spell-check">
+      <start>^```.*$</start>
+      <end>^```$</end>
+    </context>
+
+    <context id="markdown">
+      <include>
+        <context ref="fenced-code"/>
+        <context ref="atx-header"/>
+        <context ref="bracket-blocks"/>
+        <context ref="list-items"/>
+        <context ref="strong-bold"/>
+        <context ref="inline-code"/>
+      </include>
+    </context>
+  </definitions>
+</language>
