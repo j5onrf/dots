@@ -32,10 +32,10 @@ bind = SUPER SHIFT, F, exec, uwsm app -- nautilus --new-window
 bind = SUPER SHIFT, R, exec, wl-paste --primary | piper-tts --model $HOME/.local/share/piper/voices/en_US-ryan-high.onnx --length-scale 0.57 --sentence-silence 0.2 --output_raw | pw-play -a --rate 22050 --channels 1 --format s16 -
 
 # Northern English Male (Medium) - Super+Shift+N
-bind = SUPER SHIFT, N, exec, wl-paste --primary | piper-tts --model $HOME/.local/share/piper/voices/en_GB-northern_english_male-high.onnx --length-scale 0.57 --sentence-silence 0.2 --output_raw | pw-play -a --rate 22050 --channels 1 --format s16 -
+bind = SUPER SHIFT, N, exec, wl-paste --primary | piper-tts --model $HOME/.local/share/piper/voices/en_GB-northern_english_male-medium.onnx --length-scale 0.57 --sentence-silence 0.2 --output_raw | pw-play -a --rate 22050 --channels 1 --format s16 -
 
 # Amy (Medium) - Super+Shift+A
-bind = SUPER SHIFT, A, exec, wl-paste --primary | piper-tts --model $HOME/.local/share/piper/voices/en_US-amy-high.onnx --length-scale 0.57 --sentence-silence 0.2 --output_raw | pw-play -a --rate 22050 --channels 1 --format s16 -
+bind = SUPER SHIFT, A, exec, wl-paste --primary | piper-tts --model $HOME/.local/share/piper/voices/en_US-amy-medium.onnx --length-scale 0.57 --sentence-silence 0.2 --output_raw | pw-play -a --rate 22050 --channels 1 --format s16 -
 
 # Libritts (High) - Super+Shift+L
 bind = SUPER SHIFT, L, exec, wl-paste --primary | piper-tts --model $HOME/.local/share/piper/voices/en_US-libritts-high.onnx --length-scale 0.57 --sentence-silence 0.2 --output_raw | pw-play -a --rate 22050 --channels 1 --format s16 -
