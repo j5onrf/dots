@@ -8,7 +8,7 @@
 wip
 
 # -----------------------------------------------------
-# HYPRLAND BINDINGS - ACTIVE CONFIG (V4.9.3)
+# HYPRLAND BINDINGS - ACTIVE CONFIG (V5.1)
 # -----------------------------------------------------
 
 # --- 1. Core System ---
