@@ -35,7 +35,7 @@ bind = SUPER,       Z, exec, ~/.config/hypr/scripts/smart-launch.sh zeditor
 # bind = SHIFT,       Space, exec, ~/.config/hypr/scripts/smart-launch.sh brave-origin-beta --incognito
 
 # ==============================================================================
-# --- 4. Text-to-Speech (TTS) ---
+# --- 4. Text-to-Speech (TTS) | AI MODELS ---
 # ==============================================================================
 
 # Neural Kokoro-82M Text-to-Speech Engine
