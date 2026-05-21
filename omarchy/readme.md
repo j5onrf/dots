@@ -8,41 +8,42 @@
 wip
 
 # -----------------------------------------------------
-# HYPRLAND BINDINGS - ACTIVE CONFIG (V5.1)
+# HYPRLAND BINDINGS - ACTIVE CONFIG
 # -----------------------------------------------------
 
 # --- 1. Core System ---
-bind = SUPER, Q, killactive
+bind = SUPER,       Q,          killactive
 
 # --- 2. Applications ---
-bind = SUPER,       D, exec, foot
-bind = SUPER,       S, exec, kitty
-bind = SUPER,       A, exec, alacritty
-bind = SUPER,       G, exec, ghostty
-bind = SUPER,       R, exec, omarchy-menu
-bind = SUPER ALT,   S, exec, kitty --title floating_kitty
-bind = SUPER,       H, exec, ~/.config/hypr/scripts/hyprsunset.sh
-bind = ,            F2, exec, omarchy-toggle-nightlight
-# bind = ALT,         V, exec, qs -c noctalia ipc call launcher clipboard
-bind = SUPER SHIFT, F, exec, uwsm app -- nautilus --new-window
+bind = SUPER,       A,          exec, alacritty
+bind = SUPER,       D,          exec, foot
+bind = SUPER,       G,          exec, ghostty
+bind = SUPER,       H,          exec, ~/.config/hypr/scripts/hyprsunset.sh
+bind = SUPER,       R,          exec, omarchy-menu
+bind = SUPER,       S,          exec, kitty
+bind = SUPER ALT,   S,          exec, kitty --title floating_kitty
+bind = SUPER SHIFT, F,          exec, uwsm app -- nautilus --new-window
+bind = ,            F2,         exec, omarchy-toggle-nightlight
 
-# --- 3. Smart Launchers ---
-bind = ALT,         Space, exec, ~/.config/hypr/scripts/smart-launch.sh brave-origin-beta
-bind = CTRL,        Space, exec, ~/.config/hypr/scripts/smart-launch.sh org.gnome.Nautilus "nautilus --new-window"
-bind = SUPER,       Z, exec, ~/.config/hypr/scripts/smart-launch.sh zeditor
+# Disabled Applications
+# bind = ALT,         V,          exec, qs -c noctalia ipc call launcher clipboard
+
+# --- 3. Text-to-Speech (TTS) ---
+
+# --- Optimized Neural Kokoro TTS Reader ---
+bind = SUPER SHIFT, R,          exec, bash -c 'wl-paste --primary | tr -d "\n" | xargs -0 -I {} koko --style am_echo --speed 1.15 text "{}" -o /dev/shm/tts.wav && pw-play /dev/shm/tts.wav'
+
+# --- Kill TTS Audio Output Instantly ---
+bind = SUPER SHIFT, X,          exec, pkill -9 -f "pw-play|koko"
+
+# --- 4. Smart Launchers ---
+bind = CTRL,        Space,      exec, ~/.config/hypr/scripts/smart-launch.sh org.gnome.Nautilus "nautilus --new-window"
+bind = ALT,         Space,      exec, ~/.config/hypr/scripts/smart-launch.sh brave-origin-beta
+bind = SUPER,       Z,          exec, ~/.config/hypr/scripts/smart-launch.sh zeditor
 
 # Disabled Smart Launchers
-# bind = SHIFT,       Space, exec, ~/.config/hypr/scripts/smart-launch.sh brave-origin-beta --incognito
+# bind = SHIFT,       Space,      exec, ~/.config/hypr/scripts/smart-launch.sh brave-origin-beta --incognito
 
-# ==============================================================================
-# --- 4. Text-to-Speech (TTS) | AI MODELS ---
-# ==============================================================================
-
-# Neural Kokoro-82M Text-to-Speech Engine
-bind = SUPER SHIFT, R, exec, bash -c 'koko --style am_echo --speed 1.15 text "$(wl-paste --primary)" -o /dev/shm/tts.wav && pw-play /dev/shm/tts.wav'
-
-# Kill TTS Audio Output Instantly
-bind = SUPER SHIFT, X, exec, bash -c 'pkill -f pw-play || pkill -f koko'
 
 # ==============================================================================
 # LOCAL AI MODELS (LLAMA-CLI / LLAMA-SERVER)
@@ -68,48 +69,48 @@ bind = , F8, exec, uwsm app -- sh -c 'llama-server -m /home/j5/ollama_backup/Qwe
 
 
 # --- 5. Utilities & Clipboard ---
-bind = ALT,  C, exec, walker -m clipboard
-bind = CTRL, Delete, exec, elephant activate "clipboard;;remove_all;;" && notify-send "Clipboard" "History Cleared"
-bind = ALT,  R, exec, ~/.config/hypr/scripts/toggle_scale.sh
-bind = ,     F3, exec, ~/.config/hypr/scripts/power-toggle
-bind = ,     F12, exec, /home/j5/.config/hypr/scripts/browser-cleanup.sh
+bind = ALT,         C,          exec, walker -m clipboard
+bind = ALT,         R,          exec, ~/.config/hypr/scripts/toggle_scale.sh
+bind = CTRL,        Delete,     exec, elephant activate "clipboard;;remove_all;;" && notify-send "Clipboard" "History Cleared"
+bind = ,            F3,         exec, ~/.config/hypr/scripts/power-toggle
+bind = ,            F12,        exec, /home/j5/.config/hypr/scripts/browser-cleanup.sh
 
 # Disabled Utilities
-# bind = ALT,  X, exec, /usr/local/bin/qs -c noctalia ipc call launcher clipboard
-# bind = ,     F4, exec, ~/.config/hypr/scripts/walker-windows.sh
-# bind = ,     F5, exec, ~/.config/hypr/scripts/walker-switchboard.sh
-# bind = ,     F11, exec, /home/j5/.config/hypr/scripts/ai/ai-walker-menu.sh
+# bind = ALT,         X,          exec, /usr/local/bin/qs -c noctalia ipc call launcher clipboard
+# bind = ,            F4,         exec, ~/.config/hypr/scripts/walker-windows.sh
+# bind = ,            F5,         exec, ~/.config/hypr/scripts/walker-switchboard.sh
+# bind = ,            F11,        exec, /home/j5/.config/hypr/scripts/ai/ai-walker-menu.sh
 
 # --- 6. Navigation, Layout & Focus ---
-bind = CTRL,  Left,  movefocus, l
-bind = CTRL,  Right, movefocus, r
-bind = SHIFT, Left,  swapwindow, l
-bind = SHIFT, Right, swapwindow, r
+bind = CTRL,        Left,       movefocus, l
+bind = CTRL,        Right,      movefocus, r
+bind = SHIFT,       Left,       swapwindow, l
+bind = SHIFT,       Right,      swapwindow, r
 
 # Resizing Active Windows
-binde = SUPER CTRL, W, resizeactive, 0 -100
-binde = SUPER CTRL, A, resizeactive, -100 0
-binde = SUPER CTRL, S, resizeactive, 0 100
-binde = SUPER CTRL, D, resizeactive, 100 0
+binde = SUPER CTRL, A,          resizeactive, -100 0
+binde = SUPER CTRL, D,          resizeactive, 100 0
+binde = SUPER CTRL, W,          resizeactive, 0 -100
+binde = SUPER CTRL, S,          resizeactive, 0 100
 
 # Moving Active Windows
-binde = SUPER ALT,  W, moveactive, 0 -50
-binde = SUPER ALT,  Z, moveactive, 0 50
-binde = SUPER ALT,  A, moveactive, -50 0
-binde = SUPER ALT,  D, moveactive, 50 0
+binde = SUPER ALT,  A,          moveactive, -50 0
+binde = SUPER ALT,  D,          moveactive, 50 0
+binde = SUPER ALT,  W,          moveactive, 0 -50
+binde = SUPER ALT,  Z,          moveactive, 0 50
 
 # --- 7. G-Key Switchboard ---
-bind = , XF86Tools,    exec, ~/.config/hypr/scripts/w-toggle.sh
-bind = , XF86Launch5,  exec, ~/.config/hypr/scripts/veo-toggle.sh
-bind = , XF86Launch6,  exec, ~/.config/hypr/scripts/f-toggle.sh
-bind = , XF86Launch7,  exec, ~/.config/hypr/scripts/n-toggle.sh
-# bind = , XF86Launch8, exec, ~/.config/hypr/scripts/c-toggle.sh
-# bind = , XF86Launch9, exec, ~/.config/hypr/scripts/d-toggle.sh
+bind = ,            XF86Tools,   exec, ~/.config/hypr/scripts/w-toggle.sh
+bind = ,            XF86Launch5, exec, ~/.config/hypr/scripts/veo-toggle.sh
+bind = ,            XF86Launch6, exec, ~/.config/hypr/scripts/f-toggle.sh
+bind = ,            XF86Launch7, exec, ~/.config/hypr/scripts/n-toggle.sh
+# bind = ,            XF86Launch8, exec, ~/.config/hypr/scripts/c-toggle.sh
+# bind = ,            XF86Launch9, exec, ~/.config/hypr/scripts/d-toggle.sh
 
 # --- 8. Screenshots ---
-bind = ,     Print, exec, pkill slurp; grimblast --notify copysave area
-bind = SHIFT, Print, exec, grimblast --notify copysave screen
-bind = CTRL,  Print, exec, pkill slurp; grimblast --notify --freeze copysave area
+bind = ,            Print,      exec, pkill slurp; grimblast --notify copysave area
+bind = SHIFT,       Print,      exec, grimblast --notify copysave screen
+bind = CTRL,        Print,      exec, pkill slurp; grimblast --notify --freeze copysave area
 
 # --- 9. Workspaces & Keypasxc Setup ---
 workspace = 1, persistent:true
@@ -118,40 +119,40 @@ workspace = 3, persistent:true
 workspace = 4, persistent:true
 workspace = 5, persistent:true
 
-bind = , F1, workspace, 6
-bind = , F1, exec, keepassxc
+bind = ,            F1,         workspace, 6
+bind = ,            F1,         exec, keepassxc
 
 # Switch to Workspaces
-bind = SUPER, 1, workspace, 1
-bind = SUPER, 2, workspace, 2
-bind = SUPER, 3, workspace, 3
-bind = SUPER, 4, workspace, 4
-bind = SUPER, 5, workspace, 5
-bind = SUPER, 6, workspace, 6
-bind = SUPER, 7, workspace, 7
-bind = SUPER, 8, workspace, 8
-bind = SUPER, 9, workspace, 9
-bind = SUPER, 0, workspace, 10
+bind = SUPER,       1,          workspace, 1
+bind = SUPER,       2,          workspace, 2
+bind = SUPER,       3,          workspace, 3
+bind = SUPER,       4,          workspace, 4
+bind = SUPER,       5,          workspace, 5
+bind = SUPER,       6,          workspace, 6
+bind = SUPER,       7,          workspace, 7
+bind = SUPER,       8,          workspace, 8
+bind = SUPER,       9,          workspace, 9
+bind = SUPER,       0,          workspace, 10
 
 # Move Windows to Workspaces
-bind = SUPER SHIFT, 1, movetoworkspace, 1
-bind = SUPER SHIFT, 2, movetoworkspace, 2
-bind = SUPER SHIFT, 3, movetoworkspace, 3
-bind = SUPER SHIFT, 4, movetoworkspace, 4
-bind = SUPER SHIFT, 5, movetoworkspace, 5
-bind = SUPER SHIFT, 6, movetoworkspace, 6
-bind = SUPER SHIFT, 7, movetoworkspace, 7
-bind = SUPER SHIFT, 8, movetoworkspace, 8
-bind = SUPER SHIFT, 9, movetoworkspace, 9
-bind = SUPER SHIFT, 0, movetoworkspace, 10
+bind = SUPER SHIFT, 1,          movetoworkspace, 1
+bind = SUPER SHIFT, 2,          movetoworkspace, 2
+bind = SUPER SHIFT, 3,          movetoworkspace, 3
+bind = SUPER SHIFT, 4,          movetoworkspace, 4
+bind = SUPER SHIFT, 5,          movetoworkspace, 5
+bind = SUPER SHIFT, 6,          movetoworkspace, 6
+bind = SUPER SHIFT, 7,          movetoworkspace, 7
+bind = SUPER SHIFT, 8,          movetoworkspace, 8
+bind = SUPER SHIFT, 9,          movetoworkspace, 9
+bind = SUPER SHIFT, 0,          movetoworkspace, 10
 
 # Disabled Workspace/App Binds
-# bind = , F9, workspace, 7
-# bind = , F9, exec, omarchy-launch-webapp https://music.youtube.com/
+# bind = ,            F9,         workspace, 7
+# bind = ,            F9,         exec, omarchy-launch-webapp https://music.youtube.com/
 
 # --- 10. Window Rules & Mouse Binds ---
-bind = , mouse:275, exec,
-bind = , mouse:276, exec,
+bind = ,            mouse:275,  exec, 
+bind = ,            mouse:276,  exec, 
 
 # Floating Kitty
 windowrule = match:title ^(floating_kitty)$, float on
