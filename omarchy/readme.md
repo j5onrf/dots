@@ -56,6 +56,8 @@ bind = , F8, exec, uwsm app -- sh -c 'llama-server -m /home/j5/ollama_backup/Qwe
 # [INACTIVE] "Non-Thinking Mode"
 # bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading Qwen 35B in Fast Mode..." && llama-cli -m /home/j5/ollama_backup/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 4096 -t 6 -b 512 --cache-type-k q4_0 --cache-type-v q8_0 --flash-attn on --reasoning off --reasoning-budget 0 --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --presence-penalty 1.5; exec bash'
 
+# --- llama-swap ---
+
 
 # --- 5. Utilities & Clipboard ---
 bind = ALT,  C, exec, walker -m clipboard
