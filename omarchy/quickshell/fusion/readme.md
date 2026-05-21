@@ -19,8 +19,10 @@ windowrule = move 40 510, match:class ^(calendar-pwa)$
 windowrule = pin 1, match:class ^(calendar-pwa)$
 
 # Workspace Assignments (KeePass & Music)
-windowrule = match:class ^(org.keepassxc.KeePassXC)$, workspace 6 silent
-windowrule = match:class ^(brave-music.youtube.com__-Default)$, workspace 7 silent
+bind = , F1, workspace, 6
+bind = , F1, exec, keepassxc
+bind = , F9, workspace, 7
+bind = , F9, exec, omarchy-launch-webapp https://music.youtube.com/
 ```
 ```bash
 # Pin the Quickshell bar for auto-hide
