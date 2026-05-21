@@ -26,7 +26,7 @@ bind = ,            F2, exec, omarchy-toggle-nightlight
 # bind = ALT,         V, exec, qs -c noctalia ipc call launcher clipboard
 bind = SUPER SHIFT, F, exec, uwsm app -- nautilus --new-window
 
-# --- 4. Smart Launchers ---
+# --- 3. Smart Launchers ---
 bind = ALT,         Space, exec, ~/.config/hypr/scripts/smart-launch.sh brave-origin-beta
 bind = CTRL,        Space, exec, ~/.config/hypr/scripts/smart-launch.sh org.gnome.Nautilus "nautilus --new-window"
 bind = SUPER,       Z, exec, ~/.config/hypr/scripts/smart-launch.sh zeditor
@@ -34,7 +34,7 @@ bind = SUPER,       Z, exec, ~/.config/hypr/scripts/smart-launch.sh zeditor
 # Disabled Smart Launchers
 # bind = SHIFT,       Space, exec, ~/.config/hypr/scripts/smart-launch.sh brave-origin-beta --incognito
 
-# --- 3. Text-to-Speech (TTS) ---
+# --- 4. Text-to-Speech (TTS) ---
 
 # Neural Kokoro-82M Text-to-Speech Engine (v4 Optimized)
 bind = SUPER SHIFT, R, exec, bash -c 'koko --style af_sky --speed 1.15 text "$(wl-paste --primary)" -o /dev/shm/tts.wav && pw-play /dev/shm/tts.wav'
