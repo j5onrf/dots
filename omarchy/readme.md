@@ -48,8 +48,8 @@ bind = SUPER SHIFT, X, exec, bash -c 'pkill -f pw-play || pkill -f koko'
 # LOCAL AI MODELS (LLAMA-CLI / LLAMA-SERVER)
 # ==============================================================================
 
-# --- Qwen3.5-2B-UD-Q4_K_XL.gguf ---
-# (CLI) "Non-Thinking Mode" for Qwen 2B Agentic
+# --- (CLI) Qwen3.5-2B-UD-Q4_K_XL.gguf ---
+# [INACTIVE] ""Non-Thinking Mode" for Qwen 2B Agentic
 # bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading Qwen 2B Agentic..." && llama-cli -m /home/j5/ollama_backup/Qwen3.5-2B-UD-Q4_K_XL.gguf -c 12000 -t 6 -b 512 --cache-type-k q4_0 --cache-type-v q8_0 --flash-attn on --reasoning off --reasoning-budget 0 --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --presence-penalty 1.5; exec bash'
 
 # --- (WebUI) Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf ---
