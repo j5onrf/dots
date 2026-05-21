@@ -25,7 +25,7 @@ bind = , F9, workspace, 7
 bind = , F9, exec, omarchy-launch-webapp https://music.youtube.com/
 ```
 ```bash
-# Pin the Quickshell bar for auto-hide
+# Auto-hide tweak
 layerrule = match:namespace fusion-shell, no_anim on
 ```
 ```
