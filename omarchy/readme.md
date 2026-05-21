@@ -28,20 +28,11 @@ bind = SUPER SHIFT, F, exec, uwsm app -- nautilus --new-window
 
 # --- 3. Text-to-Speech (TTS) ---
 
-# Ryan (High) - Super+Shift+R
-bind = SUPER SHIFT, R, exec, wl-paste --primary | piper-tts --model $HOME/.local/share/piper/voices/en_US-ryan-high.onnx --length-scale 0.57 --sentence-silence 0.2 --output_raw | pw-play -a --rate 22050 --channels 1 --format s16 -
-
-# Northern English Male (Medium) - Super+Shift+N
-bind = SUPER SHIFT, N, exec, wl-paste --primary | piper-tts --model $HOME/.local/share/piper/voices/en_GB-northern_english_male-medium.onnx --length-scale 0.57 --sentence-silence 0.2 --output_raw | pw-play -a --rate 22050 --channels 1 --format s16 -
-
-# Amy (Medium) - Super+Shift+A
-bind = SUPER SHIFT, A, exec, wl-paste --primary | piper-tts --model $HOME/.local/share/piper/voices/en_US-amy-medium.onnx --length-scale 0.57 --sentence-silence 0.2 --output_raw | pw-play -a --rate 22050 --channels 1 --format s16 -
-
-# Libritts (High) - Super+Shift+L
-bind = SUPER SHIFT, L, exec, wl-paste --primary | piper-tts --model $HOME/.local/share/piper/voices/en_US-libritts-high.onnx --length-scale 0.57 --sentence-silence 0.2 --output_raw | pw-play -a --rate 22050 --channels 1 --format s16 -
+# Neural Kokoro-82M Text-to-Speech Engine (v4 Optimized)
+bind = SUPER SHIFT, R, exec, bash -c 'koko --style af_sky --speed 1.15 text "$(wl-paste --primary)" -o /dev/shm/tts.wav && pw-play /dev/shm/tts.wav'
 
 # Kill TTS Audio Output Instantly
-bind = SUPER SHIFT, X, exec, pkill -f pw-play
+bind = SUPER SHIFT, X, exec, bash -c 'pkill -f pw-play || pkill -f koko'
 
 # --- 4. Smart Launchers ---
 bind = ALT,         Space, exec, ~/.config/hypr/scripts/smart-launch.sh brave-origin-beta
@@ -56,30 +47,9 @@ bind = SUPER,       Z, exec, ~/.config/hypr/scripts/smart-launch.sh zeditor
 # LOCAL AI MODELS (LLAMA-CLI / LLAMA-SERVER)
 # ==============================================================================
 
-# --- Qwen3.5-2B-UD-Q4_K_XL.gguf ---
-# (CLI) "Non-Thinking Mode" for Qwen 2B Agentic
-# bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading Qwen 2B Agentic..." && llama-cli -m /home/j5/ollama_backup/Qwen3.5-2B-UD-Q4_K_XL.gguf -c 12000 -t 6 -b 512 --cache-type-k q4_0 --cache-type-v q8_0 --flash-attn on --reasoning off --reasoning-budget 0 --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --presence-penalty 1.5; exec bash'
-
-# (WebUI) "Non-Thinking Mode" for Qwen 2B Agentic MTP
-# bind = , F8, exec, uwsm app -- sh -c 'llama-server -m /home/j5/ollama_backup/Qwen3.5-2B-UD-Q4_K_XL.gguf -c 12000 -t 6 -b 512 --cache-type-k q4_0 --cache-type-v q8_0 --flash-attn on --reasoning off --reasoning-budget 0 --context-shift --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --presence-penalty 1.5 --port 8080 & sleep 2 && xdg-open "http://localhost:8080"'
-
 # --- Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf ---
 # [ACTIVE] (WebUI) "Non-Thinking Mode"
 bind = , F8, exec, uwsm app -- sh -c 'llama-server -m /home/j5/ollama_backup/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 8192 -t 6 -b 512 --cache-type-k q4_0 --cache-type-v q8_0 --flash-attn off --reasoning off --reasoning-budget 0 --context-shift --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --presence-penalty 1.5 --port 8080 & sleep 2 && xdg-open "http://localhost:8080"'
-
-# (CLI) "Non-Thinking Mode"
-# bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading Qwen 35B in Fast Mode..." && llama-cli -m /home/j5/ollama_backup/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 4096 -t 6 -b 512 --cache-type-k q4_0 --cache-type-v q8_0 --flash-attn on --reasoning off --reasoning-budget 0 --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --presence-penalty 1.5; exec bash'
-# (CLI) "Thinking Mode"
-# bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading Qwen 35B in Thinking Mode..." && llama-cli -m /home/j5/ollama_backup/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 16384 -t 6 -b 512 --cache-type-k q4_0 --cache-type-v q8_0 --flash-attn on --reasoning on --reasoning-budget 2048 --jinja --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0.0 --presence-penalty 1.5; exec bash'
-# (WebUI) "Thinking Mode"
-# bind = , F8, exec, uwsm app -- sh -c 'llama-server -m /home/j5/ollama_backup/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 16384 -t 6 -b 512 --cache-type-k q4_0 --cache-type-v q8_0 --flash-attn on --reasoning-budget 2048 --jinja --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0.0 --presence-penalty 1.5 --port 8080 & sleep 2 && xdg-open "http://localhost:8080"'
-
-# --- Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_P.gguf ---
-# (CLI) "Non-Thinking Mode"
-# bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading Gemma4 K_P MoE in Instant Non-Thinking Mode..." && llama-cli -m /home/j5/ollama_backup/Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_P.gguf -c 8192 -t 6 -b 512 --cache-type-k q4_0 --cache-type-v q8_0 --flash-attn on --reasoning off --reasoning-budget 0 --jinja --chat-template-kwargs "{\"enable_thinking\":false}" --temp 1.0 --top-p 0.95 --top-k 64 --min-p 0.0 --presence-penalty 0.0 -sys "Concise and direct. No preamble."; exec bash'
-# (WebUI) "Non-Thinking Mode"
-# bind = , F8, exec, uwsm app -- sh -c 'llama-server -m /home/j5/ollama_backup/Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_P.gguf -c 8192 -t 6 -b 512 --cache-type-k q4_0 --cache-type-v q8_0 --flash-attn on --reasoning-budget 0 --jinja --chat-template-kwargs "{\"enable_thinking\":false}" --temp 1.0 --top-p 0.95 --top-k 64 --min-p 0.0 --presence-penalty 0.0 --port 8080 & sleep 2 && xdg-open "http://localhost:8080"'
-
 
 # --- 5. Utilities & Clipboard ---
 bind = ALT,  C, exec, walker -m clipboard
