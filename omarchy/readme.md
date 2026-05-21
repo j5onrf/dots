@@ -53,7 +53,7 @@ bind = SUPER SHIFT, X, exec, bash -c 'pkill -f pw-play || pkill -f koko'
 bind = , F8, exec, uwsm app -- sh -c 'llama-server -m /home/j5/ollama_backup/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 8192 -t 6 -b 512 --cache-type-k q4_0 --cache-type-v q8_0 --flash-attn off --reasoning off --reasoning-budget 0 --context-shift --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --presence-penalty 1.5 --port 8080 & sleep 2 && xdg-open "http://localhost:8080"'
 
 # --- (CLI) Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf ---
-# (CLI) "Non-Thinking Mode"
+# [INACTIVE] "Non-Thinking Mode"
 # bind = , F8, exec, uwsm app -- foot sh -c 'echo "Loading Qwen 35B in Fast Mode..." && llama-cli -m /home/j5/ollama_backup/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL.gguf -c 4096 -t 6 -b 512 --cache-type-k q4_0 --cache-type-v q8_0 --flash-attn on --reasoning off --reasoning-budget 0 --jinja --temp 0.7 --top-p 0.8 --top-k 20 --min-p 0.0 --presence-penalty 1.5; exec bash'
 
 
