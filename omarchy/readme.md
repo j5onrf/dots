@@ -167,14 +167,22 @@ bind = SUPER SHIFT, 0, movetoworkspace, 10
 bind = , mouse:275, exec,
 bind = , mouse:276, exec,
 
+# Floating Kitty
 windowrule = match:title ^(floating_kitty)$, float on
 windowrule = match:title ^(floating_kitty)$, center on
 windowrule = match:title ^(floating_kitty)$, size 875 600
-windowrule = float on, match:class ^(xdg-desktop-portal-gtk)$
+
+# Calendar PWA
 windowrule = float 1, match:class ^(calendar-pwa)$
 windowrule = size 180 185, match:class ^(calendar-pwa)$
 windowrule = move 40 510, match:class ^(calendar-pwa)$
 windowrule = pin 1, match:class ^(calendar-pwa)$
+
+# Portal & File Dialogs
+windowrule = float on, match:class ^(xdg-desktop-portal-gtk)$
+windowrule = size 875 600, match:class ^(xdg-desktop-portal-gtk)$
+windowrule = center on, match:class ^(xdg-desktop-portal-gtk)$
+windowrule = float on, match:title ^(Open File|Save As|File Upload)$
 ```
 
 
