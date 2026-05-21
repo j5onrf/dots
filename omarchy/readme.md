@@ -34,6 +34,7 @@ bind = SUPER SHIFT, R, exec, bash -c 'koko --style af_sky --speed 1.15 text "$(w
 # Kill TTS Audio Output Instantly
 bind = SUPER SHIFT, X, exec, bash -c 'pkill -f pw-play || pkill -f koko'
 
+
 # --- 4. Smart Launchers ---
 bind = ALT,         Space, exec, ~/.config/hypr/scripts/smart-launch.sh brave-origin-beta
 bind = CTRL,        Space, exec, ~/.config/hypr/scripts/smart-launch.sh org.gnome.Nautilus "nautilus --new-window"
