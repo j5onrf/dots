@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="aistudio-dark" _name="AI Studio" version="1.0">
+  <author>Gemini</author>
+  <description>Dark theme based on Google AI Studio</description>
+
+  <color name="ui_bg"      value="#131314"/> <color name="ui_fg"      value="#e3e3e3"/> <color name="keyword"    value="#7baaf7"/> <color name="string"     value="#d2e3fc"/> <color name="function"   value="#f28b82"/> <color name="comment"    value="#9aa0a6"/> <color name="selection"  value="#3c4043"/>
+
+  <style name="text"                        foreground="ui_fg" background="ui_bg"/>
+  <style name="selection"                   background="selection"/>
+  <style name="cursor"                      foreground="ui_fg"/>
+  <style name="line-numbers"                foreground="comment" background="ui_bg"/>
+
+  <style name="def:keyword"                 foreground="keyword" bold="true"/>
+  <style name="def:function"                foreground="function"/>
+  <style name="def:string"                  foreground="string"/>
+  <style name="def:comment"                 foreground="comment"/>
+  <style name="def:type"                    foreground="keyword"/>
+  <style name="def:variable"                foreground="ui_fg"/>
+  <style name="def:identifier"              foreground="ui_fg"/>
+  <style name="def:operator"                foreground="ui_fg"/>
+</style-scheme>
