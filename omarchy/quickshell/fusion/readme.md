@@ -19,8 +19,10 @@ windowrule = pin 1, match:class ^(calendar-pwa)$
 # Workspace Assignments (KeePass & Music)
 bind = , F1, workspace, 6
 bind = , F1, exec, keepassxc
-bind = , F9, workspace, 7
-bind = , F9, exec, omarchy-launch-webapp https://music.youtube.com/
+bind = Super, M, workspace, 7
+bind = Super, M, exec, brave-origin-beta --user-data-dir="/home/j5/.config/brave-spotify-bunker" --app=https://open.spotify.com/
+# bind = , F9, workspace, 7
+# bind = , F9, exec, omarchy-launch-webapp https://music.youtube.com/
 ```
 ```bash
 # Auto-hide Tweak
