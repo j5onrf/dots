@@ -6,7 +6,7 @@
 
 `Omarchy v3.8.0` `quickshell` `ttf-material-symbols-variable-git`
 
-<img alt="20260522_001049" src="https://github.com/user-attachments/assets/7d2eb334-7ef2-4f40-a7df-4d775adf61cb" />
+<img alt="20260522_002227" src="https://github.com/user-attachments/assets/779e88f4-1ea8-47dd-99e4-655c8c24716d" />
 <br><br>
 
 > *Real-time color injection based on your current Omarchy `.toml`*
