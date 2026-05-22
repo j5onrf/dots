@@ -1,4 +1,4 @@
-/* Shell-Fusion V5.7 5.13.26 */
+/* Shell-Fusion V5.8 (IPC-Ready / Streamlined Engine) 5.21.26 */
 
 import Quickshell
 import Quickshell.Io
@@ -33,32 +33,45 @@ PanelWindow {
     readonly property string iconFont: "Material Symbols Rounded"
     readonly property string monoFont: "JetBrainsMono Nerd Font"
 
+    // --- AUTOMATED FILE WATCHER BACKEND ---
     FileView {
         id: colorFileSource
         path: omarchyConfig
+        
+        // This fires automatically only when the file actually modifies on disk
+        onTextChanged: {
+            const rawText = (typeof text === "function") ? text() : text;
+            if (rawText) {
+                theme.updateThemeFromFile(rawText);
+            }
+        }
     }
 
     QtObject {
         id: theme
-        readonly property string raw: {
-            try {
-                return (typeof colorFileSource.text === "function") ? colorFileSource.text() : colorFileSource.text;
-            } catch (e) {
-                return "";
+        
+        // Observable reactive style properties
+        property string mSurface: "#242424"
+        property string mOnSurface: "#ffffff"
+        property string mPrimary: "#ffffff"
+        property string mOnPrimary: "#ffffff"
+        property string mSurfaceVariant: "#303030"
+        property string mError: "#ff7b63"
+
+        function updateThemeFromFile(rawText) {
+            function parse(key, fallback) {
+                const pattern = new RegExp("^\\s*" + key + "\\s*=\\s*[\"']?(#[A-Fa-f0-9]{6})[\"']?", "m");
+                const m = rawText.match(pattern);
+                return m ? m[1] : fallback;
             }
+            mSurface = parse("background", "#242424")
+            mOnSurface = parse("foreground", "#ffffff")
+            mPrimary = parse("accent", "#ffffff")
+            mSurfaceVariant = parse("color0", "#303030")
+            mError = parse("color1", "#ff7b63")
         }
-        function parse(key, fallback) {
-            const pattern = new RegExp("^\\s*" + key + "\\s*=\\s*[\"']?(#[A-Fa-f0-9]{6})[\"']?", "m");
-            const m = raw.match(pattern);
-            return m ? m[1] : fallback;
-        }
-        readonly property string mSurface: parse("background", "#242424")
-        readonly property string mOnSurface: parse("foreground", "#ffffff")
-        readonly property string mPrimary: parse("accent", "#ffffff")
-        readonly property string mOnPrimary: "#ffffff"
-        readonly property string mSurfaceVariant: parse("color0", "#303030")
-        readonly property string mError: parse("color1", "#ff7b63")
     }
+    // --- END AUTOMATED FILE WATCHER BACKEND ---
 
     component FusionModule: Rectangle {
         property alias hoverArea: mArea
