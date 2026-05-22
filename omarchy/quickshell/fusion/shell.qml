@@ -1,4 +1,4 @@
-/* Shell-Fusion V6.1 (Streamlined) 5.21.26 */
+/* Shell-Fusion V6.3 (Streamlined Engine) 5.22.26 */
 
 import Quickshell
 import Quickshell.Io
@@ -12,7 +12,7 @@ PanelWindow {
     WlrLayershell.namespace: "fusion-shell"
     WlrLayershell.layer: WlrLayer.Top
     
-    exclusiveZone: autoHideEnabled ? 0 : 32
+    exclusiveZone: autoHideEnabled ? 0 : 34
 
     readonly property string homeDir: Quickshell.env("HOME")
     readonly property string omarchyConfig: homeDir + "/.config/omarchy/current/theme/colors.toml"
@@ -23,7 +23,7 @@ PanelWindow {
         bottom: true
     }
     
-    implicitWidth: (autoHideEnabled && !isHovered) ? 2 : 32
+    implicitWidth: (autoHideEnabled && !isHovered) ? 2 : 34
     color: "transparent"
 
     property bool autoHideEnabled: false
@@ -38,6 +38,7 @@ PanelWindow {
         id: colorFileSource
         path: omarchyConfig
         
+        // This fires automatically only when the file actually modifies on disk
         onTextChanged: {
             const rawText = (typeof text === "function") ? text() : text;
             if (rawText) {
@@ -49,6 +50,7 @@ PanelWindow {
     QtObject {
         id: theme
         
+        // Observable reactive style properties
         property string mSurface: "#242424"
         property string mOnSurface: "#ffffff"
         property string mPrimary: "#ffffff"
@@ -73,9 +75,9 @@ PanelWindow {
 
     component FusionModule: Rectangle {
         property alias hoverArea: mArea
-        width: 28
-        height: 28
-        radius: 7
+        width: 30
+        height: 30
+        radius: 8
         anchors.horizontalCenter: parent.horizontalCenter
         color: mArea.containsMouse ? theme.mSurfaceVariant : theme.mSurface
         border {
@@ -102,11 +104,11 @@ PanelWindow {
 
         Rectangle {
             id: slidingContent
-            width: 32
+            width: 34
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             
-            x: (autoHideEnabled && !isHovered) ? -32 : 0
+            x: (autoHideEnabled && !isHovered) ? -34 : 0
             
             Behavior on x {
                 NumberAnimation {
@@ -126,11 +128,11 @@ PanelWindow {
                 spacing: 2
 
                 FusionModule {
-                    height: 28
+                    height: 30
                     Text {
                         anchors {
                             top: parent.top
-                            topMargin: 1
+                            topMargin: 2
                             horizontalCenter: parent.horizontalCenter
                         }
                         text: "\ue5d3"
@@ -138,7 +140,7 @@ PanelWindow {
                         renderType: Text.QtRendering
                         font {
                             family: iconFont
-                            pixelSize: 20
+                            pixelSize: 22
                         }
                     }
                     hoverArea.onClicked: mouse => {
@@ -158,7 +160,7 @@ PanelWindow {
                         property bool isActive: modelData === Hyprland.focusedWorkspace
                         property bool isOccupied: Hyprland.toplevels.values.some(t => t.workspace === modelData)
 
-                        radius: hoverArea.containsMouse ? 14 : (isActive ? 11 : 7)
+                        radius: hoverArea.containsMouse ? 15 : (isActive ? 12 : 8)
                         color: isActive ? theme.mPrimary : (hoverArea.containsMouse ? theme.mSurfaceVariant : theme.mSurface)
 
                         Rectangle {
@@ -186,7 +188,7 @@ PanelWindow {
                             font {
                                 weight: Font.DemiBold
                                 family: monoFont
-                                pixelSize: (modelData.id === 6 || modelData.id === 7) ? 18 : 15
+                                pixelSize: (modelData.id === 6 || modelData.id === 7) ? 20 : 17
                             }
                         }
                         hoverArea.onClicked: Hyprland.dispatch("workspace " + modelData.id)
@@ -196,7 +198,7 @@ PanelWindow {
 
             // --- CENTER SECTION (Date) ---
             Item {
-                width: 28
+                width: 30
                 height: 80
                 anchors.centerIn: parent 
                 
@@ -226,12 +228,12 @@ PanelWindow {
                 spacing: 2
 
                 FusionModule {
-                    height: 16
+                    height: 18
                     Text {
                         anchors.centerIn: parent
                         text: "\ue5cf"
                         renderType: Text.QtRendering
-                        font { family: iconFont; pixelSize: 16 }
+                        font { family: iconFont; pixelSize: 18 }
                         color: theme.mOnSurface
                         rotation: drawerOpen ? 180 : 0
                         Behavior on rotation { NumberAnimation { duration: 250 } }
@@ -253,7 +255,7 @@ PanelWindow {
                             text: "\ue14f"
                             renderType: Text.QtRendering
                             color: parent.hoverArea.containsMouse ? theme.mPrimary : theme.mOnSurface
-                            font { family: iconFont; pixelSize: 18 }
+                            font { family: iconFont; pixelSize: 20 }
                         }
                         hoverArea.onClicked: Hyprland.dispatch("exec walker -m clipboard")
                     }
@@ -263,7 +265,7 @@ PanelWindow {
                             text: "\ue3a9"
                             renderType: Text.QtRendering
                             color: parent.hoverArea.containsMouse ? theme.mPrimary : theme.mOnSurface
-                            font { family: iconFont; pixelSize: 18 }
+                            font { family: iconFont; pixelSize: 20 }
                         }
                         hoverArea.onClicked: Hyprland.dispatch("exec omarchy-toggle-nightlight")
                     }
@@ -273,33 +275,33 @@ PanelWindow {
                             text: autoHideEnabled ? "\ue898" : "\ue897"
                             renderType: Text.QtRendering
                             color: autoHideEnabled ? theme.mOnSurface : theme.mPrimary
-                            font { family: iconFont; pixelSize: 18 }
+                            font { family: iconFont; pixelSize: 20 }
                         }
                         hoverArea.onClicked: autoHideEnabled = !autoHideEnabled
                     }
                 }
 
                 FusionModule {
-                    height: 36
+                    height: 40
                     border.width: 2
                     hoverArea.onClicked: Hyprland.dispatch("exec kitty --class=calendar-pwa -e sh -c 'cal -m; read -n 1'")
                     Column {
                         anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
-                        topPadding: 2
-                        spacing: -6
+                        topPadding: 2.4
+                        spacing: -5
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter
                             color: theme.mPrimary
                             renderType: Text.QtRendering
                             text: mainClock.date ? (mainClock.date.getHours() % 12 || 12).toString().padStart(2, '0') : "--"
-                            font { weight: Font.DemiBold; pixelSize: 14; family: monoFont }
+                            font { weight: Font.DemiBold; pixelSize: 15; family: monoFont }
                         }
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter
                             color: theme.mOnSurface
                             renderType: Text.QtRendering
                             text: mainClock.date ? mainClock.date.getMinutes().toString().padStart(2, '0') : "--"
-                            font { weight: Font.DemiBold; pixelSize: 14; family: monoFont }
+                            font { weight: Font.DemiBold; pixelSize: 15; family: monoFont }
                         }
                     }
                 }
@@ -312,7 +314,7 @@ PanelWindow {
                         text: powerVolModule.isMuted ? "\ue04f" : "\ue8ac"
                         renderType: Text.QtRendering
                         color: parent.hoverArea.containsMouse ? theme.mError : theme.mPrimary
-                        font { family: iconFont; pixelSize: 16 }
+                        font { family: iconFont; pixelSize: 18 }
                     }
                     hoverArea.onClicked: (mouse) => {
                         if (mouse.button === Qt.RightButton) {
