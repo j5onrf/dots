@@ -4,7 +4,8 @@
 
 `omarchy v3.8.0` `quickshell` `ttf-material-symbols-variable-git` `omarchy-shell`
 
-<img alt="20260522_002417" src="https://github.com/user-attachments/assets/04d0ec99-d0aa-42d5-814b-19c5ed60ba10" />
+<img alt="20260522_012909" src="https://github.com/user-attachments/assets/da66a910-c4f7-4f2b-b8c8-fa205274e1cb" />
+
 <br><br>
 
 > *Real-time color injection based on your current Omarchy `.toml`*
