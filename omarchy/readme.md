@@ -112,7 +112,7 @@ bind = ,            Print,      exec, pkill slurp; grimblast --notify copysave a
 bind = SHIFT,       Print,      exec, grimblast --notify copysave screen
 bind = CTRL,        Print,      exec, pkill slurp; grimblast --notify --freeze copysave area
 
-# --- 9. Workspaces & Keypasxc Setup ---
+# --- 9. Workspaces & Keypassxc/Spotify Setup ---
 workspace = 1, persistent:true
 workspace = 2, persistent:true
 workspace = 3, persistent:true
@@ -121,6 +121,9 @@ workspace = 5, persistent:true
 
 bind = ,            F1,         workspace, 6
 bind = ,            F1,         exec, keepassxc
+
+bind = Super,       M,          workspace, 7
+bind = Super,       M,          exec, brave-origin-beta --user-data-dir="/home/j5/.config/brave-spotify-bunker" --app=https://open.spotify.com/
 
 # Switch to Workspaces
 bind = SUPER,       1,          workspace, 1
