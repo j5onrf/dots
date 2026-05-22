@@ -195,7 +195,7 @@ PanelWindow {
                 }
             }
 
-            // --- FIXED CENTER SECTION (Date) ---
+            // --- CENTER SECTION (Date) ---
             Item {
                 width: 30
                 height: 80
