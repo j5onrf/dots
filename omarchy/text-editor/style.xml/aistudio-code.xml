@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="aistudio-pro" _name="AI Studio Pro" version="1.0">
+  <author>Gemini</author>
+
+  <color name="studio_bg"      value="#1e1f20"/> 
+  <color name="studio_fg"      value="#e8eaed"/> 
+  <color name="syntax_blue"    value="#7baaf7"/> 
+  <color name="syntax_cyan"    value="#4ec9b0"/> 
+  <color name="syntax_green"   value="#81c995"/> 
+  <color name="syntax_red"     value="#f28b82"/> 
+  <color name="syntax_amber"   value="#fdd663"/> 
+  <color name="syntax_comment" value="#9aa0a6"/> 
+
+  <color name="search_yellow"  value="#f1c40f"/> <color name="search_orange"  value="#e67e22"/> <color name="search_text"    value="#000000"/> <style name="text"                foreground="studio_fg" background="studio_bg"/>
+  <style name="selection"           background="#3c4043"/>
+  <style name="cursor"              foreground="#ffffff"/>
+  <style name="line-numbers"        foreground="syntax_comment" background="#1a1b1c"/>
+  <style name="current-line"        background="#28292a"/>
+
+  <style name="search-match"         foreground="search_text" background="search_yellow"/>
+  <style name="current-search-match" foreground="search_text" background="search_orange"/>
+
+  <style name="def:keyword"         foreground="syntax_blue" bold="true"/>
+  <style name="def:type"            foreground="syntax_cyan"/> 
+  <style name="def:function"        foreground="syntax_red"/>
+  <style name="def:string"          foreground="syntax_green"/>
+  <style name="def:constant"        foreground="syntax_amber"/> 
+  <style name="def:comment"         foreground="syntax_comment" italic="true"/>
+  <style name="def:operator"        foreground="studio_fg"/>
+  <style name="def:identifier"      foreground="studio_fg"/>
+</style-scheme>
