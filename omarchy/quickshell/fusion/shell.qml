@@ -176,7 +176,7 @@ PanelWindow {
 
                         Text {
                             anchors.centerIn: parent
-                            anchors.horizontalCenterOffset: 0.25
+                            anchors.verticalCenterOffset: 0.25
                             text: {
                                 if (parent.isActive) return "";
                                 if (modelData.id === 6) return "\uf084";
