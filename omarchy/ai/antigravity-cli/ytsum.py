@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# --- AntiGravity-CLI YouTube Summary / KoKo Read Aloud / v0.3 beta 5-22-26 ---
+# AntiGravity Summary v0.3.1-beta (with KoKo Read-Aloud) [05-22-26]
 
 import sys
 import os
@@ -8,10 +8,13 @@ import termios
 import urllib.request
 import json
 import select
-import subprocess  # Added for running koko
+import subprocess
 
 # --- Configuration ---
-API_KEY = "API-KEY-HERE"
+API_KEY = "YOUR-API-KEY-HERE"
+
+# Global state for the Text-to-Speech toggle
+TTS_ENABLED = True
 
 PROMPT_PROFILES = {
     "1": {
@@ -66,6 +69,7 @@ PROMPT_PROFILES = {
 
 # --- TUI & Display Logic ---
 def get_key():
+    """Restored: Using your original reliable key-reading logic."""
     fd = sys.stdin.fileno()
     old = termios.tcgetattr(fd)
     try:
@@ -99,8 +103,12 @@ def get_input_or_escape(prompt):
     try:
         if shutil.which("wl-paste"):  # Wayland native
             user_text = subprocess.check_output(["wl-paste"], text=True)
+        elif shutil.which("xclip"):   # X11 native
+            user_text = subprocess.check_output(["xclip", "-selection", "clipboard", "-o"], text=True)
+        elif shutil.which("xsel"):    # X11 alternative
+            user_text = subprocess.check_output(["xsel", "--clipboard", "--output"], text=True)
         else:
-            raise Exception("No clipboard utility found (install wl-clipboard).")
+            raise Exception("No clipboard utility found (install xclip or wl-clipboard).")
             
     except Exception as e:
         sys.stdout.write(f"\033[91m[Clipboard Error: {str(e)}]\033[0m\n")
@@ -119,6 +127,7 @@ def print_header():
           f"    {c[4]}▄██▀    ▀██▄{reset}\n")
 
 def run_menu():
+    global TTS_ENABLED
     keys = list(PROMPT_PROFILES.keys())
     options = [PROMPT_PROFILES[k]["name"] for k in keys] + ["Exit"]
     selected = 0
@@ -131,15 +140,25 @@ def run_menu():
         while True:
             sys.stdout.write("\033[H\033[J")
             print_header()
-            print(" Welcome to the Antigravity CLI.\n Use arrow keys to navigate, Enter to select\n")
+            
+            # Visual status indicator for TTS
+            tts_status = "\033[1;32m[TTS: ON]\033[0m" if TTS_ENABLED else "\033[1;31m[TTS: OFF]\033[0m"
+            print(f" Welcome to the Antigravity CLI.            Status: {tts_status}")
+            print(" Use arrow keys to navigate, Enter to select, 't' to toggle speech\n")
+            
             for i, opt in enumerate(options):
                 print(f"{' >' if i == selected else '  '} {opt}")
             sys.stdout.flush()
             
             key = get_key()
-            if key == '\033[A': selected = (selected - 1) % len(options)
-            elif key == '\033[B': selected = (selected + 1) % len(options)
-            elif key == '\r': return selected, keys
+            if key == '\033[A': 
+                selected = (selected - 1) % len(options)
+            elif key == '\033[B': 
+                selected = (selected + 1) % len(options)
+            elif key.lower() == 't': 
+                TTS_ENABLED = not TTS_ENABLED
+            elif key == '\r': 
+                return selected, keys
     finally:
         sys.stdout.write("\033[?25h")
         sys.stdout.flush()
@@ -153,18 +172,15 @@ def call_gemini(user_input, system_prompt):
         return json.loads(res.read().decode())['candidates'][0]['content']['parts'][0]['text']
 
 def speak_text(text):
-    """Runs koko and pw-play using the user's specific audio configurations."""
-    if not text:
+    """Runs koko and pw-play using the user's specific audio configurations if enabled."""
+    if not TTS_ENABLED or not text:
         return
     print("\n\033[90m[Generating text-to-speech with KoKo...]\033[0m")
     try:
-        # Build the exact command sequence matching your Hyprland bind
         koko_cmd = ["koko", "--style", "am_echo", "--speed", "1.15", "text", text, "-o", "/dev/shm/tts.wav"]
         play_cmd = ["pw-play", "/dev/shm/tts.wav"]
         
-        # Run koko generation, suppressing its verbose terminal logs
         subprocess.run(koko_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
-        # Play the generated file
         subprocess.run(play_cmd, check=True)
     except Exception as e:
         print(f"\033[91m[TTS Error: {e}]\033[0m")
@@ -183,11 +199,10 @@ def main():
         if user_input:
             print("\nProcessing request...")
             try:
-                # Capture summary into a variable first
                 summary = call_gemini(user_input, PROMPT_PROFILES[choice]['prompt'])
                 print(f"\n{summary}")
                 
-                # Automatically read it aloud using Koko
+                # Automatically handles whether to read or skip based on global toggle
                 speak_text(summary)
                 
             except Exception as e:
