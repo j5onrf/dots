@@ -1,9 +1,9 @@
 ### llmsum.py
 
-<img alt="20260523_130324" src="https://github.com/user-attachments/assets/85ef1d61-193e-4334-8ed8-c37f8bf4a5fd" />
+<img width="3440" height="1440" alt="20260523_154407" src="https://github.com/user-attachments/assets/4cda1c9c-a8ff-4164-a303-b887c618bfab" />
 <br><br>
 
-> Minimal Model: Qwen3.5-2B-UD-Q4_K_XL
+> Qwen3.5-2B-UD-Q4_K_XL
 
 ```ini
 # --- Launch a transient AI Summary CLI  ---
