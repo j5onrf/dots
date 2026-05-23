@@ -31,7 +31,7 @@ bind = ,            F2,         exec, omarchy-toggle-nightlight
 # --- 3. Text-to-Speech (TTS) ---
 
 # --- Optimized Neural Kokoro TTS Reader ---
-bind = SUPER SHIFT, R,          exec, bash -c 'wl-paste --primary | tr -d "\n" | xargs -0 -I {} koko --style am_echo --speed 1.15 text "{}" -o /dev/shm/tts.wav && pw-play /dev/shm/tts.wav'
+bind = SUPER SHIFT, R, exec, bash -c 'TEXT=$(wl-paste --primary); [ -n "$TEXT" ] && koko --style am_echo --speed 1.15 text "$TEXT" -o /dev/shm/tts.wav && pw-play /dev/shm/tts.wav'
 
 # --- Kill TTS Audio Output Instantly ---
 bind = SUPER SHIFT, X,          exec, pkill -9 -f "pw-play|koko"
