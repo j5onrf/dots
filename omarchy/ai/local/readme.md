@@ -1,4 +1,6 @@
 ### llmsum.py
 
-<img alt="20260523_112456" src="https://github.com/user-attachments/assets/46b705b3-fb75-4291-9910-a868abbb8fb1" />
+<img width="3440" height="1440" alt="20260523_121445" src="https://github.com/user-attachments/assets/853b651b-70e4-4655-aa6c-a7ee68366ee9" />
+
+
 
