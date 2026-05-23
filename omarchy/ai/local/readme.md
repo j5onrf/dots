@@ -1,6 +1,6 @@
 ### llmsum.py
 
-<img alt="20260523_171939" src="https://github.com/user-attachments/assets/b9e73b23-2c48-4679-bc55-bdb570d17ffa" />
+<img alt="20260523_172835" src="https://github.com/user-attachments/assets/614e455a-c8f4-4210-bbe0-8622effb92b7" />
 <br><br>
 
 > Qwen3.5-2B-UD-Q4_K_XL
