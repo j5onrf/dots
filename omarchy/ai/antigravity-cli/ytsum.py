@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# --- AntiGravity-CLI YouTube Summary / KoKo Read Aloud / v0.2 beta 5-22-26 ---
+# --- AntiGravity-CLI YouTube Summary / KoKo Read Aloud / v0.3 beta 5-22-26 ---
 
 import sys
 import os
@@ -8,9 +8,10 @@ import termios
 import urllib.request
 import json
 import select
+import subprocess  # Added for running koko
 
 # --- Configuration ---
-API_KEY = "api-key-here"
+API_KEY = "API-KEY-HERE"
 
 PROMPT_PROFILES = {
     "1": {
@@ -85,7 +86,6 @@ def flush_input_buffer():
         pass
 
 def get_input_or_escape(prompt):
-    import subprocess
     import shutil
 
     sys.stdout.write(prompt)
@@ -157,6 +157,23 @@ def call_gemini(user_input, system_prompt):
     with urllib.request.urlopen(req) as res:
         return json.loads(res.read().decode())['candidates'][0]['content']['parts'][0]['text']
 
+def speak_text(text):
+    """Runs koko and pw-play using the user's specific audio configurations."""
+    if not text:
+        return
+    print("\n\033[90m[Generating text-to-speech with KoKo...]\033[0m")
+    try:
+        # Build the exact command sequence matching your Hyprland bind
+        koko_cmd = ["koko", "--style", "am_echo", "--speed", "1.15", "text", text, "-o", "/dev/shm/tts.wav"]
+        play_cmd = ["pw-play", "/dev/shm/tts.wav"]
+        
+        # Run koko generation, suppressing its verbose terminal logs
+        subprocess.run(koko_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+        # Play the generated file
+        subprocess.run(play_cmd, check=True)
+    except Exception as e:
+        print(f"\033[91m[TTS Error: {e}]\033[0m")
+
 def main():
     while True:
         idx, keys = run_menu()
@@ -171,7 +188,13 @@ def main():
         if user_input:
             print("\nProcessing request...")
             try:
-                print(f"\n{call_gemini(user_input, PROMPT_PROFILES[choice]['prompt'])}")
+                # Capture summary into a variable first
+                summary = call_gemini(user_input, PROMPT_PROFILES[choice]['prompt'])
+                print(f"\n{summary}")
+                
+                # Automatically read it aloud using Koko
+                speak_text(summary)
+                
             except Exception as e:
                 print(f"\n❌ Error: {e}")
             flush_input_buffer()
