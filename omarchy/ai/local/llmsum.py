@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# AI Summary CLI v1.0.2-local (with KoKo Read-Aloud) [2026-05-23]
+# AI Summary CLI v1.0.4-local (with KoKo Read-Aloud) [2026-05-23]
 
 import sys
 import os
@@ -100,12 +100,8 @@ def get_input_or_escape(prompt):
     try:
         if shutil.which("wl-paste"):
             user_text = subprocess.check_output(["wl-paste"], text=True)
-        elif shutil.which("xclip"):
-            user_text = subprocess.check_output(["xclip", "-selection", "clipboard", "-o"], text=True)
-        elif shutil.which("xsel"):
-            user_text = subprocess.check_output(["xsel", "--clipboard", "--output"], text=True)
         else:
-            raise Exception("No clipboard utility found (install xclip or wl-clipboard).")
+            raise Exception("No clipboard utility found (install wl-clipboard).")
             
     except Exception as e:
         sys.stdout.write(f"\033[91m[Clipboard Error: {str(e)}]\033[0m\n")
@@ -128,11 +124,11 @@ def print_header():
     c = [f"\033[3{i}m" for i in range(1, 6)]
     reset = "\033[0m"
     print(f"         {c[0]}▄████████▄{reset}\n"
-          f"       {c[1]}▄████▀▀   ▀████▄{reset}\n"
+          f"       {c[1]}▄████▀  ▀████▄{reset}\n"
           f"     {c[2]}▄████▀  ▄▄  ▀████▄{reset}\n"
-          f"    {c[3]}█████▀  ████  ▀█████{reset}\n"
+          f"    {c[3]}█████   ████   █████{reset}\n"  # Perfect symetry
           f"     {c[4]}▀████▄  ▀▀  ▄████▀{reset}\n"
-          f"       {c[0]}▀████▄▄  ▄████▀{reset}\n"
+          f"       {c[0]}▀████▄  ▄████▀{reset}\n"
           f"         {c[1]}▀████████▀{reset}\n")
 
 def run_menu():
