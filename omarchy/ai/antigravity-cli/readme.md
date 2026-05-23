@@ -3,7 +3,7 @@
 
 ```ini
 # --- Launch a transient Antigravity CLI ---
-bind = SUPER, X, exec, kitty sh -c '/home/j5/.config/hypr/scripts/ai/agy/ytsum.py'
+bind = SUPER, X, exec, kitty sh -c '$HOME/.config/hypr/scripts/ai/agy/ytsum.py'
 ```
 
 ```ini
