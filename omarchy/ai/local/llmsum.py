@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-# AI Summary CLI v0.4.0-local (with KoKo Read-Aloud) [2026-05-23]
+# AI Summary CLI v0.5.0-local (with KoKo Read-Aloud) [2026-05-23]
 
 import sys
 import os
 import tty
 import termios
 import urllib.request
+import urllib.error
 import json
 import select
 import subprocess
@@ -112,12 +113,22 @@ def get_input_or_escape(prompt):
         return ""
 
     return user_text.strip()
+
+def check_server_status():
+    """Quickly pings the local llama-server to see if it's accepting connections."""
+    url = "http://localhost:8080/v1/models"
+    try:
+        req = urllib.request.Request(url, method="GET")
+        with urllib.request.urlopen(req, timeout=0.5) as _:
+            return "\033[1;32m[● ONLINE]\033[0m"
+    except Exception:
+        return "\033[1;31m[○ OFFLINE] (Press F8)\033[0m"
             
 def print_header():
     c = [f"\033[3{i}m" for i in range(1, 6)]
     reset = "\033[0m"
     print(f"         {c[0]}▄████████▄{reset}\n"
-          f"       {c[1]}▄████▀▀  ▀████▄{reset}\n"
+          f"       {c[1]}▄████▀▀   ▀████▄{reset}\n"
           f"     {c[2]}▄████▀  ▄▄  ▀████▄{reset}\n"
           f"    {c[3]}█████▀  ████  ▀█████{reset}\n"
           f"     {c[4]}▀████▄  ▀▀  ▄████▀{reset}\n"
@@ -138,8 +149,9 @@ def run_menu():
             sys.stdout.write("\033[H\033[J")
             print_header()
             
+            server_status = check_server_status()
             tts_status = "\033[1;32m[TTS: ON]\033[0m" if TTS_ENABLED else "\033[1;31m[TTS: OFF]\033[0m"
-            print(f" Welcome to the AI Summary CLI.           Status: {tts_status}")
+            print(f" Welcome to the AI Summary CLI.           Status: {server_status}  {tts_status}")
             print(" Use arrow keys to navigate, Enter to select, 't' to toggle speech\n")
             
             for i, opt in enumerate(options):
@@ -175,9 +187,12 @@ def call_local_llm(user_input, system_prompt):
         headers={'Content-Type': 'application/json'}
     )
     
-    with urllib.request.urlopen(req) as res:
-        response_json = json.loads(res.read().decode())
-        return response_json['choices'][0]['message']['content']
+    try:
+        with urllib.request.urlopen(req) as res:
+            response_json = json.loads(res.read().decode())
+            return response_json['choices'][0]['message']['content']
+    except urllib.error.URLError as e:
+        raise Exception(f"Connection to backend failed. (Is your server online? {e.reason})")
 
 def speak_text(text):
     if not TTS_ENABLED or not text:
@@ -212,7 +227,7 @@ def main():
                 
             except Exception as e:
                 print(f"\n❌ Local LLM Error: {e}")
-                print("\033[90mEnsure your llama.cpp server is running on port 8080.\033[0m")
+                print("\033[1;33mEnsure your llama.cpp server is running. Press F8 to launch it!\033[0m")
             flush_input_buffer()
             input("\nPress Enter to return to menu.")
 
