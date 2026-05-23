@@ -10,7 +10,7 @@ import json
 import select
 
 # --- Configuration ---
-API_KEY = "api-key"
+API_KEY = "api-key-here"
 
 PROMPT_PROFILES = {
     "1": {
