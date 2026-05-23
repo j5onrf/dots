@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# AI Summary CLI v0.5.0-local (with KoKo Read-Aloud) [2026-05-23]
+# AI Summary CLI v0.6.0-local (with KoKo Read-Aloud) [2026-05-23]
 
 import sys
 import os
@@ -91,7 +91,7 @@ def flush_input_buffer():
 
 def get_input_or_escape(prompt):
     sys.stdout.write(prompt)
-    sys.stdout.write("\n\033[90m[Copy your transcript to clipboard, then press Enter here to submit]\033[0m\n\n")
+    sys.stdout.write("\n\033[90m[Copy your transcript, text, or PDF to clipboard, then press Enter here to submit]\033[0m\n\n")
     sys.stdout.flush()
     
     sys.stdin.readline()
