@@ -66,7 +66,6 @@ PROMPT_PROFILES = {
 
 # --- TUI & Display Logic ---
 def get_key():
-    """Restored: Using your original reliable key-reading logic."""
     fd = sys.stdin.fileno()
     old = termios.tcgetattr(fd)
     try:
