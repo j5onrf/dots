@@ -6,6 +6,7 @@
 > testing (llama.cpp) <br>
 > Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL <br>
 > Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_P
+> Qwen3.5-2B-UD-Q4_K_XL.gguf
 > 
 **The "Active-3B" Sparse Expert**
 
