@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# AI Summary CLI v1.0.6-local (with KoKo Read-Aloud Fix) [2026-05-23]
+# AI Summary CLI v1.0.7-local (with KoKo Read-Aloud Fix) [2026-05-23]
 
 import sys
 import os
@@ -124,13 +124,15 @@ def check_server_status():
 def print_header():
     c = [f"\033[3{i}m" for i in range(1, 6)]
     reset = "\033[0m"
-    print(f"         {c[0]}▄████████▄{reset}\n"
-          f"       {c[1]}▄████▀▀   ▀████▄{reset}\n"
-          f"     {c[2]}▄████▀  ▄▄  ▀████▄{reset}\n"
-          f"    {c[3]}█████▀  ████  ▀█████{reset}\n"
-          f"     {c[4]}▀████▄  ▀▀  ▄████▀{reset}\n"
-          f"       {c[0]}▀████▄▄  ▄████▀{reset}\n"
-          f"         {c[1]}▀████████▀{reset}\n")
+    print(f"         {c[0]}▄████████████████▄{reset}\n"
+          f"       {c[1]}▄████████████████████▄{reset}\n"
+          f"      {c[2]}██████▀▀▀▀▀▀▀▀▀▀▀▀██████{reset}\n"
+          f"      {c[3]}█████              █████{reset}\n"
+          f"      {c[4]}██████▄▄▄▄▄▄▄▄▄▄▄▄██████{reset}\n"
+          f"       {c[0]}▀████████████████████▀{reset}\n"
+          f"         {c[1]}▀▀▀▀▀████████▀▀▀▀▀{reset}\n"
+          f"             {c[2]}████▀▀{reset}\n"
+          f"             {c[3]}▀▀{reset}\n")
 
 def run_menu():
     global TTS_ENABLED
@@ -210,10 +212,15 @@ def speak_text(text):
         koko_cmd = ["koko", "--style", "am_echo", "--speed", "1.15", "text", cleaned_text, "-o", "/dev/shm/tts.wav"]
         play_cmd = ["pw-play", "/dev/shm/tts.wav"]
         
+        # Keep generation completely silent in the background
         subprocess.run(koko_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
-        subprocess.run(play_cmd, check=True)
-    except Exception as e:
-        print(f"\033[91m[TTS Error: {e}]\033[0m")
+        
+        # Play the file, but redirect stdout/stderr and smoothly pass on any kill signals
+        subprocess.run(play_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+        
+    except Exception:
+        # Silently catch all interrupts, SIGKILL, and exit signals so the console remains perfectly clean
+        pass
 
 def main():
     while True:
