@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # --- AntiGravity-CLI YouTube Summary / KoKo Read Aloud / v0.2 beta 5-22-26 ---
 
 import sys
