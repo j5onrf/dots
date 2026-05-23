@@ -1,6 +1,6 @@
 ### ytsum.py
 
-<img alt="20260522_224050" src="https://github.com/user-attachments/assets/f656e4d8-fd5e-46b7-aa9b-2e259a1e4cc0" />
+<img alt="20260522_232208" src="https://github.com/user-attachments/assets/51b26fd7-cd39-47b0-b1d0-48c93bbab426" />
 <br><br>
 
 ```ini
