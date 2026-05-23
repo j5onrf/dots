@@ -1,4 +1,4 @@
-# --- AntiGravity-CLI YouTube Summary / KoKo Read Aloud / v0.1 beta 5-22-26 ---
+# --- AntiGravity-CLI YouTube Summary / KoKo Read Aloud / v0.2 beta 5-22-26 ---
 
 import sys
 import os
@@ -126,18 +126,27 @@ def run_menu():
     keys = list(PROMPT_PROFILES.keys())
     options = [PROMPT_PROFILES[k]["name"] for k in keys] + ["Exit"]
     selected = 0
-    while True:
-        sys.stdout.write("\033[H\033[J")
-        print_header()
-        print(" Welcome to the Antigravity CLI.\n Use arrow keys to navigate, Enter to select\n")
-        for i, opt in enumerate(options):
-            print(f"{' >' if i == selected else '  '} {opt}")
+    
+    # Hide the cursor
+    sys.stdout.write("\033[?25l")
+    sys.stdout.flush()
+    
+    try:
+        while True:
+            sys.stdout.write("\033[H\033[J")
+            print_header()
+            print(" Welcome to the Antigravity CLI.\n Use arrow keys to navigate, Enter to select\n")
+            for i, opt in enumerate(options):
+                print(f"{' >' if i == selected else '  '} {opt}")
+            sys.stdout.flush()
+            
+            key = get_key()
+            if key == '\033[A': selected = (selected - 1) % len(options)
+            elif key == '\033[B': selected = (selected + 1) % len(options)
+            elif key == '\r': return selected, keys
+    finally:
+        sys.stdout.write("\033[?25h")
         sys.stdout.flush()
-        
-        key = get_key()
-        if key == '\033[A': selected = (selected - 1) % len(options)
-        elif key == '\033[B': selected = (selected + 1) % len(options)
-        elif key == '\r': return selected, keys
 
 def call_gemini(user_input, system_prompt):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={API_KEY}"
