@@ -11,7 +11,7 @@ bind = SUPER, X, exec, kitty sh -c '/home/j5/.config/hypr/scripts/ai/agy/ytsum.p
 bind = SUPER SHIFT, R, exec, bash -c 'TEXT=$(wl-paste --primary); [ -n "$TEXT" ] && koko --style am_echo --speed 1.15 text "$TEXT" -o /dev/shm/tts.wav && pw-play /dev/shm/tts.wav'
 
 # --- Kill TTS Audio Output Instantly ---
-bind = SUPER SHIFT, X,          exec, pkill -9 -f "pw-play|koko"
+bind = SUPER SHIFT, X, exec, pkill -9 -f "pw-play|koko"
 ```
 
 
