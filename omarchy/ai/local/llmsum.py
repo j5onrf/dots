@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# AI Summary CLI v0.6.0-local (with KoKo Read-Aloud) [2026-05-23]
+# AI Summary CLI v1.0.2-local (with KoKo Read-Aloud) [2026-05-23]
 
 import sys
 import os
