@@ -126,7 +126,7 @@ def print_header():
     print(f"         {c[0]}▄████████▄{reset}\n"
           f"       {c[1]}▄████▀  ▀████▄{reset}\n"
           f"     {c[2]}▄████▀  ▄▄  ▀████▄{reset}\n"
-          f"    {c[3]}█████   ████   █████{reset}\n"  # Perfect symetry
+          f"    {c[3]}█████   ████   █████{reset}\n"  # Perfect Symmetry
           f"     {c[4]}▀████▄  ▀▀  ▄████▀{reset}\n"
           f"       {c[0]}▀████▄  ▄████▀{reset}\n"
           f"         {c[1]}▀████████▀{reset}\n")
