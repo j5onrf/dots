@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# AI Summary CLI v1.0.7-local (with KoKo Read-Aloud Fix) [2026-05-23]
+# AI Summary TUI v1.0.7-local (with KoKo Read-Aloud Fix) [2026-05-23]
 
 import sys
 import os
@@ -150,7 +150,7 @@ def run_menu():
             
             server_status = check_server_status()
             tts_status = "\033[1;32m[TTS: ON]\033[0m" if TTS_ENABLED else "\033[1;31m[TTS: OFF]\033[0m"
-            print(f" Welcome to the AI Summary CLI.           Status: {server_status}  {tts_status}")
+            print(f" Welcome to the AI Summary TUI.           Status: {server_status}  {tts_status}")
             print(" Use arrow keys to navigate, Enter to select, 't' to toggle speech\n")
             
             for i, opt in enumerate(options):
