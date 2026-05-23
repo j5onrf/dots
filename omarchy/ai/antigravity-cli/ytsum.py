@@ -100,12 +100,8 @@ def get_input_or_escape(prompt):
     try:
         if shutil.which("wl-paste"):  # Wayland native
             user_text = subprocess.check_output(["wl-paste"], text=True)
-        elif shutil.which("xclip"):   # X11 native
-            user_text = subprocess.check_output(["xclip", "-selection", "clipboard", "-o"], text=True)
-        elif shutil.which("xsel"):    # X11 alternative
-            user_text = subprocess.check_output(["xsel", "--clipboard", "--output"], text=True)
         else:
-            raise Exception("No clipboard utility found (install xclip or wl-clipboard).")
+            raise Exception("No clipboard utility found (install wl-clipboard).")
             
     except Exception as e:
         sys.stdout.write(f"\033[91m[Clipboard Error: {str(e)}]\033[0m\n")
