@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# AI Summary CLI v1.0.4-local (with KoKo Read-Aloud) [2026-05-23]
+# AI Summary CLI v1.0.6-local (with KoKo Read-Aloud Fix) [2026-05-23]
 
 import sys
 import os
@@ -11,6 +11,7 @@ import json
 import select
 import subprocess
 import shutil
+import re
 
 # --- Configuration ---
 # Llama.cpp server default OpenAI-compatible endpoint
@@ -124,7 +125,7 @@ def print_header():
     c = [f"\033[3{i}m" for i in range(1, 6)]
     reset = "\033[0m"
     print(f"         {c[0]}▄████████▄{reset}\n"
-          f"       {c[1]}▄████▀▀  ▀████▄{reset}\n"
+          f"       {c[1]}▄████▀▀   ▀████▄{reset}\n"
           f"     {c[2]}▄████▀  ▄▄  ▀████▄{reset}\n"
           f"    {c[3]}█████▀  ████  ▀█████{reset}\n"
           f"     {c[4]}▀████▄  ▀▀  ▄████▀{reset}\n"
@@ -193,9 +194,20 @@ def call_local_llm(user_input, system_prompt):
 def speak_text(text):
     if not TTS_ENABLED or not text:
         return
+        
     print("\n\033[90m[Generating text-to-speech with KoKo...]\033[0m")
+    
+    # Sanitize markdown formatting characters (* and -) to prevent bash string expansion glitches
+    cleaned_text = text.replace("*", "").replace("-", "")
+    
+    # Flatten multiple consecutive whitespaces and newlines into standard spacing
+    cleaned_text = re.sub(r'\s+', ' ', cleaned_text).strip()
+    
+    if not cleaned_text:
+        return
+
     try:
-        koko_cmd = ["koko", "--style", "am_echo", "--speed", "1.15", "text", text, "-o", "/dev/shm/tts.wav"]
+        koko_cmd = ["koko", "--style", "am_echo", "--speed", "1.15", "text", cleaned_text, "-o", "/dev/shm/tts.wav"]
         play_cmd = ["pw-play", "/dev/shm/tts.wav"]
         
         subprocess.run(koko_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
