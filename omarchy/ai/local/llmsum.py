@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# AI Summary TUI v1.1.3-local (KoKo Read-Aloud) [j5onrf] [2026-05-23]
+# AI Summary TUI v1.1.3-local (KoKo Read-Aloud) [j5onrf] [05-23-26]
 
 import sys
 import os
