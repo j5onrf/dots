@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# AI Summary TUI v1.0.7-local (KoKo Read-Aloud) [2026-05-23]
+# AI Summary TUI v1.0.8-local (KoKo Read-Aloud) [2026-05-23]
 
 import sys
 import os
@@ -124,15 +124,21 @@ def check_server_status():
 def print_header():
     c = [f"\033[3{i}m" for i in range(1, 6)]
     reset = "\033[0m"
-    print(f"         {c[0]}▄████████████████▄{reset}\n"
-          f"       {c[1]}▄████████████████████▄{reset}\n"
-          f"      {c[2]}██████▀▀▀▀▀▀▀▀▀▀▀▀██████{reset}\n"
-          f"      {c[3]}█████              █████{reset}\n"
-          f"      {c[4]}██████▄▄▄▄▄▄▄▄▄▄▄▄██████{reset}\n"
-          f"       {c[0]}▀████████████████████▀{reset}\n"
-          f"         {c[1]}▀▀▀▀▀████████▀▀▀▀▀{reset}\n"
-          f"             {c[2]}████▀▀{reset}\n"
-          f"             {c[3]}▀▀{reset}\n")
+    print(f"            {c[0]}╭───────────╮{reset}\n"
+          f"        {c[1]}╭───╯           ╰───╮{reset}\n"
+          f"        {c[2]}│   ╭───╮   ╭───╮   │{reset}\n"
+          f"        {c[3]}│   │   │   │   │   │{reset}\n"
+          f"        {c[4]}│   ╰───╯   ╰───╯   │{reset}\n"
+          f"        {c[0]}╰───╮           ╭───╯{reset}\n"
+          f"            {c[1]}╰───────────╯{reset}\n")
+
+print_header()
+
+print_header()
+
+print_header()
+
+print_header()
 
 def run_menu():
     global TTS_ENABLED
