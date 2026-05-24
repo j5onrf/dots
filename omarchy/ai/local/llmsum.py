@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# AI Summary TUI v1.1.3-local (KoKo Read-Aloud) [j5onrf] [05-23-26]
+# AI Summary TUI v1.1.4-local (KoKo Read-Aloud) [j5onrf] [05-23-26]
 
 import sys
 import os
@@ -155,7 +155,7 @@ def check_server_status():
         with urllib.request.urlopen(req, timeout=0.5) as _:
             return "\033[1;32m[● ONLINE]\033[0m"
     except Exception:
-        return "\033[1;31m[○ OFFLINE] (Press F8)\033[0m"
+        return "\033[1;31m[○ OFFLINE]\033[0m"
             
 def print_header():
     """Main start screen logo (Diamond)."""
