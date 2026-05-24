@@ -2,7 +2,7 @@
 
 <img alt="20260523_220348" src="https://github.com/user-attachments/assets/fdd2d2b2-d938-4177-8bd2-4cda27668f06" />
 
-`Qwen3.5-2B-UD-Q4_K_XL`
+`Qwen3.5-2B-UD-Q4_K_XL` `local-iq`
 
 <br>
 
