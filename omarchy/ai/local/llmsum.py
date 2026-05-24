@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# AI Summary TUI v1.1.2-local (KoKo Read-Aloud) [2026-05-23]
+# AI Summary TUI v1.1.3-local (KoKo Read-Aloud) [2026-05-23]
 
 import sys
 import os
@@ -90,13 +90,48 @@ def flush_input_buffer():
     except Exception:
         pass
 
-def get_input_or_escape(prompt):
-    sys.stdout.write(prompt)
-    sys.stdout.write("\n\033[90m[Copy your transcript, text, or PDF to clipboard, then press Enter here to submit]\033[0m\n\n")
+def get_input_with_back_button(profile_name):
+    """
+    Renders an interactive screen where the user can choose to 
+    either submit the clipboard content or select '< Back to Menu'.
+    """
+    options = ["[ Submit Clipboard Text ]", "< Back to Profile Selection"]
+    selected = 0
+    
+    sys.stdout.write("\033[?25l")  # Hide cursor
     sys.stdout.flush()
     
-    sys.stdin.readline()
-    
+    try:
+        while True:
+            sys.stdout.write("\033[H\033[J")
+            
+            # Displays the smaller robot logo exclusively on this screen
+            print_robot_header()
+            
+            sys.stdout.write(f"\033[1;32m{profile_name} ❯\033[0m\n")
+            sys.stdout.write("\033[90m[Copy your transcript, text, or PDF to clipboard before submitting]\033[0m\n\n")
+            
+            for i, opt in enumerate(options):
+                if i == selected:
+                    sys.stdout.write(f" > \033[1;36m{opt}\033[0m\n")
+                else:
+                    sys.stdout.write(f"   {opt}\n")
+            sys.stdout.flush()
+            
+            key = get_key()
+            if key == '\033[A':  # Up Arrow
+                selected = (selected - 1) % len(options)
+            elif key == '\033[B':  # Down Arrow
+                selected = (selected + 1) % len(options)
+            elif key == '\r':  # Enter
+                if selected == 1:  # Selected '< Back to Profile Selection'
+                    return None
+                break
+    finally:
+        sys.stdout.write("\033[?25h")  # Restore cursor
+        sys.stdout.flush()
+
+    # If they hit submit, pull data from the clipboard
     user_text = ""
     try:
         if shutil.which("wl-paste"):
@@ -107,6 +142,7 @@ def get_input_or_escape(prompt):
     except Exception as e:
         sys.stdout.write(f"\033[91m[Clipboard Error: {str(e)}]\033[0m\n")
         sys.stdout.flush()
+        input("\nPress Enter to return.")
         return ""
 
     return user_text.strip()
@@ -122,16 +158,28 @@ def check_server_status():
         return "\033[1;31m[○ OFFLINE] (Press F8)\033[0m"
             
 def print_header():
+    """Main start screen logo (Diamond)."""
     c = [f"\033[3{i}m" for i in range(1, 6)]
     reset = "\033[0m"
+    
     print(f"              {c[0]}╱╲{reset}\n"
           f"            {c[1]}╱  ╱╲{reset}\n"
           f"          {c[2]}╱  ╱  ╱╲{reset}\n"
           f"          {c[3]}╲  ╲  ╲╱{reset}\n"
           f"            {c[4]}╲  ╲╱{reset}\n"
           f"              {c[0]}╲╱{reset}\n")
-          
-print_header()
+
+def print_robot_header():
+    """Submit clipboard screen and summary view logo (Compact Robot)."""
+    c = [f"\033[3{i}m" for i in range(1, 6)]
+    reset = "\033[0m"
+    
+    print(f"             {c[0]}╭─────────╮{reset}\n"
+          f"         {c[1]}╭───╯         ╰───╮{reset}\n"
+          f"         {c[2]}│   ╭─╮     ╭─╮   │{reset}\n"
+          f"         {c[3]}│   ╰─╯     ╰─╯   │{reset}\n"
+          f"         {c[4]}╰───╮         ╭───╯{reset}\n"
+          f"             {c[0]}╰─────────╯{reset}\n")
 
 def run_menu():
     global TTS_ENABLED
@@ -227,13 +275,20 @@ def main():
         if idx == len(keys): break
         
         choice = keys[idx]
-        sys.stdout.write("\033[H\033[J")
-        print_header()
         
-        user_input = get_input_or_escape(f"\033[1;32m{PROMPT_PROFILES[choice]['name']} ❯\033[0m ")
+        # Pulls up the clipboard action sub-menu with the compact robot logo
+        user_input = get_input_with_back_button(PROMPT_PROFILES[choice]['name'])
         
+        # If the user selected the '< Back' option, jump straight back to the main menu loop
+        if user_input is None:
+            continue
+            
         if user_input:
-            print("\nProcessing request locally via llama.cpp...")
+            sys.stdout.write("\033[H\033[J")
+            
+            # Keep the compact robot at the top of the viewport for processing/summary pages
+            print_robot_header()
+            print("Processing request locally via llama.cpp...")
             try:
                 summary = call_local_llm(user_input, PROMPT_PROFILES[choice]['prompt'])
                 print(f"\n{summary}")
@@ -242,6 +297,7 @@ def main():
             except Exception as e:
                 print(f"\n❌ Local LLM Error: {e}")
                 print("\033[1;33mEnsure your llama.cpp server is running. Press F8 to launch it!\033[0m")
+            
             flush_input_buffer()
             input("\nPress Enter to return to menu.")
 
