@@ -73,7 +73,7 @@ The Result: likely see shell process drop to something like 30 MiB or 40 MiB.
 
 </details>
 
-<details open><summary>(2026-April14) DankMaterialShell <sup>testing</sup></summary>
+<details ><summary>(2026-April14) DankMaterialShell <sup>top list</sup></summary>
 <p>
     
 [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
@@ -147,7 +147,7 @@ That is the ultimate "Best of Both Worlds" strategy. Having a toggle script that
 
 </details>
 
-<details open><summary>(2026-March27) Caelestia-Shell <sup>modernity</sup></summary>
+<details ><summary>(2026-March27) Caelestia-Shell <sup>modernity</sup></summary>
 <p>
 
 [Caelestia-Shell](https://github.com/caelestia-dots/shell)
