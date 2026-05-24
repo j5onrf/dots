@@ -372,7 +372,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # Ai<sup> local-iq</sup>
 
-(2026-May-24) [AI Summary TUI | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion) 
+(2026-May-24) [AI Summary TUI | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/ai/local) 
 <img alt="local-iq" src="https://github.com/user-attachments/assets/35e79f20-6086-44c0-8863-2872aad9b2f1" />
 
 `Qwen3.5-2B-UD-Q4_K_XL+` `Omarchy v3.8.0`
