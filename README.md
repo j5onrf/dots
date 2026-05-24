@@ -163,7 +163,7 @@ Gruvbox Soft
 </details>
 
 <details>
-<summary>[-] Archived 2025</summary>
+<summary>Archived 2025</summary>
 
 ### Environments & Configurations
 
