@@ -9,7 +9,7 @@
 > #### Copy your transcript, text, or PDF to clipboard before submitting
 
 ```ini
-# --- Launch a transient AI Summary CLI  ---
+# --- Launch a transient AI Summary TUI  ---
 bind = SUPER, X, exec, kitty sh -c '/home/j5/.config/hypr/scripts/ai/llm/llmsum.py'
 ```
 
