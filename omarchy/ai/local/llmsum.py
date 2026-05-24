@@ -174,12 +174,12 @@ def print_robot_header():
     c = [f"\033[3{i}m" for i in range(1, 6)]
     reset = "\033[0m"
     
-    print(f"             {c[0]}╭───────╮{reset}\n"
-          f"         {c[1]}╭───╯       ╰───╮{reset}\n"
-          f"         {c[2]}│   ╭─╮   ╭─╮   │{reset}\n"
-          f"         {c[3]}│   ╰─╯   ╰─╯   │{reset}\n"
-          f"         {c[4]}╰───╮       ╭───╯{reset}\n"
-          f"             {c[0]}╰───────╯{reset}\n")
+    print(f"             {c[0]}╭──────╮{reset}\n"
+          f"         {c[1]}╭───╯      ╰───╮{reset}\n"
+          f"         {c[2]}│   ╭─╮  ╭─╮   │{reset}\n"
+          f"         {c[3]}│   ╰─╯  ╰─╯   │{reset}\n"
+          f"         {c[4]}╰───╮      ╭───╯{reset}\n"
+          f"             {c[0]}╰──────╯{reset}\n")
 
 def run_menu():
     global TTS_ENABLED
