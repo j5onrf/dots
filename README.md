@@ -401,6 +401,9 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 ---
 
+<details><summary>2025_May-Dec_Archived</summary>
+<p>
+
 (2025-July13-19) [Ghostarchy<sup>preview</sup> Cascadia Mono](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13/0-13-v4) 
 <img width="1440" height="61" alt="cas-2025-07-19_16-01-59" src="https://github.com/user-attachments/assets/1c4bf8f7-9296-4321-9c87-94588a301276" />
 
@@ -424,6 +427,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 (2025-Jan12) [Adwaita-CT-Iosevka-Pro-Duo](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Duo)
 ![Screenshot-2025-01-12_06:48:26](https://github.com/user-attachments/assets/6fd773e0-98b4-463c-a8d2-369a34be8ef7)
+</details>
 
 <details><summary>2025_Jan-April_Archived</summary>
 <p>
