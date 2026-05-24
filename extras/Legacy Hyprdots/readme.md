@@ -1,0 +1,555 @@
+# Hyprdots
+
+</details>
+
+<details open><summary>(2026-May24) AI Summary TUI <sup>local iq</sup></summary>
+<p>
+    
+[AI Summary TUI | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/ai/local)
+<img alt="20260510_095505" src="https://github.com/user-attachments/assets/fdd2d2b2-d938-4177-8bd2-4cda27668f06" />
+
+</details>
+
+<details ><summary>(2026-May10) Porting to Noctalia v5 architecture, Fusion-Shell will no longer be a standalone QML script. Instead, it will be a C++ Module</summary>
+<p>
+    
+[Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion)
+<img width="3440" height="1440" alt="20260510_095504" src="https://github.com/user-attachments/assets/4ff3a0f3-2275-498e-84a7-09c3437612d5" />
+
+<br>
+
+update* 5-13 looks like Omarchy is introducting quickshell into the dev branch.
+
+*** Why C++ is the move for you
+
+On CachyOS system with the v4 kernel, a native C++ build of a single module will actually be lightning fast.
+
+Because v5 drops the massive Qt libraries, you aren't compiling a giant monolith anymore.
+
+*** Why the "Module" approach is better:
+
+Zero Overhead: In btop screenshot, we see 648 MiB of RAM. A C++ module adds almost zero additional memory because it's just a few lines of machine code added to the main binary.
+
+The Result: likely see shell process drop to something like 30 MiB or 40 MiB.
+
+<br>
+
+</p>
+</details>
+
+
+</details>
+
+<details ><summary>(2026-May06) Qwen 3.6 35b-a3b >>> 32gb </summary>
+<p>
+
+
+[Qwen3.6-35B-A3B in Zed <sup>Local</sup>](https://github.com/j5onrf/dots/blob/main/omarchy/ai/readme.md)
+<img width="3440" height="1440" alt="20260519_134509" src="https://github.com/user-attachments/assets/ff764cbd-d5fd-40b3-b3b5-4a7c5eabbca1" />
+
+
+[Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive <sup>IQ4_NL.gguf</sup>](https://github.com/j5onrf/dots/blob/main/omarchy/ai/readme.md)
+<img width="3440" height="1440" alt="20260515_193427" src="https://github.com/user-attachments/assets/d350aafc-e5a1-4ea1-a1dc-09294a2e9c9b" />
+
+    
+[Qwen 3.6 35B-A3B <sup>micro-agents</sup>](https://github.com/j5onrf/dots/blob/main/omarchy/ai/readme.md)
+<img alt="20260505_172954" src="https://github.com/user-attachments/assets/09ecf22a-8c91-4880-bfad-4f30ffef69ce" />
+
+</p>
+</details>
+
+</details>
+
+<details open><summary>(2026-April28) Omarchy Web App >< Brave Origin </summary>
+<p>
+    
+[Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion)
+<img alt="20260428_221001" src="https://github.com/user-attachments/assets/22a87775-b7e3-4109-a427-49f2e0047513" />
+
+
+
+</p>
+</details>
+
+</details>
+
+<details ><summary>(2026-April14) DankMaterialShell <sup>top list</sup></summary>
+<p>
+    
+[DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
+![dank](https://github.com/user-attachments/assets/d68b4dd6-6de8-41a8-b32b-f2cacfc21fde)
+
+</p>
+</details>
+
+<details><summary>(2026-April14) Noctalia-Shell compared to Waybar</summary>
+<p>
+
+<br>
+
+# Quickshell/Noctalia-Shell is the New Standard
+
+After switching to **Noctalia-Shell**, I’ve realized I can’t go back. There are no downsides—only upsides. Not exactly. I will still use Waybar per usecase. It is custom and custom always works better.
+
+##  The Performance
+One hesitation people have when moving away from Waybar is speed.
+
+**I can’t tell the difference.**
+
+Noctalia-Shell is just as fast and responsive as Waybar. There is zero lag, zero stutter, and the interaction feels instantaneous. It proves that you can have a full-featured, beautiful shell without the "performance tax."
+
+##  A Built-in Ecosystem
+Full functional desktop, a launcher, a clipboard manager, and a theme switcher. Noctalia-Shell does it all, and it does it better.
+
+* **The Launcher & Clipboard:** I’ve used other standalone launchers. The built-in launcher and clipboard manager in Noctalia are just as good, if not better. It’s snappy, integrated, and feels like part of the system.
+* **The Color-Scheme System:** This is the killer feature. Creating and applying custom schemes is effortless. It’s built to play nice with the rest of your setup—syncing perfectly with **pywalfox**, **kitty**, and your system colors out of the box. 
+
+##  Smart Usability
+The way Noctalia handles workspaces is a improvement over the standard "numbered list" or "dots." 
+
+It shows you the actual applications running in each workspace. Being able to see those icons and click on a specific one to focus that application is a increased level of usability.
+
+##  The Customization Paradox
+With Noctalia, **I’m unable to find anything I don’t like.**
+
+It’s so well-designed that there is almost nothing left for me to customize. That said, the architecture is completely open. If I ever decide I want to build a custom bar with only specific modules in the future. 
+
+## Final Verdict
+
+If you are currently on Waybar," do yourself a favor: **Try Noctalia.**
+
+## Next
+
+I will "maybe-probably" see how well **Noctalia.** and **Caelestia.** works on top of Omarchy.
+
+That is the ultimate "Best of Both Worlds" strategy. Having a toggle script that allows you to treat your desktop like a high-end workstation that can change its entire personality with one keybind.
+
+<br>
+
+</p>
+</details>
+
+<details open><summary>(2026-April11) Noctalia-Shell <sup>expansive-feature-set</sup></summary>
+<p>
+    
+[Noctalia-Shell](https://github.com/noctalia-dev/noctalia-shell)
+![dank](https://github.com/user-attachments/assets/58b5dca4-c690-4485-84de-f6d0035f612b)
+
+</p>
+</details>
+
+
+
+<details><summary>(2026-April05) WayBar Bridged to Caelestia Schemes</summary>
+<p>
+ 
+![dank](https://github.com/user-attachments/assets/0240e1c4-ed63-4447-a0f4-074ec217e906)
+
+</details>
+
+<details ><summary>(2026-March27) Caelestia-Shell <sup>modernity</sup></summary>
+<p>
+
+[Caelestia-Shell](https://github.com/caelestia-dots/shell)
+![dank](https://github.com/user-attachments/assets/5bbc65cf-0611-4c74-8ef2-6a468a169c86)
+
+Google Sans Flex | GeistMono NF
+![dank](https://github.com/user-attachments/assets/2203f2bd-cfd6-4cf0-bcf0-e7e5febf13be)
+
+Gruvbox Soft
+![dank](https://github.com/user-attachments/assets/eae6ac8e-f6bb-469b-9133-4cc68118a5dd)
+
+
+</details>
+
+<details><summary>(2025-July3) Shader Wallpapers for gen Matugen Colors</summary>
+<p>
+
+[Shaders-Matugen-Wallpapers-Colors](https://github.com/j5onrf/walls/tree/main/Shaders-Matugen-Colors)
+
+</details>
+
+<details><summary>(2025-June26) Omarchy is out!</summary>
+<p>
+
+[I try this<sup> testing</sup>](https://reddit.idevicehacked.com/r/hyprland/comments/1lleu0f/omarchy_is_out/)  &nbsp; [alias paruf](https://github.com/j5onrf/dots/tree/main/waybar/Omarchy) &nbsp; [animations<sup> {</sup>](https://github.com/j5onrf/dots/blob/main/waybar/Omarchy/Omarchy.conf)
+![FullScreen-2025-07-03_22-39-35](https://github.com/user-attachments/assets/779a19de-38c7-453d-befa-bd6ef98fb383)
+
+</details>
+
+<details><summary>(2025-June24) Upgrading Waybar should bring tangible benefits, especially for theming</summary>
+<p>
+
+Aug-09 fixed for me in 0.14 &nbsp; [I had to Downgrade to Waybar v0.12.0](https://github.com/j5onrf/dots/tree/main/waybar/waybar-0.13.0-release)  &nbsp; [0-13](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13) &nbsp; [Official 0.13.0 release notes](https://github.com/Alexays/Waybar/releases/tag/0.13.0)
+
+</details>
+
+<details><summary>(2025-June22) Vertical Waybar with a Glass UI</summary>
+<p>
+
+[Glassmorphism<sup>optimized</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism) &nbsp; [v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/v2) &nbsp; [Compact](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact)-[v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2)-[v3](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v3)-[v3.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v3.5)-[v3.5.1](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v3.5/GGC-v3.5.1)-[v3.75](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v3.75)-[v4](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v4)-[v5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v5)-[v6](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v6) &nbsp; [Weather](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/openweathermap_temp/get_openweathermap_forecast.sh/Clean-v2/fontAwesome-emojis)-[v2.0](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/openweathermap_temp/get_openweathermap_forecast.sh/Clean-v2/fontAwesome-emojis/v2.0) &nbsp; [0-13-v4<sup>*</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13/0-13-v4) &nbsp; [tokyonight.rasi](https://github.com/j5onrf/dots/tree/main/rofi/tokyonight.rasi)
+![FullScreen-2025-06-22_18-29-13](https://github.com/user-attachments/assets/920115b3-c3bd-469c-a59f-00d6a28189b4)
+
+</details>
+
+<details><summary>(2025-June11-21) Ghost-Expedition Template</summary>
+<p>
+ 
+[Ghost-Expedition<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition) &nbsp; [Sharp-Thin](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Expedition-Thin) &nbsp; [v2.0](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Thin-Min-v2.0) &nbsp; [v2.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Thin-Min-v2.5) &nbsp; [Alpha](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Alpha) &nbsp; [Wttr](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr) &nbsp; [Wide](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide) &nbsp; [Round](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round) &nbsp; [Special<sup>scratchpads</sup>](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Special-Workspace-Example) 
+![FullScreen-2025-06-11_20-07-43.png](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/FullScreen-2025-06-11_20-07-43.png#_uDarkdata-hpc=true&class=Box-sc-g0xbh4-0+fzFXnm)
+
+</details>
+
+<details><summary>(2025-May21-June05) Matugen Inspired Waybar Template</summary>
+<p>
+
+[Ghost-Matugen](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) &nbsp; [Duo](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Duotone) &nbsp; [v1.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/%20%20%20%20v1.5) &nbsp; [v2](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2) &nbsp; [v2.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v2.5) &nbsp; [v3](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3) &nbsp; [v3.5](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/v3.5) &nbsp; [Cava-Wallust](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/Cava-Matugen)  &nbsp; [Chafa](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/FastFetch/chafa)<img src="https://github.com/user-attachments/assets/9d4f4609-409d-4225-982f-94ab30bb8f5b" width="100" alt="w2">
+![FullScreen-2025-05-21_14-32-31](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen/FullScreen-2025-05-25_10-37-22.png#_uDarkdata-hpc=true&class=Box-sc-g0xbh4-0+fzFXnm)
+
+</details>
+
+<details><summary>(2025-May17) Updated dots to ML4W v1.9.8.6 - Anyrun Launcher</summary> 
+<p>
+ 
+[Dotfile-Updates](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates) 
+![FullScreen-2025-05-17_12-09-51.png](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/FullScreen-2025-05-17_12-09-51.png)
+<br><br>
+[Current-Rofi](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/Current_Rofi) 
+![FullScreen-2025-05-17_rofi.png](https://github.com/j5onrf/dots/blob/main/waybar/May17-2025-Updates/Current_Rofi/FullScreen-2025-05-17_18-08-49.png)
+
+</details>
+
+<details><summary>Archived 2024</summary>
+<p>
+
+<details><summary>(2025-Jan29) Opensource Deepseek 🐋</summary> 
+<p>
+ 
+[Adwaita-CT-Iosevka-Pro-Thin<sup>*</sup>]([https://github.com/j5onrf/dots/tree/main/waybar/Ghost](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin)) 
+![Screenshot-2025-01-29_14:04:08](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Screenshot-2025-01-29_15%3A29%3A59.png)
+
+</details>
+
+<details><summary>(2025-Jan16) Ghost-Modern 👻</summary> 
+<p>
+ 
+[Ghost-Modern-White<sup>wip</sup>](https://github.com/j5onrf/dots/tree/main/waybar/Ghost) &nbsp; [Ghost-Modern<sup>wip</sup>](https://github.com/j5onrf/dots/tree/main/waybar/Ghost) 
+![Screenshot-2025-01-17_14:04:08](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three/Blk%26Red-v2/Ghost-red-v1/Ghost-Modern/Screenshot-2025-01-16_20%3A33%3A53.png)
+
+</details>
+
+<details><summary>(2025-Jan12) Font Awesome 6 Pro Thin :construction_worker:</summary> 
+<p>
+
+[Font Awesome 6 Pro Thin-3<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three)  &nbsp; 
+ [Ghost<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/Ghost/Ghost)
+![Screenshot-2025-01-16_14:04:08](https://github.com/user-attachments/assets/d87f28b6-94ff-4ac9-9d9b-e5c53ce0b3a9)
+> border-radius: 0.2em = Modern, 0.4em = Round, 2em = Circle | size 24px - 34px tested
+
+</details>
+
+<details><summary>(2025-Jan05) Font Awesome 6 Pro :construction_worker:</summary> 
+<p>
+
+[Font Awesome 6 Pro<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro)
+![Screenshot-2025-01-05_13:02:22](https://github.com/user-attachments/assets/2a253afc-1cc0-412c-8ad6-b44fef31f33e)
+
+</details>
+
+<details><summary>(2025-Jan03) Adwaita-Iosevka-CT</summary> 
+<p>
+
+[style-Iosevka](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Use-Any-Font/style-Iosevka)
+![Screenshot-2025-01-03_17:51:58](https://github.com/user-attachments/assets/f9d850e5-e682-4599-b986-3066a2e14342)
+
+</details>
+
+<details><summary>(2024-Dec31) Weather Script <sup>curl wttr.in</sup></summary> 
+<p>
+
+['curl wttr.in' Kitty-Float-Script](https://github.com/j5onrf/dots/blob/main/scripts/weather-curl-wttr.in/Screenshot-2025-01-08_14%3A48%3A19.png)
+
+</details>
+
+<details><summary>(2024-Dec30) Adwaita-Dark-CT Updated_Version-2</summary> 
+<p>
+
+Adwaita-Dark-Clock-Top  [Updated_Version-2](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2)
+![Screenshot-2024-12-24_15:52:53](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Screenshot-2024-12-30_09%3A25%3A13.png)
+[Pywal-Rofi-Dock-2](https://github.com/j5onrf/dots/tree/main/rofi/Rofi-Dock-2/Adwaita-Dark/Pywal-Version-HYDE-ML4W)
+![Screenshot-2024-12-26_15:52:53](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Screenshot-2024-12-29_19%3A01%3A25.png)
+
+</details>
+
+<details><summary>(2024-Dec24) Adwaita-Dark-CT</summary> 
+<p>
+
+[Adwaita-Dark-Clock-Top](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top) 
+![Screenshot-2024-12-24_15:52:53](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Screenshot-2024-12-24_14%3A51%3A22.png)
+[Adwaita-Dark-Rofi-Dock-2](https://github.com/j5onrf/dots/tree/main/rofi/Rofi-Dock-2/Adwaita-Dark) 
+![Screenshot-2024-12-26_15:52:53](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/rofi/Rofi-Dock-2/Adwaita-Dark/Screenshot-2024-12-26_19%3A44%3A26.png)
+
+</details>
+
+<details><summary>(2024-Dec18) Blueberry🫐<sup>2</sup></summary> 
+<p>
+  
+[Blueberry-3](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/BlueBerry-RW/Blueberry-3-RW) 
+![Screenshot-2024-12-18_16:27:27](https://github.com/user-attachments/assets/7bfc6a6f-c564-466b-a556-3d1c5050bf10)
+
+[Blueberry-Clock-Top](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/BlueBerry-RW/Blueberry-RW-Clock-Top)
+![Screenshot-2024-12-18_16:17:59](https://github.com/user-attachments/assets/c9ea25a3-8b6f-4c58-b523-8f05fafc1ffc)
+
+</details>
+
+<details><summary>(2024-Dec08) Catppuccin-Mocha🐈‍⬛ Rofi</summary> 
+<p>
+
+[Icons-Only-Dock-Catppuccin-Mocha.rasi](https://github.com/j5onrf/dots/tree/main/rofi/Icons-only-rofi-catppuchin-mocha/Version-Two)  (updated-12-12) &nbsp; Centered Workspaces# + Proton Calendar PWA
+![Screenshot-2024-12-12_18:09:11](https://github.com/user-attachments/assets/9b7bcc88-b133-40cd-8eb2-f03282b29cca)
+![Screenshot-2024-12-12_18:30:10](https://github.com/user-attachments/assets/b18d0c17-ac13-44b6-a299-f16a22d5229f)
+</details>
+
+<details><summary>(2024-Nov18) Nord🛡️ᛉᛟ Rofi</summary> 
+<p>
+
+[Version<sup>3</sup>](https://github.com/j5onrf/dots/tree/main/rofi/Nord/Harmonized%20Rofi%20Config%20for%20NordV-Sidebar/More-Styles/Version-3) (Nov-21-2024) &nbsp; [Icons Only Beta](https://github.com/j5onrf/dots/tree/main/rofi/Nord/Harmonized%20Rofi%20Config%20for%20NordV-Sidebar/More-Styles/Version-3/More-Styles) (Nov-23-2024)
+![Screenshot-v3](https://github.com/user-attachments/assets/789cf25a-6a70-4c6d-a397-05aee67ecdb8)
+![Screenshot-2024-11-23_13:54:58](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/rofi/Nord/Harmonized%20Rofi%20Config%20for%20NordV-Sidebar/More-Styles/Version-3/More-Styles/Screenshot-2024-11-24_09%3A23%3A49.png)
+</details>
+
+<details><summary>(2024-Nov17) Nord🛡️ᛉᛟ SideBar</summary>
+<p>
+  
+[ColorScheme](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release) &nbsp; [Wall](https://github.com/j5onrf/walls/tree/main/Nord) 
+![](https://raw.githubusercontent.com/j5onrf/dots/refs/heads/main/waybar/EverforestV-Sidebar/Final-Release/Color%20Schemes%20and%20Themes/NordVivid/Screenshot-2024-11-17_11%3A46%3A18.png)
+![Screenshot-2024-11-18_13:20:39](https://github.com/user-attachments/assets/3c36599f-6827-4620-9212-f3df63e1007c)
+</details>
+
+<details><summary>(2024-Nov01) Everforest🌿 Rofi</summary>
+<p>
+  
+[everforest.rasi](https://github.com/j5onrf/dots/tree/main/rofi/EverForest%20Rofi) &nbsp; [walls](https://github.com/j5onrf/walls/tree/main/EverForest/EverForest_Arch) 
+![Screenshot-2024-11-01_23:56:26](https://github.com/user-attachments/assets/c02e5d51-7335-493a-bc13-623e78e70884)
+</details>
+
+<details><summary>(2024-oct31) Everforest-S🌿 colorscheme</summary>
+<p>
+
+![Screenshot-2024-10-31_16:32:25](https://github.com/user-attachments/assets/4c1015e5-00d2-464b-acdd-480ff516b1dd)
+
+</details>
+
+<details><summary>(2024-oct30) Blueberry-S🫐 Optional workspaces#rw</summary>
+<p>
+
+[workspaces#rw](https://github.com/j5onrf/dots/tree/main/waybar/Min-Blueberry/Sidebar/Alpha-release/workspaces%23rw)
+![Screenshot-2024-10-30_15:16:53](https://github.com/user-attachments/assets/f83a791b-93d6-4fb8-b06b-da27ba1d2a3d)
+
+</details>
+
+<details><summary>(2024-oct29) Blueberry-S🫐 Optional 2nd button style</summary>
+<p>
+
+Optional [2nd button style](https://github.com/j5onrf/dots/tree/main/waybar/Min-Blueberry/Sidebar/Alpha-release/Button-Style-2)
+![Screenshot-2024-10-29_19:23:06](https://github.com/user-attachments/assets/b8109956-689d-4ca7-b20b-426421163b08)
+
+</details>
+
+<details><summary>(2024-oct28) Blueberry-S🫐 workflow & gtk 47</summary>
+<p>
+
+![Screenshot-2024-10-28_21:28:43](https://github.com/user-attachments/assets/879c4de9-4d82-42ee-9504-a54a3743443d)
+
+</details>
+
+<details><summary>(2024-oct31) Blueberry🫐 Rofi</summary>
+<p>
+ 
+[quick-simple-blueberry-rofi](https://github.com/j5onrf/dots/tree/main/rofi/Blueberry%20Rofi) 
+Use [Rofi-Launcher](https://github.com/j5onrf/dots/tree/main/rofi/Rofi-Launcher) to have multi rofi
+
+</details>
+
+<details><summary>+ScreenShots</summary>
+<p>
+
+Hyprland [Screenshot Archive](https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots.md)
+```diff
+https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots.md
+```
+
+</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+<br>
+
+# Quickshell
+
+(2026-April-27) [Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion) 
+<img alt="20260427_120546" src="https://github.com/user-attachments/assets/60c74941-992b-4382-88be-4e914ef3a4d3" />
+
+`Quickshell 0.2.1+` `Omarchy v3.6.0`
+
+---
+
+# WayBar
+
+(2026-April-26) [Veo | Vertical Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy) 
+<img alt="veo20260423_191902" src="https://github.com/user-attachments/assets/f6c5c73a-afee-48d2-b495-bc09493cc9fe" />
+
+
+`Omarchy v3.6.0`
+
+---
+
+(2026-April-05) [Modern-Fusion](https://github.com/j5onrf/dots/tree/main/waybar/Modern-Fusion) 
+<img width="1440" height="174" alt="Region-2026-04-06_09-08-37" src="https://github.com/user-attachments/assets/02f4c65f-7945-4c11-acdf-039510879b3d" />
+
+
+(2026-April-03) [I still use Waybar](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13/0-13-v5) 
+<img width="1440" height="106" alt="Waybar-2026-03-31_20-38-47" src="https://github.com/user-attachments/assets/72f80905-46c1-4717-b3e5-d1630686993d" />
+
+
+`ML4W < v2.12.1`
+
+---
+
+(2025-July13-19) [Ghostarchy<sup>preview</sup> Cascadia Mono](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v2/0-13/0-13-v4) 
+<img width="1440" height="61" alt="cas-2025-07-19_16-01-59" src="https://github.com/user-attachments/assets/1c4bf8f7-9296-4321-9c87-94588a301276" />
+
+---
+`Waybar < v0.13`
+
+(2025-July19) [GGC-v3.5.1<sup>legacy</sup> Cascadia Mono](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism/Compact/Ghost-Glass-Compact-v3.5/GGC-v3.5.1) 
+<img width="1440" height="75" alt="ggc2-2025-07-19_16-10-42" src="https://github.com/user-attachments/assets/e5976896-c7e9-4726-8c68-066d3a7744f9" />
+
+(2025-June24) [Glassmorphism<sup>optimized</sup> SF Mono](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition/Ghost-Exp-Apha-Wttr/Alpha-Wide/Round/Glassmorphism) 
+![2025-06-24T17:19:46,098629386-05:00](https://github.com/user-attachments/assets/0c6d1799-1731-4003-98ce-ab970cefc7cb)
+
+(2025-June13) [Ghost-Expedition<sup>beta</sup> Audiowide](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghostbar-Expedition) 
+![2khjRegion-2025-06-13_09-54-33](https://github.com/user-attachments/assets/fed4ac1e-1072-49bc-9faa-dcdbe5a836e5)
+
+(2025-May23) [Ghost-Matugen<sup>beta</sup> Azonix Font](https://github.com/j5onrf/dots/tree/main/waybar/May17-2025-Updates/themes/Ghost-Modern-Matugen) 
+![Region-2025-05-24_19-48-26](https://github.com/user-attachments/assets/ea7651fa-4014-41c8-9b5f-cff26bd6f868) 
+
+(2025-Jan12) [Adwaita-CT-Iosevka-Pro-Thin](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin)
+![Screenshot-2025-01-12_06:48:42](https://github.com/user-attachments/assets/d0104364-df84-4b22-b3a2-1e752c232ae0)
+
+(2025-Jan12) [Adwaita-CT-Iosevka-Pro-Duo](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Duo)
+![Screenshot-2025-01-12_06:48:26](https://github.com/user-attachments/assets/6fd773e0-98b4-463c-a8d2-369a34be8ef7)
+
+<details><summary>2025_Jan-April_Archived</summary>
+<p>
+
+(2025-Jan16) [Ghost-Modern<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/Ghost) 
+![Ghost-Modern-White](https://github.com/user-attachments/assets/c59f6e18-dfe8-45b0-9961-097e4a36023a)
+![Ghost-Modern](https://github.com/user-attachments/assets/f0d0f629-cbd7-4c3e-a762-67666a99905e)
+
+(2025-Jan14) [Ghost<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/Ghost/Ghost) 
+![Screenshot-2025-01-14_12:55:34](https://github.com/user-attachments/assets/f83d002f-18fb-4fe7-a09a-847552182d7e)
+
+(2025-Jan12) [Blk&Wht-CT-Iosevka-Pro-Thin-3<sup>beta</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/Adwaita-Dark-Clock-Top/Updated_Version-2/Font%20Awesome%206%20Pro/Adwaita-CT-Iosevka-Pro-Thin/Thin-Version-Three/Blk%26White-No-Red) <sup>discontinued</sup>
+![Screenshot-2025-01-12_06:42:42](https://github.com/user-attachments/assets/f3a41655-e95b-46be-81ee-709b27051435)
+</details>
+
+<details><summary>2024_Nov-Dec_Archived</summary>
+<p>
+
+(2024-Dec14) [Blueberry<sup>2</sup>](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes/BlueBerry-RW) 
+![BlueBerry-top3](https://github.com/user-attachments/assets/3c4e2df1-dc45-4290-a3f9-051c347bb9bf)
+
+(2024-Dec06) [Catppuccin-Mocha #RW](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes) (updated-12-10)
+![catpp2](https://github.com/user-attachments/assets/bd6b609b-2bc3-4129-a9a3-7f010bb26eb6)
+
+(2024-Dec06) [Gruvbox-Dark #RW](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes) (updated-12-10)
+![gruv3](https://github.com/user-attachments/assets/f3e42031-712e-4c79-b997-6533fe8eaa50)
+
+(2024-Dec05) [Material-Design-Dark #RW](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release/workspaces%23rw/Color%20Schemes%20and%20Themes) (updated-12-10)
+![mdd](https://github.com/user-attachments/assets/37673f12-8a86-4a80-a3a3-65d6ebe19928)
+
+(2024-nov17) NordV-Sidebar [Dots](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release)
+![nord-shot](https://github.com/user-attachments/assets/ec814964-33dc-4407-bf6f-9d04889acf71)
+
+(2024-nov10) EverforestV-Sidebar [Final-Release Dots](https://github.com/j5onrf/dots/tree/main/waybar/EverforestV-Sidebar/Final-Release)
+![Unsaved Image 11](https://github.com/user-attachments/assets/7d8ef481-b053-495e-97fa-69d83d35a29d)
+</details>
+
+<details><summary>Archived</summary>
+<p>
+
+(2024-nov03) EverforestV-Sidebar(updated-11-06)
+![EverforestV-Sidebar-Minwidth2](https://github.com/user-attachments/assets/5eba6fd5-8aad-4052-9d96-28e843239414)
+(2024-nov02) Everforest-S (updates-11-02)
+![Sidebar_EF_02](https://github.com/user-attachments/assets/8b169fd0-27a2-46ce-a0e5-f6fc8c2bf9ef)
+(2024-oct25) Blueberry-S [dots sidebar](https://github.com/j5onrf/dots/tree/main/waybar/Min-Blueberry/Sidebar) (updates-10-30)
+![Screenshot-2024-10-26_09:30:052](https://github.com/user-attachments/assets/134ddb7a-edbe-420d-be89-5cf93cfdcb1e)
+(2024-oct23) Blueberry [dots](https://github.com/j5onrf/dots/tree/main/waybar/Min-Blueberry)
+![Screenshot-2024-10-22_18:10:23](https://github.com/user-attachments/assets/1678306d-1d1b-4a26-8fc8-e595b041e62b)
+![Screenshot-2024-10-23_11:08:38](https://github.com/user-attachments/assets/aec7baec-f876-4df5-979d-0e32bb479380)
+onedark-pixel
+![Screenshot-2024-10-14_06:48:44](https://github.com/user-attachments/assets/29332da7-133b-427d-9d94-b57c46a039dd)
+everforest
+![Screenshot-2024-10-16_14:28:16](https://github.com/user-attachments/assets/4b1fb625-b818-4f1b-97ee-dc3dbd0c34ed)
+gruv
+![Screenshot-2024-10-16_17:23:34](https://github.com/user-attachments/assets/e3832c87-3ed8-4bd0-9fe1-2258e80290f4)
+
+<details><summary>Archived</summary>
+<p>
+
+(2024-oct14) Min-Hyprtidy [dots](https://github.com/j5onrf/dots/tree/main/waybar/Min-Hyprtidy)
+![Screenshot-2024-10-14_15:13:50](https://github.com/user-attachments/assets/48a256de-b979-49d9-8912-c2c4be1d33d0)
+
+(2024-oct9) Min-Hyprclean 
+![Screenshot-2024-10-09_08:59:42](https://github.com/user-attachments/assets/68e0ae88-b51d-46d4-8040-39a87f8578f4)
+
+(2024-sep29) Min-Hyprnome 
+![Screenshot-2024-09-28_14:16:32](https://github.com/user-attachments/assets/1a9a744f-90b9-4a2e-9f90-a4d97d31be1f)
+
+(2024-sep28) Min-Modern<sup>2</sup>
+![Screenshot-2024-09-27_12:39:19](https://github.com/user-attachments/assets/b73806fb-602b-4812-b628-77883e80a278)
+![Screenshot-2024-09-28_10:11:39](https://github.com/user-attachments/assets/47f2df57-cc1e-481b-9384-58412e8c3af7)
+
+(2024-sep25) Min-Modern 
+![Screenshot-2024-09-25_11:57:23](https://github.com/user-attachments/assets/d4c37518-fe92-4841-84c0-51f421986f61)
+
+(2024-sep22) Min-Monstr 
+![Screenshot-2024-09-21_10:38:37](https://github.com/user-attachments/assets/a7af54b7-3288-4c38-8272-f217c2a3921d)
+![Screenshot-2024-09-22_17:16:32](https://github.com/user-attachments/assets/2d673ff2-6801-4b40-a18b-cd171a85e8f9)
+
+<details><summary>Archived sep2024</summary>
+<p>
+  
+[ml4w-min-j5][rubik-font] (2024-sep) [dots-released](https://github.com/j5onrf/dots/tree/main/waybar/ml4w-min-j5)
+![Screenshot-2024-09-13_08:04:12](https://github.com/user-attachments/assets/f48a4b73-7ac4-41b3-8639-388769214b29)
+[gnome-extension-power]
+![Screenshot-2024-09-14_07:49:163](https://github.com/user-attachments/assets/8b03d066-3c46-41dc-84d5-7b119fd36071)
+[minimal-plus-function][group-sliders]
+![minimal-plus-function](https://github.com/user-attachments/assets/4a129265-c715-4909-a86a-911fa3adcf10)
+["hyprland/workspaces#rw" icons rewrite from] [Jakoolit dots](https://github.com/j5onrf/dots/tree/main/waybar/hyprland/workspaces%23rw%20icons%20rewrite%20from%20Jakoolit%20dots)
+![Screenshot-2024-09-09_11:20:01](https://github.com/user-attachments/assets/54fa7009-d4e5-4306-845e-66c29e5c5067)
+
+</p>
+</details>
+</details>
+</details>
+<br>
+
+
+
+# Hyprland
+
+  - These are demo templates. Fix to work on your system.
+
+</p>
+</details>
+
+
+
