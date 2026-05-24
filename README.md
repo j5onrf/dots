@@ -2,7 +2,7 @@
 
 </details>
 
-<details open><summary>(2026-May24) AI Summary TUI <sup>local iq</sup></summary>
+<details open><summary>(2026-May24) AI Summary TUI <sup>llmsum.py</sup></summary>
 <p>
     
 [AI Summary TUI | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/ai/local)
