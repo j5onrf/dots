@@ -5,7 +5,7 @@
 <details open><summary>(2026-May24) AI Summary TUI <sup>local iq</sup></summary>
 <p>
     
-[AI Summary TUI | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/ai/local-iq)
+[AI Summary TUI | Omarchy](https://github.com/j5onrf/local-iq/tree/main/ai-summary)
 <img alt="20260510_095505" src="https://github.com/user-attachments/assets/fdd2d2b2-d938-4177-8bd2-4cda27668f06" />
 
 </details>
