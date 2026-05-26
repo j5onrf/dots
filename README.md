@@ -60,7 +60,7 @@ The Result: likely see shell process drop to something like 30 MiB or 40 MiB.
 
 </details>
 
-<details open><summary>(2026-April28) Omarchy Web App >< Brave Origin </summary>
+<details ><summary>(2026-April28) Omarchy Web App >< Brave Origin </summary>
 <p>
     
 [Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion)
@@ -129,7 +129,7 @@ That is the ultimate "Best of Both Worlds" strategy. Having a toggle script that
 </p>
 </details>
 
-<details open><summary>(2026-April11) Noctalia-Shell <sup>expansive-feature-set</sup></summary>
+<details ><summary>(2026-April11) Noctalia-Shell <sup>expansive-feature-set</sup></summary>
 <p>
     
 [Noctalia-Shell](https://github.com/noctalia-dev/noctalia-shell)
