@@ -1,6 +1,6 @@
 # Shell-Fusion | Omarchy
 
-> **Minimalist industrial vertical UI for Hyprland & Omarchy**
+Minimalist industrial vertical UI for Hyprland & Omarchy
 
 `omarchy v3.8.0` `quickshell` `ttf-material-symbols-variable-git` `omarchy-shell`
 
