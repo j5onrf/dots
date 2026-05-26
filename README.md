@@ -2,10 +2,10 @@
 
 </details>
 
-<details open><summary>(2026-May24) AI Summary TUI <sup>local iq</sup></summary>
+<details open><summary>(2026-May24) AI Summary TUI <sup>local-ai</sup></summary>
 <p>
     
-[AI Summary TUI | Omarchy](https://github.com/j5onrf/local-iq/tree/main/ai-summary)
+[AI Summary TUI | Omarchy](https://github.com/j5onrf/local-ai/tree/main/ai-summary)
 <img alt="20260510_095505" src="https://github.com/user-attachments/assets/fdd2d2b2-d938-4177-8bd2-4cda27668f06" />
 
 </details>
@@ -370,10 +370,10 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 </details>
 <br>
 
-# Ai<sup> local-iq</sup>
+# Ai<sup> local-ai</sup>
 
-(2026-May-24) [AI Summary TUI | Omarchy](https://github.com/j5onrf/local-iq/tree/main/ai-summary) 
-<img alt="local-iq" src="https://github.com/user-attachments/assets/35e79f20-6086-44c0-8863-2872aad9b2f1" />
+(2026-May-24) [AI Summary TUI | Omarchy](https://github.com/j5onrf/local-ai/tree/main/ai-summary) 
+<img alt="local-ai" src="https://github.com/user-attachments/assets/35e79f20-6086-44c0-8863-2872aad9b2f1" />
 
 `Qwen3.5-2B-UD-Q4_K_XL+` `Omarchy v3.8.2`
 
