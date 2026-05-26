@@ -2,10 +2,9 @@
 
 Minimalist industrial vertical UI for Hyprland & Omarchy
 
-`omarchy v3.8.0` `quickshell` `ttf-material-symbols-variable-git` `omarchy-shell`
-
-
 <img alt="20260522_013112" src="https://github.com/user-attachments/assets/14c78178-7cdf-4e52-871f-321267333a59" />
+
+`omarchy v3.8.0` `quickshell` `ttf-material-symbols-variable-git`
 <br><br>
 
 > *Real-time color injection based on your current Omarchy `.toml`*
@@ -34,3 +33,5 @@ layerrule = match:namespace fusion-shell, no_anim on
 # To automate Quickshell bar reloads on theme changes, append the reload script to the Omarchy master setter:
 
 echo "~/.config/hypr/scripts/f-reload.sh &" >> ~/.local/share/omarchy/bin/omarchy-theme-set
+```
+---
