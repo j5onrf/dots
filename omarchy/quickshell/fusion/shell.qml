@@ -1,4 +1,4 @@
-/* Shell-Fusion v6.6 (jetbrains-basic)(fixes + stopwatch) [j5onrf] 5.27.26 */
+/* Shell-Fusion v6.8 (ttf-jetbrains-mono-nerd-basic)(fixes + stopwatch) [j5onrf] 5.27.26 */
 
 import Quickshell
 import Quickshell.Io
@@ -31,7 +31,7 @@ PanelWindow {
     property bool drawerOpen: false
 
     readonly property string iconFont: "Material Symbols Rounded"
-    readonly property string monoFont: "JetBrains Mono"
+    readonly property string monoFont: "JetBrainsMono Nerd Font"
 
     // --- AUTOMATED FILE WATCHER BACKEND ---
     FileView {
@@ -183,7 +183,7 @@ PanelWindow {
                             font {
                                 weight: Font.DemiBold
                                 family: monoFont
-                                pixelSize: (modelData.id === 6 || modelData.id === 7) ? 20 : 17
+                                pixelSize: 17
                             }
                         }
                         hoverArea.onClicked: Hyprland.dispatch("workspace " + modelData.id)
@@ -291,7 +291,6 @@ PanelWindow {
                         }
                     }
 
-                    // Properties to break down time segments into stable strings
                     property string topString: {
                         if (!mainClock.date) return "--";
                         return showSeconds 
@@ -307,10 +306,13 @@ PanelWindow {
                     }
 
                     Column {
-                        anchors.centerIn: parent
-                        spacing: -1
+                        // CHANGED: Fixed line-height offsetting by shifting the parent layout up
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.top: parent.top
+                        anchors.topMargin: 2
+                        spacing: 0
 
-                        // TOP LINE Container (Locked width ensures no horizontal shifting)
+                        // TOP LINE Container
                         Row {
                             width: 18
                             height: 16
@@ -334,7 +336,7 @@ PanelWindow {
                             }
                         }
 
-                        // BOTTOM LINE Container (Locked width ensures no horizontal shifting)
+                        // BOTTOM LINE Container
                         Row {
                             width: 18
                             height: 16
