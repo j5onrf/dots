@@ -389,7 +389,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 <img alt="20260527_130425" src="https://github.com/user-attachments/assets/8ea571fd-9664-4137-a017-ff0f7efd6074" />
 
 
-`Quickshell 0.2.1+` `Omarchy v3.6.0`
+`Quickshell 0.2.1+` `Omarchy v3.8.2`
 
 ---
 
