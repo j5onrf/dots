@@ -1,4 +1,4 @@
-/* Shell-Fusion v6.9 (fixes + stopwatch) [j5onrf] 5.27.26 */
+/* Shell-Fusion v7.0 (fixes + cpu and stopwatch added) [j5onrf] 5.27.26 */
 
 import Quickshell
 import Quickshell.Io
@@ -32,6 +32,17 @@ PanelWindow {
 
     readonly property string iconFont: "Material Symbols Rounded"
     readonly property string monoFont: "JetBrainsMono Nerd Font"
+
+    // --- OMARCHY COMPATIBLE SHELL RUNNER ---
+    function runCmd(cmdStr) {
+        cmdRunner.command = ["sh", "-c", cmdStr];
+        cmdRunner.running = true;
+    }
+
+    Process {
+        id: cmdRunner
+        running: false
+    }
 
     // --- AUTOMATED FILE WATCHER BACKEND ---
     FileView {
@@ -128,7 +139,6 @@ PanelWindow {
                 FusionModule {
                     height: 30
                     Text {
-                        // Top spacing anchors
                         anchors {
                             top: parent.top
                             topMargin: 2
@@ -144,9 +154,9 @@ PanelWindow {
                     }
                     hoverArea.onClicked: mouse => {
                         if (mouse.button === Qt.RightButton) {
-                            Hyprland.dispatch("exec kitty --class=sys-monitor -e btop");
+                            runCmd("kitty --class=sys-monitor -e btop");
                         } else {
-                            Hyprland.dispatch("exec omarchy-menu");
+                            runCmd("omarchy-menu");
                         }
                     }
                 }
@@ -190,7 +200,7 @@ PanelWindow {
                                 pixelSize: (modelData.id === 6 || modelData.id === 7) ? 20 : 17
                             }
                         }
-                        hoverArea.onClicked: Hyprland.dispatch("workspace " + modelData.id)
+                        hoverArea.onClicked: runCmd("hyprctl dispatch workspace " + modelData.id)
                     }
                 }
             }
@@ -248,6 +258,65 @@ PanelWindow {
                     Behavior on height { NumberAnimation { duration: 250; easing.type: Easing.OutCubic } }
                     Behavior on opacity { NumberAnimation { duration: 250 } }
 
+                    // --- REALTIME CPU LOOP MODULE ---
+                    FusionModule {
+                        id: cpuModule
+                        property bool showUsage: false
+                        property string displayStr: ""
+                        property int rawUsage: displayStr ? parseInt(displayStr) : 0
+
+                        Process {
+                            id: cpuUsageRunner
+                            command: ["sh", "-c", "top -bn2 -d 0.3 | grep 'Cpu(s)' | tail -n1 | awk '{print int(100 - $8)}'"]
+                            running: false
+                            stdout: StdioCollector {
+                                onStreamFinished: cpuModule.displayStr = this.text.trim();
+                            }
+                        }
+
+                        Timer {
+                            id: cpuTicker
+                            interval: 10000
+                            repeat: true
+                            running: cpuModule.showUsage
+                            onTriggered: {
+                                if (!cpuUsageRunner.running) cpuUsageRunner.running = true;
+                            }
+                        }
+
+                        Text {
+                            anchors.centerIn: parent
+                            renderType: Text.QtRendering
+                            
+                            color: {
+                                if (parent.hoverArea.containsMouse) return theme.mPrimary;
+                                if (!cpuModule.showUsage) return theme.mOnSurface;
+                                
+                                if (cpuModule.rawUsage >= 80) return theme.mError;          
+                                if (cpuModule.rawUsage >= 40) return theme.mPrimary;        
+                                return theme.mOnSurface;                                    
+                            }
+                            
+                            text: cpuModule.showUsage 
+                                ? (cpuModule.displayStr ? cpuModule.displayStr.padStart(2, '0') : "00") 
+                                : "\ue322"
+                            
+                            font {
+                                family: cpuModule.showUsage ? monoFont : iconFont
+                                pixelSize: cpuModule.showUsage ? 15 : 20
+                                weight: Font.DemiBold
+                            }
+                        }
+
+                        hoverArea.onClicked: {
+                            cpuModule.showUsage = !cpuModule.showUsage;
+                            if (cpuModule.showUsage) {
+                                cpuModule.displayStr = "";
+                                if (!cpuUsageRunner.running) cpuUsageRunner.running = true;
+                            }
+                        }
+                    }
+
                     FusionModule {
                         Text {
                             anchors.centerIn: parent
@@ -256,7 +325,7 @@ PanelWindow {
                             color: parent.hoverArea.containsMouse ? theme.mPrimary : theme.mOnSurface
                             font { family: iconFont; pixelSize: 20 }
                         }
-                        hoverArea.onClicked: Hyprland.dispatch("exec walker -m clipboard")
+                        hoverArea.onClicked: runCmd("walker -m clipboard")
                     }
                     FusionModule {
                         Text {
@@ -266,7 +335,7 @@ PanelWindow {
                             color: parent.hoverArea.containsMouse ? theme.mPrimary : theme.mOnSurface
                             font { family: iconFont; pixelSize: 20 }
                         }
-                        hoverArea.onClicked: Hyprland.dispatch("exec omarchy-toggle-nightlight")
+                        hoverArea.onClicked: runCmd("omarchy-toggle-nightlight")
                     }
                     FusionModule {
                         Text {
@@ -291,7 +360,7 @@ PanelWindow {
                         if (mouse.button === Qt.LeftButton) {
                             clockModule.showSeconds = !clockModule.showSeconds;
                         } else if (mouse.button === Qt.RightButton) {
-                            Hyprland.dispatch("exec kitty --class=calendar-pwa -e sh -c 'cal -m; read -n 1'");
+                            runCmd("kitty --class=calendar-pwa -e sh -c 'cal -m; read -n 1'");
                         }
                     }
 
@@ -363,9 +432,11 @@ PanelWindow {
                     }
                 }
 
+                // --- POWER / VOLUME MODULE ---
                 FusionModule {
                     id: powerVolModule
                     property bool isMuted: false
+
                     Text {
                         anchors.centerIn: parent
                         text: powerVolModule.isMuted ? "\ue04f" : "\ue8ac"
@@ -373,18 +444,19 @@ PanelWindow {
                         color: parent.hoverArea.containsMouse ? theme.mError : theme.mPrimary
                         font { family: iconFont; pixelSize: 18 }
                     }
+                    
                     hoverArea.onClicked: (mouse) => {
                         if (mouse.button === Qt.RightButton) {
                             powerVolModule.isMuted = !powerVolModule.isMuted;
-                            Hyprland.dispatch("exec pactl set-sink-mute @DEFAULT_SINK@ toggle");
+                            runCmd("pactl set-sink-mute @DEFAULT_SINK@ toggle");
                         } else if (mouse.button === Qt.MiddleButton) {
-                            Hyprland.dispatch("exec " + homeDir + "/.config/hypr/scripts/f-reload.sh");
+                            runCmd(homeDir + "/.config/hypr/scripts/f-reload.sh");
                         } else {
-                            Hyprland.dispatch("exec omarchy-menu");
+                            runCmd("omarchy-menu");
                         }
                     }
                     hoverArea.onWheel: (wheel) => {
-                        Hyprland.dispatch("exec pactl set-sink-volume @DEFAULT_SINK@ " + (wheel.angleDelta.y > 0 ? "+5%" : "-5%"));
+                        runCmd("pactl set-sink-volume @DEFAULT_SINK@ " + (wheel.angleDelta.y > 0 ? "+5%" : "-5%"));
                         if (wheel.angleDelta.y > 0 && powerVolModule.isMuted) powerVolModule.isMuted = false;
                     }
                 }
