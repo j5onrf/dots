@@ -14,7 +14,7 @@
 <p>
     
 [Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion)
-<img width="3440" height="1440" alt="20260510_095504" src="https://github.com/user-attachments/assets/4ff3a0f3-2275-498e-84a7-09c3437612d5" />
+<img alt="20260510_095504" src="https://github.com/user-attachments/assets/4ff3a0f3-2275-498e-84a7-09c3437612d5" />
 
 <br>
 
@@ -386,7 +386,8 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 # Quickshell
 
 (2026-April-27) [Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion) 
-<img alt="20260427_120546" src="https://github.com/user-attachments/assets/60c74941-992b-4382-88be-4e914ef3a4d3" />
+<img alt="20260527_130425" src="https://github.com/user-attachments/assets/8ea571fd-9664-4137-a017-ff0f7efd6074" />
+
 
 `Quickshell 0.2.1+` `Omarchy v3.6.0`
 
