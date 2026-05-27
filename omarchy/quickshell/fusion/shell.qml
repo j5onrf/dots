@@ -1,4 +1,4 @@
-/* Shell-Fusion V6.4 (jetbrains-basic)(added stopwatch) [j5onrf] 5.27.26 */
+/* Shell-Fusion V6.4 (jetbrains-basic)(fixes + stopwatch) [j5onrf] 5.27.26 */
 
 import Quickshell
 import Quickshell.Io
@@ -281,7 +281,7 @@ PanelWindow {
                     }
                 }
 
-                // --- CLOCK MODULE (MIN/SEC TOGGLE via Left-Click) ---
+                // --- CLOCK MODULE (HARD-ANCIENT COMPACT LAYOUT) ---
                 FusionModule {
                     id: clockModule
                     property bool showSeconds: false
@@ -296,36 +296,71 @@ PanelWindow {
                         }
                     }
 
+                    // Properties to break down time segments into stable strings
+                    property string topString: {
+                        if (!mainClock.date) return "--";
+                        return showSeconds 
+                            ? mainClock.date.getMinutes().toString().padStart(2, '0')
+                            : (mainClock.date.getHours() % 12 || 12).toString().padStart(2, '0');
+                    }
+
+                    property string bottomString: {
+                        if (!mainClock.date) return "--";
+                        return showSeconds 
+                            ? mainClock.date.getSeconds().toString().padStart(2, '0')
+                            : mainClock.date.getMinutes().toString().padStart(2, '0');
+                    }
+
                     Column {
                         anchors.centerIn: parent
-                        spacing: -2
+                        spacing: -1
 
-                        // TOP LINE: Hours (Standard) -> Minutes (Stopwatch)
-                        Text {
+                        // TOP LINE Container (Locked width ensures no horizontal shifting)
+                        Row {
+                            width: 18
+                            height: 16
                             anchors.horizontalCenter: parent.horizontalCenter
-                            color: theme.mPrimary
-                            renderType: Text.QtRendering
-                            text: {
-                                if (!mainClock.date) return "--";
-                                return clockModule.showSeconds 
-                                    ? mainClock.date.getMinutes().toString().padStart(2, '0')
-                                    : (mainClock.date.getHours() % 12 || 12).toString().padStart(2, '0');
+                            
+                            Text {
+                                width: 9
+                                horizontalAlignment: Text.AlignHCenter
+                                color: theme.mPrimary
+                                renderType: Text.QtRendering
+                                text: clockModule.topString.charAt(0)
+                                font { weight: Font.DemiBold; pixelSize: 15; family: monoFont }
                             }
-                            font { weight: Font.DemiBold; pixelSize: 15; family: monoFont }
+                            Text {
+                                width: 9
+                                horizontalAlignment: Text.AlignHCenter
+                                color: theme.mPrimary
+                                renderType: Text.QtRendering
+                                text: clockModule.topString.charAt(1)
+                                font { weight: Font.DemiBold; pixelSize: 15; family: monoFont }
+                            }
                         }
 
-                        // BOTTOM LINE: Minutes (Standard) -> Seconds (Stopwatch)
-                        Text {
+                        // BOTTOM LINE Container (Locked width ensures no horizontal shifting)
+                        Row {
+                            width: 18
+                            height: 16
                             anchors.horizontalCenter: parent.horizontalCenter
-                            color: clockModule.showSeconds ? theme.mError : theme.mOnSurface
-                            renderType: Text.QtRendering
-                            text: {
-                                if (!mainClock.date) return "--";
-                                return clockModule.showSeconds 
-                                    ? mainClock.date.getSeconds().toString().padStart(2, '0')
-                                    : mainClock.date.getMinutes().toString().padStart(2, '0');
+                            
+                            Text {
+                                width: 9
+                                horizontalAlignment: Text.AlignHCenter
+                                color: clockModule.showSeconds ? theme.mError : theme.mOnSurface
+                                renderType: Text.QtRendering
+                                text: clockModule.bottomString.charAt(0)
+                                font { weight: Font.DemiBold; pixelSize: 15; family: monoFont }
                             }
-                            font { weight: Font.DemiBold; pixelSize: 15; family: monoFont }
+                            Text {
+                                width: 9
+                                horizontalAlignment: Text.AlignHCenter
+                                color: clockModule.showSeconds ? theme.mError : theme.mOnSurface
+                                renderType: Text.QtRendering
+                                text: clockModule.bottomString.charAt(1)
+                                font { weight: Font.DemiBold; pixelSize: 15; family: monoFont }
+                            }
                         }
                     }
                 }
