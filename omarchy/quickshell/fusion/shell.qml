@@ -276,7 +276,7 @@ PanelWindow {
 
                         Timer {
                             id: cpuTicker
-                            interval: 10000
+                            interval: 2000
                             repeat: true
                             running: cpuModule.showUsage
                             onTriggered: {
