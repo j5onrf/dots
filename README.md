@@ -372,9 +372,13 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # Ai<sup> local-ai</sup>
 
-(2026-May-24) [AI Summary TUI | Omarchy](https://github.com/j5onrf/local-ai/tree/main/ai-summary) 
-<img alt="local-ai" src="https://github.com/user-attachments/assets/35e79f20-6086-44c0-8863-2872aad9b2f1" />
+(2026-May-26) [AI Suggestion Agent<sup>beta</sup> ](https://github.com/j5onrf/local-ai/tree/main/ai-suggestion) 
+<img alt="202" src="https://github.com/user-attachments/assets/bfdb833a-05e5-4c83-9f75-b288c2ec2e83" />
+`Qwen3.5-2B-UD-Q4_K_XL+` `Omarchy v3.8.2`
 
+
+(2026-May-24) [AI Summary TUI ](https://github.com/j5onrf/local-ai/tree/main/ai-summary) 
+<img alt="local-ai" src="https://github.com/user-attachments/assets/35e79f20-6086-44c0-8863-2872aad9b2f1" />
 `Qwen3.5-2B-UD-Q4_K_XL+` `Omarchy v3.8.2`
 
 ---
