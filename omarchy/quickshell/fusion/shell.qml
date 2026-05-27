@@ -1,4 +1,4 @@
-/* Shell-Fusion v6.8 (ttf-jetbrains-mono-nerd-basic)(fixes + stopwatch) [j5onrf] 5.27.26 */
+/* Shell-Fusion v6.9 (ttf-jetbrains-mono-nerd-basic)(fixes + stopwatch) [j5onrf] 5.27.26 */
 
 import Quickshell
 import Quickshell.Io
@@ -38,7 +38,6 @@ PanelWindow {
         id: colorFileSource
         path: omarchyConfig
         
-        // This fires automatically only when the file actually modifies on disk
         onTextChanged: {
             const rawText = (typeof text === "function") ? text() : text;
             if (rawText) {
@@ -50,7 +49,6 @@ PanelWindow {
     QtObject {
         id: theme
         
-        // Observable reactive style properties
         property string mSurface: "#242424"
         property string mOnSurface: "#ffffff"
         property string mPrimary: "#ffffff"
@@ -130,7 +128,12 @@ PanelWindow {
                 FusionModule {
                     height: 30
                     Text {
-                        anchors.centerIn: parent
+                        // Top spacing anchors
+                        anchors {
+                            top: parent.top
+                            topMargin: 2
+                            horizontalCenter: parent.horizontalCenter
+                        }
                         text: "\ue5d3"
                         color: theme.mOnSurface
                         renderType: Text.QtRendering
@@ -172,6 +175,7 @@ PanelWindow {
 
                         Text {
                             anchors.centerIn: parent
+                            anchors.verticalCenterOffset: 0.25
                             text: {
                                 if (parent.isActive) return "";
                                 if (modelData.id === 6) return "\uf084";
@@ -183,7 +187,7 @@ PanelWindow {
                             font {
                                 weight: Font.DemiBold
                                 family: monoFont
-                                pixelSize: 17
+                                pixelSize: (modelData.id === 6 || modelData.id === 7) ? 20 : 17
                             }
                         }
                         hoverArea.onClicked: Hyprland.dispatch("workspace " + modelData.id)
@@ -276,7 +280,7 @@ PanelWindow {
                     }
                 }
 
-                // --- CLOCK MODULE (HARD-ANCIENT COMPACT LAYOUT) ---
+                // --- CLOCK MODULE ---
                 FusionModule {
                     id: clockModule
                     property bool showSeconds: false
@@ -306,13 +310,11 @@ PanelWindow {
                     }
 
                     Column {
-                        // CHANGED: Fixed line-height offsetting by shifting the parent layout up
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.top: parent.top
                         anchors.topMargin: 2
                         spacing: 0
 
-                        // TOP LINE Container
                         Row {
                             width: 18
                             height: 16
@@ -336,7 +338,6 @@ PanelWindow {
                             }
                         }
 
-                        // BOTTOM LINE Container
                         Row {
                             width: 18
                             height: 16
