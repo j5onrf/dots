@@ -2,7 +2,7 @@
 
 </details>
 
-<details open><summary>(2026-May24) AI Summary TUI <sup>local-ai</sup></summary>
+<details><summary>(2026-May24) AI Summary TUI <sup>local-ai</sup></summary>
 <p>
     
 [AI Summary TUI | Omarchy](https://github.com/j5onrf/local-ai/tree/main/ai-summary)
@@ -73,7 +73,7 @@ The Result: likely see shell process drop to something like 30 MiB or 40 MiB.
 
 </details>
 
-<details ><summary>(2026-April14) DankMaterialShell <sup>top list</sup></summary>
+<details open><summary>(2026-April14) DankMaterialShell <sup>top list</sup></summary>
 <p>
     
 [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
@@ -129,7 +129,7 @@ That is the ultimate "Best of Both Worlds" strategy. Having a toggle script that
 </p>
 </details>
 
-<details ><summary>(2026-April11) Noctalia-Shell <sup>expansive-feature-set</sup></summary>
+<details open><summary>(2026-April11) Noctalia-Shell <sup>expansive-feature-set</sup></summary>
 <p>
     
 [Noctalia-Shell](https://github.com/noctalia-dev/noctalia-shell)
@@ -147,7 +147,7 @@ That is the ultimate "Best of Both Worlds" strategy. Having a toggle script that
 
 </details>
 
-<details ><summary>(2026-March27) Caelestia-Shell <sup>modernity</sup></summary>
+<details open><summary>(2026-March27) Caelestia-Shell <sup>modernity</sup></summary>
 <p>
 
 [Caelestia-Shell](https://github.com/caelestia-dots/shell)
