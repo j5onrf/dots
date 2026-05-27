@@ -1,4 +1,4 @@
-/* Shell-Fusion V6.3 (Streamlined Engine) 5.22.26 */
+/* Shell-Fusion V6.4 (jetbrains-basic)(seconds on clock) [j5onrf] 5.27.26 */
 
 import Quickshell
 import Quickshell.Io
@@ -31,7 +31,7 @@ PanelWindow {
     property bool drawerOpen: false
 
     readonly property string iconFont: "Material Symbols Rounded"
-    readonly property string monoFont: "JetBrainsMono Nerd Font"
+    readonly property string monoFont: "JetBrains Mono"
 
     // --- AUTOMATED FILE WATCHER BACKEND ---
     FileView {
@@ -281,26 +281,50 @@ PanelWindow {
                     }
                 }
 
+                // --- CLOCK MODULE (MIN/SEC TOGGLE via Left-Click) ---
                 FusionModule {
+                    id: clockModule
+                    property bool showSeconds: false
                     height: 40
                     border.width: 2
-                    hoverArea.onClicked: Hyprland.dispatch("exec kitty --class=calendar-pwa -e sh -c 'cal -m; read -n 1'")
+                    
+                    hoverArea.onClicked: (mouse) => {
+                        if (mouse.button === Qt.LeftButton) {
+                            clockModule.showSeconds = !clockModule.showSeconds;
+                        } else if (mouse.button === Qt.RightButton) {
+                            Hyprland.dispatch("exec kitty --class=calendar-pwa -e sh -c 'cal -m; read -n 1'");
+                        }
+                    }
+
                     Column {
-                        anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
-                        topPadding: 2.4
-                        spacing: -5
+                        anchors.centerIn: parent
+                        spacing: -2
+
+                        // TOP LINE: Hours (Standard) -> Minutes (Stopwatch)
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter
                             color: theme.mPrimary
                             renderType: Text.QtRendering
-                            text: mainClock.date ? (mainClock.date.getHours() % 12 || 12).toString().padStart(2, '0') : "--"
+                            text: {
+                                if (!mainClock.date) return "--";
+                                return clockModule.showSeconds 
+                                    ? mainClock.date.getMinutes().toString().padStart(2, '0')
+                                    : (mainClock.date.getHours() % 12 || 12).toString().padStart(2, '0');
+                            }
                             font { weight: Font.DemiBold; pixelSize: 15; family: monoFont }
                         }
+
+                        // BOTTOM LINE: Minutes (Standard) -> Seconds (Stopwatch)
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter
-                            color: theme.mOnSurface
+                            color: clockModule.showSeconds ? theme.mError : theme.mOnSurface
                             renderType: Text.QtRendering
-                            text: mainClock.date ? mainClock.date.getMinutes().toString().padStart(2, '0') : "--"
+                            text: {
+                                if (!mainClock.date) return "--";
+                                return clockModule.showSeconds 
+                                    ? mainClock.date.getSeconds().toString().padStart(2, '0')
+                                    : mainClock.date.getMinutes().toString().padStart(2, '0');
+                            }
                             font { weight: Font.DemiBold; pixelSize: 15; family: monoFont }
                         }
                     }
@@ -335,5 +359,8 @@ PanelWindow {
         }
     }
 
-    SystemClock { id: mainClock; precision: SystemClock.Minutes }
+    SystemClock { 
+        id: mainClock; 
+        precision: clockModule.showSeconds ? SystemClock.Seconds : SystemClock.Minutes 
+    }
 }
