@@ -1,4 +1,4 @@
-/* Shell-Fusion v6.9 (ttf-jetbrains-mono-nerd-basic)(fixes + stopwatch) [j5onrf] 5.27.26 */
+/* Shell-Fusion v6.9 (fixes + stopwatch) [j5onrf] 5.27.26 */
 
 import Quickshell
 import Quickshell.Io
