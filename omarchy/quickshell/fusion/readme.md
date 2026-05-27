@@ -4,7 +4,7 @@ Minimalist industrial vertical UI for Hyprland & Omarchy
 
 <img alt="20260522_013112" src="https://github.com/user-attachments/assets/14c78178-7cdf-4e52-871f-321267333a59" />
 
-`omarchy v3.8.0` `quickshell` `ttf-material-symbols-variable-git`
+`omarchy v3.8.0` `quickshell` `ttf-material-symbols-variable-git` `ttf-jetbrains-mono-nerd-basic`
 <br><br>
 
 > *Real-time color injection based on your current Omarchy `.toml`*
