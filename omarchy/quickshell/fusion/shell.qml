@@ -1,4 +1,4 @@
-/* Shell-Fusion v6.5 (jetbrains-basic)(fixes + stopwatch) [j5onrf] 5.27.26 */
+/* Shell-Fusion v6.6 (jetbrains-basic)(fixes + stopwatch) [j5onrf] 5.27.26 */
 
 import Quickshell
 import Quickshell.Io
@@ -130,11 +130,7 @@ PanelWindow {
                 FusionModule {
                     height: 30
                     Text {
-                        anchors {
-                            top: parent.top
-                            topMargin: 2
-                            horizontalCenter: parent.horizontalCenter
-                        }
+                        anchors.centerIn: parent
                         text: "\ue5d3"
                         color: theme.mOnSurface
                         renderType: Text.QtRendering
@@ -176,7 +172,6 @@ PanelWindow {
 
                         Text {
                             anchors.centerIn: parent
-                            anchors.verticalCenterOffset: 0.25
                             text: {
                                 if (parent.isActive) return "";
                                 if (modelData.id === 6) return "\uf084";
