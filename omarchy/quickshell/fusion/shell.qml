@@ -360,7 +360,7 @@ PanelWindow {
                         if (mouse.button === Qt.LeftButton) {
                             clockModule.showSeconds = !clockModule.showSeconds;
                         } else if (mouse.button === Qt.RightButton) {
-                            runCmd("kitty --class=calendar-pwa -e sh -c 'cal -m; read -n 1'");
+                            runCmd("kitty --class=calendar-pwa -e sh -c 'cal -s; read -n 1'");
                         }
                     }
 
