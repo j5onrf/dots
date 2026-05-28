@@ -372,7 +372,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # Ai<sup> local-ai</sup>
 
-(2026-May-26) [AI Suggestion Agent<sup>beta</sup> ](https://github.com/j5onrf/local-ai/tree/main/ai-suggestion) 
+(2026-May-26) [AI Suggestion Agent<sup>alpha</sup> ](https://github.com/j5onrf/local-ai/tree/main/ai-suggestion) 
 <img alt="202" src="https://github.com/user-attachments/assets/bfdb833a-05e5-4c83-9f75-b288c2ec2e83" />
 `Qwen3.5-2B-UD-Q4_K_XL+`
 
