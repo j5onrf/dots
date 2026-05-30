@@ -374,7 +374,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 (2026-May-26) [AI Suggestion Agent<sup> alpha</sup> ](https://github.com/j5onrf/local-ai/tree/main/ai-suggestion) 
 <img alt="202" src="https://github.com/user-attachments/assets/bfdb833a-05e5-4c83-9f75-b288c2ec2e83" />
-`Qwen3.5-2B-UD-Q4_K_XL+`
+`Qwen-3.5-2b/3.6-35B-A3B+/gemini+`
 
 
 (2026-May-24) [AI Summary TUI ](https://github.com/j5onrf/local-ai/tree/main/ai-summary) 
