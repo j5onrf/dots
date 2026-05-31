@@ -6,7 +6,8 @@
 <p>
     
 [AI-Suggestion Agent | ai-alias.py](https://github.com/j5onrf/local-ai/tree/main/ai-suggestion)
-<img alt="ai-suggestion-agent" src="https://github.com/user-attachments/assets/e0b874a2-a3bc-43fa-b7b8-415fb78e3200" />
+<img alt="ai-suggestion-agent" src="https://github.com/user-attachments/assets/059d405b-2326-4939-a039-eeda67343095" />
+
 
 </details> 
 
