@@ -2,7 +2,7 @@
 
 </details>
 
-<details><summary>(2026-May31) AI-Suggestion Agent <sup>alpha</sup></summary>
+<details open><summary>(2026-May31) AI-Suggestion Agent <sup>alpha</sup></summary>
 <p>
     
 [AI-Suggestion Agent | alias-ai.py](https://github.com/j5onrf/local-ai/tree/main/ai-suggestion)
