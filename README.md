@@ -5,7 +5,7 @@
 <details><summary>(2026-May31) AI-Suggestion Agent <sup>alpha</sup></summary>
 <p>
     
-[AI-Suggestion Agent | ai-alias.py](https://github.com/j5onrf/local-ai/tree/main/ai-suggestion)
+[AI-Suggestion Agent | alias-ai.py](https://github.com/j5onrf/local-ai/tree/main/ai-suggestion)
 <img alt="ai-suggestion-agent" src="https://github.com/user-attachments/assets/059d405b-2326-4939-a039-eeda67343095" />
 
 
