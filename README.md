@@ -554,7 +554,7 @@ gruv
 
 # Hyprland
 
-  - These are custom integrated. Adapt to your system. Build more and better.
+  - These are custom integrated. Adapt to your system.
 
 </p>
 </details>
