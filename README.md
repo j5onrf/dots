@@ -554,7 +554,7 @@ gruv
 
 # Hyprland
 
-  - These are demo templates. Fix to work on your system.
+  - These are custom integrated. Adapt to your system. Build more and better.
 
 </p>
 </details>
