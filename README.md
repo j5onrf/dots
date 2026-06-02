@@ -554,7 +554,7 @@ gruv
 
 # Hyprland
 
-  - These are custom integrated. Adapt to your system.
+  - These are custom integrated. Adapt to your system. MIT license
 
 </p>
 </details>
