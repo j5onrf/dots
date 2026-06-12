@@ -2,7 +2,7 @@
 
 </details>
 
-<details open><summary>(2026-May31) Local-AI Agent <sup>alpha</sup></summary>
+<details><summary>(2026-May31) Local-AI Agent <sup>alpha</sup></summary>
 <p>
     
 [Local-AI Agent | alias-ai.py](https://github.com/j5onrf/local-ai/tree/main/local-ai-agent)
@@ -395,6 +395,9 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 ---
 
 # Quickshell
+
+(2026-June-12) [C-Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion/c-shell-fusion) 
+<img alt="20260612_160607" src="https://github.com/user-attachments/assets/2dedcfde-6ef0-4fca-b5b1-0c0b073b3cd9" />
 
 (2026-April-27) [Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion) 
 <img alt="20260527_130425" src="https://github.com/user-attachments/assets/8ea571fd-9664-4137-a017-ff0f7efd6074" />
