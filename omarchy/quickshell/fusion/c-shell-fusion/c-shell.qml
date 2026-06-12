@@ -1,4 +1,4 @@
-/* C-Shell-Fusion v7.4 [j5onrf] */
+/* C-Shell-Fusion v7.5 [j5onrf] */
 
 import Quickshell
 import Quickshell.Io
@@ -183,14 +183,37 @@ PanelWindow {
                         layer.enabled: isActive || hoverArea.containsMouse
                         required property var modelData
                         
-                        property bool isActive: modelData ? (modelData === Hyprland.focusedWorkspace) : false
-                        property bool isOccupied: modelData ? Hyprland.toplevels.values.some(t => t.workspace === modelData) : false
+                        // ID integer comparison avoids dynamic dangling pointer issues in the engine
+                        property bool isActive: {
+                            if (!modelData || !Hyprland.focusedWorkspace) return false;
+                            try {
+                                return modelData.id === Hyprland.focusedWorkspace.id;
+                            } catch (e) {
+                                return false;
+                            }
+                        }
+
+                        property bool isOccupied: {
+                            if (!modelData) return false;
+                            try {
+                                const wsId = modelData.id;
+                                return Hyprland.toplevels.values.some(t => t.workspace && t.workspace.id === wsId);
+                            } catch (e) {
+                                return false;
+                            }
+                        }
 
                         radius: hoverArea.containsMouse ? 15 : (isActive ? 12 : 8)
                         color: isActive ? theme.mPrimary : (hoverArea.containsMouse ? theme.mSurfaceVariant : theme.mSurface)
 
                         Rectangle {
-                            visible: parent.isOccupied && !parent.isActive
+                            visible: {
+                                try {
+                                    return parent.isOccupied && !parent.isActive;
+                                } catch (e) {
+                                    return false;
+                                }
+                            }
                             width: 4; height: 4; radius: 2; color: theme.mPrimary
                             anchors {
                                 verticalCenter: parent.verticalCenter
@@ -206,21 +229,37 @@ PanelWindow {
                             text: {
                                 if (parent.isActive) return "";
                                 if (!modelData) return "";
-                                if (modelData.id === 9) return "\uf084";
-                                if (modelData.id === 10) return "\uf001";
-                                return modelData.id;
+                                try {
+                                    if (modelData.id === 9) return "\uf084";
+                                    if (modelData.id === 10) return "\uf001";
+                                    return modelData.id;
+                                } catch (e) {
+                                    return "";
+                                }
                             }
                             renderType: Text.QtRendering
                             color: parent.isActive ? theme.mOnPrimary : theme.mOnSurface
                             font {
                                 weight: Font.DemiBold
                                 family: monoFont
-                                pixelSize: (modelData && (modelData.id === 9 || modelData.id === 10)) ? 20 : 17
+                                pixelSize: {
+                                    try {
+                                        return (modelData && (modelData.id === 9 || modelData.id === 10)) ? 20 : 17;
+                                    } catch (e) {
+                                        return 17;
+                                    }
+                                }
                             }
                         }
                         hoverArea.onClicked: {
                             if (modelData) {
-                                runCmd("hyprctl dispatch workspace " + modelData.id);
+                                try {
+                                    // Utilizes Quickshell's native C++ Wayland/Hyprland IPC connection
+                                    modelData.activate();
+                                } catch (e) {
+                                    // Robust fallback to manual process execution if binding fails
+                                    runCmd("hyprctl dispatch workspace " + modelData.id);
+                                }
                             }
                         }
                     }
