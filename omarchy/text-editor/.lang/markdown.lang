@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language id="markdown" name="Markdown (Color-Max)" version="2.0" _section="Markup">
+<!-- GtkSourceView 5 Custom Markdown Spec (Color-Max Optimized v2.1) -->
+<language id="markdown" name="Markdown (Color-Max)" version="2.0" section="Markup">
   <metadata>
     <property name="mimetypes">text/x-markdown</property>
     <property name="globs">*.md;*.markdown</property>
@@ -35,9 +36,16 @@
       <match>`[^`\n]+`</match>
     </context>
 
+    <!-- Isolate the interior of triple-backticks from ATX headers and parse internal comments -->
     <context id="fenced-code" style-ref="code-block" class="no-spell-check">
       <start>^```.*$</start>
       <end>^```$</end>
+      <include>
+        <!-- Match and highlight comments starting with # as native comments inside code blocks -->
+        <context id="fenced-comment" style-ref="def:comment">
+          <match>^\s*#.*$</match>
+        </context>
+      </include>
     </context>
 
     <context id="markdown">
