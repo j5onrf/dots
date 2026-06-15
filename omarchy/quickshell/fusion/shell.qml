@@ -1,4 +1,4 @@
-/* Shell-Fusion v7.0 (fixes + cpu and stopwatch added) [j5onrf] 5.27.26 */
+/* Shell-Fusion v7.1 [j5onrf] 6.14.26 */
 
 import Quickshell
 import Quickshell.Io
@@ -185,7 +185,7 @@ PanelWindow {
 
                         Text {
                             anchors.centerIn: parent
-                            anchors.verticalCenterOffset: 0.25
+                            anchors.verticalCenterOffset: 0.50
                             text: {
                                 if (parent.isActive) return "";
                                 if (modelData.id === 6) return "\uf084";
