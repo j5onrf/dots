@@ -1,4 +1,4 @@
-/* C-Shell-Fusion v7.6 (cpu fix) [j5onrf] */
+/* C-Shell-Fusion v7.7 (fixes) [j5onrf] */
 
 import Quickshell
 import Quickshell.Io
@@ -225,7 +225,7 @@ PanelWindow {
 
                         Text {
                             anchors.centerIn: parent
-                            anchors.verticalCenterOffset: 0.25
+                            anchors.verticalCenterOffset: 0.50
                             text: {
                                 if (parent.isActive) return "";
                                 if (!modelData) return "";
