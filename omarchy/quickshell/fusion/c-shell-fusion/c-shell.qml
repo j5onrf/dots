@@ -1,4 +1,4 @@
-/* C-Shell-Fusion v7.5 [j5onrf] */
+/* C-Shell-Fusion v7.6 (cpu fix) [j5onrf] */
 
 import Quickshell
 import Quickshell.Io
@@ -240,8 +240,8 @@ PanelWindow {
                             renderType: Text.QtRendering
                             color: parent.isActive ? theme.mOnPrimary : theme.mOnSurface
                             font {
-                                weight: Font.DemiBold
                                 family: monoFont
+                                weight: Font.DemiBold
                                 pixelSize: {
                                     try {
                                         return (modelData && (modelData.id === 9 || modelData.id === 10)) ? 20 : 17;
@@ -334,7 +334,11 @@ PanelWindow {
 
                         Process {
                             id: cpuUsageRunner
-                            command: ["sh", "-c", "top -bn2 -d 0.3 | grep 'Cpu(s)' | tail -n1 | awk '{print int(100 - $8)}'"]
+                            // Optimized: Uses built-in POSIX shell arithmetic to parse /proc/stat
+                            command: [
+                                "sh", "-c", 
+                                "read -r _ u1 n1 s1 i1 io1 ir1 si1 st1 _ < /proc/stat; sleep 0.2; read -r _ u2 n2 s2 i2 io2 ir2 si2 st2 _ < /proc/stat; t1=$((u1+n1+s1+i1+io1+ir1+si1+st1)); t2=$((u2+n2+s2+i2+io2+ir2+si2+st2)); id=$((i2-i1)); total=$((t2-t1)); [ $total -le 0 ] && echo 0 || echo $(( (total - id) * 100 / total ))"
+                            ]
                             running: false
                             stdout: StdioCollector {
                                 onStreamFinished: cpuModule.displayStr = this.text.trim();
