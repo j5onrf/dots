@@ -1,4 +1,4 @@
-/* C-Shell-Fusion v7.7 (fixes) [j5onrf] */
+/* C-Shell-Fusion v7.8 [j5onrf] */
 
 import Quickshell
 import Quickshell.Io
@@ -23,12 +23,30 @@ PanelWindow {
         bottom: true
     }
     
-    implicitWidth: (autoHideEnabled && !isHovered) ? 2 : 34
+    // Kept static at 34 to avoid costly Wayland surface resizes.
+    // The active interaction area is managed dynamically by the input mask.
+    implicitWidth: 34
     color: "transparent"
 
     property bool autoHideEnabled: false
     property bool isHovered: false
     property bool drawerOpen: false
+
+    // --- DYNAMIC INTERACTION MASK ---
+    // Defines the active input/hover region. All clicks and hovers outside this area
+    // pass directly through to underlying application windows.
+    // Defensive ternary checks prevent null-pointer warnings during initial component load.
+    Item {
+        id: interactionMask
+        width: (autoHideEnabled && !isHovered) ? 2 : 34
+        height: slidingContent ? slidingContent.height : 0
+        y: slidingContent ? slidingContent.y : 0
+        x: 0
+    }
+
+    mask: Region {
+        item: interactionMask
+    }
 
     readonly property string iconFont: "Material Symbols Rounded"
     readonly property string monoFont: "JetBrainsMono Nerd Font"
