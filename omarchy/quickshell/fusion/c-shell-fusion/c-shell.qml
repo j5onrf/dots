@@ -29,13 +29,14 @@ PanelWindow {
     color: "transparent"
 
     property bool autoHideEnabled: false
-    property bool isHovered: false
+    
+    // Declarative state binding: tracks the mouse via native observers
+    readonly property bool isHovered: mainMouseArea.containsMouse
     property bool drawerOpen: false
 
     // --- DYNAMIC INTERACTION MASK ---
-    // Defines the active input/hover region. All clicks and hovers outside this area
+    // Defines the active input/hover region. Clicks outside of this mask
     // pass directly through to underlying application windows.
-    // Defensive ternary checks prevent null-pointer warnings during initial component load.
     Item {
         id: interactionMask
         width: (autoHideEnabled && !isHovered) ? 2 : 34
@@ -53,16 +54,11 @@ PanelWindow {
 
     // --- OMARCHY COMPATIBLE SHELL RUNNER ---
     function runCmd(cmdStr) {
-        cmdRunner.command = ["sh", "-c", cmdStr];
-        cmdRunner.running = true;
-    }
-
-    Process {
-        id: cmdRunner
-        running: false
+        Quickshell.execDetached(["sh", "-c", cmdStr]);
     }
 
     // --- AUTOMATED FILE WATCHER BACKEND ---
+    // Restored exactly as originally written to properly handle FileView's text() function.
     FileView {
         id: colorFileSource
         path: omarchyConfig
@@ -85,6 +81,7 @@ PanelWindow {
         property string mSurfaceVariant: "#303030"
         property string mError: "#ff7b63"
 
+        // Restored exactly as originally written to preserve local regex scope parsing.
         function updateThemeFromFile(rawText) {
             if (!rawText) return;
             function parse(key, fallback) {
@@ -99,7 +96,6 @@ PanelWindow {
             mError = parse("color1", "#ff7b63")
         }
     }
-    // --- END AUTOMATED FILE WATCHER BACKEND ---
 
     component FusionModule: Rectangle {
         property alias hoverArea: mArea
@@ -125,10 +121,9 @@ PanelWindow {
 
     // MAIN INTERACTION AREA
     MouseArea {
+        id: mainMouseArea
         anchors.fill: parent
         hoverEnabled: true
-        onEntered: isHovered = true
-        onExited: isHovered = false
 
         Rectangle {
             id: slidingContent
@@ -186,7 +181,7 @@ PanelWindow {
                             pixelSize: 22
                         }
                     }
-                    hoverArea.onClicked: mouse => {
+                    hoverArea.onClicked: {
                         if (mouse.button === Qt.RightButton) {
                             runCmd("kitty --class=sys-monitor -e btop");
                         } else {
@@ -445,7 +440,7 @@ PanelWindow {
                     height: 40
                     border.width: 2
                     
-                    hoverArea.onClicked: (mouse) => {
+                    hoverArea.onClicked: {
                         if (mouse.button === Qt.LeftButton) {
                             clockModule.showSeconds = !clockModule.showSeconds;
                         } else if (mouse.button === Qt.RightButton) {
@@ -533,7 +528,7 @@ PanelWindow {
                         font { family: iconFont; pixelSize: 18 }
                     }
                     
-                    hoverArea.onClicked: (mouse) => {
+                    hoverArea.onClicked: {
                         if (mouse.button === Qt.RightButton) {
                             powerVolModule.isMuted = !powerVolModule.isMuted;
                             runCmd("pactl set-sink-mute @DEFAULT_SINK@ toggle");
@@ -543,7 +538,7 @@ PanelWindow {
                             runCmd("omarchy-menu");
                         }
                     }
-                    hoverArea.onWheel: (wheel) => {
+                    hoverArea.onWheel: {
                         runCmd("pactl set-sink-volume @DEFAULT_SINK@ " + (wheel.angleDelta.y > 0 ? "+5%" : "-5%"));
                         if (wheel.angleDelta.y > 0 && powerVolModule.isMuted) powerVolModule.isMuted = false;
                     }
