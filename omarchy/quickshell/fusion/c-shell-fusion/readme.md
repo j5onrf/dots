@@ -7,7 +7,7 @@
 
  ```bash
 # Auto-hide Tweak
-layerrule = match:namespace fusion-shell, no_anim on
+layerrule = match:namespace c-fusion-shell, no_anim on
 ```
 ```
 # Quickshell Theme Sync
