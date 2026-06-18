@@ -1,4 +1,4 @@
-/* C-Shell-Fusion v7.8 [j5onrf] */
+/* C-Shell-Fusion v8.1 [j5onrf] */
 
 import Quickshell
 import Quickshell.Io
@@ -30,6 +30,9 @@ PanelWindow {
 
     property bool autoHideEnabled: false
     
+    // Toggles the automated theme sync. When false, the file is unloaded and default values apply.
+    property bool dynamicColorsEnabled: true
+    
     // Declarative state binding: tracks the mouse via native observers
     readonly property bool isHovered: mainMouseArea.containsMouse
     property bool drawerOpen: false
@@ -58,15 +61,17 @@ PanelWindow {
     }
 
     // --- AUTOMATED FILE WATCHER BACKEND ---
-    // Restored exactly as originally written to properly handle FileView's text() function.
+    // Binding the path directly to the toggle automatically unloads/reloads the file.
     FileView {
         id: colorFileSource
-        path: omarchyConfig
+        path: dynamicColorsEnabled ? omarchyConfig : ""
         
         onTextChanged: {
             const rawText = (typeof text === "function") ? text() : text;
-            if (rawText) {
+            if (rawText && dynamicColorsEnabled) {
                 theme.updateThemeFromFile(rawText);
+            } else {
+                theme.resetToDefaults();
             }
         }
     }
@@ -81,7 +86,16 @@ PanelWindow {
         property string mSurfaceVariant: "#303030"
         property string mError: "#ff7b63"
 
-        // Restored exactly as originally written to preserve local regex scope parsing.
+        // Restores the hardcoded system defaults
+        function resetToDefaults() {
+            mSurface = "#242424"
+            mOnSurface = "#ffffff"
+            mPrimary = "#ffffff"
+            mOnPrimary = "#ffffff"
+            mSurfaceVariant = "#303030"
+            mError = "#ff7b63"
+        }
+
         function updateThemeFromFile(rawText) {
             if (!rawText) return;
             function parse(key, fallback) {
@@ -533,7 +547,8 @@ PanelWindow {
                             powerVolModule.isMuted = !powerVolModule.isMuted;
                             runCmd("pactl set-sink-mute @DEFAULT_SINK@ toggle");
                         } else if (mouse.button === Qt.MiddleButton) {
-                            runCmd(homeDir + "/.config/hypr/scripts/f-reload.sh");
+                            // Toggles the file path via dynamicColorsEnabled to trigger an auto-refresh
+                            dynamicColorsEnabled = !dynamicColorsEnabled;
                         } else {
                             runCmd("omarchy-menu");
                         }
