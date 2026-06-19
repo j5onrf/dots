@@ -2,7 +2,7 @@
 
 </details>
 
-<details><summary>(2026-May31) Local-AI Agent <sup>alpha</sup></summary>
+<details><summary>(2026-May31) Local-AI Agent <sup>beta</sup></summary>
 <p>
     
 [Local-AI Agent | alias-ai.py](https://github.com/j5onrf/local-ai)
@@ -383,7 +383,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # Ai<sup> local-ai</sup>
 
-(2026-May-26) [Local-AI Agent <sup> alpha</sup> ](https://github.com/j5onrf/local-ai) 
+(2026-May-26) [Local-AI Agent <sup> beta</sup> ](https://github.com/j5onrf/local-ai) 
 <img alt="202" src="https://github.com/user-attachments/assets/bfdb833a-05e5-4c83-9f75-b288c2ec2e83" />
 `Qwen3.5-2B+` `Qwen3.6-35B-A3B` `Gemini-3.1-Flash-Lite`
 
