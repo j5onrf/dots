@@ -5,7 +5,7 @@
 <details><summary>(2026-May31) Local-AI Agent <sup>beta</sup></summary>
 <p>
     
-[Local-AI Agent | alias-ai.py](https://github.com/j5onrf/local-ai)
+[Local-AI Agent | ai-agent.py](https://github.com/j5onrf/local-ai)
 <img alt="Local-AI-Agent" src="https://github.com/user-attachments/assets/059d405b-2326-4939-a039-eeda67343095" />
 
 
