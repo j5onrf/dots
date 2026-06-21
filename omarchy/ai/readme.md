@@ -3,11 +3,10 @@
 
 ### Qwen 3.6:35b-a3b Q4_K_M (4-bit)
 
-> testing (llama.cpp) (32gb cpu only)<br>
-> Qwen3.6-28B-REAP.i1-Q4_K_S <br>
-> Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL (16/tps)<br>
+> testing (llama.cpp) <br>
+> Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-IQ4_NL <br>
 > Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_P <br>
-> Qwen3.5-2B-UD-Q4_K_XL
+> Qwen3.5-2B-UD-Q4_K_XL (fast/basic tasks/ultra-lite)
 > 
 **The "Active-3B" Sparse Expert**
 
