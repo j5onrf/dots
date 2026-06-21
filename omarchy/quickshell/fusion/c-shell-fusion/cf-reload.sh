@@ -18,6 +18,6 @@ export QML_DISABLE_DISK_CACHE=0
 export MALLOC_ARENA_MAX=1
 export QT_QML_SINGLETON_REUSE=1
 
-# 4. Fresh Launch (with logging enabled for debugging)
-uwsm app -- $LAUNCH_CMD > /tmp/quickshell-launch.log 2>&1 &
+# 4. Fresh Launch (Output silenced)
+uwsm app -- $LAUNCH_CMD &>/dev/null &
 disown
