@@ -14,5 +14,5 @@ layerrule = match:namespace c-fusion-shell, no_anim on
 # Quickshell Theme Sync
 # To automate Quickshell bar reloads on theme changes, append the reload script to the Omarchy master setter:
 
-echo "~/.config/hypr/scripts/cf-reload.sh &" >> ~/.local/share/omarchy/bin/omarchy-theme-set
+echo -e "\n~/.config/hypr/scripts/cf-reload.sh &" >> ~/.local/share/omarchy/bin/omarchy-theme-set
 ```
