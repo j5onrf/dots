@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-TARGET_DIR="$HOME/.config/quickshell/c-shell-fusion"
+TARGET_DIR="$HOME/.config/quickshell/shell-fusion"
 LAUNCH_CMD="quickshell -c $TARGET_DIR"
 
 # 1. Kill strictly by process name
