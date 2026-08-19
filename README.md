@@ -2,7 +2,7 @@
 
 </details>
 
-<details open><summary>(2026-Aug19) C-Shell Precision </summary>
+<details open><summary>(2026-Aug19) C-Shell Precision <sup>quattro</sup></summary>
 <p>
     
 [Omarchy-v4 | c-shell.qml](https://github.com/j5onrf/dots/tree/main/omarchy-v4)
