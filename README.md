@@ -396,12 +396,12 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 (2026-May-26) [Local-AI Agent <sup> beta</sup> ](https://github.com/j5onrf/local-ai) 
 <img alt="202" src="https://github.com/user-attachments/assets/bfdb833a-05e5-4c83-9f75-b288c2ec2e83" />
-`Qwen3.5-2B+` `Qwen3.6-35B-A3B` `Gemini-3.1-Flash-Lite`
+`Qwen3.5-2B` `Qwen3.6-35B-A3B` `Qwen3.8-27B` `Gemini-3.5-Flash-Lite`
 
 
 (2026-May-24) [AI Summary TUI ](https://github.com/j5onrf/local-ai/tree/main/ai-summary) 
 <img alt="local-ai" src="https://github.com/user-attachments/assets/35e79f20-6086-44c0-8863-2872aad9b2f1" />
-`Qwen3.5-2B+` `Qwen3.6-35B-A3B` `Gemini-3.1-Flash-Lite`
+`Qwen3.5-2B` `Qwen3.6-35B-A3B` `Qwen3.6-27B` `Gemini-3.5-Flash-Lite`
 
 ---
 
