@@ -29,7 +29,7 @@ Fast, autohide floating left rail dock for **Hyprland** & **Omarchy** written in
 
 ---
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### 1. Clone & Place Files
 Clone the repository and place the files in your preferred directories (e.g. keeping `c-shell.qml` in `~/.config/quickshell/` and the scripts in `~/.config/hypr/scripts/` or `~/.local/bin/`).
@@ -48,7 +48,7 @@ TARGET="$HOME/.config/quickshell/c-shell.qml"
 
 ---
 
-## ⚙️ Hyprland Integration
+## Hyprland Integration
 
 Add the toggle script to your Hyprland configuration to enable autostart and keybind toggling.
 
@@ -74,7 +74,7 @@ hl.bind("CTRL + SHIFT + 3", hl.dsp.exec_cmd(home .. "/path/to/cf-toggle.sh"))
 
 ---
 
-## 🎨 Theme Reload Hook (Omarchy)
+## Theme Reload Hook (Omarchy)
 
 If you use Omarchy (or another theme switcher with hook support), symlink `cf-reload.sh` into your `theme-set.d` hook folder so the dock automatically updates its accent colors on theme changes:
 
