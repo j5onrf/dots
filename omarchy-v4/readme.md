@@ -24,7 +24,7 @@ Fast, autohide floating left rail dock for **Hyprland** in **Quickshell**.
 ```text
 ├── c-shell.qml          # Main Quickshell UI file
 ├── cf-toggle.sh         # Launch & toggle script
-└── 10-cf-reload.sh      # Theme change reload hook (Optional / Omarchy)
+└── cf-reload.sh         # Theme change reload hook (Optional / Omarchy)
 ```
 
 ---
