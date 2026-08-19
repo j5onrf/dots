@@ -6,7 +6,7 @@
 <p>
     
 [Omarchy-v4 | c-shell.qml](https://github.com/j5onrf/dots/tree/main/omarchy-v4)
-<img alt="2026-08-19_13-14-41" src="https://github.com/user-attachments/assets/bb0f575f-2cbe-4fee-9696-c29c5f8dffef" />
+<img alt="2026-08-19_13-43-09" src="https://github.com/user-attachments/assets/1cfcd26a-c7f9-482d-9624-24193ce7b5c2" />
 
 
 </details> 
