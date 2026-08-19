@@ -1,8 +1,8 @@
 <img width="3840" height="2160" alt="2026-08-18_14-33-28" src="https://github.com/user-attachments/assets/5ce36771-86f3-436b-85f3-ffc5157e8a6d" />
 
-# C-Shell Precision — Left Rail Dock v0.1
+# C-Shell Precision — Left Rail Dock v0.9
 
-Fast, autohide floating left rail dock for **Hyprland** in **Quickshell**.
+Fast, autohide floating left rail dock for **Hyprland** & **Omarchy** written in **Quickshell**.
 
 ---
 
@@ -22,69 +22,75 @@ Fast, autohide floating left rail dock for **Hyprland** in **Quickshell**.
 ## 📁 Repository Structure
 
 ```text
-├── c-shell.qml          # Main Quickshell UI file
-├── cf-toggle.sh         # Launch & toggle script
-└── cf-reload.sh         # Theme change reload hook (Optional / Omarchy)
+├── c-shell.qml      # Main Quickshell UI file
+├── cf-toggle.sh     # Dock launch / toggle script
+└── cf-reload.sh     # Theme-change reload hook script
 ```
 
 ---
 
 ## 🚀 Installation & Setup
 
-### 1. Place the Files
-Clone the repository and place the files in your preferred directories (e.g., `~/.config/quickshell/` and `~/.local/bin/` or `~/.config/hypr/scripts/`).
+### 1. Clone & Place Files
+Clone the repository and place the files in your preferred directories (e.g. keeping `c-shell.qml` in `~/.config/quickshell/` and the scripts in `~/.config/hypr/scripts/` or `~/.local/bin/`).
 
 ### 2. Make Scripts Executable
-Ensure the shell scripts have execute permissions:
 ```bash
-chmod +x cf-toggle.sh 10-cf-reload.sh
+chmod +x cf-toggle.sh cf-reload.sh
 ```
 
-### 3. Configure Target Paths
-Open `cf-toggle.sh` and `10-cf-reload.sh` in your text editor and ensure the `TARGET` path points to the location where you saved `c-shell.qml`:
+### 3. Verify Target Paths
+Open `cf-toggle.sh` and `cf-reload.sh` in your text editor and ensure the `TARGET` variable points to the location of your `c-shell.qml` file:
 
 ```bash
-TARGET="$HOME/path/to/c-shell.qml"
+TARGET="$HOME/.config/quickshell/c-shell.qml"
 ```
 
 ---
 
 ## ⚙️ Hyprland Integration
 
-Add the toggle script to your Hyprland configuration:
+Add the toggle script to your Hyprland configuration to enable autostart and keybind toggling.
 
 ### Standard (`hyprland.conf`)
 ```ini
-# Autostart on login
+# Autostart dock on login
 exec-once = /path/to/cf-toggle.sh
 
-# Toggle keybind
+# Toggle keybind (e.g. Ctrl + Shift + 3)
 bind = CTRL SHIFT, 3, exec, /path/to/cf-toggle.sh
 ```
 
 ### Lua Configuration (`hyprland.lua`)
 ```lua
-hl.exec(os.getenv("HOME") .. "/path/to/cf-toggle.sh")
-hl.bind("CTRL + SHIFT + 3", hl.dsp.exec_cmd(os.getenv("HOME") .. "/path/to/cf-toggle.sh"))
+local home = os.getenv("HOME")
+
+-- Autostart dock on login
+hl.exec(home .. "/path/to/cf-toggle.sh")
+
+-- Toggle keybind (e.g. Ctrl + Shift + 3)
+hl.bind("CTRL + SHIFT + 3", hl.dsp.exec_cmd(home .. "/path/to/cf-toggle.sh"))
 ```
 
 ---
 
-## 🎨 Theme Reload Hook (Optional)
+## 🎨 Theme Reload Hook (Omarchy)
 
-If you use a theme switcher with hook support (such as Omarchy):
+If you use Omarchy (or another theme switcher with hook support), symlink `cf-reload.sh` into your `theme-set.d` hook folder so the dock automatically updates its accent colors on theme changes:
 
-1. Place `10-cf-reload.sh` into your theme hook directory:
-   ```bash
-   cp 10-cf-reload.sh ~/.config/omarchy/hooks/theme-set.d/
-   ```
-2. Verify that the path to `c-shell.qml` inside `10-cf-reload.sh` matches your install directory.
+```bash
+# 1. Create the hook directory if it doesn't exist
+mkdir -p ~/.config/omarchy/hooks/theme-set.d
+
+# 2. Symlink cf-reload.sh (prefixed with 10- for execution order)
+ln -sf /path/to/cf-reload.sh ~/.config/omarchy/hooks/theme-set.d/10-cf-reload.sh
+```
 
 ---
 
 ## 📊 Memory Profiling
 
-Standard tools like `btop` report full **RSS (~240MB)**, which double-counts shared Qt6, Wayland, and Mesa GPU driver mappings. 
+Standard system monitors (like `btop`) report full **RSS (~240MB)**, which double-counts shared Qt6, Wayland, and Mesa GPU driver mappings.
 
 Real memory breakdown:
 * **Private Dirty (Unique RAM):** **~88 MB** (Actual physical RAM dedicated solely to `c-shell.qml`).
