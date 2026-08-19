@@ -1,4 +1,4 @@
-/* C-Shell-Fusion v8.7 [j5onrf] - Clean Geometric Dock */
+/* C-Shell Precision — Left Rail Dock v0.9 [j5onrf] */
 
 import Quickshell
 import Quickshell.Io
