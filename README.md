@@ -2,6 +2,17 @@
 
 </details>
 
+<details open><summary>(2026-Aug19) C-Shell Precision </summary>
+<p>
+    
+[Omarchy-v4 | c-shell.qml](https://github.com/j5onrf/dots/tree/main/omarchy-v4)
+<img alt="2026-08-19_13-14-41" src="https://github.com/user-attachments/assets/bb0f575f-2cbe-4fee-9696-c29c5f8dffef" />
+
+
+</details> 
+
+</details>
+
 <details><summary>(2026-May31) Local-AI Agent <sup>beta</sup></summary>
 <p>
     
