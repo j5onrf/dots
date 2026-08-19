@@ -401,7 +401,7 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 (2026-May-24) [AI Summary TUI ](https://github.com/j5onrf/local-ai/tree/main/ai-summary) 
 <img alt="local-ai" src="https://github.com/user-attachments/assets/35e79f20-6086-44c0-8863-2872aad9b2f1" />
-`Qwen3.5-2B` `Qwen3.6-35B-A3B` `Qwen3.6-27B` `Gemini-3.5-Flash-Lite`
+`Qwen3.5-2B` `Qwen3.6-35B-A3B` `Qwen3.8-27B` `Gemini-3.5-Flash-Lite`
 
 ---
 
