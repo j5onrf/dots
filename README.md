@@ -13,21 +13,21 @@
 
 </details>
 
-<details><summary>(2026-May31) Local-AI Agent <sup>beta</sup></summary>
+<details><summary>(2026-May31) ∿ Py Agent <sup>beta</sup></summary>
 <p>
     
-[Local-AI Agent | ai-agent.py](https://github.com/j5onrf/local-ai)
-<img alt="Local-AI-Agent" src="https://github.com/user-attachments/assets/059d405b-2326-4939-a039-eeda67343095" />
+[∿ Py Agent | ai-agent.py](https://github.com/j5onrf/py-agent)
+<img alt="Py-Agent" src="https://github.com/user-attachments/assets/059d405b-2326-4939-a039-eeda67343095" />
 
 
 </details> 
 
 </details>
 
-<details><summary>(2026-May24) AI Summary TUI <sup>local-ai</sup></summary>
+<details><summary>(2026-May24) AI Summary TUI <sup>Py Agent</sup></summary>
 <p>
     
-[AI Summary TUI | Omarchy](https://github.com/j5onrf/local-ai/tree/main/ai-summary)
+[AI Summary TUI | Omarchy](https://github.com/j5onrf/py-agent)
 <img alt="20260510_095505" src="https://github.com/user-attachments/assets/fdd2d2b2-d938-4177-8bd2-4cda27668f06" />
 
 </details>
@@ -394,13 +394,13 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # Ai<sup> local-ai</sup>
 
-(2026-May-26) [Local-AI Agent <sup> beta</sup> ](https://github.com/j5onrf/local-ai) 
+(2026-May-26) [∿ Py Agent <sup> beta</sup> ](https://github.com/j5onrf/py-agent) 
 <img alt="202" src="https://github.com/user-attachments/assets/bfdb833a-05e5-4c83-9f75-b288c2ec2e83" />
 `Qwen3.5-2B` `Qwen3.6-35B-A3B` `Qwen3.8-27B` `Gemini-3.5-Flash-Lite`
 
 
-(2026-May-24) [AI Summary TUI ](https://github.com/j5onrf/local-ai/tree/main/ai-summary) 
-<img alt="local-ai" src="https://github.com/user-attachments/assets/35e79f20-6086-44c0-8863-2872aad9b2f1" />
+(2026-May-24) [AI Summary TUI ](https://github.com/j5onrf/py-agent) 
+<img alt="Py-Agent" src="https://github.com/user-attachments/assets/35e79f20-6086-44c0-8863-2872aad9b2f1" />
 `Qwen3.5-2B` `Qwen3.6-35B-A3B` `Qwen3.8-27B` `Gemini-3.5-Flash-Lite`
 
 ---
