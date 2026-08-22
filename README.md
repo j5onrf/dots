@@ -13,24 +13,16 @@
 
 </details>
 
-<details><summary>(2026-May31) ∿ Py Agent <sup>beta</sup></summary>
+<details><summary>(2026-May31) Py-Agent <sup>beta</sup></summary>
 <p>
     
 [∿ Py Agent | ai-agent.py](https://github.com/j5onrf/py-agent)
 <img alt="Py-Agent" src="https://github.com/user-attachments/assets/059d405b-2326-4939-a039-eeda67343095" />
+<img width="3840" height="2160" alt="2026-08-22_09-31-02" src="https://github.com/user-attachments/assets/e7d43c71-aa82-43e0-99d6-bfe20de812c4" />
 
 
 </details> 
 
-</details>
-
-<details><summary>(2026-May24) AI Summary TUI <sup>Py Agent</sup></summary>
-<p>
-    
-[AI Summary TUI | Omarchy](https://github.com/j5onrf/py-agent)
-<img alt="20260510_095505" src="https://github.com/user-attachments/assets/fdd2d2b2-d938-4177-8bd2-4cda27668f06" />
-
-</details>
 
 <details ><summary>(2026-May10) Porting to Noctalia v5 architecture, Fusion-Shell will no longer be a standalone QML script. Instead, it will be a C++ Module</summary>
 <p>
