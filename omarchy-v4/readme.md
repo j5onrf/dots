@@ -1,5 +1,7 @@
 <img width="3840" height="2160" alt="C-Shell Precision Banner" src="https://github.com/user-attachments/assets/5ce36771-86f3-436b-85f3-ffc5157e8a6d" />
 
+> Note: Hardcoded adwaita background until a solution that makes all dynamic background colors look good!
+
 # C-Shell Precision — Left Rail Dock v0.9.2
 
 Fast, autohide floating left rail dock for **Hyprland** & **Omarchy** written in **Quickshell**.
