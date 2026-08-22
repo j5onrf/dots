@@ -2,54 +2,19 @@
 
 </details>
 
-<details open><summary>(2026-Aug19) C-Shell Precision <sup>quattro</sup></summary>
+<details open><summary>(2026-Aug19) C-Shell Precision<sup> quattro</sup></summary>
 <p>
     
-[Omarchy-v4 | c-shell.qml](https://github.com/j5onrf/dots/tree/main/omarchy-v4)
-<img alt="2026-08-19_13-43-09" src="https://github.com/user-attachments/assets/1cfcd26a-c7f9-482d-9624-24193ce7b5c2" />
-
-
-</details> 
+[Omarchy-v4 | Left Rail Dock](https://github.com/j5onrf/dots/tree/main/omarchy-v4)
+<img alt="2026-08-22_12-08-51" src="https://github.com/user-attachments/assets/089c3e8a-1464-4ca1-bb8e-2b396f8b182c" />
 
 </details>
 
-<details><summary>(2026-May31) Py-Agent <sup>beta</sup></summary>
+<details open><summary>(2026-May31) Py-Agent <sup>beta</sup></summary>
 <p>
     
-[∿ Py Agent | ai-agent.py](https://github.com/j5onrf/py-agent)
-<img alt="2026-08-22_09-31-02-Py-Agent" src="https://github.com/user-attachments/assets/e7d43c71-aa82-43e0-99d6-bfe20de812c4" />
-<img width="3840" height="2160" alt="2026-08-22_12-27-06" src="https://github.com/user-attachments/assets/af1a2a40-1da8-45ef-abe9-f4889ec5efcd" />
-
-
-</details> 
-
-
-<details ><summary>(2026-May10) Porting to Noctalia v5 architecture, Fusion-Shell will no longer be a standalone QML script. Instead, it will be a C++ Module</summary>
-<p>
-    
-[Shell-Fusion | Omarchy](https://github.com/j5onrf/dots/tree/main/omarchy/quickshell/fusion)
-<img alt="20260510_095504" src="https://github.com/user-attachments/assets/4ff3a0f3-2275-498e-84a7-09c3437612d5" />
-
-<br>
-
-update* 5-13 looks like Omarchy is introducting quickshell into the dev branch.
-
-*** Why C++ is the move for you
-
-On CachyOS system with the v4 kernel, a native C++ build of a single module will actually be lightning fast.
-
-Because v5 drops the massive Qt libraries, you aren't compiling a giant monolith anymore.
-
-*** Why the "Module" approach is better:
-
-Zero Overhead: In btop screenshot, we see 648 MiB of RAM. A C++ module adds almost zero additional memory because it's just a few lines of machine code added to the main binary.
-
-The Result: likely see shell process drop to something like 30 MiB or 40 MiB.
-
-<br>
-
-</p>
-</details>
+[∿ PyCode | Desktop IDE](https://github.com/j5onrf/py-agent)
+<img alt="2026-08-22_09-19-37" src="https://github.com/user-attachments/assets/7ee497e6-151a-40ac-8839-7e7df7191ba2" />
 
 
 </details>
