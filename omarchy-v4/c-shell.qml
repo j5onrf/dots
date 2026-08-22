@@ -1,4 +1,4 @@
-/* C-Shell Precision — Left Rail Dock v0.9.1 [Universal] */
+/* C-Shell Precision — Left Rail Dock v0.9.2 [Hook-Driven Theme Sync] */
 
 import Quickshell
 import Quickshell.Io
@@ -68,7 +68,7 @@ PanelWindow {
         Quickshell.execDetached(["sh", "-c", cmdStr]);
     }
 
-    // UNIVERSAL WORKSPACE SWITCHER (Works on all Hyprland setups)
+    // UNIVERSAL WORKSPACE SWITCHER
     function switchToWorkspace(wsId) {
         if (wsId !== currentWsId) {
             previousWsId = currentWsId;
@@ -83,7 +83,7 @@ PanelWindow {
         Quickshell.execDetached(["hyprctl", "dispatch", "workspace", wsId.toString()]);
     }
 
-    // --- AUTOHIDE STATE LOADER ---
+    // --- ONE-TIME AUTOHIDE LOADER ON STARTUP ---
     Process {
         id: autohideStateReader
         command: ["sh", "-c", "cat ~/.cache/c-shell/.autohide_state 2>/dev/null || echo 0"]
@@ -96,7 +96,7 @@ PanelWindow {
         }
     }
 
-    // --- THEME LOADER ---
+    // --- ONE-TIME THEME LOADER ON STARTUP / RELOAD HOOK ---
     Process {
         id: themeReader
         command: [
@@ -106,7 +106,7 @@ PanelWindow {
         running: true
         stdout: StdioCollector {
             onStreamFinished: {
-                if (dynamicColorsEnabled && this.text.trim() !== "") {
+                if (dynamicColorsEnabled && this.text && this.text.trim() !== "") {
                     theme.updateThemeFromFile(this.text);
                 }
             }
@@ -115,12 +115,14 @@ PanelWindow {
 
     QtObject {
         id: theme
-        readonly property string mSurface: "#242424"
-        readonly property string mButtonSurface: "#2e2e2e"
-        readonly property string mSurfaceVariant: "#383838"
-        readonly property color mButtonBorder: "#4a4a4a"
-        readonly property color mButtonBorderHover: "#ffffff"
+        // --- 1. HARDCODED ADWAITA BASE ---
+        readonly property string mSurface: "#242424"          // Dock background
+        readonly property string mButtonSurface: "#2e2e2e"    // Button idle surface
+        readonly property string mSurfaceVariant: "#383838"   // Button hover surface
+        readonly property color mButtonBorder: "#4a4a4a"      // Button 1px border
+        readonly property color mButtonBorderHover: "#ffffff" // Button hover border
 
+        // --- 2. DYNAMIC THEME ACCENTS ---
         property string mPrimary: "#ffffff"
         property string mOnSurface: "#ffffff"
         property string mOnPrimary: "#121212"
@@ -603,6 +605,7 @@ PanelWindow {
                             powerVolModule.isMuted = !powerVolModule.isMuted;
                             runCmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle 2>/dev/null || pactl set-sink-mute @DEFAULT_SINK@ toggle");
                         } else if (mouse.button === Qt.MiddleButton) {
+                            // On-demand reload via themeReader
                             dynamicColorsEnabled = !dynamicColorsEnabled;
                             if (dynamicColorsEnabled) {
                                 themeReader.running = true;
