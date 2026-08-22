@@ -1,6 +1,6 @@
-<img width="3840" height="2160" alt="2026-08-18_14-33-28" src="https://github.com/user-attachments/assets/5ce36771-86f3-436b-85f3-ffc5157e8a6d" />
+<img width="3840" height="2160" alt="C-Shell Precision Banner" src="https://github.com/user-attachments/assets/5ce36771-86f3-436b-85f3-ffc5157e8a6d" />
 
-# C-Shell Precision — Left Rail Dock v0.9
+# C-Shell Precision — Left Rail Dock v0.9.2
 
 Fast, autohide floating left rail dock for **Hyprland** & **Omarchy** written in **Quickshell**.
 
@@ -10,6 +10,7 @@ Fast, autohide floating left rail dock for **Hyprland** & **Omarchy** written in
 
 * **Zero-Gap Left Dock:** 30px compact width flush to the screen edge.
 * **Smart Workspaces (1–10):** 1–5 persistent; 6–10 appear only when active/occupied.
+* **Workspace Breadcrumbs:** Discrete dot indicator tracks your previously active occupied workspace for seamless navigation.
 * **Theme-Proof Opacity:** 100% bright active/occupied text; 35% faded empty slots.
 * **Accordion Tools Drawer:** CPU monitor, clipboard, night light, autohide lock.
 * **Persistent Autohide:** State saves to disk; survives reboots and theme changes.
@@ -22,9 +23,11 @@ Fast, autohide floating left rail dock for **Hyprland** & **Omarchy** written in
 ## 📁 Repository Structure
 
 ```text
-├── c-shell.qml      # Main Quickshell UI file
-├── cf-toggle.sh     # Dock launch / toggle script
-└── cf-reload.sh     # Theme-change reload hook script
+├── c-shell.qml      # Main Quickshell dock UI file
+├── cf-toggle.sh     # Dock launch & toggle script
+├── cf-reload.sh     # Theme-change reload hook script
+├── w-toggle.sh      # Omarchy v4 top bar toggle script
+└── readme.md        # Documentation
 ```
 
 ---
@@ -32,11 +35,11 @@ Fast, autohide floating left rail dock for **Hyprland** & **Omarchy** written in
 ## Installation & Setup
 
 ### 1. Clone & Place Files
-Clone the repository and place the files in your preferred directories (e.g. keeping `c-shell.qml` in `~/.config/quickshell/` and the scripts in `~/.config/hypr/scripts/` or `~/.local/bin/`).
+Clone the repository and place the files into your preferred directories (e.g., `c-shell.qml` in `~/.config/quickshell/` and the `.sh` scripts in `~/.config/hypr/scripts/` or `~/.local/bin/`).
 
 ### 2. Make Scripts Executable
 ```bash
-chmod +x cf-toggle.sh cf-reload.sh
+chmod +x cf-toggle.sh cf-reload.sh w-toggle.sh
 ```
 
 ### 3. Verify Target Paths
@@ -50,15 +53,18 @@ TARGET="$HOME/.config/quickshell/c-shell.qml"
 
 ## Hyprland Integration
 
-Add the toggle script to your Hyprland configuration to enable autostart and keybind toggling.
+Add the toggle scripts to your Hyprland configuration to enable autostart and keybind controls.
 
 ### Standard (`hyprland.conf`)
 ```ini
 # Autostart dock on login
 exec-once = /path/to/cf-toggle.sh
 
-# Toggle keybind (e.g. Ctrl + Shift + 3)
+# Toggle left dock keybind (e.g. Ctrl + Shift + 3)
 bind = CTRL SHIFT, 3, exec, /path/to/cf-toggle.sh
+
+# Toggle Omarchy top bar (e.g. Super + B)
+bind = SUPER, B, exec, /path/to/w-toggle.sh
 ```
 
 ### Lua Configuration (`hyprland.lua`)
@@ -68,8 +74,11 @@ local home = os.getenv("HOME")
 -- Autostart dock on login
 hl.exec(home .. "/path/to/cf-toggle.sh")
 
--- Toggle keybind (e.g. Ctrl + Shift + 3)
+-- Toggle left dock keybind (Ctrl + Shift + 3)
 hl.bind("CTRL + SHIFT + 3", hl.dsp.exec_cmd(home .. "/path/to/cf-toggle.sh"))
+
+-- Toggle Omarchy top bar (Super + B)
+hl.bind("SUPER", "B", hl.dsp.exec_cmd(home .. "/path/to/w-toggle.sh"))
 ```
 
 ---
@@ -99,4 +108,3 @@ Real memory breakdown:
 ### Check Real Memory Usage:
 ```bash
 cat /proc/$(pgrep -f c-shell.qml)/smaps_rollup | grep -E "Rss|Pss|Private_Dirty"
-```
