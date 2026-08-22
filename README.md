@@ -17,8 +17,7 @@
 <p>
     
 [∿ Py Agent | ai-agent.py](https://github.com/j5onrf/py-agent)
-<img alt="Py-Agent" src="https://github.com/user-attachments/assets/059d405b-2326-4939-a039-eeda67343095" />
-<img width="3840" height="2160" alt="2026-08-22_09-31-02" src="https://github.com/user-attachments/assets/e7d43c71-aa82-43e0-99d6-bfe20de812c4" />
+<img alt="2026-08-22_09-31-02-Py-Agent" src="https://github.com/user-attachments/assets/e7d43c71-aa82-43e0-99d6-bfe20de812c4" />
 
 
 </details> 
