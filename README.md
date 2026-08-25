@@ -10,7 +10,7 @@
 
 </details>
 
-<details open><summary>(2026-May31) Py-Agent <sup>beta</sup></summary>
+<details><summary>(2026-May31) Py-Agent <sup>beta</sup></summary>
 <p>
     
 [∿ PyCode | Desktop IDE](https://github.com/j5onrf/py-agent)
