@@ -5,7 +5,9 @@
 <details open><summary>(2026-Oct23) Noctalia & Omarchy<sup> best left bar</sup></summary>
 <p>
     
-<img width="3840" height="2160" alt="2026-10-23_17-23-35" src="https://github.com/user-attachments/assets/e5aa1778-3e8f-419c-bc41-4e26ac6cb549" />
+<img alt="2026-10-23_17-23-35" src="https://github.com/user-attachments/assets/e5aa1778-3e8f-419c-bc41-4e26ac6cb549" />
+
+<img alt="2026-10-24_17-23-37" src="https://github.com/user-attachments/assets/e44f557a-d704-44ab-8e41-309c53746ef4" />
 
 </details>
 
