@@ -364,11 +364,6 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 <img alt="202" src="https://github.com/user-attachments/assets/bfdb833a-05e5-4c83-9f75-b288c2ec2e83" />
 `Qwen3.5-2B` `Qwen3.6-35B-A3B` `Qwen3.8-27B`
 
-
-(2026-May-24) [AI Summary TUI ](https://github.com/j5onrf/py-agent) 
-<img alt="Py-Agent" src="https://github.com/user-attachments/assets/35e79f20-6086-44c0-8863-2872aad9b2f1" />
-`Qwen3.5-2B` `Qwen3.6-35B-A3B` `Qwen3.8-27B`
-
 ---
 
 # Quickshell
