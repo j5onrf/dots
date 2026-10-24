@@ -2,7 +2,7 @@
 
 </details>
 
-<details open><summary>(2026-Oct23) Noctalia & Omarchy<sup> best left bar</sup></summary>
+<details open><summary>(2026-Oct23) Noctalia v5.3 <sup> best left autohide rail? yes!</sup></summary>
 <p>
     
 <img alt="2026-10-23_17-23-35" src="https://github.com/user-attachments/assets/e5aa1778-3e8f-419c-bc41-4e26ac6cb549" />
