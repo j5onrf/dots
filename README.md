@@ -1,5 +1,14 @@
 # Hyprdots
 
+<details open><summary>(2026-Nov21) RS Rail <sup>Rust + html</sup></summary>
+<p>
+    
+[Noctalia Theme Sync](https://j5onrf.github.io/rs-agent/)
+<img alt="2026-11-21_08-13-48" src="https://github.com/user-attachments/assets/89009214-e2fa-4af4-981c-350c13bf9cfa" />
+
+
+</details>
+
 </details>
 
 <details open><summary>(2026-Oct23) Noctalia v5.4 <sup> left autohide rail</sup></summary>
@@ -11,20 +20,11 @@
 
 </details>
 
-<details open><summary>(2026-Aug19) C-Shell Precision<sup> quattro</sup></summary>
+<details><summary>(2026-Aug19) C-Shell Precision<sup> quattro</sup></summary>
 <p>
     
 [Omarchy-v4 | Left Rail Dock](https://github.com/j5onrf/dots/tree/main/omarchy-v4)
 <img alt="2026-08-22_12-08-51" src="https://github.com/user-attachments/assets/089c3e8a-1464-4ca1-bb8e-2b396f8b182c" />
-
-</details>
-
-<details open><summary>(2026-Nov21) RS Rail <sup>Rust + html</sup></summary>
-<p>
-    
-[Noctalia Theme Sync](https://j5onrf.github.io/rs-agent/)
-<img alt="2026-11-21_08-13-48" src="https://github.com/user-attachments/assets/89009214-e2fa-4af4-981c-350c13bf9cfa" />
-
 
 </details>
 
@@ -61,7 +61,7 @@
 
 </details>
 
-<details open><summary>(2026-April14) DankMaterialShell <sup>top list</sup></summary>
+<details><summary>(2026-April14) DankMaterialShell <sup>top list</sup></summary>
 <p>
     
 [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
@@ -117,7 +117,7 @@ That is the ultimate "Best of Both Worlds" strategy. Having a toggle script that
 </p>
 </details>
 
-<details open><summary>(2026-April11) Noctalia-Shell <sup>expansive-feature-set</sup></summary>
+<details><summary>(2026-April11) Noctalia-Shell <sup>expansive-feature-set</sup></summary>
 <p>
     
 [Noctalia-Shell](https://github.com/noctalia-dev/noctalia-shell)
@@ -135,7 +135,7 @@ That is the ultimate "Best of Both Worlds" strategy. Having a toggle script that
 
 </details>
 
-<details open><summary>(2026-March27) Caelestia-Shell <sup>modernity</sup></summary>
+<details><summary>(2026-March27) Caelestia-Shell <sup>modernity</sup></summary>
 <p>
 
 [Caelestia-Shell](https://github.com/caelestia-dots/shell)
