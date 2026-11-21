@@ -19,11 +19,11 @@
 
 </details>
 
-<details><summary>(2026-May31) Py-Agent <sup>beta</sup></summary>
+<details open><summary>(2026-Nov21) RS Rail <sup>Rust + Ui.Html</sup></summary>
 <p>
     
-[∿ PyCode | Desktop IDE](https://github.com/j5onrf/py-agent)
-<img alt="2026-08-22_09-19-37" src="https://github.com/user-attachments/assets/7ee497e6-151a-40ac-8839-7e7df7191ba2" />
+[Rs-Agent | Rust Cli Harness](https://j5onrf.github.io/rs-agent/)
+<img alt="2026-11-21_08-13-48" src="https://github.com/user-attachments/assets/89009214-e2fa-4af4-981c-350c13bf9cfa" />
 
 
 </details>
@@ -360,9 +360,8 @@ https://github.com/j5onrf/dots/blob/main/waybar/Screenshot%20Archive/Screenshots
 
 # Ai<sup> local-ai</sup>
 
-(2026-May-26) [Py-Agent <sup> beta</sup> ](https://github.com/j5onrf/py-agent) 
-<img alt="202" src="https://github.com/user-attachments/assets/bfdb833a-05e5-4c83-9f75-b288c2ec2e83" />
-`Qwen3.5-2B` `Qwen3.6-35B-A3B` `Qwen3.8-27B`
+(2026-May-26) [Rs-Agent + Rs Rail <sup> beta</sup> ](https://j5onrf.github.io/rs-agent/) 
+<h1><a href="https://github.com/j5onrf/rs-agent"><img alt="Rs-Agent" src="https://github.com/j5onrf/j5onrf/blob/main/assets/logo.svg" width="36" height="36" /></a> Rs-Agent &nbsp;&nbsp;<a href="https://github.com/j5onrf/rs-agent"><img alt="rs-rail" src="https://github.com/j5onrf/j5onrf/blob/main/assets/rs-agent-rail.svg" width="36" height="36" /></a> RS Rail</h1>
 
 ---
 
