@@ -22,7 +22,7 @@
 <details open><summary>(2026-Nov21) RS Rail <sup>Rust + html</sup></summary>
 <p>
     
-[Noctalia theme sync](https://j5onrf.github.io/rs-agent/)
+[Noctalia theme Sync](https://j5onrf.github.io/rs-agent/)
 <img alt="2026-11-21_08-13-48" src="https://github.com/user-attachments/assets/89009214-e2fa-4af4-981c-350c13bf9cfa" />
 
 
