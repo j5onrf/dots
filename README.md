@@ -19,10 +19,10 @@
 
 </details>
 
-<details open><summary>(2026-Nov21) RS Rail <sup>Rust + Ui.Html</sup></summary>
+<details open><summary>(2026-Nov21) RS Rail <sup>Rust + html</sup></summary>
 <p>
     
-[Rs-Agent | Rust Cli Harness](https://j5onrf.github.io/rs-agent/)
+[Noctalia theme sync](https://j5onrf.github.io/rs-agent/)
 <img alt="2026-11-21_08-13-48" src="https://github.com/user-attachments/assets/89009214-e2fa-4af4-981c-350c13bf9cfa" />
 
 
